@@ -10,11 +10,11 @@ Requires [uv](https://docs.astral.sh/uv/) on your command line.
 cd dev/
 git clone https://github.com/USEPA/bmds-user-guide.git
 cd bmds-user-guide/
-uv venv --python=3.12 venv
+uv venv --python=3.12
 # on windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # on mac:
-# venv/bin/activate
+# .venv/bin/activate
 uv pip install -e .
 ```
 

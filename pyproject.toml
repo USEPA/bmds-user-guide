@@ -28,9 +28,9 @@ dependencies = [
 [tool.poe.tasks.docs]
 help = "Build documentation"
 cwd = "docs"
-cmd = "sphinx-build -W -b html source build/html"
+cmd = "sphinx-build -W -b html . ../build/html"
 
 [tool.poe.tasks.docs-serve]
 help = "Run documentation server"
 cwd = "docs"
-cmd = "sphinx-autobuild -b html source build/html --port 5800"
+cmd = "sphinx-autobuild -b html . ../build/html --port 5800"

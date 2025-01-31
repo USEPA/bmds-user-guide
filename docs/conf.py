@@ -31,7 +31,7 @@ html_theme_options = {
     "sidebar_hide_name": True,
     "light_logo": "img/epa-seal.svg",
     "dark_logo": "img/epa-seal.svg",
-    "source_repository": "https://github.com/USEPA/bmds",
+    "source_repository": "https://github.com/USEPA/bmds-user-guide",
     "source_branch": "main",
     "source_directory": "docs/",
 }
