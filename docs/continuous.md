@@ -336,8 +336,18 @@ Therefore, in most cases, the user should use non-transformed values and
 select the Lognormal distribution if the data are assumed to be
 lognormally distributed.
 
-[]{#_Ref39673999 .anchor}Table 5. *Options related to Continuous BMR
-Type and BMRF.*
+```{csv-table} Options related to Continuous BMR Type and BMRF.
+:header: >
+: "Analysis File, Main Tab Option Name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"
+:widths: 20, 30, 30, 20
+
+Rel. Dev.,*Relative Deviation:* <br>the specified change in median response relative to the background median, $$\frac{|m(BMD)\ –\ m(0)|}{m(0)}\ = \ BMRF$$,BMRF is the specified change Default value = 0.1 [10% change in median]
+```
+
+:::{tip}
+:name: a-tip-reference
+TODO - continue here ...
+:::
 
 +------------+---------------+-------------------------+-------------+
 | Analysis   | Verbal        | Mathematical Definition | BMRF Notes  |
