@@ -219,13 +219,18 @@ In total, three combinations are allowed:
     (see Section 8.5.2) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
     parameters are estimated simultaneously with the parameters of the
-    dose-response model.[^13]
+    dose-response model.[^1]
+
+[^1]: The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
+
 
 2.  **Lognormal distribution, constant coefficient of variation (CV):**
     for lognormally distributed responses, each dose group has the same
     CV, which entails that the log-scale variance is constant over dose
     groups (though the natural-scale variance will differ from group to
-    group[^14]).
+    group[^2]).
+
+[^2]: CV = standard deviation divided by mean. Log-scale refers to the values of the logarithms of the responses. Natural-scale refers to the values of the responses, untransformed.
 
 With respect to the response distribution (Normal or Lognormal), please
 note the following:

@@ -137,7 +137,7 @@ $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
 where LL is the log-likelihood at the maximum likelihood estimates for
 the parameters, and p is the number of model parameters estimated (and
-not on a restriction boundary).[^11]
+not on a restriction boundary).[^1]
 
 The AIC can be used to compare different models fit (using the same
 fitting method, *e.g.*, least squares or maximum likelihood) to the same
@@ -153,6 +153,10 @@ sections:
 
 -   For dichotomous endpoints, refer to Section 9.5.2 on page
     [77](#aic-and-model-comparisons-1).
+
+
+[^1]: For the dichotomous and nested dichotomous models, an additivity
+    constant is not included in the LL calculations.
 
 #### P-value
 

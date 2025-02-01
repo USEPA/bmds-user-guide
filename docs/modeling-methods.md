@@ -19,13 +19,13 @@ profile likelihood bounds and the Akaike Information Criterion (AIC) for
 model-selection. In this documentation, the term *MLE method* is used
 for the group of methods associated with likelihood maximization,
 recognizing that the term may be considered to apply most specifically
-to point estimation.[^3]
+to point estimation.[^1]
 
 The MLE approach is based on finding the parameter values that maximize
 the likelihood function. In simpler terms, it chooses the parameters
 that make the observed data most probable. Models fit by these methods
 report associated bounds determined by profile likelihood
-approaches.[^4]
+approaches.[^2]
 
 Models not labeled as Bayesian are, by default, MLE.
 
@@ -44,6 +44,15 @@ sections:
     Dichotomous Endpoints," on page
     [88](#mathematical-details-for-models-for-nested-dichotomous-endpoints)
 
+[^1]: BMDS has in the past referred to the non-Bayesian approach
+    variously as "frequentist," "Maximum Likelihood," or "Maximum
+    Likelihood Approach."
+
+[^2]: Crump, KS; Howe, R. (1985). A review of methods for calculating
+    statistical confidence limits in low-dose extrapolation. In:
+    Clayson, DB; Krewski, D; Munro, I; eds. Toxicological Risk
+    Assessment. Boca Raton, FL: CRC Press, Inc.
+
 ## Bayesian
 
 Bayesian methods combine prior information about parameters with the
@@ -57,9 +66,9 @@ uncertainty in the parameter values (the so-called prior distributions)
 are updated using the data under consideration to yield *a posteriori*
 distributions (the so-called posterior distributions). A quantile of the
 posterior BMD distribution, for example the 5th percentile, may be used
-for a Bayesian BMDL.[^5] A Bayesian point estimation procedure analogous
+for a Bayesian BMDL.[^3] A Bayesian point estimation procedure analogous
 to maximum likelihood is *maximum* *a posteriori probability* *(MAP)*
-estimation.[^6]
+estimation.[^4]
 
 The likelihood function plays a critical, formal role in Bayesian
 inference, different from its role in maximum likelihood.
@@ -81,6 +90,13 @@ Bayesian analysis is described in more detail in Section 12.0, "Bayesian
 Dichotomous Analysis, including Model Averaging," on page
 [105](#bayesian-dichotomous-analysis-including-model-averaging).
 
+[^3]: Bayesian upper or lower bounds computed in this way define
+    "credible" intervals, which are Bayesian analogues of classical
+    confidence intervals.
+
+[^4]: The MAP estimate of a parameter is the value that maximizes the
+    posterior probability density for the parameter.
+
 ## Optimization Algorithms Used in BMDS
 
 BMDS uses the NLopt optimization library for MLE analyses and some
@@ -92,9 +108,9 @@ ensure reliability of the estimation:
 
 -   For global optimization involving the maximum likelihood or maximum
     *a posteriori* estimation subject to bounds on parameters (which are
-    inequality constraints), the L-BFGS[^7] method is attempted first.
+    inequality constraints), the L-BFGS[^5] method is attempted first.
     If it fails to converge, gradient-free algorithms (subplex and
-    BOBYQA[^8]) are then attempted. Note that the parameter bounds will
+    BOBYQA[^6]) are then attempted. Note that the parameter bounds will
     be carried forward into the calculations that follow.
 
 -   The Bayesian BMDL in BMDS, as well as profile likelihood, involves
@@ -110,7 +126,7 @@ ensure reliability of the estimation:
     larger optimum are used.
 
 -   For optimizations involving ***only*** inequality constraints, the
-    COBYLA[^9] and MMA[^10] approaches are used and compared. In the
+    COBYLA[^7] and MMA[^8] approaches are used and compared. In the
     case the methods return different optimum, the values producing the
     larger of the two are used.
 
@@ -120,3 +136,15 @@ site](https://github.com/stevengj/nlopt/releases). For more information
 regarding the algorithms, refer to the [NLopt documentation
 site](https://nlopt.readthedocs.io/en/latest/).
 
+[^5]: Limited-memory *BFGS (L-BFGS or LM-BFGS)* is an optimization
+    algorithm in the family of quasi-Newton methods that approximates
+    the Broyden--Fletcher--Goldfarb--Shanno algorithm (*BFGS*).
+
+[^6]: Bound Optimization by Quadratic Approximation (BOBYQA) is a
+    numerical optimization method.
+
+[^7]: Constrained Optimization by Linear Approximation (COBYLA) is a
+    numerical optimization method.
+
+[^8]: Method of Moving Asymptotes (MMA) is a method for structural
+    optimization.

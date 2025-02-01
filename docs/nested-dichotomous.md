@@ -447,7 +447,7 @@ and their respective parameters*.
 | National Center for  | $\alpha$ = | In the model equation, $r_{ij}$  |
 | Toxicological        | intercept  | is the litter-specific covariate |
 | Research (NCTR)      | (≥0)       | for the *j^th^* litter in the    |
-| model[^16]           |            | *i^th^* dose group, $r_{m}$ is   |
+| model[^1]           |            | *i^th^* dose group, $r_{m}$ is   |
 |                      | $\rho$ =   | the overall mean for the         |
 | $$p(                 | power (≥0, | litter-specific covariate        |
 | dose) = 1 - e^{\left | can        |                                  |
@@ -498,6 +498,8 @@ and their respective parameters*.
 : The individual dichotomous nested models and their respective
 parameters Table showing, for each nested dichotomous model, its
 equation, parameters, and notes
+
+[^1]: The NCTR model will be added to a future version of BMDS.
 
 ### Likelihood Function
 

@@ -681,8 +681,10 @@ height="2.7919083552055994in"}
     model, all models, and all models with the BMD Cumulative Data
     Function (CDF) table (). Note that the Word report contains the
     analysis URL, and users can access their analyses via the generated
-    report.[^2] The name given to the Word file is the user-specified
+    report.[^1] The name given to the Word file is the user-specified
     Analysis Name.
+
+[^1]: The BMDS Desktop report does not include URLs because the analysis resides on the user's local system rather than the Internet.
 
 -   **Download analysis**: Download the analysis as a JSON file. This is
     a machine-readable file format that can be saved or shared, and then

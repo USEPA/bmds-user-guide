@@ -586,7 +586,7 @@ consideration (see Table 8). The following table specifies the solutions
 for the BMD for all the dichotomous models.
 
 []{#_Ref41750443 .anchor}Table 9. *Calculation of the BMD for the
-individual dichotomous models*[^15]*.*
+individual dichotomous models*[^1]*.*
 
 +--------------+-------------------------------------------------------+
 | Model        | BMD Calculation                                       |
@@ -671,6 +671,10 @@ individual dichotomous models*[^15]*.*
 : Calculation of the BMD and BMDL for the individual frequentist
 dichotomous models Table showing, for each dichotomous model, how its
 BMD and BMDL are calculated
+
+[^1]: All models represented in Table 9 use the same model forms as
+    presented in Table 8. BMR is the value specified by the user to
+    correspond to the risk level of interest (see 8.3.2).
 
 ### BMDL and BMDU Computation
 

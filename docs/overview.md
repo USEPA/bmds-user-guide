@@ -146,6 +146,8 @@ reference doses (RfDs), reference concentrations (RfCs), and slope
 factors,[^1] which are used along with other scientific information to
 set standards for human health effects.
 
+[^1]: With few exceptions, RfD/RfC values are noncancer benchmarks and slope factors are generally cancer benchmarks derived in accordance with [EPA cancer guidelines](https://www.epa.gov/sites/production/files/2013-09/documents/cancer_guidelines_final_3-25-05.pdf).
+
 Prior to the availability of tools such as BMDS, noncancer risk
 assessment benchmarks such as RfDs and RfCs were determined from
 no-observed-adverse-effect levels (NOAELs), which represent the highest
