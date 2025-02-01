@@ -19,7 +19,7 @@ approach that should be seriously considered in lieu of model selection
 (*e.g.*, basing inferences on one model deemed to be the "best").
 
 Suppose for this development that we are considering K models
-($M_{k},\ k\  = \ 1,\ \ldots,\ K)$.
+($M_{k},\ k\  = \ 1,\ \ldots,\ K)$).
 
 For each model, BMDS approximates the posterior density for the BMD
 using a Laplacian approximation; call that density
