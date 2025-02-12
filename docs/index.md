@@ -23,5 +23,5 @@
    bayesian-dichotomous
    special-considerations
    references
-   extra
+   tables-reformatted
 ```
