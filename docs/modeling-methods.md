@@ -34,15 +34,15 @@ sections:
 
 -   Section 8.6, "Mathematical Details for Models for Continuous
     Endpoints in Simple Designs," on page
-    [61](#mathematical-details-for-models-for-continuous-endpoints-in-simple-designs)
+    [61](./continuous.md#mathematical-details-for-models-for-continuous-endpoints-in-simple-designs)
 
 -   Section 9.5, "Mathematical Details for Models for Dichotomous
     Endpoints in Simple Designs," on page
-    [73](#mathematical-details-for-models-for-dichotomous-endpoints-in-simple-designs)
+    [73](./dichotomous.md#mathematical-details-for-models-for-dichotomous-endpoints-in-simple-designs)
 
 -   Section 10.5, "Mathematical Details for Models for Nested
     Dichotomous Endpoints," on page
-    [88](#mathematical-details-for-models-for-nested-dichotomous-endpoints)
+    [88](./nested-dichotomous.md#mathematical-details-for-models-for-nested-dichotomous-endpoints)
 
 [^1]: BMDS has in the past referred to the non-Bayesian approach
     variously as "frequentist," "Maximum Likelihood," or "Maximum
@@ -84,11 +84,11 @@ presented:
 
 To see how model parameter estimates are reported in the BMDS results,
 refer to Section 6.2.3, "Model Parameters," on page
-[42](#model-parameters-table-all-endpoints).
+[42](./result-output-mle.md#model-parameters-table-all-endpoints).
 
 Bayesian analysis is described in more detail in Section 12.0, "Bayesian
 Dichotomous Analysis, including Model Averaging," on page
-[105](#bayesian-dichotomous-analysis-including-model-averaging).
+[105](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging).
 
 [^3]: Bayesian upper or lower bounds computed in this way define
     "credible" intervals, which are Bayesian analogues of classical

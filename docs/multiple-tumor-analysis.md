@@ -224,7 +224,7 @@ The help text for the **Degree** column reads as follows:
 BMDS will recommend a model degree based on the decision logic and
 settings found on the Logic tab for Dichotomous endpoints. For more
 details, refer to Section 7.0, "Model Recommendations and Decision
-Logic," on page [44](#model-recommendations-and-decision-logic).
+Logic," on page [44](./model-recommendation.md#model-recommendations-and-decision-logic).
 
 -   If a user opts for BMDS' auto-select functionality, the best fitting
     model is chosen according to the [Technical Guidance on choosing the
@@ -237,18 +237,12 @@ Logic," on page [44](#model-recommendations-and-decision-logic).
     criteria for the user-defined test thresholds from the Dichotomous
     Logic tab:
 
-```{=html}
-<!-- -->
-```
 -   Ratio of BMD/BMDL (caution)
 
 -   \|Residual near BMD\| too large
 
 -   \|Residual at control\| too large
 
-```{=html}
-<!-- -->
-```
 -   If a user specifies a degree for a given model, that degree will be
     used regardless of model fit.
 
@@ -373,7 +367,7 @@ The **Copy Data for BMDS Modeling** link copies the summary table data
 to the clipboard. From here, the user can return to their
 Multistage/Multitumor analysis, return to the Data tab, select the
 [**Load dataset from Excel**
-button](#adding-datasets-method-2-copy-and-paste), and paste the
+button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
@@ -535,7 +529,7 @@ Multistage polynomial degree, they can re-run the analysis using a
 specified degree instead of auto-select.
 
 For more information, refer to Section 9.4, "Specific Dichotomous
-Results," on page [71](#specific-dichotomous-results).
+Results," on page [71](./dichotomous.md#specific-dichotomous-results).
 
 ### Cancer Slope Factor
 

@@ -66,7 +66,7 @@ A BMDS analysis can have the following number of continuous datasets:
 -   **pybmds:** No limit.
 
 For details on inserting or importing datasets, refer to "Specifying
-Dataset," on page [16](#specifying-datasets).
+Dataset," on page [16](./bmds-online.md#specifying-datasets).
 
 For summarized continuous response data, the default column headers are
 *Dose*, *N*, *Mean* and *Std. Dev*.
@@ -162,7 +162,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to Table 5 on page [55](#_Ref39673999).
+    on these methods, refer to Table 5 on page [55](#bmr-table).
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -211,9 +211,6 @@ In total, three combinations are allowed:
     group has the same variance, which is estimated by BMDS along with
     the dose-response model parameters.
 
-```{=html}
-<!-- -->
-```
 1.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
     (see Section 8.5.2) with two parameters (α and ρ) relating the dose
@@ -341,6 +338,8 @@ Therefore, in most cases, the user should use non-transformed values and
 select the Lognormal distribution if the data are assumed to be
 lognormally distributed.
 
+
+(bmr-table)=
 ```{csv-table} Options related to Continuous BMR Type and BMRF.
 :header: >
 : "Analysis File, Main Tab Option Name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"

@@ -212,7 +212,7 @@ analysis.
 There is also the added flexibility of offline processing with the
 simultaneous releases of BMDS Desktop and pybmds. For more information
 on these programs, refer to "BMDS Desktop and pybmds" on page
-[7](#bmds-desktop-and-pybmds).
+[7](./bmds-desktop-pybmds.md).
 
 Learn more about BMDS Online on the [BMDS
 website](https://www.epa.gov/bmds).
@@ -249,7 +249,7 @@ applications:
     some development experience.
 
 For more information, refer to Section 2.0, "BMDS Desktop and pybmds,"
-on page [7](#bmds-desktop-and-pybmds).
+on page [7](./bmds-desktop-pybmds.md).
 
 ## What's New: Active Development Stopped on BMDS 3.3
 
@@ -288,7 +288,7 @@ All improvements and enhancements listed below are available in BMDS
 Online, BMDS Desktop, and pybmds:
 
 -   Addition of Multistage Cancer/Multitumor model, along with a [poly-k
-    trend test](#poly-k-adjustment)
+    trend test](./multiple-tumor-analysis.md#poly-k-adjustment)
 
 -   Addition of the Nested Logistic nested dichotomous model for
     developmental toxicity data

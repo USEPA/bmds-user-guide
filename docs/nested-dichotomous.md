@@ -45,9 +45,6 @@ developmental toxicology studies:
     probability model: see Section 10.5.1, \"Likelihood Function,\" on
     page 91), and
 
-```{=html}
-<!-- -->
-```
 3.  They incorporate a litter-specific covariate that is expected to
     account for at least some of the extra inter-litter variance.
 
@@ -97,7 +94,7 @@ continuous, dichotomous, and nested dichotomous) or 10 datasets (for
 multitumor).
 
 For information on inserting or importing data, see Section 4.4,
-"Specifying Dataset," on page [16](#specifying-datasets).
+"Specifying Dataset," on page [16](./bmds-online.md#specifying-datasets).
 
 The default column headers are *Dose*, *Litter Size*, *Incidence*, and
 *Litter Specific Covariate (LSC)*.
@@ -224,7 +221,7 @@ the BMD (and the corresponding plots) will be computed using the Control
 Group Mean value of the LSC or the Overall Mean value of the LSC
 (*i.e.*, averaged across all dose groups; Overall Mean is the default
 selection). See Section 10.5.4, "BMD Computation," on page
-[93](#bmd-computation-1) for an explanation as to why this option is
+[93](#bmd-computation) for an explanation as to why this option is
 necessary, and which choice would be preferred for the given dataset.
 
 The Overall Mean should be used under most circumstances. If the
@@ -316,7 +313,7 @@ the model fits the data well, the observed Chi-square should not be in
 the upper tail of the Chi-square statistic values from the simulations.
 (For more on the Chi-square calculation, see Section 10.5.2, "Goodness
 of Fit Information---Litter Data," on page
-[91](#goodness-of-fit-informationlitter-data).)
+[91](#goodness-of-fit-information-litter-data).)
 
 The Bootstrap Results table summarizes the result of that test for
 goodness of fit. It reiterates the user-input number of iterations and
@@ -556,7 +553,7 @@ and
 This log-likelihood ignores a term that is independent of the values of
 the parameters.
 
-### Goodness of Fit Information---Litter Data
+### Goodness of Fit Information Litter Data
 
 The Litter Data table provides a listing of the data, expected and
 observed responses, and scaled residuals for each litter.
@@ -594,9 +591,6 @@ The goodness-of-fit p-values are calculated using a bootstrap approach.
     within litters, and those are generated, at random, as dictated by
     the values of the ML estimates.
 
-```{=html}
-<!-- -->
-```
 1.  Once the B bootstrap iterations are generated, a statistic referred
     to as *Chi-square* is calculated for each. The *Chi-square
     statistic* is the sum of the squares of the scaled residuals for
@@ -638,7 +632,7 @@ B.
 The error bars shown for the plots of nested data are calculated in the
 same way as those for dichotomous data (and described in Section 9.4.3,
 "Plot and Error Bar Calculation," on page
-[72](#plot-and-error-bar-calculation-1)).
+[72](./dichotomous.md#plot-and-error-bar-calculation)).
 
 However, a Rao-Scott transformation is applied prior to the calculations
 to express the observations in terms of an effective number of affected

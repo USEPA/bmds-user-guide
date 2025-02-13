@@ -14,15 +14,15 @@ for the presence of liver toxicity.
 For models for dichotomous endpoints in which the responses are nested
 (for example, pups within litters, and litters nested within doses), see
 Section 10.0, "Nested Dichotomous Endpoints," on page
-[80](#nested-dichotomous-endpoints).
+[80](./nested-dichotomous.md#nested-dichotomous-endpoints).
 
 For dichotomous cancer models, and the combination of model predictions
 for multiple tumor endpoints, see Section 11.0, "Multiple Tumor
-Analysis," on page [94](#multiple-tumor-analysis).
+Analysis," on page [94](./multiple-tumor-analysis.md#multiple-tumor-analysis).
 
 For more information, refer to Section 12.0, "Bayesian Dichotomous
 Analysis, including Model Averaging," on page
-[105](#bayesian-dichotomous-analysis-including-model-averaging).
+[105](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging).
 
 ## Dichotomous Response Models
 
@@ -45,7 +45,7 @@ Logistic, Probit, and Quantal Linear models have no restricted option
 ([U.S. EPA,
 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-See Table 8 on page [74](#_Ref722443575) for the effect of the user
+See Table 8 on page [74](#tbl-model) for the effect of the user
 selecting the restricted version of the models (refer to the paragraphs
 in the *Notes* column marked with **User parameter restriction
 options**). In general, the restrictions prevent the slope of the
@@ -185,7 +185,7 @@ expected number of responders (*Expected*). This is a good place for the
 user to assess the appropriateness of the model, in addition to the
 overall goodness-of-fit statistics reported in the Summary table (refer
 to "Summary Table of Key Fit Statistics (All Endpoints)" on page
-[40](#summary-table-of-key-fit-statistics-all-endpoints) and the
+[40](./result-output-mle.md#summary-table-of-key-fit-statistics-all-endpoints) and the
 Analysis of Deviance table (Section 9.4.2). If a model fits well, the
 observed and expected number of responders should be relatively close.
 
@@ -231,7 +231,7 @@ The analysis of deviance table displays three log-likelihood values.
 -   **Fitted model.** The maximum log-likelihood value obtainable for
     the model under consideration. It corresponds to the model with the
     parameters set equal to the values shown in the [Model Parameters
-    table](#model-parameters-table-all-endpoints). The number of
+    table](#tbl-model). The number of
     parameters equals the number of parameters in that table that are
     not reported as *Bounded*.
 
@@ -272,7 +272,7 @@ to infer that there is no dose-related effect on response probabilities.
 
 The graphical output, *i.e.*, plot, is a visual depiction of the results
 of the modeling. Because plots, in general, were discussed in Section
-6.2.5, "Graph," on page [43](#graphsplots-all-endpoints), here we
+6.2.5, "Graph," on page [43](./result-output-mle.md#graphsplots-all-endpoints), here we
 describe the one additional detail specific to the continuous models,
 *i.e.*, computation of the error bars:
 
@@ -317,7 +317,8 @@ model).
 BMDS contains nine models for dichotomous endpoints as defined in the
 following table.
 
-[]{#_Ref722443575 .anchor}Table 8. *The individual dichotomous models
+(tbl-model)=
+Table 8. *The individual dichotomous models
 and their respective parameters.*
 
 +---------------------+-----------+-----------------------------------+
@@ -331,7 +332,7 @@ and their respective parameters.*
 | exp\left\lbrack - \ | $\        | $$n\  \leq \ 23$$                 |
 | sum_{j = 1}^{n}{\be | beta_{j}$ |                                   |
 | ta_{j}dose^{j}} \ri | = dose    | $0\  < \ \                        |
-| ght\rbrack \right)$ | coe       | beta < \ $`<!-- -->`{=html}10,000 |
+| ght\rbrack \right)$ | coe       | beta < \ $`<!-- -->` 10,000       |
 |                     | fficients |                                   |
 |                     |           | **User parameter restriction      |
 |                     |           | options:** can restrict all β     |
@@ -358,7 +359,7 @@ and their respective parameters.*
 |  g)\left( 1 - \exp\ | $\alpha$  | $$0\  < \ \alpha\  \leq \ 18$$    |
 | left\lbrack - \beta | = power   |                                   |
 | {dose}^{\alpha} \ri |           | $0\  <                            |
-| ght\rbrack \right)$ | $\beta$ = | \ \beta < \ $`<!-- -->`{=html}100 |
+| ght\rbrack \right)$ | $\beta$ = | \ \beta < \ $`<!-- -->`       100 |
 |                     | slope     |                                   |
 |                     |           | **User parameter restriction      |
 |                     |           | options:** $1\  \leq \ \alpha$    |
@@ -563,7 +564,7 @@ selection.
 In the current version of BMDS, the number of estimated parameters
 includes only those that have not been estimated to equal a bounding
 value, either from the model-imposed constraints or user-imposed
-restrictions. For more details, see Table 8 on [74](#_Ref722443575).
+restrictions. For more details, see Table 8 on [74](#tbl-model).
 
 ***Note***
 

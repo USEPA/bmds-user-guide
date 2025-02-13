@@ -66,8 +66,8 @@ height="2.1047364391951007in"}
     can run only one project (*i.e.*, database file) at a time.
 
 -   BMDS Desktop can theoretically accept an unlimited number of
-    [datasets](#specifying-datasets-by-endpoint) and [option
-    sets](#maximum-number-of-option-sets); however, it is recommended to
+    [datasets](./bmds-online.md#specifying-datasets-by-endpoint) and [option
+    sets](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to
     create multiple analyses rather than putting large numbers of
     datasets into a single analysis.
 
@@ -77,7 +77,7 @@ height="2.1047364391951007in"}
 ### Constraints on Sharing Analyses with BMDS Online
 
 You can [export an analysis or
-results](#sharing-and-downloading-analyses-and-results) from BMDS
+results](./bmds-online.md#sharing-and-downloading-analyses-and-results) from BMDS
 Desktop and import the files into BMDS Online, and vice versa. However,
 there are some caveats:
 
@@ -97,7 +97,7 @@ needed to fully share an analysis.
 
 BMDS Online has its own set of constraints on sharing results via URL;
 for more information, see Section 4.7.2 on page
-[31](#constraints-on-sharing-analysis-urls).
+[31](./bmds-online.md#constraints-on-sharing-analysis-urls).
 
 ## pybmds for Advanced Research
 

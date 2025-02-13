@@ -204,7 +204,7 @@ We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
 of the likelihood is presented in Section 9.5.1, "Likelihood Function,"
-on page [77](#likelihood-function-1).
+on page [77](./dichotomous.md#likelihood-function).
 
 The set of Bayesian dichotomous models used in BMDS 3 is identical to
 the set of models used for maximum-likelihood estimation (MLE)

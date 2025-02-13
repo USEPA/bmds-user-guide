@@ -92,7 +92,7 @@ height="1.8367410323709537in"}
 1.  On the Settings tab, specify a name and description for the analysis
     (). BMDS uses the **Analysis Name** to name the files that are
     created when users select the Reporting options "data," "report," or
-    "analysis" from the [Actions menu](#actions-menu-1) .
+    "analysis" from the [Actions menu](#actions-menu) .
 
 []{#_Ref148619621 .anchor}**Figure 10.** Enter a descriptive name and
 summary for the analysis; they will be included in the report.
@@ -306,7 +306,7 @@ BMDS Online displays only one dataset at a time. However, it tracks
 ***all*** datasets created in the current session.
 
 All datasets created during a session are saved via the [Actions
-menu's](#actions-menu-1) **Download analysis** option and all specified
+menu's](#actions-menu) **Download analysis** option and all specified
 datasets in a session can be Shared.
 
 Select the **Create** button to create a new default dataset with an
@@ -553,7 +553,7 @@ highly recommended that new users leave the logic settings as-is; logic
 settings should only be changed under the guidance of experienced
 modelers.*** For more information, refer to Section 7.0, "Model
 Recommendations and Decision Logic," on page
-[44](#model-recommendations-and-decision-logic)
+[44](./model-recommendation.md#model-recommendations-and-decision-logic)
 
 If any logic setting changes, the default logic settings can be
 reapplied by selecting the **Reset to Default Logic** button.
@@ -651,7 +651,7 @@ height="1.9351673228346458in"}
     Actions menu. The **Download analysis** feature can be used to save
     and share analyses that need to be retained long-term.
 
-### Actions Menu {#actions-menu-1}
+### Actions Menu
 
 []{#_Toc185445221 .anchor}**Figure 45.** BMDS Online Actions menu
 options.
