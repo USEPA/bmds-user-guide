@@ -19,7 +19,7 @@ approach that should be seriously considered in lieu of model selection
 (*e.g.*, basing inferences on one model deemed to be the "best").
 
 Suppose for this development that we are considering K models
-($M_{k},\ k\  = \ 1,\ \ldots,\ K)$.
+($M_{k},\ k\  = \ 1,\ \ldots,\ K)$).
 
 For each model, BMDS approximates the posterior density for the BMD
 using a Laplacian approximation; call that density
@@ -159,30 +159,21 @@ and is a common interpretation of Bayes Factors.
 results plot.
 
 ![Multiple model result curves plotted on single graph, with
-legend](_static/img/image104.png){width="6.5in"
-height="3.161111111111111in"}
+legend](_static/img/image104.png){width="6.5in" height="3.161111111111111in"}
 
-[]{#_Ref162021897 .anchor}Table 13. *Bayes factors for dichotomous
-models.*
 
-  -----------------------------------------------------------------------
-  Bayes Factor             Strength of Evidence for H~A~
-  ------------------------ ----------------------------------------------
-  \< 1                     negative (supports H~B~)
+```{csv-table} Bayes factors for dichotomous models.
+:header: >
+: "Bayes Factor","Strength of Evidence for $H_{A}$"
+:widths: 40, 60
 
-  1 to 3.2                 not worth mentioning
-
-  3.2 to 10                substantial
-
-  10 to 31.6               strong
-
-  31.6 to 100              very strong
-
-  100                      decisive
-  -----------------------------------------------------------------------
-
-  : Bayes Factors for dichotomous modelsTable showing common
-  interpretations of 6 levels of Bayes Factors for dichtomous models
+< 1,negative (supports $H_B$)
+1 to 3.2,not worth mentioning
+3.2 to 10,substantial
+10 to 31.6,strong
+31.6 to 100,very strong
+100,decisive
+```
 
 For BMDS, all LPP and corresponding posterior model probabilities are
 computed using the Laplace approximation. This value is different from
@@ -213,7 +204,7 @@ We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
 of the likelihood is presented in Section 9.5.1, "Likelihood Function,"
-on page [77](#likelihood-function-1).
+on page [77](./dichotomous.md#likelihood-function).
 
 The set of Bayesian dichotomous models used in BMDS 3 is identical to
 the set of models used for maximum-likelihood estimation (MLE)

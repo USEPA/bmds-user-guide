@@ -66,7 +66,7 @@ A BMDS analysis can have the following number of continuous datasets:
 -   **pybmds:** No limit.
 
 For details on inserting or importing datasets, refer to "Specifying
-Dataset," on page [16](#specifying-datasets).
+Dataset," on page [16](./bmds-online.md#specifying-datasets).
 
 For summarized continuous response data, the default column headers are
 *Dose*, *N*, *Mean* and *Std. Dev*.
@@ -162,7 +162,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to Table 5 on page [55](#_Ref39673999).
+    on these methods, refer to Table 5 on page [55](#bmr-table).
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -211,21 +211,23 @@ In total, three combinations are allowed:
     group has the same variance, which is estimated by BMDS along with
     the dose-response model parameters.
 
-```{=html}
-<!-- -->
-```
 1.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
     (see Section 8.5.2) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
     parameters are estimated simultaneously with the parameters of the
-    dose-response model.[^13]
+    dose-response model.[^1]
+
+[^1]: The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
+
 
 2.  **Lognormal distribution, constant coefficient of variation (CV):**
     for lognormally distributed responses, each dose group has the same
     CV, which entails that the log-scale variance is constant over dose
     groups (though the natural-scale variance will differ from group to
-    group[^14]).
+    group[^2]).
+
+[^2]: CV = standard deviation divided by mean. Log-scale refers to the values of the logarithms of the responses. Natural-scale refers to the values of the responses, untransformed.
 
 With respect to the response distribution (Normal or Lognormal), please
 note the following:
@@ -336,8 +338,20 @@ Therefore, in most cases, the user should use non-transformed values and
 select the Lognormal distribution if the data are assumed to be
 lognormally distributed.
 
-[]{#_Ref39673999 .anchor}Table 5. *Options related to Continuous BMR
-Type and BMRF.*
+
+(bmr-table)=
+```{csv-table} Options related to Continuous BMR Type and BMRF.
+:header: >
+: "Analysis File, Main Tab Option Name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"
+:widths: 20, 30, 30, 20
+
+Rel. Dev.,*Relative Deviation:* <br>the specified change in median response relative to the background median, $$\frac{|m(BMD)\ –\ m(0)|}{m(0)}\ = \ BMRF$$,BMRF is the specified change Default value = 0.1 [10% change in median]
+```
+
+:::{tip}
+:name: a-tip-reference
+TODO - continue here ...
+:::
 
 +------------+---------------+-------------------------+-------------+
 | Analysis   | Verbal        | Mathematical Definition | BMRF Notes  |

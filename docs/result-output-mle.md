@@ -137,7 +137,7 @@ $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
 where LL is the log-likelihood at the maximum likelihood estimates for
 the parameters, and p is the number of model parameters estimated (and
-not on a restriction boundary).[^11]
+not on a restriction boundary).[^1]
 
 The AIC can be used to compare different models fit (using the same
 fitting method, *e.g.*, least squares or maximum likelihood) to the same
@@ -149,10 +149,14 @@ Model-type specific details on the AIC are discussed in the following
 sections:
 
 -   For continuous endpoints, refer to Section 8.6.4 on page
-    [65](#aic-and-model-comparisons).
+    [65](./continuous.md#aic-and-model-comparisons).
 
 -   For dichotomous endpoints, refer to Section 9.5.2 on page
-    [77](#aic-and-model-comparisons-1).
+    [77](./dichotomous.md#aic-and-model-comparisons).
+
+
+[^1]: For the dichotomous and nested dichotomous models, an additivity
+    constant is not included in the LL calculations.
 
 #### P-value
 
@@ -238,11 +242,11 @@ Error bar calculations for the data points differ slightly based on the
 endpoint:
 
 -   For continuous endpoints, refer to Section 8.5.4, "Plot and Error
-    Bar Calculation," on page [61](#plot-and-error-bar-calculation).
+    Bar Calculation," on page [61](./continuous.md#plot-and-error-bar-calculation).
 
 -   For dichotomous endpoints, refer to Section 9.4.3, "Plot and Error
-    Bar Calculation," on page [72](#plot-and-error-bar-calculation-1).
+    Bar Calculation," on page [72](./dichotomous.md#plot-and-error-bar-calculation).
 
 -   For nested endpoints, refer to Section 10.5.3, "Plot and Error Bar
-    Calculation," on page [93](#plot-and-error-bar-calculation-2).
+    Calculation," on page [93](./nested-dichotomous.md#plot-and-error-bar-calculation).
 

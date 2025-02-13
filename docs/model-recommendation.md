@@ -83,7 +83,7 @@ therefore, more open to user discretion:
 
 -   BMDL range default fail: \> 3-fold (all dataset types)
 
--   Constant and non-constant variance p-value[^12] default fail: \<
+-   Constant and non-constant variance p-value[^1] default fail: \<
     0.05 (continuous only)
 
 -   Ratio of BMD/BMDL (serious) default fail: \> 20 (all dataset types)
@@ -104,6 +104,9 @@ Other tests that will classify a result as Questionable include:
 
 -   Goodness- of- fit p-test \< 0.1 (all other models for continuous and
     dichotomous datasets)
+
+[^1]: Examples given in EPA BMD guidance ([U.S. EPA,
+    2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) suggest a criteria of p-value \> 0.1 for variance models, but this has since been relaxed in practice. Future EPA guidance will reflect this change.
 
 ### Warnings
 
