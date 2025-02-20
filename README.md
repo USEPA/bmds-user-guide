@@ -1,6 +1,6 @@
 # BMDS User Guide
 
-TODO ...
+DONE ...
 
 ## Installation
 
