@@ -633,53 +633,37 @@ these log-likelihood values corresponds to a model the user may consider
 in the analysis of the data. The five models are summarized in the
 following table.
 
-[]{#_Toc47700589 .anchor}Table 6. *Likelihood values and models for
-continuous endpoints.*
+:::::{dropdown} Likelihood Values and Models for Continuous Endpoints
+:color: primary
 
-+------------------------------------+---------------------------------+
-| Model                              | Description                     |
-+====================================+=================================+
-| A1: Full Constant Variance Model   | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-|                                    |                                 |
-|                                    | $$                              |
-|                                    | {Var\{ e}_{ij}\} = \sigma^{2}$$ |
-+------------------------------------+---------------------------------+
-| A2: Fullest Model                  | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-|                                    |                                 |
-|                                    | $${Var\{                        |
-|                                    |  e}_{ij}\} = {\sigma_{i}}^{2}$$ |
-+------------------------------------+---------------------------------+
-| A3: Full Model with variance       | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-| structure specified by the user    |                                 |
-|                                    | $${Var\{ e}_{ij}\} = \          |
-|                                    | alpha \times {\mu_{i}}^{\rho}$$ |
-+------------------------------------+---------------------------------+
-| Fitted Model                       | The user-specified model        |
-+------------------------------------+---------------------------------+
-| R: Reduced Model                   | $Y_{i} = \mu + e_{i}$,          |
-|                                    |                                 |
-|                                    | $                               |
-|                                    | ${Var\{ e}_{i}\} = \sigma^{2}$$ |
-+------------------------------------+---------------------------------+
+::::{tab-set}
 
-: Likelihood values and modelsTable describing five model likelihood
-values and the model descriptions as formulae
+:::{tab-item} Model A1 - Full Constant Variance Model
+ **Model A1** estimates separate and independent means for the observed dose group (it is full or saturated in that respect) but posits a constant variance over those groups
 
--   **Model A1** estimates separate and independent means for the
-    observed dose groups (it is full or saturated in that respect) but
-    posits a constant variance over those groups.
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{ e}_{ij}\} = \sigma^{2}$
+:::
 
--   **Model A2** is the fullest model in that it estimates separate and
-    independent means for the observed dose groups (as in Model A1) and
-    it also estimates separate and independent variances for those
-    groups. There is no assumed functional relationship among the means
-    or among the variances across dose groups. This model is often
-    referred to as the "saturated" model (it has as many mean and
+:::{tab-item} Model A2 - Fullest Model
+**Model A2** is the fullest model in that it estimates separate and
+independent means for the observed dose groups (as in Model A1) and
+ it also estimates separate and independent variances for those
+ groups. There is no assumed functional relationship among the means
+or among the variances across dose groups. This model is often
+referred to as the "saturated" model (it has as many mean and
     variance parameters as there are dose groups). The log-likelihood
     obtained for this model is the maximum attainable, for the data
     under consideration.
 
--   **Model A3** is similar to model A2 and may only differ with respect
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{e}_{ij}\} = {\sigma_{i}}^{2}$
+:::
+
+:::{tab-item} Model A3 - Full Model with Variance Structure Specified by User
+ **Model A3** is similar to model A2 and may only differ with respect
     to its variance parameters. Model A2 estimates separate and
     independent means for the observed dose groups (like A1). If the
     user specifies a constant variance for the fitted model, then model
@@ -687,15 +671,35 @@ values and the model descriptions as formulae
     the user assumes a non-constant variance for the fitted model, then
     Model A3 will also assume the same functional form for the variance.
 
--   The **fitted model** is the user-specified model (*e.g.*, power or
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{ e}_{ij}\} = \alpha \times {\mu_{i}}^{\rho}$
+:::
+
+:::{tab-item} Fitted Model
+ The **fitted model** is the user-specified model (*e.g.*, power or
     polynomial, among others). A user may have reason to believe that a
     certain model may describe the data well, and thus uses it to
     calculate the BMD and BMDL.
 
--   The **reduced model** (R) is the model that implies no difference in
+Description: <br>
+The user-specified model
+:::
+
+:::{tab-item} Model R - Reduced Model
+ The **reduced model** (R) is the model that implies no difference in
     mean or variance over the dose levels. In other words, it posits a
     constant mean response level with the same variance around that mean
     at every dose level.
+
+Description: <br>
+$Y_{i} = \mu + e_{i}$ <br>
+${Var\{ e}_{i}\} = \sigma^{2}$
+:::
+
+::::
+
+:::::
 
 ### Tests of Mean and Variance Fits
 
@@ -893,116 +897,97 @@ The definitions of the continuous models are fully specified in the
 following table. Note that $m(dose)$ is the median response for the dose
 level specified.
 
-[]{#_Ref549302492 .anchor}Table 7. *The individual continuous models and
-their respective parameters.*
+:::::{dropdown} Continuous Models and Their Respective Parameters
+:color: primary
 
-+-------------------+--------------+-----------------------------------+
-| Model             | Parameters   | Notes                             |
-+===================+==============+===================================+
-| Linear and        | $g$ =        | **Parameter Constraints: none**   |
-| Polynomial models | control      |                                   |
-|                   | response     | **User parameter restriction      |
-| $$m(do            | (intercept)  | options: can restrict the value   |
-| se) = g\  + \ \be |              | of the polynomial coefficients.** |
-| ta_{1} \times dos | $\b          | Restricting them to be either     |
-| e + \beta_{2} \ti | eta_{0}\ldot | non-positive or non-negative      |
-| mes dose^{2} + \l | s\beta_{n}$: | guarantees that the resulting     |
-| dots + \beta_{n}  | polynomial   | function will be strictly         |
-| \times dose^{n}$$ | coefficients | decreasing, strictly increasing,  |
-|                   |              | or perfectly flat (when all the   |
-| $n\ $is the       |              | coefficients are zero). If the    |
-| degree of the     |              | coefficients are unrestricted     |
-| polynomial,       |              | (*i.e.*, an unrestricted form of  |
-| specified by user |              | the model is run), more           |
-| and must be a     |              | complicated shapes are possible,  |
-| positive integer  |              | and, particularly as the degree   |
-| (maximum value =  |              | of the polynomial approaches the  |
-| 8)                |              | number of dose groups minus one,  |
-|                   |              | the polynomial will often be      |
-|                   |              | quite wavy.                       |
-+-------------------+--------------+-----------------------------------+
-| Linear            | $g$ =        | **Parameter Constraints:** none   |
-|                   | control      |                                   |
-| $$m(dos           | response     | **User parameter restriction      |
-| e) = g\  + \ \bet | (intercept)  | options:** none                   |
-| a\  \times dose$$ |              |                                   |
-|                   | $\beta$ =    |                                   |
-|                   | slope        |                                   |
-+-------------------+--------------+-----------------------------------+
-| Power             | $g$ =        | **Parameter Constraints:** 0      |
-|                   | control      | [\<]{.underline} $n$              |
-| $$m               | response     | [\<]{.underline} 18               |
-| (dose) = g + v \t | (intercept)  |                                   |
-| imes (dose)^{n}$$ |              | **User parameter restriction      |
-|                   | $v$ = slope  | options:** $n$ may be further     |
-|                   |              | restricted to values              |
-|                   | $n$= power   | [\>]{.underline} 1. Note: If $n$  |
-|                   |              | \< 1, then the slope of the       |
-|                   |              | dose-response curve becomes       |
-|                   |              | infinite at the control dose.     |
-|                   |              | This is biologically unrealistic  |
-|                   |              | and can lead to numerical         |
-|                   |              | problems when computing           |
-|                   |              | confidence limits, so several     |
-|                   |              | authors have recommended          |
-|                   |              | restricting $n$ ≥ 1.              |
-+-------------------+--------------+-----------------------------------+
-| Hill^1^           | $g$ =        | **Parameter Constraints:**        |
-|                   | control      |                                   |
-| $m(dose) =        | response     | 0 [\<]{.underline} $k$            |
-| g + \frac{v \time | (intercept)  | [\<]{.underline} 5                |
-| s {dose}^{n}}{k^{ |              |                                   |
-| n} + {dose}^{n}}$ | $k$ = dose   | 0 [\<]{.underline} $n$            |
-|                   | with         | [\<]{.underline} 18               |
-|                   | half-maximal |                                   |
-|                   | change       | **User parameter restriction      |
-|                   | (normalized) | options:** $n$ **may b**e further |
-|                   |              | restricted to values              |
-|                   | $n$= power   | [\>]{.underline} 1.               |
-|                   |              |                                   |
-|                   | $v$= maximum |                                   |
-|                   | change       |                                   |
-+-------------------+--------------+-----------------------------------+
-| Exponential^1,2^  | $a$ =        | **Parameter Constraints:**        |
-|                   | control      |                                   |
-| $$Exp2:\ m(dose)  | response     | $a$ \> 0                          |
-| = a \times e^{\pm | (intercept)  |                                   |
-|  b \times dose}$$ |              | 0 \< $b$ \< 100                   |
-|                   | $b$ = slope  |                                   |
-| $$Exp3            |              | $c$ \> 1 for responses increasing |
-| :\ m(dose) = a \t | $c$=         | with dose                         |
-| imes e^{\pm (b \t | asymptote    |                                   |
-| imes dose)^{d}}$$ | term         | 0 \< $c$ \< 1 for responses       |
-|                   |              | decreasing with dose              |
-| $$                | $d$= power   |                                   |
-| Exp4:\ m(dose) =  |              | 1 [\<]{.underline} $d$            |
-| a \times (c - (c  |              | [\<]{.underline} 18               |
-| - 1) \times e^{-  |              |                                   |
-| b \times dose})$$ |              | **Note:** The sign in "$\pm b"$   |
-|                   |              | (Exp2 and Exp3 models) will       |
-| $$Exp5:\          |              | change depending on the           |
-|  m(dose) = a \tim |              | user-designated or auto-detected  |
-| es (c - (c - 1) \ |              | direction of change: + for        |
-| times e^{- (b \ti |              | responses increasing with dose, - |
-| mes dose)^{d}})$$ |              | for responses decreasing with     |
-|                   |              | dose.                             |
-+-------------------+--------------+-----------------------------------+
+::::{tab-set}
 
-: The individual continuous models used and their respective
-parametersTable showing each continuous model name, formula, parameters,
-and notes.
+:::{tab-item} Linear and Polynomial
 
-^1^ BMDL estimates from models that have an asymptote parameter
-(including the Hill model) can be unstable when a wide range of
-parameter values can give nearly identical likelihoods. One indicator of
-that problem is that the estimated asymptotic response is far outside
-the range of the observed responses. The user should consult a
-statistician if this behavior is seen or suspected.
+**Model Form**
 
-^2^ RIVM (National Institute for Public Health and the Environment
-(Netherlands)). ([RIVM,
-2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
-PROAST.
+The Linear model is a form of the polynomial model.
+
+$$m(dose) = g\  + \ \beta_{1} \times dose + \beta_{2} \times dose^{2} + \ldots + \beta_{n} \times dose^{n}$$
+
+$n\ $is the degree of the polynomial, specified by user and must be a
+positive integer (maximum value = 8)
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$\beta_{0}\ldots\beta_{n}$: polynomial coefficients
+
+**Parameter Constraints**
+
+None.
+
+**User Parameter Restriction Options**
+
+Restrict the value of the polynomial coefficients
+to be either non-positive or non-negative guarantees that the resulting
+function will be strictly decreasing, strictly increasing, or perfectly
+flat (when all the coefficients are zero). If the coefficients are
+unrestricted (*i.e.*, an unrestricted form of the model is run), then
+more complicated shapes are possible, and, particularly as the degree of
+the polynomial approaches the number of dose groups minus one, the
+polynomial will often be quite wavy.
+
+:::
+
+:::{tab-item} Linear
+
+**Model Form**
+
+The Linear model is a form of the polynomial model.
+
+$$m(dose) = g\  + \ \beta\  \times dose$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+None.
+
+**User Parameter Restriction Options**
+
+None.
+
+:::
+
+:::{tab-item} Power
+
+**Model Form**
+
+$$m(dose) = g + v \times (dose)^{n}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$v$ = slope
+
+$n$= power
+
+**Parameter Constraints**
+
+0 [\<]{.underline} $n$ [\<]{.underline} 18
+
+**User Parameter Restriction Options**
+
+$n$ may be further restricted to values [\>]{.underline} 1.
+
+**Notes**
+
+If $n$ \< 1, then the slope of the dose-response curve becomes infinite
+at the control dose. This is biologically unrealistic and can lead to
+numerical problems when computing confidence limits, so several authors
+have recommended restricting $n$ ≥ 1.
 
 Note that the upper bounds for the power parameters in the Power, Hill,
 and Exponential models have been set to 18. That value was selected
@@ -1010,6 +995,119 @@ because it represents a very high degree of curvature that should
 accommodate almost every dataset, even ones with very (or absolutely)
 flat dose-response at low doses followed by a very steep dose-response
 at higher doses.
+
+:::
+
+:::{tab-item} Hill
+
+**Model Form**
+
+$$m(dose) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$k$ = dose with half-maximal change (normalized)
+
+$n$= power
+
+$v$= maximum change
+
+**Parameter Constraints**
+
+0 [\<]{.underline} $k$ [\<]{.underline} 5
+
+0 [\<]{.underline} $n$ [\<]{.underline} 18
+
+**User Parameter Restriction Options**
+
+$n$ may be further restricted to values \> 1.
+
+**Notes**
+BMDL estimates from models that have an asymptote parameter (including
+the Hill model) can be unstable when a wide range of parameter values
+can give nearly identical likelihoods. One indicator of that problem is
+that the estimated asymptotic response is far outside the range of the
+observed responses. The user should consult a statistician if this
+behavior is seen or suspected.
+
+Note that the upper bounds for the power parameters in the Power, Hill,
+and Exponential models have been set to 18. That value was selected
+because it represents a very high degree of curvature that should
+accommodate almost every dataset, even ones with very (or absolutely)
+flat dose-response at low doses followed by a very steep dose-response
+at higher doses.
+:::
+
+:::{tab-item} Exponential
+
+**Model Form**
+
+$$Exp2:\ m(dose) = a \times e^{\pm b \times dose}$$
+
+$$Exp3:\ m(dose) = a \times e^{\pm (b \times dose)^{d}}$$
+
+$$Exp4:\ m(dose) = a \times (c - (c - 1) \times e^{- b \times dose})$$
+
+$$Exp5:\ m(dose) = a \times (c - (c - 1) \times e^{- (b \times dose)^{d}})$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$= asymptote term
+
+$d$= power
+
+**Parameter Constraints**
+
+$a$ \> 0
+
+0 \< $b$ \< 100
+
+$c$ \> 1 for responses increasing with dose
+
+0 \< $c$ \< 1 for responses decreasing with dose
+
+1 \< $d$ \< 18
+
+**Notes**
+
+The sign in "$\pm b"$ (Exp2 and Exp3 models) will change depending on
+the user-designated or auto-detected direction of change:
+
+-   \+ for responses increasing with dose
+
+-   \- for responses decreasing with dose
+
+BMDL estimates from models that have an asymptote parameter (including
+the Hill model) can be unstable when a wide range of parameter values
+can give nearly identical likelihoods. One indicator of that problem is
+that the estimated asymptotic response is far outside the range of the
+observed responses. The user should consult a statistician if this
+behavior is seen or suspected.
+
+Note that the upper bounds for the power parameters in the Power, Hill,
+and Exponential models have been set to 18. That value was selected
+because it represents a very high degree of curvature that should
+accommodate almost every dataset, even ones with very (or absolutely)
+flat dose-response at low doses followed by a very steep dose-response
+at higher doses.
+
+#### Reference for Exponential models
+
+RIVM (National Institute for Public Health and the Environment
+(Netherlands)). ([RIVM,
+2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
+PROAST.
+:::
+
+::::
+
+:::::
 
 ### Variance Model
 
