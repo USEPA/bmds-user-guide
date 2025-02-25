@@ -7,14 +7,13 @@ integers, for example), measuring things that can vary continuously
 The three key features of such measures that need to be specified to
 estimate a BMD are:
 
-1.  What direction of change indicates a toxic response (i.e., adverse
-    direction; see Section 8.3.2 on page [50](#adverse-direction)),
+1.  What direction of change indicates a toxic response (see [**Adverse Direction**](#adverse-direction)),
 
 2.  Definition of the BMD relative to the change in the response (see
-    Section 8.4.1 on page [51](#defining-the-bmd)), and
+    [**Benchmark Response**](#defining-the-bmd)), and
 
-3.  How the responses are distributed (see Section 8.4.2 on page
-    [52](#distribution-and-variance)).
+3.  How the responses are distributed (see
+    [**Distribution and Variance**](#distribution-and-variance)).
 
 With respect to the distribution, one needs to consider the type of
 distribution and the nature of the variability around the center of the
@@ -45,7 +44,7 @@ models](_static/img/image67.png){width="4.61080271216098in"
 height="1.9748622047244095in"}
 
 Also available for all continuous models are options for Hybrid-Extra
-Risk and Hybrid-Added Risk (see Table 5 on page 55), and the Lognormal
+Risk and Hybrid-Added Risk (see [**Table 5.**](#bmr-table)), and the Lognormal
 response distribution assumption (previously only available for
 Exponential models).
 
@@ -65,8 +64,7 @@ A BMDS analysis can have the following number of continuous datasets:
 
 -   **pybmds:** No limit.
 
-For details on inserting or importing datasets, refer to "Specifying
-Dataset," on page [16](./bmds-online.md#specifying-datasets).
+For details on inserting or importing datasets, refer to [**Specifying Datasets**](./bmds-online.md#specifying-datasets).
 
 For summarized continuous response data, the default column headers are
 *Dose*, *N*, *Mean* and *Std. Dev*.
@@ -162,7 +160,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to Table 5 on page [55](#bmr-table).
+    on these methods, refer to [**Table 5.**](#bmr-table).
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -172,7 +170,7 @@ displayed](_static/img/image73.png){width="1.6668110236220472in"
 height="2.5002165354330708in"}
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
-    selected for the BMR Type. Table 5 summarizes the options related to
+    selected for the BMR Type. [**Table 5.**](#bmr-table) summarizes the options related to
     BMR Type and BMRF.
 
 -   **Tail Probability** marks the cut-off for defining adversity and
@@ -191,6 +189,192 @@ height="2.5002165354330708in"}
     the BMDL is the one-sided 95% lower bound on the BMD; the BMDU is
     the one-sided 95% upper bound on the BMD. The interval from the BMDL
     to the BMDU would, in that case, be a 90% confidence interval.
+
+    (bmr-table)=
+```{csv-table} Options related to Continuous BMR Type and BMRF.
+:header: >
+: "BMR Type name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"
+:widths: 20, 30, 30, 20
+
+Rel. Dev.,*Relative Deviation:* <br>the specified change in median response relative to the background median, $$\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$$,BMRF is the specified change Default value = 0.1 [10% change in median]
+Abs.Dev., *Absolute Deviation:* <br>the specified change in median response, $$|m(BMD)\ –\ m(0)|\  = \ BMRF$$,BMRF is the specified change There is no default because it is very endpoint specific
+Std.Dev.,*Standard Deviation:*<br>the specified change in median relative to the control standard deviation, Normal responses: <br><br>$\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BRMF$<br><br>Lognormal responses:<br><br>$\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$,BMRF is the multiple of the standard deviation <br> Default value = 1 \[change in median (or log-median) equal to 1 standard deviation (or log-scale standard deviation)\]
+Point, *Fixed Value*:<br>a median equal to the specified point value,$$m(BMD)=BMRF$$,BMRF is the specified point value<br>There is no default because it is very endpoint specific
+Hybrid - Extra Risk, *Increased Extra Risk:* <br>the specified extra risk defined by the estimated distribution and background rate, If high respones are adverse:<br><br>$BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$<br><br>If low responses are adverse:<br><br>$BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$<br><br>where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response $X$ is less than $X_{0}$ at dose $d$.  For $d=0$ the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution, BMRF is the extra risk (default = 0.1)<br>This option also requires specifying a tail probability which is the probability of extreme (adverse) responses at $dose=0
+Hybrid - Added Risk, *Increased Added Risk:* <br>the specified added risk defined by the estimated distribution and background rate, If high respones are adverse:<br><br>$BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$<br><br>If low responses are adverse:<br><br>$BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$<br><br>where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response $X$ is less than $X_{0}$ at dose $d$.  For $d=0$ the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution, BMRF is the added risk (default = 0.1)<br>This option also requires specifying a tail probability which is the probability of extreme (adverse) responses at $dose=0
+
+```
+**Notes:** m(x) is the median at dose x. Specifically, m(BMD) is the
+median at dose=BMD, so BMD is the solution to the equations shown.
+$\sigma(0)$ is the standard deviation for the control group (d=0) and
+$\sigma_{L}(0)$ is the log-scale standard deviation for the control
+group, used when the responses are assumed to be Lognormally
+distributed.
+
+:::::{dropdown} Options related to continuous BMR type and BMRF
+:color: primary
+
+::::{tab-set}
+
+:::{tab-item} Relative Deviation
+:color: secondary
+**BMR Type name in BMDS:** Rel.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the background median
+
+**Mathematical Definition**<br>
+$\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
+
+**BMRF Notes:** BMRF is the specified change Default value = 0.1 [10% change in median]
+:::
+
+:::{tab-item} Absolute Deviation
+:color: secondary
+**BMR Type name in BMDS** Abs.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response
+
+**Mathematical Definition**<br> $|m(BMD) - m(0)|\ = \ BMRF$
+
+**BMRF Notes:** BMRF is the specified change, there is no default because it is very endpoint specific
+:::
+
+:::{tab-item} Standard Deviation
+:color: secondary
+**BMR Type name in BMDS:** Std.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the control group standard deviation
+
+**Mathematical Definition** <br>Normal responses: $\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BRMF$ <br><br>
+Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
+
+**BMRF Notes:** BMRF is the multiple of the standard deviation <br> Default value = 1 \[change in median (or log-median) equal to 1 standard deviation (or log-scale standard deviation)\]
+:::
+
+:::{tab-item} Point
+:color: secondary
+**BMR Type name in BMDS** Point
+
+**The BMD is the dose yielding...** a median equal to the specified point value
+
+**Mathematical Definition** <br>$m(BMD)=BMRF$
+
+**BMRF Notes:** BMRF is the specified point value
+:::
+
+:::{tab-item} Hybrid - Extra Risk
+:color: secondary
+**BMR Type name in BMDS:** Hybrid - Extra Risk
+
+**The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:**  BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+
+:::{tab-item} Hybrid - Added Risk
+:color: secondary
+**BMR Type name in BMDS:** Hybrid - Added Risk
+
+**The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:**  BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+
+::::
+**Notes:** m(x) is the median at dose x. Specifically, m(BMD) is the
+median at dose=BMD, so BMD is the solution to the equations shown.
+$\sigma(0)$ is the standard deviation for the control group (d=0) and
+$\sigma_{L}(0)$ is the log-scale standard deviation for the control
+group, used when the responses are assumed to be Lognormally
+distributed.
+:::::
+
+
+::::{dropdown} Options Related to Continuous BMR Type and BMRF
+:color: primary
+
+:::{dropdown} Relative Deviation
+:color: secondary
+**BMR Type name in BMDS:** Rel.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the background median
+
+**Mathematical Definition**<br>
+$\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
+
+**BMRF Notes:** BMRF is the specified change Default value = 0.1 [10% change in median]
+::: 
+
+:::{dropdown} Absolute Deviation
+:color: secondary
+**BMR Type name in BMDS** Abs.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response
+
+**Mathematical Definition**<br> $|m(BMD) - m(0)|\ = \ BMRF$
+
+**BMRF Notes:** BMRF is the specified change, there is no default because it is very endpoint specific
+:::
+
+:::{dropdown} Standard Deviation
+:color: secondary
+**BMR Type name in BMDS:** Std.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the control group standard deviation
+
+**Mathematical Definition** <br>Normal responses: $\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BRMF$ <br><br>
+Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
+
+**BMRF Notes:** BMRF is the multiple of the standard deviation <br> Default value = 1 \[change in median (or log-median) equal to 1 standard deviation (or log-scale standard deviation)\]
+:::
+
+:::{dropdown} Point
+:color: secondary
+**BMR Type name in BMDS** Point
+
+**The BMD is the dose yielding...** a median equal to the specified point value
+
+**Mathematical Definition** <br>$m(BMD)=BMRF$
+
+**BMRF Notes:** BMRF is the specified point value
+:::
+
+:::{dropdown} Hybrid - Extra Risk
+:color: secondary
+**BMR Type name in BMDS:** Hybrid - Extra Risk
+
+**The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:**  BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+
+:::{dropdown} Hybrid - Added Risk
+:color: secondary
+**BMR Type name in BMDS:** Hybrid - Added Risk
+
+**The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:**  BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+**Notes:** m(x) is the median at dose x. Specifically, m(BMD) is the
+median at dose=BMD, so BMD is the solution to the equations shown.
+$\sigma(0)$ is the standard deviation for the control group (d=0) and
+$\sigma_{L}(0)$ is the log-scale standard deviation for the control
+group, used when the responses are assumed to be Lognormally
+distributed.
+::::
 
 ### Distribution and Variance
 
@@ -213,7 +397,7 @@ In total, three combinations are allowed:
 
 1.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
-    (see Section 8.5.2) with two parameters (α and ρ) relating the dose
+    (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
     parameters are estimated simultaneously with the parameters of the
     dose-response model.[^1]
@@ -242,14 +426,14 @@ note the following:
     denote the median at dose d by m(d), then it is always true for BMDS
     that m(d) = f(d), where f(d) is the dose-response function under
     consideration (see list of possible functions in Table 7 on page
-    [63](#_Ref549302492)).
+    [63](#_Ref549302492)). **fix this call out when table is revised**
 
 -   If the assumed data distribution is Normal, then it is also true
     that the mean at dose d, μ(d), is equal to the median. Thus, it is
     common under the Normal assumption to describe the dose-response
     function as a model of the mean response, and to write μ(d) = f(d),
     where f(d) is again one of the dose-response functions described in
-    Table 7 on page [63](#_Ref549302492).
+    Table 7 on page [63](#_Ref549302492). **fix this call out when table is revised**
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -275,13 +459,13 @@ log-scale variance, corresponding to an assumption of a constant CV.
 The exact MLE solution cannot be obtained when the data are assumed to
 be Lognormally distributed and the data are presented in terms of
 group-specific means and standard deviations. In that case, the results
-are *approximate* MLE solutions. The means (m~L~) and standard
-deviations (s~L~) of the log-transformed data are estimated as follows:
+are *approximate* MLE solutions. The means ($m_{L}$) and standard
+deviations ($s_{L}$) of the log-transformed data are estimated as follows:
 
-estimated log-scale sample mean (m~L~):
+estimated log-scale sample mean ($m_{L}$):
 $m_{L} = \ln{(m) - \frac{s_{L}^{2}}{2}}$
 
-estimated log-scale sample standard deviation (s~L~):
+estimated log-scale sample standard deviation ($s_{L}$):
 $s_{L} = \sqrt{(\ln\left\lbrack 1 + \frac{s^{2}}{m^{2}} \right\rbrack)}$
 
 where m and s are the sample mean and sample standard deviation,
@@ -307,8 +491,10 @@ following procedure:
 
 #### Log-transformed Responses are NOT Recommended
 
+:::{caution}
 ***Using log-transformed responses in the analysis is not
 recommended.***
+:::
 
 If the user chooses to log-transform the data prior to analysis, then
 the interpretation of the BMD and BMDL estimates would have to be
@@ -338,167 +524,6 @@ Therefore, in most cases, the user should use non-transformed values and
 select the Lognormal distribution if the data are assumed to be
 lognormally distributed.
 
-
-(bmr-table)=
-```{csv-table} Options related to Continuous BMR Type and BMRF.
-:header: >
-: "Analysis File, Main Tab Option Name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"
-:widths: 20, 30, 30, 20
-
-Rel. Dev.,*Relative Deviation:* <br>the specified change in median response relative to the background median, $$\frac{|m(BMD)\ –\ m(0)|}{m(0)}\ = \ BMRF$$,BMRF is the specified change Default value = 0.1 [10% change in median]
-```
-
-:::{tip}
-:name: a-tip-reference
-TODO - continue here ...
-:::
-
-+------------+---------------+-------------------------+-------------+
-| Analysis   | Verbal        | Mathematical Definition | BMRF Notes  |
-| File, Main | Definition:   |                         |             |
-| Tab Option | The BMD is    |                         |             |
-| Name       | the dose      |                         |             |
-|            | yielding ...  |                         |             |
-+============+===============+=========================+=============+
-| Rel. Dev.  | *Relative     | $$\frac{|m(BMD)\ –\ m(  | BMRF is the |
-|            | Deviation*:   | 0)|}{m(0)}\  = \ BMRF$$ | specified   |
-|            |               |                         | change      |
-|            | ... the       |                         |             |
-|            | specified     |                         | Default     |
-|            | change in     |                         | value = 0.1 |
-|            | median        |                         | \[10%       |
-|            | response      |                         | change in   |
-|            | relative to   |                         | median\]    |
-|            | the           |                         |             |
-|            | background    |                         |             |
-|            | median        |                         |             |
-+------------+---------------+-------------------------+-------------+
-| Abs. Dev.  | *Absolute     | $$|m(BMD)               | BMRF is the |
-|            | Deviation*:   | \ –\ m(0)|\  = \ BMRF$$ | specified   |
-|            |               |                         | change      |
-|            | ... the       |                         |             |
-|            | specified     |                         | There is no |
-|            | change in     |                         | default     |
-|            | median        |                         | because it  |
-|            | response      |                         | is very     |
-|            |               |                         | endpoint    |
-|            |               |                         | specific    |
-+------------+---------------+-------------------------+-------------+
-| Point      | *Fixed        | $$m(BMD)\  = \ BMRF$$   | BMRF is the |
-|            | Value*:       |                         | specified   |
-|            |               |                         | point value |
-|            | ... a median  |                         |             |
-|            | equal to the  |                         | There is no |
-|            | specified     |                         | default     |
-|            | point value   |                         | because it  |
-|            |               |                         | is very     |
-|            |               |                         | endpoint    |
-|            |               |                         | specific    |
-+------------+---------------+-------------------------+-------------+
-| Std. Dev.  | *Standard     | Normal Responses:       | BMRF is the |
-|            | Deviation*:   |                         | multiple of |
-|            |               | $$\f                    | the         |
-|            | ... the       | rac{|m(BMD)\ –\ m(0)|}{ | standard    |
-|            | specified     | \sigma(0)}\  = \ BMRF$$ | deviation   |
-|            | change in     |                         |             |
-|            | median        | Lognormal Responses:    | Default     |
-|            | relative to   |                         | value = 1   |
-|            | the control   | $$\frac{|ln(m(BM        | \[change in |
-|            | standard      | D))\ –\ ln(m(0))|}{\sig | median (or  |
-|            | deviation     | ma_{L}(0)}\  = \ BMRF$$ | log-median) |
-|            |               |                         | equal to 1  |
-|            |               |                         | standard    |
-|            |               |                         | deviation   |
-|            |               |                         | (or         |
-|            |               |                         | log-scale   |
-|            |               |                         | standard    |
-|            |               |                         | d           |
-|            |               |                         | eviation)\] |
-+------------+---------------+-------------------------+-------------+
-| Hy         | *Increased    | If high responses are   | BMRF is the |
-| brid-Extra | Extra Risk*:  | adverse:                | extra risk. |
-| Risk       |               |                         | (Default    |
-|            | ... the       | $$BMRF = \ \            | 0.5)        |
-|            | specified     | frac{\Pr\left( X > X_{0 |             |
-|            | extra risk,   | } \middle| BMD \right)  | This option |
-|            | defined by    | - \Pr\left( X > X_{0} \ | also        |
-|            | the estimated | middle| 0 \right)}{1\   | requires    |
-|            | distribution  | - {\ Pr}\left( X > X_{0 | specifying  |
-|            | and           | } \middle| 0 \right)}$$ | a tail      |
-|            | background    |                         | p           |
-|            | rate          | If low responses are    | robability, |
-|            |               | adverse:                | which is    |
-|            |               |                         | the         |
-|            |               | $$BMRF\  = \            | probability |
-|            |               | frac{\Pr\left( X < X_{0 | of extreme  |
-|            |               | } \middle| BMD \right)  | (adverse)   |
-|            |               | - \Pr\left( X < X_{0} \ | response at |
-|            |               | middle| 0 \right)}{1\   | dose=0.     |
-|            |               | - {\ Pr}\left( X < X_{0 |             |
-|            |               | } \middle| 0 \right)}$$ |             |
-|            |               |                         |             |
-|            |               | where $X_{0}$ is a      |             |
-|            |               | response value and      |             |
-|            |               | $\Pr\left( X < X_       |             |
-|            |               | {0} \middle| d \right)$ |             |
-|            |               | is the probability that |             |
-|            |               | the response, $X$, is   |             |
-|            |               | less than $X_{0}$ at    |             |
-|            |               | dose $d$. For d=0, the  |             |
-|            |               | latter equals the       |             |
-|            |               | user-specified "tail    |             |
-|            |               | probability" and        |             |
-|            |               | $X_{0}$ is then a       |             |
-|            |               | function of that tail   |             |
-|            |               | probability and the     |             |
-|            |               | estimated control-group |             |
-|            |               | response-distribution.  |             |
-+------------+---------------+-------------------------+-------------+
-| Hy         | *Increased    | If high responses are   | BMRF is the |
-| brid-Added | Added Risk:*  | adverse:                | added risk. |
-| Risk       |               |                         | (Default    |
-|            | ... the       | $$BMRF = \              | 0.5)        |
-|            | specified     | Pr\left( X > X_{0} \mid |             |
-|            | added risk,   | dle| BMD \right) - Pr(X | This option |
-|            | defined by    |  > X_{0}|0)\ \ \ \ \ $$ | also        |
-|            | the estimated |                         | requires    |
-|            | distribution  | If low responses are    | specifying  |
-|            | and           | adverse:                | a tail      |
-|            | background    |                         | p           |
-|            | rate          | $$BMRF = \              | robability, |
-|            |               | Pr\left( X < X_{0} \mid | which is    |
-|            |               | dle| BMD \right) - Pr(X | the         |
-|            |               |  < X_{0}|0)\ \ \ \ \ $$ | probability |
-|            |               |                         | of extreme  |
-|            |               | where $X_{0}$ is a      | (adverse)   |
-|            |               | response value and      | response at |
-|            |               | $\Pr\left( X < X_       | dose=0.     |
-|            |               | {0} \middle| d \right)$ |             |
-|            |               | is the probability that |             |
-|            |               | the response, $X$, is   |             |
-|            |               | less than $X_{0}$ at    |             |
-|            |               | dose $d$. For d=0, the  |             |
-|            |               | latter equals the       |             |
-|            |               | user-specified "tail    |             |
-|            |               | probability" and        |             |
-|            |               | $X_{0}$ is then a       |             |
-|            |               | function of that tail   |             |
-|            |               | probability and the     |             |
-|            |               | estimated control-group |             |
-|            |               | response-distribution.  |             |
-+------------+---------------+-------------------------+-------------+
-
-: Options related to Continuous BMR Type and BMRF: Relative Deviation,
-Absolute Devation, Point (Fixed Value), Standard Deviation, and Hybrid
-Columns include a verbal definition of each option, a mathematical
-definitioin, and BMRF notes.
-
-**Notes:** m(x) is the median at dose x. Specifically, m(BMD) is the
-median at dose=BMD, so BMD is the solution to the equations shown.
-$\sigma(0)$ is the standard deviation for the control group (d=0) and
-$\sigma_{L}(0)$ is the log-scale standard deviation for the control
-group, used when the responses are assumed to be Lognormally
-distributed.
 
 ## Specific Continuous Results
 
