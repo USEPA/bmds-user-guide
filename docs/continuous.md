@@ -496,10 +496,6 @@ following procedure:
 recommended.***
 :::
 
-:::{note}
-TODO: increase font size of admonitions via CSS
-:::
-
 If the user chooses to log-transform the data prior to analysis, then
 the interpretation of the BMD and BMDL estimates would have to be
 considered carefully (and perhaps in consultation with a statistician).
