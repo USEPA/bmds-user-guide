@@ -44,7 +44,7 @@ models](_static/img/image67.png){width="4.61080271216098in"
 height="1.9748622047244095in"}
 
 Also available for all continuous models are options for Hybrid-Extra
-Risk and Hybrid-Added Risk (see [**Table 5.**](#bmr-table)), and the Lognormal
+Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown), and the Lognormal
 response distribution assumption (previously only available for
 Exponential models).
 
@@ -160,7 +160,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to [**Table 5.**](#bmr-table).
+    on these methods, refer to the [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown.
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -170,8 +170,7 @@ displayed](_static/img/image73.png){width="1.6668110236220472in"
 height="2.5002165354330708in"}
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
-    selected for the BMR Type. [**Table 5.**](#bmr-table) summarizes the options related to
-    BMR Type and BMRF.
+    selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown summarizes the options related to BMR Type and BMRF.
 
 -   **Tail Probability** marks the cut-off for defining adversity and
     applies only to Hybrid-Extra Risk BMR Type, not the background rate.
@@ -210,6 +209,8 @@ $\sigma(0)$ is the standard deviation for the control group (d=0) and
 $\sigma_{L}(0)$ is the log-scale standard deviation for the control
 group, used when the responses are assumed to be Lognormally
 distributed.
+
+(target_to_paragraph1)=
 
 :::::{dropdown} Options related to continuous BMR type and BMRF
 :color: primary
@@ -423,17 +424,16 @@ note the following:
 -   Regardless of the distribution assumed, the dose-response model
     under consideration is the representation of the change in the
     median of the distribution of responses as a function of dose. If we
-    denote the median at dose d by m(d), then it is always true for BMDS
-    that m(d) = f(d), where f(d) is the dose-response function under
-    consideration (see list of possible functions in Table 7 on page
-    [63](#_Ref549302492)). **fix this call out when table is revised**
+    denote the median at dose d by $m(d)$, then it is always true for BMDS
+    that $m(d) = f(d)$, where $f(d)$ is the dose-response function under
+    consideration (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
 
 -   If the assumed data distribution is Normal, then it is also true
-    that the mean at dose d, μ(d), is equal to the median. Thus, it is
+    that the mean at dose d, $μ(d)$, is equal to the median. Thus, it is
     common under the Normal assumption to describe the dose-response
-    function as a model of the mean response, and to write μ(d) = f(d),
-    where f(d) is again one of the dose-response functions described in
-    Table 7 on page [63](#_Ref549302492). **fix this call out when table is revised**
+    function as a model of the mean response, and to write $μ(d) = f(d)$,
+    where $f(d)$ is again one of the dose-response functions described in
+    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters). 
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -491,9 +491,13 @@ following procedure:
 
 #### Log-transformed Responses are NOT Recommended
 
-:::{caution}
+:::{warning}
 ***Using log-transformed responses in the analysis is not
 recommended.***
+:::
+
+:::{note}
+TODO: increase font size of admonitions via CSS
 :::
 
 If the user chooses to log-transform the data prior to analysis, then
@@ -534,7 +538,7 @@ the observed (or calculated) data that were used as input, one row for
 each dose group. Generally, one desires to have the model predictions
 match the input data as well as possible.
 
-Note that in the Goodness of Fit tables shown in and :
+Note that in the Goodness of Fit tables shown in [**Figure 71**](target_to_image1) and [**Figure 72**](target_to_image2):
 
 -   Sample Mean = the sample mean for both Normally and Lognormally
     distributed data.
@@ -543,8 +547,7 @@ Note that in the Goodness of Fit tables shown in and :
     data. In the case of Lognormally distributed responses, the median
     is calculated as $exp(z_{L})$, where $z_{L}$ is the log-scale mean,
     estimated if need be for summarized response data as shown in
-    Section 8.4.2, "Distribution and Variance," on page
-    [52](#distribution-and-variance).
+    [**Distribution and Variance**](#distribution-and-variance).
 
 -   Model Fitted Mean/Median = model-predicted median, which equals the
     mean in the case of Normally distributed data.
@@ -558,20 +561,21 @@ Note that in the Goodness of Fit tables shown in and :
     computed from the observed data. In the case of Lognormally
     distributed data, this equals $exp(s_{L})$, where $s_{L}$ is the
     log-scale standard deviation, estimated if need be for summarized
-    response data as shown in Section 8.4.2, "Distribution and
-    Variance," on page [52](#distribution-and-variance).
+    response data as shown in [**Distribution and Variance**](#distribution-and-variance).
 
 -   Model Fitted \[G\]SD = the standard deviation (or geometric standard
     deviation, in the case of Lognormally distributed data) estimated by
     the model.
 
--   Scaled Residual = For Normal responses, the scaled residual equals\
+-   Scaled Residual = For Normal responses, the scaled residual equals:
+
     $$(Sample\ Mean\  - \ Model\ Fitted\ Mean)/(Model\ Fitted\ SD/\sqrt{N_{i}})$$
 
-    whereas for Lognormal responses, the scaled residual equals
+    Whereas, for Lognormal responses, the scaled residual equals:
 
     $$(ln(Sample\ Median)\  - \ ln(Model\ Fitted\ Median))/(ln(Model\ Fitted\ GSD)/\sqrt{N_{i}})$$
 
+(target_to_image1)=
 []{#_Ref184734400 .anchor}**Figure 71.** Goodness of Fit table headings,
 with Normal assumption.
 
@@ -579,6 +583,7 @@ with Normal assumption.
 headers](_static/img/image75.png){width="6.499068241469816in"
 height="0.5797965879265092in"}
 
+(target_to_image2)=
 []{#_Ref184734412 .anchor}**Figure 72.** Goodness of Fit table headings,
 with Lognormal assumption. Note the column header
 similarities/differences between the two tables.
@@ -621,17 +626,18 @@ height="1.9974934383202099in"}
 The number of parameters for each model excludes parameters that have
 values on one of the bounds set for their estimation (either bounds
 specified by the user or those inherent constraints associated with the
-model; see Table 7 on page [63](#_Ref549302492)).
+model; see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
 
-***Note*** The likelihood is maximized given bounds on parameters. As a
-result, it is technically not guaranteed to be the universal MLE, but
-rather a *bounded* MLE.
+:::{important} The likelihood is maximized given bounds on parameters.
+As a result, it is technically not guaranteed to be the universal MLE, but
+rather a bounded MLE.
+:::
 
 The five log-likelihood models can be used for tests of hypotheses,
 including tests of fit, that are asymptotically Chi-square. Each of
 these log-likelihood values corresponds to a model the user may consider
 in the analysis of the data. The five models are summarized in the
-following table.
+following dropdown.
 
 :::::{dropdown} Likelihood Values and Models for Continuous Endpoints
 :color: primary
@@ -732,8 +738,9 @@ example, consider that the linear model is a "simpler" or "nested" model
 relative to the power model because the linear model has the power
 parameter restricted to be equal to 1.
 
-***Note*** The model with a higher number of parameters is always in the
+:::{note} The model with a higher number of parameters is always in the
 denominator of this ratio.
+:::
 
 Suppose that $L(X)$ represents the likelihood of model X. Now, using the
 theory, $- 2 \times ln\{\frac{L(A)}{L(B)}\}$ approaches a Chi-square
@@ -759,22 +766,22 @@ would be a Chi-square with 8 - 5 = 3 degrees of freedom.
 In the A vs B example, what is exactly being tested? In terms of
 hypotheses, it would be:
 
-H~0~: A models the data as well as B
+H{sub}`0`: A models the data as well as B
 
-H~1~: B models the data better than A
+H{sub}`1`: B models the data better than A
 
 Keeping these tests in mind, suppose
 $2 \times \log\{ L(B)\}\  - \ 2 \times \log\{ L(A)\}\  = \ 4.89$ based
 on 3 degrees of freedom. Also, suppose the rejection criteria is a
 Chi-square probability of less than 0.05. Looking on a Chi-square table,
-4.89 has a p-value somewhere between 0.10 and 0.25. In this case, H~0~
+4.89 has a p-value somewhere between 0.10 and 0.25. In this case, H{sub}`0`
 would not be rejected, and it would seem to be appropriate to model the
 data using Model A (*i.e.*, the simpler model A models the data as well
 as the more complex model B). BMDS automatically does the table look-up
 for the user and provides the p-value associated with the calculated
 log-likelihood ratio having degrees of freedom as described above.
 
-The table provides four default tests for any of the continuous models.
+The The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
 
 **Test 1 (A2 vs R): Tests the null hypothesis that responses and
 variances do not differ among dose levels. If this test fails to reject
@@ -891,7 +898,7 @@ consideration of more details than do those for dichotomous endpoints in
 similar designs. This section presents the mathematical and statistical
 details that determine how estimation is accomplished in BMDS.
 
-### Continuous Dose-Response Models & Parameters
+### Continuous Dose-Response Models and Parameters
 
 The definitions of the continuous models are fully specified in the
 following table. Note that $m(dose)$ is the median response for the dose
@@ -976,21 +983,20 @@ $n$= power
 
 **Parameter Constraints**
 
-0 [\<]{.underline} $n$ [\<]{.underline} 18
+0 ≤ $n$ ≤ 18
 
 **User Parameter Restriction Options**
 
-$n$ may be further restricted to values [\>]{.underline} 1.
+$n$ may be further restricted to values ≥ 1.
 
 **Notes**
 
-If $n$ \< 1, then the slope of the dose-response curve becomes infinite
+If $n$ < 1, then the slope of the dose-response curve becomes infinite
 at the control dose. This is biologically unrealistic and can lead to
 numerical problems when computing confidence limits, so several authors
 have recommended restricting $n$ ≥ 1.
 
-Note that the upper bounds for the power parameters in the Power, Hill,
-and Exponential models have been set to 18. That value was selected
+Note that the upper bounds for the power parameter in the Power model have been set to 18. That value was selected
 because it represents a very high degree of curvature that should
 accommodate almost every dataset, even ones with very (or absolutely)
 flat dose-response at low doses followed by a very steep dose-response
@@ -1016,13 +1022,13 @@ $v$= maximum change
 
 **Parameter Constraints**
 
-0 [\<]{.underline} $k$ [\<]{.underline} 5
+0 ≤ $k$ ≤ 5
 
-0 [\<]{.underline} $n$ [\<]{.underline} 18
+0 ≤ $n$ ≤ 18
 
 **User Parameter Restriction Options**
 
-$n$ may be further restricted to values \> 1.
+$n$ may be further restricted to values ≥ 1.
 
 **Notes**
 BMDL estimates from models that have an asymptote parameter (including
@@ -1032,8 +1038,7 @@ that the estimated asymptotic response is far outside the range of the
 observed responses. The user should consult a statistician if this
 behavior is seen or suspected.
 
-Note that the upper bounds for the power parameters in the Power, Hill,
-and Exponential models have been set to 18. That value was selected
+Note that the upper bounds for the power parameter in the Hill model have been set to 18. That value was selected
 because it represents a very high degree of curvature that should
 accommodate almost every dataset, even ones with very (or absolutely)
 flat dose-response at low doses followed by a very steep dose-response
@@ -1072,11 +1077,11 @@ $c$ \> 1 for responses increasing with dose
 
 0 \< $c$ \< 1 for responses decreasing with dose
 
-1 \< $d$ \< 18
+1 ≤ $d$ ≤ 18
 
 **Notes**
 
-The sign in "$\pm b"$ (Exp2 and Exp3 models) will change depending on
+The sign in "$\pm b$" (Exp2 and Exp3 models) will change depending on
 the user-designated or auto-detected direction of change:
 
 -   \+ for responses increasing with dose
@@ -1084,14 +1089,13 @@ the user-designated or auto-detected direction of change:
 -   \- for responses decreasing with dose
 
 BMDL estimates from models that have an asymptote parameter (including
-the Hill model) can be unstable when a wide range of parameter values
+the Exponential5 model) can be unstable when a wide range of parameter values
 can give nearly identical likelihoods. One indicator of that problem is
 that the estimated asymptotic response is far outside the range of the
 observed responses. The user should consult a statistician if this
 behavior is seen or suspected.
 
-Note that the upper bounds for the power parameters in the Power, Hill,
-and Exponential models have been set to 18. That value was selected
+Note that the upper bounds for the power parameter in the Exponential models have been set to 18. That value was selected
 because it represents a very high degree of curvature that should
 accommodate almost every dataset, even ones with very (or absolutely)
 flat dose-response at low doses followed by a very steep dose-response
@@ -1117,22 +1121,24 @@ the model for the variance also needs to be defined.
 For responses assumed to vary Normally around the median, the variance
 model is:
 
-${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$,
+$${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$$
 
 where $\alpha$ (\> 0) and $\rho$ are parameters estimated simultaneously
-with the parameters of the dose-response function (see Table 7 above).
-As in that table, $m\left( {dose}_{i} \right)$ is the predicted median
-(from the dose-response model under consideration) for the *i^th^* dose
+with the parameters of the dose-response function (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+As in that dropdown, $m\left( {dose}_{i} \right)$ is the predicted median
+(from the dose-response model under consideration) for the $i^{th}$ dose
 group.
 
 Note that when a constant variance model is specified by the user, the
 parameter $\rho$ is set to 0 and only $\alpha$ will be estimated. In
-that case, ${\sigma_{i}}^{2} = \ \alpha$
+that case, 
+
+$${\sigma_{i}}^{2} = \alpha$$
 
 When the responses are assumed to be Lognormally distributed, then the
 variance modeled is the log-scale variance:
 
-${\sigma_{Li}}^{2} = \alpha$.
+$${\sigma_{Li}}^{2} = \alpha$$
 
 Because, for Lognormal data, BMDS is restricted to a constant log-scale
 variance model (equivalent to a constant coefficient of variation),
@@ -1173,10 +1179,10 @@ $$LL = - \frac{N}{2}\ln(2\pi) - \sum_{i = 1}^{G}\left\lbrack \frac{N_{i}}{2}\ln{
 where
 
 ${\overline{y}}_{i} = \frac{\sum_{j = 1}^{N_{i}}y_{ij}}{N_{i}}$ (the
-sample mean for the *i^th^* dose group),
+sample mean for the $i^{th}$ dose group),
 
 $s_{i}^{2} = \frac{\sum_{j = 1}^{N_{i}}{(y_{ij} - {\overline{y}}_{i})}^{2}\ }{N_{i} - 1}$
-(the sample variance for the *i^th^* dose group),
+(the sample variance for the $i^{th}$ dose group),
 
 $N = \ \sum_{i = 1}^{G}N_{i}$.
 
@@ -1193,10 +1199,10 @@ $$LL = - \frac{N}{2}\ln(2\pi) - \sum_{i = 1}^{G}\left\lbrack N_{i}{\overline{z}}
 
 where
 
-${\overline{z}}_{Li}\  = \ $log-scale sample mean for *i^th^* dose
+${\overline{z}}_{Li}\  = \ $log-scale sample mean for $i^{th}$ dose
 group, and
 
-${{\ s}_{Li}}^{2}\  = \ $log-scale sample variance for *i^th^* dose
+${{\ s}_{Li}}^{2}\  = \ $log-scale sample variance for $i^{th}$ dose
 group.
 
 As in the case of Normally distributed responses, the parameters
@@ -1229,19 +1235,21 @@ In BMDS, the number of estimated parameters includes only those that
 have not been estimated to equal a bounding value (either from the
 model-imposed constraints or user-imposed restrictions (see Table 7).
 
-***Note*** This counting process may or may not be reasonable, depending
-on the boundary value that a parameter in question hits.
+:::{note}
+This counting process may or may not be reasonable, depending
+on the boundary value that a parameter in question hits. 
 
 For example, if the power parameter in a model hits (*i.e.*, is
 estimated to be equal to) the upper bound of 18, it would usually be the
 case that one would want to count that parameter as one that is
-estimated, but BMDS Online does ***not*** do that.
+estimated, but BMDS Online does ***not*** do that. 
 
 For this reason, the user is apprised to carefully consider the cases
 where parameter bounds have been hit and to consider the implications
 for issues such as model comparison and model selection.
+:::
 
-Note that if a parameter hits a bound for any model, the parameter
+If a parameter hits a bound for any model, the parameter
 estimates are maximum likelihood estimates (MLEs) only in the restricted
 sense that the bounded parameter has been assigned a value and the other
 parameters are MLEs conditional on that assigned value. Such model
@@ -1251,17 +1259,16 @@ thus, sensitivity analysis is recommended if one intends to rely on the
 reported BMD or BMDL. This is especially important when considering
 power parameters that have hit the upper bound of 18.
 
-***Note*** To facilitate comparing models with different likelihoods
-(*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using
-all the terms shown in the LL equations in Section 8.6.3, \"Likelihood
-Function,\" on page [64](#likelihood-function).
+:::{note} 
+To facilitate comparing models with different likelihoods (*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using all the terms shown in the LL equations in [**Likelihood
+Function**](#likelihood-function).
+:::
 
 When comparing models having different parametric distributions, the AIC
 calculated using BMDS Online will result in the proper comparison
 between any two models regardless of underlying distribution.
 
-***Caution***
-
+:::{caution}
 A note of caution is required for situations where only the sample mean
 and sample standard deviation are available (summarized data) and for
 which the log-scale sample mean and sample standard deviation are only
@@ -1287,11 +1294,12 @@ Normally distributed responses to those assuming Lognormal responses
 should not be made using the AIC, if the underlying data are presented
 in summarized form (*i.e.*, only sample means and sample standard
 deviations are available).
+:::
 
 ### BMDL and BMDU Computation
 
 The estimation of the BMDs, depending on the definition of the BMR type,
-is specified in Table 5 on page 55. The derivation of the confidence
+is specified in the [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown. The derivation of the confidence
 bounds for the BMD, *i.e.*, the BMDL and BMDU, is defined in this
 section.
 
@@ -1360,8 +1368,5 @@ means) to make the values (means) positive. That will not change the
 standard deviations of the observations and would allow the user to
 model the variance.
 
-***Related topic:***
-
--   Section 8.4.2.2, "Log-transformed Responses are NOT Recommended," on
-    page [53](#log-transformed-responses-are-not-recommended)
+***Related topic:*** see [Log-transformed Responses are NOT Recommended](#log-transformed-responses-are-not-recommended)
 
