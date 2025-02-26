@@ -218,7 +218,7 @@ distributed.
 ::::{tab-set}
 
 :::{tab-item} Relative Deviation
-:color: secondary
+
 **BMR Type name in BMDS:** Rel.Dev.
 
 **The BMD is the dose yielding...** the specified change in median response relative to the background median
@@ -230,7 +230,7 @@ $\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
 :::
 
 :::{tab-item} Absolute Deviation
-:color: secondary
+
 **BMR Type name in BMDS** Abs.Dev.
 
 **The BMD is the dose yielding...** the specified change in median response
@@ -241,7 +241,7 @@ $\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
 :::
 
 :::{tab-item} Standard Deviation
-:color: secondary
+
 **BMR Type name in BMDS:** Std.Dev.
 
 **The BMD is the dose yielding...** the specified change in median response relative to the control group standard deviation
@@ -253,7 +253,7 @@ Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 :::
 
 :::{tab-item} Point
-:color: secondary
+
 **BMR Type name in BMDS** Point
 
 **The BMD is the dose yielding...** a median equal to the specified point value
@@ -264,7 +264,7 @@ Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 :::
 
 :::{tab-item} Hybrid - Extra Risk
-:color: secondary
+
 **BMR Type name in BMDS:** Hybrid - Extra Risk
 
 **The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
@@ -276,7 +276,7 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 :::
 
 :::{tab-item} Hybrid - Added Risk
-:color: secondary
+
 **BMR Type name in BMDS:** Hybrid - Added Risk
 
 **The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
