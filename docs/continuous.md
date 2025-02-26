@@ -44,7 +44,7 @@ models](_static/img/image67.png){width="4.61080271216098in"
 height="1.9748622047244095in"}
 
 Also available for all continuous models are options for Hybrid-Extra
-Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown), and the Lognormal
+Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](paragraph-target1) dropdown), and the Lognormal
 response distribution assumption (previously only available for
 Exponential models).
 
@@ -160,7 +160,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to the [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown.
+    on these methods, refer to the [**Options related to continuous BMR type and BMRF**](paragraph-target1) dropdown.
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -170,7 +170,7 @@ displayed](_static/img/image73.png){width="1.6668110236220472in"
 height="2.5002165354330708in"}
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
-    selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown summarizes the options related to BMR Type and BMRF.
+    selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](paragraph-target1) dropdown summarizes the options related to BMR Type and BMRF.
 
 -   **Tail Probability** marks the cut-off for defining adversity and
     applies only to Hybrid-Extra Risk BMR Type, not the background rate.
@@ -210,7 +210,7 @@ $\sigma_{L}(0)$ is the log-scale standard deviation for the control
 group, used when the responses are assumed to be Lognormally
 distributed.
 
-(target_to_paragraph1)=
+(paragraph-target1)=
 
 :::::{dropdown} Options related to continuous BMR type and BMRF
 :color: primary
@@ -538,7 +538,7 @@ the observed (or calculated) data that were used as input, one row for
 each dose group. Generally, one desires to have the model predictions
 match the input data as well as possible.
 
-Note that in the Goodness of Fit tables shown in [**Figure 71**](target_to_image1) and [**Figure 72**](target_to_image2):
+Note that in the Goodness of Fit tables shown in [**Figure 71**](paragraph-target2) and [**Figure 72**](paragraph-target3):
 
 -   Sample Mean = the sample mean for both Normally and Lognormally
     distributed data.
@@ -575,7 +575,7 @@ Note that in the Goodness of Fit tables shown in [**Figure 71**](target_to_image
 
     $$(ln(Sample\ Median)\  - \ ln(Model\ Fitted\ Median))/(ln(Model\ Fitted\ GSD)/\sqrt{N_{i}})$$
 
-(target_to_image1)=
+(paragraph-target2)=
 []{#_Ref184734400 .anchor}**Figure 71.** Goodness of Fit table headings,
 with Normal assumption.
 
@@ -583,7 +583,7 @@ with Normal assumption.
 headers](_static/img/image75.png){width="6.499068241469816in"
 height="0.5797965879265092in"}
 
-(target_to_image2)=
+(paragraph-target3)=
 []{#_Ref184734412 .anchor}**Figure 72.** Goodness of Fit table headings,
 with Lognormal assumption. Note the column header
 similarities/differences between the two tables.
@@ -1299,7 +1299,7 @@ deviations are available).
 ### BMDL and BMDU Computation
 
 The estimation of the BMDs, depending on the definition of the BMR type,
-is specified in the [**Options related to continuous BMR type and BMRF**](target_to_paragraph1) dropdown. The derivation of the confidence
+is specified in the [**Options related to continuous BMR type and BMRF**](paragraph-target1) dropdown. The derivation of the confidence
 bounds for the BMD, *i.e.*, the BMDL and BMDU, is defined in this
 section.
 
