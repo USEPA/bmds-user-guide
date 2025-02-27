@@ -41,7 +41,7 @@ Logistic, Probit, and Quantal Linear models have no restricted option
 ([U.S. EPA,
 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-See Table 8 on page [74](#tbl-model) for the effect of the user
+See [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters) for the effect of the user
 selecting the restricted version of the models (refer to the paragraphs
 in the *Notes* column marked with **User parameter restriction
 options**). In general, the restrictions prevent the slope of the
@@ -233,8 +233,7 @@ The full model posits a separate and independent
 
 The maximum log-likelihood value obtainable for
     the model under consideration. It corresponds to the model with the
-    parameters set equal to the values shown in [Model Parameters
-    table](#tbl-model). The number of
+    parameters set equal to the values shown in [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters). The number of
     parameters equals the number of parameters in that table that are
     not reported as *Bounded*.
 :::
@@ -702,7 +701,7 @@ selection.
 In the current version of BMDS, the number of estimated parameters
 includes only those that have not been estimated to equal a bounding
 value, either from the model-imposed constraints or user-imposed
-restrictions. For more details, see Table 8 on [74](#tbl-model).
+restrictions. For more details, see [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters).
 
 :::{note}
 
@@ -725,7 +724,7 @@ The BMD is computed as a function of the parameters of the model under
 consideration (see [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters)). Solutions
 for the BMD for all the dichotomous models are shown below.
 
-#### Calculation of the BMD for the Individual Dichotomous Models[^1]
+#### Calculation of the BMD for the Individual Dichotomous Models
 
 ::::{tab-set}
 
@@ -783,9 +782,11 @@ $BMD = \left\{ \begin{array}{r} e\frac{- \alpha - \log\left( - \frac{BMR - v + g
 
 ::::
 
-[^1]: All models represented in [Calculation of the BMD for the Individual Dichotomous Models](#calculation-of-the-bmd-for-the-individual-dichotomous-models1) use the same model forms as
+:::{note}
+All models represented in above use the same model forms as
     presented in [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters). The BMR is the value specified by the user to
     correspond to the risk level of interest (see [BMR](#bmr)).
+:::
 
 ### BMDL and BMDU Computation
 
@@ -808,7 +809,7 @@ $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
 For the remaining models, the equations that define the benchmark
 response in terms of the benchmark dose and the dose-response model
-([Calculation of the BMD for the Individual Dichotomous Models](#calculation-of-the-bmd-for-the-individual-dichotomous-models1)) are solved for one of the model parameters. The resulting
+([Calculation of the BMD for the Individual Dichotomous Models](#individual-dichotomous-models-and-their-respective-parameters)) are solved for one of the model parameters. The resulting
 expression is substituted back into the model equations, with the effect
 of reparameterizing the model so that BMD appears explicitly as a
 parameter. A value for BMD is then found such that, when the remaining
