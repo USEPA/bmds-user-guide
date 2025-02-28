@@ -42,8 +42,7 @@ developmental toxicology studies:
 
 1.  They use a probability model that provides for extra inter-litter
     variance of the proportion of pups affected (the beta-binomial
-    probability model: see Section 10.5.1, \"Likelihood Function,\" on
-    page 91), and
+    probability model: see [Likelihood Function](#likelihood-function), and
 
 3.  They incorporate a litter-specific covariate that is expected to
     account for at least some of the extra inter-litter variance.
@@ -62,20 +61,14 @@ there is any dose-induced prenatal death or resorption.
 
 ## Nested Logistic Model
 
-BMDS 2.7 contained three nested dichotomous models:
+BMDS contains two nested dichotomous models:
 
 -   Nested Logistic
 
 -   National Center for Toxicological Research (NCTR)
 
--   Rai and van Ryzin
-
-Currently, the only nested dichotomous model available in BMDS is Nested
-Logistic. The Nested Logistic Model is the log-logistic model, modified
-to include a litter-specific covariate.
-
-The NCTR (National Center for Toxicological Research) nested dichotomous
-model will be included in a future BMDS release.
+The Nested Logistic Model is the log-logistic model, modified
+to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
 
 []{#_Toc47700655 .anchor}**Figure 83.** BMDS nested model selection.
 
@@ -83,9 +76,11 @@ model will be included in a future BMDS release.
 selection](_static/img/image87.png){width="5.394587707786527in"
 height="1.076035651793526in"}
 
-The NCTR and Rai and Van Ryzin models can be accessed in BMDS 2.7,
+:::{note}
+A third nested dichotomous model, the Rai and Van Ryzin model, can be accessed in BMDS 2.7,
 [which is available from the BMDS
 website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).
+:::
 
 ## Entering Nested Dichotomous Data
 
@@ -93,14 +88,15 @@ A BMDS Online analysis can have a maximum of six datasets (for
 continuous, dichotomous, and nested dichotomous) or 10 datasets (for
 multitumor).
 
-For information on inserting or importing data, see Section 4.4,
-"Specifying Dataset," on page [16](./bmds-online.md#specifying-datasets).
+For information on inserting or importing data, see [Specifying Datasets](./bmds-online.md#specifying-datasets).
 
-The default column headers are *Dose*, *Litter Size*, *Incidence*, and
+The default column headers for nested dichotomous data are *Dose*, *Litter Size*, *Incidence*, and
 *Litter Specific Covariate (LSC)*.
 
-***Note*** There ***must*** be data in the LSC column even if the
+:::{note}
+There ***must*** be data in the LSC column even if the
 modeling options do not call for the use of LSC.
+:::
 
 Figure 84 is a screenshot of a nested dataset in Excel that is formatted
 for use in BMDS.
@@ -135,14 +131,19 @@ height="0.9213812335958005in"}
 
 Choices for the Risk Type option are Extra Risk (default) or Added Risk.
 
-Additional risk is the additional proportion of total animals that
+Added risk is the additional proportion of total animals that
 respond in the presence of the dose, or the probability of response at
 dose $d$, $P(d)$, minus the probability of response in the absence of
-exposure, $P(0);\ i.e.,$ $additional\ risk\  = \ P(d)\ –\ P(0)$.
+exposure, $P(0)$; i.e.,
 
-Extra risk is the additional risk divided by the proportion of animals
+$$added\ risk  = P(d) –P(0)$$
+
+Extra risk is the added risk divided by the proportion of animals
 that will not respond in the absence of exposure,
-$1\  - \ P(0);\ i.e.,\ extra\ risk\  = \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$.
+$1\  - \ P(0)$ ;i.e.,
+
+$$extra\ risk  = \frac{P(d) –P(0)}{1 - P(0)}$$
+
 Thus, extra and additional risk are equal when background rate is zero.
 
 ### BMR
@@ -162,8 +163,7 @@ The response associated with the BMR that is displayed in the graphical
 model output will only be the same as the BMR when $P(0)\  = \ 0$.
 
 This is because to obtain the actual response value one must solve for
-$P(d)$ in the equation for added or extra risk discussed in Section
-10.3.1.
+$P(d)$ in the equation for added or extra risk discussed in [Risk Type](#risk-type).
 
 The horizontal bar depicting the response level used to derive the BMD
 that is displayed in the graphical model output will only be the same as
@@ -171,7 +171,7 @@ the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at
 background, P(0), equals zero.
 
 When P(0) does not equal zero, the true response level can be calculated
-using the Extra Risk equation described in Section 10.3.1.
+using the Extra Risk equation described in [Risk Type](#risk-type).
 
 []{#_Toc185445262 .anchor}**Figure 86**. Results plot, with horizontal
 bar centered on the y-axis at the modeled BMR.
@@ -220,8 +220,7 @@ The **Litter Specific Covariate** option allows the user to determine if
 the BMD (and the corresponding plots) will be computed using the Control
 Group Mean value of the LSC or the Overall Mean value of the LSC
 (*i.e.*, averaged across all dose groups; Overall Mean is the default
-selection). See Section 10.5.4, "BMD Computation," on page
-[93](#bmd-computation) for an explanation as to why this option is
+selection). See [BMD Computation](#bmd-computation) for an explanation as to why this option is
 necessary, and which choice would be preferred for the given dataset.
 
 The Overall Mean should be used under most circumstances. If the
@@ -249,8 +248,7 @@ generator by default. However, the user can specify a seed value, if
 needed for reproducibility.
 
 For more details, refer to Section 10.4.2, "Bootstrap Results Table," on
-page [86](#bootstrap-results-table) and Section 10.4.3, "Bootstrap Runs
-Table," on page [86](#bootstrap-runs-table).
+page [Bootstrap Results Table](#bootstrap-results-table) and [Bootstrap Runs Table](#bootstrap-runs-table).
 
 ## Specific Nested Dichotomous Results
 
@@ -268,30 +266,27 @@ on the Output tab.
 types](_static/img/image91.png){width="2.6670384951881014in"
 height="1.5835542432195975in"}
 
-[]{#_Toc512002153 .anchor}Table 10. *All forms of nested models run by
-BMDS.*
+:::{list-table} All Forms of Nested Models run by BMDS
+:widths: 20 15 15
+:header-rows: 1
 
-  -----------------------------------------------------------------------
-  Litter-Specific\       Intralitter             Intralitter
-  Covariate              Correlation-\           Correlation-\
-                         Estimated               Set to Zero
-  ---------------------- ----------------------- ------------------------
-  Included in Model      lsc+ilc+                lsc+ilc-
-
-  Not included in Model  lsc-ilc+                lsc-ilc-
-  -----------------------------------------------------------------------
-
-  : All forms of nested models run by BMDSTable describing abbreviations
-  of the 4 permutations of nested model runs on a 2x2 matrix, with the
-  rows as Included or Not Included in the model, and the columns as
-  Intralitter Correlation set to either Estimated or Zero
+*   - Litter Specific Coveriate
+    - Intralitter Correlation - Estimated
+    - Intralitter Correlation - Set to Zero
+*   - Inlcluded in Model
+    - lsc+ilc+
+    - lsc+ilc-
+*   - Not Included in Model
+    - lsc-ilc+
+    - lsc-ilc-
+:::
 
 The Litter Specific Covariate is another variable that the model can
 (optionally) include, one that may help to explain the variation in the
 response from one experimental unit to another. The experimental unit is
 very often a litter of observations, hence the designation *Litter
-Specific*. For more details, refer to Section 10.3.5, "Litter Specific
-Covariate," on page [84](#litter-specific-covariate).
+Specific*. For more details, refer to [Litter Specific
+Covariate](#litter-specific-covariate).
 
 The Intralitter Correlation (again referencing the litter as a common
 experimental unit), estimates the degree to which observations within
@@ -311,9 +306,7 @@ statistic. The distribution of that test statistic over the iterations
 is compared to the Chi-square test statistic from the observed data. If
 the model fits the data well, the observed Chi-square should not be in
 the upper tail of the Chi-square statistic values from the simulations.
-(For more on the Chi-square calculation, see Section 10.5.2, "Goodness
-of Fit Information---Litter Data," on page
-[91](#goodness-of-fit-information-litter-data).)
+(For more on the Chi-square calculation, see [Goodness-of-fit Information - Litter Data](#goodness-of-fit-information-litter-data).)
 
 The Bootstrap Results table summarizes the result of that test for
 goodness of fit. It reiterates the user-input number of iterations and
@@ -371,7 +364,7 @@ height="2.0047944006999123in"}
 ### Litter Data Table
 
 The Litter Data table shows the model-predicted probability of response
-and expected number of responders (= Est. Prob \* Litter Size).
+and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
 
 []{#_Ref177662524 .anchor}**Figure 92.** Partial capture of the Litter
 Data table from Results Workbook.
@@ -383,158 +376,148 @@ height="2.857638888888889in"}
 
 ## Mathematical Details for Models for Nested Dichotomous Endpoints
 
-The model that BMDS makes available for nested data is the Logistic
-Nested Model (Table 11). In the future, the NCTR model will be made
-available (also presented in Table 11). The user who is interested in
-the NCTR model and the Rai and van Ryzin model is advised to [download
+The models that BMDS makes available for nested data are the Logistic
+Nested and NCTR models (see below). The user who is interested in
+the Rai and van Ryzin model is advised to [download
 BMDS
-2.7](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials),
-which has both of those models for nested data.
+2.7](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).
 
-[]{#_Ref41836755 .anchor}Table 11. *Individual nested dichotomous models
-and their respective parameters*.
+### Individual Nested Dichotomous Models and their Respective Parameters
 
-+----------------------+------------+----------------------------------+
-| Model                | Parameters | Notes                            |
-+======================+============+==================================+
-| Logistic Nested      | $\alpha$ = | In the model equation, $r_{ij}$  |
-| model                | intercept  | is the litter-specific covariate |
-|                      | (≥0)       | for the *j^th^* litter in the    |
-| if $dose > 0$        |            | *i^th^* dose group. In addition, |
-|                      | $\rho$ =   | there are *g* intra-litter       |
-| $$p(do               | power (≥0, | correlation coefficients; *g* is |
-| se) = {a + \theta}_{ | can        | the number of dose groups.       |
-| 1}r_{ij} + \frac{(1  | restrict   | ${0 \leq \phi}_{i                |
-| - \alpha - \theta_{1 | ≥1)        | } \leq 1\ (i = 1,\ \ldots,\ g).$ |
-| }r_{ij})}{(1 + e^{\l |            |                                  |
-| eft\lbrack - \beta - | $\beta$ =  | $1 > \alpha + \r                 |
-|  \theta_{2}r_{ij} -  | slope (≥0) | ho \geq \theta_{1}r_{ij} \geq 0$ |
-| \rho \times \ln(dose |            | for every $r_{ij}$.              |
-| ) \right\rbrack})}$$ | $\         |                                  |
-|                      | theta_{1}$ | If $r_{m}$ represents either the |
-| if $dose = 0$        | = first    | control mean value for the       |
-|                      | c          | litter-specific covariate or its |
-| $p(dose) = \alpha    | oefficient | overall mean, then the BMD is    |
-|  + \theta_{1}r_{ij}$ | for the    | computed as:                     |
-|                      | litte      |                                  |
-|                      | r-specific | $$BM                             |
-|                      | covariate  | D = e^{\left\{ \frac{\left\lbrac |
-|                      |            | k \ln\left( \frac{A}{(1 - A)} \r |
-|                      | $\         | ight) - \beta - \theta_{2}r_{m}  |
-|                      | theta_{2}$ | \right\rbrack}{\rho} \right\}}$$ |
-|                      | = second   |                                  |
-|                      | c          | where                            |
-|                      | oefficient |                                  |
-|                      | for the    | $$A = \left\{ \begin{array}{r}   |
-|                      | litte      | \ BMRF\ extra\ risk \\           |
-|                      | r-specific |  \\                              |
-|                      | covariate  | \frac{BMRF}{(1 - a               |
-|                      |            | - \theta_{1}r_{m})}\ added\ risk |
-|                      | $\phi_{1}, | \end{array} \right.\ $$          |
-|                      | \ \ldots,\ |                                  |
-|                      |  \phi_{g}$ | For the BMDL, the parameter      |
-|                      | =          | $\beta$ is replaced with an      |
-|                      | in         | expression derived from the BMD  |
-|                      | tra-litter | definition and the BMDL is       |
-|                      | c          | derived as described in Section  |
-|                      | orrelation | 10.5.2.                          |
-|                      | co         |                                  |
-|                      | efficients |                                  |
-+----------------------+------------+----------------------------------+
-| National Center for  | $\alpha$ = | In the model equation, $r_{ij}$  |
-| Toxicological        | intercept  | is the litter-specific covariate |
-| Research (NCTR)      | (≥0)       | for the *j^th^* litter in the    |
-| model[^1]           |            | *i^th^* dose group, $r_{m}$ is   |
-|                      | $\rho$ =   | the overall mean for the         |
-| $$p(                 | power (≥0, | litter-specific covariate        |
-| dose) = 1 - e^{\left | can        |                                  |
-| \{ - (\alpha + \thet | restrict   | $\t                              |
-| a_{1}\left( r_{ij} - | ≥1)        | heta_{1}(r_{ij} - r_{m}) \geq 0$ |
-|  r_{m} \right)) - (\ |            | and                              |
-| beta + \theta_{2}\le | $\beta$ =  | $\t                              |
-| ft( r_{ij} - r_{m} \ | slope (≥0) | heta_{2}(r_{ij} - r_{m}) \geq 0$ |
-| right)) \times dose^ |            |                                  |
-| {\rho} \right\}}\ $$ | $\         | In addition, there are *g*       |
-|                      | theta_{1}$ | intra-litter correlation         |
-|                      | = first    | coefficients; *g* is the number  |
-|                      | c          | of dose groups.                  |
-|                      | oefficient | $                                |
-|                      | for the    | {0 \leq \phi}_{i} \leq 1\ (i = 1 |
-|                      | litte      | ,\ \ldots,\ g);\ 1 > \alpha + \r |
-|                      | r-specific | ho \geq \theta_{1}r_{ij} \geq 0$ |
-|                      | covariate  | for every $r_{ij}$.              |
-|                      |            |                                  |
-|                      | $\         | $$BMD = \left\lbrack \frac{- (\  |
-|                      | theta_{2}$ | ln(1 - A))}{(\beta + \theta_{2}\ |
-|                      | = second   | delta_{r})} \right\rbrack \times |
-|                      | c          |  \left( \frac{1}{\rho} \right)$$ |
-|                      | oefficient |                                  |
-|                      | for the    | where                            |
-|                      | litte      |                                  |
-|                      | r-specific | $$A = \left\{ \begin{array}{r}   |
-|                      | covariate  | BMRF\ extra\ risk \\             |
-|                      |            |  \\                              |
-|                      | $\phi_{1}, | \frac{BMRF}{(1 - a - \th         |
-|                      | \ \ldots,\ | eta_{1}\delta_{r})}\ added\ risk |
-|                      |  \phi_{g}$ | \end{array} \right.\ $$          |
-|                      | =          |                                  |
-|                      | in         | and $\delta_{r}$is the average   |
-|                      | tra-litter | of $r_{ij} - r_{m}$ over either  |
-|                      | c          | the control group or over all    |
-|                      | orrelation | observations (depending on user  |
-|                      | co         | selection).                      |
-|                      | efficients |                                  |
-|                      |            | For the BMDL, the parameter      |
-|                      |            | $\beta$ is replaced with an      |
-|                      |            | expression derived from the BMD  |
-|                      |            | definition and the BMDL is       |
-|                      |            | derived as described in Section  |
-|                      |            | 10.5.2.                          |
-+----------------------+------------+----------------------------------+
+::::{tab-set}
 
-: The individual dichotomous nested models and their respective
-parameters Table showing, for each nested dichotomous model, its
-equation, parameters, and notes
+:::{tab-item} Nested Logistic model
 
-[^1]: The NCTR model will be added to a future version of BMDS.
+**Model Form**
+
+If $dose > 0$
+
+$$p(dose) = {a + \theta}_{1}r_{ij} + \frac{(1 - \alpha - \theta_{1}r_{ij})}{(1 + e^{\left\lbrack - \beta - \theta_{2}r_{ij} - \rho \times \ln(dose) \right\rbrack})}$$
+
+If $dose = 0$
+
+$$p(dose) = \alpha + \theta_{1}r_{ij}$$
+
+**Parameters**
+
+$\alpha$ = intercept (≥0)
+
+$\rho$ = power (≥0, can restrict to ≥1)
+
+$\beta$ = slope (≥0)
+
+$\theta_{1}$ = first coefficient for the litter specific covariate
+
+$\theta_{2}$ = second coefficient for the litter specific covariate
+
+$\phi_{1}, \ldots, \phi_{g}$ = intra-litter correlation coefficients
+
+**Notes**
+
+In the model equation, $r_{ij}$ is the litter-specific covariate for the $j^{th}$ litter in the $i^{th}$ dose group.  In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups.
+
+$0 \leq \phi_{i} \leq 1\ (i=1, \ldots, g)$
+
+$1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0$ for every $r_{ij}$
+
+if $r_{m}$ represents either the control mean value for the litter specific covariate or its overall mean, the BMD is computed as: 
+
+$$BMD = e^{\left\{ \frac{\left\lbrack \ln\left( \frac{A}{1-A} \right) - \beta - \theta_{2}r_{m}\right\rbrack}{\rho}\right\}}$$
+
+where
+
+$$A = \left\{ \begin{array}{r}\ BMRF\ extra\ risk \\ \\ \frac{BMRF}{(1 - a - \theta_{1}r_{m})}\ added\ risk\end{array} \right.\ $$
+
+For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [BMDL Calculation](#bmdl-computation)
+:::
+
+:::{tab-item} NCTR model
+
+**Model Form**
+
+$$p(dose) = 1 - e^{\left\{- (\alpha + \theta_{1}\left(r_{ij} - r_{m} \right)) - (\beta + \theta_{2}\left( r_{ij}-r_{m} \right)) \times dose^{\rho}\right\}}$$
+
+**Parameters**
+
+$\alpha$ = intercept (≥0)
+
+$\rho$ = power (≥0, can restrict to ≥1)
+
+$\beta$ = slope (≥0)
+
+$\theta_{1}$ = first coefficient for the litter specific covariate
+
+$\theta_{2}$ = second coefficient for the litter specific covariate
+
+$\phi_{1}, \ldots, \phi_{g}$ = intra-litter correlation coefficients
+
+**Notes**
+
+In the model equation, $r_{ij}$ is the litter-specific covariate for the $j^{th}$ litter in the $i^{th}$ dose group, $r_{m}$ is the overall mean for the litter-specific covariate
+
+$\theta_{1}(r_{ij}-r_{m}) \geq 0$ and $\theta_{2}(r_{ij}r_{m}) \geq 0$
+
+In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups. 
+
+$0 \leq \phi_{i} \leq 1\ (i = 1, \ldots, g); 1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0 $ for every $r_{ij}$
+
+$$BMD = \left\lbrack \frac{- (\ln(1-A))}{(\beta + \theta_{2}\delta_{r})} \right\rbrack \times \left( \frac{1}{\rho} \right)$$
+
+where
+
+$$A = \left\{ \begin{array}{r}\ BMRF\ extra\ risk \\ \\ \frac{BMRF}{(1 - a - \theta_{1}\delta_{r})}\ added\ risk\end{array} \right.\ $$
+
+and $\delta_{r}$ is the average of $r_{ij}-r_{m}$ over either the control group of all observations (depending on user selection).
+
+For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [BMDL Calculation](#bmdl-computation)
+
+
+:::
+
+::::
 
 ### Likelihood Function
 
-Let ***g*** represent the number of dose groups. For the ***i^th^***
-group, there are ***n~i~*** pregnant females administered dose
-***dose~i~.*** In the ***j^th^*** litter of the ***i^th^*** dose group
-there are ***s~ij~ fetuses***, ***x~ij~*** affected fetuses, and,
-potentially, a litter-specific covariate ***r~ij~*** which will often be
+Let $g$ represent the number of dose groups. For the $i^{th}$ dose
+group, there are $n_{i}$ pregnant females administered dose
+$dose_{i}$. In the $j^{th}$ litter of the $i^{th}$ dose group
+there are $s_{ij}$ fetuses, $x_{ij}$ affected fetuses, and,
+potentially, a litter-specific covariate $r_{ij}$ which will often be
 a measure of potential litter size, such as number of implantation
 sites, though this is not a requirement of the models. In what follows,
 the dose-response model, which gives the probability that a fetus in the
-***j^th^*** litter of the ***i^th^*** dose group will be affected is
+$j^{th}$ litter of the $i^{th}$ dose group will be affected is
 represented by
 
-> $$p(dose_{i},\ r_{ij})$$
+$$p(dose_{i},\ r_{ij})$$
 
 The beta-binomial distribution can be thought of as resulting from
 sampling in two stages. First, each litter is assigned a probability,
-***P~ij~*** from a beta distribution (beta distributions represent a
+$P_{ij}$ from a beta distribution (beta distributions represent a
 two-parameter family of probability distributions defined on the
 interval (0,1)). The parameters of the beta distribution are determined
-by the administered dose, the litter-specific covariate ***r~ij~*** and
-the degree of intra-litter correlation, v***~i~***. Note that the
-intra-litter correlation parameter varies among doses. It has been shown
+by the administered dose, the litter-specific covariate $$r_{ij}$ and
+the degree of intra-litter correlation, $v_{i}$. 
+
+:::{note}
+
+The intra-litter correlation parameter varies among doses. It has been shown
 [(Williams, 1988)](https://pubmed.ncbi.nlm.nih.gov/3358995/) that when
 the true intra-litter correlation differs among doses, unbiased
 estimates of the other parameters in a dose-response model can only be
 obtained if dose-specific intra-litter correlation parameters are
-estimated. As a special case, if v***~i~*** =0, then this part of the
+estimated. As a special case, if $v_{i} = 0$, then this part of the
 process is completely deterministic, and
 
-> $$P_{ij} = p(dose_{i},\ r_{ij})$$
+$$P_{ij} = p(dose_{i},\ r_{ij})$$
 
 This allows for the possibility of no litter effect at all.
 
-In the second stage of sampling, ***s~ij~ fetuses*** are assigned to the
-litter, and the number of affected fetuses, ***x~ij\ ~***is sampled from
-a binomial distribution with parameters ***P~ij\ ~***and ***s~ij~.***
+:::
+
+In the second stage of sampling, $s_{ij}$ fetuses are assigned to the
+litter, and the number of affected fetuses, $x_{ij}$ is sampled from
+a binomial distribution with parameters $P_{ij}$ and $s_{ij}$.
 
 The log-likelihood function that results from this process is ([Kupper
 et al.,
@@ -544,11 +527,11 @@ $$LL = \sum_{i = 1}^{g}\left\{ \sum_{j = 1}^{n_{i}}\left\lbrack \sum_{k = 1}^{x_
 
 where
 
-> $$\Psi_{i} = \frac{\phi_{i}}{1 - \phi_{i}}$$
+$$\Psi_{i} = \frac{\phi_{i}}{1 - \phi_{i}}$$
 
 and
 
-> $$\sum_{a}^{b}{( \bullet ) = 0}\ if\ a > b\ (by\ convention).$$
+$$\sum_{a}^{b}{( \bullet ) = 0}\ if\ a > b\ (by\ convention).$$
 
 This log-likelihood ignores a term that is independent of the values of
 the parameters.
@@ -561,12 +544,13 @@ observed responses, and scaled residuals for each litter.
 The scaled residual values printed at the end of the table are defined
 as follows:
 
-$\frac{(Obs\  - \ Expected)}{SE}$ ,
+$$\frac{(Obs\  - \ Expected)}{SE}$$
 
 where Expected is the predicted number of responders from the model and
 SE equals the estimated standard error of that predicted number. For
 these models, the estimated standard error is equal to
-$\sqrt{\lbrack n \times p \times (1 - p) \times \left( \theta \times (n - 1) + 1 \right)\rbrack}$,
+
+$$\sqrt{\lbrack n \times p \times (1 - p) \times \left( \theta \times (n - 1) + 1 \right)\rbrack}$$
 
 -   $n$ is the sample (litter) size,
 
@@ -622,17 +606,19 @@ variability in the p-values, but they are all greater than 0.20, for
 example, then one probably need not worry about increasing the value for
 B.
 
-> ***Note*** In traditional testing situations, the Chi-square statistic
-> would be approximated by a Chi-square random variable having a certain
-> degree of freedom, and its "significance" (p-value) would be
-> determined from the appropriate Chi-square distribution function.
+:::{note}
+In traditional testing situations, the Chi-square statistic
+would be approximated by a Chi-square random variable having a certain
+degree of freedom, and its "significance" (p-value) would be
+determined from the appropriate Chi-square distribution function.
+:::
 
 ### Plot and Error Bar Calculation
 
 The error bars shown for the plots of nested data are calculated in the
 same way as those for dichotomous data (and described in Section 9.4.3,
 "Plot and Error Bar Calculation," on page
-[72](./dichotomous.md#plot-and-error-bar-calculation)).
+[Plot and Error Bar Calculation](./dichotomous.md#plot-and-error-bar-calculation)).
 
 However, a Rao-Scott transformation is applied prior to the calculations
 to express the observations in terms of an effective number of affected
