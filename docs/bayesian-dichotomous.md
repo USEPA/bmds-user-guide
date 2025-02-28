@@ -245,10 +245,10 @@ lowest dose) group.
 The user does ***not*** need to scale anything beforehand. That means
 that the parameter estimates, and BMD values returned by the program
 have been adjusted back to the original scale of the doses and the
-original scale of the responses specified in the input data file.
+original scale of the responses specified in the input data file. 
 :::
 
-#### Bayesian Dichotomous Models and their Respective Parameter Priors
+### Bayesian Dichotomous Models and their Respective Parameter Priors
 
 ::::{tab-set}
 
