@@ -1,12 +1,12 @@
 # Overview
 
-The U.S. Environmental Protection Agency (EPA) Benchmark Dose Software
+The U.S. Environmental Protection Agency's (EPA) Benchmark Dose Software
 (BMDS) was developed as a tool to facilitate the application of
 benchmark dose (BMD) methods to EPA hazardous pollutant risk
 assessments.
 
 This user guide provides instruction on how to use BMDS but is not
-intended to address or replace EPA BMD guidance. However, every attempt
+intended to address or replace EPA BMD guidance. Every attempt
 has been made to make this software consistent with EPA guidance,
 including the Risk Assessment Forum's (RAF) [Benchmark Dose Technical
 Guidance
@@ -47,7 +47,7 @@ height="2.298611111111111in"}
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
 dose-response models that help risk assessors estimate the quantitative
 relationship between a chemical ***dose*** and the test
-subject's ***response***. The user can select from and/or compare the
+subject's ***response***. The user can select from and/or compare the 
 models to make predictions about the quantitative relationship between
 dose and response. One specific focus of this software is the estimation
 of a statistical benchmark dose (BMD), including bounds (*e.g.*, 95%
@@ -55,8 +55,7 @@ confidence intervals) on such estimates.
 
 The BMD is a dose estimated to produce a response level of a defined
 (benchmark) magnitude. The [online BMDS
-Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossaryhttp://ofmpub.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossary)
-defines BMD as follows:
+Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossaryhttp://ofmpub.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossary) defines BMD as follows:
 
 *An exposure due to a dose of a substance associated with a specified
 low incidence of risk, generally in the range of 1% to 10%, of a health
@@ -97,8 +96,7 @@ The key features of those response (endpoint) types are as follows:
     such units that have the response. Tumor responses are a subcategory
     of dichotomous endpoints with cancer-specific model selection
     considerations that are automated in the BMDS Multitumor model; for
-    more information, see Section 11.0, "Multiple Tumor Analysis," on
-    page [94](#multiple-tumor-analysis).
+    more information, see [**Multiple Tumor Analysis**](#multiple-tumor-analysis).
 
 -   **Nested Dichotomous Endpoint:** as for Dichotomous endpoints, the
     presence or absence of a disease state or counter is the response.
@@ -211,8 +209,7 @@ analysis.
 
 There is also the added flexibility of offline processing with the
 simultaneous releases of BMDS Desktop and pybmds. For more information
-on these programs, refer to "BMDS Desktop and pybmds" on page
-[7](./bmds-desktop-pybmds.md).
+on these programs, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
 
 Learn more about BMDS Online on the [BMDS
 website](https://www.epa.gov/bmds).
@@ -248,8 +245,7 @@ applications:
     command-line application and is intended for the advanced user with
     some development experience.
 
-For more information, refer to Section 2.0, "BMDS Desktop and pybmds,"
-on page [7](./bmds-desktop-pybmds.md).
+For more information, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
 
 ## What's New: Active Development Stopped on BMDS 3.3
 
@@ -305,7 +301,7 @@ page](https://www.epa.gov/bmds/bmds-online-release-history).
 ### BMDS Website
 
 The [BMDS website](https://www.epa.gov/bmds) contains the most
-up-to-date information and updates pertaining to BMDS.
+up-to-date information on BMDS.
 
 In addition to the latest downloadable version of BMDS, the site
 includes links to [troubleshooting and usage
@@ -365,4 +361,3 @@ page](https://www.epa.gov/bmds/forms/contact-us-about-benchmark-dose-tools)
 serves as the online Help Desk for all BMDS applications. Use the page
 to post questions, concerns, comments, or suggestions on any aspect of
 the software or its usage.
-
