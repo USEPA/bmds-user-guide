@@ -17,8 +17,7 @@ effectively.
     EPA server; users can optionally "renew" an analysis so that it
     remains on the EPA server for another three years. Or, users can
     save to their computer an export of the data or analysis for later
-    import into BMDS Online. For more information, refer to Section
-    4.7.3, "Actions Menu," on page 31.
+    import into BMDS Online. For more information, refer to [**Actions Menu**](#actions-menu).
 
 -   If data sensitivity is an issue, the user can run BMDS Desktop on
     their local computer.
@@ -27,9 +26,9 @@ effectively.
 
 1.  Navigate to the [BMDS Online website](https://bmdsonline.epa.gov).
 
-2.  Select the **Create a new BMDS analysis** button ().
+2.  Select the **Create a new BMDS analysis** button.
 
-[]{#_Ref148619316 .anchor}**Figure 6.** BMDS Online landing page, with
+> []{#_Ref148619316 .anchor}**Figure 6.** BMDS Online landing page, with
 **Create a new BMDS analysis** button.
 
 ![BMDS Online landing page, with Create a new BMDS analysis button
@@ -37,50 +36,51 @@ highlighted](_static/img/image12.png){width="5.092825896762904in"
 height="3.5470220909886265in"}
 
 BMDS Online displays a new, empty analysis page with the Settings tab
-selected (). From here, you can configure an analysis, load a dataset,
+selected. From here, you can configure an analysis, load a dataset,
 execute the analysis, and select results.
 
-Each BMDS Online analysis is self-contained and includes all the inputs
-and outputs for the executed analysis. No user or personal information
-is captured by BMDS Online.
-
-[]{#_Ref148619287 .anchor}**Figure 7.** A new BMDS Online analysis page.
+> []{#_Ref148619287 .anchor}**Figure 7.** A new BMDS Online analysis page.
 
 ![BMDS Online page with default model
 selections](_static/img/image13.png){width="6.5in"
 height="3.879166666666667in"}
 
+Each BMDS Online analysis is self-contained and includes all the inputs
+and outputs for the executed analysis. No user or personal information
+is captured by BMDS Online.
+
 ### Analyses and URLs
 
-When a new analysis is created, a unique URL is created for the analysis
-().
+When a new analysis is created, a unique URL is created for the analysis.
 
-You can create as many analyses as you want, but ***saving an analysis
-saves only its most recent execution to that unique URL***. If you edit
-the data or add new data or new options, then the resulting analysis
-will overwrite the previous analysis.
-
-***Tip*** To analyze multiple datasets, create a new analysis for each
-dataset rather than overwrite an existing analysis.
-
-[]{#_Ref148619345 .anchor}**Figure 8.** A new BMDS Online analysis has a
+> []{#_Ref148619345 .anchor}**Figure 8.** A new BMDS Online analysis has a
 unique URL.
 
 ![BMDS Online analysis URL
 highlighted](_static/img/image14.png){width="6.5in"
 height="2.2916666666666665in"}
 
+You can create as many analyses as you want, but ***saving an analysis
+saves only its most recent execution to that unique URL***. If you edit
+the data or add new data or new options, then the resulting analysis
+will overwrite the previous analysis.
+
+:::{note} 
+To analyze multiple datasets, create a new analysis for each
+dataset rather than overwrite an existing analysis.
+:::
+
 ## Specifying an Analysis
 
 ### Steps Required to Run the Analysis
 
-BMDS Online tracks the steps required to run an analysis (). In this
+BMDS Online tracks the steps required to run an analysis. In this
 example, for a new analysis, the green checkmarks show that the default
 set of models and options have been selected for the analysis. Red x's
 show that, currently, no dataset has been selected and the analysis has
 not been saved.
 
-[]{#_Ref148619560 .anchor}**Figure 9.** When all checkmarks are green,
+> []{#_Ref148619560 .anchor}**Figure 9.** When all checkmarks are green,
 BMDS Online can run an analysis.
 
 ![BMDS Online analysis steps marked with red and green
@@ -89,12 +89,11 @@ height="1.8367410323709537in"}
 
 ### Specifying the Model(s) and Option(s)
 
-1.  On the Settings tab, specify a name and description for the analysis
-    (). BMDS uses the **Analysis Name** to name the files that are
+1.  On the Settings tab, specify a name and description for the analysis. BMDS uses the **Analysis Name** to name the files that are
     created when users select the Reporting options "data," "report," or
-    "analysis" from the [Actions menu](#actions-menu) .
+    "analysis" from the [Actions menu](#actions-menu).
 
-[]{#_Ref148619621 .anchor}**Figure 10.** Enter a descriptive name and
+> []{#_Ref148619621 .anchor}**Figure 10.** Enter a descriptive name and
 summary for the analysis; they will be included in the report.
 
 ![Red highlight spotlighting the Analysis Name and Description
@@ -102,13 +101,15 @@ fields](_static/img/image16.png){width="3.255601487314086in"
 height="2.27668416447944in"}
 
 2.  Select the model type for your analysis (*i.e.*, are you modeling
-    dichotomous or continuous data?) (). For this example, the
+    dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
 
-**Note:** An analysis can have only a single model type. You cannot mix
+:::{note} 
+An analysis can have only a single model type. You cannot mix
 continuous and dichotomous data in a single analysis.
+:::
 
-[]{#_Ref148619786 .anchor}**Figure 11.** Dichotomous model type is
+> []{#_Ref148619786 .anchor}**Figure 11.** Dichotomous model type is
 selected for this analysis.
 
 ![Model type picklist, with dichotomous
@@ -119,9 +120,9 @@ height="1.4358409886264216in"}
     the default selection of dichotomous maximum-likelihood estimation
     (MLE) models will be used, plus all the Bayesian dichotomous model
     averaging models. To use all the models in a column, check the
-    **Select All** box ().
+    **Select All** box .
 
-[]{#_Ref148619674 .anchor}**Figure 12.** Tick the Select All box to
+> []{#_Ref148619674 .anchor}**Figure 12.** Tick the Select All box to
 select all the models in a column.
 
 ![Two columns highlighted with arrows pointing to the Select All
@@ -133,10 +134,9 @@ height="2.840761154855643in"}
     response (BMR) of 10% extra risk.\
     \
     You can add/delete option sets by clicking the blue plus or red
-    trash can icons, respectively, to the right of the option set panel
-    (Figure *13*).
+    trash can icons, respectively, to the right of the option set panel.
 
-[]{#_Ref148619744 .anchor}**Figure 13.** Select the blue plus icon to
+> []{#_Ref148619744 .anchor}**Figure 13.** Select the blue plus icon to
 add a row for a new option set. Select the red trash can icon to delete
 the row.
 
@@ -144,9 +144,12 @@ the row.
 buttons](_static/img/image19.png){width="6.5in"
 height="1.0784722222222223in"}
 
-***Note:*** To reset the model selection to the BMDS Online defaults,
+:::{note} 
+To reset the model selection to the BMDS Online defaults,
 select the **Reset Selection** button. This function does not reset the
 modeling options (*e.g.*, Risk Type) already specified.
+:::
+
 
 ### Maximum Number of Option Sets
 
@@ -166,9 +169,9 @@ modeling options (*e.g.*, Risk Type) already specified.
 1.  Select a Model Type on the Settings tab ***before*** entering
     datasets.
 
-2.  Select the Data tab ().
+2.  Select the Data tab.
 
-[]{#_Ref148620146 .anchor}**Figure 14.** Select the Data tab to start
+> []{#_Ref148620146 .anchor}**Figure 14.** Select the Data tab to start
 specifying datasets.
 
 ![Red arrow pointing to the Data tab
@@ -176,26 +179,25 @@ link](_static/img/image20.png){width="3.3333333333333335in"
 height="1.5833333333333333in"}
 
 3.  On the Data tab, select the **New** button to add an individual
-    dataset (). For this example workflow, only the dichotomous option
+    dataset. For this example workflow, only the dichotomous option
     is shown for *New dataset* because Dichotomous was chosen as the
     model type on the Settings tab.
 
-[]{#_Ref148620168 .anchor}**Figure 15.** The **New** button creates a
+> []{#_Ref148620168 .anchor}**Figure 15.** The **New** button creates a
 new empty dataset.
 
 ![New button
 highlighted](_static/img/image21.png){width="3.3333333333333335in"
 height="1.9375in"}
 
-> Depending on the model type selected on the Settings tab, BMDS Online
-> will present appropriate selections for a new dataset.
+Depending on the model type selected on the Settings tab, BMDS Online will present appropriate selections for a new dataset.
 
 -   Continuous data:
 
--   Summarized (data measured on a continuous scale and presented as
+    ---   Summarized (data measured on a continuous scale and presented as
     means and standard deviations), or
 
--   Individual (data measured on a continuous scale presented as dose
+    ---   Individual (data measured on a continuous scale presented as dose
     and response data for each test subject)
 
 -   Dichotomous data (*e.g.*, lesion incidence)
@@ -215,9 +217,9 @@ height="1.9375in"}
     and reports.\
     \
     For this example, the incidence of hepatocellular hyperplasia will
-    be modeled with dose units of mg/kg-day, as shown in .
+    be modeled with dose units of mg/kg-day.
 
-[]{#_Ref148620647 .anchor}**Figure 16.** Data tab with empty dataset,
+> []{#_Ref148620647 .anchor}**Figure 16.** Data tab with empty dataset,
 empty graph, and details about the dataset to be analyzed.
 
 ![Data tab with empty dataset and empty
@@ -242,9 +244,9 @@ Manually enter Dose, N, and Incidence data by typing the data into the
 table.
 
 New rows can be added by clicking the blue plus icon; unneeded rows can
-be deleted by clicking the red trash can icon ().
+be deleted by clicking the red trash can icon.
 
-[]{#_Ref148620704 .anchor}**Figure 17.** Select the blue plus icon to
+> []{#_Ref148620704 .anchor}**Figure 17.** Select the blue plus icon to
 add five rows at a time; select the red trash can icon to delete that
 row.
 
@@ -258,9 +260,9 @@ BMDS Online can import datasets by copying and pasting from an Excel or
 HTML formatted source.
 
 1.  Select and copy the cells (numbers only; do not include column
-    titles or header text) ().
+    titles or header text).
 
-[]{#_Ref148620818 .anchor}**Figure 18.** Select and copy the data from
+> []{#_Ref148620818 .anchor}**Figure 18.** Select and copy the data from
 Excel.
 
 ![Data cells selected in
@@ -268,19 +270,18 @@ Excel](_static/img/image24.png){width="3.3333333333333335in"
 height="1.6111111111111112in"}
 
 2.  In BMDS Online, select the aqua Excel icon in the dataset table
-    header (). A *Paste from Excel* window displays.
+    header. A *Paste from Excel* window displays.
 
-> []{#_Ref148620871 .anchor}**Figure 19.** Select the **Paste from
-> Excel** button (right).
+> []{#_Ref148620871 .anchor}**Figure 19.** Select the **Paste from Excel** button (right).
 
 ![Aqua button highlighted for Paste from Excel
 function](_static/img/image25.png){width="2.375in" height="0.9375in"}
 
 3.  Click the mouse inside the *Paste from Excel* window's text box,
-    paste the data, and select the Load icon (). The dataset is then
+    paste the data, and select the Load icon. The dataset is then
     fully entered in BMDS Online.
 
-[]{#_Ref148620904 .anchor}**Figure 20.** After pasting in the data from
+> []{#_Ref148620904 .anchor}**Figure 20.** After pasting in the data from
 Excel, select Load to enter the data into BMDS Online.
 
 ![BMDS Online\'s Paste from Excel window, with Load button
@@ -292,7 +293,7 @@ height="3.7282589676290465in"}
 Select the **Load an example dataset** link to create ready-to-customize
 sample data.
 
-[]{#_Toc185445197 .anchor}**Figure 21.** Sample dichotomous dataset,
+> []{#_Toc185445197 .anchor}**Figure 21.** Sample dichotomous dataset,
 ready for editing.
 
 ![Dichotomous dataset values in data table, with arrow pointing to
@@ -314,7 +315,7 @@ autogenerated name. The user can switch between datasets created during
 the current session by selecting them from the **Select existing**
 picklist.
 
-[]{#_Toc185445198 .anchor}**Figure 22.** Creating multiple datasets in
+> []{#_Toc185445198 .anchor}**Figure 22.** Creating multiple datasets in
 BMDS Online.
 
 ![Picklist showing multiple datasets for
@@ -326,7 +327,7 @@ height="2.4083705161854767in"}
 Select the dataset from the **Select existing** picklist, then select
 the **Delete** button beside the **Dataset name** field.
 
-[]{#_Toc185445199 .anchor}**Figure 23.** Data tab with **Delete** button
+> []{#_Toc185445199 .anchor}**Figure 23.** Data tab with **Delete** button
 highlighted.
 
 ![Data tab with dataset entered and arrow pointing to Delete
@@ -335,21 +336,21 @@ height="3.0922769028871393in"}
 
 ### Document the Dataset
 
-BMDS Online enters a default dataset name as a placeholder but it's a
-good practice to enter a unique name for the dataset. The dataset name
+BMDS Online enters a default dataset name as a placeholder but a
+good practice is to enter a unique name for the dataset. The dataset name
 will be used as the title for the plot.
 
-Specifying the Dose units and Response units above the dataset () will
-enter those units into the plot ().
+Specifying the Dose units and Response units above the dataset  will
+enter those units into the plot.
 
-[]{#_Ref148622188 .anchor}**Figure 24.** Specify the dataset's units
+> []{#_Ref148622188 .anchor}**Figure 24.** Specify the dataset's units
 here...
 
 ![Red boxes highlighting the Dose units and Response units
 fields](_static/img/image30.png){width="5.236459973753281in"
 height="1.2050568678915135in"}
 
-[]{#_Ref148622206 .anchor}**Figure 25.** ...and they provide additional
+> []{#_Ref148622206 .anchor}**Figure 25.** ...and they provide additional
 context for the plot's axes.
 
 ![Dose and Response units values shown as the graph\'s x and y axis
@@ -362,7 +363,7 @@ height="3.2240562117235347in"}
 When the user saves an analysis, BMDS Online displays an error if the
 dataset is missing any values.
 
-[]{#_Toc185445202 .anchor}**Figure 26.** BMDS Online displays an error
+> []{#_Toc185445202 .anchor}**Figure 26.** BMDS Online displays an error
 if there are missing values in a dataset.
 
 ![A blank cell in a dataset is highlighted with arrow pointing to error
@@ -372,17 +373,17 @@ height="2.632379702537183in"}
 ### Dataset Plot
 
 Note that the plot to the right of the dataset table updates as data is
-entered (). The plot provides visual feedback on the entered data to
+entered. The plot provides visual feedback on the entered data to
 draw attention to trends or anomalies that may need correction.
 
-[]{#_Ref148622333 .anchor}**Figure 27.** Dataset and plot.
+> []{#_Ref148622333 .anchor}**Figure 27.** Dataset and plot.
 
 ![Dataset table with loaded data and updated plot to the
 right](_static/img/image33.png){width="6.5in"
 height="2.022222222222222in"}
 
 Hover the cursor over a data point to see additional extrapolations from
-the entered data ().
+the entered data .
 
 []{#_Ref148622416 .anchor}**Figure 28.** Hover the cursor over a data
 point to see extra plot details.
@@ -391,7 +392,7 @@ point to see extra plot details.
 values displayed](_static/img/image34.png){width="2.9583552055993in"
 height="2.6953904199475067in"}
 
-The plot's upper right corner features a line of icons () that help the
+The plot's upper right corner features a line of icons that help the
 user to, from left to right:
 
 -   Download the plot as a PNG image (camera icon)
@@ -403,7 +404,7 @@ user to, from left to right:
 -   Display the Plotly.com website, who are makers of the plotting
     feature (graph icon)
 
-[]{#_Ref148622522 .anchor}**Figure 29.** Plotly accessories.
+> []{#_Ref148622522 .anchor}**Figure 29.** Plotly accessories.
 
 ![Toolbar of plot accessory icons
 ](_static/img/image35.png){width="1.4834623797025372in"
@@ -420,9 +421,9 @@ detailed instructions on the use of these plot controls.
 
 2.  Use the *Enabled* column's checkboxes to select all datasets to
     include in the analysis. On the Settings tab, a green checkmark now
-    appears next to *At least one dataset is selected* ().
+    appears next to *At least one dataset is selected*.
 
-[]{#_Ref156987860 .anchor}**Figure 30.** Enable datasets to satisfy
+> []{#_Ref156987860 .anchor}**Figure 30.** Enable datasets to satisfy
 another analysis requirement.
 
 ![Enabled checkboxes for datasets are highlighted, with arrows pointing
@@ -432,12 +433,11 @@ height="3.3802274715660543in"}
 
 3.  For dichotomous data, BMDS Online automatically selects the Maximum
     multistage degree to be 3. However, you can manually select a range
-    of options from the **Maximum multistage degree** picklist (). For
+    of options from the **Maximum multistage degree** picklist. For
     this example analysis, the default setting is used. For more
-    information, refer to Section 9.2, "Maximum Multistage Degree," on
-    page 69.
-
-[]{#_Ref148628787 .anchor}**Figure 31.** Hover the mouse over the
+    information, refer to [**Maximum Multistage Degree**](./dichotomous.md#maximum-multistage-degree).
+    
+> []{#_Ref148628787 .anchor}**Figure 31.** Hover the mouse over the
 question mark icon for help text on Maximum multistage degree setting.
 
 ![Help text panel displayed beside pointer hovering over question mark
@@ -446,9 +446,9 @@ height="2.057736220472441in"}
 
 4.  Select the **Save Analysis** button to complete all the steps
     required to enable the **Run Analysis** button. Notice that all
-    steps now have a green checkmark next to them ().
+    steps now have a green checkmark next to them.
 
-[]{#_Ref148628855 .anchor}**Figure 32.** Selecting Save Analysis ensures
+> []{#_Ref148628855 .anchor}**Figure 32.** Selecting Save Analysis ensures
 all specifications are in place for an analysis.
 
 ![Save Analysis button highlighted, with all requirements showing green
@@ -457,9 +457,9 @@ height="2.785207786526684in"}
 
 5.  Select the **Run Analysis** button to execute the analysis. A
     running analysis can be stopped by selecting the **Cancel
-    execution** button ().
+    execution** button.
 
-[]{#_Ref148628892 .anchor}**Figure 33.** Select **Cancel execution** to
+> []{#_Ref148628892 .anchor}**Figure 33.** Select **Cancel execution** to
 stop a running analysis.
 
 ![UI showing \"executing\" feedback, with a Cancel execution
@@ -467,7 +467,7 @@ button](_static/img/image39.png){width="4.044642388451444in"
 height="1.9639851268591426in"}
 
 6.  After successful execution, the modeling results are displayed on
-    the Output tab ().
+    the Output tab.
 
 ## Viewing Analysis Results
 
@@ -478,7 +478,7 @@ settings, results, and a plot.
 The large Model Results table is an abbreviated display showing the most
 frequently used and referenced values from a BMD analysis.
 
-[]{#_Ref177725002 .anchor}**Figure 34.** The Output tab is a large
+> []{#_Ref177725002 .anchor}**Figure 34.** The Output tab is a large
 scrolling page showing results for one dataset at a time.
 
 ![Large display of output tab with results table and
@@ -488,7 +488,7 @@ height="2.9243055555555557in"}
 To select a different set of results, select the specific dataset+option
 set combination from the **Select an output** picklist.
 
-[]{#_Toc185445211 .anchor}**Figure 35.** Select the output results to
+> []{#_Toc185445211 .anchor}**Figure 35.** Select the output results to
 display in the Output tab.
 
 ![Picklist showing four output results for
@@ -500,9 +500,9 @@ height="1.5687521872265966in"}
 Numerical results are displayed in a summary table for all models.
 Select the **Show** icon in the *Recommendation and Notes* column header
 to display a full set of model notes and warnings. Select the **Hide**
-icon to hide the model notes ().
+icon to hide the model notes.
 
-[]{#_Ref148629035 .anchor}**Figure 36.** The **Show/Hide** buttons
+> []{#_Ref148629035 .anchor}**Figure 36.** The **Show/Hide** buttons
 toggle display of additional model warnings and messages.
 
 ![Before and after images of Recommendations and Notes column, with
@@ -511,9 +511,9 @@ toggle](_static/img/image42.png){width="2.7200317147856516in"
 height="2.3214709098862643in"}
 
 Hover the cursor over rows within the Model Results table to display
-individual model curves in the plot ().
+individual model curves in the plot.
 
-[]{#_Ref148629097 .anchor}**Figure 37.** Hovering the cursor over a
+> []{#_Ref148629097 .anchor}**Figure 37.** Hovering the cursor over a
 model row displays that model's plot.
 
 ![Cursor hovers over Log-logistic row, with corresponding plot
@@ -522,9 +522,9 @@ height="2.2419870953630796in"}
 
 To investigate an individual model's results, select that model's name
 in the Model column. BMDS will overlay a window showing all the
-numerical and graphical model outputs for that model ().
+numerical and graphical model outputs for that model.
 
-[]{#_Ref148629123 .anchor}**Figure 38.** Select a model's name to
+> []{#_Ref148629123 .anchor}**Figure 38.** Select a model's name to
 display a window showing all results for that model.
 
 ![Pop-up window with model results overlaying the Output
@@ -535,10 +535,10 @@ height="2.427410323709536in"}
 
 For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
-model (the blue row marked **Recommended** in ). The logic criteria used
-to make the recommendations are located on the Logic tab ().
+model (the blue row marked **Recommended**). The logic criteria used
+to make the recommendations are located on the Logic tab.
 
-[]{#_Ref148690854 .anchor}**Figure 39.** The Logic tab contains the
+> []{#_Ref148690854 .anchor}**Figure 39.** The Logic tab contains the
 rules BMDS Online uses to make model recommendations. It is highly
 recommended to leave the settings as-is.
 
@@ -551,9 +551,8 @@ for model selection based on the needs of their analysis or to comport
 with the modeling guidance of their organizations. ***However, it is
 highly recommended that new users leave the logic settings as-is; logic
 settings should only be changed under the guidance of experienced
-modelers.*** For more information, refer to Section 7.0, "Model
-Recommendations and Decision Logic," on page
-[44](./model-recommendation.md#model-recommendations-and-decision-logic)
+modelers.*** For more information, refer to [**Model
+Recommendations and Decision Logic**](./model-recommendation.md#model-recommendations-and-decision-logic).
 
 If any logic setting changes, the default logic settings can be
 reapplied by selecting the **Reset to Default Logic** button.
@@ -561,21 +560,21 @@ reapplied by selecting the **Reset to Default Logic** button.
 ### Selecting the Best Fitting Model
 
 Back on the Output tab, the user can choose the recommended model, or an
-alternative, from the **Selected best-fitting model** picklist ().
+alternative, from the **Selected best-fitting model** picklist.
 
-[]{#_Ref148690882 .anchor}**Figure 40.** The **Selected best-fitting
+> []{#_Ref148690882 .anchor}**Figure 40.** The **Selected best-fitting
 model** picklist, with the Multistage 3 model selected.
 
 ![Selected best-fitting model picklist, with Multistage 3 model
 highlighted](_static/img/image45.png){width="2.6403947944007in"
 height="1.820077646544182in"}
 
-Enter notes on model selection in the **Selection notes** field ().
+Enter notes on model selection in the **Selection notes** field .
 Click the **Save model selection** button to save this documentation
 with the results analysis. This documentation will be included in the
 downloaded Word report.
 
-[]{#_Ref148691110 .anchor}**Figure 41.** Use the Selection notes box to
+> []{#_Ref148691110 .anchor}**Figure 41.** Use the Selection notes box to
 record the reason why a specific model was selected.
 
 ![Selection notes field with
@@ -584,20 +583,20 @@ height="1.0055555555555555in"}
 
 Select the **Save model selection** button to finalize model selection.
 BMDS Online displays the selected model row in green, and any selection
-notes will be displayed in a footnote at the bottom of the table ().
+notes will be displayed in a footnote at the bottom of the table.
 
-[]{#_Ref148691246 .anchor}**Figure 42.** The final output table:
+> []{#_Ref148691246 .anchor}**Figure 42.** The final output table:
 recommended row in blue, user-selected row in green, and footnotes.
 
 ![Output table with selected model row in green with footnotes
 below](_static/img/image47.png){width="6.5in" height="2.5875in"}
 
 Individual model and model averaging results can also be investigated by
-clicking on the desired row in the results table. In , the Model Average
+clicking on the desired row in the results table. In the following figure, the Model Average
 link is selected to display the Model Average results graph. Hover the
 mouse across the curves to investigate results in more detail.
 
-[]{#_Ref148691301 .anchor}**Figure 43.** Selecting the Model Average
+> []{#_Ref148691301 .anchor}**Figure 43.** Selecting the Model Average
 link from the Bayesian Model Results table displays the Model Average
 results window. Hover the cursor over the results curves to display more
 details on each model's result.
@@ -615,14 +614,16 @@ The Share and Actions menus in the top-right corner of the BMDS Online
 application include options for other ways to interact with the
 analysis.
 
-*Tip* BMDS Online analyses are linked to the URL of the *current*
+:::{note} 
+BMDS Online analyses are linked to the URL of the *current*
 session. To get back to that analysis later: email the link to yourself
 or save the link in a Microsoft Word document with a full description of
 the analysis.
+:::
 
 ### Share Menu
 
-[]{#_Toc185445220 .anchor}**Figure 44.** BMDS Online Share menu options.
+> []{#_Toc185445220 .anchor}**Figure 44.** BMDS Online Share menu options.
 
 ![BMDS Online Share menu showing options for read-only or editable
 links](_static/img/image49.png){width="2.236111111111111in"
@@ -653,7 +654,7 @@ height="1.9351673228346458in"}
 
 ### Actions Menu
 
-[]{#_Toc185445221 .anchor}**Figure 45.** BMDS Online Actions menu
+> ]{#_Toc185445221 .anchor}**Figure 45.** BMDS Online Actions menu
 options.
 
 ![Actions menu
@@ -661,8 +662,8 @@ options](_static/img/image50.png){width="2.9238648293963254in"
 height="2.7919083552055994in"}
 
 -   **Load analysis**: Load a previously downloaded analysis (using the
-    **Download analysis** option described below).
-
+    **Download analysis** option described later in this list.
+    
 -   **Extend deletion date**: BMDS Online will store analyses for three
     years after the date of creation. Select **Extend deletion date** to
     extend deletion to three years from the time this button was
@@ -679,7 +680,7 @@ height="2.7919083552055994in"}
 -   **Download report**: Download the analysis results as a Word file.
     Options for the Word report can include only the user-selected
     model, all models, and all models with the BMD Cumulative Data
-    Function (CDF) table (). Note that the Word report contains the
+    Function (CDF) table . Note that the Word report contains the
     analysis URL, and users can access their analyses via the generated
     report.[^1] The name given to the Word file is the user-specified
     Analysis Name.
@@ -693,20 +694,19 @@ height="2.7919083552055994in"}
 
 ### Microsoft Word Report
 
-As described in the previous section, select the Actions menu's
-**Download report** option to display the following panel where the user
+Select the Actions menu's **Download report** option to display the following panel where the user
 can customize what will appear in the report.
 
-The **Long dataset format** option is recommended for most users.
-Selecting the options **Include all models** and **Include BMD CDF
-Table** make the report considerably longer.
-
-[]{#_Ref157270082 .anchor}**Figure 46.** The Actions **Download report**
+> []{#_Ref157270082 .anchor}**Figure 46.** The Actions **Download report**
 option displays items the user can include in the Word report.
 
 ![Download report options panel with first option
 selected](_static/img/image51.png){width="6.5in"
 height="2.545138888888889in"}
+
+The **Long dataset format** option is recommended for most users.
+Selecting the options **Include all models** and **Include BMD CDF
+Table** make the report considerably longer.
 
 ## Citing BMDS Results
 
