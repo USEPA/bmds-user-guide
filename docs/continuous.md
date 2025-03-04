@@ -7,14 +7,13 @@ integers, for example), measuring things that can vary continuously
 The three key features of such measures that need to be specified to
 estimate a BMD are:
 
-1.  What direction of change indicates a toxic response (i.e., adverse
-    direction; see Section 8.3.2 on page [50](#adverse-direction)),
+1.  What direction of change indicates a toxic response (see [**Adverse Direction**](#adverse-direction)),
 
 2.  Definition of the BMD relative to the change in the response (see
-    Section 8.4.1 on page [51](#defining-the-bmd)), and
+    [**Benchmark Response**](#defining-the-bmd)), and
 
-3.  How the responses are distributed (see Section 8.4.2 on page
-    [52](#distribution-and-variance)).
+3.  How the responses are distributed (see
+    [**Distribution and Variance**](#distribution-and-variance)).
 
 With respect to the distribution, one needs to consider the type of
 distribution and the nature of the variability around the center of the
@@ -45,7 +44,7 @@ models](_static/img/image67.png){width="4.61080271216098in"
 height="1.9748622047244095in"}
 
 Also available for all continuous models are options for Hybrid-Extra
-Risk and Hybrid-Added Risk (see Table 5 on page 55), and the Lognormal
+Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
 response distribution assumption (previously only available for
 Exponential models).
 
@@ -65,8 +64,7 @@ A BMDS analysis can have the following number of continuous datasets:
 
 -   **pybmds:** No limit.
 
-For details on inserting or importing datasets, refer to "Specifying
-Dataset," on page [16](./bmds-online.md#specifying-datasets).
+For details on inserting or importing datasets, refer to [**Specifying Datasets**](./bmds-online.md#specifying-datasets).
 
 For summarized continuous response data, the default column headers are
 *Dose*, *N*, *Mean* and *Std. Dev*.
@@ -162,7 +160,7 @@ bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of
     choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details
-    on these methods, refer to Table 5 on page [55](#bmr-table).
+    on these methods, refer to the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown.
 
 []{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
 selections.
@@ -172,8 +170,7 @@ displayed](_static/img/image73.png){width="1.6668110236220472in"
 height="2.5002165354330708in"}
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
-    selected for the BMR Type. Table 5 summarizes the options related to
-    BMR Type and BMRF.
+    selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown summarizes the options related to BMR Type and BMRF.
 
 -   **Tail Probability** marks the cut-off for defining adversity and
     applies only to Hybrid-Extra Risk BMR Type, not the background rate.
@@ -191,6 +188,88 @@ height="2.5002165354330708in"}
     the BMDL is the one-sided 95% lower bound on the BMD; the BMDU is
     the one-sided 95% upper bound on the BMD. The interval from the BMDL
     to the BMDU would, in that case, be a 90% confidence interval.
+    
+
+#### Options related to continuous BMR type and BMRF
+In the BMR descriptions below, $m(x)$ is the median at dose x. Specifically, $m(BMD)$ is the
+median at dose=BMD, so BMD is the solution to the equations shown.
+$\sigma(0)$ is the standard deviation for the control group (d=0) and
+$\sigma_{L}(0)$ is the log-scale standard deviation for the control
+group, used when the responses are assumed to be Lognormally distributed.
+
+::::{tab-set}
+
+:::{tab-item} Relative Deviation
+
+**BMR Type name in BMDS:** Rel.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the background median
+
+**Mathematical Definition**<br><br>
+$\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
+
+**BMRF Notes:** <br>BMRF is the specified change Default value = 0.1 [10% change in median]
+:::
+
+:::{tab-item} Absolute Deviation
+
+**BMR Type name in BMDS:** Abs.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response
+
+**Mathematical Definition**<br><br> $|m(BMD) - m(0)|\ = \ BMRF$
+
+**BMRF Notes:** <br>BMRF is the specified change, there is no default because it is very endpoint specific
+:::
+
+:::{tab-item} Standard Deviation
+
+**BMR Type name in BMDS:** Std.Dev.
+
+**The BMD is the dose yielding...** the specified change in median response relative to the control group standard deviation
+
+**Mathematical Definition** <br><br>Normal responses: $\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BRMF$ <br><br>
+Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
+
+**BMRF Notes:** <br>BMRF is the multiple of the standard deviation <br> Default value = 1 \[change in median (or log-median) equal to 1 standard deviation (or log-scale standard deviation)\]
+:::
+
+:::{tab-item} Point
+
+**BMR Type name in BMDS:** Point
+
+**The BMD is the dose yielding...** a median equal to the specified point value
+
+**Mathematical Definition** <br><br>$m(BMD)=BMRF$
+
+**BMRF Notes:** <br>BMRF is the specified point value
+:::
+
+:::{tab-item} Hybrid - Extra Risk
+
+**BMR Type name in BMDS:** Hybrid - Extra Risk
+
+**The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+
+:::{tab-item} Hybrid - Added Risk
+
+**BMR Type name in BMDS:** Hybrid - Added Risk
+
+**The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
+
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
+where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
+
+**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+:::
+
+::::
 
 ### Distribution and Variance
 
@@ -213,7 +292,7 @@ In total, three combinations are allowed:
 
 1.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
-    (see Section 8.5.2) with two parameters (α and ρ) relating the dose
+    (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
     parameters are estimated simultaneously with the parameters of the
     dose-response model.[^1]
@@ -239,17 +318,16 @@ note the following:
 -   Regardless of the distribution assumed, the dose-response model
     under consideration is the representation of the change in the
     median of the distribution of responses as a function of dose. If we
-    denote the median at dose d by m(d), then it is always true for BMDS
-    that m(d) = f(d), where f(d) is the dose-response function under
-    consideration (see list of possible functions in Table 7 on page
-    [63](#_Ref549302492)).
+    denote the median at dose d by $m(d)$, then it is always true for BMDS
+    that $m(d) = f(d)$, where $f(d)$ is the dose-response function under
+    consideration (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
 
 -   If the assumed data distribution is Normal, then it is also true
-    that the mean at dose d, μ(d), is equal to the median. Thus, it is
+    that the mean at dose d, $μ(d)$, is equal to the median. Thus, it is
     common under the Normal assumption to describe the dose-response
-    function as a model of the mean response, and to write μ(d) = f(d),
-    where f(d) is again one of the dose-response functions described in
-    Table 7 on page [63](#_Ref549302492).
+    function as a model of the mean response, and to write $μ(d) = f(d)$,
+    where $f(d)$ is again one of the dose-response functions described in
+    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters). 
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -275,13 +353,13 @@ log-scale variance, corresponding to an assumption of a constant CV.
 The exact MLE solution cannot be obtained when the data are assumed to
 be Lognormally distributed and the data are presented in terms of
 group-specific means and standard deviations. In that case, the results
-are *approximate* MLE solutions. The means (m~L~) and standard
-deviations (s~L~) of the log-transformed data are estimated as follows:
+are *approximate* MLE solutions. The means ($m_{L}$) and standard
+deviations ($s_{L}$) of the log-transformed data are estimated as follows:
 
-estimated log-scale sample mean (m~L~):
+estimated log-scale sample mean ($m_{L}$):
 $m_{L} = \ln{(m) - \frac{s_{L}^{2}}{2}}$
 
-estimated log-scale sample standard deviation (s~L~):
+estimated log-scale sample standard deviation ($s_{L}$):
 $s_{L} = \sqrt{(\ln\left\lbrack 1 + \frac{s^{2}}{m^{2}} \right\rbrack)}$
 
 where m and s are the sample mean and sample standard deviation,
@@ -307,8 +385,10 @@ following procedure:
 
 #### Log-transformed Responses are NOT Recommended
 
+:::{warning}
 ***Using log-transformed responses in the analysis is not
 recommended.***
+:::
 
 If the user chooses to log-transform the data prior to analysis, then
 the interpretation of the BMD and BMDL estimates would have to be
@@ -339,167 +419,6 @@ select the Lognormal distribution if the data are assumed to be
 lognormally distributed.
 
 
-(bmr-table)=
-```{csv-table} Options related to Continuous BMR Type and BMRF.
-:header: >
-: "Analysis File, Main Tab Option Name", "Verbal Definition: The BMD is the dose yielding...", "Mathematical Definition", "BMRF Notes"
-:widths: 20, 30, 30, 20
-
-Rel. Dev.,*Relative Deviation:* <br>the specified change in median response relative to the background median, $$\frac{|m(BMD)\ –\ m(0)|}{m(0)}\ = \ BMRF$$,BMRF is the specified change Default value = 0.1 [10% change in median]
-```
-
-:::{tip}
-:name: a-tip-reference
-TODO - continue here ...
-:::
-
-+------------+---------------+-------------------------+-------------+
-| Analysis   | Verbal        | Mathematical Definition | BMRF Notes  |
-| File, Main | Definition:   |                         |             |
-| Tab Option | The BMD is    |                         |             |
-| Name       | the dose      |                         |             |
-|            | yielding ...  |                         |             |
-+============+===============+=========================+=============+
-| Rel. Dev.  | *Relative     | $$\frac{|m(BMD)\ –\ m(  | BMRF is the |
-|            | Deviation*:   | 0)|}{m(0)}\  = \ BMRF$$ | specified   |
-|            |               |                         | change      |
-|            | ... the       |                         |             |
-|            | specified     |                         | Default     |
-|            | change in     |                         | value = 0.1 |
-|            | median        |                         | \[10%       |
-|            | response      |                         | change in   |
-|            | relative to   |                         | median\]    |
-|            | the           |                         |             |
-|            | background    |                         |             |
-|            | median        |                         |             |
-+------------+---------------+-------------------------+-------------+
-| Abs. Dev.  | *Absolute     | $$|m(BMD)               | BMRF is the |
-|            | Deviation*:   | \ –\ m(0)|\  = \ BMRF$$ | specified   |
-|            |               |                         | change      |
-|            | ... the       |                         |             |
-|            | specified     |                         | There is no |
-|            | change in     |                         | default     |
-|            | median        |                         | because it  |
-|            | response      |                         | is very     |
-|            |               |                         | endpoint    |
-|            |               |                         | specific    |
-+------------+---------------+-------------------------+-------------+
-| Point      | *Fixed        | $$m(BMD)\  = \ BMRF$$   | BMRF is the |
-|            | Value*:       |                         | specified   |
-|            |               |                         | point value |
-|            | ... a median  |                         |             |
-|            | equal to the  |                         | There is no |
-|            | specified     |                         | default     |
-|            | point value   |                         | because it  |
-|            |               |                         | is very     |
-|            |               |                         | endpoint    |
-|            |               |                         | specific    |
-+------------+---------------+-------------------------+-------------+
-| Std. Dev.  | *Standard     | Normal Responses:       | BMRF is the |
-|            | Deviation*:   |                         | multiple of |
-|            |               | $$\f                    | the         |
-|            | ... the       | rac{|m(BMD)\ –\ m(0)|}{ | standard    |
-|            | specified     | \sigma(0)}\  = \ BMRF$$ | deviation   |
-|            | change in     |                         |             |
-|            | median        | Lognormal Responses:    | Default     |
-|            | relative to   |                         | value = 1   |
-|            | the control   | $$\frac{|ln(m(BM        | \[change in |
-|            | standard      | D))\ –\ ln(m(0))|}{\sig | median (or  |
-|            | deviation     | ma_{L}(0)}\  = \ BMRF$$ | log-median) |
-|            |               |                         | equal to 1  |
-|            |               |                         | standard    |
-|            |               |                         | deviation   |
-|            |               |                         | (or         |
-|            |               |                         | log-scale   |
-|            |               |                         | standard    |
-|            |               |                         | d           |
-|            |               |                         | eviation)\] |
-+------------+---------------+-------------------------+-------------+
-| Hy         | *Increased    | If high responses are   | BMRF is the |
-| brid-Extra | Extra Risk*:  | adverse:                | extra risk. |
-| Risk       |               |                         | (Default    |
-|            | ... the       | $$BMRF = \ \            | 0.5)        |
-|            | specified     | frac{\Pr\left( X > X_{0 |             |
-|            | extra risk,   | } \middle| BMD \right)  | This option |
-|            | defined by    | - \Pr\left( X > X_{0} \ | also        |
-|            | the estimated | middle| 0 \right)}{1\   | requires    |
-|            | distribution  | - {\ Pr}\left( X > X_{0 | specifying  |
-|            | and           | } \middle| 0 \right)}$$ | a tail      |
-|            | background    |                         | p           |
-|            | rate          | If low responses are    | robability, |
-|            |               | adverse:                | which is    |
-|            |               |                         | the         |
-|            |               | $$BMRF\  = \            | probability |
-|            |               | frac{\Pr\left( X < X_{0 | of extreme  |
-|            |               | } \middle| BMD \right)  | (adverse)   |
-|            |               | - \Pr\left( X < X_{0} \ | response at |
-|            |               | middle| 0 \right)}{1\   | dose=0.     |
-|            |               | - {\ Pr}\left( X < X_{0 |             |
-|            |               | } \middle| 0 \right)}$$ |             |
-|            |               |                         |             |
-|            |               | where $X_{0}$ is a      |             |
-|            |               | response value and      |             |
-|            |               | $\Pr\left( X < X_       |             |
-|            |               | {0} \middle| d \right)$ |             |
-|            |               | is the probability that |             |
-|            |               | the response, $X$, is   |             |
-|            |               | less than $X_{0}$ at    |             |
-|            |               | dose $d$. For d=0, the  |             |
-|            |               | latter equals the       |             |
-|            |               | user-specified "tail    |             |
-|            |               | probability" and        |             |
-|            |               | $X_{0}$ is then a       |             |
-|            |               | function of that tail   |             |
-|            |               | probability and the     |             |
-|            |               | estimated control-group |             |
-|            |               | response-distribution.  |             |
-+------------+---------------+-------------------------+-------------+
-| Hy         | *Increased    | If high responses are   | BMRF is the |
-| brid-Added | Added Risk:*  | adverse:                | added risk. |
-| Risk       |               |                         | (Default    |
-|            | ... the       | $$BMRF = \              | 0.5)        |
-|            | specified     | Pr\left( X > X_{0} \mid |             |
-|            | added risk,   | dle| BMD \right) - Pr(X | This option |
-|            | defined by    |  > X_{0}|0)\ \ \ \ \ $$ | also        |
-|            | the estimated |                         | requires    |
-|            | distribution  | If low responses are    | specifying  |
-|            | and           | adverse:                | a tail      |
-|            | background    |                         | p           |
-|            | rate          | $$BMRF = \              | robability, |
-|            |               | Pr\left( X < X_{0} \mid | which is    |
-|            |               | dle| BMD \right) - Pr(X | the         |
-|            |               |  < X_{0}|0)\ \ \ \ \ $$ | probability |
-|            |               |                         | of extreme  |
-|            |               | where $X_{0}$ is a      | (adverse)   |
-|            |               | response value and      | response at |
-|            |               | $\Pr\left( X < X_       | dose=0.     |
-|            |               | {0} \middle| d \right)$ |             |
-|            |               | is the probability that |             |
-|            |               | the response, $X$, is   |             |
-|            |               | less than $X_{0}$ at    |             |
-|            |               | dose $d$. For d=0, the  |             |
-|            |               | latter equals the       |             |
-|            |               | user-specified "tail    |             |
-|            |               | probability" and        |             |
-|            |               | $X_{0}$ is then a       |             |
-|            |               | function of that tail   |             |
-|            |               | probability and the     |             |
-|            |               | estimated control-group |             |
-|            |               | response-distribution.  |             |
-+------------+---------------+-------------------------+-------------+
-
-: Options related to Continuous BMR Type and BMRF: Relative Deviation,
-Absolute Devation, Point (Fixed Value), Standard Deviation, and Hybrid
-Columns include a verbal definition of each option, a mathematical
-definitioin, and BMRF notes.
-
-**Notes:** m(x) is the median at dose x. Specifically, m(BMD) is the
-median at dose=BMD, so BMD is the solution to the equations shown.
-$\sigma(0)$ is the standard deviation for the control group (d=0) and
-$\sigma_{L}(0)$ is the log-scale standard deviation for the control
-group, used when the responses are assumed to be Lognormally
-distributed.
-
 ## Specific Continuous Results
 
 ### Goodness of Fit Table
@@ -509,7 +428,7 @@ the observed (or calculated) data that were used as input, one row for
 each dose group. Generally, one desires to have the model predictions
 match the input data as well as possible.
 
-Note that in the Goodness of Fit tables shown in and :
+Note that in the Goodness of Fit tables shown in [**Figure 71**](paragraph-target2) and [**Figure 72**](paragraph-target3):
 
 -   Sample Mean = the sample mean for both Normally and Lognormally
     distributed data.
@@ -518,8 +437,7 @@ Note that in the Goodness of Fit tables shown in and :
     data. In the case of Lognormally distributed responses, the median
     is calculated as $exp(z_{L})$, where $z_{L}$ is the log-scale mean,
     estimated if need be for summarized response data as shown in
-    Section 8.4.2, "Distribution and Variance," on page
-    [52](#distribution-and-variance).
+    [**Distribution and Variance**](#distribution-and-variance).
 
 -   Model Fitted Mean/Median = model-predicted median, which equals the
     mean in the case of Normally distributed data.
@@ -533,20 +451,21 @@ Note that in the Goodness of Fit tables shown in and :
     computed from the observed data. In the case of Lognormally
     distributed data, this equals $exp(s_{L})$, where $s_{L}$ is the
     log-scale standard deviation, estimated if need be for summarized
-    response data as shown in Section 8.4.2, "Distribution and
-    Variance," on page [52](#distribution-and-variance).
+    response data as shown in [**Distribution and Variance**](#distribution-and-variance).
 
 -   Model Fitted \[G\]SD = the standard deviation (or geometric standard
     deviation, in the case of Lognormally distributed data) estimated by
     the model.
 
--   Scaled Residual = For Normal responses, the scaled residual equals\
+-   Scaled Residual = For Normal responses, the scaled residual equals:
+
     $$(Sample\ Mean\  - \ Model\ Fitted\ Mean)/(Model\ Fitted\ SD/\sqrt{N_{i}})$$
 
-    whereas for Lognormal responses, the scaled residual equals
+    Whereas, for Lognormal responses, the scaled residual equals:
 
     $$(ln(Sample\ Median)\  - \ ln(Model\ Fitted\ Median))/(ln(Model\ Fitted\ GSD)/\sqrt{N_{i}})$$
 
+(paragraph-target2)=
 []{#_Ref184734400 .anchor}**Figure 71.** Goodness of Fit table headings,
 with Normal assumption.
 
@@ -554,6 +473,7 @@ with Normal assumption.
 headers](_static/img/image75.png){width="6.499068241469816in"
 height="0.5797965879265092in"}
 
+(paragraph-target3)=
 []{#_Ref184734412 .anchor}**Figure 72.** Goodness of Fit table headings,
 with Lognormal assumption. Note the column header
 similarities/differences between the two tables.
@@ -596,65 +516,49 @@ height="1.9974934383202099in"}
 The number of parameters for each model excludes parameters that have
 values on one of the bounds set for their estimation (either bounds
 specified by the user or those inherent constraints associated with the
-model; see Table 7 on page [63](#_Ref549302492)).
+model; see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
 
-***Note*** The likelihood is maximized given bounds on parameters. As a
-result, it is technically not guaranteed to be the universal MLE, but
-rather a *bounded* MLE.
+:::{important} The likelihood is maximized given bounds on parameters.
+As a result, it is technically not guaranteed to be the universal MLE, but
+rather a bounded MLE.
+:::
 
 The five log-likelihood models can be used for tests of hypotheses,
 including tests of fit, that are asymptotically Chi-square. Each of
 these log-likelihood values corresponds to a model the user may consider
 in the analysis of the data. The five models are summarized in the
-following table.
+following dropdown.
 
-[]{#_Toc47700589 .anchor}Table 6. *Likelihood values and models for
-continuous endpoints.*
+#### Likelihood Values and Models for Continuous Endpoints
 
-+------------------------------------+---------------------------------+
-| Model                              | Description                     |
-+====================================+=================================+
-| A1: Full Constant Variance Model   | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-|                                    |                                 |
-|                                    | $$                              |
-|                                    | {Var\{ e}_{ij}\} = \sigma^{2}$$ |
-+------------------------------------+---------------------------------+
-| A2: Fullest Model                  | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-|                                    |                                 |
-|                                    | $${Var\{                        |
-|                                    |  e}_{ij}\} = {\sigma_{i}}^{2}$$ |
-+------------------------------------+---------------------------------+
-| A3: Full Model with variance       | $Y_{ij} = \mu_{i} + e_{ij}$,    |
-| structure specified by the user    |                                 |
-|                                    | $${Var\{ e}_{ij}\} = \          |
-|                                    | alpha \times {\mu_{i}}^{\rho}$$ |
-+------------------------------------+---------------------------------+
-| Fitted Model                       | The user-specified model        |
-+------------------------------------+---------------------------------+
-| R: Reduced Model                   | $Y_{i} = \mu + e_{i}$,          |
-|                                    |                                 |
-|                                    | $                               |
-|                                    | ${Var\{ e}_{i}\} = \sigma^{2}$$ |
-+------------------------------------+---------------------------------+
+::::{tab-set}
 
-: Likelihood values and modelsTable describing five model likelihood
-values and the model descriptions as formulae
+:::{tab-item} Model A1 - Full Constant Variance Model
+ **Model A1** estimates separate and independent means for the observed dose group (it is full or saturated in that respect) but posits a constant variance over those groups
 
--   **Model A1** estimates separate and independent means for the
-    observed dose groups (it is full or saturated in that respect) but
-    posits a constant variance over those groups.
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{ e}_{ij}\} = \sigma^{2}$
+:::
 
--   **Model A2** is the fullest model in that it estimates separate and
-    independent means for the observed dose groups (as in Model A1) and
-    it also estimates separate and independent variances for those
-    groups. There is no assumed functional relationship among the means
-    or among the variances across dose groups. This model is often
-    referred to as the "saturated" model (it has as many mean and
+:::{tab-item} Model A2 - Fullest Model
+**Model A2** is the fullest model in that it estimates separate and
+independent means for the observed dose groups (as in Model A1) and
+ it also estimates separate and independent variances for those
+ groups. There is no assumed functional relationship among the means
+or among the variances across dose groups. This model is often
+referred to as the "saturated" model (it has as many mean and
     variance parameters as there are dose groups). The log-likelihood
     obtained for this model is the maximum attainable, for the data
     under consideration.
 
--   **Model A3** is similar to model A2 and may only differ with respect
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{e}_{ij}\} = {\sigma_{i}}^{2}$
+:::
+
+:::{tab-item} Model A3 - Full Model with Variance Structure Specified by User
+ **Model A3** is similar to model A2 and may only differ with respect
     to its variance parameters. Model A2 estimates separate and
     independent means for the observed dose groups (like A1). If the
     user specifies a constant variance for the fitted model, then model
@@ -662,15 +566,35 @@ values and the model descriptions as formulae
     the user assumes a non-constant variance for the fitted model, then
     Model A3 will also assume the same functional form for the variance.
 
--   The **fitted model** is the user-specified model (*e.g.*, power or
+Description: <br>
+$Y_{ij} = \mu_{i} + e_{ij}$ <br>
+${Var\{ e}_{ij}\} = \alpha \times {\mu_{i}}^{\rho}$
+:::
+
+:::{tab-item} Fitted Model
+ The **fitted model** is the user-specified model (*e.g.*, power or
     polynomial, among others). A user may have reason to believe that a
     certain model may describe the data well, and thus uses it to
     calculate the BMD and BMDL.
 
--   The **reduced model** (R) is the model that implies no difference in
+Description: <br>
+The user-specified model
+:::
+
+:::{tab-item} Model R - Reduced Model
+ The **reduced model** (R) is the model that implies no difference in
     mean or variance over the dose levels. In other words, it posits a
     constant mean response level with the same variance around that mean
     at every dose level.
+
+Description: <br>
+$Y_{i} = \mu + e_{i}$ <br>
+${Var\{ e}_{i}\} = \sigma^{2}$
+:::
+
+::::
+
+:::::
 
 ### Tests of Mean and Variance Fits
 
@@ -703,8 +627,9 @@ example, consider that the linear model is a "simpler" or "nested" model
 relative to the power model because the linear model has the power
 parameter restricted to be equal to 1.
 
-***Note*** The model with a higher number of parameters is always in the
+:::{note} The model with a higher number of parameters is always in the
 denominator of this ratio.
+:::
 
 Suppose that $L(X)$ represents the likelihood of model X. Now, using the
 theory, $- 2 \times ln\{\frac{L(A)}{L(B)}\}$ approaches a Chi-square
@@ -730,22 +655,22 @@ would be a Chi-square with 8 - 5 = 3 degrees of freedom.
 In the A vs B example, what is exactly being tested? In terms of
 hypotheses, it would be:
 
-H~0~: A models the data as well as B
+H{sub}`0`: A models the data as well as B
 
-H~1~: B models the data better than A
+H{sub}`1`: B models the data better than A
 
 Keeping these tests in mind, suppose
 $2 \times \log\{ L(B)\}\  - \ 2 \times \log\{ L(A)\}\  = \ 4.89$ based
 on 3 degrees of freedom. Also, suppose the rejection criteria is a
 Chi-square probability of less than 0.05. Looking on a Chi-square table,
-4.89 has a p-value somewhere between 0.10 and 0.25. In this case, H~0~
+4.89 has a p-value somewhere between 0.10 and 0.25. In this case, H{sub}`0`
 would not be rejected, and it would seem to be appropriate to model the
 data using Model A (*i.e.*, the simpler model A models the data as well
 as the more complex model B). BMDS automatically does the table look-up
 for the user and provides the p-value associated with the calculated
 log-likelihood ratio having degrees of freedom as described above.
 
-The table provides four default tests for any of the continuous models.
+The The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
 
 **Test 1 (A2 vs R): Tests the null hypothesis that responses and
 variances do not differ among dose levels. If this test fails to reject
@@ -862,129 +787,216 @@ consideration of more details than do those for dichotomous endpoints in
 similar designs. This section presents the mathematical and statistical
 details that determine how estimation is accomplished in BMDS.
 
-### Continuous Dose-Response Models & Parameters
+### Continuous Dose-Response Models and Parameters
 
-The definitions of the continuous models are fully specified in the
-following table. Note that $m(dose)$ is the median response for the dose
+The definitions of the continuous models are fully specified below. Note that $m(dose)$ is the median response for the dose
 level specified.
 
-[]{#_Ref549302492 .anchor}Table 7. *The individual continuous models and
-their respective parameters.*
+::::{tab-set}
 
-+-------------------+--------------+-----------------------------------+
-| Model             | Parameters   | Notes                             |
-+===================+==============+===================================+
-| Linear and        | $g$ =        | **Parameter Constraints: none**   |
-| Polynomial models | control      |                                   |
-|                   | response     | **User parameter restriction      |
-| $$m(do            | (intercept)  | options: can restrict the value   |
-| se) = g\  + \ \be |              | of the polynomial coefficients.** |
-| ta_{1} \times dos | $\b          | Restricting them to be either     |
-| e + \beta_{2} \ti | eta_{0}\ldot | non-positive or non-negative      |
-| mes dose^{2} + \l | s\beta_{n}$: | guarantees that the resulting     |
-| dots + \beta_{n}  | polynomial   | function will be strictly         |
-| \times dose^{n}$$ | coefficients | decreasing, strictly increasing,  |
-|                   |              | or perfectly flat (when all the   |
-| $n\ $is the       |              | coefficients are zero). If the    |
-| degree of the     |              | coefficients are unrestricted     |
-| polynomial,       |              | (*i.e.*, an unrestricted form of  |
-| specified by user |              | the model is run), more           |
-| and must be a     |              | complicated shapes are possible,  |
-| positive integer  |              | and, particularly as the degree   |
-| (maximum value =  |              | of the polynomial approaches the  |
-| 8)                |              | number of dose groups minus one,  |
-|                   |              | the polynomial will often be      |
-|                   |              | quite wavy.                       |
-+-------------------+--------------+-----------------------------------+
-| Linear            | $g$ =        | **Parameter Constraints:** none   |
-|                   | control      |                                   |
-| $$m(dos           | response     | **User parameter restriction      |
-| e) = g\  + \ \bet | (intercept)  | options:** none                   |
-| a\  \times dose$$ |              |                                   |
-|                   | $\beta$ =    |                                   |
-|                   | slope        |                                   |
-+-------------------+--------------+-----------------------------------+
-| Power             | $g$ =        | **Parameter Constraints:** 0      |
-|                   | control      | [\<]{.underline} $n$              |
-| $$m               | response     | [\<]{.underline} 18               |
-| (dose) = g + v \t | (intercept)  |                                   |
-| imes (dose)^{n}$$ |              | **User parameter restriction      |
-|                   | $v$ = slope  | options:** $n$ may be further     |
-|                   |              | restricted to values              |
-|                   | $n$= power   | [\>]{.underline} 1. Note: If $n$  |
-|                   |              | \< 1, then the slope of the       |
-|                   |              | dose-response curve becomes       |
-|                   |              | infinite at the control dose.     |
-|                   |              | This is biologically unrealistic  |
-|                   |              | and can lead to numerical         |
-|                   |              | problems when computing           |
-|                   |              | confidence limits, so several     |
-|                   |              | authors have recommended          |
-|                   |              | restricting $n$ ≥ 1.              |
-+-------------------+--------------+-----------------------------------+
-| Hill^1^           | $g$ =        | **Parameter Constraints:**        |
-|                   | control      |                                   |
-| $m(dose) =        | response     | 0 [\<]{.underline} $k$            |
-| g + \frac{v \time | (intercept)  | [\<]{.underline} 5                |
-| s {dose}^{n}}{k^{ |              |                                   |
-| n} + {dose}^{n}}$ | $k$ = dose   | 0 [\<]{.underline} $n$            |
-|                   | with         | [\<]{.underline} 18               |
-|                   | half-maximal |                                   |
-|                   | change       | **User parameter restriction      |
-|                   | (normalized) | options:** $n$ **may b**e further |
-|                   |              | restricted to values              |
-|                   | $n$= power   | [\>]{.underline} 1.               |
-|                   |              |                                   |
-|                   | $v$= maximum |                                   |
-|                   | change       |                                   |
-+-------------------+--------------+-----------------------------------+
-| Exponential^1,2^  | $a$ =        | **Parameter Constraints:**        |
-|                   | control      |                                   |
-| $$Exp2:\ m(dose)  | response     | $a$ \> 0                          |
-| = a \times e^{\pm | (intercept)  |                                   |
-|  b \times dose}$$ |              | 0 \< $b$ \< 100                   |
-|                   | $b$ = slope  |                                   |
-| $$Exp3            |              | $c$ \> 1 for responses increasing |
-| :\ m(dose) = a \t | $c$=         | with dose                         |
-| imes e^{\pm (b \t | asymptote    |                                   |
-| imes dose)^{d}}$$ | term         | 0 \< $c$ \< 1 for responses       |
-|                   |              | decreasing with dose              |
-| $$                | $d$= power   |                                   |
-| Exp4:\ m(dose) =  |              | 1 [\<]{.underline} $d$            |
-| a \times (c - (c  |              | [\<]{.underline} 18               |
-| - 1) \times e^{-  |              |                                   |
-| b \times dose})$$ |              | **Note:** The sign in "$\pm b"$   |
-|                   |              | (Exp2 and Exp3 models) will       |
-| $$Exp5:\          |              | change depending on the           |
-|  m(dose) = a \tim |              | user-designated or auto-detected  |
-| es (c - (c - 1) \ |              | direction of change: + for        |
-| times e^{- (b \ti |              | responses increasing with dose, - |
-| mes dose)^{d}})$$ |              | for responses decreasing with     |
-|                   |              | dose.                             |
-+-------------------+--------------+-----------------------------------+
+:::{tab-item} Linear and Polynomial
 
-: The individual continuous models used and their respective
-parametersTable showing each continuous model name, formula, parameters,
-and notes.
+**Model Form**
 
-^1^ BMDL estimates from models that have an asymptote parameter
-(including the Hill model) can be unstable when a wide range of
-parameter values can give nearly identical likelihoods. One indicator of
-that problem is that the estimated asymptotic response is far outside
-the range of the observed responses. The user should consult a
-statistician if this behavior is seen or suspected.
+The Linear model is a form of the polynomial model.
 
-^2^ RIVM (National Institute for Public Health and the Environment
-(Netherlands)). ([RIVM,
-2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
-PROAST.
+$$m(dose) = g\  + \ \beta_{1} \times dose + \beta_{2} \times dose^{2} + \ldots + \beta_{n} \times dose^{n}$$
 
-Note that the upper bounds for the power parameters in the Power, Hill,
-and Exponential models have been set to 18. That value was selected
+$n\ $is the degree of the polynomial, specified by user and must be a
+positive integer (maximum value = 8)
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$\beta_{0}\ldots\beta_{n}$: polynomial coefficients
+
+**Parameter Constraints**
+
+None.
+
+**User Parameter Restriction Options**
+
+Restrict the value of the polynomial coefficients
+to be either non-positive or non-negative guarantees that the resulting
+function will be strictly decreasing, strictly increasing, or perfectly
+flat (when all the coefficients are zero). If the coefficients are
+unrestricted (*i.e.*, an unrestricted form of the model is run), then
+more complicated shapes are possible, and, particularly as the degree of
+the polynomial approaches the number of dose groups minus one, the
+polynomial will often be quite wavy.
+
+:::
+
+:::{tab-item} Linear
+
+**Model Form**
+
+The Linear model is a form of the polynomial model.
+
+$$m(dose) = g\  + \ \beta\  \times dose$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+None.
+
+**User Parameter Restriction Options**
+
+None.
+
+:::
+
+:::{tab-item} Power
+
+**Model Form**
+
+$$m(dose) = g + v \times (dose)^{n}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$v$ = slope
+
+$n$= power
+
+**Parameter Constraints**
+
+0 ≤ $n$ ≤ 18
+
+**User Parameter Restriction Options**
+
+$n$ may be further restricted to values ≥ 1.
+
+**Notes**
+
+If $n$ < 1, then the slope of the dose-response curve becomes infinite
+at the control dose. This is biologically unrealistic and can lead to
+numerical problems when computing confidence limits, so several authors
+have recommended restricting $n$ ≥ 1.
+
+Note that the upper bounds for the power parameter in the Power model have been set to 18. That value was selected
 because it represents a very high degree of curvature that should
 accommodate almost every dataset, even ones with very (or absolutely)
 flat dose-response at low doses followed by a very steep dose-response
 at higher doses.
+
+:::
+
+:::{tab-item} Hill
+
+**Model Form**
+
+$$m(dose) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$k$ = dose with half-maximal change (normalized)
+
+$n$= power
+
+$v$= maximum change
+
+**Parameter Constraints**
+
+0 ≤ $k$ ≤ 5
+
+0 ≤ $n$ ≤ 18
+
+**User Parameter Restriction Options**
+
+$n$ may be further restricted to values ≥ 1.
+
+**Notes**
+BMDL estimates from models that have an asymptote parameter (including
+the Hill model) can be unstable when a wide range of parameter values
+can give nearly identical likelihoods. One indicator of that problem is
+that the estimated asymptotic response is far outside the range of the
+observed responses. The user should consult a statistician if this
+behavior is seen or suspected.
+
+Note that the upper bounds for the power parameter in the Hill model have been set to 18. That value was selected
+because it represents a very high degree of curvature that should
+accommodate almost every dataset, even ones with very (or absolutely)
+flat dose-response at low doses followed by a very steep dose-response
+at higher doses.
+:::
+
+:::{tab-item} Exponential
+
+**Model Form**
+
+$$Exp2:\ m(dose) = a \times e^{\pm b \times dose}$$
+
+$$Exp3:\ m(dose) = a \times e^{\pm (b \times dose)^{d}}$$
+
+$$Exp4:\ m(dose) = a \times (c - (c - 1) \times e^{- b \times dose})$$
+
+$$Exp5:\ m(dose) = a \times (c - (c - 1) \times e^{- (b \times dose)^{d}})$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$= asymptote term
+
+$d$= power
+
+**Parameter Constraints**
+
+$a$ \> 0
+
+0 \< $b$ \< 100
+
+$c$ \> 1 for responses increasing with dose
+
+0 \< $c$ \< 1 for responses decreasing with dose
+
+1 ≤ $d$ ≤ 18
+
+**Notes**
+
+The sign in "$\pm b$" (Exp2 and Exp3 models) will change depending on
+the user-designated or auto-detected direction of change:
+
+-   \+ for responses increasing with dose
+
+-   \- for responses decreasing with dose
+
+BMDL estimates from models that have an asymptote parameter (including
+the Exponential5 model) can be unstable when a wide range of parameter values
+can give nearly identical likelihoods. One indicator of that problem is
+that the estimated asymptotic response is far outside the range of the
+observed responses. The user should consult a statistician if this
+behavior is seen or suspected.
+
+Note that the upper bounds for the power parameter in the Exponential models have been set to 18. That value was selected
+because it represents a very high degree of curvature that should
+accommodate almost every dataset, even ones with very (or absolutely)
+flat dose-response at low doses followed by a very steep dose-response
+at higher doses.
+
+#### Reference for Exponential models
+
+RIVM (National Institute for Public Health and the Environment
+(Netherlands)). ([RIVM,
+2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
+PROAST.
+:::
+
+::::
+
+:::::
 
 ### Variance Model
 
@@ -994,22 +1006,24 @@ the model for the variance also needs to be defined.
 For responses assumed to vary Normally around the median, the variance
 model is:
 
-${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$,
+$${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$$
 
 where $\alpha$ (\> 0) and $\rho$ are parameters estimated simultaneously
-with the parameters of the dose-response function (see Table 7 above).
-As in that table, $m\left( {dose}_{i} \right)$ is the predicted median
-(from the dose-response model under consideration) for the *i^th^* dose
+with the parameters of the dose-response function (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+As in that dropdown, $m\left( {dose}_{i} \right)$ is the predicted median
+(from the dose-response model under consideration) for the $i^{th}$ dose
 group.
 
 Note that when a constant variance model is specified by the user, the
 parameter $\rho$ is set to 0 and only $\alpha$ will be estimated. In
-that case, ${\sigma_{i}}^{2} = \ \alpha$
+that case, 
+
+$${\sigma_{i}}^{2} = \alpha$$
 
 When the responses are assumed to be Lognormally distributed, then the
 variance modeled is the log-scale variance:
 
-${\sigma_{Li}}^{2} = \alpha$.
+$${\sigma_{Li}}^{2} = \alpha$$
 
 Because, for Lognormal data, BMDS is restricted to a constant log-scale
 variance model (equivalent to a constant coefficient of variation),
@@ -1050,10 +1064,10 @@ $$LL = - \frac{N}{2}\ln(2\pi) - \sum_{i = 1}^{G}\left\lbrack \frac{N_{i}}{2}\ln{
 where
 
 ${\overline{y}}_{i} = \frac{\sum_{j = 1}^{N_{i}}y_{ij}}{N_{i}}$ (the
-sample mean for the *i^th^* dose group),
+sample mean for the $i^{th}$ dose group),
 
 $s_{i}^{2} = \frac{\sum_{j = 1}^{N_{i}}{(y_{ij} - {\overline{y}}_{i})}^{2}\ }{N_{i} - 1}$
-(the sample variance for the *i^th^* dose group),
+(the sample variance for the $i^{th}$ dose group),
 
 $N = \ \sum_{i = 1}^{G}N_{i}$.
 
@@ -1070,10 +1084,10 @@ $$LL = - \frac{N}{2}\ln(2\pi) - \sum_{i = 1}^{G}\left\lbrack N_{i}{\overline{z}}
 
 where
 
-${\overline{z}}_{Li}\  = \ $log-scale sample mean for *i^th^* dose
+${\overline{z}}_{Li}\  = \ $log-scale sample mean for $i^{th}$ dose
 group, and
 
-${{\ s}_{Li}}^{2}\  = \ $log-scale sample variance for *i^th^* dose
+${{\ s}_{Li}}^{2}\  = \ $log-scale sample variance for $i^{th}$ dose
 group.
 
 As in the case of Normally distributed responses, the parameters
@@ -1106,19 +1120,21 @@ In BMDS, the number of estimated parameters includes only those that
 have not been estimated to equal a bounding value (either from the
 model-imposed constraints or user-imposed restrictions (see Table 7).
 
-***Note*** This counting process may or may not be reasonable, depending
-on the boundary value that a parameter in question hits.
+:::{note}
+This counting process may or may not be reasonable, depending
+on the boundary value that a parameter in question hits. 
 
 For example, if the power parameter in a model hits (*i.e.*, is
 estimated to be equal to) the upper bound of 18, it would usually be the
 case that one would want to count that parameter as one that is
-estimated, but BMDS Online does ***not*** do that.
+estimated, but BMDS Online does ***not*** do that. 
 
 For this reason, the user is apprised to carefully consider the cases
 where parameter bounds have been hit and to consider the implications
 for issues such as model comparison and model selection.
+:::
 
-Note that if a parameter hits a bound for any model, the parameter
+If a parameter hits a bound for any model, the parameter
 estimates are maximum likelihood estimates (MLEs) only in the restricted
 sense that the bounded parameter has been assigned a value and the other
 parameters are MLEs conditional on that assigned value. Such model
@@ -1128,17 +1144,16 @@ thus, sensitivity analysis is recommended if one intends to rely on the
 reported BMD or BMDL. This is especially important when considering
 power parameters that have hit the upper bound of 18.
 
-***Note*** To facilitate comparing models with different likelihoods
-(*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using
-all the terms shown in the LL equations in Section 8.6.3, \"Likelihood
-Function,\" on page [64](#likelihood-function).
+:::{note} 
+To facilitate comparing models with different likelihoods (*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using all the terms shown in the LL equations in [**Likelihood
+Function**](#likelihood-function).
+:::
 
 When comparing models having different parametric distributions, the AIC
 calculated using BMDS Online will result in the proper comparison
 between any two models regardless of underlying distribution.
 
-***Caution***
-
+:::{caution}
 A note of caution is required for situations where only the sample mean
 and sample standard deviation are available (summarized data) and for
 which the log-scale sample mean and sample standard deviation are only
@@ -1164,11 +1179,12 @@ Normally distributed responses to those assuming Lognormal responses
 should not be made using the AIC, if the underlying data are presented
 in summarized form (*i.e.*, only sample means and sample standard
 deviations are available).
+:::
 
 ### BMDL and BMDU Computation
 
 The estimation of the BMDs, depending on the definition of the BMR type,
-is specified in Table 5 on page 55. The derivation of the confidence
+is specified in the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown. The derivation of the confidence
 bounds for the BMD, *i.e.*, the BMDL and BMDU, is defined in this
 section.
 
@@ -1237,8 +1253,5 @@ means) to make the values (means) positive. That will not change the
 standard deviations of the observations and would allow the user to
 model the variance.
 
-***Related topic:***
-
--   Section 8.4.2.2, "Log-transformed Responses are NOT Recommended," on
-    page [53](#log-transformed-responses-are-not-recommended)
+***Related topic:*** see [Log-transformed Responses are NOT Recommended](#log-transformed-responses-are-not-recommended)
 
