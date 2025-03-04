@@ -191,6 +191,11 @@ height="2.5002165354330708in"}
     
 
 #### Options related to continuous BMR type and BMRF
+In the BMR descriptions below, $m(x)$ is the median at dose x. Specifically, $m(BMD)$ is the
+median at dose=BMD, so BMD is the solution to the equations shown.
+$\sigma(0)$ is the standard deviation for the control group (d=0) and
+$\sigma_{L}(0)$ is the log-scale standard deviation for the control
+group, used when the responses are assumed to be Lognormally distributed.
 
 ::::{tab-set}
 
@@ -265,12 +270,6 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 :::
 
 ::::
-:::{note} $m(x)$ is the median at dose x. Specifically, $m(BMD)$ is the
-median at dose=BMD, so BMD is the solution to the equations shown.
-$\sigma(0)$ is the standard deviation for the control group (d=0) and
-$\sigma_{L}(0)$ is the log-scale standard deviation for the control
-group, used when the responses are assumed to be Lognormally distributed.
-:::
 
 ### Distribution and Variance
 

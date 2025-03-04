@@ -561,11 +561,7 @@ $logit(v) \sim Normal(0,3)$
 ::::
 
 :::{note}
-$\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. Normal(x, y) denotes a Normal distribution with mean x and standard deviation y. Lognormal(w, z) denotes a Lognormal distribution with log-scale mean w and log-scale standard deviation z.
-:::
-
-:::{note}
-The background parameter constraints above are on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
+For all the models described above, $\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. $Normal(x, y)$ denotes a Normal distribution with mean $x$ and standard deviation $y$. $Lognormal(w, z)$ denotes a Lognormal distribution with log-scale mean $w$ and log-scale standard deviation $z$.  Further, the background parameter constraints above are on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
 :::
 
 As the number of observations in a dataset increases, there should be less quantitative difference between the parameters and BMDs obtained from the Bayesian approach and from the maximum-likelihood estimation (MLE) approach.

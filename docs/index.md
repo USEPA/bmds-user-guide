@@ -22,6 +22,5 @@
    multiple-tumor-analysis
    bayesian-dichotomous
    special-considerations
-   references
-   tables-reformatted
+   references   
 ```

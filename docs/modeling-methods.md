@@ -128,8 +128,7 @@ ensure reliability of the estimation:
     case the methods return different optimum, the values producing the
     larger of the two are used.
 
-NLopt 2.4.1 was used when developing the BMDS model code. This version
-is available for download from the [NLopt GitHub
+NLopt is available for download from the [NLopt GitHub
 site](https://github.com/stevengj/nlopt/releases). For more information
 regarding the algorithms, refer to the [NLopt documentation
 site](https://nlopt.readthedocs.io/en/latest/).

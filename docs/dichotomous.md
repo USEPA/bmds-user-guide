@@ -817,8 +817,35 @@ parameters are varied to maximize the likelihood, the resulting
 log-likelihood is less than that at the maximum likelihood estimates by
 exactly
 
-> $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
+$$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
 In all cases, the additional constraints specify that the BMDL be less
 than the BMD and the BMDU be greater than the BMD.
 
+### Rao-Scott Transformation for Modeling Summary Dichotomous Developmental Data
+
+For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters (this is called the *litter effect* or *intralitter correlation, see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data instead: the total number of fetuses and the number of fetuses responding to treatment. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
+
+:::{note}
+If individual-level developmental toxicity data are available for modeling, see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for details on the usage of the nested dichotomous models available in BMDS Online
+:::
+
+If summary developmental data (i.e., dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results (including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals) would occur.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less-health protective, BMDLs would be estimated given the confidence interval around the BMD would be more narrower.
+
+Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necesary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), multiple statistical studies have researched the concept of the design effect, $D$ as an approach to transformation dose-response data in order to reduce overdispersion due to correlation arising from a clustered study design.  The core concept is that correlated data can be transformed and then modeled with standard dichotomous models as if it were not correlated.  As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) reports, the design effect is related approximately to  intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
+
+As described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), $D$ is the ratio of the variance for correlated, clustered data and the variance for uncorrelated binomial data, given both have the same average proportion of affected animals. For both variances, an estimate of the proportion of affected fetuses $P_{f}=\frac{A_{f}}{N_{f}}$, where $A_{f}$ is the number of affected fetuses and $N_{f}$ is the total number of fetuses, is required. 
+
+The estimated variance of a binomial proportion is the denominator for $D$: 
+
+$$\frac{P_{f}(1 - P_{f})}{N_{f}}$$
+
+Whereas an estimate of the correct variance for the correlated data (based on a weighted sum of the squared deviations of litter proportions, $p_{i}$ in the $i^{th}$ litter, from $P_{f}$) is The numerator of $D$:
+
+$${\widehat{V}}=\left( \frac{m}{m-1}\right)\frac{1}{N_{f}}\sum_{i}^{m}n_{i}^{2}{\left( p_{i} - {\widehat{P_{f}}}\right)}^{2}$$
+
+where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the number of litters.
+
+In order to apply the Rao-Scott transfromation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left( \frac{N_{f}}{D}\right)$ and the *effective* responding fetuses $\left( \frac{A_{f}}{D}\right)$.
+
+It should be immediately noticed that the calculation of the design effect requires litter-level data and can not be calculated directly from dose-group-level data.  
