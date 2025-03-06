@@ -44,6 +44,56 @@ with the BMDL and
 BMD](_static/img/image7.jpeg){width="4.775807086614173in"
 height="2.298611111111111in"}
 
+
+
+---
+
+EXAMPLE
+
+
+```{figure} _static/img/image7.jpeg
+:alt: Sample graph showing the predetermined BMR line, and its intersection with the BMDL and BMD
+:name: z1
+
+The dose-response relationship:
+A benchmark dose (BMD) is the dose amount estimated to produce a
+response (BMR) of a specific magnitude in the test subject. The BMD's
+lower confidence limit (BMDL) is a dose where the observable physical
+effect is less than the predetermined BMR.
+
+```
+
+```{figure} _static/img/image7.jpeg
+:alt: Sample graph showing the predetermined BMR line, and its intersection with the BMDL and BMD
+:name: z2
+
+The dose-response relationship:
+A benchmark dose (BMD) is the dose amount estimated to produce a
+response (BMR) of a specific magnitude in the test subject. The BMD's
+lower confidence limit (BMDL) is a dose where the observable physical
+effect is less than the predetermined BMR.
+
+```
+
+
+```{figure} _static/img/image7.jpeg
+:alt: Sample graph showing the predetermined BMR line, and its intersection with the BMDL and BMD
+:name: z3
+
+The dose-response relationship:
+A benchmark dose (BMD) is the dose amount estimated to produce a
+response (BMR) of a specific magnitude in the test subject. The BMD's
+lower confidence limit (BMDL) is a dose where the observable physical
+effect is less than the predetermined BMR.
+```
+
+* Link to [Figure 1.](#z1)
+* Link to [Figure 2.](#z2)
+* Link to [Figure 3.](#z3)
+
+---
+
+
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
 dose-response models that help risk assessors estimate the quantitative
 relationship between a chemical ***dose*** and the test
