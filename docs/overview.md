@@ -25,7 +25,7 @@ Dose-response modeling is a technique, often used in toxicology and risk
 assessment, for quantitatively relating exposure (the dose) to a
 biological outcome (the response). It may be thought of as an elaborate
 form of regression, which is the statistical technique used to explore
-or represent the relationship(s) between two (or more) variables.
+or represent the relationship(s) between two (or more) variables. 
 
 In the dose-response context, the dose term (*e.g.*, mg of chemical per
 kg body weight per day) is most often viewed as the "cause" of the

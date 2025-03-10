@@ -28,15 +28,15 @@ The logic settings can be overridden but are set to default values and
 options that are most consistent with EPA's BMD guidance.
 
 Models that meet all logic criteria are considered viable. If a modeling
-result fails any of the criteria listed in Sections 7.2.1 or 7.2.2, its
-results are placed in the Unusable or Questionable bin, respectively,
-and are not classed as Viable for recommendation.
+result fails any of the criteria listed in [**Unusable**](#unusable-bin) or [**Questionable**](#questionable-bin), its
+results are placed in those respective bins,
+and are not classed as [**Viable**](#viable) for recommendation.
 
-For the criteria listed in Section 7.2.3, failure of the criteria only
+For the criteria listed in [**Warnings**](#warnings), failure of the criteria only
 results in a warning.
 
 The recommended model is chosen from the Viable models, as described in
-Section 7.2.4. If the range of BMDL estimates from all Viable models is
+[**Viable**](#viable). If the range of BMDL estimates from all Viable models is
 less than a user-specified "Maximum BMDL range deemed sufficiently
 close" (set to 3-fold by default), the Viable model with the lowest BMDL
 is chosen. Otherwise, the Viable model with the lowest AIC is chosen.
@@ -99,10 +99,10 @@ Other tests that will classify a result as Questionable include:
 -   Absolute value of scaled residual of interest \> 2 (all dataset
     types)
 
--   Goodness- of- fit p-test \< 0.05 (dichotomous, multistage cancer
+-   Goodness-of-fit p-test \< 0.05 (dichotomous, multistage cancer
     model only)
 
--   Goodness- of- fit p-test \< 0.1 (all other models for continuous and
+-   Goodness-of-fit p-test \< 0.1 (all other models for continuous and
     dichotomous datasets)
 
 [^1]: Examples given in EPA BMD guidance ([U.S. EPA,

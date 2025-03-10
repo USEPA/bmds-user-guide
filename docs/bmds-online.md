@@ -17,7 +17,7 @@ effectively.
     EPA server; users can optionally "renew" an analysis so that it
     remains on the EPA server for another three years. Or, users can
     save to their computer an export of the data or analysis for later
-    import into BMDS Online. For more information, refer to [**Actions Menu**](#actions-menu).
+    import into BMDS Online. For more information, refer to the [**Actions Menu**](#actions-menu).
 
 -   If data sensitivity is an issue, the user can run BMDS Desktop on
     their local computer.

@@ -63,8 +63,8 @@ height="2.298051181102362in"}
 ## Individual Model Results
 
 From the Output tab's Maximum Likelihood Approach Model Results table,
-select any model link () to display a popup window thoroughly detailing
-that model's stats results ().
+select any model link [**Figure 51**](#_Ref183108349) to display a popup window thoroughly detailing
+that model's stats results [**Figure 52**](#_Ref183108350).
 
 []{#_Ref183108349 .anchor}**Figure 51.** Select a model name in the
 results table \...
@@ -148,11 +148,9 @@ AIC differences), they can provide useful guidance in model selection.
 Model-type specific details on the AIC are discussed in the following
 sections:
 
--   For continuous endpoints, refer to Section 8.6.4 on page
-    [65](./continuous.md#aic-and-model-comparisons).
+-   [**AIC and Model Comparisons for Continuous Endpoints**](./continuous.md#aic-and-model-comparisons).
 
--   For dichotomous endpoints, refer to Section 9.5.2 on page
-    [77](./dichotomous.md#aic-and-model-comparisons).
+-   [**AIC and Model Comparisons for Dichotomous Endpoints**](./dichotomous.md#aic-and-model-comparisons).
 
 
 [^1]: For the dichotomous and nested dichotomous models, an additivity
@@ -161,7 +159,7 @@ sections:
 #### P-value
 
 The goodness-of-fit p-value is computed based on the degrees of freedom
-and the Chi^2^ value (Chi^2^ is assumed to be distributed as a
+and the $Chi^2$ value ($Chi^2$ is assumed to be distributed as a
 Chi-square distribution having degrees of freedom equal to degrees of
 freedom). The p-value measures the "closeness" of the model predictions
 to the observed data. If the overall p-value is larger than some
@@ -184,14 +182,14 @@ The Model Parameters table includes the estimates for the parameter
 values that "optimize" the model fit.
 
 Parameter estimates are checked to see if they fall within a given
-tolerance (1.0e^-6^) of parameter boundaries. If so, they are marked as
+tolerance ($1.0e^{-6}$) of parameter boundaries. If so, they are marked as
 *On Bound*. This tolerance value applies to all parameters.
 
 ### Cumulative Distribution Function (CDF) Table (All Endpoints)
 
 CDF stands for *cumulative distribution function*, in this case for the
 BMD estimate. It lists the percentiles associated with the CDF for the
-BMD being estimated ().
+BMD being estimated [(**Figure 59**)](#_Ref177727762).
 
 Note that the BMD value associated with the CDF value of 0.5 is the MLE
 of the BMD (and matches the value reported for the BMD in the Summary
@@ -241,12 +239,9 @@ The results plot shows the dose-response curve estimated by the model.
 Error bar calculations for the data points differ slightly based on the
 endpoint:
 
--   For continuous endpoints, refer to Section 8.5.4, "Plot and Error
-    Bar Calculation," on page [61](./continuous.md#plot-and-error-bar-calculation).
+-   [**For continuous endpoints**](./continuous.md#plot-and-error-bar-calculation).
 
--   For dichotomous endpoints, refer to Section 9.4.3, "Plot and Error
-    Bar Calculation," on page [72](./dichotomous.md#plot-and-error-bar-calculation).
+-   [**For dichotomous endpoints**](./dichotomous.md#plot-and-error-bar-calculation).
 
--   For nested endpoints, refer to Section 10.5.3, "Plot and Error Bar
-    Calculation," on page [93](./nested-dichotomous.md#plot-and-error-bar-calculation).
+-   [**For nested endpoints**](./nested-dichotomous.md#plot-and-error-bar-calculation).
 

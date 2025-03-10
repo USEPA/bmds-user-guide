@@ -32,17 +32,14 @@ Models not labeled as Bayesian are, by default, MLE.
 Specifics on the MLE model equations are presented in the following
 sections:
 
--   Section 8.6, "Mathematical Details for Models for Continuous
-    Endpoints in Simple Designs," on page
-    [61](./continuous.md#mathematical-details-for-models-for-continuous-endpoints-in-simple-designs)
+-   [**Mathematical Details for Models for Continuous
+    Endpoints in Simple Designs**](./continuous.md#mathematical-details-for-models-for-continuous-endpoints-in-simple-designs)
 
--   Section 9.5, "Mathematical Details for Models for Dichotomous
-    Endpoints in Simple Designs," on page
-    [73](./dichotomous.md#mathematical-details-for-models-for-dichotomous-endpoints-in-simple-designs)
+-   [**Mathematical Details for Models for Dichotomous
+    Endpoints in Simple Designs**](./dichotomous.md#mathematical-details-for-models-for-dichotomous-endpoints-in-simple-designs)
 
--   Section 10.5, "Mathematical Details for Models for Nested
-    Dichotomous Endpoints," on page
-    [88](./nested-dichotomous.md#mathematical-details-for-models-for-nested-dichotomous-endpoints)
+-   [**Mathematical Details for Models for Nested
+    Dichotomous Endpoints**](./nested-dichotomous.md#mathematical-details-for-models-for-nested-dichotomous-endpoints)
 
 [^1]: BMDS has in the past referred to the non-Bayesian approach
     variously as "frequentist," "Maximum Likelihood," or "Maximum
@@ -50,8 +47,8 @@ sections:
 
 [^2]: Crump, KS; Howe, R. (1985). A review of methods for calculating
     statistical confidence limits in low-dose extrapolation. In:
-    Clayson, DB; Krewski, D; Munro, I; eds. Toxicological Risk
-    Assessment. Boca Raton, FL: CRC Press, Inc.
+    Clayson, DB; Krewski, D; Munro, I; eds. *Toxicological Risk
+    Assessment*. Boca Raton, FL: CRC Press, Inc.
 
 ## Bayesian
 
@@ -73,22 +70,18 @@ estimation.[^4]
 The likelihood function plays a critical, formal role in Bayesian
 inference, different from its role in maximum likelihood.
 
-***Note*** At this time, EPA does not offer technical guidance on
+:::{note} 
+At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
+:::
 
-See the following table where the priors and model constraints are
-presented:
-
--   Table 14: Bayesian dichotomous models and their respective parameter
-    priors on page [109](#_Ref548672746)
+Priors and model constraints are presented in the table [**Bayesian dichotomous models and their respective parameter priors**](#_Ref548672746).
 
 To see how model parameter estimates are reported in the BMDS results,
-refer to Section 6.2.3, "Model Parameters," on page
-[42](./result-output-mle.md#model-parameters-table-all-endpoints).
+refer to [**Model Parameters**](./result-output-mle.md#model-parameters-table-all-endpoints).
 
-Bayesian analysis is described in more detail in Section 12.0, "Bayesian
-Dichotomous Analysis, including Model Averaging," on page
-[105](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging).
+Bayesian analysis is described in more detail in [**Bayesian
+Dichotomous Analysis, including Model Averaging**](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging).
 
 [^3]: Bayesian upper or lower bounds computed in this way define
     "credible" intervals, which are Bayesian analogues of classical
