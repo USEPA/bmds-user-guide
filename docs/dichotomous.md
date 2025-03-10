@@ -828,7 +828,7 @@ The Rao-Scott transformation is an approach, described in [Fox et al., 2017](htt
 
 To access the Rao-Scott transformation:
 
-* Select **Dichotomous** on teh Settings tab.
+* Select **Dichotomous** on the Settings tab.
 
 * Select the Data tab.
 
@@ -838,7 +838,36 @@ To access the Rao-Scott transformation:
 
 Selecting the link displays the Rao-Scott transformation page, where the user can enter their data and specify settings.  Users can copy and paste data from an CSV file or an Excel sheet into the Dataset text box.
 
-`TO DO`
+Under the Dataset table:
+
+- Select the load link to have BMDS Online load an example dataset.
+
+- The dataset used for the Rao-Scott transformation should have the same structure as regular dichotomous data and should have the following columns in this sequence:
+
+   * **Dose** Numeric value of the dose group
+
+   * **N** Numeric value for the number of fetuses (irrespective of litter membership) per dose group
+
+   * **Incidence** Numeric value for the number of fetuses (irrespective of litter membership) per dose group
+
+Additionally, users will need to select the species that corresponds to their dose-response data; currently options for species are limited to rat, mouse, and rabbit.
+
+Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott transformation page with the following outputs:
+
+* A summary table of the original and adjusted data (Summary tab)
+
+* Plots of the original and adjusted N values and original and adjusted incidence values (Data tab)
+
+`add figure at later date`
+
+The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data tabe, select the [**Load dataset from Excel**
+button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
+clipboard contents to create a new dataset. Or they can paste the
+clipboard contents into Excel for further analysis.
+
+From the Actions drop down menu, users can create a Word report documenting the Rao-Scott transformation.  This work report will recapitulate the summary table and plots previously displayed in the browser window and will additionally report the actual values of the design effect estimated from the entered unadjusted data and the Rao-Scott regression parameter values.
+
+`add figure at later date`
 
 #### More on the Rao-Scott Transformation
 
