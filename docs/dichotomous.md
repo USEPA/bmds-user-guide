@@ -822,7 +822,7 @@ $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 In all cases, the additional constraints specify that the BMDL be less
 than the BMD and the BMDU be greater than the BMD.
 
-### Rao-Scott Adjustment for Modeling Summary Dichotomous Developmental Data
+## Rao-Scott Adjustment for Modeling Summary Dichotomous Developmental Data
 
 The Rao-Scott adjustment is an approach, described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), to model dichotomous developmental data when only summary level dose-response data is available.  The adjustment works by scaling dose-level incidence and sample size data by a variable called the design effect in order to approximate the intralitter correlation that occurs due to the clustered study design of developmental toxicity studies.
 
@@ -863,7 +863,7 @@ Additionally, users will need to select the species that corresponds to their do
 :scale: 65%
 :name: f84
 
-The Rao-Scott adjustment page, with an example dataset loaded
+The Rao-Scott adjustment page, with an example dataset loaded *add new screenshot when UI updated*
 ```
 
 Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott adjustment page with the following outputs:
@@ -895,7 +895,7 @@ From the Actions drop down menu, users can download the Rao-Scott adjusted data 
 Rao-Scott adjustment Word report, with summary table of results, plots of original vs adjusted values, and Rao-Scott adjustment regression parameter values
 ```
 
-#### More on the Rao-Scott Adjustment
+### More on the Rao-Scott Adjustment
 
 For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters (this is called the *litter effect* or *intralitter correlation, see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data instead: the total number of fetuses and the number of fetuses responding to treatment. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 
@@ -923,117 +923,32 @@ In order to apply the Rao-Scott transfromation, both the numerator and denominat
 
 It should be immediately noticed that the calculation of the design effect requires litter-level data given the requirement to know $p_{i}$ for each litter and that it can not be calculated directly from dose-group-level data. In order provider BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squres and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
-:::{list-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estiamtes by Species
-:widths: 10 10 10 10 10 10 10
-:header-rows: 1
 
-*  - 
-   - Method
-   - Species
-   - $n$, Dose Groups
-   - $a$
-   - $b$
-   - $\sigma_{res}^{2}$
-*  - Mice
-   - LS
-   - 21
-   - 88
-   - 1.5938
-   - 0.2866
-   - 0.2078
-*  - Mice
-   - OR
-   - 21
-   - 88
-   - 1.6943
-   - 0.3132
-   - 0.1863
-*  - Rats
-   - LS
-   - 25
-   - 101
-   - 1.6852
-   - 0.3310
-   - 0.1248
-*  - Rats
-   - OR
-   - 25
-   - 101
-   - 1.8327
-   - 0.3690
-   - 0.1090
-*  - Rabbits
-   - LS
-   - 10
-   - 43
-   - 1.0582
-   - 0.2397
-   - 0.1452    
-*  - Rabbits
-   - OR
-   - 10
-   - 43
-   - 1.1477
-   - 0.2739
-   - 0.1299
-::: 
+```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
+:header: > 
+: "", "Method", "Species", "$n$, Dose Groups", "$a$", "$b$", "$\sigma_{res}^{2}$"
+:widths: 10 10 10 10 10 10 10
+
+"Mice", "LS", "21", "88", "1.5938", "0.2866", "0.2078"
+"Mice", "OR", "21", "88", "1.6943", "0.3132", "0.1863"
+"Rats", "LS", "25", "101", "1.6852", "0.3310", "0.1248"
+"Rats", "OR", "25", "101", "1.8327", "0.3690", "0.1090"
+"Rabbits", "LS", "10", "43", "1.0582", "0.2397", "0.1452"
+"Rabbits", "OR", "10", "43", "1.1477", "0.2739", "0.1299"
+```
 
 From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) vs the design effect calculated using  orthogonal regression ($D_{OR}$), by practice the design effect estimated using these two regression approaches is averaged to generate the average design effect ($D_{average}$) actually used in the scaling of $N_{f}$ and $A_{f}$. An example calculation is provided below for a hypothetical developmental study using mice.
 
-:::{list-table} Example Calculation of the Design effect and Transformed Incidence Numbers for a Hypothetical Mouse Study
+```{csv-table} Example Calculation of the Design effect and Transformed Incidence Numbers for a Hypothetical Mouse Study
+:header: >
+: "Dose", "$N_{f}$", "$A_{f}$", "$P_{f}$", "$D_{LS}$", "$D_{OR}$", "$D_{average}$", "${N_{f}}_{RS}$", "${A_{f}}_{RS}$", "${P_{f}}_{RS}$"
 :widths: 8, 8, 8, 8, 8, 8, 8, 8, 8, 8
-:header-rows: 1
-*  - Dose
-   - $N_{f}$
-   - $A_{f}$
-   - $P_{f}$
-   - $D_{LS}$
-   - $D_{OR}$
-   - $D_{average}$
-   - ${N_{f}}_{RS}$
-   - ${A_{f}}_{RS}$
-   - ${P_{f}}_{RS}$
-*  - 0
-   - 121
-   - 1
-   - 0.0083
-   - 1.1737
-   - 1.1247
-   - 1.1493
-   - 105.287
-   - 0.870
-   - 0.0083
-*  - 25
-   - 116
-   - 7
-   - 0.0604
-   - 2.2666
-   - 2.3424
-   - 2.3045
-   - 50.337
-   - 3.038
-   - 0.0604
-*  - 50
-   - 114
-   - 24
-   - 0.2105
-   - 3.4276
-   - 3.7145
-   - 3.5710
-   - 31.924
-   - 6.721
-   - 0.2105
-*  - 100
-   - 105
-   - 52
-   - 0.4952
-   - 4.5494
-   - 5.0932
-   - 4.8213
-   - 21.778
-   - 10.786
-   - 0.4952
-:::
+
+"0", "121", "1", "0.0083", "1.1737", "1.1247", "1.1493", "105.287", "0.870", "0.0083"
+"25", "116", "7", "0.0604", "2.2666", "2.3424", "2.3045", "50.337", "3.038", "0.0604"
+"50", "114", "24", "0.2106", "3.4276", "3.7145", "3.5710", "31.924", "6.721", "0.2105"
+"100", "105", "52", "0.4952", "4.5494", "5.0932", "4.8213", "21.778", "10.786", "0.4952"
+```
 
 For example, using the 25 ppm dose group as an example, the Rao-Scott transformed N (${N_{f}}_{RS}$) would be caclulated as:
 
