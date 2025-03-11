@@ -40,6 +40,8 @@ the toxic effects of the exposure).
 
 The dose-response relationship
 ```
+<br>
+
 As {numref}`f1` shows, the benchmark dose (BMD) is the dose amount estimated to produce a
 response (BMR) of a specific magnitude in the test subject. The BMD's
 lower confidence limit (BMDL) is a dose where the observable physical
@@ -140,6 +142,8 @@ models include:
 
 BMDS results for a dichotomous endpoint, presented using graph and tables
 ```
+<br>
+
 ## How EPA Uses BMD Methods
 
 EPA uses BMD methods to derive reference doses estimates (such as

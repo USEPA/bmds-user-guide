@@ -21,6 +21,7 @@ The bmds-ui Python package installs BMDS Desktop to the user's local system. BMD
 
 BMDS Online and BMDS Desktop use the same interface and command components and workflows, but BMDS Desktop projects run entirely on the user's local computer with no Internet connection.
 ```
+<br>
 
 ### BMDS Desktop-Specific Features and Constraints
 
@@ -39,6 +40,7 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 BMDS Desktop home page, showing selectable and searchable list of previous analyses within a single project
 ```
+<br>
 
 -   Multiple analyses can be stored in a single project, but the user can run only one project (*i.e.*, database file) at a time.
 
@@ -71,6 +73,7 @@ Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal wind
 
 pybmds is a command-line environment that runs in a terminal window.
 ```
+<br>
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.
 
