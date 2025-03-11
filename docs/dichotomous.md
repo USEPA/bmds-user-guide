@@ -926,7 +926,7 @@ It should be immediately noticed that the calculation of the design effect requi
 
 ```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
 :header: > 
-: "", "Method", "Species", "$n$, Dose Groups", "$a$", "$b$", "$\sigma_{res}^{2}$"
+: "Species", "Method", "$n$, Studies", "$n$, Dose Groups", "$a$", "$b$", "$\sigma_{res}^{2}$"
 :widths: 10 10 10 10 10 10 10
 
 "Mice", "LS", "21", "88", "1.5938", "0.2866", "0.2078"
