@@ -70,11 +70,14 @@ BMDS contains two nested dichotomous models:
 The Nested Logistic Model is the log-logistic model, modified
 to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
 
-[]{#_Toc47700655 .anchor}**Figure 83.** BMDS nested model selection.
+```{figure} _static/img/image87.png
+:alt: Nested model selection
+:scale: 80%
+:name: f87
 
-![Nested model
-selection](_static/img/image87.png){width="5.394587707786527in"
-height="1.076035651793526in"}
+BMDS nested model selection.
+```
+<br>
 
 :::{note}
 A third nested dichotomous model, the Rai and Van Ryzin model, can be accessed in BMDS 2.7,
@@ -98,15 +101,17 @@ There ***must*** be data in the LSC column even if the
 modeling options do not call for the use of LSC.
 :::
 
-Figure 84 is a screenshot of a nested dataset in Excel that is formatted
+{numref}`f88` is a screenshot of a nested dataset in Excel that is formatted
 for use in BMDS.
 
-[]{#_Ref88591241 .anchor}**Figure 84.** Nested dataset formatted
-correctly for BMDS analysis.
+```{figure} _static/img/image88.png
+:alt: Example of how a nested dichotomous dataset should be formatted for analysis
+:scale: 100%
+:name: f88
 
-.![Example of how a nested dichotomous dataset should be formatted for
-analysis](_static/img/image88.png){width="2.2126837270341206in"
-height="4.87755249343832in"}
+Nested dataset formatted correctly for BMDS analysis.
+```
+<br>
 
 As shows, each litter is on a separate row, showing the dose it
 received, its sample size (*Litter Size*), the number of responders
@@ -121,11 +126,14 @@ user-selected datasets in a single batch process. Select the blue Plus
 button to define a new Option Set configuration; select the red Trashcan
 icon to delete the Option Set.
 
-[]{#_Toc47700656 .anchor}**Figure 85.** Nested Model options.
+```{figure} _static/img/image89.png
+:alt: Options table selections for nested model
+:scale: 80%
+:name: f89
 
-![Options table selections for nested
-model](_static/img/image89.png){width="6.7061679790026245in"
-height="0.9213812335958005in"}
+Nested Model options.
+```
+<br>
 
 ### Risk Type
 
@@ -173,12 +181,14 @@ background, P(0), equals zero.
 When P(0) does not equal zero, the true response level can be calculated
 using the Extra Risk equation described in [Risk Type](#risk-type).
 
-[]{#_Toc185445262 .anchor}**Figure 86**. Results plot, with horizontal
-bar centered on the y-axis at the modeled BMR.
+```{figure} _static/img/image64.png
+:alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
+:scale: 80%
+:name: f90
 
-![Close-up of horizontal bar of results plot, centered on a BMR of
-0.1](_static/img/image64.png){width="2.556971784776903in"
-height="1.596398731408574in"}
+Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
+```
+<br>
 
 ### Confidence Level (one sided)
 
@@ -197,13 +207,14 @@ confidence interval (5% in each tail outside that interval).
 
 ### Litter Specific Covariate
 
-[]{#_Toc185445263 .anchor}**Figure 87.** Litter Specific Covariate
-options.
+```{figure} _static/img/image90.png
+:alt: For the nested dichotomous models, the Litter Specific Covariate option picklist selections are: Overall Mean (default) and Control Group Mean.
+:scale: 100%
+:name: f91
 
-![For the nested dichotomous models, the Litter Specific Covariate
-option picklist selections are: Overall Mean (default) and Control Group
-Mean.](_static/img/image90.png){width="1.5334667541557305in"
-height="1.408455818022747in"}
+Litter Specific Covariate options.
+```
+<br>
 
 Using a litter-specific covariate (LSC) enables the user to account for
 inter-litter variability.
@@ -259,12 +270,14 @@ displays the results on the Output tab. The codes following the model
 name indicate whether the litter specific covariate (lsc) and
 intralitter correlation (ilc) are included in the result.
 
-[]{#_Toc185445264 .anchor}**Figure 88.** Nested model results as listed
-on the Output tab.
+```{figure} _static/img/image91.png
+:alt: Four rows of nested logistic model result types
+:scale: 100%
+:name: f92
 
-![Four rows of nested logistic model result
-types](_static/img/image91.png){width="2.6670384951881014in"
-height="1.5835542432195975in"}
+Nested model results as listed on the Output tab.
+```
+<br>
 
 :::{list-table} All Forms of Nested Models run by BMDS
 :widths: 20 15 15
@@ -316,11 +329,14 @@ Chi-square test statistic pertain to the observed data. The Combined
 P-value can be used to infer whether the fit is adequate. Small p-values
 (*e.g.*, less than 0.05 or 0.10) would indicate poor fit.
 
-[]{#_Toc185445265 .anchor}**Figure 89.** Bootstrap Results table.
+```{figure} _static/img/image92.png
+:alt: Bootstrap Results table
+:scale: 80%
+:name: f93
 
-![Bootstrap Results
-table](_static/img/image92.png){width="4.140264654418198in"
-height="2.0155588363954506in"}
+Bootstrap Results table.
+```
+<br>
 
 ### Bootstrap Runs Table
 
@@ -337,11 +353,14 @@ Further details include middle and high-end percentiles for the
 Chi-square test statistic, that can be further compared to the observed
 value.
 
-[]{#_Toc185445266 .anchor}**Figure 90.** Bootstrap Runs table.
+```{figure} _static/img/image93.png
+:alt: Bootstrap Runs table
+:scale: 80%
+:name: f94
 
-![Bootstrap Runs
-table](_static/img/image93.png){width="4.567804024496938in"
-height="1.8056485126859143in"}
+Bootstrap Runs table.
+```
+<br>
 
 ### Scaled Residuals Table
 
@@ -355,24 +374,28 @@ response rates to those predicted by the model. As is typical, scaled
 residual values greater than 2 in absolute value may affect the user's
 assessment of fit.
 
-[]{#_Ref177662539 .anchor}**Figure 91.** Summarized Scaled Residuals.
+```{figure} _static/img/image94.png
+:alt: Scaled Residuals Table
+:scale: 75%
+:name: f95
 
-![Scaled Residuals
-Table](_static/img/image94.png){width="4.926457786526684in"
-height="2.0047944006999123in"}
+Summarized Scaled Residuals.
+```
+<br>
 
 ### Litter Data Table
 
 The Litter Data table shows the model-predicted probability of response
 and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
 
-[]{#_Ref177662524 .anchor}**Figure 92.** Partial capture of the Litter
-Data table from Results Workbook.
+```{figure} _static/img/image95.png
+:alt: Eleven rows of the Little Data table showing columns for Dose, Litter Specific Covariance, Estimated robability, Litter Size, Expected, Observed, and Scaled Residual
+:scale: 50%
+:name: f96
 
-![Eleven rows of the Little Data table showing columns for Dose, Litter
-Specific Covariance, Estimated Probability, Litter Size, Expected,
-Observed, and Scaled Residual](_static/img/image95.png){width="6.5in"
-height="2.857638888888889in"}
+Partial capture of the Litter Data table from Results Workbook.
+```
+<br>
 
 ## Mathematical Details for Models for Nested Dichotomous Endpoints
 

@@ -65,12 +65,14 @@ Users can choose to have BMDS auto-select the appropriate polynomial
 degree of the Multistage model for each tumor dataset. The option is
 available from the **Degree** picklist on the Settings tab ().
 
-[]{#_Ref153972310 .anchor}**Figure 93.** The **Degree** picklist with
-the auto-select option highlighted.
+```{figure} _static/img/image96.png
+:alt: Degree column picklist values displayed, with "auto" selected
+:scale: 100%
+:name: f97
 
-![Degree column picklist values displayed, with \"auto\"
-selected](_static/img/image96.png){width="2.0751793525809274in"
-height="1.841826334208224in"}
+The Degree picklist with the auto-select option highlighted.
+```
+<br>
 
 When the auto-select feature is used, BMDS runs all relevant forms of
 the Multistage Multitumor model and selects the polynomial degree to use
@@ -209,12 +211,14 @@ Choose whether BMDS auto-selects the appropriate polynomial degree or
 whether it should be user-specified. Selectable values are auto, 1, 2,
 3, or 4.
 
-[]{#_Toc109392458 .anchor}**Figure 94.** Dataset options for multitumor
-data.
+```{figure} _static/img/image97.png
+:alt: Dataset options table for multitumor data, with Degree column picklist values displayed
+:scale: 75%
+:name: f98
 
-![Dataset options table for multitumor data, with Degree column picklist
-values displayed](_static/img/image97.png){width="3.7898206474190728in"
-height="1.8697287839020122in"}
+Dataset options for multitumor data.
+```
+<br>
 
 The help text for the **Degree** column reads as follows:
 
@@ -254,13 +258,14 @@ details, refer to [Model Recommendations and Decision Logic](./model-recommendat
     \[value\]; consider consulting a statistician*. However, the model
     is not removed from the results.
 
-[]{#_Ref184733166 .anchor}**Figure 95.** BMDS Online will display an
-error message if the result does not meet the threshold value specified
-in this Dichotomous Logic tab setting.
+```{figure} _static/img/image98.png
+:alt: The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a threshold value of 3.
+:scale: 80%
+:name: f99
 
-![The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a
-threshold value of 3.](_static/img/image98.png){width="6.5in"
-height="0.3458333333333333in"}
+BMDS Online will display an error message if the result does not meet the threshold value specified in this Dichotomous Logic tab setting.
+```
+<br>
 
 ### Poly K Adjustment
 
@@ -282,13 +287,14 @@ To access the trend test:
 
 *  Beneath the data table, select the link for **Poly K Adjustment**.
 
-[]{#_Toc185445272 .anchor}**Figure 96.** With Multistage
-Cancer/Multitumor as the model type, BMDS Online displays a Poly K
-Adjustment link under the data table.
+```{figure} _static/img/image99.png
+:alt: Arrow pointing to Poly K Adjustment link
+:scale: 75%
+:name: f100
 
-![Arrow pointing to Poly K Adjustment
-link](_static/img/image99.png){width="5.085400262467192in"
-height="2.500865048118985in"}
+With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
+```
+<br>
 
 Selecting the link displays the Poly K Adjustment page (see ), where the
 user can enter their data and specify settings. Users can copy and paste
@@ -312,11 +318,14 @@ in this sequence:
 -   **Tumor status.** Numeric value indicating if animal did not have
     tumor (0) or did have tumor (1)
 
-[]{#_Ref175841798 .anchor}**Figure 97.** The Poly K Adjustment page,
-with an example dataset.
+```{figure} _static/img/image100.png
+:alt: Poly K Adjustment page
+:scale: 70%
+:name: f101
 
-![Poly K Adjustment page](_static/img/image100.png){width="5.625in"
-height="3.0432688101487315in"}
+The Poly K Adjustment page, with an example dataset.
+```
+<br>
 
 Select the **About** button to display a complete description of the
 poly-adjustment approach, and the rationale supporting it. The text of
@@ -373,12 +382,14 @@ button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
-[]{#_Ref184671158 .anchor}**Figure 98.** Result of running a Poly K
-adjustment, with plot of tumor incidence over study duration
+```{figure} _static/img/image101.png
+:alt: Result window following Poly K adjustment operation
+:scale: 85%
+:name: f102
 
-![Result window following Poly K adjustment
-operation](_static/img/image101.png){width="6.5in"
-height="6.321527777777778in"}
+Result of running a Poly K adjustment, with plot of tumor incidence over study duration
+```
+<br>
 
 ### More on the Poly K Adjustment Approach
 
@@ -549,23 +560,26 @@ an estimate of the slope factor, defined by EPA as the linear slope
 between the extra risk (0.1) at the BMDL(10) and the extra risk (0) at
 background (generally 0 dose).
 
-[]{#_Toc47700651 .anchor}**Figure 99.** Slope Factor (fourth row in
-table) appears only on restricted Multistage model results for
-multistage/multitumor endpoints.
+```{figure} _static/img/image102.png
+:alt: Modeling Summary table containing Slope Factor row
+:scale: 75%
+:name: f103
 
-![Modeling Summary table containing Slope Factor
-row](_static/img/image102.png){width="2.8301454505686787in"
-height="2.6047364391951007in"}
+Slope Factor (fourth row in table) appears only on restricted Multistage model results for multistage/multitumor endpoints.
+```
+<br>
 
 The Multistage model plot also includes a dashed line representing this
 linear slope.
 
-[]{#_Toc47700652 .anchor}**Figure 100.** The dashed line for the
-Multistage model plot representing cancer slope factor.
+```{figure} _static/img/image103.png
+:alt: Graph with dashed line dhowing linear slope
+:scale: 80%
+:name: f104
 
-![Graph with dashed line dhowing linear
-slope](_static/img/image103.png){width="4.469853455818023in"
-height="2.5644346019247592in"}
+The dashed line for the Multistage model plot representing cancer slope factor.
+```
+<br>
 
 If dose units are in mg/kg-day, this equals the oral slope factor (OSF)
 as defined by IRIS. If the dose units are µg/m3, this equals the
