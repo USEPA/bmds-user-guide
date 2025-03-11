@@ -822,27 +822,33 @@ $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 In all cases, the additional constraints specify that the BMDL be less
 than the BMD and the BMDU be greater than the BMD.
 
-### Rao-Scott Transformation for Modeling Summary Dichotomous Developmental Data
+### Rao-Scott Adjustment for Modeling Summary Dichotomous Developmental Data
 
-The Rao-Scott transformation is an approach, described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), to model dichotomous developmental data when only summary level dose-response data is available.  The transformation works by scaling dose-level incidence and sample size data by a variable called the design effect in order to approximate the intralitter correlation that occurs due to the clustered study design of developmental toxicity studies.
+The Rao-Scott adjustment is an approach, described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), to model dichotomous developmental data when only summary level dose-response data is available.  The adjustment works by scaling dose-level incidence and sample size data by a variable called the design effect in order to approximate the intralitter correlation that occurs due to the clustered study design of developmental toxicity studies.
 
-To access the Rao-Scott transformation:
+To access the Rao-Scott adjustment:
 
 * Select **Dichotomous** on the Settings tab.
 
 * Select the Data tab.
 
-* Beneath the data table, select the link for **Rao-Scott transformation**
+* Beneath the data table, select the link for **Rao-Scott Adjustment**
 
-`insert figure when screenshot is available`
+```{figure} _static/img/RS_button.png
+:alt: screenshot showing Rao-Scott transformation button under data table for Dichotomous data
+:scale: 30%
+:name: f83
 
-Selecting the link displays the Rao-Scott transformation page, where the user can enter their data and specify settings.  Users can copy and paste data from an CSV file or an Excel sheet into the Dataset text box.
+With Dichotomous as the model type, BMDS Online displays a Rao-Scott Adjustment link under the data table.
+```
+
+Selecting the link displays the Rao-Scott adjustment page, where the user can enter their data and specify settings.  Users can copy and paste data from an CSV file or an Excel sheet into the Dataset text box.
 
 Under the Dataset table:
 
 - Select the load link to have BMDS Online load an example dataset.
 
-- The dataset used for the Rao-Scott transformation should have the same structure as regular dichotomous data and should have the following columns in this sequence:
+- The dataset used for the Rao-Scott adjustment should have the same structure as regular dichotomous data and should have the following columns in this sequence:
 
    * **Dose** Numeric value of the dose group
 
@@ -852,24 +858,44 @@ Under the Dataset table:
 
 Additionally, users will need to select the species that corresponds to their dose-response data; currently options for species are limited to rat, mouse, and rabbit.
 
-Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott transformation page with the following outputs:
+```{figure} _static/img/RS_data_entry.png
+:alt: the Rao-Scott adjustment page
+:scale: 65%
+:name: f84
 
-* A summary table of the original and adjusted data (Summary tab)
+The Rao-Scott adjustment page, with an example dataset loaded
+```
 
-* Plots of the original and adjusted N values and original and adjusted incidence values (Data tab)
+Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott adjustment page with the following outputs:
 
-`add figure at later date`
+* A summary table of the original and adjusted data 
+
+* Plots of the original and adjusted N values and original and adjusted incidence values 
+
+```{figure} _static/img/RS_results.png
+:alt: Result window following Rao-Scott adjustment operation
+:scale: 65%
+:name: f85
+
+Result of running a Rao-Scott adjustment, with summary table of results and plots of adjusted vs original values
+```
 
 The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data tabe, select the [**Load dataset from Excel**
 button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
-From the Actions drop down menu, users can create a Word report documenting the Rao-Scott transformation.  This work report will recapitulate the summary table and plots previously displayed in the browser window and will additionally report the actual values of the design effect estimated from the entered unadjusted data and the Rao-Scott regression parameter values.
+From the Actions drop down menu, users can download the Rao-Scott adjusted data or create a Word report documenting the Rao-Scott adjustment.  This work report will recapitulate the summary table and plots previously displayed in the browser window and will additionally report the actual values of the design effect estimated from the entered unadjusted data and the Rao-Scott regression parameter values.
 
-`add figure at later date`
+```{figure} _static/img/RS_report.png
+:alt: Contents of downloaded Rao-Scott adjustment Word report
+:scale: 90%
+:name: f86
 
-#### More on the Rao-Scott Transformation
+Rao-Scott adjustment Word report, with summary table of results, plots of original vs adjusted values, and Rao-Scott adjustment regression parameter values
+```
+
+#### More on the Rao-Scott Adjustment
 
 For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters (this is called the *litter effect* or *intralitter correlation, see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data instead: the total number of fetuses and the number of fetuses responding to treatment. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 
@@ -879,7 +905,7 @@ If individual-level developmental toxicity data are available for modeling, see 
 
 If summary developmental data (i.e., dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results (including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals) would occur.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less-health protective, BMDLs would be estimated given the confidence interval around the BMD would be more narrower.
 
-Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necesary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), multiple statistical studies have researched the concept of the design effect, $D$ as an approach to transformation dose-response data in order to reduce overdispersion due to correlation arising from a clustered study design.  The core concept is that correlated data can be transformed and then modeled with standard dichotomous models as if it were not correlated.  As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) reports, the design effect is related approximately to  intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
+Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necesary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), multiple statistical studies have researched the concept of the design effect, $D$ as an approach to transform dose-response data in order to reduce overdispersion due to correlation arising from a clustered study design.  The core concept is that correlated data can be transformed and then modeled with standard dichotomous models as if it were not correlated.  As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) reports, the design effect is related approximately to  intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
 
 As described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386), $D$ is the ratio of the variance for correlated, clustered data and the variance for uncorrelated binomial data, given both have the same average proportion of affected animals. For both variances, an estimate of the proportion of affected fetuses $P_{f}=\frac{A_{f}}{N_{f}}$, where $A_{f}$ is the number of affected fetuses and $N_{f}$ is the total number of fetuses, is required. 
 
@@ -1021,4 +1047,4 @@ Rao-Scott transformed N: $N_{RS} = \frac{116}{2.3045} = 50.337$
 
 For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical. 
 
-The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) compared multiple approaches for accounting for intralitter correlation using summary level data (e.g., setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (i.e., the method described above) resulted in BMDLs that were most equivalent to those acheived modeling individual-level data.  
+The ultimate consequence of the Rao-Scott adjustment will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the adjustment that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) compared multiple approaches for accounting for intralitter correlation using summary level data (e.g., setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (i.e., the method described above) resulted in BMDLs that were most equivalent to those acheived modeling individual-level data.  
