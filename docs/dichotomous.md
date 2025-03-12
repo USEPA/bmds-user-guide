@@ -856,7 +856,7 @@ Under the Dataset table:
 
    * **N** Numeric value for the number of fetuses (irrespective of litter membership) per dose group
 
-   * **Incidence** Numeric value for the number of fetuses (irrespective of litter membership) per dose group
+   * **Incidence** Numeric value for the number of affected fetuses (irrespective of litter membership) per dose group
 
 Additionally, users will need to select the species that corresponds to their dose-response data; currently options for species are limited to rat, mouse, and rabbit.
 
@@ -865,14 +865,14 @@ Additionally, users will need to select the species that corresponds to their do
 :scale: 65%
 :name: f84
 
-The Rao-Scott adjustransformationtment page, with an example dataset loaded *add new screenshot when UI updated*
+The Rao-Scott transformation page, with an example dataset loaded *add new screenshot when UI updated*
 ```
 
 Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott transformation page with the following outputs:
 
 * A summary table of the original and adjusted data 
 
-* Plots of the original and adjusted N values and original and adjusted incidence values 
+* Plots of the original and adjusted values for both the total number of fetuses and number of affected fetuses per dose group
 
 ```{figure} _static/img/RS_results.png
 :alt: Result window following Rao-Scott transformation operation
@@ -925,7 +925,7 @@ where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the n
 
 In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$. 
 
-It should be immediately noticed that the calculation of the design effect requires litter-level data given the requirement to know $p_{i}$ for each litter and that it can not be calculated directly from dose-group-level data. In order provider BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squres and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
+It should be immediately noticed that the calculation of the design effect requires litter-level data given the requirement to know $p_{i}$ for each litter and that it can not be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squres and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
 
 ```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
@@ -962,8 +962,8 @@ Design effect using OR regression coefficients: $D_{OR}= e^{\left\lbrack 1.8327 
 
 Average design effect: $D_{average} = \frac{2.2666 + 2.3424}{2} = 2.3045$
 
-Rao-Scott transformed N: $N_{RS} = \frac{116}{2.3045} = 50.337$
+Rao-Scott transformed N: ${N_{f}}_{RS} = \frac{116}{2.3045} = 50.337$
 
-For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical. 
+For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical. 
 
 The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) compared multiple approaches for accounting for intralitter correlation using summary level data (e.g., setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (i.e., the method described above) resulted in BMDLs that were most equivalent to those acheived modeling individual-level data.  
