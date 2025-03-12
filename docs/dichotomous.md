@@ -923,7 +923,7 @@ $${\widehat{V}}=\left( \frac{m}{m-1}\right)\frac{1}{N_{f}}\sum_{i}^{m}n_{i}^{2}{
 
 where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the number of litters.
 
-In order to apply the Rao-Scott transfromation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$. 
+In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$. 
 
 It should be immediately noticed that the calculation of the design effect requires litter-level data given the requirement to know $p_{i}$ for each litter and that it can not be calculated directly from dose-group-level data. In order provider BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392386) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squres and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
