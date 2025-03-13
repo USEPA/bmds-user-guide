@@ -179,11 +179,14 @@ $O(n^{- 1})$. This means the latter approximation goes to the true
 posterior model probability with increasing data and the former, using
 the BIC, may not go to the true value.
 
-[]{#_Toc47700653 .anchor}**Figure 101.** Sample Bayesian dichotomous
-results plot.
+```{figure} _static/img/image104.png
+:alt: Multiple model result curves plotted on single graph, with legend 
+:scale: 75%
+:name: f105
 
-![Multiple model result curves plotted on single graph, with
-legend](_static/img/image104.png){width="6.5in" height="3.161111111111111in"}
+Sample Bayesian dichotomous results plot.
+```
+<br>
 
 ## Bayesian Dichotomous Model Descriptions
 

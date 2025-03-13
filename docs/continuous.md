@@ -36,12 +36,14 @@ All the traditional maximum-likelihood estimation (MLE) models and
 options that were available for analyzing continuous response data in
 previous versions of BMDS are available in BMDS Online.
 
-[]{#_Toc77956735 .anchor}**Figure 63.** Default selection of continuous
-models on BMDS Online's Settings tab.
+```{figure} _static/img/image67.png
+:alt: Checkboxes ticked for default continuous models
+:scale: 85%
+:name: f63
 
-![Checkboxes ticked for default continuous
-models](_static/img/image67.png){width="4.61080271216098in"
-height="1.9748622047244095in"}
+Default selection of continuous models on BMDS Online's Settings tab.
+```
+<br>
 
 Also available for all continuous models are options for Hybrid-Extra
 Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
@@ -72,34 +74,40 @@ For summarized continuous response data, the default column headers are
 For individual continuous response data, the default column headers are
 *Dose* and *Response*.
 
-[]{#_Toc185445240 .anchor}**Figure 64.** Default column headers for
-summarized data (top) and individual data (bottom)
+```{figure} _static/img/image68.png
+:alt: Stacked screenshots of tables showing summarized data (top) and individual data (bottom)
+:scale: 100%
+:name: f64
 
-![Stacked screenshots of tables showing summarized data (top) and
-individual data
-(bottom)](_static/img/image68.png){width="4.036129702537183in"
-height="3.5249365704286966in"}
+Default column headers for summarized data (top) and individual data (bottom)
+```
+<br>
+
 
 ## Dataset Specifications (Settings Tab)
 
 Datasets for an analysis can be a mix of individual and summarized data.
 Select a dataset's Enabled checkbox to include it in the analysis.
 
-[]{#_Toc185445241 .anchor}**Figure 65.** Dataset specification settings,
-with Enabled checkboxes selected.
+```{figure} _static/img/image69.png
+:alt: Dataset specification settings with checkboxes selected
+:scale: 85%
+:name: f65
 
-![Dataset specification settings with checkboxes
-selected](_static/img/image69.png){width="3.819890638670166in"
-height="1.5318350831146106in"}
+Dataset specification settings, with Enabled checkboxes selected.
+```
+<br>
 
 ### Maximum Polynomial Degree
 
-[]{#_Toc185445242 .anchor}**Figure 66.** Maximum polynomial degree
-selections.
+```{figure} _static/img/image70.png
+:alt: Maximum polynomial degree column with picklist displayed
+:scale: 90%
+:name: f66
 
-![Maximum polynomial degree column with picklist
-displayed](_static/img/image70.png){width="1.6799781277340333in"
-height="1.9787882764654419in"}
+Maximum polynomial degree selections.
+```
+<br>
 
 The default value for the maximum polynomial degree is lesser of N-1 or
 3, but the user can change this value to a higher number of degrees up
@@ -119,12 +127,15 @@ text:
 Choices for the **Adverse Direction** option are Automatic (default),
 Up, or Down.
 
-[]{#_Toc109392434 .anchor}**Figure 67.** **Adverse Direction** picklist
-for the selected dataset.
+```{figure} _static/img/image71.png
+:alt: Adverse Direction column with picklist of values displayed
+:scale: 100%
+:name: f67
 
-![Adverse Direction column with picklist of values
-displayed](_static/img/image71.png){width="0.947166447944007in"
-height="1.3469444444444445in"}
+Adverse Direction picklist for the selected dataset.
+```
+<br>
+
 
 This option refers to whether adversity increases as the dose-response
 curve rises "up" or falls "down." Manually choose the adverse direction
@@ -146,11 +157,14 @@ option sets in BMDS Desktop and pybmds.)
 Select the blue Plus button to add a new Option Set row. Select the red
 Trashcan button to delete that Option Set row.
 
-[]{#_Toc47700641 .anchor}**Figure 68.** Continuous Model Option Set row.
+```{figure} _static/img/image72.png
+:alt: BMR Type column with picklist of values displayed
+:scale: 75%
+:name: f68
 
-![BMR Type column with picklist of values
-displayed](_static/img/image72.png){width="6.5in"
-height="0.6833333333333333in"}
+Continuous Model Option Set row.
+```
+<br>
 
 ### Defining the BMD
 
@@ -162,12 +176,14 @@ bounds:
     (*i.e.*, relative deviation, standard deviation, etc.). For details
     on these methods, refer to the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown.
 
-[]{#_Toc185445245 .anchor}**Figure 69.** **BMR Type** picklist
-selections.
+```{figure} _static/img/image73.png
+:alt: BMR Type column with picklist of values displayed
+:scale: 100%
+:name: f69
 
-![BMR Type column with picklist of values
-displayed](_static/img/image73.png){width="1.6668110236220472in"
-height="2.5002165354330708in"}
+BMR Type picklist selections.
+```
+<br>
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
     selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown summarizes the options related to BMR Type and BMRF.
@@ -273,13 +289,14 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 ### Distribution and Variance
 
-[]{#_Toc185445246 .anchor}**Figure 70.** **Distribution and Variance**
-picklist selections.
+```{figure} _static/img/image74.png
+:alt: Picklist menu selections for Distribution+Variance, with Normal+Constant highlighted
+:scale: 100%
+:name: f70
 
-![Picklist menu selections for Distribution+Variance, with
-Normal+Constant
-highlighted](_static/img/image74.png){width="1.6658070866141732in"
-height="1.5478127734033247in"}
+Distribution and Variance picklist selections.
+```
+<br>
 
 The underlying data distribution and the variability around the center
 of that distribution are linked options.
@@ -428,7 +445,7 @@ the observed (or calculated) data that were used as input, one row for
 each dose group. Generally, one desires to have the model predictions
 match the input data as well as possible.
 
-Note that in the Goodness of Fit tables shown in [**Figure 71**](paragraph-target2) and [**Figure 72**](paragraph-target3):
+Note that in the Goodness of Fit tables shown in {numref}`f71` and {numref}`f72`:
 
 -   Sample Mean = the sample mean for both Normally and Lognormally
     distributed data.
@@ -465,22 +482,24 @@ Note that in the Goodness of Fit tables shown in [**Figure 71**](paragraph-targe
 
     $$(ln(Sample\ Median)\  - \ ln(Model\ Fitted\ Median))/(ln(Model\ Fitted\ GSD)/\sqrt{N_{i}})$$
 
-(paragraph-target2)=
-[]{#_Ref184734400 .anchor}**Figure 71.** Goodness of Fit table headings,
-with Normal assumption.
+```{figure} _static/img/image75.png
+:alt: Sample Goodness of fit with column headers
+:scale: 70%
+:name: f71
 
-![Sample Goodness of fit with column
-headers](_static/img/image75.png){width="6.499068241469816in"
-height="0.5797965879265092in"}
+Goodness of Fit table headings, with Normal assumption.
+```
+<br>
+<br>
 
-(paragraph-target3)=
-[]{#_Ref184734412 .anchor}**Figure 72.** Goodness of Fit table headings,
-with Lognormal assumption. Note the column header
-similarities/differences between the two tables.
+```{figure} _static/img/image76.png
+:alt: Sample Goodness of fit table with different column headers
+:scale: 70%
+:name: f72
 
-![Sample Goodness of fit table with different column
-headers](_static/img/image76.png){width="6.5in"
-height="0.6372550306211724in"}
+Goodness of Fit table headings, with Lognormal assumption. Note the column header similarities/differences between the two tables.
+```
+<br>
 
 The scaled residual value is a *calibrated* difference between the
 observations and the model predictions. Regardless of the assumption
@@ -507,11 +526,14 @@ under consideration and the data. In other words, parameter values are
 obtains the best possible fit to the data, given the constraints of the
 model's parameter structure.
 
-[]{#_Toc109392440 .anchor}**Figure 73.** Likelihoods of Interest table.
+```{figure} _static/img/image77.png
+:alt: Likelihoods of interest table
+:scale: 75%
+:name: f73
 
-![Likelihoods of interest
-table](_static/img/image77.png){width="4.302775590551181in"
-height="1.9974934383202099in"}
+Likelihoods of Interest table.
+```
+<br>
 
 The number of parameters for each model excludes parameters that have
 values on one of the bounds set for their estimation (either bounds
@@ -603,12 +625,15 @@ tests based on the log-likelihoods from the Likelihoods of Interest
 table. The p-values associated with the tests are based on asymptotic
 properties of the likelihood ratio.
 
-[]{#_Toc109392441 .anchor}**Figure 74.** Test of Means and Variance Fits
-table.
+```{figure} _static/img/image78.png
+:alt: Test of Mean and Variance Fits table table
+:scale: 75%
+:name: f74
 
-![Test of Mean and Variance Fits table
-table](_static/img/image78.png){width="4.95432195975503in"
-height="1.60962489063867in"}
+Test of Means and Variance Fits table.
+```
+<br>
+
 
 The likelihood ratio is the ratio of two likelihood values, many of
 which are given in the BMDS output. Statistical theory proves that
@@ -766,12 +791,14 @@ group:
     The routine adds the products to the observed means to define the
     lower and upper ends of the error bar.
 
-[]{#_Toc15484421 .anchor}**Figure 75**. Maximum likelihood approach
-results plot for continuous data.
+```{figure} _static/img/image79.png
+:alt: Graph showing results plot
+:scale: 70%
+:name: f75
 
-![Graph showing results
-plot](_static/img/image79.png){width="4.813548775153106in"
-height="2.7544192913385825in"}
+Maximum likelihood approach results plot for continuous data.
+```
+<br>
 
 ## Mathematical Details for Models for Continuous Endpoints in Simple Designs
 

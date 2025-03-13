@@ -26,12 +26,14 @@ BMDS offers the traditional MLE dichotomous response models available in
 previous versions of BMDS plus Bayesian versions of each model, and a
 Bayesian model averaging feature.
 
-[]{#_Toc47700647 .anchor}**Figure 76.** Default dichotomous model
-selection.
+```{figure} _static/img/image81.png
+:alt: Dichotomous model table with default models selected
+:scale: 65%
+:name: f76
 
-![Dichotomous model table with default models
-selected](_static/img/image81.png){width="6.5in"
-height="2.839583333333333in"}
+Default dichotomous model selection.
+```
+<br>
 
 Most MLE models can be run restricted or unrestricted. The EPA default
 recommendation for initial runs is to restrict the Dichotomous Hill,
@@ -63,12 +65,14 @@ The default value for number degrees to run will be the lesser of $n‑1$ or
 3, but the user can change this to a higher number of degrees up to the
 lesser of $n‑1$ or 4. 
 
-[]{#_Toc77956743 .anchor}**Figure 77.** Maximum Multistage Degrees for
-dichotomous datasets.
+```{figure} _static/img/image82.png
+:alt: Maximum Multistage Degree picklist selections displayed, with degree 3 highlighted
+:scale: 100%
+:name: f77
 
-![Maximum Multistage Degree picklist selections displayed, with degree 3
-highlighted](_static/img/image82.png){width="4.925426509186352in"
-height="1.7001476377952756in"}
+Maximum Multistage Degrees for dichotomous datasets.
+```
+<br>
 
 Hovering over the help text icon for **Maximum multistage degree**
 displays the following text:
@@ -91,10 +95,14 @@ Select the blue Plus button in the table header to define a new Option
 Set configuration row; select the red Trash Can button to delete the
 row.
 
-[]{#_Toc47700648 .anchor}**Figure 78.** Dichotomous Model options.
+```{figure} _static/img/image83.png
+:alt: Dichotomous model options with Risk Type picklist values displayed
+:scale: 80%
+:name: f78
 
-![Dichotomous model options with Risk Type picklist values
-displayed](_static/img/image83.png){width="5.03in" height="1.22in"}
+Dichotomous Model options
+```
+<br>
 
 ### Risk Type
 
@@ -141,12 +149,14 @@ background, P(0), equals zero.
 When P(0) does not equal zero, the true response level can be calculated
 using the Extra Risk equation described in [Risk Type](#risk-type)
 
-[]{#_Ref157091435 .anchor}**Figure 79**. Results plot, with horizontal
-bar centered on the y-axis at the modeled BMR.
+```{figure} _static/img/image64.png
+:alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
+:scale: 80%
+:name: f79
 
-![Close-up of horizontal bar of results plot, centered on a BMR of
-0.1](_static/img/image64.png){width="2.556971784776903in"
-height="1.596398731408574in"}
+Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
+```
+<br>
 
 ### Confidence Level (one sided)
 
@@ -169,12 +179,14 @@ interval).
 
 ### Goodness of Fit Table
 
-[]{#_Toc185445256 .anchor}**Figure 80.** Goodness of Fit table for MLE
-Dichotomous.
+```{figure} _static/img/image84.png
+:alt: Goodness of Fit table
+:scale: 80%
+:name: f80
 
-![Goodness of Fit
-table](_static/img/image84.png){width="5.014235564304462in"
-height="1.8556955380577427in"}
+Goodness of Fit table for MLE Dichotomous.
+```
+<br>
 
 The Goodness of Fit table in the individual model results shows a
 listing of the data (*N* and *Observed*) , the model-estimated
@@ -207,12 +219,14 @@ the BMD.
 
 ### Analysis of Deviance Table
 
-[]{#_Toc185445257 .anchor}**Figure 81.** Analysis of Deviance table for
-MLE Dichotomous.
+```{figure} _static/img/image85.png
+:alt: Analysis of Deviance table
+:scale: 75%
+:name: f81
 
-![Analysis of Deviance
-table](_static/img/image85.png){width="4.779691601049869in"
-height="1.3379046369203849in"}
+Analysis of Deviance table for MLE Dichotomous.
+```
+<br>
 
 The analysis of deviance table displays three log-likelihood values.
 
@@ -296,12 +310,14 @@ of the modeling. Because plots, in general, were discussed in [Graphs/Plots (All
 describe the one additional detail specific to the dichotomous models,
 *i.e.*, computation of the error bars:
 
-[]{#_Ref157091436 .anchor}**Figure 82.** Dichotomous endpoint plot with
-error bars on the data points.
+```{figure} _static/img/image86.png
+:alt: Graph displaying error bars on the data points
+:scale: 80%
+:name: f82
 
-![Graph displaying error bars on the data
-points](_static/img/image86.png){width="3.5378587051618546in"
-height="3.398998250218723in"}
+Dichotomous endpoint plot with error bars on the data points.
+```
+<br>
 
 The error bars shown on the plots of dichotomous data () are derived
 using a modification of the Wilson interval (based on the score
