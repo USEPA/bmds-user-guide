@@ -10,8 +10,8 @@ packages are available for download but are no longer supported or
 updated by EPA.
 
 ```{csv-table} List of Maximum-Likelihood Estimation (MLE) Continuous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online
-:widths: 40, 20, 20, 20
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
 
 Exponential,Yes,Yes,Yes
 Hill,Yes,Yes,Yes
@@ -21,8 +21,8 @@ Power,Yes,Yes,Yes
 ```
 
 ```{csv-table} List of MLE Dichotomous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online
-:widths: 40, 20, 20, 20
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
 
 Gamma,Yes,Yes,Yes
 Logistic,Yes,Yes,Yes
@@ -36,17 +36,17 @@ Dichotomous Hill,Yes,Yes,Yes
 ```
 
 ```{csv-table} List of Nested Dichotomous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online
-:widths: 40, 20, 20, 20
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
 
 Nested Logistic,Yes,Yes,Yes
-National Center for Toxicological Research (NCTR),Yes,No,No
+National Center for Toxicological Research (NCTR),Yes,No,Yes
 "Rai and Van Ryzin (No longer supported)",Yes,No,No
 ```
 
 ```{csv-table} List of Specialized Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online
-:widths: 40, 20, 20, 20
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
 
 Bayesian Model Averaging (Dichotomous),No,Yes,Yes
 Multistage Cancer/Multitumor,Yes,Yes,Yes

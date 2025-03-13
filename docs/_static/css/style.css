@@ -18,3 +18,22 @@ code {
     margin: 0 0.1rem;
     vertical-align: top;
 }
+
+.badge a {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    margin: 0 5px;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-decoration: none; /* Remove underline from hyperlink */
+}
+#furo-main-content .badge a:after {
+    content: ""
+}

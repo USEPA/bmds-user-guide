@@ -5,6 +5,10 @@ The U.S. Environmental Protection Agency's (EPA) Benchmark Dose Software
 benchmark dose (BMD) methods to EPA hazardous pollutant risk
 assessments.
 
+EPA risk assessors use the models in BMDS to estimate reference doses (RfDs), reference concentrations (RfCs), and cancer slope factors, which are used along with other scientific information, to set standards that protect human health from the effects of chemical exposures.
+
+A specific focus of BMDS is the estimation of a statistical benchmark dose (BMD), including bounds (e.g., 95% confidence intervals) on such estimates. The BMD is a chemical dose or concentration that produces a predetermined change in the response rate (i.e., the "benchmark") of an adverse effect, such as weight loss or tumor incidence.
+
 This user guide provides instruction on how to use BMDS but is not
 intended to address or replace EPA BMD guidance. Every attempt
 has been made to make this software consistent with EPA guidance,
@@ -17,7 +21,7 @@ Document](https://www.epa.gov/risk/benchmark-dose-technical-guidance).
 ## BMDS for Dose-Response Modeling
 
 BMDS facilitates dose-response modeling. BMDS models are currently
-accessible primarily via an online browser-based web application.
+accessible via an online browser-based web application (BMDS Online), a desktop application (BMDS Desktop), or in a scripting environment (pybmds).
 
 ### Dose-Response Modeling
 
@@ -33,22 +37,20 @@ response (*e.g.*, presence of a tumor or other manifestation of disease
 or a measure of the weight of some organ that might be susceptible to
 the toxic effects of the exposure).
 
-```{figure} _static/img/image7.jpeg
-:alt: Sample graph showing the predetermined BMR line, and its intersection with the BMDL and BMD
-:scale: 100%
+```{figure} _static/img/hill_dose_response.png
+:alt: Sample graph showing the predetermined BMR, and its intersection with the BMDL, BMD, and BMDU
+:scale: 25%
 :name: f1
 
 The dose-response relationship
 ```
-<br>
-
 As {numref}`f1` shows, the benchmark dose (BMD) is the dose amount estimated to produce a
 response (BMR) of a specific magnitude in the test subject. The BMD's
 lower confidence limit (BMDL) is a dose where the observable physical
 effect is less than the predetermined BMR.
 
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
-dose-response models that help risk assessors estimate the quantitative
+[dose-response models](./bmds.md) that help risk assessors estimate the quantitative
 relationship between a chemical ***dose*** and the test
 subject's ***response***. The user can select from and/or compare the 
 models to make predictions about the quantitative relationship between
@@ -85,23 +87,23 @@ endpoints will be added to a future release.)
 
 The key features of those response (endpoint) types are as follows:
 
--   **Continuous Endpoint**: the response is measured on a continuous
+-   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
     positive values, but not always). Organ weight, body weight,
     concentration levels of biological markers --- these are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
 
--   **Dichotomous Endpoint**: the response here is the presence or
+-   [**Dichotomous Endpoints**](./dichotomous.md): the response here is the presence or
     absence of a disease state or other "counter" of system malfunction.
     In this case, each experimental unit will either have the response
     or not. Dichotomous dose-response models predict the proportion of
     such units that have the response. Tumor responses are a subcategory
     of dichotomous endpoints with cancer-specific model selection
     considerations that are automated in the BMDS Multitumor model; for
-    more information, see [**Multiple Tumor Analysis**](#multiple-tumor-analysis).
+    more information, see [**Multiple Tumor Analysis**](./multiple-tumor-analysis).
 
--   **Nested Dichotomous Endpoint:** as for Dichotomous endpoints, the
+-   [**Nested Dichotomous Endpoints**](./nested-dichotomous.md): as for Dichotomous endpoints, the
     presence or absence of a disease state or counter is the response.
     However, in this case each experimental unit may have more than one
     such count (*i.e.*, the counts are nested within an experimental
@@ -119,7 +121,7 @@ dose-response datasets.
 
 ### Presentation of Model Results
 
-As {numref}`f2` shows, BMDS presents model results in text and graphic outputs that can be
+As {numref}`f2` shows, BMDS presents [model results](./result-output-mle.md) in text and graphic outputs that can be
 printed or saved and incorporated into other documents. Results from all
 models include:
 
@@ -140,11 +142,10 @@ models include:
 
 BMDS results for a dichotomous endpoint, presented using graph and tables
 ```
-<br>
 
 ## How EPA Uses BMD Methods
 
-EPA uses BMD methods to derive reference doses estimates (such as
+EPA uses [BMD methods](./modeling-methods.md) to derive reference doses estimates (such as
 reference doses (RfDs), reference concentrations (RfCs), and slope
 factors,[^1] which are used along with other scientific information to
 set standards for human health effects.
@@ -191,22 +192,22 @@ and public reviews in 1998-1999, and extensive Quality Assurance testing
 in 1999-2000, the first public version of BMDS, version 1.2, was
 released in April 2000. Since that time, BMDS has been transformed from
 a standalone Windows application to an Excel-based application in 2018,
-and then to a browser-based web application in 2022.
+and then to a browser-based web application in 2022.  Python-based BMDS Desktop and pybmds were released in 2024.
 
 The 2018 release of BMDS 3.0 included Bayesian versions of all
-maximum-likelihood estimation (MLE) dichotomous models, and Bayesian
-model averaging using all or weighted dichotomous models.
+maximum-likelihood estimation (MLE) dichotomous models, and [Bayesian
+model averaging](./bayesian-dichotomous.md) using all or weighted dichotomous models.
 
 The [BMDS application
 history](https://www.epa.gov/bmds/about-benchmark-dose-tools#history) is
 documented on the BMDS website.
 
-## What's New: BMDS Online is EPA's Primary Dose-Response Modeling Platform
+## What's New in BMDS
 
-[BMDS Online](https://bmdsonline.epa.gov/) is the U.S. EPA's primary
-application for benchmark dose-response modeling.
+[BMDS](https://www.epa.gov/bmds) is the U.S. EPA's primary
+application for benchmark dose-response modeling and includes multiple applications for conducting dose-response analyses according to user needs and preferences.
 
-BMDS Online leverages aspects of the familiar BMDS 3.x Excel interface
+[BMDS Online](./bmds-online.md) leverages aspects of the familiar BMDS 3.x Excel interface
 yet delivers faster performance and enables greater accessibility for
 users. Now, instead of downloading and installing an Excel macro-based
 application, users only need an internet connection to run a BMD
@@ -215,9 +216,6 @@ analysis.
 There is also the added flexibility of offline processing with the
 simultaneous releases of BMDS Desktop and pybmds. For more information
 on these programs, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
-
-Learn more about BMDS Online on the [BMDS
-website](https://www.epa.gov/bmds).
 
 ### Privacy is Respected
 
@@ -233,7 +231,7 @@ rerun or delete the analyses at any time, and they can optionally
 If data sensitivity is an issue, BMDS Desktop or pybmds should be used
 for offline analysis.
 
-## What's New: Work Offline with BMDS Desktop and pybmds
+### Work Offline with BMDS Desktop and pybmds
 
 The 2024 BMDS Online upgrade includes the release of two new
 applications:
@@ -242,7 +240,7 @@ applications:
     offline in a web browser and replaces the Excel-based BMDS 3.3. It
     is intended for users with increased data privacy or sensitivity
     concerns that prevent them from being able to run BMD analyses on
-    EPA infrastructure.
+    EPA infrastructure.  The user interface for BMDS Desktop is identical to that of BMDS Online.
 
 -   **pybmds** enables users to run dose-response analyses in a
     scripting environment, along with running high-throughput or batch
@@ -252,7 +250,7 @@ applications:
 
 For more information, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
 
-## What's New: Active Development Stopped on BMDS 3.3
+### Active Development Stopped on BMDS 3.3
 
 Active development has stopped on the Excel-based BMDS 3.3 application,
 which was first introduced in 2018. While the Excel framework for the
@@ -283,19 +281,27 @@ BMDS 3.3 will remain
 [downloadable](https://www.epa.gov/bmds/download-bmds/) but will receive
 no further updates.
 
-## What's New: Key Improvements and Enhancements
+### Recent Key Improvements and Enhancements
 
 All improvements and enhancements listed below are available in BMDS
 Online, BMDS Desktop, and pybmds:
 
 -   Addition of Multistage Cancer/Multitumor model, along with a [poly-k
-    trend test](./multiple-tumor-analysis.md#poly-k-adjustment)
+    adjustment tool](./multiple-tumor-analysis.md#poly-k-adjustment) (24.1 release)
 
 -   Addition of the Nested Logistic nested dichotomous model for
-    developmental toxicity data
+    developmental toxicity data (24.1 release)
+
+-   Addition of the NCTR nested dichotomous model for developmental toxicity data (25.1 release)
+
+-   Addition of the [Rao-Scott transformation tool](./dichotomous.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
+
+-   Ability to clone an analysis (25.1 release)
 
 -   Enhancements and under-the-hood fixes to improve efficiency, error
-    handling, and stability for future development
+    handling, and stability for future development (24.1 and 25.1 releases)
+
+-   Bug fixes (24.1 and 25.1 releases)
 
 For a complete list of what's new or changed in the current release,
 refer to the BMDS website's [Release History

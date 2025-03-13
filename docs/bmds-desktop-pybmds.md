@@ -21,7 +21,6 @@ The bmds-ui Python package installs BMDS Desktop to the user's local system. BMD
 
 BMDS Online and BMDS Desktop use the same interface and command components and workflows, but BMDS Desktop projects run entirely on the user's local computer with no Internet connection.
 ```
-<br>
 
 ### BMDS Desktop-Specific Features and Constraints
 
@@ -40,7 +39,6 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 BMDS Desktop home page, showing selectable and searchable list of previous analyses within a single project
 ```
-<br>
 
 -   Multiple analyses can be stored in a single project, but the user can run only one project (*i.e.*, database file) at a time.
 
@@ -65,7 +63,7 @@ BMDS Online has its own set of constraints on sharing results via URL; for more 
 
 pybmds is a Python package that is the underlying execution engine for BMDS Desktop and BMDS Online. It's also a way for users to run BMDS in a scripting environment and is designed for users familiar with basic scripting in languages like R or Python.
 
-Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface (). The pybmds command-line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [Bayesian model averaging](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging), even override the default priors for parameter estimation.
+Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface ({numref}`f5`). The pybmds command-line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [Bayesian model averaging](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging), even override the default priors for parameter estimation.
 
 ```{figure} _static/img/image11.png
 :alt: pybmds running in a terminal window
@@ -74,7 +72,6 @@ Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal wind
 
 pybmds is a command-line environment that runs in a terminal window.
 ```
-<br>
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.
 
