@@ -72,8 +72,8 @@ Multistage Multitumor Results Output tab layout.
 ## Individual Model Results
 
 From the Output tab's Maximum Likelihood Approach Model Results table,
-select any model link [**Figure 51**](#_Ref183108349) to display a popup window thoroughly detailing
-that model's stats results [**Figure 52**](#_Ref183108350).
+select any model link {numref}`f51` to display a popup window thoroughly detailing
+that model's stats results {numref}`f52`.
 
 ```{figure} _static/img/image56.png
 :alt: Callout box drawn around model name in summary results table
@@ -220,7 +220,7 @@ tolerance ($1.0e^{-6}$) of parameter boundaries. If so, they are marked as
 
 CDF stands for *cumulative distribution function*, in this case for the
 BMD estimate. It lists the percentiles associated with the CDF for the
-BMD being estimated [(**Figure 59**)](#_Ref177727762).
+BMD being estimated {numref}`f59`.
 
 Note that the BMD value associated with the CDF value of 0.5 is the MLE
 of the BMD (and matches the value reported for the BMD in the Summary
