@@ -1,5 +1,15 @@
+body {
+    /* https://sphinx-design.readthedocs.io/en/furo-theme/css_variables.html */
+    --admonition-title-font-size: 1rem;
+    --admonition-font-size: 0.85rem;
+}
+
 code {
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.caption-number {
+    font-weight: bold;
 }
 
 /* External link (starts with https:// ) */

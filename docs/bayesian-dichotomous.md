@@ -18,13 +18,13 @@ When one is interested in more than one model, model averaging is an
 approach that should be seriously considered in lieu of model selection
 (*e.g.*, basing inferences on one model deemed to be the "best").
 
-Suppose for this development that we are considering K models
+Suppose for this development that we are considering $K$ models
 ($M_{k},\ k\  = \ 1,\ \ldots,\ K)$).
 
 For each model, BMDS approximates the posterior density for the BMD
 using a Laplacian approximation; call that density
 $g_{k}\left( BMD \middle| M_{k},D \right)$ for model k. If the parameter
-vector for model k is denoted θ~k~, let ${\widehat{\theta}}_{k}$
+vector for model k is denoted $θ_{k}$, let ${\widehat{\theta}}_{k}$
 designate the value of that vector that maximizes the posterior
 likelihood (the maximum *a posteriori*, or MAP, estimate).
 
@@ -41,7 +41,7 @@ averaging process. Unlike approaches that have been used elsewhere, we
 eschew the use of information-criteria-based weights (*e.g.*, those
 based on Bayesian information criteria or Akaike information criteria).
 Rather, BMDS generates weights using the Laplace approximation to the
-marginal density of the data. That is, for model *M~k~*, 1 ≤ *k* ≤ K,
+marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$,
 with parameter vector $\theta_{k}$ of length s, one approximates the
 marginal density as
 
@@ -86,8 +86,8 @@ posterior density for the likelihood in each of the steps. This method
 approximates the marginal likelihood using the posterior MAP estimate
 and Hessian of the log-posterior.
 
-**Note** For the model average approach, the dichotomous Bayesian models
-(described in Section 9.1) are available in the model average. For
+:::{note}
+For the model average approach, the [Bayesian dichotomous models](#bayesian-dichotomous-model-descriptions) are available in the model average. For
 dichotomous model averaging, the Multistage model is capped to a maximum
 degree of 2. The reasoning for this follows upon the work of Nitcheva,
 et al.
@@ -95,13 +95,14 @@ et al.
 who show that higher-order polynomials are not necessary given the fact
 that other models of the model averaging suite (*e.g.*, dichotomous
 Hill) can provide increased curvature.
+:::
 
 The BMDS model-averaged BMD point estimate is the weighted average of
 BMD MAP estimates from individual models, weighted by posterior weights
 $\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the
 median of the approximate posterior density of θ. For the BMDL or BMDU
-estimates, the equation defining $g_{ma}$ is integrated. A 100(*α*)%
-BMDU estimate or 100(1 - *α*)% BMDL estimate is the value BMD~α~ such
+estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$
+BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such
 that:
 
 $$\alpha = \ \int_{- \infty}^{BMD_{\alpha}}{g_{ma}\left( BMD|D \right)\ dBMD,}$$
@@ -118,7 +119,7 @@ $$\approx {\frac{1}{2}\Pr}\left( \  - 2{\text{ log}\lbrack\widehat{g}}_{k}\left(
 
 where${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the
 maximum value of the posterior evaluated at *x,* $\widehat{BMD}$ is the
-MAP estimate of the BMD*,* and $\chi_{1,\alpha\ }^{2}$ is the *α*
+MAP estimate of the BMD and $\chi_{1,\alpha\ }^{2}$ is the *α*
 quantile of a Chi-square random variable with one degree of freedom. The
 above approximation assumes $BMD_{\alpha} < \widehat{BMD}$. When
 $\widehat{BMD} < BMD_{\alpha}$ the right-hand side of this equation is
@@ -137,8 +138,8 @@ To compare the difference between any two Bayesian models, the
 unnormalized Log Posterior Probability (LPP) is given, which allows the
 computation of a Bayes factor (BF) to compare any two models. BF equals
 the exponentiated difference between the two LPP. For example, if one
-wishes to compare the Log-Logistic model (Model A) (yielding LPP~A~) to
-the Multistage 2^nd^ degree model (Model B, with LPP~B~) one estimates
+wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to
+the Multistage 2^nd^ degree model (Model B, $LPP_{B}$) one estimates
 the BF as
 
 $$BF = \exp\left( LPP_{A} - LPP_{B} \right),$$
@@ -151,16 +152,9 @@ interpretation would be that the Log-logistic model is *a posteriori*
 2.5 times more likely than the multistage model. When these values are
 normalized into proper probabilities, they are equivalent to the
 posterior model probabilities given in model averaging (again, assuming
-equal model probability *a priori*). Table 13 is adapted from Jeffreys
+equal model probability *a priori*). The table below is adapted from Jeffreys
 ([1998](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials?action=search.view&reference_id=4850043))
 and is a common interpretation of Bayes Factors.
-
-[]{#_Toc47700653 .anchor}**Figure 101.** Sample Bayesian dichotomous
-results plot.
-
-![Multiple model result curves plotted on single graph, with
-legend](_static/img/image104.png){width="6.5in" height="3.161111111111111in"}
-
 
 ```{csv-table} Bayes factors for dichotomous models.
 :header: >
@@ -174,7 +168,6 @@ legend](_static/img/image104.png){width="6.5in" height="3.161111111111111in"}
 31.6 to 100,very strong
 100,decisive
 ```
-
 For BMDS, all LPP and corresponding posterior model probabilities are
 computed using the Laplace approximation. This value is different from
 the commonly used Bayesian Information Criterion (BIC), and the two
@@ -186,14 +179,25 @@ $O(n^{- 1})$. This means the latter approximation goes to the true
 posterior model probability with increasing data and the former, using
 the BIC, may not go to the true value.
 
+```{figure} _static/img/image104.png
+:alt: Multiple model result curves plotted on single graph, with legend 
+:scale: 75%
+:name: f105
+
+Sample Bayesian dichotomous results plot.
+```
+<br>
+
 ## Bayesian Dichotomous Model Descriptions
 
-***Note*** At this time, EPA does not offer technical guidance on
+:::{note}
+At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
+:::
 
 From a Bayesian perspective, inference proceeds by defining a
 data-generating mechanism, given a model, $M$, and its parameters. For
-our purposes, $M$ would be one of the models listed in Table 8 that
+our purposes, $M$ would be one of the models listed in [Dichotomous Response Models](./dichotomous.md#dichotomous-response-models) that
 determines the probability of response. For the dichotomous models, the
 data generating mechanism would be the assumption that the observations
 were obtained from binomial sampling, having the dose-dependent
@@ -203,37 +207,35 @@ values of the parameters in that model).
 We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
-of the likelihood is presented in Section 9.5.1, "Likelihood Function,"
-on page [77](./dichotomous.md#likelihood-function).
+of the likelihood is presented in [Likelihood Function](./dichotomous.md#likelihood-function).
 
-The set of Bayesian dichotomous models used in BMDS 3 is identical to
+The set of Bayesian dichotomous models used in BMDS Online is identical to
 the set of models used for maximum-likelihood estimation (MLE)
-approaches (Table 8). In the following, let θ be the vector of
+approaches ([Dichotomous Response Models](./dichotomous.md#dichotomous-response-models)). In the following, let θ be the vector of
 parameters that are required to define the any one of those models. So,
-for example, for the Weibull model θ = (g, α, β). The additional
+for example, for the Weibull model $\theta = (g, \alpha, \beta)$. The additional
 consideration incorporated into the Bayesian approach is the
-specification of a prior distribution for θ. The Bayesian approach takes
+specification of a prior distribution for $\theta$. The Bayesian approach takes
 the specified prior and updates it using the data under consideration to
-obtain a posterior distribution for θ.
+obtain a posterior distribution for $\theta$.
 
-From a Bayesian perspective, functions of θ also have posterior
+From a Bayesian perspective, functions of $\theta$ also have posterior
 densities. So, using the equations (which express the BMD as function of
-the model parameters) summarized in Table 9, one can derive a posterior
+the model parameters) summarized in [Calculation of the BMD for Individual Dichotomous Models](./dichotomous.md#calculation-of-the-bmd-for-the-individual-dichotomous-models), one can derive a posterior
 distribution for the BMD.
 
 BMDS summarizes the posterior for the BMD as follows. The BMD is equated
-to the value obtained (as in Table 9) by using the maximum *a
-posteriori* (MAP) θ estimate. The MAP is the value of θ that maximizes
+to the value obtained by using the maximum *a
+posteriori* (MAP) $\theta$ estimate. The MAP is the value of $\theta$ that maximizes
 the posterior log-likelihood. The posterior density is itself
 approximated using a Laplacian approximation. This approximation is also
 used to estimate BMDL and BMDU values, which are the percentiles from
 that density that correspond to the confidence level selected by the
 user.
 
-The priors for the BMDS dichotomous models are defined in Table 14.
+The priors for the BMDS dichotomous models are defined below.
 
-**Note**
-
+:::{note}
 The priors for the parameters are based on scaled doses and scaled
 responses; BMDS performs this scaling automatically.
 
@@ -246,182 +248,327 @@ lowest dose) group.
 The user does ***not*** need to scale anything beforehand. That means
 that the parameter estimates, and BMD values returned by the program
 have been adjusted back to the original scale of the doses and the
-original scale of the responses specified in the input data file.
+original scale of the responses specified in the input data file. 
+:::
 
-[]{#_Ref548672746 .anchor}Table 14. *Bayesian dichotomous models and
-their respective parameter priors.*
+### Bayesian Dichotomous Models and their Respective Parameter Priors
 
-+---------------------+-------+--------------+-------------------------+
-| Model               | C     | Priors       | Notes                   |
-|                     | onstr |              |                         |
-|                     | aints |              |                         |
-+=====================+=======+==============+=========================+
-| Multistage          | $     | $$logit      | The prior over the β~1~ |
-|                     | $0 \l | (g)\sim\ Nor | parameter reflects the  |
-| $p(dose) = g + (1   | eq g  | mal(0,\ 2)$$ | belief that the linear  |
-|  - g)\left( 1 - \ex | < 1$$ |              | term should be strictly |
-| p\left\lbrack - \su |       | $$\beta_{    | positive if the         |
-| m_{i = 1}^{N}{\beta | $$    | i}\sim\ Logn | quadratic term is       |
-| _{i}{dose}^{i}} \ri | \beta | ormal(0,1),\ | positive in the two-hit |
-| ght\rbrack \right)$ | _{i}  |  i \geq 2)$$ | model of                |
-|                     | > 0$$ |              | carcinogenesis.         |
-|                     |       |              |                         |
-|                     | $$N\  |              | The difference in       |
-|                     |   \ge |              | priors between          |
-|                     | q 2$$ |              | Multistage and Quantal  |
-|                     |       |              | Linear models is by     |
-|                     |       |              | design. The objective   |
-|                     |       |              | is to emphasize the     |
-|                     |       |              | higher-order terms in   |
-|                     |       |              | each model. Multistage  |
-|                     |       |              | 1 uses a prior favoring |
-|                     |       |              | shallow dose-response   |
-|                     |       |              | relationships, while    |
-|                     |       |              | Quantal Linear uses a   |
-|                     |       |              | more diffuse prior.     |
-|                     |       |              |                         |
-|                     |       |              | For model averaging     |
-|                     |       |              | purposes, N = 2.        |
-+---------------------+-------+--------------+-------------------------+
-| Weibull             | $     | $$logit      |                         |
-|                     | $0 \l | (g)\sim\ Nor |                         |
-| $p(dose) = g + (1 - | eq g  | mal(0,\ 2)$$ |                         |
-|  g)\left( 1 - \exp\ | < 1$$ |              |                         |
-| left\lbrack - \beta |       | $\alph       |                         |
-| {dose}^{\alpha} \ri | $$0   | a\sim\ Logno |                         |
-| ght\rbrack \right)$ | < \al | rmal(\sqrt{0 |                         |
-|                     | pha < | .18},\ 0.5$) |                         |
-|                     |  40$$ |              |                         |
-|                     |       | $$\beta\s    |                         |
-|                     | $$    | im\ Lognorma |                         |
-|                     | 0 < \ | l(0,\ 1.5)$$ |                         |
-|                     | beta  |              |                         |
-|                     | < 10, |              |                         |
-|                     | 000$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
-| Quantal Linear      | $     | $$logit      | The difference in       |
-|                     | $0 \l | (g)\sim\ Nor | priors between Quantal  |
-| $p(dose) = g + (    | eq g  | mal(0,\ 2)$$ | Linear and the          |
-| 1 - g)\left( 1 - \e | < 1$$ |              | following Multistage    |
-| xp\lbrack - \beta d |       | $$\beta      | model is by design. The |
-| ose\rbrack \right)$ | $$0 < | \sim\ Lognor | objective is to         |
-|                     |  \ \b | mal(0,\ 1)$$ | emphasize the           |
-|                     | eta < |              | higher-order terms in   |
-|                     |  18$$ |              | each model.             |
-|                     |       |              |                         |
-|                     |       |              | Quantal Linear is not   |
-|                     |       |              | the same as             |
-|                     |       |              | Multistage-1. This is   |
-|                     |       |              | important for model     |
-|                     |       |              | averaging purposes.     |
-|                     |       |              | Multistage 1 uses a     |
-|                     |       |              | prior favoring shallow  |
-|                     |       |              | dose-response           |
-|                     |       |              | relationships, while    |
-|                     |       |              | Quantal Linear uses a   |
-|                     |       |              | more diffuse prior.     |
-+---------------------+-------+--------------+-------------------------+
-| Gamma               | $     | $$log        | The prior for α entails |
-|                     | $0 \l | it(g)\sim\ N | that there is only a    |
-| $p(dose) = g + \fra | eq g  | ormal(0,2)$$ | 0.05 prior probability  |
-| c{1 - g}{\Gamma(\al | < 1$$ |              | the power parameter     |
-| pha)}\int_{0}^{\bet |       | $$\alpha\si  | will be less than 1.    |
-| a dose}{t^{\alpha - | $     | m\ Lognormal | This allows for models  |
-|  1}\exp( - t)dt\ }$ | $0.2  | (\ln(2),\ \s | that are supra linear;  |
-|                     | < \al | qrt{0.18})$$ | however, it requires a  |
-|                     | pha < |              | large amount of data    |
-|                     |  20$$ | $$\beta      | for the α parameter to  |
-|                     |       | \sim\ Lognor | go much below 1.        |
-|                     | $$0   | mal(0,\ 1)$$ |                         |
-|                     | < \ \ |              | The α parameter is also |
-|                     | beta  |              | constrained to be       |
-|                     | < 10, |              | greater than 0.2, for   |
-|                     | 000$$ |              | numerical reasons.      |
-+---------------------+-------+--------------+-------------------------+
-| Logistic            | $$    | $$\alph      |                         |
-|                     | - 20  | a\ \sim\ Nor |                         |
-| $p(dose) =          | < \al | mal(0,\ 2)$$ |                         |
-|  \frac{1}{1 + exp\l | pha < |              |                         |
-| brack - \alpha\  -  |  20$$ | $$\be        |                         |
-| \beta dose\rbrack}$ |       | ta\sim\ Logn |                         |
-|                     | $$    | ormal(0,2)$$ |                         |
-|                     | 0 < \ |              |                         |
-|                     |  \bet |              |                         |
-|                     | a\  < |              |                         |
-|                     |  40$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
-| Log-Logistic        | $     | $$logit      |                         |
-|                     | $0 \l | (g)\sim\ Nor |                         |
-| $p(d                | eq g  | mal(0,\ 2)$$ |                         |
-| dose) = g + \frac{1 | < 1$$ |              |                         |
-|  - g}{1 + exp\lbrac |       | $$\alph      |                         |
-| k - \alpha\  - \bet | $$    | a\ \sim\ Nor |                         |
-| a\ln(dose)\rbrack}$ | - 40  | mal(0,\ 1)$$ |                         |
-|                     | < \al |              |                         |
-|                     | pha < | $$\          |                         |
-|                     |  40$$ | beta\sim\ Lo |                         |
-|                     |       | gnormal({ln} |                         |
-|                     | $$0 < | (2),\ 0.5)$$ |                         |
-|                     |  \ \b |              |                         |
-|                     | eta < |              |                         |
-|                     |  20$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
-| Probit              | $$    | $$\alph      | $\Phi( \bullet )$ is    |
-|                     | - 20  | a\ \sim\ Nor | the standard Normal     |
-| $p(                 | < \al | mal(0,\ 2)$$ | cumulative density      |
-| dose) = \ \Phi(\alp | pha < |              | function                |
-| ha + \ \beta dose)$ |  20$$ | $$\beta      |                         |
-|                     |       | \sim\ Lognor |                         |
-|                     | $$0 < | mal(0,\ 1)$$ |                         |
-|                     |  \ \b |              |                         |
-|                     | eta < |              |                         |
-|                     |  40$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
-| Log-Probit          | $     | $$logit      | $\Phi( \bullet )$ is    |
-|                     | $0 \l | (g)\sim\ Nor | the standard Normal     |
-| $p(dose             | eq g  | mal(0,\ 2)$$ | cumulative density      |
-| ) = g + (1 - g)\Phi | < 1$$ |              | function                |
-| \lbrack\alpha + \be |       | $$\alph      |                         |
-| ta\ln(dose)\rbrack$ | $$    | a\ \sim\ Nor |                         |
-|                     | - 40  | mal(0,\ 1)$$ |                         |
-|                     | < \al |              |                         |
-|                     | pha < | $$           |                         |
-|                     |  40$$ | \beta\sim\ L |                         |
-|                     |       | ognormal(\ln |                         |
-|                     | $$0 < | (2),\ 0.5)$$ |                         |
-|                     |  \ \b |              |                         |
-|                     | eta < |              |                         |
-|                     |  20$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
-| Dichotomous Hill    | $     | $$logit(g)   |                         |
-|                     | $0 \l | \sim\ Normal |                         |
-| $p(do               | eq g  | ( - 1,\ 2)$$ |                         |
-| se) = g + \ \frac{\ | < 1$$ |              |                         |
-| nu - v \times g}{1  |       | $$a\ \s      |                         |
-| + exp\lbrack - a -  | $$- 4 | im\ Normal(  |                         |
-| b\ln(dose)\rbrack}$ | 0 < v | - 3,\ 3.3)$$ |                         |
-|                     |  \leq |              |                         |
-|                     |  40$$ | $$b\ \sim\ L |                         |
-|                     |       | ognormal(\ln |                         |
-|                     | $$    | (2),\ 0.5)$$ |                         |
-|                     | - 40  |              |                         |
-|                     | < a < | $$logit      |                         |
-|                     |  40$$ | (v)\sim\ Nor |                         |
-|                     |       | mal(0,\ 3)$$ |                         |
-|                     | $     |              |                         |
-|                     | $0 <  |              |                         |
-|                     | \ b < |              |                         |
-|                     |  40$$ |              |                         |
-+---------------------+-------+--------------+-------------------------+
+::::{tab-set}
 
-: The individual Bayesian dichotomous models and their respective
-parameter priors. Table showing, for each Bayesian dichotomous model,
-its equation, constraints, priors, and notes
+:::{tab-item} Multistage
 
-**Notes:** $\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. Normal(x, y) denotes a Normal distribution with mean x and standard deviation y. Lognormal(w, z) denotes a Lognormal distribution with log-scale mean w and log-scale standard deviation z.
+**Model Form**
+
+$$p(dose) = g + (1 - g)\left( 1 - \exp\left\lbrack - \sum_{i = 1}^{n}{\beta_{i}dose^{i}} \right\rbrack \right)$$
+
+**Parameters**
+
+$g$ = background
+
+$\beta_{i}$ = dose coefficients
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$\beta_{i} > 0$
+
+$N \geq 2$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\alpha \sim Normal(0,1)$
+
+$\beta \sim Lognormal(\ln(2),0.5)$
+
+**Notes**
+
+The prior over $\beta_{1}$ reflects the belief that the linear term should be strictly prositive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
+
+For model averaging purposes, $N = 2$.
+
+:::
+
+:::{tab-item} Weibull
+
+**Model Form**
+
+$$p(dose) = g + (1 - g)\left( 1 - \exp\left\lbrack - \beta{dose}^{\alpha} \right\rbrack \right)$$
+
+**Parameters**
+
+$g$ = background
+
+$\alpha$ = power
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$-40\  < \ \alpha\  \leq \ 40$
+
+$0\  < \ \beta < \ 10,000$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\alpha \sim Lognormal(\sqrt(0.18),0,5)$
+
+$\beta \sim Lognormal(0,1.5)$
+
+:::
+
+:::{tab-item} Quantal Linear
+
+**Model Form**
+
+$$p(dose) = g + (1 - g)\left( 1 - \exp\left\lbrack - \beta{dose} \right\rbrack \right)$$
+
+**Parameters**
+
+$g$ = background
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$0\  < \ \beta < \ 10,000$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\beta \sim Lognormal(0,1)$
+
+**Notes**
+
+The difference in priors between the Quantal Linear model and the Multistage 1 model is by design. The objective is to emphasize the higher-order terms in each model.  The Quantal Linear model is not the same as the Multistage 1 model. This is important for model averaging purposes. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
+
+:::
+
+:::{tab-item} Gamma
+**Model Form**
+
+$$p(dose) = g + \frac{1 - g}{\Gamma(\alpha)}\int_{0}^{\beta d}{t^{\alpha - 1}\exp( - t)dt\ }$$
+
+**Parameters**
+
+$g$ = background
+
+$\alpha$ = power
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$0.2\  < \ \alpha\  \leq \ 20$
+
+$0\  < \ \beta\  < 10,000$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\alpha \sim Lognormal(\ln(2)\sqrt(0.18))$
+
+$\beta \sim Lognormal(0,1)$
+
+**Notes**
+
+The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.  
+
+The $\alpha$ parameter is also constrained to be greater than 0.2 for numerical reasons.
+:::
+
+:::{tab-item} Logistic
+**Model Form**
+
+$$p(dose) = \frac{1}{1 + exp\lbrack - \alpha - \beta(dose)\rbrack}$$
+
+**Parameters**
+
+$\alpha$ = intercept
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$- 20 < \alpha < 20$
+
+$0 < \ \beta\  < 40$
+
+**Priors**
+
+$\alpha \sim Normal(0,2)$
+
+$\beta \sim Lognormal(0,2)$
+
+:::
+
+:::{tab-item} Log-Logistic
+**Model Form**
+
+$$p(dose) = g + \frac{1 - g}{1 + exp\lbrack - \alpha - \beta log(dose)\rbrack}$$
+
+**Parameters**
+
+$g$ = background
+
+$\alpha$ = power
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$- 40\  < \ \alpha\  \leq \ 40$
+
+$0\  < \ \beta < 20$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\alpha \sim Normal(0,1)$
+
+$\beta \sim Lognormal(\ln(2),0.5)$
+
+:::
+
+:::{tab-item} Probit
+**Model Form**
+
+$$p(dose) = \ \Phi(\alpha + \ \beta dose)$$
+
+where 
+
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+
+and
+
+$\phi(t) = \ \frac{1}{\sqrt{2\pi}}e^{\frac{- t^{2}}{2}}$
+
+**Parameters**
+
+$\alpha$ = intercept
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$- 20 < \alpha < 20$
+
+$0\  < \ \beta < 40$
+
+**Priors**
+
+$\alpha \sim Normal(0,2)$
+
+$\beta \sim Lognormal(0,1)$
+
+**Notes**
+
+$\Phi$ is the standard Normal cumulative distribution function, $\phi$
+is the standard Normal density function.
+:::
+
+:::{tab-item} Log-Probit
+**Model Form**
+
+$$p(dose) = g + (1 - g)\Phi\left\lbrack \alpha + \beta\log(dose) \right\rbrack$$
+
+where
+
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+
+and
+
+$\phi(t) = \ \frac{1}{\sqrt{2\pi}}e^{\frac{- t^{2}}{2}}$
+
+**Parameters**
+
+$g$ = background
+
+$\alpha$ = intercept
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$- 40\  \leq \alpha < 40$
+
+$0\  < \ \beta\  \leq 20$
+
+**Priors**
+
+$logit(g) \sim Normal(0,2)$
+
+$\alpha \sim Normal(0,1)$
+
+$\beta \sim Lognormal(\ln(2),0.5)$
+
+**Notes**
+
+$\Phi$ is the standard Normal cumulative distribution function, $\phi$
+is the standard Normal density function.
+:::
+
+:::{tab-item} Dichotomous Hill
+**Model Form**
+
+$$p(dose) = g + \frac{(v - vg)}{1 + exp( - \alpha - \beta\log(dose))}$$
+
+**Parameters**
+
+$g$ = background
+
+$v$ = maximum extra risk
+
+$\alpha$ = intercept
+
+$\beta$ = slope
+
+**Parameter Constraints**
+
+$0\  \leq \ g\  < \ 1$
+
+$- 40\  < \ v\  \leq 40$
+
+$- 40\  < \alpha\  \leq 40$
+
+$0\  < \ \beta\  \leq 40$
+
+**Priors**
+
+$logit(g) \sim Normal(-1,2)$
+
+$\alpha \sim Normal(-3,3.33)$
+
+$\beta \sim Lognormal(\ln(2),0.5)$
+
+$logit(v) \sim Normal(0,3)$
+:::
+
+::::
+
+:::{note}
+For all the models described above, $\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. $Normal(x, y)$ denotes a Normal distribution with mean $x$ and standard deviation $y$. $Lognormal(w, z)$ denotes a Lognormal distribution with log-scale mean $w$ and log-scale standard deviation $z$.  Further, the background parameter constraints above are on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
+:::
 
 As the number of observations in a dataset increases, there should be less quantitative difference between the parameters and BMDs obtained from the Bayesian approach and from the maximum-likelihood estimation (MLE) approach.
 
 When there are fewer data points, the priors will affect the Bayesian estimation. The impact may be most noticeable when the data suggest a "hockey-stick" shaped dose-response relationship, or when those data suggest strong supralinear behavior. In these cases, the priors specified above for the Bayesian approach will tend to "shrink back" parameter estimates to obtain smoother dose-response relationships where changes in the slope are more gradual.
 
-***Note*** Table 14 presents the background parameter constraints on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
+

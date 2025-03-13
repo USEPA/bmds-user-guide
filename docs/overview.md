@@ -33,16 +33,19 @@ response (*e.g.*, presence of a tumor or other manifestation of disease
 or a measure of the weight of some organ that might be susceptible to
 the toxic effects of the exposure).
 
-[]{#_Toc185445177 .anchor}**Figure 1.** The dose-response relationship:
-A benchmark dose (BMD) is the dose amount estimated to produce a
+```{figure} _static/img/image7.jpeg
+:alt: Sample graph showing the predetermined BMR line, and its intersection with the BMDL and BMD
+:scale: 100%
+:name: f1
+
+The dose-response relationship
+```
+<br>
+
+As {numref}`f1` shows, the benchmark dose (BMD) is the dose amount estimated to produce a
 response (BMR) of a specific magnitude in the test subject. The BMD's
 lower confidence limit (BMDL) is a dose where the observable physical
 effect is less than the predetermined BMR.
-
-![Sample graph showing the predetermined BMR line, and its intersection
-with the BMDL and
-BMD](_static/img/image7.jpeg){width="4.775807086614173in"
-height="2.298611111111111in"}
 
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
 dose-response models that help risk assessors estimate the quantitative
@@ -116,7 +119,7 @@ dose-response datasets.
 
 ### Presentation of Model Results
 
-BMDS presents model results in text and graphic outputs that can be
+As {numref}`f2` shows, BMDS presents model results in text and graphic outputs that can be
 printed or saved and incorporated into other documents. Results from all
 models include:
 
@@ -130,12 +133,14 @@ models include:
     (notated BMDL and BMDU for the lower bound and upper bound,
     respectively)
 
-[]{#_Toc185445178 .anchor}**Figure 2.** BMDS results for a dichotomous
-endpoint, presented using graph and tables.
+```{figure} _static/img/image8.png
+:alt: Cursor hovers over Log-logistic row, with corresponding plot displayed
+:scale: 100%
+:name: f2
 
-![Cursor hovers over Log-logistic row, with corresponding plot
-displayed](_static/img/image8.png){width="6.476848206474191in"
-height="2.2419870953630796in"}
+BMDS results for a dichotomous endpoint, presented using graph and tables
+```
+<br>
 
 ## How EPA Uses BMD Methods
 

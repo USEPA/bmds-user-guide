@@ -36,18 +36,20 @@ model as MS_Combo, but this term is no longer used.
 The analyses of multiple tumors have the following assumptions and
 results:
 
-1\. The tumors are statistically independent of one another.
+* The tumors are statistically independent of one another.
 
-> ***Note:*** Unless there is substantial biological evidence to
-> indicate that the tumor types are ***not*** independent---conditional
-> on model parameter values---the approach based on independence is
-> considered appropriate.
+:::{note}
+Unless there is substantial biological evidence to
+ indicate that the tumor types are ***not*** independent---conditional
+ on model parameter values---the approach based on independence is
+ considered appropriate.
+:::
 
-2\. A multistage model is an appropriate model for each of the tumors
+*  A multistage model is an appropriate model for each of the tumors
 separately. However, the individual multistage models fit to the
 individual tumors need not have the same polynomial degree.
 
-3\. The user is interested in estimating the risk of getting one or more
+*  The user is interested in estimating the risk of getting one or more
 of the tumors under analysis; the results indicate the BMD and BMDL
 associated with the user-defined benchmark response (BMR) level, where
 the BMD and BMDL are the maximum likelihood and lower bound estimates of
@@ -63,12 +65,14 @@ Users can choose to have BMDS auto-select the appropriate polynomial
 degree of the Multistage model for each tumor dataset. The option is
 available from the **Degree** picklist on the Settings tab ().
 
-[]{#_Ref153972310 .anchor}**Figure 93.** The **Degree** picklist with
-the auto-select option highlighted.
+```{figure} _static/img/image96.png
+:alt: Degree column picklist values displayed, with "auto" selected
+:scale: 100%
+:name: f97
 
-![Degree column picklist values displayed, with \"auto\"
-selected](_static/img/image96.png){width="2.0751793525809274in"
-height="1.841826334208224in"}
+The Degree picklist with the auto-select option highlighted.
+```
+<br>
 
 When the auto-select feature is used, BMDS runs all relevant forms of
 the Multistage Multitumor model and selects the polynomial degree to use
@@ -130,13 +134,13 @@ $$\beta_{2} = \sum_{}^{}\beta_{2i}$$
 
 etc.
 
-where the sums are over i = 1, ..., t, with
+where the sums are over $i = 1, \ldots, t$, with
 
 t being the number of tumors under consideration, and
 
-β~xj~ being the x^th^ parameter (0, 1, ...) for tumor j.
+$β_{xj}$ being the $x^{th}$ parameter (0, 1, ...) for tumor $j$.
 
-The β~xj~ values are available directly from the Multistage-Cancer runs
+The $β_{xj}$ values are available directly from the Multistage-Cancer runs
 performed on the individual tumors. However, the Multistage Multitumor
 model performs the calculations for the user, completing the summations
 of the individual terms and computing the BMD based on the combined
@@ -144,33 +148,33 @@ parameter values and the user-specified BMR.
 
 A profile-likelihood approach is used to derive the BMDL:
 
-1\. Given the BMD and the log-likelihood associated with the MLE
+* Given the BMD and the log-likelihood associated with the MLE
 solution, a target likelihood is defined based on the user-specified
 confidence level (e.g., 95%).
 
-2\. That target likelihood is derived by computing the percentile of a
+*  That target likelihood is derived by computing the percentile of a
 Chi-square (1 degree of freedom) corresponding to the confidence level
 specified by the user (actually, the alpha associated with the
 confidence level, times 2).
 
-3\. That percentile is divided by 2 and subtracted from the maximum
+*  That percentile is divided by 2 and subtracted from the maximum
 log-likelihood.
 
-4\. That derivation is based on a likelihood ratio test with one degree
+*  That derivation is based on a likelihood ratio test with one degree
 of freedom; it can be shown that estimating the BMDL corresponds to
 losing one degree of freedom, regardless of the number of tumors being
 combined.
 
-5\. The BMDL for the combined response (one or more of the tumors of
-interest) is defined as the smallest dose, D, for which the following
+*  The BMDL for the combined response (one or more of the tumors of
+interest) is defined as the smallest dose, $d$, for which the following
 two conditions are satisfied:
 
-> i\. There is a set of parameters such that the combined log-likelihood
-> using D and those parameters is greater than or equal to the target
-> likelihood, and
->
-> ii\. For that set of parameters, the risk at D is equal to the
-> user-specified BMR.
+   * There is a set of parameters such that the combined log-likelihood
+  using $d$ and those parameters is greater than or equal to the target
+  likelihood, and
+
+   * For that set of parameters, the risk at $d$ is equal to the
+  user-specified BMR.
 
 Note that the combined log-likelihood is a function of the fits of the
 individual tumors (the sum of the individual log-likelihoods), obtained
@@ -192,8 +196,7 @@ optimization) in the summations shown above.
 
 A BMDS Online multitumor analysis can have a maximum of 10 datasets (for
 multitumor) and up to three option sets. Add multiple datasets to BMDS
-as described in Section 4.4.6, \"Insert and Save Multiple Datasets,\" on
-page 20. Enable the datasets to be included in the analysis.
+as described in [Insert and Save Multiple Datasets](./bmds-online.md#insert-and-save-multiple-datasets). Enable the datasets to be included in the analysis.
 
 BMDS Desktop and pybmds have essentially no limit on the number of
 datasets or option sets, but it is recommended to create multiple
@@ -208,57 +211,61 @@ Choose whether BMDS auto-selects the appropriate polynomial degree or
 whether it should be user-specified. Selectable values are auto, 1, 2,
 3, or 4.
 
-[]{#_Toc109392458 .anchor}**Figure 94.** Dataset options for multitumor
-data.
+```{figure} _static/img/image97.png
+:alt: Dataset options table for multitumor data, with Degree column picklist values displayed
+:scale: 75%
+:name: f98
 
-![Dataset options table for multitumor data, with Degree column picklist
-values displayed](_static/img/image97.png){width="3.7898206474190728in"
-height="1.8697287839020122in"}
+Dataset options for multitumor data.
+```
+<br>
 
 The help text for the **Degree** column reads as follows:
 
-> *If set to auto (default), all degrees to N-1are executed and the
-> best-fitting is used. If a numeric value, only that degree will be
-> modeled.*
+:::{note}
+If set to auto (default), all degrees to N-1are executed and the
+best-fitting is used. If a numeric value, only that degree will be
+modeled.
+:::
 
 BMDS will recommend a model degree based on the decision logic and
 settings found on the Logic tab for Dichotomous endpoints. For more
-details, refer to Section 7.0, "Model Recommendations and Decision
-Logic," on page [44](./model-recommendation.md#model-recommendations-and-decision-logic).
+details, refer to [Model Recommendations and Decision Logic](./model-recommendation.md#model-recommendations-and-decision-logic).
 
--   If a user opts for BMDS' auto-select functionality, the best fitting
+   * If a user opts for BMDS' auto-select functionality, the best fitting
     model is chosen according to the [Technical Guidance on choosing the
     appropriate stage of a multistage model for cancer
     modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
     If no model can be chosen based on that criterion, then the model is
     removed from the Multistage Multitumor model results.
 
--   The Multistage Multitumor model decision logic uses the following
+   * The Multistage Multitumor model decision logic uses the following
     criteria for the user-defined test thresholds from the Dichotomous
     Logic tab:
 
--   Ratio of BMD/BMDL (caution)
+   * Ratio of BMD/BMDL (caution)
 
--   \|Residual near BMD\| too large
+   * \|Residual near BMD\| too large
 
--   \|Residual at control\| too large
+   * \|Residual at control\| too large
 
--   If a user specifies a degree for a given model, that degree will be
+   * If a user specifies a degree for a given model, that degree will be
     used regardless of model fit.
 
--   If the results do not meet the **Test Threshold** value set in the
+  * If the results do not meet the **Test Threshold** value set in the
     **Ratio of BMD/BMDL (Caution)** setting on the Logic tab (), BMDS
     displays a pop-up message to the user that *BMD/BMDL ratio \>
     \[value\]; consider consulting a statistician*. However, the model
     is not removed from the results.
 
-[]{#_Ref184733166 .anchor}**Figure 95.** BMDS Online will display an
-error message if the result does not meet the threshold value specified
-in this Dichotomous Logic tab setting.
+```{figure} _static/img/image98.png
+:alt: The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a threshold value of 3.
+:scale: 80%
+:name: f99
 
-![The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a
-threshold value of 3.](_static/img/image98.png){width="6.5in"
-height="0.3458333333333333in"}
+BMDS Online will display an error message if the result does not meet the threshold value specified in this Dichotomous Logic tab setting.
+```
+<br>
 
 ### Poly K Adjustment
 
@@ -274,19 +281,20 @@ dose-groups in standard two-year cancer bioassays.
 
 To access the trend test:
 
-1\. Select **Multistage Cancer/Multitumor** on the Settings tab.
+* Select **Multistage Cancer/Multitumor** on the Settings tab.
 
-2\. Select the Data tab.
+*  Select the Data tab.
 
-3\. Beneath the data table, select the link for **Poly K Adjustment**.
+*  Beneath the data table, select the link for **Poly K Adjustment**.
 
-[]{#_Toc185445272 .anchor}**Figure 96.** With Multistage
-Cancer/Multitumor as the model type, BMDS Online displays a Poly K
-Adjustment link under the data table.
+```{figure} _static/img/image99.png
+:alt: Arrow pointing to Poly K Adjustment link
+:scale: 75%
+:name: f100
 
-![Arrow pointing to Poly K Adjustment
-link](_static/img/image99.png){width="5.085400262467192in"
-height="2.500865048118985in"}
+With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
+```
+<br>
 
 Selecting the link displays the Poly K Adjustment page (see ), where the
 user can enter their data and specify settings. Users can copy and paste
@@ -310,11 +318,14 @@ in this sequence:
 -   **Tumor status.** Numeric value indicating if animal did not have
     tumor (0) or did have tumor (1)
 
-[]{#_Ref175841798 .anchor}**Figure 97.** The Poly K Adjustment page,
-with an example dataset.
+```{figure} _static/img/image100.png
+:alt: Poly K Adjustment page
+:scale: 70%
+:name: f101
 
-![Poly K Adjustment page](_static/img/image100.png){width="5.625in"
-height="3.0432688101487315in"}
+The Poly K Adjustment page, with an example dataset.
+```
+<br>
 
 Select the **About** button to display a complete description of the
 poly-adjustment approach, and the rationale supporting it. The text of
@@ -323,31 +334,31 @@ Adjustment Approach.\"
 
 The inputs for the Poly K tool are:
 
--   **Dose units**. The dose metrics for the data being adjusted
+* **Dose units**. The dose metrics for the data being adjusted
     (*e.g.*, ppm, mg/kg-d).
 
--   **Power.** The power to be used for the adjustment. Defaults to 3,
+* **Power.** The power to be used for the adjustment. Defaults to 3,
     but can be adjusted given the nature of the tumors being analyzed.
 
--   **Duration.** The duration of the study in days. By default (if
+* **Duration.** The duration of the study in days. By default (if
     empty), the maximum reported day in the dataset. In [[Kissling et
-    al.
-    (2008)]{.underline}](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/708980),
+    al.(2008)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/708980),
     the authors note that the poly-3 adjustment has not been validated
     for carcinogenicity studies longer than two years, consistent with
-    the conclusion of the Portier et al. (1986) analysis that
+    the conclusion of the [Portier et al.
+(1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998) analysis that
     acknowledges that "animals used in historical control data base were
     generally sacrificed if they lived to 109 weeks.... Thus, the
     application of these models beyond 109 weeks would be speculative."
 
--   **Dataset.** The dose-response data that will be adjusted, provided
+* **Dataset.** The dose-response data that will be adjusted, provided
     in an uploaded CSV file with the following structure:
 
--   Dose: numeric value of dose group
+   * **Dose**: numeric value of dose group
 
--   Day: numeric value of survival time
+   * **Day**: numeric value of survival time
 
--   Tumor status: numeric value indicating if animal did not have
+   * **Tumor status**: numeric value indicating if animal did not have
     tumor (0) or did have tumor (1)
 
 Select the **Execute** button to run the analysis. BMDS Online extends
@@ -371,16 +382,16 @@ button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
-[]{#_Ref184671158 .anchor}**Figure 98.** Result of running a Poly K
-adjustment, with plot of tumor incidence over study duration
+```{figure} _static/img/image101.png
+:alt: Result window following Poly K adjustment operation
+:scale: 85%
+:name: f102
 
-![Result window following Poly K adjustment
-operation](_static/img/image101.png){width="6.5in"
-height="6.321527777777778in"}
+Result of running a Poly K adjustment, with plot of tumor incidence over study duration
+```
+<br>
 
 ### More on the Poly K Adjustment Approach
-
-\[The following text is from BMDS Online's About panel for Poly K.\]
 
 The Poly K adjustment is an approach (based on the poly-k trend test
 developed by [Portier and Bailer
@@ -402,45 +413,50 @@ Thus, by not taking differential survival into account, it is possible
 to understate a chemical's true carcinogenic potential when performing
 dose-response analyses.
 
+#### Determining the denominator contribution for the Poly K Adjustment*
+
 Animals in a carcinogenicity experiment can be placed into four bins for
 the purpose of analysis:
 
-[]{#_Toc512002154 .anchor}Table 12. *Determining the denominator
-contribution (Poly K)*
+::::{tab-set}
 
-  -----------------------------------------------------------------------------
-  Condition           Numerator      Denominator     Rationale for denominator
-                      contribution   contribution    contribution
-  ------------------- -------------- --------------- --------------------------
-  Survive until end   0              1               Animal observed for full
-  of experiment, no                                  lifetime.
-  tumor
+:::{tab-item} Animal survives to end of experiment with no tumor
+**Numerator Contribution:** 0
 
-  Survive until end   1              1               Animal observed for full
-  of experiment,                                     lifetime
-  develops tumor.
+**Denominator Contribution:** 1
 
-  Dies prior to end   1              1               Animal observed for less
-  of experiment,                                     than full lifetime but
-  develops tumor                                     observed for long enough
-                                                     time to develop tumor of
-                                                     interest.
+**Rationale for Denominator Contribution:** Animal observed for an entire lifetime without developing the tumor of interest
 
-  Dies prior to end   0              (t/t~max~)^k^   Animal may have developed
-  of experiment, no                                  a tumor within a normal
-  tumor                                              lifetime; contribution
-                                                     should account for
-                                                     acceleration of rate with
-                                                     age. Rationale for
-                                                     denominator contribution.
-  -----------------------------------------------------------------------------
+:::
 
-  : Table summarizing how the Poly K approach determines the denominator
-  contribution, proceeding by 4 conditions, with numerator/denominator
-  values set to 1 or 0, and the rationale for the denominator
-  contribution
+:::{tab-item} Animal surives to end of experiment and develops tumor
+**Numerator Contribution:** 1
 
-Portier and Bailer (1989) provide a rationale for how to determine the
+**Denominator Contribution:** 1
+
+**Rationale for Denominator Contribution:** Animal observed for an entire lifetime and developed the tumor of interest
+:::
+
+:::{tab-item} Animal dies prior to end of experiment with no tumor
+**Numerator Contribution:** 1
+
+**Denominator Contribution:** 1 
+
+**Rationale for Denominator Contribution:** Animal observed for less than a full lifetime but observed for long enough time to develop the tumor of interest
+:::
+
+:::{tab-item} Animal dies prior to end of experiment and develops tumor
+**Numerator Contribution:** 0
+
+**Denominator Contribution:** $(\frac{t}{t_{max}})^{k}$, where $t$ = time of death, $t_{max}$ =total duration of experiment, and $k$ = polynomial degree
+
+**Rationale for Denominator Contribution:** Animal may have developed a tumor within a normal lifetime; contribution should account for acceleration of rate with age.
+:::
+
+::::
+
+[Portier and Bailer
+(1989)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/93236) provide a rationale for how to determine the
 denominator contribution of animals that die early without developing a
 tumor:
 
@@ -454,7 +470,7 @@ this animal should not be given a weight of 1 (i.e., should not be
 counted as 1 when determining the denominator). If the risk of
 developing a tumor is constant throughout a lifetime, this animal should
 be given a weight of ½. However, if tumor risk accelerates with age,
-this animal would be at (½)^k^ the risk of developing the tumor compared
+this animal would be at $(½)^{k}$ the risk of developing the tumor compared
 to animals that survive until the end of the experiment, where k is the
 exponent for the polynomial function describing the cumulative rate of
 tumor onset as a function of time. [Portier et al.
@@ -464,7 +480,7 @@ and concluded at a 3rd order polynomial was a reasonable general value
 of k.
 
 Given the example above, an animal dying at one year would contribute a
-weight of (½)^3^=0.125. For tumors that are quicker to develop, a lower
+weight of $(½)^{3}=0.125$. For tumors that are quicker to develop, a lower
 value of k can be used (such that animals dying early provide more
 information). Conversely, for slower developing tumors, a higher value
 of k can be used (such that animals dying early provide less
@@ -487,12 +503,15 @@ Risk.
 **Added risk** is the additional proportion of total animals that
 respond in the presence of the dose, or the predicted probability of
 response at dose $d$, $P(d)$, minus the predicted probability of
-response in the absence of exposure,
-$P(0).\ I.e.\ added\ risk\  = \ P(d)\ –\ P(0)$
+response in the absence of exposure $P(0)$,
 
-**Extra risk** is the additional risk divided by the predicted
+$$added\ risk\  = \ P(d)\ –\ P(0)$$
+
+**Extra risk** is the added risk divided by the predicted
 proportion of animals that will not respond in the absence of exposure,
-$1\  - \ P(0).\ i.e.,\ extra\ risk\  - \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$.
+$1\  - \ P(0)$
+
+$$extra\ risk\  - \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$$
 
 ### BMR
 
@@ -541,23 +560,26 @@ an estimate of the slope factor, defined by EPA as the linear slope
 between the extra risk (0.1) at the BMDL(10) and the extra risk (0) at
 background (generally 0 dose).
 
-[]{#_Toc47700651 .anchor}**Figure 99.** Slope Factor (fourth row in
-table) appears only on restricted Multistage model results for
-multistage/multitumor endpoints.
+```{figure} _static/img/image102.png
+:alt: Modeling Summary table containing Slope Factor row
+:scale: 75%
+:name: f103
 
-![Modeling Summary table containing Slope Factor
-row](_static/img/image102.png){width="2.8301454505686787in"
-height="2.6047364391951007in"}
+Slope Factor (fourth row in table) appears only on restricted Multistage model results for multistage/multitumor endpoints.
+```
+<br>
 
 The Multistage model plot also includes a dashed line representing this
 linear slope.
 
-[]{#_Toc47700652 .anchor}**Figure 100.** The dashed line for the
-Multistage model plot representing cancer slope factor.
+```{figure} _static/img/image103.png
+:alt: Graph with dashed line dhowing linear slope
+:scale: 80%
+:name: f104
 
-![Graph with dashed line dhowing linear
-slope](_static/img/image103.png){width="4.469853455818023in"
-height="2.5644346019247592in"}
+The dashed line for the Multistage model plot representing cancer slope factor.
+```
+<br>
 
 If dose units are in mg/kg-day, this equals the oral slope factor (OSF)
 as defined by IRIS. If the dose units are µg/m3, this equals the

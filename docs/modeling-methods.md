@@ -70,12 +70,12 @@ estimation.[^4]
 The likelihood function plays a critical, formal role in Bayesian
 inference, different from its role in maximum likelihood.
 
-:::{note} 
+:::{note}
 At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
 :::
 
-Priors and model constraints are presented in the table [**Bayesian dichotomous models and their respective parameter priors**](#_Ref548672746).
+See to see a full list of Bayesian model priors and contraints, see [Bayesian Dichotomous Models and their Respective Priors and Model Constraints](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
 
 To see how model parameter estimates are reported in the BMDS results,
 refer to [**Model Parameters**](./result-output-mle.md#model-parameters-table-all-endpoints).
@@ -123,8 +123,7 @@ ensure reliability of the estimation:
     case the methods return different optimum, the values producing the
     larger of the two are used.
 
-NLopt 2.4.1 was used when developing the BMDS model code. This version
-is available for download from the [NLopt GitHub
+NLopt is available for download from the [NLopt GitHub
 site](https://github.com/stevengj/nlopt/releases). For more information
 regarding the algorithms, refer to the [NLopt documentation
 site](https://nlopt.readthedocs.io/en/latest/).

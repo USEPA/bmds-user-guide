@@ -10,6 +10,14 @@ templates_path = ["_templates"]
 
 exclude_patterns = []
 
+numfig = True
+numfig_format = {
+    "code-block": "Listing %s.",
+    "figure": "Figure %s.",
+    "section": "Section",
+    "table": "Table %s.",
+}
+
 myst_links_external_new_tab = True
 myst_heading_anchors = 6
 myst_enable_extensions = [

@@ -174,11 +174,14 @@ Bin Placement Logic tables, the user can:
 Logic settings are saved with the Settings and Results of a run; loading
 a previously run analysis will restore any customized logic settings.
 
-[]{#_Toc185445237 .anchor}**Figure 61.** Decision Logic settings.
+```{figure} _static/img/image65.png
+:alt: BMDS Online Decision Logic table
+:scale: 50%
+:name: f61
 
-![BMDS Online Decision Logic
-table](_static/img/image65.png){width="3.119078083989501in"
-height="2.7820964566929134in"}
+Decision Logic settings.
+```
+<br>
 
 The BMDS Decision Logic settings are:
 
@@ -203,13 +206,14 @@ The BMDS Decision Logic settings are:
     be necessary for the lowest BMDL to be used as the selection
     criterion).
 
-[]{#_Toc185445238 .anchor}**Figure 62.** Users can change the bin
-placement logic for a test.
+```{figure} _static/img/image66.png
+:alt: Model Recommendation and Bin Placement Logic table with picklist displayed for alternative bin placement
+:scale: 60%
+:name: f62
 
-![Model Recommendation and Bin Placement Logic table with picklist
-displayed for alternative bin
-placement](_static/img/image66.png){width="5.321083770778652in"
-height="2.8163462379702535in"}
+Users can change the bin placement logic for a test.
+```
+<br>
 
 The *Notes to Show* column text cannot be edited. BMDS automatically
 updates a note to reflect any changed threshold values.

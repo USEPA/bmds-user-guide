@@ -32,53 +32,67 @@ depending on the type of endpoint.
 The following wireframe diagrams provide a simple overview of the tables
 and plots shown on the Output tab for each endpoint type.
 
-[]{#_Toc185445223 .anchor}**Figure 47.** Continuous Results Output tab
-layout.
+```{figure} _static/img/image52.JPG
+:alt: Simplified and labeled layout of continuous results output page
+:scale: 60%
+:name: f47
 
-![Simplified and labeled layout of continuous results output
-page](_static/img/image52.JPG){width="5.2625in"
-height="2.4625798337707785in"}
+Continuous Results Output tab layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445224 .anchor}**Figure 48.** Dichotomous Results Output tab
-layout.
+```{figure} _static/img/image53.JPG
+:alt: Simplified and labeled layout of dichotomous results output page
+:scale: 60%
+:name: f48
 
-![Simplified and labeled layout of dichotomous results output
-page](_static/img/image53.JPG){width="5.424459755030621in"
-height="3.8666666666666667in"}
+Dichotomous Results Output tab layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445225 .anchor}**Figure 49.** Nested Dichotomous Results
-Output tab layout.
+```{figure} _static/img/image54.png 
+:alt: Simplified and labeled layout of nested dichotomous results output page
+:scale: 60%
+:name: f49
 
-![Simplified and labeled layout of nested dichotomous results output
-page](_static/img/image54.png){width="5.382653105861768in"
-height="2.3782163167104113in"}
+Nested Dichotomous Results Output tab layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445226 .anchor}**Figure 50.** Multistage Multitumor Results
-Output tab layout.
+```{figure} _static/img/image55.png
+:alt: Simplified and labeled layout of multistage multitumor results output page
+:scale: 60%
+:name: f50
 
-![Simplified and labeled layout of multistage multitumor results output
-page](_static/img/image55.png){width="4.684178696412949in"
-height="2.298051181102362in"}
-
+Multistage Multitumor Results Output tab layout.
+```
 ## Individual Model Results
 
 From the Output tab's Maximum Likelihood Approach Model Results table,
 select any model link [**Figure 51**](#_Ref183108349) to display a popup window thoroughly detailing
 that model's stats results [**Figure 52**](#_Ref183108350).
 
-[]{#_Ref183108349 .anchor}**Figure 51.** Select a model name in the
-results table \...
+```{figure} _static/img/image56.png
+:alt: Callout box drawn around model name in summary results table
+:scale: 100%
+:name: f51
 
-![Callout box drawn around model name in summary results
-table](_static/img/image56.png){width="1.2428893263342082in"
-height="2.166155949256343in"}
+Select a model name in the results table ...
+```
+<br>
+<br>
 
-[]{#_Ref183108350 .anchor}**Figure 52.** \... to display a window
-showing all results for that model.
+```{figure} _static/img/image43.png
+:alt: Pop-up window with model results overlaying the Output tab.
+:scale: 100%
+:name: f52
 
-s![Pop-up window with model results overlaying the Output
-tab.](_static/img/image43.png){width="5.152244094488189in"
-height="2.371353893263342in"}
+... to display a window showing all results for that model.
+```
+<br>
 
 ### Individual Model Result Window Layouts
 
@@ -87,31 +101,44 @@ endpoint: continuous, dichotomous, and nested dichotomous. The following
 wireframe diagrams illustrate the results displayed by BMDS for each
 model type.
 
-[]{#_Toc185445229 .anchor}**Figure 53.** Continuous model result window
-layout.
+```{figure} _static/img/image57.png
+:alt: Simplified and labelled diagram of continuous model result window layout
+:scale: 60%
+:name: f53
 
-![Simplified and labelled diagram of continuous model result window
-layout](_static/img/image57.png){width="4.54in" height="3.4in"}
+Continuous model result window layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445230 .anchor}**Figure 54.** Dichotomous model result window
-layout.
+```{figure} _static/img/image58.png
+:alt: Simplified and labelled diagram of individual dichotomous model result window layout
+:scale: 60%
+:name: f54
 
-![Simplified and labelled diagram of individual dichotomous model result
-window layout](_static/img/image58.png){width="4.51in" height="3.38in"}
+Dichotomous model result window layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445231 .anchor}**Figure 55.** Nested Dichotomous model
-results window layout.
+```{figure} _static/img/image59.png
+:alt: Simplified and labelled diagram of nested dichotomous model result window layout
+:scale: 60%
+:name: f55
 
-![Simplified and labelled diagram of nested dichotomous model result
-window layout](_static/img/image59.png){width="4.373811242344707in"
-height="3.397836832895888in"}
+Nested Dichotomous model results window layout.
+```
+<br>
+<br>
 
-[]{#_Toc185445232 .anchor}**Figure 56.** Multistage Multitumor model
-results window layout.
+```{figure} _static/img/image60.png
+:alt: Simplified and labelled diagram of multistage multitumor model result window layout
+:scale: 60%
+:name: f56
 
-![Simplified and labelled diagram of multistage multitumor model result
-window layout](_static/img/image60.png){width="4.37731627296588in"
-height="3.346120953630796in"}
+Multistage Multitumor model results window layout.
+```
+<br>
 
 ### Summary Table of Key Fit Statistics (All Endpoints)
 
@@ -120,12 +147,14 @@ contains---depending on the endpoint type---the BMD, BMDL, and BMDU
 estimates, AIC, Log Likelihood, the overall goodness-of-fit test
 p-value, and degrees of freedom (d.f.).
 
-[]{#_Toc185445233 .anchor}**Figure 57.** Example Modeling Summary table
-for a dichotomous model.
+```{figure} _static/img/image61.png
+:alt: Model Summary table from result output
+:scale: 80%
+:name: f57
 
-![Model Summary table from result
-output](_static/img/image61.png){width="2.496596675415573in"
-height="2.03159886264217in"}
+Example Modeling Summary table for a dichotomous model.
+```
+<br>
 
 #### AIC
 
@@ -171,12 +200,14 @@ for the Multistage model when it is applied to cancer data ([U.S. EPA,
 
 ### Model Parameters Table (All Endpoints)
 
-[]{#_Toc47700637 .anchor}**Figure 58.** Model Parameters table for
-Exponential 3 (Continuous), with popup description of bounded variable.
+```{figure} _static/img/image62.png
+:alt: Popup help panel text displayed for Exponential 3 model
+:scale: 75%
+:name: f58
 
-![Popup help panel text displayed for Exponential 3
-model](_static/img/image62.png){width="5.257245188101487in"
-height="1.9506846019247595in"}
+Model Parameters table for Exponential 3 (Continuous), with popup description of bounded variable.
+```
+<br>
 
 The Model Parameters table includes the estimates for the parameter
 values that "optimize" the model fit.
@@ -207,23 +238,30 @@ Benchmark Dose table will match the BMD value listed for 0.95 in the CDF
 block. And the BMDL will match the BMD value listed for 0.05 in the CDF
 block.
 
-[]{#_Ref177727762 .anchor}**Figure 59.** CDF table and graph.
+```{figure} _static/img/image63.png
+:alt: CDF table with accompanying graph
+:scale: 75%
+:name: f59
 
-![CDF table with accompanying graph
-](_static/img/image63.png){width="5.282240813648294in"
-height="2.1066885389326333in"}
+CDF table and graph.
+```
+<br>
+
 
 ### Graphs/Plots (All Endpoints)
 
 Graphical outputs (plots) are displayed on both the Output tab and on
 the individual model result window.
 
-[]{#_Toc47700638 .anchor}**Figure 60**. Results plot for the Multistage
-2 model.
+```{figure} _static/img/image64.png
+:alt: Results plot for an individual model illustrating various plot components
+:scale: 75%
+:name: f60
 
-![Results plot for an individual model illustrating various plot
-components](_static/img/image64.png){width="3.1683125546806647in"
-height="2.890197944006999in"}
+Results plot for the Multistage 2 model.
+```
+<br>
+
 
 The results plot shows the dose-response curve estimated by the model.
 
