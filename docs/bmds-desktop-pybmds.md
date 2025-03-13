@@ -69,7 +69,7 @@ Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal wind
 ```{figure} _static/img/image11.png
 :alt: pybmds running in a terminal window
 :scale: 75%
-:name:f5
+:name: f5
 
 pybmds is a command-line environment that runs in a terminal window.
 ```
