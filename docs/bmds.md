@@ -64,14 +64,14 @@ BMDS 2.7 except for:
     the Nested Logistic and NCTR models.
 
 -   [ToxicoDiffusion
-    model](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308355)---also
+    model](https://www.epa.gov/bmds/external-review-draft-toxicodiffusion-model-development-2008)---also
     known as Repeated Response Measures--- was not included because it
     required R to be installed on the target computer.
 
--   [[Ten Berge Concentration x Time
-    model]{.underline}](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308352),
-    which was superseded by [[EPA's categorical regression software
-    CatReg](https://www.epa.gov/bmds/catreg).]{.underline} CatReg has
+-   [Ten Berge Concentration x Time
+    model](https://www.epa.gov/bmds/external-review-concentration-x-time-ten-berge-model-2008),
+    which was superseded by [EPA's categorical regression software
+    CatReg](https://www.epa.gov/bmds/catreg). CatReg has
     the same functionality but with added features and options.
 
 -   NCTR (National Center for Toxicological Research) nested dichotomous

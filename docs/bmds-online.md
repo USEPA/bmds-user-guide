@@ -17,8 +17,7 @@ effectively.
     EPA server; users can optionally "renew" an analysis so that it
     remains on the EPA server for another three years. Or, users can
     save to their computer an export of the data or analysis for later
-    import into BMDS Online. For more information, refer to Section
-    4.7.3, "Actions Menu," on page 31.
+    import into BMDS Online. For more information, refer to the [**Actions Menu**](#actions-menu).
 
 -   If data sensitivity is an issue, the user can run BMDS Desktop on
     their local computer.
@@ -367,8 +366,8 @@ Data tab with **Delete** button highlighted.
 
 ### Document the Dataset
 
-BMDS Online enters a default dataset name as a placeholder but it's a
-good practice to enter a unique name for the dataset. The dataset name
+BMDS Online enters a default dataset name as a placeholder but a
+good practice is to enter a unique name for the dataset. The dataset name
 will be used as the title for the plot.
 
 Specifying the Dose units and Response units above the dataset will
@@ -597,6 +596,8 @@ Select a model's name to display a window showing all results for that model.
 
 For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
+model (the blue row marked **Recommended**). The logic criteria used
+to make the recommendations are located on the Logic tab.
 model (the blue row marked **Recommended** in ). The logic criteria used
 to make the recommendations are located on the Logic tab.
 
@@ -615,9 +616,8 @@ for model selection based on the needs of their analysis or to comport
 with the modeling guidance of their organizations. ***However, it is
 highly recommended that new users leave the logic settings as-is; logic
 settings should only be changed under the guidance of experienced
-modelers.*** For more information, refer to Section 7.0, "Model
-Recommendations and Decision Logic," on page
-[44](./model-recommendation.md#model-recommendations-and-decision-logic)
+modelers.*** For more information, refer to [**Model
+Recommendations and Decision Logic**](./model-recommendation.md#model-recommendations-and-decision-logic).
 
 If any logic setting changes, the default logic settings can be
 reapplied by selecting the **Reset to Default Logic** button.
@@ -665,7 +665,7 @@ The final output table: recommended row in blue, user-selected row in green, and
 <br>
 
 Individual model and model averaging results can also be investigated by
-clicking on the desired row in the results table. In , the Model Average
+clicking on the desired row in the results table. In the following figure, the Model Average
 link is selected to display the Model Average results graph. Hover the
 mouse across the curves to investigate results in more detail.
 
@@ -687,10 +687,12 @@ The Share and Actions menus in the top-right corner of the BMDS Online
 application include options for other ways to interact with the
 analysis.
 
-*Tip* BMDS Online analyses are linked to the URL of the *current*
+:::{note} 
+BMDS Online analyses are linked to the URL of the *current*
 session. To get back to that analysis later: email the link to yourself
 or save the link in a Microsoft Word document with a full description of
 the analysis.
+:::
 
 ### Share Menu
 
@@ -738,8 +740,8 @@ BMDS Online Actions menu options.
 <br>
 
 -   **Load analysis**: Load a previously downloaded analysis (using the
-    **Download analysis** option described below).
-
+    **Download analysis** option described later in this list.
+    
 -   **Extend deletion date**: BMDS Online will store analyses for three
     years after the date of creation. Select **Extend deletion date** to
     extend deletion to three years from the time this button was
@@ -770,8 +772,7 @@ BMDS Online Actions menu options.
 
 ### Microsoft Word Report
 
-As described in the previous section, select the Actions menu's
-**Download report** option to display the following panel where the user
+Select the Actions menu's **Download report** option to display the following panel where the user
 can customize what will appear in the report.
 
 The **Long dataset format** option is recommended for most users.

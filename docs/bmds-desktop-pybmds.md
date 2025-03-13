@@ -56,9 +56,10 @@ You can [export an analysis or results](./bmds-online.md#sharing-and-downloading
 
 -   The export function is intended to share and view analyses and results only; it is not intended to support a seamless interchange of data between the two applications, nor does it support a collaborative workflow.
 
-***Tip*** Instead of sharing an analysis, consider exporting a Word report. An exported Word report contains all the datasets, graphs, etc. needed to fully share an analysis.
+:::{note} Instead of sharing an analysis, consider exporting a Word report. An exported Word report contains all the datasets, graphs, etc. needed to fully share an analysis.
+:::
 
-BMDS Online has its own set of constraints on sharing results via URL; for more information, see Section 4.7.2 on page [31](./bmds-online.md#constraints-on-sharing-analysis-urls).
+BMDS Online has its own set of constraints on sharing results via URL; for more information, see [**Constraints on Sharing Analysis URLs**](./bmds-online.md#constraints-on-sharing-analysis-urls).
 
 ## pybmds for Advanced Research
 
