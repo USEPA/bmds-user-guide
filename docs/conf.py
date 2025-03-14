@@ -37,8 +37,8 @@ html_css_files = ["css/style.css"]
 html_js_files = ["js/site.js"]
 html_theme_options = {
     "sidebar_hide_name": True,
-    "light_logo": "img/epa-seal.svg",
-    "dark_logo": "img/epa-seal.svg",
+    "light_logo": "img/epa_logo_green.jpg",
+    "dark_logo": "img/epa_logo_green_dark.png",
     "source_repository": "https://github.com/USEPA/bmds-user-guide",
     "source_branch": "main",
     "source_directory": "docs/",
