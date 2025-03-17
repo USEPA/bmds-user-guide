@@ -147,8 +147,8 @@ value is calculated as follows:
 
 $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
-where LL is the log-likelihood at the maximum likelihood estimates for
-the parameters, and p is the number of model parameters estimated (and
+where $LL$ is the log-likelihood at the maximum likelihood estimates for
+the parameters, and $p$ is the number of model parameters estimated (and
 not on a restriction boundary).
 
 :::{important}
@@ -171,7 +171,7 @@ sections:
 #### P-value
 
 The goodness-of-fit p-value is computed based on the degrees of freedom
-and the $Chi^2$ value ($Chi^2$ is assumed to be distributed as a
+and the Chi-square, $\chi^{2}$, value. The $\chi^{2}$ value is assumed to be distributed as a
 Chi-square distribution having degrees of freedom equal to degrees of
 freedom). The p-value measures the "closeness" of the model predictions
 to the observed data. If the overall p-value is larger than some

@@ -60,14 +60,14 @@ confidence intervals) on such estimates.
 
 The BMD is a dose estimated to produce a response level of a defined
 (benchmark) magnitude. The [online BMDS
-Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossaryhttp://ofmpub.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossary) defines BMD as follows:
+Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/termsandacronyms/search.do) defines the BMD as follows:
 
 *An exposure due to a dose of a substance associated with a specified
 low incidence of risk, generally in the range of 1% to 10%, of a health
 effect; or the dose associated with a specified measure or change of a
 biological effect.*
 
-The BMD is a range, rather than a fixed number. For example, the
+The BMD can be thought of as a range, rather than a fixed number. For example, the
 benchmark dose lower confidence limit (BMDL) can be regarded as a dose
 where the observable physical effect is *less* than the predetermined
 benchmark response (BMR).
@@ -90,7 +90,7 @@ The key features of those response (endpoint) types are as follows:
 -   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
     positive values, but not always). Organ weight, body weight,
-    concentration levels of biological markers --- these are all
+    concentration levels of biological markers are are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
 
@@ -199,7 +199,7 @@ maximum-likelihood estimation (MLE) dichotomous models, and [Bayesian
 model averaging](./bayesian-dichotomous.md) using all or weighted dichotomous models.
 
 The [BMDS application
-history](https://www.epa.gov/bmds/about-benchmark-dose-tools#history) is
+history](https://www.epa.gov/bmds/about-benchmark-dose-software-bmds#history) is
 documented on the BMDS website.
 
 ## What's New in BMDS
@@ -252,10 +252,8 @@ For more information, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybm
 
 ### Active Development Stopped on BMDS 3.3
 
-Active development has stopped on the Excel-based BMDS 3.3 application,
-which was first introduced in 2018. While the Excel framework for the
-application was modern and familiar to users at the time, several issues
-hampered innovation and maintenance:
+Active development has stopped on the Excel-based BMDS 3.3 application.
+While the Excel framework for the application was modern and familiar to users when BMDS 3.0 was released in 2018, several issues hampered innovation and maintenance:
 
 -   Excel incompatibilities across different versions of Microsoft
     Office
@@ -273,9 +271,8 @@ hampered innovation and maintenance:
     security restrictions that stalled or prevented uptake of BMDS
     within some organizations
 
-BMDS Online is now the primary application where new development and
-innovation will occur. BMDS Online also offers an easier introduction to
-BMD analysis for new users.
+BMDS Online, BMDS Desktop, and pybmds are now the primary applications where new development and
+innovation will occur. As a web-application with no requirement to download any software, BMDS Online also offers an easier introduction to BMD analysis for new users.
 
 BMDS 3.3 will remain
 [downloadable](https://www.epa.gov/bmds/download-bmds/) but will receive
@@ -339,7 +336,7 @@ website](https://www.epa.gov/bmds/how-subscribe-bmds-bulletin-email-list).
 
 For definitions of terms used in this guide, please refer to the [online
 BMDS
-Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossaryhttp://ofmpub.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary&uid=1821254&taxonomyName=BMDS%20Glossary).
+Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/termsandacronyms/search.do).
 The glossary items can be exported to other formats, such as PDF or
 Excel.
 

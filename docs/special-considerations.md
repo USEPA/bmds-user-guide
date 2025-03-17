@@ -18,7 +18,9 @@ etc.).
 following:
 
    * Maximum log-likelihood for each dataset. Add the two log-likelihoods
-    (one from each dataset) to get the ***summed*** log-likelihood.
+    (one from each dataset) to get the ***summed*** log-likelihood. The fitted model log-likelihoods
+    are reported in the Analysis of Deviance (dichotomous endpoints) or
+    Likelihoods of Interest (continuous endpoints) tables.
 
    * The number of unconstrained parameters for each dataset. Add those
     numbers from each run to get the ***summed*** unconstrained

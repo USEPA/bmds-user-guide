@@ -11,8 +11,7 @@ Dose‐Response Model in teratology. Risk Anal 11: 111-120.
 [doi: 10.1111/j.1539-6924.1991.tb00581.x](https://onlinelibrary.wiley.com/doi/10.1111/j.1539-6924.1991.tb00581.x) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/2038612/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4829617)]{.badge}
 
 Crump, KS. (1984). A new method for determining allowable daily intakes.
-Toxicol Sci 4: 854-871. http://dx.doi.org/10.1016/0272-0590(84)90107-6
-[doi: 10.1016/0272-0590(84)90107-6](http://dx.doi.org/10.1111/j.1539-6924.1991.tb00581.x) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/6510615/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/66651)]{.badge}
+Toxicol Sci 4: 854-871. [doi: 10.1016/0272-0590(84)90107-6](http://dx.doi.org/10.1111/j.1539-6924.1991.tb00581.x) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/6510615/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/66651)]{.badge}
 
 Crump, KS; Howe, RB. (1985). A review of methods for calculating
 statistical confidence limits in low dose extrapolation. In DB Clayson;
@@ -72,8 +71,7 @@ quantal responses. Biometrics 41: 1-9.
 [doi: 10.2307/2530637](https://doi.org/10.2307/2530637) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/4005367/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3227)]{.badge}
 
 RIVM (National Institute for Public Health and the Environment
-(Netherlands)). (2018). PROAST. Retrieved from
-https://www.rivm.nl/en/Documents_and_publications/Scientific/Models/PROAST
+(Netherlands)). (2018). PROAST. Retrieved from [PROAST](https://www.rivm.nl/en/Documents_and_publications/Scientific/Models/PROAST)                
 
 U.S. EPA (U.S. Environmental Protection Agency). (2012). [Benchmark dose
 technical guidance](https://www.epa.gov/risk/benchmark-dose-technical-guidance). (EPA/100/R-12/001). Washington, DC: U.S. Environmental Protection Agency, Risk Assessment Forum.

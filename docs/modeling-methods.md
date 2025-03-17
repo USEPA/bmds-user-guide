@@ -1,8 +1,8 @@
 # BMDS Modeling Methods
 
 BMDS employs two general modeling approaches: Bayesian for dichotomous
-endpoints only, and non-Bayesian methods (such as maximum likelihood)
-for all endpoints including dichotomous.
+endpoints only, and non-Bayesian methods (i.e. maximum likelihood estimation)
+for dichotomous, continuous, and nested dichotomous endpoints.
 
 Both Bayesian and non-Bayesian methods estimate parameters of a
 statistical model based on observed data. Both approaches use the
@@ -74,7 +74,7 @@ At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
 :::
 
-To see a full list of Bayesian model priors and contraints, refer to [Bayesian Dichotomous Models and their Respective Priors and Model Constraints](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
+To see a full list of Bayesian model priors and contraints, refer to [Bayesian Dichotomous Models and their Respective Parameter Priors](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
 
 To see how model parameter estimates are reported in the BMDS results,
 refer to [**Model Parameters**](./result-output-mle.md#model-parameters-table-all-endpoints).

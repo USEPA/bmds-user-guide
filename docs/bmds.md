@@ -9,7 +9,7 @@ and [BMDS 3.3](https://www.epa.gov/bmds/download-bmds/) software
 packages are available for download but are no longer supported or
 updated by EPA.
 
-```{csv-table} List of Maximum-Likelihood Estimation (MLE) Continuous Models
+```{csv-table} List of Maximum-Likelihood Estimation Continuous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
 
@@ -20,7 +20,7 @@ Polynomial,Yes,Yes,Yes
 Power,Yes,Yes,Yes
 ```
 
-```{csv-table} List of MLE Dichotomous Models
+```{csv-table} List of Maximum-Likelihood Estimation Dichotomous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
 
@@ -35,7 +35,7 @@ Quantal Linear,Yes,Yes,Yes
 Dichotomous Hill,Yes,Yes,Yes
 ```
 
-```{csv-table} List of Nested Dichotomous Models
+```{csv-table} List of Maximum-Likelihood Estimation Nested Dichotomous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
 
@@ -57,27 +57,25 @@ Multistage Cancer/Multitumor,Yes,Yes,Yes
 BMDS Online contains all the models and features that were available in
 BMDS 2.7 except for:
 
--   Dichotomous background-dose models, which were rarely used.
+-   The Dichotomous background-dose models, which were rarely used.
 
--   Rai and Van Ryzin nested dichotomous model, which was not included
+-   The Rai and Van Ryzin nested dichotomous model, which was not included
     in BMDS due to the planned inclusion, and increased reliability, of
     the Nested Logistic and NCTR models.
 
--   [ToxicoDiffusion
+-   The [ToxicoDiffusion
     model](https://www.epa.gov/bmds/external-review-draft-toxicodiffusion-model-development-2008)---also
     known as Repeated Response Measures--- was not included because it
     required R to be installed on the target computer.
 
--   [Ten Berge Concentration x Time
+-   The [Ten Berge Concentration x Time
     model](https://www.epa.gov/bmds/external-review-concentration-x-time-ten-berge-model-2008),
     which was superseded by [EPA's categorical regression software
     CatReg](https://www.epa.gov/bmds/catreg). CatReg has
     the same functionality but with added features and options.
 
--   NCTR (National Center for Toxicological Research) nested dichotomous
-    model, which is slated for inclusion in a future BMDS release.
 
 All these models --- excluding CatReg --- can be accessed in BMDS 2.7,
 [which is available from the BMDS
-website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).
+website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).  [CatReg](https://www.epa.gov/bmds/catreg) is a separate downloadable dose-time-response software package that can be downloaded from the BMDS website.
 

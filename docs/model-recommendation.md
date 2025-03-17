@@ -151,10 +151,12 @@ and the following criteria:
 
 ## Changing the Decision and Recommendation Logic
 
-***Note*** When changing the decision logic; an experienced user or
+:::{warning}
+When changing the decision logic; an experienced user or
 statistician should be consulted to ensure the criteria selections are
-reasonable.\
-\
+reasonable.
+:::
+
 Any changes to the BMDS default logic should be noted in any results or
 reports.
 

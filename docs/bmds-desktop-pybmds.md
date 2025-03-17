@@ -50,7 +50,7 @@ BMDS Desktop home page, showing selectable and searchable list of previous analy
 
 You can [export an analysis or results](./bmds-online.md#sharing-and-downloading-analyses-and-results) from BMDS Desktop and import the files into BMDS Online, and vice versa. However, there are some caveats:
 
--   BMDS Online is limited to a maximum of 3-6 option sets and 6-10 datasets (depending on the endpoint). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
+-   BMDS Online is limited to a maximum of 3-6 option sets and 6 datasets (for dichotomous, continuous, and nested dichotomous endpoints) or 10 datasets (for cancer endpoints). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
 
 -   The export function is intended to share and view analyses and results only; it is not intended to support a seamless interchange of data between the two applications, nor does it support a collaborative workflow.
 

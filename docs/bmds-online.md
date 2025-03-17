@@ -28,9 +28,9 @@ effectively.
 
 2.  Select the **Create a new BMDS analysis** button.
 
-```{figure} _static/img/image12.png
+```{figure} _static/img/bmds_online_create_analysis.png
 :alt: BMDS Online landing page, with Create a new BMDS analysis button highlighted
-:scale: 65
+:scale: 30
 :name: f6
 
 BMDS Online landing page, with **Create a new BMDS analysis** highlighted
@@ -56,12 +56,9 @@ A new BMDS Online analysis page.
 When a new analysis is created, a unique URL is created for the analysis.
 
 You can create as many analyses as you want, but ***saving an analysis
-saves only its most recent execution to that unique URL***. If you edit
-the data or add new data or new options, then the resulting analysis
-will overwrite the previous analysis.
-
-***Tip*** To analyze multiple datasets, create a new analysis for each
-dataset rather than overwrite an existing analysis.
+saves only the most recent execution to that unique URL***. If you edit
+the data or add new data or new options and rerun the software, then the resulting new analysis
+will overwrite the previous older analysis.
 
 ```{figure} _static/img/image14.png
 :alt: BMDS Online analysis URL highlighted
@@ -114,7 +111,7 @@ Enter a descriptive name and summary for the analysis; they will be included in 
 Dichotomous model type is selected for this analysis.
 ```
 
-:::{note}
+:::{important}
 An analysis can have only a single model type. You cannot mix continuous and dichotomous data in a single analysis.
 :::
 
@@ -159,7 +156,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
     (for multitumor).
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to
-    create multiple analyses.
+    create multiple analyses  instead of putting large numbers of datasets into a single analysis.
 
 -   **pybmds:** No limit.
 
@@ -397,8 +394,7 @@ draw attention to trends or anomalies that may need correction.
 Dataset and plot.
 ```
 
-Hover the cursor over a data point to see additional extrapolations from
-the entered data.
+Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [Graphs/Plots All Data](./result-output-mle.md#graphsplots-all-endpoints)).
 
 ```{figure} _static/img/image34.png
 :alt: Highlight box around a pointer hovering over a plot point, with data values displayed
@@ -562,7 +558,7 @@ For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
 model (the blue row marked **Recommended**). The logic criteria used
 to make the recommendations are located on the Logic tab.
-model (the blue row marked **Recommended** in ). The logic criteria used
+model. The logic criteria used
 to make the recommendations are located on the Logic tab.
 
 ```{figure} _static/img/image44.png
