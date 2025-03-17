@@ -83,8 +83,10 @@ therefore, more open to user discretion:
 
 -   BMDL range default fail: \> 3-fold (all dataset types)
 
--   Constant and non-constant variance p-value[^1] default fail: \<
-    0.05 (continuous only)
+-   Constant and non-constant variance p-value default fail: \<
+    0.05 (continuous only)[^1]
+
+[^1]: Examples given in EPA BMD guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) suggest a criteria of p-value \> 0.1 for variance models, but this has since been relaxed in practice. Future EPA guidance will reflect this change.
 
 -   Ratio of BMD/BMDL (serious) default fail: \> 20 (all dataset types)
 
@@ -104,9 +106,6 @@ Other tests that will classify a result as Questionable include:
 
 -   Goodness-of-fit p-test \< 0.1 (all other models for continuous and
     dichotomous datasets)
-
-[^1]: Examples given in EPA BMD guidance ([U.S. EPA,
-    2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) suggest a criteria of p-value \> 0.1 for variance models, but this has since been relaxed in practice. Future EPA guidance will reflect this change.
 
 ### Warnings
 
@@ -181,8 +180,6 @@ a previously run analysis will restore any customized logic settings.
 
 Decision Logic settings.
 ```
-<br>
-
 The BMDS Decision Logic settings are:
 
 -   Enable model recommendation logic testing. Default is selected.
@@ -213,7 +210,6 @@ The BMDS Decision Logic settings are:
 
 Users can change the bin placement logic for a test.
 ```
-<br>
 
 The *Notes to Show* column text cannot be edited. BMDS automatically
 updates a note to reflect any changed threshold values.

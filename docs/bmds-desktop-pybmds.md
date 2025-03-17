@@ -28,7 +28,7 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 -   Dose response analyses and data storage are fully offline.
 
--   Database files (projects) are single files containing all analyses; the BMDS Desktop opening page shows all previous analyses included in that project (see ).
+-   Database files (projects) are single files containing all analyses; the BMDS Desktop opening page shows all previous analyses included in that project.
 
 -   Within a database file (project), analyses can be labelled and organized.
 

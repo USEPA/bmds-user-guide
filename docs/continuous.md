@@ -43,8 +43,6 @@ previous versions of BMDS are available in BMDS Online.
 
 Default selection of continuous models on BMDS Online's Settings tab.
 ```
-<br>
-
 Also available for all continuous models are options for Hybrid-Extra
 Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
 response distribution assumption (previously only available for
@@ -81,8 +79,6 @@ For individual continuous response data, the default column headers are
 
 Default column headers for summarized data (top) and individual data (bottom)
 ```
-<br>
-
 
 ## Dataset Specifications (Settings Tab)
 
@@ -96,7 +92,6 @@ Select a dataset's Enabled checkbox to include it in the analysis.
 
 Dataset specification settings, with Enabled checkboxes selected.
 ```
-<br>
 
 ### Maximum Polynomial Degree
 
@@ -107,7 +102,6 @@ Dataset specification settings, with Enabled checkboxes selected.
 
 Maximum polynomial degree selections.
 ```
-<br>
 
 The default value for the maximum polynomial degree is lesser of N-1 or
 3, but the user can change this value to a higher number of degrees up
@@ -134,8 +128,6 @@ Up, or Down.
 
 Adverse Direction picklist for the selected dataset.
 ```
-<br>
-
 
 This option refers to whether adversity increases as the dose-response
 curve rises "up" or falls "down." Manually choose the adverse direction
@@ -164,7 +156,6 @@ Trashcan button to delete that Option Set row.
 
 Continuous Model Option Set row.
 ```
-<br>
 
 ### Defining the BMD
 
@@ -183,7 +174,6 @@ bounds:
 
 BMR Type picklist selections.
 ```
-<br>
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method
     selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown summarizes the options related to BMR Type and BMRF.
@@ -296,7 +286,6 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 Distribution and Variance picklist selections.
 ```
-<br>
 
 The underlying data distribution and the variability around the center
 of that distribution are linked options.
@@ -312,18 +301,21 @@ In total, three combinations are allowed:
     (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
     parameters are estimated simultaneously with the parameters of the
-    dose-response model.[^1]
+    dose-response model.
 
-[^1]: The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
-
+:::{important}
+The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
+:::
 
 2.  **Lognormal distribution, constant coefficient of variation (CV):**
     for lognormally distributed responses, each dose group has the same
     CV, which entails that the log-scale variance is constant over dose
     groups (though the natural-scale variance will differ from group to
-    group[^2]).
+    group).
 
-[^2]: CV = standard deviation divided by mean. Log-scale refers to the values of the logarithms of the responses. Natural-scale refers to the values of the responses, untransformed.
+:::{important}
+CV = standard deviation divided by mean. Log-scale refers to the values of the logarithms of the responses. Natural-scale refers to the values of the responses, untransformed.
+:::
 
 With respect to the response distribution (Normal or Lognormal), please
 note the following:
@@ -489,8 +481,6 @@ Note that in the Goodness of Fit tables shown in {numref}`f71` and {numref}`f72`
 
 Goodness of Fit table headings, with Normal assumption.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image76.png
 :alt: Sample Goodness of fit table with different column headers
@@ -499,7 +489,6 @@ Goodness of Fit table headings, with Normal assumption.
 
 Goodness of Fit table headings, with Lognormal assumption. Note the column header similarities/differences between the two tables.
 ```
-<br>
 
 The scaled residual value is a *calibrated* difference between the
 observations and the model predictions. Regardless of the assumption
@@ -533,7 +522,6 @@ model's parameter structure.
 
 Likelihoods of Interest table.
 ```
-<br>
 
 The number of parameters for each model excludes parameters that have
 values on one of the bounds set for their estimation (either bounds
@@ -632,8 +620,6 @@ properties of the likelihood ratio.
 
 Test of Means and Variance Fits table.
 ```
-<br>
-
 
 The likelihood ratio is the ratio of two likelihood values, many of
 which are given in the BMDS output. Statistical theory proves that
@@ -798,7 +784,6 @@ group:
 
 Maximum likelihood approach results plot for continuous data.
 ```
-<br>
 
 ## Mathematical Details for Models for Continuous Endpoints in Simple Designs
 
@@ -1145,7 +1130,7 @@ selection.
 
 In BMDS, the number of estimated parameters includes only those that
 have not been estimated to equal a bounding value (either from the
-model-imposed constraints or user-imposed restrictions (see Table 7).
+model-imposed constraints or user-imposed restrictions (see [Continuous Dose-Response Models and Parameters](#continuous-dose-response-models-and-parameters)).
 
 :::{note}
 This counting process may or may not be reasonable, depending

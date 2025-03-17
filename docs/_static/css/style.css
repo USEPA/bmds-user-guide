@@ -37,3 +37,9 @@ code {
 #furo-main-content .badge a:after {
     content: ""
 }
+
+.tippy-box {
+    background-color: var(--color-background-primary);
+    color: var(--color-foreground-primary);
+    border: 1px solid var(--color-background-border);
+}

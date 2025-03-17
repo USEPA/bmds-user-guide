@@ -139,7 +139,7 @@ unnormalized Log Posterior Probability (LPP) is given, which allows the
 computation of a Bayes factor (BF) to compare any two models. BF equals
 the exponentiated difference between the two LPP. For example, if one
 wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to
-the Multistage 2^nd^ degree model (Model B, $LPP_{B}$) one estimates
+the Multistage 2{sup}`nd` degree model (Model B, $LPP_{B}$) one estimates
 the BF as
 
 $$BF = \exp\left( LPP_{A} - LPP_{B} \right),$$
@@ -186,7 +186,6 @@ the BIC, may not go to the true value.
 
 Sample Bayesian dichotomous results plot.
 ```
-<br>
 
 ## Bayesian Dichotomous Model Descriptions
 

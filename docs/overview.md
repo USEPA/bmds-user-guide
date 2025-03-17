@@ -147,8 +147,8 @@ BMDS results for a dichotomous endpoint, presented using graph and tables
 
 EPA uses [BMD methods](./modeling-methods.md) to derive reference doses estimates (such as
 reference doses (RfDs), reference concentrations (RfCs), and slope
-factors,[^1] which are used along with other scientific information to
-set standards for human health effects.
+factors, which are used along with other scientific information to
+set standards for human health effects.[^1]
 
 [^1]: With few exceptions, RfD/RfC values are noncancer benchmarks and slope factors are generally cancer benchmarks derived in accordance with [EPA cancer guidelines](https://www.epa.gov/sites/production/files/2013-09/documents/cancer_guidelines_final_3-25-05.pdf).
 
@@ -175,9 +175,9 @@ recognized as having limitations:
     [Crump,
     1984](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=66651)).
 
-*A goal of the BMD approach is to define a starting point of departure
+A goal of the BMD approach is to define a starting point of departure
 (POD) for the computation of a reference value (RfD or RfC) or slope
-factor that is more independent of study design.* The EPA Risk
+factor that is more independent of study design. The EPA Risk
 Assessment Forum has published [technical
 guidance](https://www.epa.gov/risk/benchmark-dose-technical-guidance)
 for the application of the BMD approach in cancer and non-cancer

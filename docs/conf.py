@@ -1,7 +1,7 @@
 project = "BMDS User Guide"
 copyright = "MIT License"
 
-extensions = ["sphinx.ext.githubpages", "myst_nb", "sphinx_design"]
+extensions = ["sphinx.ext.githubpages", "myst_nb", "sphinx_design", "sphinx_tippy"]
 souce_suffix = {
     ".md": "markdown",
     ".rst": "restructuredtext",

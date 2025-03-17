@@ -39,8 +39,6 @@ and plots shown on the Output tab for each endpoint type.
 
 Continuous Results Output tab layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image53.JPG
 :alt: Simplified and labeled layout of dichotomous results output page
@@ -49,8 +47,6 @@ Continuous Results Output tab layout.
 
 Dichotomous Results Output tab layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image54.png 
 :alt: Simplified and labeled layout of nested dichotomous results output page
@@ -59,8 +55,6 @@ Dichotomous Results Output tab layout.
 
 Nested Dichotomous Results Output tab layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image55.png
 :alt: Simplified and labeled layout of multistage multitumor results output page
@@ -82,8 +76,6 @@ that model's stats results {numref}`f52`.
 
 Select a model name in the results table ...
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image43.png
 :alt: Pop-up window with model results overlaying the Output tab.
@@ -92,7 +84,6 @@ Select a model name in the results table ...
 
 ... to display a window showing all results for that model.
 ```
-<br>
 
 ### Individual Model Result Window Layouts
 
@@ -108,8 +99,6 @@ model type.
 
 Continuous model result window layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image58.png
 :alt: Simplified and labelled diagram of individual dichotomous model result window layout
@@ -118,8 +107,6 @@ Continuous model result window layout.
 
 Dichotomous model result window layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image59.png
 :alt: Simplified and labelled diagram of nested dichotomous model result window layout
@@ -128,8 +115,6 @@ Dichotomous model result window layout.
 
 Nested Dichotomous model results window layout.
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image60.png
 :alt: Simplified and labelled diagram of multistage multitumor model result window layout
@@ -138,7 +123,6 @@ Nested Dichotomous model results window layout.
 
 Multistage Multitumor model results window layout.
 ```
-<br>
 
 ### Summary Table of Key Fit Statistics (All Endpoints)
 
@@ -154,7 +138,6 @@ p-value, and degrees of freedom (d.f.).
 
 Example Modeling Summary table for a dichotomous model.
 ```
-<br>
 
 #### AIC
 
@@ -166,7 +149,11 @@ $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
 where LL is the log-likelihood at the maximum likelihood estimates for
 the parameters, and p is the number of model parameters estimated (and
-not on a restriction boundary).[^1]
+not on a restriction boundary).
+
+:::{important}
+For the dichotomous and nested dichotomous models, an additivity constant is not included in the LL calculations.
+:::
 
 The AIC can be used to compare different models fit (using the same
 fitting method, *e.g.*, least squares or maximum likelihood) to the same
@@ -180,10 +167,6 @@ sections:
 -   [**AIC and Model Comparisons for Continuous Endpoints**](./continuous.md#aic-and-model-comparisons).
 
 -   [**AIC and Model Comparisons for Dichotomous Endpoints**](./dichotomous.md#aic-and-model-comparisons).
-
-
-[^1]: For the dichotomous and nested dichotomous models, an additivity
-    constant is not included in the LL calculations.
 
 #### P-value
 
@@ -207,7 +190,6 @@ for the Multistage model when it is applied to cancer data ([U.S. EPA,
 
 Model Parameters table for Exponential 3 (Continuous), with popup description of bounded variable.
 ```
-<br>
 
 The Model Parameters table includes the estimates for the parameter
 values that "optimize" the model fit.
@@ -245,8 +227,6 @@ block.
 
 CDF table and graph.
 ```
-<br>
-
 
 ### Graphs/Plots (All Endpoints)
 
@@ -260,8 +240,6 @@ the individual model result window.
 
 Results plot for the Multistage 2 model.
 ```
-<br>
-
 
 The results plot shows the dose-response curve estimated by the model.
 

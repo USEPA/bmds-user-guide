@@ -77,7 +77,6 @@ to include a litter-specific covariate, whereas the NCTR model is the Weibull mo
 
 BMDS nested model selection.
 ```
-<br>
 
 :::{note}
 A third nested dichotomous model, the Rai and Van Ryzin model, can be accessed in BMDS 2.7,
@@ -111,7 +110,6 @@ for use in BMDS.
 
 Nested dataset formatted correctly for BMDS analysis.
 ```
-<br>
 
 As shows, each litter is on a separate row, showing the dose it
 received, its sample size (*Litter Size*), the number of responders
@@ -133,7 +131,6 @@ icon to delete the Option Set.
 
 Nested Model options.
 ```
-<br>
 
 ### Risk Type
 
@@ -188,7 +185,6 @@ using the Extra Risk equation described in [Risk Type](#risk-type).
 
 Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
 ```
-<br>
 
 ### Confidence Level (one sided)
 
@@ -214,7 +210,6 @@ confidence interval (5% in each tail outside that interval).
 
 Litter Specific Covariate options.
 ```
-<br>
 
 Using a litter-specific covariate (LSC) enables the user to account for
 inter-litter variability.
@@ -258,8 +253,7 @@ to keep the value at a minimum of 1000.
 generator by default. However, the user can specify a seed value, if
 needed for reproducibility.
 
-For more details, refer to Section 10.4.2, "Bootstrap Results Table," on
-page [Bootstrap Results Table](#bootstrap-results-table) and [Bootstrap Runs Table](#bootstrap-runs-table).
+For more details, refer to [Bootstrap Results Table](#bootstrap-results-table) and [Bootstrap Runs Table](#bootstrap-runs-table).
 
 ## Specific Nested Dichotomous Results
 
@@ -277,7 +271,6 @@ intralitter correlation (ilc) are included in the result.
 
 Nested model results as listed on the Output tab.
 ```
-<br>
 
 :::{list-table} All Forms of Nested Models run by BMDS
 :widths: 20 15 15
@@ -336,7 +329,6 @@ P-value can be used to infer whether the fit is adequate. Small p-values
 
 Bootstrap Results table.
 ```
-<br>
 
 ### Bootstrap Runs Table
 
@@ -360,15 +352,15 @@ value.
 
 Bootstrap Runs table.
 ```
-<br>
+
 
 ### Scaled Residuals Table
 
 In simple dichotomous modeling, there is a single scaled residual for
 each dose group. For nested designs, the probabilities of response and
 therefore the scaled residuals will vary across experimental units
-(*i.e.*, litters). That variation is shown in the Litter Data table ()
-and summarized in the Scaled Residuals table (). The summary is an
+(*i.e.*, litters). That variation is shown in the Litter Data table ({numref}`f96`)
+and summarized in the Scaled Residuals table ({numref}`f95`). The summary is an
 attempt to capture a general impression of the closeness of the observed
 response rates to those predicted by the model. As is typical, scaled
 residual values greater than 2 in absolute value may affect the user's
@@ -381,7 +373,7 @@ assessment of fit.
 
 Summarized Scaled Residuals.
 ```
-<br>
+
 
 ### Litter Data Table
 
@@ -395,7 +387,6 @@ and expected number of responders (i.e., $Expected\ number\ of\ responders = Est
 
 Partial capture of the Litter Data table from Results Workbook.
 ```
-<br>
 
 ## Mathematical Details for Models for Nested Dichotomous Endpoints
 

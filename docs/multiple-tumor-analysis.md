@@ -63,7 +63,7 @@ Multistage model.
 
 Users can choose to have BMDS auto-select the appropriate polynomial
 degree of the Multistage model for each tumor dataset. The option is
-available from the **Degree** picklist on the Settings tab ().
+available from the **Degree** picklist on the Settings tab ({numref}`f97`).
 
 ```{figure} _static/img/image96.png
 :alt: Degree column picklist values displayed, with "auto" selected
@@ -72,7 +72,6 @@ available from the **Degree** picklist on the Settings tab ().
 
 The Degree picklist with the auto-select option highlighted.
 ```
-<br>
 
 When the auto-select feature is used, BMDS runs all relevant forms of
 the Multistage Multitumor model and selects the polynomial degree to use
@@ -218,7 +217,6 @@ whether it should be user-specified. Selectable values are auto, 1, 2,
 
 Dataset options for multitumor data.
 ```
-<br>
 
 The help text for the **Degree** column reads as follows:
 
@@ -253,7 +251,7 @@ details, refer to [Model Recommendations and Decision Logic](./model-recommendat
     used regardless of model fit.
 
   * If the results do not meet the **Test Threshold** value set in the
-    **Ratio of BMD/BMDL (Caution)** setting on the Logic tab (), BMDS
+    **Ratio of BMD/BMDL (Caution)** setting on the Logic tab ({numref}`f99`), BMDS
     displays a pop-up message to the user that *BMD/BMDL ratio \>
     \[value\]; consider consulting a statistician*. However, the model
     is not removed from the results.
@@ -265,7 +263,6 @@ details, refer to [Model Recommendations and Decision Logic](./model-recommendat
 
 BMDS Online will display an error message if the result does not meet the threshold value specified in this Dichotomous Logic tab setting.
 ```
-<br>
 
 ### Poly K Adjustment
 
@@ -279,7 +276,7 @@ developed by [Portier and Bailer
 to correct for treatment-related differences in survival across
 dose-groups in standard two-year cancer bioassays.
 
-To access the trend test:
+To access the Poly K adjustment tool:
 
 * Select **Multistage Cancer/Multitumor** on the Settings tab.
 
@@ -294,9 +291,8 @@ To access the trend test:
 
 With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
 ```
-<br>
 
-Selecting the link displays the Poly K Adjustment page (see ), where the
+Selecting the link displays the Poly K Adjustment page ({numref}`f100`), where the
 user can enter their data and specify settings. Users can copy and paste
 data from a CSV file or an Excel sheet into the Dataset text box.
 
@@ -325,7 +321,6 @@ in this sequence:
 
 The Poly K Adjustment page, with an example dataset.
 ```
-<br>
 
 Select the **About** button to display a complete description of the
 poly-adjustment approach, and the rationale supporting it. The text of
@@ -362,7 +357,7 @@ The inputs for the Poly K tool are:
     tumor (0) or did have tumor (1)
 
 Select the **Execute** button to run the analysis. BMDS Online extends
-the Poly K Adjustment page with the following outputs (see ):
+the Poly K Adjustment page with the following outputs ({numref}`f102`):
 
 -   A summary table of the original and adjusted data
 
@@ -389,7 +384,6 @@ clipboard contents into Excel for further analysis.
 
 Result of running a Poly K adjustment, with plot of tumor incidence over study duration
 ```
-<br>
 
 ### More on the Poly K Adjustment Approach
 
@@ -547,8 +541,7 @@ desired dose-response region. If the user wants to try a different
 Multistage polynomial degree, they can re-run the analysis using a
 specified degree instead of auto-select.
 
-For more information, refer to Section 9.4, "Specific Dichotomous
-Results," on page [71](./dichotomous.md#specific-dichotomous-results).
+For more information, refer to [Specific Dichotomous Results](./dichotomous.md#specific-dichotomous-results).
 
 ### Cancer Slope Factor
 
@@ -567,7 +560,6 @@ background (generally 0 dose).
 
 Slope Factor (fourth row in table) appears only on restricted Multistage model results for multistage/multitumor endpoints.
 ```
-<br>
 
 The Multistage model plot also includes a dashed line representing this
 linear slope.
@@ -579,7 +571,6 @@ linear slope.
 
 The dashed line for the Multistage model plot representing cancer slope factor.
 ```
-<br>
 
 If dose units are in mg/kg-day, this equals the oral slope factor (OSF)
 as defined by IRIS. If the dose units are µg/m3, this equals the
