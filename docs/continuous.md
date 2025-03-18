@@ -44,7 +44,7 @@ Default selection of continuous models on BMDS Online's Settings tab.
 ```
 Also available for all continuous models are options for Hybrid-Extra
 Risk and Hybrid-Added Risk benchmark responses (BMRs; see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
-response distribution assumption (previously only available for
+response distribution assumption (only available for
 Exponential models).
 
 The user can choose to run the Hill, Polynomial, and Power models either
@@ -345,8 +345,7 @@ the mean response). An alternative assumption is that the responses are
 lognormally distributed.
 
 In BMDS, all continuous models allow the user to choose between Normal
-and Lognormal response distribution assumptions; prior versions of BMDS
-only allowed this choice for Exponential models.
+response distribution assumptions; whereas the Lognormal response distribution is only available for Exponential models.
 
 If the user has access to the individual response data, those data can
 be log-transformed prior to analysis but, as discussed below, this is
