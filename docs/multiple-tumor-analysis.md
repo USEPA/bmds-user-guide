@@ -86,10 +86,12 @@ and appropriate for the dataset(s) being analyzed.
 
 ## Multistage Multitumor Model Description
 
-***Note*** Before using the Multistage Multitumor model, it is strongly
+:::{note}
+Before using the Multistage Multitumor model, it is strongly
 recommended that users refer to the [Technical Guidance on choosing the
 appropriate stage of a multistage model for cancer
 modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
+:::
 
 The purpose of the Multistage Multitumor model in BMDS is to allow the
 user to calculate BMDs and BMDLs for a combination of tumors
@@ -112,8 +114,10 @@ of the tumors of interest (they need not have the same degree across all
 the tumors in question), the user should specify those choices in the
 analysis.
 
-***Note*** The following descriptions are valid only when the tumors are
+:::{note}
+The following descriptions are valid only when the tumors are
 assumed to be independent of one another (conditional on dose level).
+:::
 
 Because of the form of the multistage model, the MLE estimates for the
 combined risk are a function of the parameter values obtained for the
@@ -135,7 +139,7 @@ etc.
 
 where the sums are over $i = 1, \ldots, t$, with
 
-t being the number of tumors under consideration, and
+$t$ being the number of tumors under consideration, and
 
 $β_{xj}$ being the $x^{th}$ parameter (0, 1, ...) for tumor $j$.
 
@@ -193,9 +197,8 @@ optimization) in the summations shown above.
 
 ## Entering Multitumor Data
 
-A BMDS Online multitumor analysis can have a maximum of 10 datasets (for
-multitumor) and up to three option sets. Add multiple datasets to BMDS
-as described in [Insert and Save Multiple Datasets](./bmds-online.md#insert-and-save-multiple-datasets). Enable the datasets to be included in the analysis.
+A BMDS Online multitumor analysis can have a maximum of 10 datasets and up to three option sets. Add multiple datasets to BMDS
+as described in [**Insert and Save Multiple Datasets**](./bmds-online.md#insert-and-save-multiple-datasets). Enable the datasets to be included in the analysis.
 
 BMDS Desktop and pybmds have essentially no limit on the number of
 datasets or option sets, but it is recommended to create multiple
@@ -228,7 +231,7 @@ modeled.
 
 BMDS will recommend a model degree based on the decision logic and
 settings found on the Logic tab for Dichotomous endpoints. For more
-details, refer to [Model Recommendations and Decision Logic](./model-recommendation.md#model-recommendations-and-decision-logic).
+details, refer to [**Model Recommendations and Decision Logic**](./model-recommendation.md#model-recommendations-and-decision-logic).
 
    * If a user opts for BMDS' auto-select functionality, the best fitting
     model is chosen according to the [Technical Guidance on choosing the
@@ -324,7 +327,7 @@ The Poly K Adjustment page, with an example dataset.
 
 Select the **About** button to display a complete description of the
 poly-adjustment approach, and the rationale supporting it. The text of
-the About screen is reproduced in Section 11.3.3, \"More on the Poly K
+the About screen is reproduced in [**More on the Poly K Adjustment Approach**](#more-on-the-poly-k-adjustment-approach) Section 11.3.3, \"More on the Poly K
 Adjustment Approach.\"
 
 The inputs for the Poly K tool are:
@@ -372,8 +375,8 @@ the Poly K Adjustment page with the following outputs ({numref}`f102`):
 The **Copy Data for BMDS Modeling** link copies the summary table data
 to the clipboard. From here, the user can return to their
 Multistage/Multitumor analysis, return to the Data tab, select the
-[**Load dataset from Excel**
-button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
+[**Load dataset from Excel
+button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
@@ -399,9 +402,9 @@ incidence, so that the lifetime incidence would be 5 animals in a group
 of 50. If exposure to a carcinogen increases the lifetime incidence to
 30%, 15 animals out of a group of 50 would develop the tumor. But, if
 exposure to the carcinogen also decreases survival to 60% at 90 weeks,
-only 9 out of the 30 surviving exposed animals would develop a tumor. If
+as few as 9 out of the 30 surviving exposed animals would develop a tumor. If
 this decrease in survival is not taken into account, the incidence used
-in dose-response modeling would be 9/50.
+in dose-response modeling would be as low as 9/50.
 
 Thus, by not taking differential survival into account, it is possible
 to understate a chemical's true carcinogenic potential when performing
@@ -431,7 +434,7 @@ the purpose of analysis:
 **Rationale for Denominator Contribution:** Animal observed for an entire lifetime and developed the tumor of interest
 :::
 
-:::{tab-item} Animal dies prior to end of experiment with no tumor
+:::{tab-item} Animal dies prior to end of experiment and develops tumor
 **Numerator Contribution:** 1
 
 **Denominator Contribution:** 1 
@@ -439,7 +442,7 @@ the purpose of analysis:
 **Rationale for Denominator Contribution:** Animal observed for less than a full lifetime but observed for long enough time to develop the tumor of interest
 :::
 
-:::{tab-item} Animal dies prior to end of experiment and develops tumor
+:::{tab-item} Animal dies prior to end of experiment with no tumor
 **Numerator Contribution:** 0
 
 **Denominator Contribution:** $(\frac{t}{t_{max}})^{k}$, where $t$ = time of death, $t_{max}$ =total duration of experiment, and $k$ = polynomial degree
@@ -487,7 +490,7 @@ analyses.
 ## Option Set
 
 The Multitumor options are the same as for the Dichotomous options as
-described in Section 9.3, \"Option Sets,\" on page 69.
+described in [**Option Sets**](./dichotomous#option-sets).
 
 ### Risk Type
 
@@ -541,7 +544,7 @@ desired dose-response region. If the user wants to try a different
 Multistage polynomial degree, they can re-run the analysis using a
 specified degree instead of auto-select.
 
-For more information, refer to [Specific Dichotomous Results](./dichotomous.md#specific-dichotomous-results).
+For more information, refer to [**Specific Dichotomous Results**](./dichotomous.md#specific-dichotomous-results).
 
 ### Cancer Slope Factor
 

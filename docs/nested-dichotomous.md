@@ -9,7 +9,7 @@ nested within the experimental units.
 Moreover, because of the nesting, one may suspect that the observations
 within each experimental unit are more similar to one another than they
 are to observations from other experimental units. For example, consider
-a developmental toxicity experiment, in which rodent females (*dams*)
+a developmental toxicity experiment, in which pregnant female rodents (*dams*)
 are exposed to the chemical of interest prior to or during pregnancy.
 The offspring (*pups*) from each litter are examined after birth for the
 presence or absence of malformations. Because each rodent dam may
@@ -42,7 +42,7 @@ developmental toxicology studies:
 
 1.  They use a probability model that provides for extra inter-litter
     variance of the proportion of pups affected (the beta-binomial
-    probability model: see [Likelihood Function](#likelihood-function), and
+    probability model: see [**Likelihood Function**](#likelihood-function), and
 
 3.  They incorporate a litter-specific covariate that is expected to
     account for at least some of the extra inter-litter variance.
@@ -59,15 +59,15 @@ seem to be an appropriate measure. On the other hand, the number of live
 fetuses in the litter at term would not be an appropriate measure if
 there is any dose-induced prenatal death or resorption.
 
-## Nested Logistic Model
+## Nested Dichotomous Models
 
 BMDS contains two nested dichotomous models:
 
--   Nested Logistic
+-   Nested Logistic model, and
 
--   National Center for Toxicological Research (NCTR)
+-   National Center for Toxicological Research (NCTR) model
 
-The Nested Logistic Model is the log-logistic model, modified
+The Nested Logistic model is the log-logistic model, modified
 to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
 
 ```{figure} _static/img/image87.png
@@ -86,9 +86,8 @@ website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materi
 
 ## Entering Nested Dichotomous Data
 
-A BMDS Online analysis can have a maximum of six datasets (for
-continuous, dichotomous, and nested dichotomous) or 10 datasets (for
-multitumor).
+A BMDS Online analysis can have a maximum of six datasets for
+nested dichotomous data.
 
 For information on inserting or importing data, see [Specifying Datasets](./bmds-online.md#specifying-datasets).
 
@@ -139,13 +138,13 @@ Choices for the Risk Type option are Extra Risk (default) or Added Risk.
 Added risk is the additional proportion of total animals that
 respond in the presence of the dose, or the probability of response at
 dose $d$, $P(d)$, minus the probability of response in the absence of
-exposure, $P(0)$; i.e.,
+exposure, $P(0)$:
 
 $$added\ risk  = P(d) –P(0)$$
 
 Extra risk is the added risk divided by the proportion of animals
 that will not respond in the absence of exposure,
-$1\  - \ P(0)$ ;i.e.,
+$1\  - \ P(0)$:
 
 $$extra\ risk  = \frac{P(d) –P(0)}{1 - P(0)}$$
 
@@ -168,7 +167,7 @@ The response associated with the BMR that is displayed in the graphical
 model output will only be the same as the BMR when $P(0)\  = \ 0$.
 
 This is because to obtain the actual response value one must solve for
-$P(d)$ in the equation for added or extra risk discussed in [Risk Type](#risk-type).
+$P(d)$ in the equation for added or extra risk discussed in [**Risk Type**](#risk-type).
 
 The horizontal bar depicting the response level used to derive the BMD
 that is displayed in the graphical model output will only be the same as
@@ -176,7 +175,7 @@ the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at
 background, P(0), equals zero.
 
 When P(0) does not equal zero, the true response level can be calculated
-using the Extra Risk equation described in [Risk Type](#risk-type).
+using the Extra Risk equation described in [**Risk Type**](#risk-type).
 
 ```{figure} _static/img/image64.png
 :alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
@@ -193,8 +192,8 @@ by EPA ([U.S. EPA,
 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
 The value for confidence level must be between 0 and 1 (not inclusive).
-For a confidence level of x, BMDS will output BMDL and BMDU estimates,
-each of which is a one-sided confidence bound at level x. For example,
+For a confidence level of $x$, BMDS will output BMDL and BMDU estimates,
+each of which is a one-sided confidence bound at level $x$. For example,
 if the user sets the confidence level to 0.95 (the default), then the
 BMDL is a 95% one-sided lower confidence bound for the BMD estimate; the
 BMDU is a 95% one-sided lower confidence bound for the BMD estimate. In
@@ -226,7 +225,7 @@ The **Litter Specific Covariate** option allows the user to determine if
 the BMD (and the corresponding plots) will be computed using the Control
 Group Mean value of the LSC or the Overall Mean value of the LSC
 (*i.e.*, averaged across all dose groups; Overall Mean is the default
-selection). See [BMD Computation](#bmd-computation) for an explanation as to why this option is
+selection). See [**BMD Computation**](#bmd-computation) for an explanation as to why this option is
 necessary, and which choice would be preferred for the given dataset.
 
 The Overall Mean should be used under most circumstances. If the
@@ -234,7 +233,8 @@ Litter-Specific Covariate differs from dose to dose (without any
 apparent consistent trend with respect to dose), consider using the
 Control Group Mean.
 
-***Note*** Carr and Portier ([Carr and Porter,
+:::{note}
+Carr and Portier ([Carr and Porter,
 1991](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=4829617)),
 in a simulation study, warn that in situations in which there is no
 effect of litter size, statistical models that incorporate a litter size
@@ -242,6 +242,7 @@ parameter, as do the models in BMDS, will often erroneously indicate
 that there is a litter size effect. Thus, the user should use litter
 size parameters with caution. Unfortunately, there are currently no good
 diagnostics for determining whether a litter size effect exists.
+:::
 
 ### Bootstrapping
 
@@ -253,7 +254,7 @@ to keep the value at a minimum of 1000.
 generator by default. However, the user can specify a seed value, if
 needed for reproducibility.
 
-For more details, refer to [Bootstrap Results Table](#bootstrap-results-table) and [Bootstrap Runs Table](#bootstrap-runs-table).
+For more details, refer to [**Bootstrap Results Table**](#bootstrap-results-table) and [**Bootstrap Runs Table**](#bootstrap-runs-table).
 
 ## Specific Nested Dichotomous Results
 
@@ -291,11 +292,11 @@ The Litter Specific Covariate is another variable that the model can
 (optionally) include, one that may help to explain the variation in the
 response from one experimental unit to another. The experimental unit is
 very often a litter of observations, hence the designation *Litter
-Specific*. For more details, refer to [Litter Specific
-Covariate](#litter-specific-covariate).
+Specific*. For more details, refer to [**Litter Specific
+Covariate**](#litter-specific-covariate).
 
-The Intralitter Correlation (again referencing the litter as a common
-experimental unit), estimates the degree to which observations within
+The intralitter correlation (again referencing the litter as a common
+experimental unit) variable estimates the degree to which observations within
 the same litter are correlated. If set to zero (one of the options),
 there is no correlation; the assumption then is that every observation
 is independent of every other observation (conditional on the model
@@ -312,7 +313,7 @@ statistic. The distribution of that test statistic over the iterations
 is compared to the Chi-square test statistic from the observed data. If
 the model fits the data well, the observed Chi-square should not be in
 the upper tail of the Chi-square statistic values from the simulations.
-(For more on the Chi-square calculation, see [Goodness-of-fit Information - Litter Data](#goodness-of-fit-information-litter-data).)
+(For more on the Chi-square calculation, see [**Goodness-of-fit Information - Litter Data**](#goodness-of-fit-information-litter-data).)
 
 The Bootstrap Results table summarizes the result of that test for
 goodness of fit. It reiterates the user-input number of iterations and
@@ -373,7 +374,9 @@ assessment of fit.
 
 Summarized Scaled Residuals.
 ```
-
+:::{note}
+Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical. 
+:::
 
 ### Litter Data Table
 
@@ -442,7 +445,7 @@ where
 
 $$A = \left\{ \begin{array}{r}\ BMRF\ extra\ risk \\ \\ \frac{BMRF}{(1 - a - \theta_{1}r_{m})}\ added\ risk\end{array} \right.\ $$
 
-For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [BMDL Calculation](#bmdl-computation)
+For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [**BMDL Calculation**](#bmdl-computation)
 :::
 
 :::{tab-item} NCTR model
@@ -483,7 +486,7 @@ $$A = \left\{ \begin{array}{r}\ BMRF\ extra\ risk \\ \\ \frac{BMRF}{(1 - a - \th
 
 and $\delta_{r}$ is the average of $r_{ij}-r_{m}$ over either the control group of all observations (depending on user selection).
 
-For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [BMDL Calculation](#bmdl-computation)
+For the BMDL, the parameter $\beta$ is replaced with an expression derived from the BMD definition and the BMDL is derived as in [**BMDL Calculation**](#bmdl-computation)
 
 
 :::
@@ -581,7 +584,7 @@ values close to the overall mean.
 
 The goodness-of-fit p-values are calculated using a bootstrap approach.
 
-1.  The MLE parameter values are used to generate B pseudo-datasets
+1.  The MLE parameter values are used to generate $B$ pseudo-datasets
     having the same design features (number of doses and number of
     litters per dose), litter-sizes, and, if necessary, litter-specific
     covariate values, as the original dataset. What varies from
@@ -597,7 +600,7 @@ The goodness-of-fit p-values are calculated using a bootstrap approach.
     data.
 
 2.  The Chi-square statistic from the original data is computed and
-    compared to the values from the B bootstrap iterations. The p-value
+    compared to the values from the $B$ bootstrap iterations. The p-value
     is the proportion of Chi-square values from the iterations that are
     greater than the original Chi-square value.
 
@@ -632,7 +635,7 @@ determined from the appropriate Chi-square distribution function.
 The error bars shown for the plots of nested data are calculated in the
 same way as those for dichotomous data (and described in Section 9.4.3,
 "Plot and Error Bar Calculation," on page
-[Plot and Error Bar Calculation](./dichotomous.md#plot-and-error-bar-calculation)).
+[**Plot and Error Bar Calculation**](./dichotomous.md#plot-and-error-bar-calculation)).
 
 However, a Rao-Scott transformation is applied prior to the calculations
 to express the observations in terms of an effective number of affected
@@ -661,7 +664,7 @@ the control group as opposed to the average across all the groups). If
 the LSC is found to be affected by dose, *i.e.*, if its value appears to
 have a consistent trend with respect to dose, its use is discouraged.
 
-Details of the BMD calculation are shown in Table 11 above.
+Details of the BMD calculation are shown in [**Nested Dichotomous Models and their Respective Parameters**](#individual-nested-dichotomous-models-and-their-respective-parameters).
 
 ### BMDL Computation
 
