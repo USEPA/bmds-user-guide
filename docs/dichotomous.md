@@ -3,22 +3,22 @@
 BMDS includes models for dichotomous endpoints in which the observations
 are independent of each other. In these models, the dose-response model
 defines the probability that an experimental unit (*e.g.*, a rat or a
-mouse in a test of toxicity) will have an adverse response at a given
+mouse in a standard, non-nested toxicological study) will have an adverse response at a given
 dose. The actual number of animals that have an adverse response is
 assumed to be binomially distributed.
 
 A specific example of such a dataset is a study in which adult animals
 are exposed to different concentrations of a toxicant and then evaluated
-for the presence of liver toxicity.
+for the presence of liver toxicity manifested as increased histopathological lesions.
 
 For models for dichotomous endpoints in which the responses are nested
 (for example, pups within litters, and litters nested within doses), see
-[Nested Dichotomous Endpoints](./nested-dichotomous.md).
+[**Nested Dichotomous Endpoints**](./nested-dichotomous.md).
 
 For dichotomous cancer models, and the combination of model predictions
-for multiple tumor endpoints, see [Multiple Tumor Analysis](./multiple-tumor-analysis.md).
+for multiple tumor endpoints, see [**Multiple Tumor Analysis**](./multiple-tumor-analysis.md).
 
-For more information, refer to [Bayesian Dichotomous Analysis](./bayesian-dichotomous.md).
+For more information on the Bayesian implementation of the dichotomous models, see [**Bayesian Dichotomous Analysis**](./bayesian-dichotomous.md).
 
 ## Dichotomous Response Models
 
@@ -44,25 +44,22 @@ Logistic, Probit, and Quantal Linear models have no restricted option
 
 See [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters) for the effect of the user
 selecting the restricted version of the models (refer to the paragraphs
-in the *Notes* column marked with **User parameter restriction
-options**). In general, the restrictions prevent the slope of the
+in the *Notes* fields). In general, the restrictions prevent the slope of the
 dose-response curve from becoming infinite at 0 dose. This is often
 considered to be biologically unrealistic and can lead to numerical
 problems when computing confidence limits, so several authors have
 recommended restricting the appropriate parameter.
 
-A BMDS Online analysis can have a maximum of six datasets (for
-continuous, dichotomous, and nested dichotomous) or 10 datasets (for
-multitumor).
+A BMDS Online analysis can have a maximum of six datasets for dichotomous endpoints.
 
 ## Maximum Multistage Degree
 
 The dataset-specific **Maximum multistage degree** picklist will contain
-choices for degree 1 to the lesser of $n‑1$ or 4.
+choices for degree 1 to the lesser of $N‑1$ or 4.
 
-The default value for number degrees to run will be the lesser of $n‑1$ or
+The default value for number degrees to run will be the lesser of $N‑1$ or
 3, but the user can change this to a higher number of degrees up to the
-lesser of $n‑1$ or 4. 
+lesser of $N‑1$ or 4. 
 
 ```{figure} _static/img/image82.png
 :alt: Maximum Multistage Degree picklist selections displayed, with degree 3 highlighted
@@ -124,7 +121,7 @@ The BMR is the value of risk (extra or added, as specified by the user)
 for which a BMD is estimated. BMR must be between 0 and 1 (not
 inclusive).
 
-If $P(0)\  > \ 0$, then values for BMR greater than $1 - \ P(0)$ will
+If $P(0)\  > \ 0$, then values for the BMR greater than $1 - \ P(0)$ will
 result in an error when the risk type is added risk. That is because the
 maximum added risk that can ever be achieved is $1 - \ P(0)$. In
 practice, this should not typically be an issue because one usually is
@@ -139,12 +136,12 @@ This is because to obtain the actual response value one must solve for
 $P(d)$ in the equation for added or extra risk discussed above.
 
 The horizontal bar depicting the response level used to derive the BMD
-(*add figure cross-reference*) that is displayed in the graphical model output will only be the same
+({numref}`f79`) that is displayed in the graphical model output will only be the same
 as the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at
 background, P(0), equals zero.
 
 When P(0) does not equal zero, the true response level can be calculated
-using the Extra Risk equation described in [Risk Type](#risk-type)
+using the Extra Risk equation described in [**Risk Type**](#risk-type)
 
 ```{figure} _static/img/image64.png
 :alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
@@ -189,7 +186,7 @@ probability of response (*Estimated Probability*) and corresponding
 expected number of responders (*Expected*). This is a good place for the
 user to assess the appropriateness of the model, in addition to the
 overall goodness-of-fit statistics reported in the Summary table (refer
-[Summary Table of Key Fit Statistics (All Endpoints)](./result-output-mle.md#summary-table-of-key-fit-statistics-all-endpoints) and [Analysis of Deviance Table](#analysis-of-deviance-table). If a model fits well, the
+[**Summary Table of Key Fit Statistics (All Endpoints)**](./result-output-mle.md#summary-table-of-key-fit-statistics-all-endpoints) and [**Analysis of Deviance Table**](#analysis-of-deviance-table). If a model fits well, the
 observed and expected number of responders should be relatively close.
 
 The scaled residual values printed at the end of the table are defined
@@ -241,7 +238,7 @@ The full model posits a separate and independent
 
 The maximum log-likelihood value obtainable for
     the model under consideration. It corresponds to the model with the
-    parameters set equal to the values shown in [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters). The number of
+    parameters set equal to the values shown in [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters). The number of
     parameters equals the number of parameters in that table that are
     not reported as *Bounded*.
 :::
@@ -300,7 +297,7 @@ to infer that there is no dose-related effect on response probabilities.
 ### Plot and Error Bar Calculation
 
 The graphical output, *i.e.*, plot, is a visual depiction of the results
-of the modeling. Because plots, in general, were discussed in [Graphs/Plots (All Endpoints)](./result-output-mle.md#graphsplots-all-endpoints), here we
+of the modeling. Because plots, in general, were discussed in [**Graphs/Plots (All Endpoints)**](./result-output-mle.md#graphsplots-all-endpoints), here we
 describe the one additional detail specific to the dichotomous models,
 *i.e.*, computation of the error bars:
 
@@ -614,8 +611,8 @@ steep dose-response at higher doses.
 
 If such parameter values are reported to be equal to 18 and/or the
 estimate in question is reported as *Bounded* (see the description of
-the output from dichotomous model runs in [Analysis of
-Deviance Table](#analysis-of-deviance-table)), the
+the output from dichotomous model runs in [**Analysis of
+Deviance Table**](#analysis-of-deviance-table)), the
 parameter estimates are maximum likelihood estimates only in the
 restricted sense that the parameter in question has been assigned a
 value and the other parameters are MLEs conditional on that assigned
@@ -661,7 +658,7 @@ The distribution of $n_{i}$ is assumed to be binomial with probability
 
 $$p_{i} = p\left( dose_{i};\ \theta \right),\ i = 1,2,\ldots G$$
 
-where $\theta$ is a vector of dose-response model parameters (see [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters)). Then the log-likelihood
+where $\theta$ is a vector of dose-response model parameters (see [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters)). Then the log-likelihood
 function $LL$ can be written as
 
 $$LL = \ \sum_{i = 1}^{G}{{LL}_{i}(N_{i},\ n_{i},\ dose_{i};\ \theta)}$$
@@ -710,7 +707,7 @@ selection.
 In the current version of BMDS, the number of estimated parameters
 includes only those that have not been estimated to equal a bounding
 value, either from the model-imposed constraints or user-imposed
-restrictions. For more details, see [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters).
+restrictions. For more details, see [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters).
 
 :::{note}
 
@@ -730,7 +727,7 @@ for issues such as model comparison and model selection.
 ### BMD Computation
 
 The BMD is computed as a function of the parameters of the model under
-consideration (see [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters)). Solutions
+consideration (see [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters)). Solutions
 for the BMD for all the dichotomous models are shown below.
 
 #### Calculation of the BMD for the Individual Dichotomous Models
@@ -793,8 +790,8 @@ $BMD = \left\{ \begin{array}{r} e\frac{- \alpha - \log\left( - \frac{BMR - v + g
 
 :::{note}
 All models represented in above use the same model forms as
-    presented in [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters). The BMR is the value specified by the user to
-    correspond to the risk level of interest (see [BMR](#bmr)).
+    presented in [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters). The BMR is the value specified by the user to
+    correspond to the risk level of interest (see [**BMR**](#bmr)).
 :::
 
 ### BMDL and BMDU Computation
@@ -818,7 +815,7 @@ $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
 For the remaining models, the equations that define the benchmark
 response in terms of the benchmark dose and the dose-response model
-([Calculation of the BMD for the Individual Dichotomous Models](#individual-dichotomous-models-and-their-respective-parameters)) are solved for one of the model parameters. The resulting
+([**Calculation of the BMD for the Individual Dichotomous Models**](#individual-dichotomous-models-and-their-respective-parameters)) are solved for one of the model parameters. The resulting
 expression is substituted back into the model equations, with the effect
 of reparameterizing the model so that BMD appears explicitly as a
 parameter. A value for BMD is then found such that, when the remaining
@@ -836,7 +833,7 @@ than the BMD and the BMDU be greater than the BMD.
 The Rao-Scott transformation is an approach, described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), to model dichotomous developmental data when only summary level dose-response data is available.  The transformation works by scaling dose-level incidence and sample size data by a variable called the design effect in order to approximate the intralitter correlation that occurs due to the clustered study design of developmental toxicity studies.
 
 :::{note}
-If individual-level developmental toxicity data are available for modeling, see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for details on the usage of the nested dichotomous models available in BMDS Online.
+If individual-level developmental toxicity data are available for modeling, see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for details on the usage of the nested dichotomous models available in BMDS Online.
 :::
 
 To access the Rao-Scott transformation:
@@ -893,8 +890,8 @@ Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-
 Result of running a Rao-Scott transformation, with summary table of results and plots of adjusted vs original values
 ```
 
-The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data tabe, select the [**Load dataset from Excel**
-button](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
+The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data tabe, select the [**Load dataset from Excel
+button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
 
@@ -910,7 +907,7 @@ Rao-Scott transformation Word report, with summary table of results, plots of or
 
 ### More on the Rao-Scott Transformation
 
-For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [Nested Dichotomous Endpoints](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  
+For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  
 
 However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data: the total number of fetuses and the number of fetuses responding per dose group, but not information on how many fetuses from each litter were affected. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 

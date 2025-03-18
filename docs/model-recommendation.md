@@ -8,8 +8,8 @@ Technical Guidance ([U.S. EPA,
 BMDS Online displays the logic tests relevant to the model type selected
 on the Settings tab: Continuous, Dichotomous, or Nested.
 Multitumor/Multistage Dichotomous does not have its own set of logic
-rules because [it is a special instance of Dichotomous
-modeling](#multiple-tumor-analysis).
+rules because [**it is a special instance of Dichotomous
+modeling**](#multiple-tumor-analysis).
 
 On the Logic tab, users can enable or disable specific decision logic
 settings and even alter specific test criteria. ***However, it is highly

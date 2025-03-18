@@ -74,7 +74,7 @@ At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
 :::
 
-To see a full list of Bayesian model priors and contraints, refer to [Bayesian Dichotomous Models and their Respective Parameter Priors](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
+To see a full list of Bayesian model priors and contraints, refer to [**Bayesian Dichotomous Models and their Respective Parameter Priors**](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
 
 To see how model parameter estimates are reported in the BMDS results,
 refer to [**Model Parameters**](./result-output-mle.md#model-parameters-table-all-endpoints).

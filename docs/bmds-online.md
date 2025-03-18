@@ -89,7 +89,7 @@ When all checkmarks are green, BMDS Online can run an analysis.
 ### Specifying the Model(s) and Option(s)
 
 1.  **On the Settings tab, specify a name and description for the analysis.** BMDS uses the **Analysis Name** to name the files that are created when users select the Reporting options "data," "report," or
-    "analysis" from the [Actions menu](#actions-menu).
+    "analysis" from the [**Actions menu**](#actions-menu).
 
 ```{figure} _static/img/image16.png
 :alt: Red highlight spotlighting the Analysis Name and Description fields
@@ -312,8 +312,8 @@ Sample dichotomous dataset, ready for editing.
 BMDS Online displays only one dataset at a time. However, it tracks
 ***all*** datasets created in the current session.
 
-All datasets created during a session are saved via the [Actions
-menu's](#actions-menu) **Download analysis** option and all specified
+All datasets created during a session are saved via the [**Actions
+menu's**](#actions-menu) **Download analysis** option and all specified
 datasets in a session can be Shared.
 
 Select the **Create** button to create a new default dataset with an
@@ -394,7 +394,7 @@ draw attention to trends or anomalies that may need correction.
 Dataset and plot.
 ```
 
-Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [Graphs/Plots All Data](./result-output-mle.md#graphsplots-all-endpoints)).
+Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [**Graphs/Plots All Data**](./result-output-mle.md#graphsplots-all-endpoints)).
 
 ```{figure} _static/img/image34.png
 :alt: Highlight box around a pointer hovering over a plot point, with data values displayed
@@ -449,7 +449,7 @@ Enable datasets to satisfy another analysis requirement.
     multistage degree to be 3. However, you can manually select a range
     of options from the **Maximum multistage degree** picklist. For
     this example analysis, the default setting is used. For more
-    information, see [Maximum Multistage Degree](./dichotomous.md#maximum-multistage-degree).
+    information, see [**Maximum Multistage Degree**](./dichotomous.md#maximum-multistage-degree).
 
 ```{figure} _static/img/image37.png
 :alt: Help text panel displayed beside pointer hovering over question mark icon
@@ -673,8 +673,8 @@ BMDS Online Share menu options.
     are linked to the URL of the ***current*** session. When a link is
     shared, only the most recent execution of that analysis is preserved
     and will be available to others. Therefore, if you need to perform
-    more work after sharing an analysis link, we recommend [creating a
-    new analysis](#creating-a-new-analysis).
+    more work after sharing an analysis link, we recommend [**creating a
+    new analysis**](#creating-a-new-analysis).
 
 -   **Analyses are deleted after three years unless extended.** If you
     share the link with others, note that analyses are deleted after

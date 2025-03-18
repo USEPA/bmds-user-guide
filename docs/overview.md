@@ -50,7 +50,7 @@ lower confidence limit (BMDL) is a dose where the observable physical
 effect is less than the predetermined BMR.
 
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
-[dose-response models](./bmds.md) that help risk assessors estimate the quantitative
+[**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative
 relationship between a chemical ***dose*** and the test
 subject's ***response***. The user can select from and/or compare the 
 models to make predictions about the quantitative relationship between
@@ -121,7 +121,7 @@ dose-response datasets.
 
 ### Presentation of Model Results
 
-As {numref}`f2` shows, BMDS presents [model results](./result-output-mle.md) in text and graphic outputs that can be
+As {numref}`f2` shows, BMDS presents [**model results**](./result-output-mle.md) in text and graphic outputs that can be
 printed or saved and incorporated into other documents. Results from all
 models include:
 
@@ -145,7 +145,7 @@ BMDS results for a dichotomous endpoint, presented using graph and tables
 
 ## How EPA Uses BMD Methods
 
-EPA uses [BMD methods](./modeling-methods.md) to derive reference doses estimates (such as
+EPA uses [**BMD methods**](./modeling-methods.md) to derive reference doses estimates (such as
 reference doses (RfDs), reference concentrations (RfCs), and slope
 factors, which are used along with other scientific information to
 set standards for human health effects.[^1]
@@ -195,8 +195,8 @@ a standalone Windows application to an Excel-based application in 2018,
 and then to a browser-based web application in 2022.  Python-based BMDS Desktop and pybmds were released in 2024.
 
 The 2018 release of BMDS 3.0 included Bayesian versions of all
-maximum-likelihood estimation (MLE) dichotomous models, and [Bayesian
-model averaging](./bayesian-dichotomous.md) using all or weighted dichotomous models.
+maximum-likelihood estimation (MLE) dichotomous models, and [**Bayesian
+model averaging**](./bayesian-dichotomous.md) using all or weighted dichotomous models.
 
 The [BMDS application
 history](https://www.epa.gov/bmds/about-benchmark-dose-software-bmds#history) is
@@ -283,15 +283,15 @@ no further updates.
 All improvements and enhancements listed below are available in BMDS
 Online, BMDS Desktop, and pybmds:
 
--   Addition of Multistage Cancer/Multitumor model, along with a [poly-k
-    adjustment tool](./multiple-tumor-analysis.md#poly-k-adjustment) (24.1 release)
+-   Addition of Multistage Cancer/Multitumor model, along with a [**poly-k
+    adjustment tool**](./multiple-tumor-analysis.md#poly-k-adjustment) (24.1 release)
 
 -   Addition of the Nested Logistic nested dichotomous model for
     developmental toxicity data (24.1 release)
 
 -   Addition of the NCTR nested dichotomous model for developmental toxicity data (25.1 release)
 
--   Addition of the [Rao-Scott transformation tool](./dichotomous.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
+-   Addition of the [**Rao-Scott transformation tool**](./dichotomous.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
 
 -   Ability to clone an analysis (25.1 release)
 

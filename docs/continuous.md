@@ -17,8 +17,7 @@ estimate a BMD are:
 
 With respect to the distribution, one needs to consider the type of
 distribution and the nature of the variability around the center of the
-distribution. The options available to the user, discussed in Section
-8.4, relate to all those choices.
+distribution. The options available to the user, discussed in [**Distribution and Variance**](#distribution-and-variance), relate to all those choices.
 
 This section provides details on the following topics:
 
@@ -44,7 +43,7 @@ previous versions of BMDS are available in BMDS Online.
 Default selection of continuous models on BMDS Online's Settings tab.
 ```
 Also available for all continuous models are options for Hybrid-Extra
-Risk and Hybrid-Added Risk (see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
+Risk and Hybrid-Added Risk benchmark responses (BMRs; see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal
 response distribution assumption (previously only available for
 Exponential models).
 
@@ -103,7 +102,7 @@ Dataset specification settings, with Enabled checkboxes selected.
 Maximum polynomial degree selections.
 ```
 
-The default value for the maximum polynomial degree is lesser of N-1 or
+The default value for the maximum polynomial degree is the lesser of N-1 or
 3, but the user can change this value to a higher number of degrees up
 to the lesser of N-1 or 8.
 
@@ -112,7 +111,7 @@ text:
 
 > *Studies have indicated that higher degree polynomial models are not
 > warranted I that they generally do not sufficiently improve fit over
-> simpler models (Nitcheve et al., 2007; PMC2040324). Complex models
+> simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
 > also increase computing processing time and the chance of model
 > failure.*
 
@@ -181,8 +180,8 @@ BMR Type picklist selections.
 -   **Tail Probability** marks the cut-off for defining adversity and
     applies only to Hybrid-Extra Risk BMR Type, not the background rate.
     If the default setting of 0.01, for example, is used, this indicates
-    that the user has specified that, in the absence of exposure, the
-    probability of a response that is considered adverse is 0.01. This
+    that the user has specified that, in the absence of exposure, there
+    is a probability of 1% for a response that is considered adverse. This
     is a "tail probability" in the sense that it specifies how much of
     the tail of the distribution of responses (upper or lower) is in the
     adverse range. It implicitly defines the cut-off between Normal and
@@ -197,8 +196,8 @@ BMR Type picklist selections.
     
 
 #### Options related to continuous BMR type and BMRF
-In the BMR descriptions below, $m(x)$ is the median at dose x. Specifically, $m(BMD)$ is the
-median at dose=BMD, so BMD is the solution to the equations shown.
+In the BMR descriptions below, $m(x)$ is the median response at dose x. Specifically, $m(BMD)$ is the
+median response at dose=BMD, so BMD is the solution to the equations shown.
 $\sigma(0)$ is the standard deviation for the control group (d=0) and
 $\sigma_{L}(0)$ is the log-scale standard deviation for the control
 group, used when the responses are assumed to be Lognormally distributed.
@@ -234,7 +233,7 @@ $\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
 
 **The BMD is the dose yielding...** the specified change in median response relative to the control group standard deviation
 
-**Mathematical Definition** <br><br>Normal responses: $\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BRMF$ <br><br>
+**Mathematical Definition** <br><br>Normal responses: $\frac{|m(BMD) - m(0)|}{\sigma(0)}\ = \ BMRF$ <br><br>
 Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 
 **BMRF Notes:** <br>BMRF is the multiple of the standard deviation <br> Default value = 1 \[change in median (or log-median) equal to 1 standard deviation (or log-scale standard deviation)\]
@@ -260,7 +259,7 @@ Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 **Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
-**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
 :::
 
 :::{tab-item} Hybrid - Added Risk
@@ -272,7 +271,7 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 **Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
-**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0
+**BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
 :::
 
 ::::
@@ -507,7 +506,7 @@ number of parameters, and AIC for five models, including the
 dose-response model under consideration (*i.e.*, fitted).
 
 BMDS uses likelihood theory to estimate model parameters and ultimately
-to make inferences based on risk dose-response data. Maximum likelihood
+to make inferences based on dose-response data. Maximum likelihood
 is the process of estimating the model parameters; the likelihood
 function is as large as possible (maximized) given the form of the model
 under consideration and the data. In other words, parameter values are
@@ -645,7 +644,7 @@ denominator of this ratio.
 Suppose that $L(X)$ represents the likelihood of model X. Now, using the
 theory, $- 2 \times ln\{\frac{L(A)}{L(B)}\}$ approaches a Chi-square
 random variable. This can be simplified by using the fact that the log
-of a ratio is equal to the difference of the logs, or put,
+of a ratio is equal to the difference of the logs: 
 
 $$- 2 \times \ln\left\{ \frac{L(A)}{L(B)} \right\} = - 2 \times \left( \ln\left\{ L(A) \right\} - \ln\left\{ L(B) \right\} \right) = 2 \times \ln\left\{ L(B) \right\} - 2 \times ln\{ L(A)\}$$
 
@@ -790,7 +789,7 @@ Maximum likelihood approach results plot for continuous data.
 Models in this section are for continuous endpoints, such as weight or
 enzyme activity measures, in simple experimental designs that do not
 involve nesting or other complications. The models predict the median
-value of the response, m(dose), expected for a given dose and the
+value of the response, $m(dose)$, expected for a given dose and the
 variation around that median.
 
 As evidenced by the previous discussion of the options available for
@@ -1022,7 +1021,7 @@ $${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \r
 
 where $\alpha$ (\> 0) and $\rho$ are parameters estimated simultaneously
 with the parameters of the dose-response function (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
-As in that dropdown, $m\left( {dose}_{i} \right)$ is the predicted median
+As in the model equations, $m\left( {dose}_{i} \right)$ is the predicted median
 (from the dose-response model under consideration) for the $i^{th}$ dose
 group.
 
@@ -1062,7 +1061,7 @@ Suppose there are G dose groups, having doses
 $${dose}_{1},\ \ldots,\ {dose}_{G}$$
 
 with $N_{i}$ subjects per dose group. Also suppose that $y_{ij}$ is the
-measurement for the *j^th^* subject in the *i^th^* dose group. The form
+measurement for the $j^{th}$ subject in the $i^{th}$ dose group. The form
 of the log-likelihood function depends upon whether the responses are
 assumed to be Normally or Lognormally distributed.
 
@@ -1130,7 +1129,7 @@ selection.
 
 In BMDS, the number of estimated parameters includes only those that
 have not been estimated to equal a bounding value (either from the
-model-imposed constraints or user-imposed restrictions (see [Continuous Dose-Response Models and Parameters](#continuous-dose-response-models-and-parameters)).
+model-imposed constraints or user-imposed restrictions (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
 
 :::{note}
 This counting process may or may not be reasonable, depending
@@ -1265,5 +1264,5 @@ means) to make the values (means) positive. That will not change the
 standard deviations of the observations and would allow the user to
 model the variance.
 
-***Related topic:*** see [Log-transformed Responses are NOT Recommended](#log-transformed-responses-are-not-recommended)
+***Related topic:*** see [**Log-transformed Responses are NOT Recommended**](#log-transformed-responses-are-not-recommended)
 
