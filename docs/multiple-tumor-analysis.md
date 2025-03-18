@@ -327,8 +327,7 @@ The Poly K Adjustment page, with an example dataset.
 
 Select the **About** button to display a complete description of the
 poly-adjustment approach, and the rationale supporting it. The text of
-the About screen is reproduced in [**More on the Poly K Adjustment Approach**](#more-on-the-poly-k-adjustment-approach) Section 11.3.3, \"More on the Poly K
-Adjustment Approach.\"
+the About screen is reproduced in [**More on the Poly K Adjustment Approach**](#more-on-the-poly-k-adjustment-approach).
 
 The inputs for the Poly K tool are:
 

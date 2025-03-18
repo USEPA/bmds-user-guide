@@ -23,7 +23,7 @@ Suppose for this development that we are considering $K$ models
 For each model, BMDS approximates the posterior density for the BMD
 using a Laplacian approximation; call that density
 $g_{k}\left( BMD \middle| M_{k},D \right)$ for model $k$. If the parameter
-vector for model $k$** is denoted $θ_{k}$, let ${\widehat{\theta}}_{k}$
+vector for model $k$ is denoted $\theta_{k}$, let ${\widehat{\theta}}_{k}$
 designate the value of that vector that maximizes the posterior
 likelihood (the maximum *a posteriori*, or MAP, estimate).
 
@@ -99,7 +99,7 @@ Hill) can provide increased curvature.
 The BMDS model-averaged BMD point estimate is the weighted average of
 BMD MAP estimates from individual models, weighted by posterior weights
 $\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the
-median of the approximate posterior density of $θ$. For the BMDL or BMDU
+median of the approximate posterior density of $\theta$. For the BMDL or BMDU
 estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$
 BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such
 that:
@@ -205,11 +205,11 @@ values of the parameters in that model).
 We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
-of the likelihood is presented in [**Likelihood Functi**](./dichotomous.md#likelihood-function).
+of the likelihood is presented in [**Likelihood Function**](./dichotomous.md#likelihood-function).
 
 The set of Bayesian dichotomous models used in BMDS Online is identical to
 the set of models used for maximum-likelihood estimation (MLE)
-approaches ([**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models)). In the following, let $θ$ be the vector of
+approaches ([**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models)). In the following, let $\theta$ be the vector of
 parameters that are required to define the any one of those models. So,
 for example, for the Weibull model $\theta = (g, \alpha, \beta)$. The additional
 consideration incorporated into the Bayesian approach is the

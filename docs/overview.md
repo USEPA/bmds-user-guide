@@ -90,7 +90,7 @@ The key features of those response (endpoint) types are as follows:
 -   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
     positive values, but not always). Organ weight, body weight,
-    concentration levels of biological markers are are all
+    concentration levels of biological markers are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
 
