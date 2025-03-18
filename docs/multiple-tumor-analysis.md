@@ -490,7 +490,7 @@ analyses.
 ## Option Set
 
 The Multitumor options are the same as for the Dichotomous options as
-described in [**Option Sets**](./dichotomous#option-sets).
+described in [**Option Sets**](./dichotomous.md#option-sets).
 
 ### Risk Type
 
