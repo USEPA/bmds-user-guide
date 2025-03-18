@@ -28,15 +28,13 @@ effectively.
 
 2.  Select the **Create a new BMDS analysis** button.
 
-```{figure} _static/img/image12.png
+```{figure} _static/img/bmds_online_create_analysis.png
 :alt: BMDS Online landing page, with Create a new BMDS analysis button highlighted
-:scale: 65
+:scale: 30
 :name: f6
 
 BMDS Online landing page, with **Create a new BMDS analysis** highlighted
 ```
-<br>
-
 BMDS Online displays a new, empty analysis page with the Settings tab
 selected. From here, you can configure an analysis, load a dataset,
 execute the analysis, and select results.
@@ -52,19 +50,15 @@ is captured by BMDS Online.
 
 A new BMDS Online analysis page.
 ```
-<br>
 
 ### Analyses and URLs
 
 When a new analysis is created, a unique URL is created for the analysis.
 
 You can create as many analyses as you want, but ***saving an analysis
-saves only its most recent execution to that unique URL***. If you edit
-the data or add new data or new options, then the resulting analysis
-will overwrite the previous analysis.
-
-***Tip*** To analyze multiple datasets, create a new analysis for each
-dataset rather than overwrite an existing analysis.
+saves only the most recent execution to that unique URL***. If you edit
+the data or add new data or new options and rerun the software, then the resulting new analysis
+will overwrite the previous older analysis.
 
 ```{figure} _static/img/image14.png
 :alt: BMDS Online analysis URL highlighted
@@ -73,7 +67,6 @@ dataset rather than overwrite an existing analysis.
 
 A new BMDS Online analysis has a unique URL.
 ```
-<br>
 
 ## Specifying an Analysis
 
@@ -92,12 +85,11 @@ not been saved.
 
 When all checkmarks are green, BMDS Online can run an analysis.
 ```
-<br>
 
 ### Specifying the Model(s) and Option(s)
 
 1.  **On the Settings tab, specify a name and description for the analysis.** BMDS uses the **Analysis Name** to name the files that are created when users select the Reporting options "data," "report," or
-    "analysis" from the [Actions menu](#actions-menu).
+    "analysis" from the [**Actions menu**](#actions-menu).
 
 ```{figure} _static/img/image16.png
 :alt: Red highlight spotlighting the Analysis Name and Description fields
@@ -106,8 +98,7 @@ When all checkmarks are green, BMDS Online can run an analysis.
 
 Enter a descriptive name and summary for the analysis; they will be included in the report.
 ```
-<br>
-
+ 
 2.  **Select the model type for your analysis** (*i.e.*, are you modeling
     dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
@@ -119,9 +110,8 @@ Enter a descriptive name and summary for the analysis; they will be included in 
 
 Dichotomous model type is selected for this analysis.
 ```
-<br>
 
-:::{note}
+:::{important}
 An analysis can have only a single model type. You cannot mix continuous and dichotomous data in a single analysis.
 :::
 
@@ -138,7 +128,6 @@ An analysis can have only a single model type. You cannot mix continuous and dic
 
 Tick the Select All box to select all the models in a column.
 ```
-<br>
 
 4.  **Specify the option sets to be used for the analysis.** For this
     example, we will use a single option set with the default benchmark
@@ -155,7 +144,6 @@ Tick the Select All box to select all the models in a column.
 
 Select the blue plus icon to add a row for a new option set. Select the red trash can icon to delete the row.
 ```
-<br>
 
 :::{note}
 To reset the model selection to the BMDS Online defaults, select the **Reset Selection** button. This function does not reset the modeling options (*e.g.*, Risk Type) already specified.
@@ -168,7 +156,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
     (for multitumor).
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to
-    create multiple analyses.
+    create multiple analyses  instead of putting large numbers of datasets into a single analysis.
 
 -   **pybmds:** No limit.
 
@@ -188,7 +176,6 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
 
 Select the Data tab to start specifying datasets.
 ```
-<br>
 
 3.  On the Data tab, select the **New** button to add an individual
     dataset. For this example workflow, only the dichotomous option
@@ -202,7 +189,6 @@ Select the Data tab to start specifying datasets.
 
 The **New** button creates a new empty dataset.
 ```
-<br>
 
 Depending on the model type selected on the Settings tab, BMDS Online will present appropriate selections for a new dataset.
 
@@ -240,7 +226,6 @@ Depending on the model type selected on the Settings tab, BMDS Online will prese
 
 Data tab with empty dataset, empty graph, and details about the dataset to be analyzed.
 ```
-<br>
 
 ### Maximum Number of Datasets
 
@@ -269,7 +254,6 @@ be deleted by clicking the red trash can icon.
 
 Select the blue plus icon to add five rows at a time; select the red trash can icon to delete that row.
 ```
-<br>
 
 ### Adding Datasets, Method 2: Copy and Paste
 
@@ -286,7 +270,6 @@ HTML formatted source.
 
 Select and copy the data from Excel.
 ```
-<br>
 
 2.  In BMDS Online, select the aqua Excel icon in the dataset table
     header. A *Paste from Excel* window displays.
@@ -298,7 +281,6 @@ Select and copy the data from Excel.
 
 Select the **Paste from > Excel** button
 ```
-<br>
 
 3.  Click the mouse inside the *Paste from Excel* window's text box,
     paste the data, and select the Load icon. The dataset is then
@@ -311,7 +293,6 @@ Select the **Paste from > Excel** button
 
 After pasting in the data from Excel, select Load to enter the data into BMDS Online.
 ```
-<br>
 
 ### Adding Datasets, Method 3: Edit Sample Data
 
@@ -325,15 +306,14 @@ sample data.
 
 Sample dichotomous dataset, ready for editing.
 ```
-<br>
 
 ### Insert and Save Multiple Datasets
 
 BMDS Online displays only one dataset at a time. However, it tracks
 ***all*** datasets created in the current session.
 
-All datasets created during a session are saved via the [Actions
-menu's](#actions-menu) **Download analysis** option and all specified
+All datasets created during a session are saved via the [**Actions
+menu's**](#actions-menu) **Download analysis** option and all specified
 datasets in a session can be Shared.
 
 Select the **Create** button to create a new default dataset with an
@@ -348,7 +328,6 @@ picklist.
 
 Creating multiple datasets in BMDS Online.
 ```
-<br>
 
 ### Delete a Dataset
 
@@ -362,7 +341,6 @@ the **Delete** button beside the **Dataset name** field.
 
 Data tab with **Delete** button highlighted.
 ```
-<br>
 
 ### Document the Dataset
 
@@ -380,8 +358,6 @@ enter those units into the plot.
 
 Specify the dataset's units here...
 ```
-<br>
-<br>
 
 ```{figure} _static/img/image31.png
 :alt: Dose and Response units values shown as the graph's x and y axis labels, respectively
@@ -390,7 +366,6 @@ Specify the dataset's units here...
 
 ...and they provide additional context for the plot's axes.
 ```
-<br>
 
 ### All Rows Must Have Data
 
@@ -404,7 +379,6 @@ dataset is missing any values.
 
 BMDS Online displays an error if there are missing values in a dataset.
 ```
-<br>
 
 ### Dataset Plot
 
@@ -419,10 +393,8 @@ draw attention to trends or anomalies that may need correction.
 
 Dataset and plot.
 ```
-<br>
 
-Hover the cursor over a data point to see additional extrapolations from
-the entered data.
+Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [**Graphs/Plots All Data**](./result-output-mle.md#graphsplots-all-endpoints)).
 
 ```{figure} _static/img/image34.png
 :alt: Highlight box around a pointer hovering over a plot point, with data values displayed
@@ -431,7 +403,6 @@ the entered data.
 
 Hover the cursor over a data point to see extra plot details.
 ```
-<br>
 
 The plot's upper right corner features a line of icons that help the
 user to, from left to right:
@@ -452,7 +423,6 @@ user to, from left to right:
 
 Plotly accessories.
 ```
-<br>
 
 Visit the [Plotly Website Help
 Page](https://plotly.com/chart-studio-help/zoom-pan-hover-controls/) for
@@ -474,14 +444,12 @@ detailed instructions on the use of these plot controls.
 
 Enable datasets to satisfy another analysis requirement.
 ```
-<br>
 
 3.  For dichotomous data, BMDS Online automatically selects the Maximum
     multistage degree to be 3. However, you can manually select a range
     of options from the **Maximum multistage degree** picklist. For
     this example analysis, the default setting is used. For more
-    information, refer to Section 9.2, "Maximum Multistage Degree," on
-    page 69.
+    information, see [**Maximum Multistage Degree**](./dichotomous.md#maximum-multistage-degree).
 
 ```{figure} _static/img/image37.png
 :alt: Help text panel displayed beside pointer hovering over question mark icon
@@ -490,7 +458,6 @@ Enable datasets to satisfy another analysis requirement.
 
 Hover the mouse over the question mark icon for help text on Maximum multistage degree setting.
 ```
-<br>
 
 4.  Select the **Save Analysis** button to complete all the steps
     required to enable the **Run Analysis** button. Notice that all
@@ -503,7 +470,6 @@ Hover the mouse over the question mark icon for help text on Maximum multistage 
 
 Selecting Save Analysis ensures all specifications are in place for an analysis.
 ```
-<br>
 
 5.  Select the **Run Analysis** button to execute the analysis. A
     running analysis can be stopped by selecting the **Cancel
@@ -516,7 +482,6 @@ Selecting Save Analysis ensures all specifications are in place for an analysis.
 
 Select **Cancel execution** to stop a running analysis.
 ```
-<br>
 
 6.  After successful execution, the modeling results are displayed on
     the Output tab.
@@ -537,7 +502,6 @@ frequently used and referenced values from a BMD analysis.
 
 The Output tab is a large scrolling page showing results for one dataset at a time.
 ```
-<br>
 
 To select a different set of results, select the specific dataset+option
 set combination from the **Select an output** picklist.
@@ -549,7 +513,6 @@ set combination from the **Select an output** picklist.
 
 Select the output results to display in the Output tab.
 ```
-<br>
 
 ### Summary Results Table
 
@@ -565,7 +528,6 @@ icon to hide the model notes.
 
 The **Show/Hide** buttons toggle display of additional model warnings and messages.
 ```
-<br>
 
 Hover the cursor over rows within the Model Results table to display
 individual model curves in the plot.
@@ -577,7 +539,6 @@ individual model curves in the plot.
 
 Hovering the cursor over a model row displays that model's plot.
 ```
-<br>
 
 To investigate an individual model's results, select that model's name
 in the Model column. BMDS will overlay a window showing all the
@@ -590,7 +551,6 @@ numerical and graphical model outputs for that model.
 
 Select a model's name to display a window showing all results for that model.
 ```
-<br>
 
 ### Recommended MLE Models
 
@@ -598,7 +558,7 @@ For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
 model (the blue row marked **Recommended**). The logic criteria used
 to make the recommendations are located on the Logic tab.
-model (the blue row marked **Recommended** in ). The logic criteria used
+model. The logic criteria used
 to make the recommendations are located on the Logic tab.
 
 ```{figure} _static/img/image44.png
@@ -608,7 +568,6 @@ to make the recommendations are located on the Logic tab.
 
 The Logic tab contains the rules BMDS Online uses to make model recommendations. It is highly recommended to leave the settings as-is.
 ```
-<br>
 
 On the Logic tab, you can investigate the criteria BMDS Online used to
 recommend the best-fitting model. Users can change any of the criteria
@@ -634,7 +593,6 @@ alternative, from the **Selected best-fitting model** picklist.
 
 The **Selected best-fitting model** picklist, with the Multistage 3 model selected.
 ```
-<br>
 
 Enter notes on model selection in the **Selection notes** field.
 Click the **Save model selection** button to save this documentation
@@ -649,7 +607,6 @@ downloaded Word report.
 
 Use the Selection notes box to record the reason why a specific model was selected.
 ```
-<br>
 
 Select the **Save model selection** button to finalize model selection.
 BMDS Online displays the selected model row in green, and any selection
@@ -662,7 +619,6 @@ notes will be displayed in a footnote at the bottom of the table.
 
 The final output table: recommended row in blue, user-selected row in green, and footnotes.
 ```
-<br>
 
 Individual model and model averaging results can also be investigated by
 clicking on the desired row in the results table. In the following figure, the Model Average
@@ -676,7 +632,6 @@ mouse across the curves to investigate results in more detail.
 
 Selecting the Model Average link from the Bayesian Model Results table displays the Model Average results window. Hover the cursor over the results curves to display more details on each model's result.
 ```
-<br>
 
 ## Sharing and Downloading Analyses and Results
 
@@ -703,7 +658,6 @@ the analysis.
 
 BMDS Online Share menu options.
 ```
-<br>
 
 -   **Read-only links**: users can share read-only links so
     collaborators can view the current analysis and download reports but
@@ -719,8 +673,8 @@ BMDS Online Share menu options.
     are linked to the URL of the ***current*** session. When a link is
     shared, only the most recent execution of that analysis is preserved
     and will be available to others. Therefore, if you need to perform
-    more work after sharing an analysis link, we recommend [creating a
-    new analysis](#creating-a-new-analysis).
+    more work after sharing an analysis link, we recommend [**creating a
+    new analysis**](#creating-a-new-analysis).
 
 -   **Analyses are deleted after three years unless extended.** If you
     share the link with others, note that analyses are deleted after
@@ -737,7 +691,6 @@ BMDS Online Share menu options.
 
 BMDS Online Actions menu options.
 ```
-<br>
 
 -   **Load analysis**: Load a previously downloaded analysis (using the
     **Download analysis** option described later in this list.
@@ -760,10 +713,12 @@ BMDS Online Actions menu options.
     model, all models, and all models with the BMD Cumulative Data
     Function (CDF) table. Note that the Word report contains the
     analysis URL, and users can access their analyses via the generated
-    report.[^1] The name given to the Word file is the user-specified
+    report. The name given to the Word file is the user-specified
     Analysis Name.
 
-[^1]: The BMDS Desktop report does not include URLs because the analysis resides on the user's local system rather than the Internet.
+:::{important}
+The BMDS Desktop report does not include URLs because the analysis resides on the user's local system rather than the Internet.
+:::
 
 -   **Download analysis**: Download the analysis as a JSON file. This is
     a machine-readable file format that can be saved or shared, and then
@@ -786,7 +741,6 @@ Table** make the report considerably longer.
 
 The Actions **Download report** option displays items the user can include in the Word report.
 ```
-<br>
 
 ## Citing BMDS Results
 
@@ -797,15 +751,15 @@ Desktop citation. The user can adapt the citation as appropriate.
 The following example citations include each application's package
 version and timestamps to aid in reproducing the analysis.
 
-> U.S. Environmental Protection Agency. (2024). BMDS Online (24.1;
-> pybmds 24.1; bmdscore 24.1) \[Software\]. Available from
-> https://bmdsonline.epa.gov. Accessed September 18, 2024.
+> U.S. Environmental Protection Agency. (2025). BMDS Online (25.1;
+> pybmds 25.1; bmdscore 25.1) \[Software\]. Available from
+> https://bmdsonline.epa.gov. Accessed March 17, 2025.
 >
-> U.S. Environmental Protection Agency. (2024). BMDS Desktop (24.1;
-> pybmds 24.1; bmdscore 24.1) \[Software\]. Available from
-> https://pypi.org/project/bmds-ui/. Accessed September 18, 2024.
+> U.S. Environmental Protection Agency. (2025). BMDS Desktop (25.1;
+> pybmds 25.1; bmdscore 25.1) \[Software\]. Available from
+> https://pypi.org/project/bmds-ui/. Accessed March 17, 2025.
 >
-> U.S. Environmental Protection Agency. (2024). pybmds (24.1; bmdscore
-> 24.1) \[Software\]. Available from https://pypi.org/project/pybmds/.
-> Executed on September 18, 2024.
+> U.S. Environmental Protection Agency. (2025). pybmds (25.1; bmdscore
+> 25.1) \[Software\]. Available from https://pypi.org/project/pybmds/.
+> Executed on Accessed March 17, 2025.
 

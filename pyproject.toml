@@ -23,6 +23,7 @@ dependencies = [
   "sphinx_design~=0.6.1",
   "sphinx-autobuild~=2024.10.3",
   "poethepoet~=0.32.1",
+  "sphinx_tippy~=0.4.3",
 ]
 
 [tool.poe.tasks.docs]

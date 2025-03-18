@@ -1,7 +1,7 @@
 project = "BMDS User Guide"
 copyright = "MIT License"
 
-extensions = ["sphinx.ext.githubpages", "myst_nb", "sphinx_design"]
+extensions = ["sphinx.ext.githubpages", "myst_nb", "sphinx_design", "sphinx_tippy"]
 souce_suffix = {
     ".md": "markdown",
     ".rst": "restructuredtext",
@@ -37,8 +37,8 @@ html_css_files = ["css/style.css"]
 html_js_files = ["js/site.js"]
 html_theme_options = {
     "sidebar_hide_name": True,
-    "light_logo": "img/epa-seal.svg",
-    "dark_logo": "img/epa-seal.svg",
+    "light_logo": "img/epa_logo_green.jpg",
+    "dark_logo": "img/epa_logo_green_dark.png",
     "source_repository": "https://github.com/USEPA/bmds-user-guide",
     "source_branch": "main",
     "source_directory": "docs/",

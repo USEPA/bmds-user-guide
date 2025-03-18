@@ -21,7 +21,6 @@ The bmds-ui Python package installs BMDS Desktop to the user's local system. BMD
 
 BMDS Online and BMDS Desktop use the same interface and command components and workflows, but BMDS Desktop projects run entirely on the user's local computer with no Internet connection.
 ```
-<br>
 
 ### BMDS Desktop-Specific Features and Constraints
 
@@ -29,7 +28,7 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 -   Dose response analyses and data storage are fully offline.
 
--   Database files (projects) are single files containing all analyses; the BMDS Desktop opening page shows all previous analyses included in that project (see ).
+-   Database files (projects) are single files containing all analyses; the BMDS Desktop opening page shows all previous analyses included in that project.
 
 -   Within a database file (project), analyses can be labelled and organized.
 
@@ -40,19 +39,18 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 BMDS Desktop home page, showing selectable and searchable list of previous analyses within a single project
 ```
-<br>
 
 -   Multiple analyses can be stored in a single project, but the user can run only one project (*i.e.*, database file) at a time.
 
--   BMDS Desktop can theoretically accept an unlimited number of [datasets](./bmds-online.md#specifying-datasets-by-endpoint) and [option sets](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than putting large numbers of datasets into a single analysis.
+-   BMDS Desktop can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#specifying-datasets-by-endpoint) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than putting large numbers of datasets into a single analysis.
 
 -   The Microsoft Word report does not contain URLs because the analysis was run on a local computer, not the internet.
 
 ### Constraints on Sharing Analyses with BMDS Online
 
-You can [export an analysis or results](./bmds-online.md#sharing-and-downloading-analyses-and-results) from BMDS Desktop and import the files into BMDS Online, and vice versa. However, there are some caveats:
+You can [**export an analysis or results**](./bmds-online.md#sharing-and-downloading-analyses-and-results) from BMDS Desktop and import the files into BMDS Online, and vice versa. However, there are some caveats:
 
--   BMDS Online is limited to a maximum of 3-6 option sets and 6-10 datasets (depending on the endpoint). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
+-   BMDS Online is limited to a maximum of 3-6 option sets and 6 datasets (for dichotomous, continuous, and nested dichotomous endpoints) or 10 datasets (for cancer endpoints). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
 
 -   The export function is intended to share and view analyses and results only; it is not intended to support a seamless interchange of data between the two applications, nor does it support a collaborative workflow.
 
@@ -65,7 +63,7 @@ BMDS Online has its own set of constraints on sharing results via URL; for more 
 
 pybmds is a Python package that is the underlying execution engine for BMDS Desktop and BMDS Online. It's also a way for users to run BMDS in a scripting environment and is designed for users familiar with basic scripting in languages like R or Python.
 
-Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface (). The pybmds command-line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [Bayesian model averaging](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging), even override the default priors for parameter estimation.
+Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface ({numref}`f5`). The pybmds command-line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [**Bayesian model averaging**](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging), even override the default priors for parameter estimation.
 
 ```{figure} _static/img/image11.png
 :alt: pybmds running in a terminal window
@@ -74,9 +72,8 @@ Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal wind
 
 pybmds is a command-line environment that runs in a terminal window.
 ```
-<br>
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.
 
-pybmds can theoretically accept an unlimited number of [datasets](./bmds-online.md#specifying-datasets-by-endpoint) and [option sets](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than put large numbers of datasets into a single analysis.
+pybmds can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#specifying-datasets-by-endpoint) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than put large numbers of datasets into a single analysis.
 

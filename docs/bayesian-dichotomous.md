@@ -4,8 +4,7 @@ BMDS model averaging proceeds from the basis of Bayesian analyses, for
 which the parameters of the models under consideration are updated using
 the dataset of interest.
 
-Priors for the parameters are defined in [Section
-12.2](#bayesian-dichotomous-model-descriptions) for dichotomous
+Priors for the parameters are defined in [**Bayesian Dichotomous Model Descriptions**](#bayesian-dichotomous-model-descriptions) for dichotomous
 dose-response models. Only dichotomous model averaging is available in
 BMDS Online.
 
@@ -23,8 +22,8 @@ Suppose for this development that we are considering $K$ models
 
 For each model, BMDS approximates the posterior density for the BMD
 using a Laplacian approximation; call that density
-$g_{k}\left( BMD \middle| M_{k},D \right)$ for model k. If the parameter
-vector for model k is denoted $θ_{k}$, let ${\widehat{\theta}}_{k}$
+$g_{k}\left( BMD \middle| M_{k},D \right)$ for model $k$. If the parameter
+vector for model $k$ is denoted $\theta_{k}$, let ${\widehat{\theta}}_{k}$
 designate the value of that vector that maximizes the posterior
 likelihood (the maximum *a posteriori*, or MAP, estimate).
 
@@ -55,13 +54,13 @@ ${\widehat{\Sigma}}_{k}\ $is the negative inverse Hessian matrix
 evaluated at ${\widehat{\theta}}_{k}$,
 
 $\mathcal{l}\left( D \middle| {M_{k},\ \widehat{\theta}}_{k} \right)\ $is
-the likelihood of the data, for model k evaluated at the MAP, and
+the likelihood of the data, for model $k$ evaluated at the MAP, and
 
 $g\left( {\widehat{\theta}}_{k} \middle| M_{k} \right)$ is the value of
 the prior density for $M_{k}$ evaluated at the MAP parameter estimates.
 
 To compute the posterior model probabilities for the $M_{k}$, one
-calculates the MAP and then calculates *I~k~* using the preceding
+calculates the MAP and then calculates $I_{k}$ using the preceding
 equation. The posterior probability of the model is
 
 $$\pi_{k}\left( M_{k} \middle| D \right) = \ \frac{w_{k}I_{k}}{\sum_{i = 1}^{K}{w_{k}I_{k}}},$$
@@ -87,7 +86,7 @@ approximates the marginal likelihood using the posterior MAP estimate
 and Hessian of the log-posterior.
 
 :::{note}
-For the model average approach, the [Bayesian dichotomous models](#bayesian-dichotomous-model-descriptions) are available in the model average. For
+For the model average approach, the [**Bayesian dichotomous models**](#bayesian-dichotomous-model-descriptions) are available in the model average. For
 dichotomous model averaging, the Multistage model is capped to a maximum
 degree of 2. The reasoning for this follows upon the work of Nitcheva,
 et al.
@@ -100,7 +99,7 @@ Hill) can provide increased curvature.
 The BMDS model-averaged BMD point estimate is the weighted average of
 BMD MAP estimates from individual models, weighted by posterior weights
 $\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the
-median of the approximate posterior density of θ. For the BMDL or BMDU
+median of the approximate posterior density of $\theta$. For the BMDL or BMDU
 estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$
 BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such
 that:
@@ -139,7 +138,7 @@ unnormalized Log Posterior Probability (LPP) is given, which allows the
 computation of a Bayes factor (BF) to compare any two models. BF equals
 the exponentiated difference between the two LPP. For example, if one
 wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to
-the Multistage 2^nd^ degree model (Model B, $LPP_{B}$) one estimates
+the Multistage 2{sup}`nd` degree model (Model B, $LPP_{B}$) one estimates
 the BF as
 
 $$BF = \exp\left( LPP_{A} - LPP_{B} \right),$$
@@ -186,7 +185,6 @@ the BIC, may not go to the true value.
 
 Sample Bayesian dichotomous results plot.
 ```
-<br>
 
 ## Bayesian Dichotomous Model Descriptions
 
@@ -197,7 +195,7 @@ Bayesian modeling or Bayesian model averaging.
 
 From a Bayesian perspective, inference proceeds by defining a
 data-generating mechanism, given a model, $M$, and its parameters. For
-our purposes, $M$ would be one of the models listed in [Dichotomous Response Models](./dichotomous.md#dichotomous-response-models) that
+our purposes, $M$ would be one of the models listed in [**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models) that
 determines the probability of response. For the dichotomous models, the
 data generating mechanism would be the assumption that the observations
 were obtained from binomial sampling, having the dose-dependent
@@ -207,11 +205,11 @@ values of the parameters in that model).
 We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
-of the likelihood is presented in [Likelihood Function](./dichotomous.md#likelihood-function).
+of the likelihood is presented in [**Likelihood Function**](./dichotomous.md#likelihood-function).
 
 The set of Bayesian dichotomous models used in BMDS Online is identical to
 the set of models used for maximum-likelihood estimation (MLE)
-approaches ([Dichotomous Response Models](./dichotomous.md#dichotomous-response-models)). In the following, let θ be the vector of
+approaches ([**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models)). In the following, let $\theta$ be the vector of
 parameters that are required to define the any one of those models. So,
 for example, for the Weibull model $\theta = (g, \alpha, \beta)$. The additional
 consideration incorporated into the Bayesian approach is the
@@ -221,7 +219,7 @@ obtain a posterior distribution for $\theta$.
 
 From a Bayesian perspective, functions of $\theta$ also have posterior
 densities. So, using the equations (which express the BMD as function of
-the model parameters) summarized in [Calculation of the BMD for Individual Dichotomous Models](./dichotomous.md#calculation-of-the-bmd-for-the-individual-dichotomous-models), one can derive a posterior
+the model parameters) summarized in [**Calculation of the BMD for Individual Dichotomous Models**](./dichotomous.md#calculation-of-the-bmd-for-the-individual-dichotomous-models), one can derive a posterior
 distribution for the BMD.
 
 BMDS summarizes the posterior for the BMD as follows. The BMD is equated
