@@ -633,9 +633,7 @@ determined from the appropriate Chi-square distribution function.
 ### Plot and Error Bar Calculation
 
 The error bars shown for the plots of nested data are calculated in the
-same way as those for dichotomous data (and described in Section 9.4.3,
-"Plot and Error Bar Calculation," on page
-[**Plot and Error Bar Calculation**](./dichotomous.md#plot-and-error-bar-calculation)).
+same way as those for dichotomous data (and described in [**Plot and Error Bar Calculation**](./dichotomous.md#plot-and-error-bar-calculation)).
 
 However, a Rao-Scott transformation is applied prior to the calculations
 to express the observations in terms of an effective number of affected
