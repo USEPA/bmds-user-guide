@@ -23,7 +23,7 @@ BMDS to auto-select the degree of Multistage model to apply to each
 dataset. The auto-selection process follows the most recent [EPA
 technical guidance for selecting the Multistage model degree for the
 analysis of cancer
-datasets,](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382)
+datasets,](https://www.epa.gov/bmds/choosing-appropriate-stage-multistage-model-cancer-modeling-bmds-technical-guidance)
 which differs from the model selection process described by EPA
 ([2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433))
 for other modeling scenarios.
@@ -47,7 +47,7 @@ Unless there is substantial biological evidence to
 
 *  A multistage model is an appropriate model for each of the tumors
 separately. However, the individual multistage models fit to the
-individual tumors need not have the same polynomial degree.
+individual tumors need not have the same multistage degree.
 
 *  The user is interested in estimating the risk of getting one or more
 of the tumors under analysis; the results indicate the BMD and BMDL
@@ -61,7 +61,7 @@ In accordance with EPA cancer guidelines ([U.S. EPA,
 a Multiple Tumor Analysis will always run the restricted form of the
 Multistage model.
 
-Users can choose to have BMDS auto-select the appropriate polynomial
+Users can choose to have BMDS auto-select the appropriate multistage
 degree of the Multistage model for each tumor dataset. The option is
 available from the **Degree** picklist on the Settings tab ({numref}`f97`).
 
@@ -74,14 +74,14 @@ The Degree picklist with the auto-select option highlighted.
 ```
 
 When the auto-select feature is used, BMDS runs all relevant forms of
-the Multistage Multitumor model and selects the polynomial degree to use
+the Multistage Multitumor model and selects the multistage degree to use
 based on the current [EPA Multistage model selection criteria for tumor
-analyses](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
+analyses](https://www.epa.gov/bmds/choosing-appropriate-stage-multistage-model-cancer-modeling-bmds-technical-guidance).
 
 Although auto-select is the BMDS default option, the user can choose to
-manually set the polynomial degree for each dataset. In any case, it is
+manually set the multistage degree for each dataset. In any case, it is
 ultimately the user's responsibility to ensure that the degree of the
-polynomial and other selections for modeling parameters are as desired
+multistage and other selections for modeling parameters are as desired
 and appropriate for the dataset(s) being analyzed.
 
 ## Multistage Multitumor Model Description
@@ -93,7 +93,7 @@ appropriate stage of a multistage model for cancer
 modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
 :::
 
-The purpose of the Multistage Multitumor model in BMDS is to allow the
+The purpose of the Multistage Multitumor model in BMDS is to enable the
 user to calculate BMDs and BMDLs for a combination of tumors
 (corresponding to a defined risk of getting one or more of those tumors)
 when the individual tumor dose-responses have been modeled using a
@@ -205,11 +205,11 @@ datasets or option sets, but it is recommended to create multiple
 analyses instead of putting large numbers of datasets into a single
 analysis.
 
-### Setting Polynomial Degree for a Dataset
+### Setting Degree for a Dataset
 
-The user can specify the polynomial degree for each dataset.
+The user can specify the multistage degree for each dataset.
 
-Choose whether BMDS auto-selects the appropriate polynomial degree or
+Choose whether BMDS auto-selects the appropriate multistage degree or
 whether it should be user-specified. Selectable values are auto, 1, 2,
 3, or 4.
 
@@ -223,17 +223,15 @@ Dataset options for multitumor data.
 
 The help text for the **Degree** column reads as follows:
 
-:::{note}
-If set to auto (default), all degrees to N-1are executed and the
+> If set to auto (default), all degrees to N-1 are executed and the
 best-fitting is used. If a numeric value, only that degree will be
 modeled.
-:::
 
 BMDS will recommend a model degree based on the decision logic and
 settings found on the Logic tab for Dichotomous endpoints. For more
 details, refer to [**Model Recommendations and Decision Logic**](./model-recommendation.md#model-recommendations-and-decision-logic).
 
-   * If a user opts for BMDS' auto-select functionality, the best fitting
+   * If the user opts for the auto-select functionality, the best fitting
     model is chosen according to the [Technical Guidance on choosing the
     appropriate stage of a multistage model for cancer
     modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
@@ -244,11 +242,11 @@ details, refer to [**Model Recommendations and Decision Logic**](./model-recomme
     criteria for the user-defined test thresholds from the Dichotomous
     Logic tab:
 
-   * Ratio of BMD/BMDL (caution)
+        * Ratio of BMD/BMDL (caution)
 
-   * \|Residual near BMD\| too large
+        * \|Residual near BMD\| too large
 
-   * \|Residual at control\| too large
+        * \|Residual at control\| too large
 
    * If a user specifies a degree for a given model, that degree will be
     used regardless of model fit.
@@ -281,11 +279,11 @@ dose-groups in standard two-year cancer bioassays.
 
 To access the Poly K adjustment tool:
 
-* Select **Multistage Cancer/Multitumor** on the Settings tab.
+1. Select **Multistage Cancer/Multitumor** on the Settings tab.
 
-*  Select the Data tab.
+2.  Select the Data tab.
 
-*  Beneath the data table, select the link for **Poly K Adjustment**.
+3.  Beneath the data table, select the link for **Poly K Adjustment**.
 
 ```{figure} _static/img/image99.png
 :alt: Arrow pointing to Poly K Adjustment link
@@ -295,13 +293,13 @@ To access the Poly K adjustment tool:
 With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
 ```
 
-Selecting the link displays the Poly K Adjustment page ({numref}`f100`), where the
+Selecting the link displays the Poly K Adjustment page ({numref}`f101`), where the
 user can enter their data and specify settings. Users can copy and paste
 data from a CSV file or an Excel sheet into the Dataset text box.
 
 Under the Dataset table:
 
--   Select the Load link to have BMDS Online load an example dataset.
+-   Select the Load link to have BMDS Online load an example dataset, or
 
 -   Select the download link to download an example dataset formatted
     specifically for poly-k adjustment; the example dataset can be used
@@ -338,7 +336,7 @@ The inputs for the Poly K tool are:
     but can be adjusted given the nature of the tumors being analyzed.
 
 * **Duration.** The duration of the study in days. By default (if
-    empty), the maximum reported day in the dataset. In [[Kissling et
+    empty), the maximum reported day in the dataset. In [Kissling et
     al.(2008)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/708980),
     the authors note that the poly-3 adjustment has not been validated
     for carcinogenicity studies longer than two years, consistent with
@@ -395,7 +393,7 @@ developed by [Portier and Bailer
 to correct for treatment-related differences in survival across
 dose-groups in standard 2-year cancer bioassays.
 
-Consider the example provided in Portier and Bailer, 1989: there exists
+Consider the example provided in Portier and Bailer (1989): there exists
 a tumor type that does not appear before 90 weeks of age and has 10%
 incidence, so that the lifetime incidence would be 5 animals in a group
 of 50. If exposure to a carcinogen increases the lifetime incidence to
@@ -409,7 +407,7 @@ Thus, by not taking differential survival into account, it is possible
 to understate a chemical's true carcinogenic potential when performing
 dose-response analyses.
 
-#### Determining the denominator contribution for the Poly K Adjustment*
+#### Determining the Denominator Contribution for the Poly K Adjustment
 
 Animals in a carcinogenicity experiment can be placed into four bins for
 the purpose of analysis:
@@ -425,7 +423,7 @@ the purpose of analysis:
 
 :::
 
-:::{tab-item} Animal surives to end of experiment and develops tumor
+:::{tab-item} Animal survives to end of experiment and develops tumor
 **Numerator Contribution:** 1
 
 **Denominator Contribution:** 1
@@ -444,7 +442,7 @@ the purpose of analysis:
 :::{tab-item} Animal dies prior to end of experiment with no tumor
 **Numerator Contribution:** 0
 
-**Denominator Contribution:** $(\frac{t}{t_{max}})^{k}$, where $t$ = time of death, $t_{max}$ =total duration of experiment, and $k$ = polynomial degree
+**Denominator Contribution:** $(\frac{t}{t_{max}})^{k}$, where $t$ = time of death, $t_{max}$ =total duration of experiment, and $k$ = multistage degree
 
 **Rationale for Denominator Contribution:** Animal may have developed a tumor within a normal lifetime; contribution should account for acceleration of rate with age.
 :::
@@ -472,7 +470,7 @@ exponent for the polynomial function describing the cumulative rate of
 tumor onset as a function of time. [Portier et al.
 (1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998)
 analyzed the untreated control groups of 47 NTP studies in mice and rats
-and concluded at a 3rd order polynomial was a reasonable general value
+and concluded that a 3rd order polynomial was a reasonable general value
 of k.
 
 Given the example above, an animal dying at one year would contribute a
@@ -488,8 +486,7 @@ analyses.
 
 ## Option Set
 
-The Multitumor options are the same as for the Dichotomous options as
-described in [**Option Sets**](./dichotomous.md#option-sets).
+The Multitumor options are the same as for the [**Dichotomous option sets**](./dichotomous.md#option-sets).
 
 ### Risk Type
 
@@ -537,17 +534,17 @@ the user.
 The user can select a specific individual model's results to display its
 plot and additional results.
 
-If the auto-select feature was used to select the Multistage polynomial
+If the auto-select feature was used to select the Multistage
 degree, the user should verify that the model fits are adequate in the
 desired dose-response region. If the user wants to try a different
-Multistage polynomial degree, they can re-run the analysis using a
+Multistage degree, they can re-run the analysis using a
 specified degree instead of auto-select.
 
 For more information, refer to [**Specific Dichotomous Results**](./dichotomous.md#specific-dichotomous-results).
 
 ### Cancer Slope Factor
 
-By default, the BMDS runs the Multistage model as restricted. This is
+By default, BMDS runs the Multistage model as restricted. This is
 the EPA standard setup for modeling cancer data.
 
 The Modeling Summary table for the restricted Multistage model includes

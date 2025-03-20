@@ -9,7 +9,7 @@ dose-response models. Only dichotomous model averaging is available in
 BMDS Online.
 
 For each model, $M$, there is a likelihood for the data,
-$\mathcal{l}(D|M)$, based on the data generating mechanism (binomial
+$\mathcal{l}(D|M)$, based on the data-generating mechanism (binomial
 sampling in the case of the dichotomous endpoints; Normal or Lognormal
 distributions for continuous data).
 
@@ -152,7 +152,7 @@ interpretation would be that the Log-logistic model is *a posteriori*
 normalized into proper probabilities, they are equivalent to the
 posterior model probabilities given in model averaging (again, assuming
 equal model probability *a priori*). The table below is adapted from Jeffreys
-([1998](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials?action=search.view&reference_id=4850043))
+([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043))
 and is a common interpretation of Bayes Factors.
 
 ```{csv-table} Bayes factors for dichotomous models.
@@ -197,7 +197,7 @@ From a Bayesian perspective, inference proceeds by defining a
 data-generating mechanism, given a model, $M$, and its parameters. For
 our purposes, $M$ would be one of the models listed in [**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models) that
 determines the probability of response. For the dichotomous models, the
-data generating mechanism would be the assumption that the observations
+data-generating mechanism would be the assumption that the observations
 were obtained from binomial sampling, having the dose-dependent
 probability of response defined by one of those models (with specific
 values of the parameters in that model).

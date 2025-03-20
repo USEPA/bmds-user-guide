@@ -172,7 +172,9 @@ sections:
 
 The goodness-of-fit p-value is computed based on the degrees of freedom
 and the Chi-square, $\chi^{2}$, value. The $\chi^{2}$ value is assumed to be distributed as a
-Chi-square distribution having degrees of freedom equal to "Model d.f."). The p-value measures the "closeness" of the model predictions
+Chi-square distribution having degrees of freedom equal to the number of dose groups minus the number of model parameters estimated off a boundary. 
+
+The p-value measures the "closeness" of the model predictions
 to the observed data. If the overall p-value is larger than some
 predetermined critical p-value, then the user might infer that the model
 appropriately describes the observed dose-response pattern. The critical
