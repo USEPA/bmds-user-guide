@@ -45,18 +45,7 @@ the toxic effects of the exposure).
 The dose-response relationship
 ```
 As {numref}`f1` shows, the benchmark dose (BMD) is the dose amount estimated to produce a
-response (BMR) of a specific magnitude in the test subject. The BMD's
-lower confidence limit (BMDL) is a dose where the observable physical
-effect is less than the predetermined BMR.
-
-EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
-[**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative
-relationship between a chemical ***dose*** and the test
-subject's ***response***. The user can select from and/or compare the 
-models to make predictions about the quantitative relationship between
-dose and response. One specific focus of this software is the estimation
-of a statistical benchmark dose (BMD), including bounds (*e.g.*, 95%
-confidence intervals) on such estimates.
+response (BMR) of a specific magnitude in the test subject. 
 
 The BMD is a dose estimated to produce a response level of a defined
 (benchmark) magnitude. The [online BMDS
@@ -67,10 +56,16 @@ low incidence of risk, generally in the range of 1% to 10%, of a health
 effect; or the dose associated with a specified measure or change of a
 biological effect.*
 
-The BMD can be thought of as a range, rather than a fixed number. For example, the
-benchmark dose lower confidence limit (BMDL) can be regarded as a dose
-where the observable physical effect is *less* than the predetermined
-benchmark response (BMR).
+The BMD can be thought of as a range, rather than a fixed number. The BMD's lower confidence limit (BMDL) is a dose where the observable physical effect is *less than* the predetermined BMR. The BMD's upper confidence limit (BMDU) is a dose where the observable effect is *greater than* the predetermined BMR.
+
+EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
+[**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative
+relationship between a chemical ***dose*** and the test
+subject's ***response***. The user can select from and/or compare the 
+models to make predictions about the quantitative relationship between
+dose and response. A specific focus of this software is the estimation
+of a statistical benchmark dose (BMD), including bounds (*e.g.*, 95%
+confidence intervals) on such estimates.
 
 ### Types of Responses Modeled
 
@@ -89,7 +84,7 @@ The key features of those response (endpoint) types are as follows:
 
 -   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
-    positive values, but not always). Organ weight, body weight,
+    positive values, but not always). Organ weight, body weight, amd 
     concentration levels of biological markers are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
@@ -213,9 +208,7 @@ users. Now, instead of downloading and installing an Excel macro-based
 application, users only need an internet connection to run a BMD
 analysis.
 
-There is also the added flexibility of offline processing with the
-simultaneous releases of BMDS Desktop and pybmds. For more information
-on these programs, refer to [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
+There is also the added flexibility of offline processing with [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
 
 ### Privacy is Respected
 
@@ -225,7 +218,7 @@ users of the software.
 ### Results Saved for Three Years
 
 BMDS Online will save datasets and analyses for three years; users can
-rerun or delete the analyses at any time, and they can optionally
+rerun or delete an analysis at any time, and they can optionally
 "renew" an analysis to continue saving for another three years.
 
 If data sensitivity is an issue, BMDS Desktop or pybmds should be used
@@ -233,7 +226,7 @@ for offline analysis.
 
 ### Work Offline with BMDS Desktop and pybmds
 
-The 2024 BMDS Online upgrade includes the release of two new
+The 2024 BMDS Online upgrade included the release of two new
 applications:
 
 -   **BMDS Desktop** is a Python-based version of BMDS Online that runs
@@ -256,20 +249,20 @@ Active development has stopped on the Excel-based BMDS 3.3 application.
 While the Excel framework for the application was modern and familiar to users when BMDS 3.0 was released in 2018, several issues hampered innovation and maintenance:
 
 -   Excel incompatibilities across different versions of Microsoft
-    Office
+    Office.
 
 -   Limitations to the design of the user interface both functionally
-    and aesthetically
+    and aesthetically.
 
--   Slow performance when writing to Excel workbooks and Word reports
+-   Slow performance when writing to Excel workbooks and Word reports.
 
 -   Limitations in Excel's Visual Basic for Applications (VBA)
     programming language hindered BMDS development and complicated its
-    maintenance
+    maintenance.
 
 -   BMDS Excel's macro-based nature occasionally triggered workplace
     security restrictions that stalled or prevented uptake of BMDS
-    within some organizations
+    within some organizations.
 
 BMDS Online, BMDS Desktop, and pybmds are now the primary applications where new development and
 innovation will occur. As a web-application with no requirement to download any software, BMDS Online also offers an easier introduction to BMD analysis for new users.
@@ -335,10 +328,7 @@ website](https://www.epa.gov/bmds/how-subscribe-bmds-bulletin-email-list).
 ### BMDS Glossary
 
 For definitions of terms used in this guide, please refer to the [online
-BMDS
-Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/termsandacronyms/search.do).
-The glossary items can be exported to other formats, such as PDF or
-Excel.
+BMDS Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary). The glossary items can be exported to other formats, such as PDF or Excel.
 
 Another good source of dose-response terminology is the [Integrated Risk
 Information System (IRIS)
@@ -366,6 +356,4 @@ The documentation for BMDS Desktop and pybmds are at
 
 The [BMDS Contact Us
 page](https://www.epa.gov/bmds/forms/contact-us-about-benchmark-dose-tools)
-serves as the online Help Desk for all BMDS applications. Use the page
-to post questions, concerns, comments, or suggestions on any aspect of
-the software or its usage.
+serves as the online Help Desk for all BMDS applications. Post questions, concerns, comments, or suggestions on any aspect of the software or its usage.

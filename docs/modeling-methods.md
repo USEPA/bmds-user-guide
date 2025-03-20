@@ -1,7 +1,7 @@
 # BMDS Modeling Methods
 
 BMDS employs two general modeling approaches: Bayesian for dichotomous
-endpoints only, and non-Bayesian methods (i.e. maximum likelihood estimation)
+endpoints only, and non-Bayesian methods (*i.e.*, maximum likelihood estimation)
 for dichotomous, continuous, and nested dichotomous endpoints.
 
 Both Bayesian and non-Bayesian methods estimate parameters of a
@@ -21,7 +21,7 @@ for the group of methods associated with likelihood maximization,
 recognizing that the term may be considered to apply most specifically
 to point estimation.
 
-[^1]: BMDS has in the past referred to the non-Bayesian approach variously as "frequentist," "Maximum Likelihood," or Maximum Likelihood Approach."
+[^1]: BMDS has in the past referred to the non-Bayesian approach variously as "frequentist," "Maximum Likelihood," or "Maximum Likelihood Approach."
 
 The MLE approach is based on finding the parameter values that maximize
 the likelihood function. In simpler terms, it chooses the parameters

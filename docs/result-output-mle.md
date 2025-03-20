@@ -172,8 +172,7 @@ sections:
 
 The goodness-of-fit p-value is computed based on the degrees of freedom
 and the Chi-square, $\chi^{2}$, value. The $\chi^{2}$ value is assumed to be distributed as a
-Chi-square distribution having degrees of freedom equal to degrees of
-freedom). The p-value measures the "closeness" of the model predictions
+Chi-square distribution having degrees of freedom equal to "Model d.f."). The p-value measures the "closeness" of the model predictions
 to the observed data. If the overall p-value is larger than some
 predetermined critical p-value, then the user might infer that the model
 appropriately describes the observed dose-response pattern. The critical
@@ -202,7 +201,7 @@ tolerance ($1.0e^{-6}$) of parameter boundaries. If so, they are marked as
 
 CDF stands for *cumulative distribution function*, in this case for the
 BMD estimate. It lists the percentiles associated with the CDF for the
-BMD being estimated {numref}`f59`.
+BMD being estimated ({numref}`f59`).
 
 Note that the BMD value associated with the CDF value of 0.5 is the MLE
 of the BMD (and matches the value reported for the BMD in the Summary

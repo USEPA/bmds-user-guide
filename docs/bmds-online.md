@@ -58,7 +58,7 @@ When a new analysis is created, a unique URL is created for the analysis.
 You can create as many analyses as you want, but ***saving an analysis
 saves only the most recent execution to that unique URL***. If you edit
 the data or add new data or new options and rerun the software, then the resulting new analysis
-will overwrite the previous older analysis.
+will overwrite the previous older analysis, but the URL will remain unchanged.
 
 ```{figure} _static/img/image14.png
 :alt: BMDS Online analysis URL highlighted
@@ -88,7 +88,7 @@ When all checkmarks are green, BMDS Online can run an analysis.
 
 ### Specifying the Model(s) and Option(s)
 
-1.  **On the Settings tab, specify a name and description for the analysis.** BMDS uses the **Analysis Name** to name the files that are created when users select the Reporting options "data," "report," or
+1.  On the Settings tab, specify a name and description for the analysis. BMDS uses the **Analysis Name** field to name the files that are created when users select the Reporting options "data," "report," or
     "analysis" from the [**Actions menu**](#actions-menu).
 
 ```{figure} _static/img/image16.png
@@ -99,7 +99,7 @@ When all checkmarks are green, BMDS Online can run an analysis.
 Enter a descriptive name and summary for the analysis; they will be included in the report.
 ```
  
-2.  **Select the model type for your analysis** (*i.e.*, are you modeling
+2.  Select the model type for your analysis (*i.e.*, are you modeling
     dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
 
@@ -115,7 +115,7 @@ Dichotomous model type is selected for this analysis.
 An analysis can have only a single model type. You cannot mix continuous and dichotomous data in a single analysis.
 :::
 
-3.  **Select which models will be used for the analysis.** For this example,
+3.  Select which models will be used for the analysis. For this example,
     the default selection of dichotomous maximum-likelihood estimation
     (MLE) models will be used, plus all the Bayesian dichotomous model
     averaging models. To use all the models in a column, check the
@@ -129,7 +129,7 @@ An analysis can have only a single model type. You cannot mix continuous and dic
 Tick the Select All box to select all the models in a column.
 ```
 
-4.  **Specify the option sets to be used for the analysis.** For this
+4.  Specify the option sets to be used for the analysis. For this
     example, we will use a single option set with the default benchmark
     response (BMR) of 10% extra risk.\
     \
@@ -179,7 +179,7 @@ Select the Data tab to start specifying datasets.
 
 3.  On the Data tab, select the **New** button to add an individual
     dataset. For this example workflow, only the dichotomous option
-    is shown for *New dataset* because Dichotomous was chosen as the
+    is shown for the **New dataset** field because Dichotomous was chosen as the
     model type on the Settings tab.
 
 ```{figure} _static/img/image21.png
@@ -271,27 +271,27 @@ HTML formatted source.
 Select and copy the data from Excel.
 ```
 
-2.  In BMDS Online, select the aqua Excel icon in the dataset table
+2.  In BMDS Online, select the teal Excel icon in the dataset table
     header. A *Paste from Excel* window displays.
 
 ```{figure} _static/img/image25.png
-:alt: Aqua button highlighted for Paste from Excel function
+:alt: Teal button highlighted for Paste from Excel function
 :scale: 100%
 :name: f19
 
-Select the **Paste from > Excel** button
+Select the **Paste from Excel** button
 ```
 
 3.  Click the mouse inside the *Paste from Excel* window's text box,
-    paste the data, and select the Load icon. The dataset is then
+    paste the data, and select the **Load** button. The dataset is then
     fully entered in BMDS Online.
 
 ```{figure} _static/img/image26.png
-:alt: BMDS Online\'s Paste from Excel window, with Load button highlighted
+:alt: BMDS Online\'s Paste from Excel window, with the Load button highlighted
 :scale: 110%
 :name: f20
 
-After pasting in the data from Excel, select Load to enter the data into BMDS Online.
+After pasting in the data from Excel, select **Load** to enter the data into BMDS Online.
 ```
 
 ### Adding Datasets, Method 3: Edit Sample Data
@@ -468,7 +468,7 @@ Hover the mouse over the question mark icon for help text on Maximum multistage 
 :scale: 80%
 :name: f32
 
-Selecting Save Analysis ensures all specifications are in place for an analysis.
+Selecting **Save Analysis** ensures all specifications are in place for an analysis.
 ```
 
 5.  Select the **Run Analysis** button to execute the analysis. A
@@ -692,8 +692,7 @@ BMDS Online Share menu options.
 BMDS Online Actions menu options.
 ```
 
--   **Load analysis**: Load a previously downloaded analysis (using the
-    **Download analysis** option described later in this list.
+-   **Load analysis**: Load a previously downloaded analysis.
     
 -   **Extend deletion date**: BMDS Online will store analyses for three
     years after the date of creation. Select **Extend deletion date** to

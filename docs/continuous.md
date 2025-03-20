@@ -110,7 +110,7 @@ Hover the pointer over the question mark to display the following help
 text:
 
 > *Studies have indicated that higher degree polynomial models are not
-> warranted I that they generally do not sufficiently improve fit over
+> warranted in that they generally do not sufficiently improve fit over
 > simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
 > also increase computing processing time and the chance of model
 > failure.*
@@ -295,7 +295,7 @@ In total, three combinations are allowed:
     group has the same variance, which is estimated by BMDS along with
     the dose-response model parameters.
 
-1.  **Normal distribution, non-constant (modeled) variance:** each dose
+2.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
     (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
@@ -306,7 +306,7 @@ In total, three combinations are allowed:
 The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
 :::
 
-2.  **Lognormal distribution, constant coefficient of variation (CV):**
+3.  **Lognormal distribution, constant coefficient of variation (CV):**
     for lognormally distributed responses, each dose group has the same
     CV, which entails that the log-scale variance is constant over dose
     groups (though the natural-scale variance will differ from group to
@@ -534,8 +534,7 @@ rather a bounded MLE.
 The five log-likelihood models can be used for tests of hypotheses,
 including tests of fit, that are asymptotically Chi-square. Each of
 these log-likelihood values corresponds to a model the user may consider
-in the analysis of the data. The five models are summarized in the
-following dropdown.
+in the analysis of the data.
 
 #### Likelihood Values and Models for Continuous Endpoints
 
@@ -679,7 +678,7 @@ as the more complex model B). BMDS automatically does the table look-up
 for the user and provides the p-value associated with the calculated
 log-likelihood ratio having degrees of freedom as described above.
 
-The The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
+The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
 
 **Test 1 (A2 vs R): Tests the null hypothesis that responses and
 variances do not differ among dose levels. If this test fails to reject
@@ -782,6 +781,8 @@ group:
 
 Maximum likelihood approach results plot for continuous data.
 ```
+
+
 
 ## Mathematical Details for Models for Continuous Endpoints in Simple Designs
 

@@ -19,7 +19,7 @@ modelers.***
 
 ## About the Logic Tab
 
-The purpose of the Logic tab and its settings in BMDS are to assist
+The Logic tab and its settings assist
 users in performing BMD analyses in accordance with EPA Benchmark Dose
 Technical Guidance ([U.S. EPA,
 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
@@ -27,19 +27,16 @@ Technical Guidance ([U.S. EPA,
 The logic settings can be overridden but are set to default values and
 options that are most consistent with EPA's BMD guidance.
 
-Models that meet all logic criteria are considered viable. If a modeling
-result fails any of the criteria listed in [**Unusable**](#unusable-bin) or [**Questionable**](#questionable-bin), its
-results are placed in those respective bins,
-and are not classed as [**Viable**](#viable) for recommendation.
+All models start as Viable before the logic tests are applied. If a modeling
+result meets the criteria listed in [**Unusable**](#unusable-bin) or [**Questionable**](#questionable-bin), its
+results are placed in those respective bins.
 
 For the criteria listed in [**Warnings**](#warnings), failure of the criteria only
 results in a warning.
 
-The recommended model is chosen from the Viable models, as described in
-[**Viable**](#viable). If the range of BMDL estimates from all Viable models is
-less than a user-specified "Maximum BMDL range deemed sufficiently
-close" (set to 3-fold by default), the Viable model with the lowest BMDL
-is chosen. Otherwise, the Viable model with the lowest AIC is chosen.
+Models that meet the appropriate logic criteria are considered [**Viable**](#viable); from the viable models, the recommended model is chosen. If the range of BMDL estimates from all Viable models is less than a user-specified "Maximum BMDL range deemed sufficiently
+close" (set to 3-fold by default), the viable model with the lowest BMDL
+is chosen. Otherwise, the viable model with the lowest AIC is chosen.
 
 ## How BMDS Recommends a Model
 
@@ -48,11 +45,11 @@ BMDS places each model into one of three different bins:
 -   **Unusable**---required outputs such as BMD or BMDL are not
     estimated.
 
--   **Questionable**---some serious deficiencies with model based on
+-   **Questionable**---some serious deficiencies based on
     user-defined decision logic.
 
--   **Viable**---highest quality model, no serious deficiencies found
-    based on user-defined logic but may contain warnings.
+-   **Viable**---highest-quality model, no serious deficiencies found
+    based on user-defined logic, but may contain warnings.
 
 The default settings for factors (tests) that determine bin placement
 are consistent with EPA Benchmark Dose Technical Guidance ([U.S. EPA,
@@ -144,7 +141,7 @@ defined in the 2012 EPA Benchmark Dose Technical Guidance ([U.S. EPA,
 and the following criteria:
 
 -   If the range of BMDLs from models remaining in the Viable bin
-    is \< 3, then recommend the BMDL from the model with the lowest AIC
+    is \< 3, then recommend the BMDL from the model with the lowest AIC.
 
 -   Otherwise, recommend the lowest BMDL from models remaining in the
     Viable bin.

@@ -77,5 +77,5 @@ BMDS 2.7 except for:
 
 All these models --- excluding CatReg --- can be accessed in BMDS 2.7,
 [which is available from the BMDS
-website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).  [CatReg](https://www.epa.gov/bmds/catreg) is a separate downloadable dose-time-response software package that can be downloaded from the BMDS website.
+website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).  [CatReg](https://www.epa.gov/bmds/catreg) is a Windows-based dose-time-response software package that can be downloaded from the BMDS website.
 
