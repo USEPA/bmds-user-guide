@@ -72,11 +72,12 @@ Maximum Multistage Degrees for dichotomous datasets.
 Hovering over the help text icon for **Maximum multistage degree**
 displays the following text:
 
-> Studies have indicated that higher degree polynomial models are not
+:::{note} 
+Studies have indicated that higher degree polynomial models are not
 warranted in that they generally do not sufficiently improve fit over
 simpler models (Nitcheva et al., 2007; PMC2040324). Complex models also
 increase computer processing time and the chance of model failure.
-
+:::
 
 ## Option Sets
 
