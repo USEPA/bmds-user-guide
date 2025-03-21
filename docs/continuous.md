@@ -109,11 +109,13 @@ to the lesser of N-1 or 8.
 Hover the pointer over the question mark to display the following help
 text:
 
-> *Studies have indicated that higher degree polynomial models are not
-> warranted in that they generally do not sufficiently improve fit over
-> simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
-> also increase computing processing time and the chance of model
-> failure.*
+:::{note} 
+*Studies have indicated that higher degree polynomial models are not
+warranted in that they generally do not sufficiently improve fit over
+simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
+also increase computing processing time and the chance of model
+failure.*
+:::
 
 ### Adverse Direction
 
