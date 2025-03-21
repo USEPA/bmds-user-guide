@@ -84,7 +84,7 @@ The key features of those response (endpoint) types are as follows:
 
 -   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
-    positive values, but not always). Organ weight, body weight, amd 
+    positive values, but not always). Organ weight, body weight, and 
     concentration levels of biological markers are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
@@ -324,15 +324,6 @@ announcements per year.
 
 To join the mailing list, please [sign up on the BMDS
 website](https://www.epa.gov/bmds/how-subscribe-bmds-bulletin-email-list).
-
-### BMDS Glossary
-
-For definitions of terms used in this guide, please refer to the [online
-BMDS Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=BMDS%20Glossary). The glossary items can be exported to other formats, such as PDF or Excel.
-
-Another good source of dose-response terminology is the [Integrated Risk
-Information System (IRIS)
-Glossary](https://sor.epa.gov/sor_internet/registry/termreg/searchandretrieve/glossariesandkeywordlists/search.do?details=&vocabName=IRIS%20Glossary).
 
 ### BMDS Source Code
 
