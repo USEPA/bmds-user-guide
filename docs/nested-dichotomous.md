@@ -513,7 +513,7 @@ sampling in two stages. First, each litter is assigned a probability
 $P_{ij}$ from a beta distribution (beta distributions represent a
 two-parameter family of probability distributions defined on the
 interval (0,1)). The parameters of the beta distribution are determined
-by the administered dose, the litter-specific covariate $$r_{ij}$ and
+by the administered dose, the litter-specific covariate $r_{ij}$ and
 the degree of intra-litter correlation, $v_{i}$. 
 
 :::{note}
