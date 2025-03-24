@@ -603,8 +603,6 @@ ${Var\{ e}_{i}\} = \sigma^{2}$
 
 ::::
 
-:::::
-
 ### Tests of Mean and Variance Fits
 
 The **Tests of Mean and Variance Fits** table show the results of four
@@ -783,8 +781,6 @@ group:
 
 Maximum likelihood approach results plot for continuous data.
 ```
-
-
 
 ## Mathematical Details for Models for Continuous Endpoints in Simple Designs
 
@@ -1008,8 +1004,6 @@ PROAST.
 :::
 
 ::::
-
-:::::
 
 ### Variance Model
 
