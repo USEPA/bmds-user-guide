@@ -434,7 +434,7 @@ the purpose of analysis:
 :::{tab-item} Animal dies prior to end of experiment and develops tumor
 **Numerator Contribution:** 1
 
-**Denominator Contribution:** 1 
+**Denominator Contribution:** 1
 
 **Rationale for Denominator Contribution:** Animal observed for less than a full lifetime but observed for long enough time to develop the tumor of interest
 :::

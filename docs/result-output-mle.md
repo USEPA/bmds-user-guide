@@ -48,7 +48,7 @@ Continuous Results Output tab layout.
 Dichotomous Results Output tab layout.
 ```
 
-```{figure} _static/img/image54.png 
+```{figure} _static/img/image54.png
 :alt: Simplified and labeled layout of nested dichotomous results output page
 :scale: 60%
 :name: f49
@@ -172,7 +172,7 @@ sections:
 
 The goodness-of-fit p-value is computed based on the degrees of freedom
 and the Chi-square, $\chi^{2}$, value. The $\chi^{2}$ value is assumed to be distributed as a
-Chi-square distribution having degrees of freedom equal to the number of dose groups minus the number of model parameters estimated off a boundary. 
+Chi-square distribution having degrees of freedom equal to the number of dose groups minus the number of model parameters estimated off a boundary.
 
 The p-value measures the "closeness" of the model predictions
 to the observed data. If the overall p-value is larger than some
@@ -230,7 +230,7 @@ CDF table and graph.
 ```
 :::{important}
 **Why is BMDS reporting different cumulative distribution function values for different confidence levels?**<br>
-BMDS may report different Cumulative Distribution Function (CDF) percentile values when different user-specified confidence levels (alphas) are chosen. **These differences are not a bug in BMDS**. Rather, these CDF ranges — and any differences in CDFs based on different confidence levels — are calculated by the underlying Gnu Scientific Library's methods, not by BMDS. Differences in CDFs should not affect repeatability or reliability of results. However, users should use discretion when comparing CDF values to BMDL/BMDU values calculated from different confidence levels. For example, if a user inputs a 90% confidence level (alpha = 0.1), the BMDU is not guaranteed to match the 90% percentile from the CDF when using a 95% confidence level (alpha = 0.5). 
+BMDS may report different Cumulative Distribution Function (CDF) percentile values when different user-specified confidence levels (alphas) are chosen. **These differences are not a bug in BMDS**. Rather, these CDF ranges — and any differences in CDFs based on different confidence levels — are calculated by the underlying Gnu Scientific Library's methods, not by BMDS. Differences in CDFs should not affect repeatability or reliability of results. However, users should use discretion when comparing CDF values to BMDL/BMDU values calculated from different confidence levels. For example, if a user inputs a 90% confidence level (alpha = 0.1), the BMDU is not guaranteed to match the 90% percentile from the CDF when using a 95% confidence level (alpha = 0.5).
 :::
 
 ### Graphs/Plots (All Endpoints)

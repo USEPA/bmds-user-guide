@@ -109,7 +109,7 @@ to the lesser of N-1 or 8.
 Hover the pointer over the question mark to display the following help
 text:
 
-:::{note} 
+:::{note}
 *Studies have indicated that higher degree polynomial models are not
 warranted in that they generally do not sufficiently improve fit over
 simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
@@ -195,7 +195,7 @@ BMR Type picklist selections.
     the BMDL is the one-sided 95% lower bound on the BMD; the BMDU is
     the one-sided 95% upper bound on the BMD. The interval from the BMDL
     to the BMDU would, in that case, be a 90% confidence interval.
-    
+
 
 #### Options related to continuous BMR type and BMRF
 In the BMR descriptions below, $m(x)$ is the median response at dose x. Specifically, $m(BMD)$ is the
@@ -258,7 +258,7 @@ Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 
 **The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
 
-**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br>
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
 **BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
@@ -270,7 +270,7 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 **The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
 
-**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br>
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
 **BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
@@ -337,7 +337,7 @@ note the following:
     common under the Normal assumption to describe the dose-response
     function as a model of the mean response, and to write $μ(d) = f(d)$,
     where $f(d)$ is again one of the dose-response functions described in
-    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters). 
+    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters).
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -644,7 +644,7 @@ denominator of this ratio.
 Suppose that $L(X)$ represents the likelihood of model X. Now, using the
 theory, $- 2 \times ln\{\frac{L(A)}{L(B)}\}$ approaches a Chi-square
 random variable. This can be simplified by using the fact that the log
-of a ratio is equal to the difference of the logs: 
+of a ratio is equal to the difference of the logs:
 
 $$- 2 \times \ln\left\{ \frac{L(A)}{L(B)} \right\} = - 2 \times \left( \ln\left\{ L(A) \right\} - \ln\left\{ L(B) \right\} \right) = 2 \times \ln\left\{ L(B) \right\} - 2 \times ln\{ L(A)\}$$
 
@@ -1029,7 +1029,7 @@ group.
 
 Note that when a constant variance model is specified by the user, the
 parameter $\rho$ is set to 0 and only $\alpha$ will be estimated. In
-that case, 
+that case,
 
 $${\sigma_{i}}^{2} = \alpha$$
 
@@ -1135,12 +1135,12 @@ model-imposed constraints or user-imposed restrictions (see [**Continuous Dose-R
 
 :::{note}
 This counting process may or may not be reasonable, depending
-on the boundary value that a parameter in question hits. 
+on the boundary value that a parameter in question hits.
 
 For example, if the power parameter in a model hits (*i.e.*, is
 estimated to be equal to) the upper bound of 18, it would usually be the
 case that one would want to count that parameter as one that is
-estimated, but BMDS Online does ***not*** do that. 
+estimated, but BMDS Online does ***not*** do that.
 
 For this reason, the user is apprised to carefully consider the cases
 where parameter bounds have been hit and to consider the implications
@@ -1157,7 +1157,7 @@ thus, sensitivity analysis is recommended if one intends to rely on the
 reported BMD or BMDL. This is especially important when considering
 power parameters that have hit the upper bound of 18.
 
-:::{note} 
+:::{note}
 To facilitate comparing models with different likelihoods (*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using all the terms shown in the LL equations in [**Likelihood
 Function**](#likelihood-function).
 :::

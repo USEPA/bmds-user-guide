@@ -29,7 +29,7 @@ Dose-response modeling is a technique, often used in toxicology and risk
 assessment, for quantitatively relating exposure (the dose) to a
 biological outcome (the response). It may be thought of as an elaborate
 form of regression, which is the statistical technique used to explore
-or represent the relationship(s) between two (or more) variables. 
+or represent the relationship(s) between two (or more) variables.
 
 In the dose-response context, the dose term (*e.g.*, mg of chemical per
 kg body weight per day) is most often viewed as the "cause" of the
@@ -45,7 +45,7 @@ the toxic effects of the exposure).
 The dose-response relationship
 ```
 As {numref}`f1` shows, the benchmark dose (BMD) is the dose amount estimated to produce a
-response (BMR) of a specific magnitude in the test subject. 
+response (BMR) of a specific magnitude in the test subject.
 
 The BMD is a dose estimated to produce a response level of a defined
 (benchmark) magnitude. The [online BMDS
@@ -61,7 +61,7 @@ The BMD can be thought of as a range, rather than a fixed number. The BMD's lowe
 EPA's Benchmark Dose Software (BMDS) provides easy access to numerous
 [**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative
 relationship between a chemical ***dose*** and the test
-subject's ***response***. The user can select from and/or compare the 
+subject's ***response***. The user can select from and/or compare the
 models to make predictions about the quantitative relationship between
 dose and response. A specific focus of this software is the estimation
 of a statistical benchmark dose (BMD), including bounds (*e.g.*, 95%
@@ -84,7 +84,7 @@ The key features of those response (endpoint) types are as follows:
 
 -   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
-    positive values, but not always). Organ weight, body weight, and 
+    positive values, but not always). Organ weight, body weight, and
     concentration levels of biological markers are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.

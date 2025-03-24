@@ -56,7 +56,7 @@ uncertainty in the parameter values (the so-called prior distributions)
 are updated using the data under consideration to yield *a posteriori*
 distributions (the so-called posterior distributions). A quantile of the
 posterior BMD distribution, for example the 5th percentile, may be used
-for a Bayesian BMDL.[^2] 
+for a Bayesian BMDL.[^2]
 
 [^2]: Bayesian upper or lower bounds computed in this way define "credible" intervals, which are Bayesian analogues of classical confidence intervals.
 
@@ -98,7 +98,7 @@ ensure reliability of the estimation:
     BOBYQA[^5]) are then attempted. Note that the parameter bounds will
     be carried forward into the calculations that follow.
 
-[^4]: Limited-memory *BFGS (L-BFGS or LM-BFGS)* is an optimization algorithm in the family of quasi-Newton methods that approximates the Broyden--Fletcher--Goldfarb--Shanno algorithm (*BFGS*). 
+[^4]: Limited-memory *BFGS (L-BFGS or LM-BFGS)* is an optimization algorithm in the family of quasi-Newton methods that approximates the Broyden--Fletcher--Goldfarb--Shanno algorithm (*BFGS*).
 [^5]: Bound Optimization by Quadratic Approximation (BOBYQA) is a numerical optimization method.
 
 -   The Bayesian BMDL in BMDS, as well as profile likelihood, involves
@@ -118,7 +118,7 @@ ensure reliability of the estimation:
     case the methods return different optimum, the values producing the
     larger of the two are used.
 
-[^6]: Constrained Optimization by Linear Approximation (COBYLA) is a numerical optimization method. 
+[^6]: Constrained Optimization by Linear Approximation (COBYLA) is a numerical optimization method.
 [^7]: Method of Moving Asymptotes (MMA) is a method for structural optimization.
 
 NLopt is available for download from the [NLopt GitHub

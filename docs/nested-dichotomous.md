@@ -112,7 +112,7 @@ Nested dataset formatted correctly for BMDS analysis.
 
 As {numref}`f88` shows, each litter is on a separate row, showing the dose it
 received, its sample size (*Litter Size*), the number of responders
-(*Incidence*), and the value of a covariate 
+(*Incidence*), and the value of a covariate
 (*Litter Specific Covariate*).
 
 ## Option Set
@@ -375,7 +375,7 @@ assessment of fit.
 Summarized Scaled Residuals.
 ```
 :::{note}
-Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical. 
+Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical.
 :::
 
 ### Litter Data Table
@@ -437,7 +437,7 @@ $0 \leq \phi_{i} \leq 1\ (i=1, \ldots, g)$
 
 $1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0$ for every $r_{ij}$
 
-if $r_{m}$ represents either the control mean value for the litter specific covariate or its overall mean, the BMD is computed as: 
+if $r_{m}$ represents either the control mean value for the litter specific covariate or its overall mean, the BMD is computed as:
 
 $$BMD = e^{\left\{ \frac{\left\lbrack \ln\left( \frac{A}{1-A} \right) - \beta - \theta_{2}r_{m}\right\rbrack}{\rho}\right\}}$$
 
@@ -474,7 +474,7 @@ In the model equation, $r_{ij}$ is the litter-specific covariate for the $j^{th}
 
 $\theta_{1}(r_{ij}-r_{m}) \geq 0$ and $\theta_{2}(r_{ij}r_{m}) \geq 0$
 
-In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups. 
+In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups.
 
 $0 \leq \phi_{i} \leq 1\ (i = 1, \ldots, g); 1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0 $ for every $r_{ij}$
 
@@ -514,7 +514,7 @@ $P_{ij}$ from a beta distribution (beta distributions represent a
 two-parameter family of probability distributions defined on the
 interval (0,1)). The parameters of the beta distribution are determined
 by the administered dose, the litter-specific covariate $r_{ij}$ and
-the degree of intra-litter correlation, $v_{i}$. 
+the degree of intra-litter correlation, $v_{i}$.
 
 :::{note}
 

@@ -98,7 +98,7 @@ When all checkmarks are green, BMDS Online can run an analysis.
 
 Enter a descriptive name and summary for the analysis; they will be included in the report.
 ```
- 
+
 2.  Select the model type for your analysis (*i.e.*, are you modeling
     dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
@@ -642,7 +642,7 @@ The Share and Actions menus in the top-right corner of the BMDS Online
 application include options for other ways to interact with the
 analysis.
 
-:::{note} 
+:::{note}
 BMDS Online analyses are linked to the URL of the *current*
 session. To get back to that analysis later: email the link to yourself
 or save the link in a Microsoft Word document with a full description of
@@ -693,7 +693,7 @@ BMDS Online Actions menu options.
 ```
 
 -   **Load analysis**: Load a previously downloaded analysis.
-    
+
 -   **Extend deletion date**: BMDS Online will store analyses for three
     years after the date of creation. Select **Extend deletion date** to
     extend deletion to three years from the time this button was

@@ -179,7 +179,7 @@ posterior model probability with increasing data and the former, using
 the BIC, may not go to the true value.
 
 ```{figure} _static/img/image104.png
-:alt: Multiple model result curves plotted on single graph, with legend 
+:alt: Multiple model result curves plotted on single graph, with legend
 :scale: 75%
 :name: f105
 
@@ -246,7 +246,7 @@ lowest dose) group.
 The user does ***not*** need to scale anything beforehand. That means
 that the parameter estimates, and BMD values returned by the program
 have been adjusted back to the original scale of the doses and the
-original scale of the responses specified in the input data file. 
+original scale of the responses specified in the input data file.
 :::
 
 ### Bayesian Dichotomous Models and their Respective Parameter Priors
@@ -382,7 +382,7 @@ $\beta \sim Lognormal(0,1)$
 
 **Notes**
 
-The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.  
+The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.
 
 The $\alpha$ parameter is also constrained to be greater than 0.2 for numerical reasons.
 :::
@@ -448,9 +448,9 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 $$p(dose) = \ \Phi(\alpha + \ \beta dose)$$
 
-where 
+where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
@@ -487,7 +487,7 @@ $$p(dose) = g + (1 - g)\Phi\left\lbrack \alpha + \beta\log(dose) \right\rbrack$$
 
 where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
