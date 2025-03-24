@@ -42,7 +42,7 @@ Logistic, Probit, and Quantal Linear models have no restricted option
 ([U.S. EPA,
 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-See [Individual Dichotomous Models and their Respective Parameters](#individual-dichotomous-models-and-their-respective-parameters) for the effect of the user
+See [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters) for the effect of the user
 selecting the restricted version of the models (refer to the paragraphs
 in the *Notes* fields). In general, the restrictions prevent the slope of the
 dose-response curve from becoming infinite at 0 dose. This is often
@@ -73,10 +73,10 @@ Hovering over the help text icon for **Maximum multistage degree**
 displays the following text:
 
 :::{note}
-Studies have indicated that higher degree polynomial models are not
+*Studies have indicated that higher degree polynomial models are not
 warranted in that they generally do not sufficiently improve fit over
 simpler models (Nitcheva et al., 2007; PMC2040324). Complex models also
-increase computer processing time and the chance of model failure.
+increase computer processing time and the chance of model failure.*
 :::
 
 ## Option Sets
@@ -181,18 +181,18 @@ Goodness of Fit table for MLE Dichotomous.
 ```
 
 The Goodness of Fit table in the individual model results shows a
-listing of the data (*N* and *Observed*) , the model-estimated
-probability of response (*Estimated Probability*) and corresponding
+listing of the data (*N* and *Observed*), the model-estimated
+probability of response (*Estimated Probability*), and corresponding
 expected number of responders (*Expected*). This is a good place for the
 user to assess the appropriateness of the model, in addition to the
-overall goodness-of-fit statistics reported in the Summary table (refer
-[**Summary Table of Key Fit Statistics (All Endpoints)**](./result-output-mle.md#summary-table-of-key-fit-statistics-all-endpoints) and [**Analysis of Deviance Table**](#analysis-of-deviance-table). If a model fits well, the
+overall goodness-of-fit statistics reported in the Summary table (refer to
+[**Summary Table of Key Fit Statistics (All Endpoints)**](./result-output-mle.md#summary-table-of-key-fit-statistics-all-endpoints) and [**Analysis of Deviance Table**](#analysis-of-deviance-table)). If a model fits well, the
 observed and expected number of responders should be relatively close.
 
 The scaled residual values printed at the end of the table are defined
 as follows:
 
-$$\frac{(Obs\  - \ Expected)}{SE}$$ 
+$$\frac{(Obs\  - \ Expected)}{SE}$$
 
 where *Expected* is the predicted number of responders from the model
 and SE equals the estimated standard error of that predicted number. For
@@ -219,7 +219,7 @@ the BMD.
 Analysis of Deviance table for MLE Dichotomous.
 ```
 
-The analysis of deviance table displays three log-likelihood values.
+The Analysis of Deviance table displays three log-likelihood values.
 
 ::::{tab-set}
 
@@ -255,7 +255,7 @@ The maximum log-likelihood obtainable if one
 ::::
 
 Associated with each of these three models are three values: Deviance,
-degrees of freedom (Test d.f.), and P-value.
+degrees of freedom (*Test d.f.*), and P-value.
 
 ::::{tab-set}
 
@@ -296,10 +296,9 @@ to infer that there is no dose-related effect on response probabilities.
 
 ### Plot and Error Bar Calculation
 
-The graphical output, *i.e.*, plot, is a visual depiction of the results
+The graphical output (*i.e.*, plot) is a visual depiction of the results
 of the modeling. Because plots, in general, were discussed in [**Graphs/Plots (All Endpoints)**](./result-output-mle.md#graphsplots-all-endpoints), here we
-describe the one additional detail specific to the dichotomous models,
-*i.e.*, computation of the error bars:
+describe the one additional detail specific to the dichotomous models: computation of the error bars.
 
 ```{figure} _static/img/image86.png
 :alt: Graph displaying error bars on the data points
@@ -494,9 +493,9 @@ $1\  \leq \beta$
 
 $$p(dose) = \ \Phi(\alpha + \ \beta dose)$$
 
-where 
+where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
@@ -531,7 +530,7 @@ $$p(dose) = g + (1 - g)\Phi\left\lbrack \alpha + \beta\log(dose) \right\rbrack$$
 
 where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
@@ -735,7 +734,7 @@ for the BMD for all the dichotomous models are shown below.
 ::::{tab-set}
 
 :::{tab-item} Multistage
-There is no general analytical form for the BMD in terms of the BMR and the estimated model parameters for the multistage model.  Instead, the BMD is the root of the equation 
+There is no general analytical form for the BMD in terms of the BMR and the estimated model parameters for the multistage model.  Instead, the BMD is the root of the equation
 
 $\beta_{1}BMD+\ldots{+ \ \beta}_{n}BMD^{n} + \ln(1-A) = 0$
 
@@ -749,11 +748,11 @@ $BMD = \left\{\begin{array}{r}\left\lbrack \frac{- ln(1-BMR)}{\beta} \right\rbra
 :::
 
 :::{tab-item} Gamma
-Let 
+Let
 
 $G(x;\alpha) = \frac{1}{\Gamma(\alpha)}\int_{0}^{x}{t^{\alpha -1}e^{-t}dt}$
 
-be the incomplete Gamma function and 
+be the incomplete Gamma function and
 
 $G^{-1}( \bullet ;\ \alpha)$
 
@@ -789,7 +788,7 @@ $BMD = \left\{ \begin{array}{r} e\frac{- \alpha - \log\left( - \frac{BMR - v + g
 ::::
 
 :::{note}
-All models represented in above use the same model forms as
+All models represented here use the same model forms as
     presented in [**Individual Dichotomous Models and their Respective Parameters**](#individual-dichotomous-models-and-their-respective-parameters). The BMR is the value specified by the user to
     correspond to the risk level of interest (see [**BMR**](#bmr)).
 :::
@@ -873,12 +872,12 @@ Additionally, users will need to select the species that corresponds to their do
 :scale: 65%
 :name: f84
 
-The Rao-Scott transformation page, with an example dataset loaded *add new screenshot when UI updated*
+The Rao-Scott transformation page, with an example dataset loaded
 ```
 
 Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-Scott transformation page with the following outputs:
 
-* A summary table of the original and adjusted data 
+* A summary table of the original and adjusted data
 
 * Plots of the original and adjusted values for both the total number of fetuses and number of affected fetuses per dose group
 
@@ -890,7 +889,7 @@ Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-
 Result of running a Rao-Scott transformation, with summary table of results and plots of adjusted vs original values
 ```
 
-The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data tabe, select the [**Load dataset from Excel
+The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data table, select the [**Load dataset from Excel
 button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the
 clipboard contents to create a new dataset. Or they can paste the
 clipboard contents into Excel for further analysis.
@@ -907,17 +906,17 @@ Rao-Scott transformation Word report, with summary table of results, plots of or
 
 ### More on the Rao-Scott Transformation
 
-For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (i.e., litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).  
+For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (*i.e.*, litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).
 
 However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data: the total number of fetuses and the number of fetuses responding per dose group, but not information on how many fetuses from each litter were affected. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 
-If summary developmental data (i.e., dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results can occur, including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less-health protective, BMDLs would be estimated given the confidence interval around the BMD would be narrower.
+If summary developmental data (*i.e.*, dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results can occur, including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less health-protective, BMDLs would be estimated given that the confidence interval around the BMD would be narrower.
 
 Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necessary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), multiple statistical studies have researched the concept of the design effect, $D$, as a strategy to reduce overdispersion arising from clustered study design via a simple dose-response transformation. The core concept is that correlated data can be transformed via scaling and then modeled with standard dichotomous models as if they were not correlated.  As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) reports, the design effect is related approximately to  intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
 
-As described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), $D$ is the ratio of the variance for correlated, clustered data and the variance for uncorrelated binomial data, given both have the same average proportion of affected animals. An estimate of the proportion of affected fetuses, $P_{f}=\frac{A_{f}}{N_{f}}$, where $A_{f}$ is the number of affected fetuses and $N_{f}$ is the total number of fetuses, is required by both measures of variance. 
+As described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), $D$ is the ratio of the variance for correlated, clustered data and the variance for uncorrelated binomial data, given both have the same average proportion of affected animals. An estimate of the proportion of affected fetuses, $P_{f}=\frac{A_{f}}{N_{f}}$, where $A_{f}$ is the number of affected fetuses and $N_{f}$ is the total number of fetuses, is required by both measures of variance.
 
-The estimated variance of a binomial proportion is the denominator for $D$: 
+The estimated variance of a binomial proportion is the denominator for $D$:
 
 $$\frac{P_{f}(1 - P_{f})}{N_{f}}$$
 
@@ -927,13 +926,13 @@ $$\left( \frac{m}{m-1}\right)\frac{1}{N_{f}}\sum_{i}^{m}n_{i}^{2}{\left( p_{i} -
 
 where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the number of litters.
 
-In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$. 
+In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$.
 
-As can be seen in the equations above, the calculation of the design effect requires litter-level data given the need to know $p_{i}$ for each litter and that it thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squres and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
+As can be seen in the equations above, the calculation of the design effect requires litter-level data given the need to know $p_{i}$ for each litter and that it thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squares and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
 
 ```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
-:header: > 
+:header: >
 : "Species", "Method", "$n$, Studies", "$n$, Dose Groups", "$a$", "$b$", "$\sigma_{res}^{2}$"
 :widths: 10 10 10 10 10 10 10
 
@@ -958,7 +957,7 @@ From these regression coefficients, the design effect can be calculated as $D = 
 "100", "105", "52", "0.4952", "4.5494", "5.0932", "4.8213", "21.778", "10.786", "0.4952"
 ```
 
-For example, using the 25 ppm dose group as an example, the Rao-Scott transformed N (${N_{f}}_{RS}$) would be caclulated as:
+For example, using the 25 ppm dose group as an example, the Rao-Scott transformed N (${N_{f}}_{RS}$) would be calculated as:
 
 Design effect using LS regression coefficients: $D_{LS}= e^{\left\lbrack 1.6852 + 0.3310 \times \ln(0.0604) + 0.5 \times 0.1248 \right\rbrack} = 2.2666$
 
@@ -968,6 +967,6 @@ Average design effect: $D_{average} = \frac{2.2666 + 2.3424}{2} = 2.3045$
 
 Rao-Scott transformed N: ${N_{f}}_{RS} = \frac{116}{2.3045} = 50.337$
 
-For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical. 
+For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical.
 
-The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (e.g., setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (i.e., the method described above) resulted in BMDLs that were most equivalent to those acheived modeling individual-level data.  
+The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved modeling individual-level data.

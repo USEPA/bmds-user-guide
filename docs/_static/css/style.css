@@ -8,6 +8,10 @@ code {
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
+article figure {
+    margin-bottom: 1em;
+}
+
 .caption-number {
     font-weight: bold;
 }

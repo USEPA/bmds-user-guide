@@ -109,11 +109,13 @@ to the lesser of N-1 or 8.
 Hover the pointer over the question mark to display the following help
 text:
 
-> *Studies have indicated that higher degree polynomial models are not
-> warranted I that they generally do not sufficiently improve fit over
-> simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
-> also increase computing processing time and the chance of model
-> failure.*
+:::{note}
+*Studies have indicated that higher degree polynomial models are not
+warranted in that they generally do not sufficiently improve fit over
+simpler models (Nitcheva et al., 2007; PMC2040324). Complex models
+also increase computing processing time and the chance of model
+failure.*
+:::
 
 ### Adverse Direction
 
@@ -193,7 +195,7 @@ BMR Type picklist selections.
     the BMDL is the one-sided 95% lower bound on the BMD; the BMDU is
     the one-sided 95% upper bound on the BMD. The interval from the BMDL
     to the BMDU would, in that case, be a 90% confidence interval.
-    
+
 
 #### Options related to continuous BMR type and BMRF
 In the BMR descriptions below, $m(x)$ is the median response at dose x. Specifically, $m(BMD)$ is the
@@ -256,7 +258,7 @@ Log-normal responses: $\frac{|ln(m(BMD))-ln(m(0))|}{\sigma_{L}(0)}\ = BMRF$
 
 **The BMD is the dose yielding...** the specified extra risk defined by the estimated distribution and background rate
 
-**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br> 
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = \frac{Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)}{1\ - Pr(X > X_{0}|0)}$ <br><br> If low responses are adverse: $BMRF = \frac{Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)}{1\ - Pr(X < X_{0}|0)}$ <br><br>
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
 **BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
@@ -268,7 +270,7 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 **The BMD is the dose yielding...** the specified added risk defined by the estimated distribution and background rate
 
-**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br> 
+**Mathematical Definition:** <br><br>If high responses are adverse: $BMRF = Pr( X > X_{0}|BMD) - Pr(X > X_{0}|0)$ <br><br> If low responses are adverse: $BMRF = Pr( X < X_{0}|BMD) - Pr(X < X_{0}|0)$ <br><br>
 where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that the response, $X$, is less than $X_{0}$ at dose $d$.  For $d=0$, the latter equals the user-specified "tail probability" and $X_{0}$ is a function of that tail probability and the estimated control-group response-distribution
 
 **BMRF Notes:** <br> BMRF is the extra risk (default = 0.1). This option also requires specifying a tail probability, which is the probability of extreme (adverse) responses at $dose=0$
@@ -295,7 +297,7 @@ In total, three combinations are allowed:
     group has the same variance, which is estimated by BMDS along with
     the dose-response model parameters.
 
-1.  **Normal distribution, non-constant (modeled) variance:** each dose
+2.  **Normal distribution, non-constant (modeled) variance:** each dose
     group may have a different variance, described by a variance model
     (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose
     group's estimated mean value (see below) to the variance. Those two
@@ -306,7 +308,7 @@ In total, three combinations are allowed:
 The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
 :::
 
-2.  **Lognormal distribution, constant coefficient of variation (CV):**
+3.  **Lognormal distribution, constant coefficient of variation (CV):**
     for lognormally distributed responses, each dose group has the same
     CV, which entails that the log-scale variance is constant over dose
     groups (though the natural-scale variance will differ from group to
@@ -335,7 +337,7 @@ note the following:
     common under the Normal assumption to describe the dose-response
     function as a model of the mean response, and to write $μ(d) = f(d)$,
     where $f(d)$ is again one of the dose-response functions described in
-    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters). 
+    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters).
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -534,8 +536,7 @@ rather a bounded MLE.
 The five log-likelihood models can be used for tests of hypotheses,
 including tests of fit, that are asymptotically Chi-square. Each of
 these log-likelihood values corresponds to a model the user may consider
-in the analysis of the data. The five models are summarized in the
-following dropdown.
+in the analysis of the data.
 
 #### Likelihood Values and Models for Continuous Endpoints
 
@@ -602,8 +603,6 @@ ${Var\{ e}_{i}\} = \sigma^{2}$
 
 ::::
 
-:::::
-
 ### Tests of Mean and Variance Fits
 
 The **Tests of Mean and Variance Fits** table show the results of four
@@ -643,7 +642,7 @@ denominator of this ratio.
 Suppose that $L(X)$ represents the likelihood of model X. Now, using the
 theory, $- 2 \times ln\{\frac{L(A)}{L(B)}\}$ approaches a Chi-square
 random variable. This can be simplified by using the fact that the log
-of a ratio is equal to the difference of the logs: 
+of a ratio is equal to the difference of the logs:
 
 $$- 2 \times \ln\left\{ \frac{L(A)}{L(B)} \right\} = - 2 \times \left( \ln\left\{ L(A) \right\} - \ln\left\{ L(B) \right\} \right) = 2 \times \ln\left\{ L(B) \right\} - 2 \times ln\{ L(A)\}$$
 
@@ -679,7 +678,7 @@ as the more complex model B). BMDS automatically does the table look-up
 for the user and provides the p-value associated with the calculated
 log-likelihood ratio having degrees of freedom as described above.
 
-The The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
+The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
 
 **Test 1 (A2 vs R): Tests the null hypothesis that responses and
 variances do not differ among dose levels. If this test fails to reject
@@ -1006,8 +1005,6 @@ PROAST.
 
 ::::
 
-:::::
-
 ### Variance Model
 
 In addition to the model for the median response as a function of dose,
@@ -1026,7 +1023,7 @@ group.
 
 Note that when a constant variance model is specified by the user, the
 parameter $\rho$ is set to 0 and only $\alpha$ will be estimated. In
-that case, 
+that case,
 
 $${\sigma_{i}}^{2} = \alpha$$
 
@@ -1132,12 +1129,12 @@ model-imposed constraints or user-imposed restrictions (see [**Continuous Dose-R
 
 :::{note}
 This counting process may or may not be reasonable, depending
-on the boundary value that a parameter in question hits. 
+on the boundary value that a parameter in question hits.
 
 For example, if the power parameter in a model hits (*i.e.*, is
 estimated to be equal to) the upper bound of 18, it would usually be the
 case that one would want to count that parameter as one that is
-estimated, but BMDS Online does ***not*** do that. 
+estimated, but BMDS Online does ***not*** do that.
 
 For this reason, the user is apprised to carefully consider the cases
 where parameter bounds have been hit and to consider the implications
@@ -1154,7 +1151,7 @@ thus, sensitivity analysis is recommended if one intends to rely on the
 reported BMD or BMDL. This is especially important when considering
 power parameters that have hit the upper bound of 18.
 
-:::{note} 
+:::{note}
 To facilitate comparing models with different likelihoods (*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using all the terms shown in the LL equations in [**Likelihood
 Function**](#likelihood-function).
 :::

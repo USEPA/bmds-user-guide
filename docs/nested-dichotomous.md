@@ -42,7 +42,7 @@ developmental toxicology studies:
 
 1.  They use a probability model that provides for extra inter-litter
     variance of the proportion of pups affected (the beta-binomial
-    probability model: see [**Likelihood Function**](#likelihood-function), and
+    probability model: see [**Likelihood Function**](#likelihood-function)), and
 
 3.  They incorporate a litter-specific covariate that is expected to
     account for at least some of the extra inter-litter variance.
@@ -63,9 +63,9 @@ there is any dose-induced prenatal death or resorption.
 
 BMDS contains two nested dichotomous models:
 
--   Nested Logistic model, and
+-   Nested Logistic model
 
--   National Center for Toxicological Research (NCTR) model
+-   NCTR (National Center for Toxicological Research) model
 
 The Nested Logistic model is the log-logistic model, modified
 to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
@@ -89,7 +89,7 @@ website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materi
 A BMDS Online analysis can have a maximum of six datasets for
 nested dichotomous data.
 
-For information on inserting or importing data, see [Specifying Datasets](./bmds-online.md#specifying-datasets).
+For information on inserting or importing data, see [**Specifying Datasets**](./bmds-online.md#specifying-datasets).
 
 The default column headers for nested dichotomous data are *Dose*, *Litter Size*, *Incidence*, and
 *Litter Specific Covariate (LSC)*.
@@ -110,9 +110,9 @@ for use in BMDS.
 Nested dataset formatted correctly for BMDS analysis.
 ```
 
-As shows, each litter is on a separate row, showing the dose it
+As {numref}`f88` shows, each litter is on a separate row, showing the dose it
 received, its sample size (*Litter Size*), the number of responders
-(*Incidence*), and the value of a covariate that will be discussed below
+(*Incidence*), and the value of a covariate
 (*Litter Specific Covariate*).
 
 ## Option Set
@@ -375,7 +375,7 @@ assessment of fit.
 Summarized Scaled Residuals.
 ```
 :::{note}
-Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical. 
+Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical.
 :::
 
 ### Litter Data Table
@@ -388,7 +388,7 @@ and expected number of responders (i.e., $Expected\ number\ of\ responders = Est
 :scale: 50%
 :name: f96
 
-Partial capture of the Litter Data table from Results Workbook.
+Partial capture of the Litter Data table.
 ```
 
 ## Mathematical Details for Models for Nested Dichotomous Endpoints
@@ -437,7 +437,7 @@ $0 \leq \phi_{i} \leq 1\ (i=1, \ldots, g)$
 
 $1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0$ for every $r_{ij}$
 
-if $r_{m}$ represents either the control mean value for the litter specific covariate or its overall mean, the BMD is computed as: 
+if $r_{m}$ represents either the control mean value for the litter specific covariate or its overall mean, the BMD is computed as:
 
 $$BMD = e^{\left\{ \frac{\left\lbrack \ln\left( \frac{A}{1-A} \right) - \beta - \theta_{2}r_{m}\right\rbrack}{\rho}\right\}}$$
 
@@ -474,7 +474,7 @@ In the model equation, $r_{ij}$ is the litter-specific covariate for the $j^{th}
 
 $\theta_{1}(r_{ij}-r_{m}) \geq 0$ and $\theta_{2}(r_{ij}r_{m}) \geq 0$
 
-In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups. 
+In addition, there are *g* intra-litter correlation coefficients; where *g* equals the number of dose groups.
 
 $0 \leq \phi_{i} \leq 1\ (i = 1, \ldots, g); 1 > \alpha + \rho \geq \theta_{1}r_{ij} \geq 0 $ for every $r_{ij}$
 
@@ -503,18 +503,18 @@ potentially, a litter-specific covariate $r_{ij}$ which will often be
 a measure of potential litter size, such as number of implantation
 sites, though this is not a requirement of the models. In what follows,
 the dose-response model, which gives the probability that a fetus in the
-$j^{th}$ litter of the $i^{th}$ dose group will be affected is
+$j^{th}$ litter of the $i^{th}$ dose group will be affected, is
 represented by
 
 $$p(dose_{i},\ r_{ij})$$
 
 The beta-binomial distribution can be thought of as resulting from
-sampling in two stages. First, each litter is assigned a probability,
+sampling in two stages. First, each litter is assigned a probability
 $P_{ij}$ from a beta distribution (beta distributions represent a
 two-parameter family of probability distributions defined on the
 interval (0,1)). The parameters of the beta distribution are determined
-by the administered dose, the litter-specific covariate $$r_{ij}$ and
-the degree of intra-litter correlation, $v_{i}$. 
+by the administered dose, the litter-specific covariate $r_{ij}$ and
+the degree of intra-litter correlation, $v_{i}$.
 
 :::{note}
 
@@ -633,13 +633,11 @@ determined from the appropriate Chi-square distribution function.
 ### Plot and Error Bar Calculation
 
 The error bars shown for the plots of nested data are calculated in the
-same way as those for dichotomous data (and described in Section 9.4.3,
-"Plot and Error Bar Calculation," on page
-[**Plot and Error Bar Calculation**](./dichotomous.md#plot-and-error-bar-calculation)).
+same way as those for dichotomous data (and described in [**Plot and Error Bar Calculation**](./dichotomous.md#plot-and-error-bar-calculation) for dichotomous endpoints).
 
 However, a Rao-Scott transformation is applied prior to the calculations
 to express the observations in terms of an effective number of affected
-divided by the total number in each group (the format required for the
+fetuses divided by the total number in each group (the format required for the
 confidence intervals of simple dichotomous responses).
 
 ### BMD Computation
@@ -661,8 +659,8 @@ the user might decide to use the control group mean LSC when the BMD is
 close to the background dose (*i.e.*, basically deciding that the LSC of
 interest in that region is more likely to be the average observed for
 the control group as opposed to the average across all the groups). If
-the LSC is found to be affected by dose, *i.e.*, if its value appears to
-have a consistent trend with respect to dose, its use is discouraged.
+the LSC is found to be affected by dose (*i.e.*, if its value appears to
+have a consistent trend with respect to dose), its use is discouraged.
 
 Details of the BMD calculation are shown in [**Nested Dichotomous Models and their Respective Parameters**](#individual-nested-dichotomous-models-and-their-respective-parameters).
 

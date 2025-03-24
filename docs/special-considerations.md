@@ -4,17 +4,17 @@
 
 BMDS does not include a formal test for similarity of dose response
 across covariate values (*e.g.*, across class variables like species or
-sex). [EPA's categorical regression software,
-CatReg](https://www.epa.gov/bmds/about-catreg), has that capability.
+sex). EPA's categorical regression software,
+[CatReg](https://www.epa.gov/bmds/about-catreg), has that capability.
 
 However, the following procedure can be used in BMDS if there are
 dose-response data for two experiments that the user is considering
 combining (*e.g.*, for the two sexes within a species, or two species,
 etc.).
 
-* Choose a single model to consider for both datasets.
+1. Choose a single model to consider for both datasets.
 
-* Model the two datasets separately. For each run, record the
+2. Model the two datasets separately. For each run, record the
 following:
 
    * Maximum log-likelihood for each dataset. Add the two log-likelihoods
@@ -26,7 +26,7 @@ following:
     numbers from each run to get the ***summed*** unconstrained
     parameters.
 
-* Combine the data from the two experiments and model them together.
+3. Combine the data from the two experiments and model them together.
 Record the following:
 
    * The maximum log-likelihood for the combined dataset. This will be
@@ -37,10 +37,10 @@ Record the following:
    * The number of unconstrained parameters for the combined dataset.
     This will be the ***combined*** unconstrained parameters.
 
-* Subtract the combined log-likelihood from the summed log-likelihood.
+4. Subtract the combined log-likelihood from the summed log-likelihood.
 Then, multiply the difference by 2.
 
-* Compare the value from Step 4 to a Chi-square distribution. The
+5. Compare the value from Step 4 to a Chi-square distribution. The
 degrees of freedom for that Chi-square distribution will be the
 difference between the summed unconstrained parameters (Step 2) and the
 combined unconstrained parameters (Step 3).

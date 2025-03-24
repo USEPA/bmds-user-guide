@@ -29,7 +29,7 @@ intervals. Journal of Agricultural, Biological, and Environmental
 Statistics 17: 38-51.
 [doi: 10.1007/s13253-011-0064-8](http://dx.doi.org/10.1007/s13253-011-0064-8) [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4286986)]{.badge}
 
-Fox JF, Hogan KA, Davis A. Dose-Response Modeling with Summary Data from Developmental Toxicity Studies. Risk Anal. 2017 May;37(5):905-917. 
+Fox JF, Hogan KA, Davis A. Dose-Response Modeling with Summary Data from Developmental Toxicity Studies. Risk Anal. 2017 May;37(5):905-917.
 [doi: 10.1111/risa.12667](http://dx.doi.org/10.1111/risa.12667) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/27567129/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311)]{.badge}
 
 Jeffreys, H. (1998). The theory of probability. Oxford, United Kingdom:
@@ -47,7 +47,7 @@ studies. Regul Toxicol Pharmacol. 50(3):428-429.
 
 Kupper, LL; Poetier, C; Hogan, MD; Yamamoto, E. (1986). The impact of
 litter effects on dose-response modeling in teratology. Biometrics 42:
-85-98. 
+85-98.
 [doi: 10.2307/2531245](http://dx.doi.org/10.2307/2531245) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3719065/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3252)]{.badge}
 
 Nitcheva, DK; Piegorsch, WW; West, RW. (2007). On use of the multistage
@@ -71,7 +71,7 @@ quantal responses. Biometrics 41: 1-9.
 [doi: 10.2307/2530637](https://doi.org/10.2307/2530637) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/4005367/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3227)]{.badge}
 
 RIVM (National Institute for Public Health and the Environment
-(Netherlands)). (2018). PROAST. Retrieved from [PROAST](https://www.rivm.nl/en/Documents_and_publications/Scientific/Models/PROAST)                
+(Netherlands)). (2018). PROAST. Retrieved from [PROAST](https://www.rivm.nl/en/Documents_and_publications/Scientific/Models/PROAST)
 
 U.S. EPA (U.S. Environmental Protection Agency). (2012). [Benchmark dose
 technical guidance](https://www.epa.gov/risk/benchmark-dose-technical-guidance). (EPA/100/R-12/001). Washington, DC: U.S. Environmental Protection Agency, Risk Assessment Forum.

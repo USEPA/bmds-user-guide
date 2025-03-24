@@ -9,7 +9,7 @@ dose-response models. Only dichotomous model averaging is available in
 BMDS Online.
 
 For each model, $M$, there is a likelihood for the data,
-$\mathcal{l}(D|M)$, based on the data generating mechanism (binomial
+$\mathcal{l}(D|M)$, based on the data-generating mechanism (binomial
 sampling in the case of the dichotomous endpoints; Normal or Lognormal
 distributions for continuous data).
 
@@ -152,7 +152,7 @@ interpretation would be that the Log-logistic model is *a posteriori*
 normalized into proper probabilities, they are equivalent to the
 posterior model probabilities given in model averaging (again, assuming
 equal model probability *a priori*). The table below is adapted from Jeffreys
-([1998](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials?action=search.view&reference_id=4850043))
+([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043))
 and is a common interpretation of Bayes Factors.
 
 ```{csv-table} Bayes factors for dichotomous models.
@@ -179,7 +179,7 @@ posterior model probability with increasing data and the former, using
 the BIC, may not go to the true value.
 
 ```{figure} _static/img/image104.png
-:alt: Multiple model result curves plotted on single graph, with legend 
+:alt: Multiple model result curves plotted on single graph, with legend
 :scale: 75%
 :name: f105
 
@@ -197,7 +197,7 @@ From a Bayesian perspective, inference proceeds by defining a
 data-generating mechanism, given a model, $M$, and its parameters. For
 our purposes, $M$ would be one of the models listed in [**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models) that
 determines the probability of response. For the dichotomous models, the
-data generating mechanism would be the assumption that the observations
+data-generating mechanism would be the assumption that the observations
 were obtained from binomial sampling, having the dose-dependent
 probability of response defined by one of those models (with specific
 values of the parameters in that model).
@@ -246,7 +246,7 @@ lowest dose) group.
 The user does ***not*** need to scale anything beforehand. That means
 that the parameter estimates, and BMD values returned by the program
 have been adjusted back to the original scale of the doses and the
-original scale of the responses specified in the input data file. 
+original scale of the responses specified in the input data file.
 :::
 
 ### Bayesian Dichotomous Models and their Respective Parameter Priors
@@ -382,7 +382,7 @@ $\beta \sim Lognormal(0,1)$
 
 **Notes**
 
-The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.  
+The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.
 
 The $\alpha$ parameter is also constrained to be greater than 0.2 for numerical reasons.
 :::
@@ -448,9 +448,9 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 $$p(dose) = \ \Phi(\alpha + \ \beta dose)$$
 
-where 
+where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
@@ -487,7 +487,7 @@ $$p(dose) = g + (1 - g)\Phi\left\lbrack \alpha + \beta\log(dose) \right\rbrack$$
 
 where
 
-$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$ 
+$\Phi(x) = \int_{- \infty}^{x}{\phi(t)dt}$
 
 and
 
