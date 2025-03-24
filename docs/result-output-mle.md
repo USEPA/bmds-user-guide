@@ -223,11 +223,15 @@ block.
 
 ```{figure} _static/img/image63.png
 :alt: CDF table with accompanying graph
-:scale: 75%
+:scale: 65%
 :name: f59
 
 CDF table and graph.
 ```
+:::{important}
+**Why is BMDS reporting different cumulative distribution function values for different confidence levels?**<br>
+BMDS may report different Cumulative Distribution Function (CDF) percentile values when different user-specified confidence levels (alphas) are chosen. **These differences are not a bug in BMDS**. Rather, these CDF ranges — and any differences in CDFs based on different confidence levels — are calculated by the underlying Gnu Scientific Library's methods, not by BMDS. Differences in CDFs should not affect repeatability or reliability of results. However, users should use discretion when comparing CDF values to BMDL/BMDU values calculated from different confidence levels. For example, if a user inputs a 90% confidence level (alpha = 0.1), the BMDU is not guaranteed to match the 90% percentile from the CDF when using a 95% confidence level (alpha = 0.5). 
+:::
 
 ### Graphs/Plots (All Endpoints)
 
