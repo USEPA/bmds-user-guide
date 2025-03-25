@@ -2,6 +2,11 @@ name: Deploy documentation
 
 on:
   workflow_dispatch:
+    inputs:
+      generateDocx:
+        description: 'Generate docx report'
+        required: false
+        type: boolean
   push:
     branches:
       - main
@@ -13,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    env:
+      generateDocx: ${{ inputs.generateDocx }}
     steps:
 
       - uses: actions/checkout@v4
@@ -36,10 +43,25 @@ jobs:
         run: |
           poe docs
 
+      - name: Generate docx report
+        if: env.generateDocx == 'true'
+        run: |
+          sudo apt-get install -y pandoc
+          sphinx-build -W -b singlehtml docs build/singlehtml
+          cd build/singlehtml && pandoc -s index.html -o ../bmds-user-guide.docx
+
       - name: Upload Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/html/
+
+      - name: Upload Docx
+        if: env.generateDocx == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: docx
+          path: build/*.docx
+          retention-days: 14
 
   deploy:
     name: Deploy to GitHub Pages
