@@ -248,7 +248,7 @@ diagnostics for determining whether a litter size effect exists.
 
 **Bootstrap Iterations**: Specify the number of bootstrap iterations
 (default is 1000) to run to estimate goodness of fit. It is recommended
-to keep the value at a minimum of 1000.
+to keep the value at a minimum of 1000. The maximum number of iterations is dependent on platform:  in pybmds, the maximum is less than or equal to 1,000,000; in BMDS Online or BMDS Desktop, the maximum is less than or equal to 10,000.
 
 **Bootstrap Seed**: BMDS auto-generates a seed for the random number
 generator by default. However, the user can specify a seed value, if
