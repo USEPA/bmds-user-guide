@@ -286,7 +286,7 @@ Online, BMDS Desktop, and pybmds:
 
 -   Addition of the [**Rao-Scott transformation tool**](./dichotomous.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
 
--   Ability to clone an analysis (25.1 release)
+-   Ability to clone an analysis after clicking a [**Read-only link**](./bmds-online.md#share-menu) (25.1 release)
 
 -   Enhancements and under-the-hood fixes to improve efficiency, error
     handling, and stability for future development (24.1 and 25.1 releases)

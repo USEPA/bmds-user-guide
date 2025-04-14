@@ -85,6 +85,9 @@ not been saved.
 
 When all checkmarks are green, BMDS Online can run an analysis.
 ```
+:::{important}
+An analysis can only be run after all four steps required are satisfied:  At least one model is selected, at least one dataset is selected, at least one option set is selected, and the analysis has been saved.  Changing any input parameter related to model, dataset, or option set will require the analysis to be saved again prior to running.
+:::
 
 ### Specifying the Model(s) and Option(s)
 
@@ -558,8 +561,7 @@ For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
 model (the blue row marked **Recommended**). The logic criteria used
 to make the recommendations are located on the Logic tab.
-model. The logic criteria used
-to make the recommendations are located on the Logic tab.
+model. 
 
 ```{figure} _static/img/image44.png
 :alt: Logic tab is highlighted
@@ -661,7 +663,7 @@ BMDS Online Share menu options.
 
 -   **Read-only links**: users can share read-only links so
     collaborators can view the current analysis and download reports but
-    cannot edit or execute the analysis.
+    cannot edit or execute the analysis.  When users click on a Read-only link, they now have an option to "clone" the analysis.  Essentially this allows recipients of the Read-only link to copy the original analysis and modify it without altering the original analysis.  
 
 -   **Edit link**: users can share links to collaborators so they can
     edit the analysis settings, change input data, and re-execute the
