@@ -561,7 +561,7 @@ For the maximum-likelihood estimation (MLE) models, BMDS Online applies
 a set of model selection logic criteria to recommend a best fitting
 model (the blue row marked **Recommended**). The logic criteria used
 to make the recommendations are located on the Logic tab.
-model. 
+
 
 ```{figure} _static/img/image44.png
 :alt: Logic tab is highlighted
