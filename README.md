@@ -39,7 +39,7 @@ To build and edit the docs in real-time:
 poe docs-serve
 ```
 
-The documentation is deployed automatically whenever a commit is pushed to the `main` branch on of the GitHub repository.
+The documentation is deployed automatically whenever a commit is pushed to the `main` branch of the GitHub repository.
 
 ## Disclaimer
 
