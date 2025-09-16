@@ -30,14 +30,6 @@ To build and edit the docs in real-time:
 poe docs-serve
 ```
 
-### Converting the docx file:
-
-The docx file was converted using the following command:
-
-```batch
-cd "C:\Users\ASHAPIRO\dev\bmds-user-guide"
-"C:\Program Files\RStudio\resources\app\bin\quarto\bin\tools\pandoc.exe" guide.docx --extract-media=static -o guide.md
-```
 
 ## Disclaimer
 
