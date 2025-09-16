@@ -1,20 +1,29 @@
 # BMDS User Guide
 
-DONE ...
+[![Docs Badge](https://img.shields.io/badge/Latest-online-brightgreen)](https://usepa.github.io/bmds-user-guide)
+![GitHub Commit Activity](https://img.shields.io/github/commit-activity/y/USEPA/bmds-user-guide)
+
+Benchmark Dose Modeling Software (BMDS) User Guide. The User Guide is available online at https://usepa.github.io/bmds-user-guide. For edits or recommendations, please submit GitHub issues or GitHub pull-requests in this repository.
 
 ## Installation
 
-Requires [uv](https://docs.astral.sh/uv/) on your command line.
+The guide is written using [Sphinx](https://www.sphinx-doc.org/en/master/) and is compiled into a static website. To develop and edit locally, use [uv](https://docs.astral.sh/uv/) for Python environment management.
 
 ```bash
-cd dev/
+# clone the repository and change directories to the repo root
 git clone https://github.com/USEPA/bmds-user-guide.git
 cd bmds-user-guide/
-uv venv --python=3.12
+
+# create a new python virtual environment
+uv venv --python=3.13
+
+# activate the environment
 # on windows:
 .venv\Scripts\activate
 # on mac:
 # .venv/bin/activate
+
+# install python dependencies
 uv pip install -e .
 ```
 
@@ -30,14 +39,7 @@ To build and edit the docs in real-time:
 poe docs-serve
 ```
 
-### Converting the docx file:
-
-The docx file was converted using the following command:
-
-```batch
-cd "C:\Users\ASHAPIRO\dev\bmds-user-guide"
-"C:\Program Files\RStudio\resources\app\bin\quarto\bin\tools\pandoc.exe" guide.docx --extract-media=static -o guide.md
-```
+The documentation is deployed automatically whenever a commit is pushed to the `main` branch of the GitHub repository.
 
 ## Disclaimer
 
