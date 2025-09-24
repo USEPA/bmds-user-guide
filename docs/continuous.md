@@ -1038,7 +1038,7 @@ $\rho$ does not appear in that equation (in essence, it is once again
 set to 0 under the assumption of Lognormally distributed responses).
 
 The formulation of the variance model shown above allows for several
-commonly encountered situations. If $\rho\  = \ 1$, then the variance is
+commonly encountered situations. When $\rho\ > 0$, the estimated variances will increase with increasing median values and decrease with decreasing median values.  When $\rho\ < 0$, the variances will decrease with increasing median values and increase with decreasing median values.  If $\rho\  = \ 1$, then the variance is
 proportional to the median. If $\rho\  = \ 2$, then the coefficient of
 variation is constant, a common assumption especially for biochemical
 measures and one which mimics the constant coefficient of variation
