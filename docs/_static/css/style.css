@@ -47,3 +47,8 @@ article figure {
     color: var(--color-foreground-primary);
     border: 1px solid var(--color-background-border);
 }
+
+table.docutils.align-default td,
+table.docutils.align-default th {
+    text-align: center;
+}

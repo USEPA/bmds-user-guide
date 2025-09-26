@@ -1262,3 +1262,29 @@ model the variance.
 
 ***Related topic:*** see [**Log-transformed Responses are NOT Recommended**](#log-transformed-responses-are-not-recommended)
 
+## Trend Test for Continuous Data
+
+The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/stable/2333011); [Terpstra, 1954](https://scispace.com/pdf/the-asymptotic-normality-and-consistency-of-kendall-s-test-59ew49i1tf.pdf)) is a non-parameteric statistical test used to detect a trend in continuous response data across multiple ordered dose groups.  The null hypotehsis for the Jonckheere-Terpstra trend test is that the continuous response data are all from the same population, that is the sample medians for all dose groups are equal, and the alternative hypothesis that the sample medians have an *a priori* ordering with at least one dose group sample being larger or smaller than the others.  The test statistic counts, for each dose group, the number of times values in that group are greater than those in every lower order dose group and sums these counts across groups.  A statistically significant tend can be inferred when the trend test *p*-value $< 0.05$.
+
+The Jonckheere-Terpstra trend test can be performed usign a one-sided alternative hypothesis that the trend in responses is either increasing or decreasing (with the direction set by the user before running the test) or a two-sided alternative hypothesis used to detect a trend in either direction. Both exact and approximate versions of the Jonckheere-Terpstra trend test are available.  
+
+When running the Jonckheere-Terpstra trend test, the exact method, utilizing a a permutation approach, is preferentially used.  However, this exact method is only avaiable when there are no ties in the data (i.e., there are no equal response values in the data set across dose groups) and when the total sample size is less than 150. The limit on sample size is based on the observation that  computation time for the exact Jonckheere's test increases in an exponential fashion with increasing total N:
+
+```{csv-table} Computation time for the exact Jonckheere-Terpstra trend test
+:header: >
+: "Total Sample size (N)", "Computation Time (s)"
+:widths: 10, 10
+
+"60", "0.56"
+"100", "6.8"
+"150", "54"
+"190", "254"
+"200", "1026"
+```
+When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.  Users can opt to use the approximate approach even when there are no ties in the data and total N < 150. 
+
+Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual respons data that corresponds to the observed summary statistics.  
+
+:::{note}
+At this time, the Jonckheere-Terpstra trend test is only available in pybmds (version 25.2).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
+:::
