@@ -1045,6 +1045,10 @@ measures and one which mimics the constant coefficient of variation
 assumption of Lognormally distributed responses (but without having
 to assume that the responses are in fact Lognormally distributed).
 
+:::{note}
+At this time, the change to the parameter restriction for the $\rho$ parameter to allow negative values is only available in pybmds (version 25.2).  Version 25.1 of pybmds, BMDS Online, and BMDS Desktop still restricts the $\rho$ parameter to have values greater than or equal to zero, except for the Hill model.  
+:::
+
 ### Likelihood Function
 
 Parameter estimates are derived by the method of maximizing the
