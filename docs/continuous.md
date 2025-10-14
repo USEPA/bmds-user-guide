@@ -1042,7 +1042,7 @@ commonly encountered situations. When $\rho\ > 0$, the estimated variances will 
 proportional to the median. If $\rho\  = \ 2$, then the coefficient of
 variation is constant, a common assumption especially for biochemical
 measures and one which mimics the constant coefficient of variation
-assumption of the Lognormally distributed responses (but without having
+assumption of Lognormally distributed responses (but without having
 to assume that the responses are in fact Lognormally distributed).
 
 ### Likelihood Function
@@ -1264,11 +1264,11 @@ model the variance.
 
 ## Trend Test for Continuous Data
 
-The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/stable/2333011); [Terpstra, 1954](https://scispace.com/pdf/the-asymptotic-normality-and-consistency-of-kendall-s-test-59ew49i1tf.pdf)) is a non-parameteric statistical test used to detect a trend in continuous response data across multiple ordered dose groups.  The null hypotehsis for the Jonckheere-Terpstra trend test is that the continuous response data are all from the same population, that is the sample medians for all dose groups are equal, and the alternative hypothesis that the sample medians have an *a priori* ordering with at least one dose group sample being larger or smaller than the others.  The test statistic counts, for each dose group, the number of times values in that group are greater than those in every lower order dose group and sums these counts across groups.  A statistically significant tend can be inferred when the trend test *p*-value $< 0.05$.
+The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/stable/2333011); [Terpstra, 1954](https://scispace.com/pdf/the-asymptotic-normality-and-consistency-of-kendall-s-test-59ew49i1tf.pdf)) is a non-parametric statistical test used to detect a trend in continuous response data across multiple ordered dose groups.  The null hypothesis for the Jonckheere-Terpstra trend test is that the continuous response data are all from the same population, that is the sample medians for all dose groups are equal, and the alternative hypothesis that the sample medians have an *a priori* ordering with at least one dose group sample being larger or smaller than the others.  The test statistic counts, for each dose group, the number of times values in that group are greater than those in every lower order dose group and sums these counts across groups.  A statistically significant tend can be inferred when the trend test *p*-value $< 0.05$.
 
-The Jonckheere-Terpstra trend test can be performed usign a one-sided alternative hypothesis that the trend in responses is either increasing or decreasing (with the direction set by the user before running the test) or a two-sided alternative hypothesis used to detect a trend in either direction. Both exact and approximate versions of the Jonckheere-Terpstra trend test are available.  
+The Jonckheere-Terpstra trend test can be performed using a one-sided alternative hypothesis that the trend in responses is either increasing or decreasing (with the direction set by the user before running the test) or a two-sided alternative hypothesis used to detect a trend in either direction. Both exact and approximate versions of the Jonckheere-Terpstra trend test are available.  
 
-When running the Jonckheere-Terpstra trend test, the exact method, utilizing a a permutation approach, is preferentially used.  However, this exact method is only avaiable when there are no ties in the data (i.e., there are no equal response values in the data set across dose groups) and when the total sample size is less than 150. The limit on sample size is based on the observation that  computation time for the exact Jonckheere's test increases in an exponential fashion with increasing total N:
+When running the Jonckheere-Terpstra trend test, the exact method, utilizing a permutation approach, is preferentially used. This permutation approach is not dependent on any distributional assumptions; it iteratively reshuffles the observed data (i.e., reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the the proportion of permutted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. However, this exact method is only available when there are no ties in the data (i.e., there are no equal response values in the data set across dose groups) and when the total sample size is less than 150. The limit on sample size is based on the observation that computation time for the exact Jonckheere's test increases in an exponential fashion with increasing total N:
 
 ```{csv-table} Computation time for the exact Jonckheere-Terpstra trend test
 :header: >
@@ -1283,7 +1283,7 @@ When running the Jonckheere-Terpstra trend test, the exact method, utilizing a a
 ```
 When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.  Users can opt to use the approximate approach even when there are no ties in the data and total N < 150. 
 
-Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual respons data that corresponds to the observed summary statistics.  
+Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual response data that corresponds to the observed summary statistics. This is done by iteratively generating random samples using a normal distribution; random samples are generated until the sample mean and standard deviation match the target (i.e., observed) mean and standard deviation or until the maximum number of iterations are reached.  If no sampled mean and standard deviation are found that match the target values, an error message is returned.
 
 :::{note}
 At this time, the Jonckheere-Terpstra trend test is only available in pybmds (version 25.2).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
