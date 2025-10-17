@@ -1038,12 +1038,12 @@ $\rho$ does not appear in that equation (in essence, it is once again
 set to 0 under the assumption of Lognormally distributed responses).
 
 The formulation of the variance model shown above allows for several
-commonly encountered situations. When $\rho\ > 0$, the estimated variances will increase with increasing median values and decrease with decreasing median values.  When $\rho\ < 0$, the variances will decrease with increasing median values and increase with decreasing median values.  If $\rho\  = \ 1$, then the variance is
+commonly encountered situations. When the estimated value of $\rho\ > 0$, the estimated variances will increase with increasing median values and decrease with decreasing median values.  When $\rho\ < 0$, the variances will decrease with increasing median values and increase with decreasing median values.  If $\rho\  = \ 1$, then the variance is
 proportional to the median. If $\rho\  = \ 2$, then the coefficient of
 variation is constant, a common assumption especially for biochemical
 measures and one which mimics the constant coefficient of variation
-assumption of Lognormally distributed responses (but without having
-to assume that the responses are in fact Lognormally distributed).
+assumption of lognormally distributed responses (but without having
+to assume that the responses are in fact lognormally distributed).
 
 :::{note}
 At this time, the change to the parameter restriction for the $\rho$ parameter to allow negative values is only available in pybmds (version 25.2).  Version 25.1 of pybmds, BMDS Online, and BMDS Desktop still restricts the $\rho$ parameter to have values greater than or equal to zero, except for the Hill model.  
@@ -1268,7 +1268,7 @@ model the variance.
 
 ## Trend Test for Continuous Data
 
-The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/stable/2333011); [Terpstra, 1954](https://scispace.com/pdf/the-asymptotic-normality-and-consistency-of-kendall-s-test-59ew49i1tf.pdf)) is a non-parametric statistical test used to detect a trend in continuous response data across multiple ordered dose groups.  The null hypothesis for the Jonckheere-Terpstra trend test is that the continuous response data are all from the same population, that is the sample medians for all dose groups are equal, and the alternative hypothesis that the sample medians have an *a priori* ordering with at least one dose group sample being larger or smaller than the others.  The test statistic counts, for each dose group, the number of times values in that group are greater than those in every lower order dose group and sums these counts across groups.  A statistically significant tend can be inferred when the trend test *p*-value $< 0.05$.
+The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/stable/2333011); [Terpstra, 1954](https://scispace.com/pdf/the-asymptotic-normality-and-consistency-of-kendall-s-test-59ew49i1tf.pdf)) is a non-parametric statistical test used to detect a trend in continuous response data across ordered dose groups.  The null hypothesis for the Jonckheere-Terpstra trend test is that the continuous response data are all from the same population, that is, the sample medians for all dose groups are equal.  The alternative hypothesis is that the sample medians have an *a priori* ordering with at least one dose group sample being larger or smaller than the others.  The test statistic counts, for each dose group, the number of times values in that group are greater than those in every lower order dose group and sums these counts across groups.  A statistically significant tend can be inferred when the trend test *p*-value $< 0.05$.
 
 The Jonckheere-Terpstra trend test can be performed using a one-sided alternative hypothesis that the trend in responses is either increasing or decreasing (with the direction set by the user before running the test) or a two-sided alternative hypothesis used to detect a trend in either direction. Both exact and approximate versions of the Jonckheere-Terpstra trend test are available.  
 
