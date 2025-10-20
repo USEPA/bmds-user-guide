@@ -970,3 +970,15 @@ Rao-Scott transformed N: ${N_{f}}_{RS} = \frac{116}{2.3045} = 50.337$
 For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical.
 
 The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved modeling individual-level data.
+
+## Trend Test for Dichotomous Data
+
+The Cochran-Armitage trend test allows users to test for trends in binomial proportions across different levels of a single variable.  In the case of dichotomous dose-response data, the number of responses divided by the total number of subjects exposed represents the binomial proportion, which is tested across the different doses.  Here, dose is treated as an ordinal variable, and thus the test depends only on the order of the doses, not their numerical values.  The Cochran-Armitage trend test in pybmds automatically computes both the asymptotic and conditional exact *p*-values for testing the presences of a monotonic trend in incidence rations across increasing dose groups.
+
+The asymptotic *p*-value is based on a normal approximation of the linear trend statistic proposed by [Cochran (1954)](https://www.jstor.org/stable/pdf/3001616.pdf) and [Armitage (1954)](https://www.jstor.org/stable/3001775?seq=1).  The exact one-sided *p*-value for the Cochran-Armitage trend test uses a special case of the linear rank test algorithm by [Mehta, Patel, and Tsiastis (1992)](https://www.jstor.org/stable/1390598?seq=6).
+
+The null hypothesis for the Cochran-Armitage test is that the binomial proportion of the responses is the same across all levels of the ordinal dose variable; *p*-values less than the alpha level (normally 0.05) indicate that a monotonic trend does exist in the data.
+
+:::{note}
+At this time, the Cochran-Armitage trend test is only available in pybmds (version 25.2).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
+:::
