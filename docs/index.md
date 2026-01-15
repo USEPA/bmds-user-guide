@@ -36,3 +36,7 @@ including the Risk Assessment Forum's (RAF) [Benchmark Dose Technical Guidance D
    troubleshooting
    references
 ```
+
+:::{important}
+**Final Product** This document has been reviewed in accordance with the U.S. Environmental Protection Agency, Office for Applied Science and Environmental Solutions, and approved for publication
+:::
