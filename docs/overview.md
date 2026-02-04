@@ -330,3 +330,7 @@ The documentation for BMDS Desktop and pybmds are at
 The [BMDS Contact Us
 page](https://www.epa.gov/bmds/forms/contact-us-about-benchmark-dose-tools)
 serves as the online Help Desk for all BMDS applications. Post questions, concerns, comments, or suggestions on any aspect of the software or its usage.
+
+:::{important}
+**Final Product** This document has been reviewed in accordance with the U.S. Environmental Protection Agency, Office for Applied Science and Environmental Solutions, and approved for publication
+:::
