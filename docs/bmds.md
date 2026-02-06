@@ -10,92 +10,92 @@ packages are available for download but are no longer supported or
 updated by EPA.
 
 ```{csv-table} List of Maximum-Likelihood Estimation Continuous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Exponential[^1],Yes,Yes,Yes
-Hill,Yes,Yes,Yes
-Linear,Yes,Yes,Yes
-Polynomial,Yes,Yes,Yes
-Power,Yes,Yes,Yes
+Exponential[^1],Yes,Yes,Yes,Yes,Yes,Yes
+Hill,Yes,Yes,Yes,Yes,Yes,Yes
+Linear,Yes,Yes,Yes,Yes,Yes,Yes
+Polynomial,Yes,Yes,Yes,Yes,Yes,Yes
+Power,Yes,Yes,Yes,Yes,Yes,Yes
 ```
 [^1]: Developed by RIVM (National Institute for Public Health and the Environment (Netherlands))
 
 ```{csv-table} List of Bayesian Continuous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Exponential[^1], No,No,Yes
-Hill (Additive background),No,No,Yes
-Hill (Multiplicative background)[^1],No,No,Yes
-Inverse Exponential[^1],No,No,Yes
-LogNormal[^1],No,No,Yes
-Gamma[^2],No,No,No
-LMS Two-stage[^2],No,No,Yes
-Linear,No,No,Yes
-Polynomial,No,No,No
-Power,No,No,Yes
+Exponential[^1], No,No,No,No,No,Yes
+Hill (Additive background),No,No,No,No,No,Yes
+Hill (Multiplicative background)[^1],No,No,No,No,No,Yes
+Inverse Exponential[^1],No,No,No,No,No,Yes
+LogNormal[^1],No,No,No,No,No,Yes
+Gamma[^2],No,No,No,No,No,Yes
+LMS Two-stage[^2],No,No,No,No,No,Yes
+Linear,No,No,No,No,No,Yes
+Polynomial,No,No,No,No,No,No
+Power,No,No,No,No,No,Yes
 ```
 [^2]: Developed by EFSA (European Food Safety Authority)
 
 ```{csv-table} List of Maximum-Likelihood Estimation Dichotomous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Gamma,Yes,Yes,Yes
-Logistic,Yes,Yes,Yes
-Log-Logistic,Yes,Yes,Yes
-Log-Probit,Yes,Yes,Yes
-Multistage,Yes,Yes,Yes
-Probit,Yes,Yes,Yes
-Weibull,Yes,Yes,Yes
-Quantal Linear,Yes,Yes,Yes
-Dichotomous Hill,Yes,Yes,Yes
+Gamma,Yes,Yes,Yes,Yes,Yes,Yes
+Logistic,Yes,Yes,Yes,Yes,Yes,Yes
+Log-Logistic,Yes,Yes,Yes,Yes,Yes,Yes
+Log-Probit,Yes,Yes,Yes,Yes,Yes,Yes
+Multistage,Yes,Yes,Yes,Yes,Yes,Yes
+Probit,Yes,Yes,Yes,Yes,Yes,Yes
+Weibull,Yes,Yes,Yes,Yes,Yes,Yes
+Quantal Linear,Yes,Yes,Yes,Yes,Yes,Yes
+Dichotomous Hill,Yes,Yes,Yes,Yes,Yes,Yes
 ```
 
 ```{csv-table} List of Bayesian Dichotomous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Gamma,No,Yes,Yes
-Logistic,No,Yes,Yes
-Log-Logistic,No,Yes,Yes
-Log-Probit,No,Yes,Yes
-Multistage,No,Yes,Yes
-Probit,No,Yes,Yes
-Weibull,No,Yes,Yes
-Quantal Linear,No,Yes,Yes
-Dichotomous Hill,No,Yes,Yes
+Gamma,No,Yes,Yes,Yes,Yes,Yes
+Logistic,No,Yes,Yes,Yes,Yes,Yes
+Log-Logistic,No,Yes,Yes,Yes,Yes,Yes
+Log-Probit,No,Yes,Yes,Yes,Yes,Yes
+Multistage,No,Yes,Yes,Yes,Yes,Yes
+Probit,No,Yes,Yes,Yes,Yes,Yes
+Weibull,No,Yes,Yes,Yes,Yes,Yes
+Quantal Linear,No,Yes,Yes,Yes,Yes,Yes
+Dichotomous Hill,No,Yes,Yes,Yes,Yes,Yes
 ```
 
 ```{csv-table} List of Maximum-Likelihood Estimation Nested Dichotomous Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Nested Logistic,Yes,Yes,Yes
-National Center for Toxicological Research (NCTR),Yes,No,Yes
-"Rai and Van Ryzin (No longer supported)",Yes,No,No
+Nested Logistic,Yes,Yes,Yes,Yes,Yes,Yes
+National Center for Toxicological Research (NCTR),Yes,No,No,Yes,Yes,Yes
+"Rai and Van Ryzin (No longer supported)",Yes,No,No,No,No,No
 ```
 
 ```{csv-table} List of Specialized Models
-:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Dichotomous Bayesian Model Averaging - ToxicR priors/Laplace approximation,No,Yes,Yes
-Dichotomous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,Yes
-Continuous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,Yes
-Multistage Cancer/Multitumor,Yes,Yes,Yes
+Dichotomous Bayesian Model Averaging - ToxicR priors/Laplace approximation,No,Yes,Yes,Yes,Yes,Yes
+Dichotomous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,No,No,No,Yes
+Continuous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,No,No,No,Yes
+Multistage Cancer/Multitumor,Yes,Yes,No,Yes,Yes,Yes
 ```
 [^3]: LOUD = Leveraging Objective Univariate Distributions, MCMC = Markov Chain Monte Carlo, see **_INSERT CROSSREF here_**  for more information 
 
 ```{csv-table} List of Data Transformations and Trend Tests
-:header: Transformation,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
-:widths: 40, 20, 20, 30
+:header: Transformation,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
+:widths: 40, 20, 20, 20, 30, 20, 30
 
-Rao-Scott Transform,No,No,Yes
-Poly3 Adjustment - LOUD priors/MCMC sampling[^1],No,No,Yes
-Cochrane Armitage trend test,No,No,Yes
-Jonckheere-Terpstra trend test,No,No,Yes
+Rao-Scott Transform,No,No,No,Yes,Yes,Yes
+Poly3 Adjustment,No,No,No,Yes,Yes,Yes
+Cochrane Armitage trend test,No,No,No,No,Yes,Yes
+Jonckheere-Terpstra trend test,No,No,No,No,Yes,Yes
 ```
 
 ## Models Not Included in BMDS Online
