@@ -1,4 +1,4 @@
-# Benchmark Dose Models Included in BMDS
+# Benchmark Dose Models and Methods Included in BMDS
 
 Most of the models in the following tables were developed by U.S. EPA
 and are available in BMDS, unless otherwise noted.
@@ -13,12 +13,30 @@ updated by EPA.
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
 
-Exponential,Yes,Yes,Yes
+Exponential[^1],Yes,Yes,Yes
 Hill,Yes,Yes,Yes
 Linear,Yes,Yes,Yes
 Polynomial,Yes,Yes,Yes
 Power,Yes,Yes,Yes
 ```
+[^1]: Developed by RIVM (National Institute for Public Health and the Environment (Netherlands))
+
+```{csv-table} List of Bayesian Continuous Models
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
+
+Exponential[^1], No,No,Yes
+Hill (Additive background),No,No,Yes
+Hill (Multiplicative background)[^1],No,No,Yes
+Inverse Exponential[^1],No,No,Yes
+LogNormal[^1],No,No,Yes
+Gamma[^2],No,No,No
+LMS Two-stage[^2],No,No,Yes
+Linear,No,No,Yes
+Polynomial,No,No,No
+Power,No,No,Yes
+```
+[^2]: Developed by EFSA (European Food Safety Authority)
 
 ```{csv-table} List of Maximum-Likelihood Estimation Dichotomous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
@@ -35,6 +53,21 @@ Quantal Linear,Yes,Yes,Yes
 Dichotomous Hill,Yes,Yes,Yes
 ```
 
+```{csv-table} List of Bayesian Dichotomous Models
+:header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
+
+Gamma,No,Yes,Yes
+Logistic,No,Yes,Yes
+Log-Logistic,No,Yes,Yes
+Log-Probit,No,Yes,Yes
+Multistage,No,Yes,Yes
+Probit,No,Yes,Yes
+Weibull,No,Yes,Yes
+Quantal Linear,No,Yes,Yes
+Dichotomous Hill,No,Yes,Yes
+```
+
 ```{csv-table} List of Maximum-Likelihood Estimation Nested Dichotomous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
@@ -48,8 +81,21 @@ National Center for Toxicological Research (NCTR),Yes,No,Yes
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
 :widths: 40, 20, 20, 30
 
-Bayesian Model Averaging (Dichotomous),No,Yes,Yes
+Dichotomous Bayesian Model Averaging - ToxicR priors/Laplace approximation,No,Yes,Yes
+Dichotomous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,Yes
+Continuous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,Yes
 Multistage Cancer/Multitumor,Yes,Yes,Yes
+```
+[^3]: LOUD = Leveraging Objective Univariate Distributions, MCMC = Markov Chain Monte Carlo, see **_INSERT CROSSREF here_**  for more information 
+
+```{csv-table} List of Data Transformations and Trend Tests
+:header: Transformation,BMDS 2.7,BMDS 3.3,BMDS Online/Desktop/pybmds
+:widths: 40, 20, 20, 30
+
+Rao-Scott Transform,No,No,Yes
+Poly3 Adjustment - LOUD priors/MCMC sampling[^1],No,No,Yes
+Cochrane Armitage trend test,No,No,Yes
+Jonckheere-Terpstra trend test,No,No,Yes
 ```
 
 ## Models Not Included in BMDS Online
