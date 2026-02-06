@@ -903,7 +903,6 @@ From the Actions drop down menu, users can download the Rao-Scott adjusted data 
 
 Rao-Scott transformation Word report, with summary table of results, plots of original vs adjusted values, and Rao-Scott transformation regression parameter values
 ```
-
 ### More on the Rao-Scott Transformation
 
 For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (*i.e.*, litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).
@@ -944,7 +943,13 @@ As can be seen in the equations above, the calculation of the design effect requ
 "Rabbits", "OR", "10", "43", "1.1477", "0.2739", "0.1299"
 ```
 
-From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) vs the design effect calculated using  orthogonal regression ($D_{OR}$), by practice the design effect estimated using these two regression approaches is averaged to generate the average design effect ($D_{average}$) actually used in the scaling of $N_{f}$ and $A_{f}$. An example calculation is provided below for a hypothetical developmental study using mice.
+From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) vs the design effect calculated using  orthogonal regression ($D_{OR}$), by practice the design effect estimated using these two regression approaches is averaged to generate the average design effect ($D_{average}$) actually used in the scaling of $N_{f}$ and $A_{f}$. 
+
+:::{note}
+When dose-group incidences are zero, the calculation of the design effect includes a $ln(0)$, term, which is undefined.  If design effect was calculated as normal, dose-groups with 0 incidece would be assigned the maximum design effect possible.  The testing of the Rao-Scott transformation did not cover situations such as these and until testing can be conducted to determine if this appropriate, a design effect of 0 (meaning no scaling) is manually assigned to dose groups with 0 incidence.  Additionally, in cases of exceedingly low incidence (approximately occurring when $P_{f} < 0.006$), a design effect less than 1 will be estimated, resulting in a scaling upwards (i.e., larger numbers) of the transformed incidence and N values.  In cases such as this, a design effect of 1 is manually applied to prevent this behavior.
+:::
+
+An example calculation is provided below for a hypothetical developmental study using mice.
 
 ```{csv-table} Example Calculation of the Design effect and Transformed Incidence Numbers for a Hypothetical Mouse Study
 :header: >
