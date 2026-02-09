@@ -18,7 +18,7 @@ For models for dichotomous endpoints in which the responses are nested
 For dichotomous cancer models, and the combination of model predictions
 for multiple tumor endpoints, see [**Multiple Tumor Analysis**](./multiple-tumor-analysis.md).
 
-For more information on the Bayesian implementation of the dichotomous models, see [**Bayesian Dichotomous Analysis**](./bayesian-dichotomous.md).
+For more information on the Bayesian implementation of the dichotomous models, see [**Bayesian Dichotomous Analysis**](./dichotomous-bayesian.md).
 
 ## Dichotomous Response Models
 
