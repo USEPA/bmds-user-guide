@@ -1,4 +1,4 @@
-# Dichotomous Endpoints
+# Dichotomous Endpoints - Maximum Likelihood Methods
 
 BMDS includes models for dichotomous endpoints in which the observations
 are independent of each other. In these models, the dose-response model

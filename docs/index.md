@@ -27,11 +27,12 @@ including the Risk Assessment Forum's (RAF) [Benchmark Dose Technical Guidance D
    modeling-methods
    result-output-mle
    model-recommendation
-   continuous
-   dichotomous
+   continuous-mle
+   continuous-bayesian
+   dichotomous-mle
+   dichotomous-bayesian
    nested-dichotomous
    multiple-tumor-analysis
-   bayesian-dichotomous
    special-considerations
    troubleshooting
    references

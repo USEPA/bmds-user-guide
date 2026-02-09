@@ -1,0 +1,404 @@
+# Continuous Endpoints - Bayesian Model Averaging Methods
+
+Traditional BMD modeling involves fitting a number of dose-response models to the observed data and selecting the single “best” model based on predefined criteria (see [**Goodness of Fit Table**](./continuous-mle.md#goodness-of-fit-table) and [**AIC and Model Comparisons**](./continuous-mle.md#aic-and-model-comparisons)). However, no single traditional dose-response model can be expected to capture the underlying biology or toxicological modes of action, and each candidate model represents only a possible hypothesis about the biologic processes leading to the observed endpoint being modeled. Hence, using the associated BMDL from the “best” model may not fully reflect the true model uncertainty ([Haber et al., 2018](https://hero.epa.gov/reference/11400398/); [Wheeler & Bailer, 2007](https://hero.epa.gov/reference/669774/)). 
+
+Therefore, model averaging in BMD modeling has been recommended by the National Institute for Occupational Safety and Health (NIOSH), World Health Organization (WHO), and the European Food Safety Authority (EFSA) as an approach that incorporates results from multiple candidate models, combined through weighted averaging to account for model uncertainty ([Wheeler et al., 2020](https://hero.epa.gov/reference/5939422/);[Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/)). Model averaging accounts for uncertainty across both individual model parameters and the suite of models analyzed (Hinne et al., 2020, **ADD REF**). In addition, Bayesian inference is commonly employed for model averaging, as it improves characterization of uncertainty in risk value estimation by incorporating prior information and using observed data to estimate a posterior distribution of the parameter of interest (in this case, the BMD). Prior information is incorporated by specifying prior probability distributions for unknown model parameters. 
+
+The EPA has developed an approach to BMA for continuous data, terned "leveraging objective univariate distributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to continuous dose-response data, where each response can take on any value in an interval. 
+
+In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the predicted means for continuous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
+
+Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
+
+## LOUD Model Averaging - Continuous Endpoints
+
+In an animal toxicological experiment with $r$ doses $x_i, i=1…r$, let $Y={\left({y}_{i1},{y}_{i2},…,{y}_{in_i }\right)}^{'}$ represent ${n}_{i}$ observations at the ${i}^{th}$ dose. Here, we assume all observations are independent and share a common error distribution, either normal or lognormal, such that the central tendency changes as a smooth dose-response function m of dose. If ${y}_{i}$ are normally distributed, $m({x}_{i})$ is the mean response given ${x}_{i}$, and if ${y}_{i}$ are lognormally distributed, $m({x}_{i})$ is the median response given ${x}_{i}$.  Specifically, when dose levels are scaled as explained above, ${m}_{0}$ and ${m}_{1}$ refer to the observed means at the minimum and maximum dose levels, respectively.
+
+### Priors for ${m}_{0}$ and ${m}_{1}$
+
+For the continuous LOUD framework, the true mean responses at the minimum and maximum doses, ${m}_{0}$ and ${m}_{1}$, were assigned priors that reflect both the structure of the data and the theoretical motivation from reference prior theory. In a Normal model with unknown mean and variance, the reference prior is $\pi(\mu,\sigma) ∝ 1/\sigma$, where $\pi$ denotes the joint reference prior to making inferences about $\mu$ (Bernardo, 1979, **ADD REF**). When this prior is combined with data, the marginal posterior distribution for $\mu$ follows a non-standardized Student-t form with $n-1$ degrees of freedom, reflecting both the uncertainty in the mean and the sampling variability in the variance: 
+
+$${m}_{0} \sim \text{student_t}\left({n}_{0}-1, {\overline{y}}_{0},\sqrt{\frac{{s}_{0}^{2}}{{n}_{0}-1}}\right)$$
+
+$${m}_{1} \sim \text{student_t}\left({n}_{1}-1, {\overline{y}}_{1},\sqrt{\frac{{s}_{1}^{2}}{{n}_{1}-1}}\right)$$
+
+where ${n}_{0}$ and ${n}_{1}$ are the numbers of observations, ${\overline{y}}_{0}$ and ${\overline{y}}_{1}$ are the observed mean responses, and ${s}_{0}^{2}$ and ${s}_{1}^{2}$ are the observed standard deviations of responses at the minimum and maximum dose levels ${d}_{0}$ and ${d}_{1}$, respectively. Here, the parameters for the non-standardized Student-t distributions represent degrees of freedom $\left({n}_{i}-1\right)$, location $\left({\overline{y}}_{i}\right)$, and scale $\left(\sqrt{\frac{{s}_{1}^{2}}{{n}_{1}-1}}\right)$, respectively.
+
+The probability density function of the non-standardized Student-t distribution is:
+
+$$\text{Student-t}\left(y|\nu,\mu,\sigma\right)=\frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)} \times \frac{1}{\sqrt{\nu\pi}\sigma}{\left(1+\frac{1}{\nu}{\left(\frac{y-\mu}{\sigma}\right)}^{2}\right)}^{-\frac{\nu+1}{2}}$$
+
+where $\nu$, $\mu$, and $$\sigma$ are the degrees of freedom, location, and scale parameters, respectively, and $\Gamma$ is the gamma function.
+
+### Variance priors
+
+For continuous models, variance refers to the variability of individual responses within each dose group and it must be explicitly modeled.  Consistent with how BMDS models variance for the MLE models [**Variance Model**](./continuous-mle.md#variance-model), the LOUD approach considers three variance structures:
+
+- Normal distribution with constant variance
+- Normal distribution with non-constant variance modeled as a power function of the mean response, and
+- Lognormal distribution with a constant coefficient of variation
+
+In all cases, a inverse-gamma prior was assigned to the variance term.  The inverse-gamma distribution is the conjugate prior for the variance of a Normal model and correspondes the reference prior for dispersion parameters ([Gelman, 2006](https://hero.epa.gov/reference/4235805/)).  The shape and scale hyperparameters were chose to reflect the degrees of freedom and observed variability in the control and high-dose groups.  The probability function for the inverse-gamma distribution is:
+
+$$\text{InvGamma}\left(y|\alpha,\beta\right)=\frac{{\beta}^{\alpha}}{\Gamma(\alpha)}{y}^{-\left(\alpha+1\right)}\text{exp}\left(-\beta \cdot \frac{1}{y}\right)$$
+
+where $\alpha$ and $\beta$ are the shape and scale parameters, respectively, and $\Gamma$ is the gamma function.  The specific priors for the three variance structures are: 
+
+1. **Normal distribution with constant variance**
+
+The variance of observations in dose group $i$, ${Var}_{i}$ is:
+
+$${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{01}-1}{2},\frac{{n}_{01} \cdot {s}_{01}^{2}}{2}\right)$$
+
+where ${n}_{01}$ is the total number of observations and ${s}_{01}^{2}$ is the total observed variance observed in both the ${x}_{0}$ and ${x}_{1}$ dose groups.  ${n}_{01}$ is subtracted by 1 to account for the degree of freedom lost from the estimation of ${s}_{01}^{2}$ itself. Here, the parameters in the inverse-gamma distribution represent the shape $\left(\frac{{n}_{01}-1}{2}\right)$ and scale $\left(\frac{{n}_{01} \cdot {s}_{01}^{2}}{2}\right)$, respectivley.  The observations from ${x}_{0}$ and ${x}_{1}$ dose groups are excluded from the likelihood when forming the posterior to avoid double counting.
+
+2. **Normal distribution with non-constant variance**
+
+The variance of observations is modeled as a power function of the mean:
+
+$${Var}_{i}= \alpha \cdot {\lbrack\mu\left({d}_{i}\right)\rbrack}^{\rho}$$
+
+where the parameters $\alpha$ and $\rho$ represent scale and power parameters and are estimated simultaneously with the other parameters in the dose-response model, and $\mu\left({d}_{i}\right)$ is the predicted resposne from the dose-response model under consideration for the ${i}^{th}$ dose group.  To estimate $\alpha$ and $\rho$, such that 
+
+$${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{0}-1}{2},\frac{{n}_{0} \cdot {s}_{0}^{2}}{2}\right)$$ 
+
+$${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{1}-1}{2},\frac{{n}_{1} \cdot {s}_{1}^{2}}{2}\right)$$
+
+where ${n}_{0}$ and ${n}_{1}$ are the total number of observations and ${s}_{0}^{2}$ and ${s}_{1}^{2}$ are the total observed variances observed in both the ${x}_{0}$ and ${x}_{1}$ dose groups, respectively.  ${n}_{0}$ and ${n}_{1}$ are both subtracted by 1 to account for the degree of freedom lost from the estimation of ${s}_{1}^{2}$ and ${s}_{1}^{2}$ themselves. Using those estimates along with the estimates for ${m}_{0}$ and ${m}_{1}$, the esimates for $\alpha$ and $\rho$ may be calculated using the relationship described above for the definition of non-constant variance:
+
+$$\rho = \frac{\log\left(\frac{{Var}_{1}}{{Var}_{0}}\right)}{\log\left(\frac{{m}_{1}}{{m}_{0}}\right)}$$
+
+$$\alpha = \frac{{Var}_{0}}{{m}_{0}^{\rho}}$$
+
+3. **Lognormal distribution with constant coefficient of variation**
+
+For lognormal data with constant log-scale variance, the inverse-gamma prior is defined as:
+
+$${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{01}-1}{2},\frac{{n}_{01} \cdot {s}_{\log, 01}^{2}}{2}\right)$$
+
+where ${s}_{\log, 01}$ is the overall observed log-scale variance across the ${x}_{0}$ and ${x}_{1}$ dose groups.
+
+## Individual Model Specifications
+
+The continuous dose-response functions and their prior distributions used in Bayesian parameter estimation are shown below.  One or two of each model's parameters can be expressed in terms of ${m}_{0}$ and ${m}_{1}$ and the priors for these parameters cna derived using the distributions for ${m}_{0}$ and ${m}_{1}$ listed [**above**](#priors-for--and).  For example, for the Power model, 
+
+$$m\left(x|\theta\right)= g + v \cdot {x}^{n}$$
+
+The background parameter ($g$) can be defined explicitly as ${m}_{0}$: 
+
+$$m\left({d}_{0}\right) = {m}_{0} = g + v \cdot {0}^{n} = g$$
+
+and the slope parameter ($v$) can be defined in terms of both ${m}_{0}$ and ${m}_{1}$:
+
+$$m\left({d}_{1}\right) = {m}_{1} = {m}_{0} + v \cdot {1}^{n}$$
+
+$$\nu = {m}_{1} - {m}_{0}$$
+
+The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/).  For example, the power parameter prior for each model was chosen to reflect the assumption that large amounts of curvature are not expected.  Similar to the dichotomous models, the parameters that identify curvature were assigned separate priors because ${m}_{0}$ and ${m}_{1}$ do not provide information to identify the shape of the curve.  
+
+From the existing suite of MLE continuous models included in BMDS, Bayesian versions of the Power, Exponential-3, Exponential-5, and additive Hill models were devloped, as shown below. Bayesian versions of the polynomial and linear models were not developed as monotone restrictions on polynomials are difficult to enforce and non-monotone functions lead to difficulties when evaluating the BMD, such as the possibility of having two BMDs for the same BMR.
+
+:::{note}
+Note that the term additive with respect to the Hill model connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see ADD REF), the background is treated multiplicatively.
+:::
+
+::::{tab-set}
+
+:::{tab-item} Power
+
+**Model Form**
+
+$$m\left(x|\theta\right) = g + v \times (dose)^{n}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$v$ = slope
+
+$n$= power
+
+**Parameter Priors**
+
+$g = {m}_{0}$
+
+$v = {m}_{1} - {m}_{0}$
+
+$n \sim \ln(\log(1.6), 0.421)$
+
+:::
+
+:::{tab-item} Hill (additive)
+
+**Model Form**
+
+$$m\left(x|\theta\right) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$$
+
+**Parameters**
+
+$g$ = control response (intercept)
+
+$k$ = dose with half-maximal change (normalized)
+
+$n$= power
+
+$v$= maximum change
+
+**Parameter Priors**
+
+$g = {m}_{0}$ 
+
+$k \sim \ln(0,2)$ 
+
+$n \sim \ln(\log(1.6, 0.421)$
+
+$v = \left({m}_{1} - {m}_{0}\right) \cdot \left({k}^{n}+1\right)$
+:::
+
+:::{tab-item} Exponential 3
+
+**Model Form**
+
+$$m\left(x|\theta\right) = a \times e^{\pm (b \times dose)^{d}}$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b = {\brack\log\left(\frac{{m}_{1}}{{m}_{0}}\right)\rbrack}^{\frac{1}{c}}$ 
+
+$d \sim \ln(\log(1.6, 0.421)$
+
+**Notes**
+
+The sign in "$\pm b$" will change depending on
+the user-designated or auto-detected direction of change:
+
+-   \+ for responses increasing with dose
+
+-   \- for responses decreasing with dose
+
+#### Reference for Exponential models
+
+RIVM (National Institute for Public Health and the Environment
+(Netherlands)). ([RIVM,
+2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
+PROAST.
+:::
+
+:::{tab-item} Exponential 5
+
+**Model Form**
+
+$$m\left(x|\theta\right) = a \times (c - (c - 1) \times e^{- (b \times dose)^{d}})$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b = \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{0}-{m}_{1} \cdot \exp^\left({b}^{n}\right)}{{m}_{0}-{m}_{0} \cdot \exp^\left({b}^{n}\right)}$
+
+$d \sim \ln(\log(1.6, 0.421)$
+
+#### Reference for Exponential models
+
+RIVM (National Institute for Public Health and the Environment
+(Netherlands)). ([RIVM,
+2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
+PROAST.
+:::
+
+::::
+
+The dose-response functions, m(d), from EFSA and PROAST were 4-parameter multiplicative Hill, Inverse-Exponential, and Lognormal models (termed “canonical” models in Slob et al., 2025) and the Gamma, and linearized multistage (LMS)-two-stage  models. 
+
+::::{tab-set}
+:::{tab-item} Hill (multiplicative)
+
+**Model Form**
+
+$$m\left(x|\theta\right) = a \left\lbrack 1 + \left(c -1\right) \cdot \frac{{x}^{d}}{{b}^{d}+{x}^{d}} \right\rbrack$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{0}-{m}_{1}}{{m}_{0}} \cdot \left(b + 1\right) + 1$
+
+$d \sim \ln(\log(1.6, 0.421)$
+:::
+
+:::{tab-item} Inverse Exponential
+
+**Model Form**
+
+$$m\left(x|\theta\right) = a \left\lbrack 1 + \left(c-1\right) \cdot e^{\left(-b \cdot {x}^{-d}\right)} \right\rbrack$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{1}-{m}_{0} + {m}_{0} \cdot \exp^{-b}}{{m}_{0} \cdot e^{(-b)}}$
+
+$d \sim \ln(\log(1.6, 0.421)$
+:::
+
+:::{tab-item} Lognormal
+**Model Form**
+
+$$m\left(x|\theta\right) = a \left\lbrack 1 + \left(c-1\right) \cdot \Phi\left(\log(b) + d \cdot \log(x)\right) \right\rbrack$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{1}-{m}_{0} + {m}_{0} \cdot \Phi\left(\log(b)\right)}{{m}_{0} \cdot \Phi\left(\log(b)\right)}$
+
+$d \sim \ln(\log(1.6, 0.421)$
+
+:::
+
+:::{tab-item} Gamma
+**Model Form**
+
+$$m\left(x|\theta\right) = a \left\lbrack 1 + \left(c-1\right) \cdot pgamma(b \cdot x, d, 1) \right\rbrack$$
+
+where 
+
+$$pgamma\left(\beta \cdot x,\alpha,1 \right) = \int_{0}^{\beta x}{t^{\alpha - 1}\exp( - t)dt\ }$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{1}-{m}_{0}}{{m}_{0} \cdot pgamma(b,d,1)} + 1$
+
+$d \sim \ln(\log(1.6, 0.421)$
+
+:::
+
+:::{tab-item} LMS two-stage
+**Model Form**
+
+$$m\left(x|\theta\right) = a \left\lbrack 1 + \left(c-1\right) \cdot \left(1 - exp^{-b \cdot x - d \cdot {x}^{2}} \right) \right\rbrack$$
+
+**Parameters**
+
+$a$ = control response (intercept)
+
+$b$ = slope
+
+$c$ = asymptote term
+
+$d$= power
+
+**Parameter Priors**
+
+$a = {m}_{0}$ 
+
+$b \sim \ln(0,2)$ 
+
+$c = \frac{{m}_{1}-{m}_{0} \cdot \exp^{-b-d}}{{m}_{0}-{m}_{0} \cdot \exp^{-b-d}}$
+
+$d \sim \ln(\log(1.6, 0.421)$
+
+:::
+::::
+
+## Bayesian Parameter Estimation
+Markov chain Monte Carlo (MCMC) sampling is used to derive posterior distributions for the standard model parameters and BMDs. MCMC sampling is conducted by using a latent slice sampler in compiled the C++ bmdscore library.  The latent slice sampler is a more computationally efficient alternative to the Metropolis-Hastings algorithm and addresses the issues raised in other sampling algorithms (Li, 2022; Li & Walker, 2023). 
+
+The structure of the MCMC sampling is customizable in pybmds, but for BMDS Online and Desktop, 4 chains of 12,500 samples (1,250 burn-in) is used by default.  Convergence diagnostics for all analyses are calculated and provided to the user for consideration: 
+
+- The potential scale reduction statistic ($\hat{R}$) - EXPLANATION
+- Effective sample size (ESS), which estimates the number of independent samples from the posterior distribution that are equivalent to the total number of correlated MCMC samples
+
+A reasonable rule of thumb is that the chains can be considered to have converged when both R ̂ is below 1.1 and ESS greater than 100 per Markov chain. 
+
+## Bayesian Model Averaging
+
+The BMD is estimated from a cross-model/distribution posterior distribution formed by combining posterior samples from each model, weighted by their prior weight (usually equally distributed across the model suite) and posterior model probability. 
+
+For continuous data, there are a total of eight models that can be included in the model average.  
+
+:::{note}
+Although there are a total of nine Bayesian continuous models, the user must select wheter the additive or multiplicative Hill will be used in the model average.  Thus, the full model averaging suite of continuous models would be Power, Exponential 3, Exponential 5, Inverse Exponential, Lognormal, Gamma, LMS two-stage and either the additive Hill (BMDS) or multiplicative Hill (PROAST) models
+:::
+
+Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms.  So, for every model, all three distributional forms are included in the model average, except for the lognormal assumption for the Power and additive Hill models give that these two models are additive to background and can conceivably estimate negative responses.
+
+Therefore, for the full model averaging suite of continuous models, a total of 22 or 23 model/distribution combinations would be included, depending on whether the additive or multiplicative Hill model was included.
+
+So, suppose there are K = 23 model/distribution combinations are under consideration, For the ${k}^{th}$ model, ${M}_{k}$, let ${θ}_{k}$ denote its vector of model-specific parameters, and define the model-specific BMD as a function of these parameters, ${BMD}_{k}$. The model ${M}_{k}$ is associated with a likelihood function $\ell \left(Y|{M}_{k},{θ}_{k} \right)$, which describes the data-generating process. The cross-model/distribution posterior distribution for the BMD can be expressed as:
+
+$$p \left(BMD|Y \right) = \sum_{k = 1}^{K}{{w}_{k}p \left( {BMD}_{k}|Y,{M}_{k} \right)}$$
+
+where ${w}_{k}$ represents the normalized wieght for model ${M}_{k}$.

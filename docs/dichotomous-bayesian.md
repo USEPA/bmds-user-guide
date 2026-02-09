@@ -1,4 +1,4 @@
-# Bayesian Dichotomous Analysis, including Model Averaging
+# Dichotomous Endpoints - Bayesian Model Averaging Methods
 
 BMDS model averaging proceeds from the basis of Bayesian analyses, for
 which the parameters of the models under consideration are updated using
@@ -195,7 +195,7 @@ Bayesian modeling or Bayesian model averaging.
 
 From a Bayesian perspective, inference proceeds by defining a
 data-generating mechanism, given a model, $M$, and its parameters. For
-our purposes, $M$ would be one of the models listed in [**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models) that
+our purposes, $M$ would be one of the models listed in [**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models) that
 determines the probability of response. For the dichotomous models, the
 data-generating mechanism would be the assumption that the observations
 were obtained from binomial sampling, having the dose-dependent
@@ -205,11 +205,11 @@ values of the parameters in that model).
 We can then relate that to the likelihood, here denoted
 $\mathcal{l}(D|M)$, which shows explicitly that it is the likelihood of
 the data, $D$, conditional on the model. The functional form of the log
-of the likelihood is presented in [**Likelihood Function**](./dichotomous.md#likelihood-function).
+of the likelihood is presented in [**Likelihood Function**](./dichotomous-mle.md#likelihood-function).
 
 The set of Bayesian dichotomous models used in BMDS Online is identical to
 the set of models used for maximum-likelihood estimation (MLE)
-approaches ([**Dichotomous Response Models**](./dichotomous.md#dichotomous-response-models)). In the following, let $\theta$ be the vector of
+approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)). In the following, let $\theta$ be the vector of
 parameters that are required to define the any one of those models. So,
 for example, for the Weibull model $\theta = (g, \alpha, \beta)$. The additional
 consideration incorporated into the Bayesian approach is the
@@ -219,7 +219,7 @@ obtain a posterior distribution for $\theta$.
 
 From a Bayesian perspective, functions of $\theta$ also have posterior
 densities. So, using the equations (which express the BMD as function of
-the model parameters) summarized in [**Calculation of the BMD for Individual Dichotomous Models**](./dichotomous.md#calculation-of-the-bmd-for-the-individual-dichotomous-models), one can derive a posterior
+the model parameters) summarized in [**Calculation of the BMD for Individual Dichotomous Models**](./dichotomous-mle.md#calculation-of-the-bmd-for-the-individual-dichotomous-models), one can derive a posterior
 distribution for the BMD.
 
 BMDS summarizes the posterior for the BMD as follows. The BMD is equated

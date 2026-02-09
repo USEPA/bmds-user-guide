@@ -164,9 +164,9 @@ AIC differences), they can provide useful guidance in model selection.
 Model-type specific details on the AIC are discussed in the following
 sections:
 
--   [**AIC and Model Comparisons for Continuous Endpoints**](./continuous.md#aic-and-model-comparisons).
+-   [**AIC and Model Comparisons for Continuous Endpoints**](./continuous-mle.md#aic-and-model-comparisons).
 
--   [**AIC and Model Comparisons for Dichotomous Endpoints**](./dichotomous.md#aic-and-model-comparisons).
+-   [**AIC and Model Comparisons for Dichotomous Endpoints**](./dichotomous-mle.md#aic-and-model-comparisons).
 
 #### P-value
 
@@ -260,9 +260,9 @@ The results plot shows the dose-response curve estimated by the model.
 Error bar calculations for the data points differ slightly based on the
 endpoint:
 
--   [**For continuous endpoints**](./continuous.md#plot-and-error-bar-calculation).
+-   [**For continuous endpoints**](./continuous-mle.md#plot-and-error-bar-calculation).
 
--   [**For dichotomous endpoints**](./dichotomous.md#plot-and-error-bar-calculation).
+-   [**For dichotomous endpoints**](./dichotomous-mle.md#plot-and-error-bar-calculation).
 
 -   [**For nested endpoints**](./nested-dichotomous.md#plot-and-error-bar-calculation).
 

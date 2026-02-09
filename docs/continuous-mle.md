@@ -1,4 +1,4 @@
-# Continuous Endpoints
+# Continuous Endpoints - Maximum Likelihood Methods
 
 Continuous endpoints take on values that are real numbers (as opposed to
 integers, for example), measuring things that can vary continuously
