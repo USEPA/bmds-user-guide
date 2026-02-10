@@ -330,14 +330,14 @@ note the following:
     median of the distribution of responses as a function of dose. If we
     denote the median at dose d by $m(d)$, then it is always true for BMDS
     that $m(d) = f(d)$, where $f(d)$ is the dose-response function under
-    consideration (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+    consideration (see [**Individual Model Specifications**](#individual-model-specifications)).
 
 -   If the assumed data distribution is Normal, then it is also true
     that the mean at dose d, $μ(d)$, is equal to the median. Thus, it is
     common under the Normal assumption to describe the dose-response
     function as a model of the mean response, and to write $μ(d) = f(d)$,
     where $f(d)$ is again one of the dose-response functions described in
-    [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters).
+    (see [**Individual Model Specifications**](#individual-model-specifications)).
 
 When modeling continuous response data, the standard assumption for the
 BMDS continuous models is that the underlying distributions (one for
@@ -526,7 +526,7 @@ Likelihoods of Interest table.
 The number of parameters for each model excludes parameters that have
 values on one of the bounds set for their estimation (either bounds
 specified by the user or those inherent constraints associated with the
-model; see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+model; see (see [**Individual Model Specifications**](#individual-model-specifications)).
 
 :::{important} The likelihood is maximized given bounds on parameters.
 As a result, it is technically not guaranteed to be the universal MLE, but
@@ -782,7 +782,7 @@ group:
 Maximum likelihood approach results plot for continuous data.
 ```
 
-## Mathematical Details for Models for Continuous Endpoints in Simple Designs
+## Mathematical Details for Continuous MLE Models 
 
 Models in this section are for continuous endpoints, such as weight or
 enzyme activity measures, in simple experimental designs that do not
@@ -796,7 +796,7 @@ consideration of more details than do those for dichotomous endpoints in
 similar designs. This section presents the mathematical and statistical
 details that determine how estimation is accomplished in BMDS.
 
-### Continuous Dose-Response Models and Parameters
+### Individual Model Specifications
 
 The definitions of the continuous models are fully specified below. Note that $m(dose)$ is the median response for the dose
 level specified.
@@ -1016,7 +1016,7 @@ model is:
 $${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$$
 
 where $\alpha$ (\> 0) and $\rho$ are parameters estimated simultaneously
-with the parameters of the dose-response function (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+with the parameters of the dose-response function (see [**Individual Model Specifications**](#individual-model-specifications)).
 As in the model equations, $m\left( {dose}_{i} \right)$ is the predicted median
 (from the dose-response model under consideration) for the $i^{th}$ dose
 group.
@@ -1129,7 +1129,7 @@ selection.
 
 In BMDS, the number of estimated parameters includes only those that
 have not been estimated to equal a bounding value (either from the
-model-imposed constraints or user-imposed restrictions (see [**Continuous Dose-Response Models and Parameters**](#continuous-dose-response-models-and-parameters)).
+model-imposed constraints or user-imposed restrictions (see [**Individual Model Specifications**](#individual-model-specifications)).
 
 :::{note}
 This counting process may or may not be reasonable, depending

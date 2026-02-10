@@ -10,11 +10,17 @@ In the LOUD framework, dose-response models are reparametrized in terms of inter
 
 Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
 
+:::{note}
+At this time, EPA does not offer technical guidance on
+Bayesian modeling or Bayesian model averaging.
+:::
+
 ## LOUD Model Averaging - Continuous Endpoints
 
 In an animal toxicological experiment with $r$ doses $x_i, i=1…r$, let $Y={\left({y}_{i1},{y}_{i2},…,{y}_{in_i }\right)}^{'}$ represent ${n}_{i}$ observations at the ${i}^{th}$ dose. Here, we assume all observations are independent and share a common error distribution, either normal or lognormal, such that the central tendency changes as a smooth dose-response function m of dose. If ${y}_{i}$ are normally distributed, $m({x}_{i})$ is the mean response given ${x}_{i}$, and if ${y}_{i}$ are lognormally distributed, $m({x}_{i})$ is the median response given ${x}_{i}$.  Specifically, when dose levels are scaled as explained above, ${m}_{0}$ and ${m}_{1}$ refer to the observed means at the minimum and maximum dose levels, respectively.
 
-### Priors for ${m}_{0}$ and ${m}_{1}$
+(priors-for-m0-and-m1)=
+### Priors for m{sub}`0` and m{sub}`1`
 
 For the continuous LOUD framework, the true mean responses at the minimum and maximum doses, ${m}_{0}$ and ${m}_{1}$, were assigned priors that reflect both the structure of the data and the theoretical motivation from reference prior theory. In a Normal model with unknown mean and variance, the reference prior is $\pi(\mu,\sigma) ∝ 1/\sigma$, where $\pi$ denotes the joint reference prior to making inferences about $\mu$ (Bernardo, 1979, **ADD REF**). When this prior is combined with data, the marginal posterior distribution for $\mu$ follows a non-standardized Student-t form with $n-1$ degrees of freedom, reflecting both the uncertainty in the mean and the sampling variability in the variance: 
 
@@ -78,9 +84,13 @@ $${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{01}-1}{2},\frac{{n}_{01} \cdot 
 
 where ${s}_{\log, 01}$ is the overall observed log-scale variance across the ${x}_{0}$ and ${x}_{1}$ dose groups.
 
-## Individual Model Specifications
+## Mathematical Details for Bayesian Continuous Models
 
-The continuous dose-response functions and their prior distributions used in Bayesian parameter estimation are shown below.  One or two of each model's parameters can be expressed in terms of ${m}_{0}$ and ${m}_{1}$ and the priors for these parameters cna derived using the distributions for ${m}_{0}$ and ${m}_{1}$ listed [**above**](#priors-for--and).  For example, for the Power model, 
+BMDS contains nine Bayesian models for continuous endpoints as defined below.
+
+### Individual Model Specifications
+
+The continuous dose-response functions and their prior distributions used in Bayesian parameter estimation are shown below.  One or two of each model's parameters can be expressed in terms of ${m}_{0}$ and ${m}_{1}$ and the priors for these parameters cna derived using the distributions for ${m}_{0}$ and ${m}_{1}$ listed [**above**](#priors-for-m0-and-m1).  For example, for the Power model:
 
 $$m\left(x|\theta\right)= g + v \cdot {x}^{n}$$
 
@@ -96,10 +106,10 @@ $$\nu = {m}_{1} - {m}_{0}$$
 
 The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/).  For example, the power parameter prior for each model was chosen to reflect the assumption that large amounts of curvature are not expected.  Similar to the dichotomous models, the parameters that identify curvature were assigned separate priors because ${m}_{0}$ and ${m}_{1}$ do not provide information to identify the shape of the curve.  
 
-From the existing suite of MLE continuous models included in BMDS, Bayesian versions of the Power, Exponential-3, Exponential-5, and additive Hill models were devloped, as shown below. Bayesian versions of the polynomial and linear models were not developed as monotone restrictions on polynomials are difficult to enforce and non-monotone functions lead to difficulties when evaluating the BMD, such as the possibility of having two BMDs for the same BMR.
+From the existing suite of MLE continuous models included in BMDS, Bayesian versions of the Power, Exponential-3, Exponential-5, and additive Hill models were devloped, as shown below. Bayesian versions of the polynomial and linear models were not developed as monotone restrictions on polynomials are difficult to enforce and non-monotone functions lead to difficulties when evaluating the BMD, such as the possibility of having two BMDs for the same BMR. In addition to the existing BMDS continuous models, dose-response models from RIVM and EFSA were also developed.  These dose-response functions from [EFSA](https://hero.epa.gov/reference/12033104/) and [PROAST](https://hero.epa.gov/reference/4850042/) were the 4-parameter multiplicative Hill, Inverse-Exponential, and Lognormal models (termed “canonical” models in Slob et al., 2025 ADD REF) and the Gamma, and linearized multistage (LMS)-two-stage  models. 
 
 :::{note}
-Note that the term additive with respect to the Hill model connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see ADD REF), the background is treated multiplicatively.
+Note that, with respect to the Hill model, the term additive connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see [PROAST](https://hero.epa.gov/reference/4850042/)), the background is treated multiplicatively instead:  $m\left(x|\theta\right) = a \left\lbrack 1 + \left(c -1\right) \cdot \frac{{x}^{d}}{{b}^{d}+{x}^{d}} \right\rbrack$
 :::
 
 ::::{tab-set}
@@ -228,11 +238,6 @@ RIVM (National Institute for Public Health and the Environment
 PROAST.
 :::
 
-::::
-
-The dose-response functions, m(d), from EFSA and PROAST were 4-parameter multiplicative Hill, Inverse-Exponential, and Lognormal models (termed “canonical” models in Slob et al., 2025) and the Gamma, and linearized multistage (LMS)-two-stage  models. 
-
-::::{tab-set}
 :::{tab-item} Hill (multiplicative)
 
 **Model Form**
@@ -373,17 +378,17 @@ $d \sim \ln(\log(1.6, 0.421)$
 :::
 ::::
 
-## Bayesian Parameter Estimation
-Markov chain Monte Carlo (MCMC) sampling is used to derive posterior distributions for the standard model parameters and BMDs. MCMC sampling is conducted by using a latent slice sampler in compiled the C++ bmdscore library.  The latent slice sampler is a more computationally efficient alternative to the Metropolis-Hastings algorithm and addresses the issues raised in other sampling algorithms (Li, 2022; Li & Walker, 2023). 
+### Bayesian Parameter Estimation
+Markov chain Monte Carlo (MCMC) sampling is used to derive posterior distributions for the standard model parameters and BMDs. MCMC sampling is conducted by using a latent slice sampler in compiled the C++ bmdscore library.  The latent slice sampler is a more computationally efficient alternative to the Metropolis-Hastings algorithm and addresses the issues raised in other sampling algorithms (Li, 2022; Li & Walker, 2023 ADD REFS). 
 
 The structure of the MCMC sampling is customizable in pybmds, but for BMDS Online and Desktop, 4 chains of 12,500 samples (1,250 burn-in) is used by default.  Convergence diagnostics for all analyses are calculated and provided to the user for consideration: 
 
-- The potential scale reduction statistic ($\hat{R}$) - EXPLANATION
+- The potential scale reduction statistic ($\hat{R}$), which is the ratio of the average variation of samples within each Markov chain to the variance of samples across all chains.  When chains have reached equilibrium (i.e., have converged), the $\hat{R}$ statistic will equal 1; when chains have not converged the $\hat{R}$ statistic will be greater than 1
 - Effective sample size (ESS), which estimates the number of independent samples from the posterior distribution that are equivalent to the total number of correlated MCMC samples
 
-A reasonable rule of thumb is that the chains can be considered to have converged when both R ̂ is below 1.1 and ESS greater than 100 per Markov chain. 
+A reasonable rule of thumb is that the chains can be considered to have converged when both $\hat{R}$ is below 1.1 and ESS is greater than 100 per Markov chain. 
 
-## Bayesian Model Averaging
+### Bayesian Model Averaging
 
 The BMD is estimated from a cross-model/distribution posterior distribution formed by combining posterior samples from each model, weighted by their prior weight (usually equally distributed across the model suite) and posterior model probability. 
 
@@ -393,7 +398,7 @@ For continuous data, there are a total of eight models that can be included in t
 Although there are a total of nine Bayesian continuous models, the user must select wheter the additive or multiplicative Hill will be used in the model average.  Thus, the full model averaging suite of continuous models would be Power, Exponential 3, Exponential 5, Inverse Exponential, Lognormal, Gamma, LMS two-stage and either the additive Hill (BMDS) or multiplicative Hill (PROAST) models
 :::
 
-Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms.  So, for every model, all three distributional forms are included in the model average, except for the lognormal assumption for the Power and additive Hill models give that these two models are additive to background and can conceivably estimate negative responses.
+Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms.  So, for every model, all three distributional forms are included in the model average, except for the lognormal assumption for the Power and additive Hill models given that these two models are additive to background and can conceivably estimate negative responses.
 
 Therefore, for the full model averaging suite of continuous models, a total of 22 or 23 model/distribution combinations would be included, depending on whether the additive or multiplicative Hill model was included.
 
@@ -401,4 +406,42 @@ So, suppose there are K = 23 model/distribution combinations are under considera
 
 $$p \left(BMD|Y \right) = \sum_{k = 1}^{K}{{w}_{k}p \left( {BMD}_{k}|Y,{M}_{k} \right)}$$
 
-where ${w}_{k}$ represents the normalized wieght for model ${M}_{k}$.
+where ${w}_{k}$ represents the normalized weight for model ${M}_{k}$.
+
+The model weights used for generating the model averaged posterior can be calculated in one of two ways in BMDS:
+
+1. The Watanabe-Akaike Information Criterion (WAIC), which computes a log pointwise posterior predictive density and adds a correction for the effective number of parameters to adjust for overfitting (Gelman et al. 2014, ADD REF).  The WAIC is asymptotically equivalent to leave-one-out cross-validation (LOO) (Vehtari, et al. 2017, ADD REF). For model averaging, the WAIC weights are computed by normalizing the inverse of the WAIC for each model. If ${WAIC}_{k}$ is the WAIC for model ${M}_{k}$, the WAIC weight for ${M}_{k}$, ${w}_{k}$, is given by:
+
+$${w}_{k} = \frac{e^{\left(-\frac{1}{2}{WAIC}_{k}\right)}}{\sum_{k=1}^{K}e^{\left(-\frac{1}{2}{WAIC}_{k}\right)}}$$
+
+2. Posterior predictive model probabilities, $P\left({M}_{k},{\theta}_{k}|Y\right)$, determined by Bayes' theorum:
+
+$$P\left({M}_{k},{\theta}_{k}|Y\right) = \frac{f\left({M}_{k}\right)\int{L\left(Y|{M}_{k},{\theta}_{k}\right)\pi\left({M}_{k},{\theta}_{k}\right)d{\theta}_{k}}}{\sum_{i=1}^{K}f\left({M}_{i}\right)\int{L\left(Y|{M}_{i},{\theta}_{i}\right)\pi\left({M}_{i},{\theta}_{i}\right)d{\theta}_{i}}}$$
+
+Estimating the posterior model probabilities requires numerical approximation techniques and BMDS uses bridge sampling to estimate these quantities ([Fang et al, 2015](https://hero.epa.gov/reference/4141312/)).
+
+The WAIC approach to estimating model weights is used by default in BMDS as it consistently provides stable BMD estimation for continuous endpoints.  For continuous endpoints, the observations from the ${d}_{0}$ and ${d}_{1}$ groups are excluded from the likelihood when forming the posterior to avoid double-counting, as these same data are used to update the prior hyperparameters.
+
+### Summary Level Data vs. Individual Responses
+
+The LOUD approach can be applied to summary level statistics (i.e., reported means and standard deviations) as well as to individual response data (i.e., a series of response values for each test subject, from which means and standard deviations are derived).
+
+When individual response data are reported and used for dose-response modeling, the summary statistics are calculated by the software and used for statistical calculations.  When summary statistics are used, given that they are most often generated under the normal distribution assumption (i.e., are arithmetic means and standard deviations), the data must be transformed to the log-scale for the lognormal variance model.  BMDS uses the method employed in [ToxicR](https://hero.epa.gov/reference/12902051/) to do so:
+
+$${\overline{y}_{i}}^{'} = \log\left(\overline{y}_{i}\right) - 0.5 \cdot \left\lbrack{\left(\frac{{s}_{i}}{\overline{y}_{i}}\right)}^{2}+1\right\rbrack$$
+
+$${s}_{i}^{'} = \sqrt{ \log\left\lbrack{\left(\frac{{s}_{i}}{\overline{y}_{i}}\right)}^{2}+1\right\rbrack}$$
+
+where $\overline{y}_{i}$ and ${s}_{i}$ are the arithmetic mean and standard deviation, respectively ([Crump, 1995](https://hero.epa.gov/reference/2258/); [Slob, 2002](https://hero.epa.gov/reference/24962/)). 
+
+:::{important}
+Extensive simulation testing of the continuous LOUD model averaging methods indicated that almost identical results were obtained when using either summary data or individual data.
+:::
+
+### BMD and BMDL estimation
+
+Once the model-averaged posterior density of the BMD is estimated, the model-averaged BMD is simply the median of the posterior distribution and the 5$^{th}$ and 95$^{th}$ percentiles of the posterior distribution are used as the BMDL and BMDU, respectively.
+
+## Specific Continuous Bayesian Model Averaging Results
+
+**ADD SCREENSHOTS AND DESCRIPTIONS WHEN UI IS READY**

@@ -1,5 +1,7 @@
 # References
 
+***UPDATE REFERENCES***
+
 Akaike, H. (1973). Information theory and an extension of the maximum
 likelihood principle. In BN Petrov; F Csaki (Eds.), 2nd International
 Symposium on Information Theory (pp. 267-281). Budapest, Hungary:
