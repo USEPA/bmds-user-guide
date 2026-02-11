@@ -63,7 +63,7 @@ BMDS Online has its own set of constraints on sharing results via URL; for more 
 
 pybmds is a Python package that is the underlying execution engine for BMDS Desktop and BMDS Online. It's also a way for users to run BMDS in a scripting environment and is designed for users familiar with basic scripting in languages like R or Python.
 
-Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface ({numref}`f5`). The pybmds command line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [**Bayesian model averaging**](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging), even override the default priors for parameter estimation.
+Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface ({numref}`f5`). The pybmds command line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [**Bayesian model averaging**](./dichotomous-bayesian.md#Dichotomous Endpoints - Bayesian Model Averaging Methods), even override the default priors for parameter estimation.
 
 ```{figure} _static/img/image11.png
 :alt: pybmds running in a terminal window
