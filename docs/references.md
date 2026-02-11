@@ -8,6 +8,10 @@ Symposium on Information Theory (pp. 267-281). Budapest, Hungary:
 Akadémiai Kiadó.
 [doi: 10.1007/978-1-4612-1694-0_15](http://dx.doi.org/10.1007/978-1-4612-1694-0_15) [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3841190)]{.badge}
 
+Bernardo, J. M. (1979). Reference Posterior Distributions for Bayesian Inference. Journal of the Royal Statistical Society Series B: Statistical Methodology, 41(2), 113–128. [doi: 10.1111/j.2517-6161.1979.tb01066.x](https://academic.oup.com/jrsssb/article/41/2/113/7027630) [[HERO]()].{badge}
+
+Bernardo, J. M. (1998). Bayesian reference analysis. A Postgraduate Tutorial Course, Universitat de Valencia, Spain. [[HERO]()].{badge}
+
 Carr, GJ; Porter, CJ. (1991). An evaluation of the Rai and Van Ryzin
 Dose‐Response Model in teratology. Risk Anal 11: 111-120.
 [doi: 10.1111/j.1539-6924.1991.tb00581.x](https://onlinelibrary.wiley.com/doi/10.1111/j.1539-6924.1991.tb00581.x) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/2038612/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4829617)]{.badge}
@@ -22,6 +26,8 @@ Biological and statistical criteria (pp. 187-203). Boca Raton, FL: CRC
 Press, Inc.
 [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3198)]{.badge}
 
+Crump, Kenny S. (1995). Calculation of benchmark doses from continuous data. Risk Analysis 15.1: 79-89. [doi: 10.1111/j.1539-6924.1995.tb00095.x](https://doi.org/10.1111/j.1539-6924.1995.tb00095.x) [[HERO](https://hero.epa.gov/reference/2258/)]{.badge}
+
 Fleiss, JL; Levin, B; Paik, MC. (2003). Statistical methods for rates
 and proportions. Hoboken, NJ: John Wiley & Sons, Inc.
 [doi: 10.1002/0471445428](http://dx.doi.org/10.1002/0471445428) [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4829616)]{.badge}
@@ -33,6 +39,12 @@ Statistics 17: 38-51.
 
 Fox JF, Hogan KA, Davis A. Dose-Response Modeling with Summary Data from Developmental Toxicity Studies. Risk Anal. 2017 May;37(5):905-917.
 [doi: 10.1111/risa.12667](http://dx.doi.org/10.1111/risa.12667) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/27567129/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311)]{.badge}
+
+Gelman, A., Hwang, J., & Vehtari, A. (2014). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24, 997–1016. [doi: 10.1007/s11222-013-9416-2](https://doi.org/10.1007/s11222-013-9416-2) [[HERO]()]{.badge}
+
+Hinne, M., Gronau, Q. F., van den Bergh, D., & Wagenmakers, E.-J. (2020). A conceptual introduction to Bayesian model averaging. Advances in Methods and Practices in Psychological Science, 3(2), 200–215. [doi: 10.1177/2515245919898657](https://doi.org/10.1177/2515245919898657) [[HERO]()]{.badge}
+
+Jacketti et al. 2026 LOUD methods.
 
 Jeffreys, H. (1998). The theory of probability. Oxford, United Kingdom:
 Oxford University Press.
@@ -51,6 +63,10 @@ Kupper, LL; Poetier, C; Hogan, MD; Yamamoto, E. (1986). The impact of
 litter effects on dose-response modeling in teratology. Biometrics 42:
 85-98.
 [doi: 10.2307/2531245](http://dx.doi.org/10.2307/2531245) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3719065/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3252)]{.badge}
+
+Li, Y. (2022). Latent Slice Sampling. The University of Texas at Austin. [doi: 10.26153/tsw/42321](http://dx.doi.org/10.26153/tsw/42321) [[HERO]()]{.badge}
+
+Li, Y., & Walker, S. G. (2023). A latent slice sampling algorithm. Computational Statistics & Data Analysis, 179, 107652. [doi: 10.1016/j.csda.2022.107652](https://doi.org/10.1016/j.csda.2022.107652) [[HERO]()]{.badge}
 
 Nitcheva, DK; Piegorsch, WW; West, RW. (2007). On use of the multistage
 dose-response model for assessing laboratory animal carcinogenicity.
@@ -75,6 +91,12 @@ quantal responses. Biometrics 41: 1-9.
 RIVM (National Institute for Public Health and the Environment
 (Netherlands)). (2018). PROAST. Retrieved from [PROAST](https://www.rivm.nl/en/Documents_and_publications/Scientific/Models/PROAST)
 
+Slob, W. (2002). Dose-response modeling of continuous endpoints. Toxicological sciences 66.2: 298-312. [doi: 10.1093/toxsci/66.2.298](https://doi.org/10.1093/toxsci/66.2.298) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/11896297/)]{.badge} [[HERO](https://heronetnext.epa.gov/reference/24962/)]{.badge}
+
+Slob, W., Bakker, M. I., Bokkers, B. G. H., Chen, G., Chiu, W. A., Mennes, W., Nicolaie, M. A., Setzer, R. W., & White, P. A. (2025). The use of canonical dose–response models for benchmark dose analysis of continuous toxicological data. Critical Reviews in Toxicology, 0(0), 1–25. [doi: 10.1080/10408444.2025.2464067](https://doi.org/10.1080/10408444.2025.2464067) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/40202288/)]{.badge} [[HERO]()]{.badge}
+
+Tiao, G. C., & Box, G. E. P. (1973). Some comments on “Bayes” estimators. The American Statistician, 27(1), 12–14. [doi: 10.2307/2682897](https://doi.org/10.2307/2682897) [[HERO]()]{.badge}
+
 U.S. EPA (U.S. Environmental Protection Agency). (2012). [Benchmark dose
 technical guidance](https://www.epa.gov/risk/benchmark-dose-technical-guidance). (EPA/100/R-12/001). Washington, DC: U.S. Environmental Protection Agency, Risk Assessment Forum.
 [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/1239433)]{.badge}
@@ -83,6 +105,8 @@ U.S.EPA (U.S. Environmental Protection Agency). (2005). [Guidelines for
 carcinogen risk assessment](https://www.epa.gov/sites/production/files/2013-09/documents/cancer_guidelines_final_3-25-05.pdf). (EPA/630/P-03/001B). Washington, DC: U.S.
 Environmental Protection Agency, Risk Assessment Forum.
 [[HERO](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=6324329)]{.badge}
+
+Vehtari, A., Gelman, A., & Gabry, J. (2017). Practical Bayesian model evaluation using leave-one-out cross-validation and WAIC. Statistics and Computing, 27(5), 1413–1432. [doi: 10.1007/s11222-016-9696-4](https://doi.org/10.1007/s11222-016-9696-4) [[HERO]()]{.badge}
 
 Williams D. A. (1988). Estimation bias using the beta-binomial
 distribution in teratology. Biometrics, 44(1), 305--309.

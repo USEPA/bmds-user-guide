@@ -10,7 +10,7 @@ In the LOUD framework, dose-response models are reparametrized in terms of inter
 
 Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
 
-:::{note}
+:::{important}
 At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
 :::
@@ -402,7 +402,7 @@ Additionally, the Bayesian model averaging performed by BMDS considers not only 
 
 Therefore, for the full model averaging suite of continuous models, a total of 22 or 23 model/distribution combinations would be included, depending on whether the additive or multiplicative Hill model was included.
 
-So, suppose there are K = 23 model/distribution combinations are under consideration, For the ${k}^{th}$ model, ${M}_{k}$, let ${θ}_{k}$ denote its vector of model-specific parameters, and define the model-specific BMD as a function of these parameters, ${BMD}_{k}$. The model ${M}_{k}$ is associated with a likelihood function $\ell \left(Y|{M}_{k},{θ}_{k} \right)$, which describes the data-generating process. The cross-model/distribution posterior distribution for the BMD can be expressed as:
+So, suppose there are K = 23 model/distribution combinations are under consideration, for the ${k}^{th}$ model, ${M}_{k}$, let ${θ}_{k}$ denote its vector of model-specific parameters, and define the model-specific BMD as a function of these parameters, ${BMD}_{k}$. The model ${M}_{k}$ is associated with a likelihood function $\ell \left(Y|{M}_{k},{θ}_{k} \right)$, which describes the data-generating process. The cross-model/distribution posterior distribution for the BMD can be expressed as:
 
 $$p \left(BMD|Y \right) = \sum_{k = 1}^{K}{{w}_{k}p \left( {BMD}_{k}|Y,{M}_{k} \right)}$$
 
