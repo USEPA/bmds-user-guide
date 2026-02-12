@@ -2,7 +2,7 @@
 
 ## Gamma model fails with BMR = 0.05 extra risk
 
-Occassionally, when modeling dichotomous data with a shallow dose-response and a BMR = 0.05 extra risk, the Gamma model will fail to execute. In such cases, BMDS will not properly execute and no results will be returned. This is due to a failure in the model optimization routines in the C++ gsl library.
+Occassionally, when modeling dichotomous data with a shallow dose-response and a BMR = 0.05 extra risk, the MLE Gamma model will fail to execute. In such cases, BMDS will not properly execute and no results will be returned. This is due to a failure in the model optimization routines in the C++ gsl library.
   
 ```{figure} _static/img/image107.png
 :alt: Example of a shallow dose response relationship

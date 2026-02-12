@@ -34,14 +34,14 @@ Models not labeled as Bayesian are, by default, MLE.
 Specifics on the MLE model equations are presented in the following
 sections:
 
--   [**Mathematical Details for Models for Continuous
-    Endpoints in Simple Designs**](./continuous.md#mathematical-details-for-models-for-continuous-endpoints-in-simple-designs)
+-   [**Mathematical Details for Continuous MLE Models**](./continuous-mle.md#mathematical-details-for-continuous-mle-models)
 
--   [**Mathematical Details for Models for Dichotomous
-    Endpoints in Simple Designs**](./dichotomous.md#mathematical-details-for-models-for-dichotomous-endpoints-in-simple-designs)
+-   [**Mathematical Details for for Dichotomous MLE Models**](./dichotomous-mle.md#mathematical-details-for-dichotomous-mle-models)
+    
+-   [**Mathematical Details for Nested Dichotomous Endpoints**](./nested-dichotomous.md#mathematical-details-for-nested-dichotomous-mle-models)
 
--   [**Mathematical Details for Models for Nested
-    Dichotomous Endpoints**](./nested-dichotomous.md#mathematical-details-for-models-for-nested-dichotomous-endpoints)
+To see how model parameter estimates are reported in the BMDS results,
+refer to [**Model Parameters**](./result-output-mle-bayesian.md#model-parameters-table-all-endpoints).
 
 ## Bayesian
 
@@ -74,13 +74,23 @@ At this time, EPA does not offer technical guidance on
 Bayesian modeling or Bayesian model averaging.
 :::
 
-To see a full list of Bayesian model priors and contraints, refer to [**Bayesian Dichotomous Models and their Respective Parameter Priors**](./bayesian-dichotomous.md#bayesian-dichotomous-models-and-their-respective-parameter-priors).
+Specifics on the Bayesian model equations and parameter priors are presented in the following
+sections:
 
-To see how model parameter estimates are reported in the BMDS results,
-refer to [**Model Parameters**](./result-output-mle.md#model-parameters-table-all-endpoints).
+-   [**Mathematical Details for Bayesian Continuous Models**](./continuous-bayesian.md#mathematical-details-for-bayesian-continuous-models)
 
-Bayesian analysis is described in more detail in [**Bayesian
-Dichotomous Analysis, including Model Averaging**](./bayesian-dichotomous.md#bayesian-dichotomous-analysis-including-model-averaging).
+-   [**Mathematical Details for LOUD Bayesian Dichotomous Models**](./dichotomous-bayesian.md#mathematical-details-for-loud-bayesian-dichotomous-models)
+
+-   [**Mathematical Details for ToxicR Bayesian Dichotomous Models**](./dichotomous-bayesian.md#mathematical-details-for-toxicr-bayesian-dichotomous-models)
+
+
+The methods used for Bayesian model averaging are described in more detail in the following sections: 
+
+-   [**LOUD Model Averaging - Continuous Endpoints**](./continuous-bayesian.md#loud-model-averaging---continuous-endpoints)
+
+-   [**LOUD Model Averaging - Dichotomous Endpoints**](./dichotomous-bayesian.md#loud-model-averaging---dichotomous-endpoints)
+
+-   [**ToxicR Model Averaging Dichotomous**](./dichotomous-bayesian.md#toxicr-model-averaging---dichotomous-endpoints)
 
 ## Optimization Algorithms Used in BMDS
 

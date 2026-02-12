@@ -25,7 +25,7 @@ including the Risk Assessment Forum's (RAF) [Benchmark Dose Technical Guidance D
    bmds
    bmds-online
    modeling-methods
-   result-output-mle
+   result-output-mle-bayesian
    model-recommendation
    continuous-mle
    continuous-bayesian

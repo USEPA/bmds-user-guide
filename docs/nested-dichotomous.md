@@ -391,8 +391,7 @@ and expected number of responders (i.e., $Expected\ number\ of\ responders = Est
 Partial capture of the Litter Data table.
 ```
 
-## Mathematical Details for Models for Nested Dichotomous Endpoints
-
+## Mathematical Details for Nested Dichotomous MLE Models
 The models that BMDS makes available for nested data are the Logistic
 Nested and NCTR models (see below). The user who is interested in
 the Rai and van Ryzin model is advised to [download

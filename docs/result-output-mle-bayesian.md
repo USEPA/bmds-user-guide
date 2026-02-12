@@ -1,7 +1,7 @@
-# Results Output Common to MLE Models
+# Results Output Common to MLE and Bayesian Models
 
 BMDS results provide the user with goodness-of-fit criteria and model
-results to aid in determining the appropriateness of the Model and
+results for MLE models to aid in determining the appropriateness of the Model and
 Option Set to the benchmark dose derivation.
 
 BMDS Online displays summary results for the analysis for the Model and

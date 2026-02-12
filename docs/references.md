@@ -8,7 +8,7 @@ Symposium on Information Theory (pp. 267-281). Budapest, Hungary:
 Akadémiai Kiadó.
 [doi: 10.1007/978-1-4612-1694-0_15](http://dx.doi.org/10.1007/978-1-4612-1694-0_15) [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3841190)]{.badge}
 
-Bernardo, J. M. (1979). Reference Posterior Distributions for Bayesian Inference. Journal of the Royal Statistical Society Series B: Statistical Methodology, 41(2), 113–128. [doi: 10.1111/j.2517-6161.1979.tb01066.x](https://academic.oup.com/jrsssb/article/41/2/113/7027630) [[HERO]()].{badge}
+Bernardo, J. M. (1979). Reference Posterior Distributions for Bayesian Inference. Journal of the Royal Statistical Society Series B: Statistical Methodology, 41(2), 113–128. [doi: 10.1111/j.2517-6161.1979.tb01066.x](https://academic.oup.com/jrsssb/article/41/2/113/7027630) [[HERO](https://hero.epa.gov/reference/13243399/)].{badge}
 
 Bernardo, J. M. (1998). Bayesian reference analysis. A Postgraduate Tutorial Course, Universitat de Valencia, Spain. [[HERO]()].{badge}
 
@@ -40,9 +40,9 @@ Statistics 17: 38-51.
 Fox JF, Hogan KA, Davis A. Dose-Response Modeling with Summary Data from Developmental Toxicity Studies. Risk Anal. 2017 May;37(5):905-917.
 [doi: 10.1111/risa.12667](http://dx.doi.org/10.1111/risa.12667) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/27567129/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311)]{.badge}
 
-Gelman, A., Hwang, J., & Vehtari, A. (2014). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24, 997–1016. [doi: 10.1007/s11222-013-9416-2](https://doi.org/10.1007/s11222-013-9416-2) [[HERO]()]{.badge}
+Gelman, A., Hwang, J., & Vehtari, A. (2013). Understanding predictive information criteria for Bayesian models. Statistics and Computing, 24, 997–1016. [doi: 10.1007/s11222-013-9416-2](https://doi.org/10.1007/s11222-013-9416-2) [[HERO](https://hero.epa.gov/reference/13243402/)]{.badge}
 
-Hinne, M., Gronau, Q. F., van den Bergh, D., & Wagenmakers, E.-J. (2020). A conceptual introduction to Bayesian model averaging. Advances in Methods and Practices in Psychological Science, 3(2), 200–215. [doi: 10.1177/2515245919898657](https://doi.org/10.1177/2515245919898657) [[HERO]()]{.badge}
+Hinne, M., Gronau, Q. F., van den Bergh, D., & Wagenmakers, E.-J. (2020). A conceptual introduction to Bayesian model averaging. Advances in Methods and Practices in Psychological Science, 3(2), 200–215. [doi: 10.1177/2515245919898657](https://doi.org/10.1177/2515245919898657) [[HERO](https://hero.epa.gov/reference/13243400/)]{.badge}
 
 Jacketti et al. 2026 LOUD methods.
 
@@ -66,7 +66,7 @@ litter effects on dose-response modeling in teratology. Biometrics 42:
 
 Li, Y. (2022). Latent Slice Sampling. The University of Texas at Austin. [doi: 10.26153/tsw/42321](http://dx.doi.org/10.26153/tsw/42321) [[HERO]()]{.badge}
 
-Li, Y., & Walker, S. G. (2023). A latent slice sampling algorithm. Computational Statistics & Data Analysis, 179, 107652. [doi: 10.1016/j.csda.2022.107652](https://doi.org/10.1016/j.csda.2022.107652) [[HERO]()]{.badge}
+Li, Y., & Walker, S. G. (2023). A latent slice sampling algorithm. Computational Statistics & Data Analysis, 179, 107652. [doi: 10.1016/j.csda.2022.107652](https://doi.org/10.1016/j.csda.2022.107652) [[HERO](https://hero.epa.gov/reference/13243405/)]{.badge}
 
 Nitcheva, DK; Piegorsch, WW; West, RW. (2007). On use of the multistage
 dose-response model for assessing laboratory animal carcinogenicity.
@@ -95,7 +95,7 @@ Slob, W. (2002). Dose-response modeling of continuous endpoints. Toxicological s
 
 Slob, W., Bakker, M. I., Bokkers, B. G. H., Chen, G., Chiu, W. A., Mennes, W., Nicolaie, M. A., Setzer, R. W., & White, P. A. (2025). The use of canonical dose–response models for benchmark dose analysis of continuous toxicological data. Critical Reviews in Toxicology, 0(0), 1–25. [doi: 10.1080/10408444.2025.2464067](https://doi.org/10.1080/10408444.2025.2464067) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/40202288/)]{.badge} [[HERO]()]{.badge}
 
-Tiao, G. C., & Box, G. E. P. (1973). Some comments on “Bayes” estimators. The American Statistician, 27(1), 12–14. [doi: 10.2307/2682897](https://doi.org/10.2307/2682897) [[HERO]()]{.badge}
+Tiao, G. C., & Box, G. E. P. (1973). Some comments on “Bayes” estimators. The American Statistician, 27(1), 12–14. [doi: 10.2307/2682897](https://doi.org/10.2307/2682897) [[HERO](https://hero.epa.gov/reference/13243403/)]{.badge}
 
 U.S. EPA (U.S. Environmental Protection Agency). (2012). [Benchmark dose
 technical guidance](https://www.epa.gov/risk/benchmark-dose-technical-guidance). (EPA/100/R-12/001). Washington, DC: U.S. Environmental Protection Agency, Risk Assessment Forum.
@@ -106,7 +106,7 @@ carcinogen risk assessment](https://www.epa.gov/sites/production/files/2013-09/d
 Environmental Protection Agency, Risk Assessment Forum.
 [[HERO](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=6324329)]{.badge}
 
-Vehtari, A., Gelman, A., & Gabry, J. (2017). Practical Bayesian model evaluation using leave-one-out cross-validation and WAIC. Statistics and Computing, 27(5), 1413–1432. [doi: 10.1007/s11222-016-9696-4](https://doi.org/10.1007/s11222-016-9696-4) [[HERO]()]{.badge}
+Vehtari, A., Gelman, A., & Gabry, J. (2017). Practical Bayesian model evaluation using leave-one-out cross-validation and WAIC. Statistics and Computing, 27(5), 1413–1432. [doi: 10.1007/s11222-016-9696-4](https://doi.org/10.1007/s11222-016-9696-4) [[HERO](https://hero.epa.gov/reference/13243404/)]{.badge}
 
 Williams D. A. (1988). Estimation bias using the beta-binomial
 distribution in teratology. Biometrics, 44(1), 305--309.

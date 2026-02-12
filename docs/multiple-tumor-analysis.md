@@ -486,7 +486,7 @@ analyses.
 
 ## Option Set
 
-The Multitumor options are the same as for the [**Dichotomous option sets**](./dichotomous.md#option-sets).
+The Multitumor options are the same as for the [**Dichotomous option sets**](./dichotomous-mle.md#option-sets).
 
 ### Risk Type
 
@@ -540,7 +540,7 @@ desired dose-response region. If the user wants to try a different
 Multistage degree, they can re-run the analysis using a
 specified degree instead of auto-select.
 
-For more information, refer to [**Specific Dichotomous Results**](./dichotomous.md#specific-dichotomous-results).
+For more information, refer to [**Specific Dichotomous Results**](./dichotomous-mle.md#specific-dichotomous-results).
 
 ### Cancer Slope Factor
 

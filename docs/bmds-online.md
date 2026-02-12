@@ -397,7 +397,7 @@ draw attention to trends or anomalies that may need correction.
 Dataset and plot.
 ```
 
-Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [**Graphs/Plots All Data**](./result-output-mle.md#graphsplots-all-endpoints)).
+Hover the cursor over a data point to see the observed incidence (calculated from the entered data) and the confidence interval (calculated using endpoint-specific methods; see [**Graphs/Plots All Data**](./result-output-mle-bayesian.md#graphsplots-all-endpoints)).
 
 ```{figure} _static/img/image34.png
 :alt: Highlight box around a pointer hovering over a plot point, with data values displayed

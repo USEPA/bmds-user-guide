@@ -64,14 +64,14 @@ endpoints will be added to a future release.)
 
 The key features of those response (endpoint) types are as follows:
 
--   [**Continuous Endpoints**](./continuous.md): the response is measured on a continuous
+-   [**Continuous Endpoints**](./continuous-mle.md): the response is measured on a continuous
     scale, so its valid values are real numbers (often restricted to
     positive values, but not always). Organ weight, body weight, and
     concentration levels of biological markers are all
     examples of continuous endpoints whose values might be affected by
     exposure to the compound under consideration.
 
--   [**Dichotomous Endpoints**](./dichotomous.md): the response here is the presence or
+-   [**Dichotomous Endpoints**](./dichotomous-mle.md): the response here is the presence or
     absence of a disease state or other "counter" of system malfunction.
     In this case, each experimental unit will either have the response
     or not. Dichotomous dose-response models predict the proportion of
@@ -171,13 +171,11 @@ released in April 2000. Since that time, BMDS has been transformed from
 a standalone Windows application to an Excel-based application in 2018,
 and then to a browser-based web application in 2022.  Python-based BMDS Desktop and pybmds were released in 2024.
 
-The 2018 release of BMDS 3.0 included Bayesian versions of all
-maximum-likelihood estimation (MLE) dichotomous models, and [**Bayesian
-model averaging**](./bayesian-dichotomous.md) using all or weighted dichotomous models.
+The 2018 release of BMDS 3.0 included Bayesian versions of all maximum-likelihood estimation (MLE) dichotomous models, and [**ToxicR Bayesian model averaging**](./dichotomous-bayesian.md#toxicr-model-averaging---dichotomous-endpoints).
 
-The [BMDS application
-history](https://www.epa.gov/bmds/about-benchmark-dose-software-bmds#history) is
-documented on the BMDS website.
+The 2026 release of pybmds and bmds-ui 26.1 included LOUD Bayesian model averaging for [**dichotomous**](./dichotomous-bayesian.md#loud-model-averaging---dichotomous-endpoints) and [**continuous**](./continuous-bayesian.md#continuous-endpoints---bayesian-model-averaging-methods) endpoints.
+
+The full [BMDS application history](https://www.epa.gov/bmds/about-benchmark-dose-software-bmds#history) is documented on the BMDS website.
 
 ## What's New in BMDS
 
@@ -266,7 +264,7 @@ Online, BMDS Desktop, and pybmds:
 
 -   Addition of the NCTR nested dichotomous model for developmental toxicity data (25.1 release)
 
--   Addition of the [**Rao-Scott transformation tool**](./dichotomous.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
+-   Addition of the [**Rao-Scott transformation tool**](./dichotomous-mle.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
 
 -   Ability to clone an analysis after clicking a [**Read-only link**](./bmds-online.md#share-menu) (25.1 release)
 
