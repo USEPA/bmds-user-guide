@@ -54,8 +54,7 @@ which produces heavy tails near 0 and 1 and approximate the marginal $\text{Beta
 
 ### Mathematical Details for LOUD Bayesian Dichotomous Models
 
-In BMDS, the set of Bayesian dichotomous models used in LOUD model averaging is identical to the set of models used for maximum-likelihood estimation (MLE)
-approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and ToxicR model averaging ([**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr)). 
+In BMDS, the set of Bayesian dichotomous models used in LOUD model averaging is identical to the set of models used for maximum-likelihood estimation (MLE) approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and ToxicR model averaging ([**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr)). 
 
 Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
 
@@ -323,14 +322,11 @@ The EPA, in conjunction with statisticians at the National Institute of Environm
 
 ### Mathematical Details for ToxicR Bayesian Dichotomous Models
 
-In BMDS, the set of Bayesian dichotomous models used in ToxicR model averaging is identical to the set of models used for maximum-likelihood estimation (MLE)
-approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and LOUD model averaging ([**Individual Model Specifications (LOUD)**](./dichotomous-bayesian.md#individual-model-specifications-loud)). The model forms and parameter priors for the BMDS dichotomous models are defined below.
+In BMDS, the set of Bayesian dichotomous models used in ToxicR model averaging is identical to the set of models used for maximum-likelihood estimation (MLE) approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and LOUD model averaging ([**Individual Model Specifications (LOUD)**](./dichotomous-bayesian.md#individual-model-specifications-loud)). The model forms and parameter priors for the BMDS dichotomous models are defined below.
 
 #### Individual Model Specifications (ToxicR)
 
-The priors for the parameters used in ToxicR model averaging are based on scaled doses and scaled
-responses; BMDS performs this scaling automatically by dividing by the maximum dose in the dataset under consideration, *i.e.*, that the doses under consideration range from 0 to 1 (inclusive). **BMDS automatically scales the responses** by dividing by the mean response in the control (or
-lowest dose) group. The user does ***not*** need to scale anything beforehand. That means that the parameter estimates, and BMD values returned by the program have been adjusted back to the original scale of the doses and the original scale of the responses specified in the input data file.
+The priors for the parameters used in ToxicR model averaging are based on scaled doses and scaled responses; BMDS performs this scaling automatically by dividing by the maximum dose in the dataset under consideration, *i.e.*, that the doses under consideration range from 0 to 1 (inclusive). **BMDS automatically scales the responses** by dividing by the mean response in the control (or lowest dose) group. The user does ***not*** need to scale anything beforehand. That means that the parameter estimates, and BMD values returned by the program have been adjusted back to the original scale of the doses and the original scale of the responses specified in the input data file.
 
 ::::{tab-set}
 
@@ -557,8 +553,7 @@ $\beta \sim Lognormal(0,1)$
 
 **Notes**
 
-$\Phi$ is the standard Normal cumulative distribution function, $\phi$
-is the standard Normal density function.
+$\Phi$ is the standard Normal cumulative distribution function, $\phi$ is the standard Normal density function.
 :::
 
 :::{tab-item} Log-Probit
@@ -600,8 +595,7 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 **Notes**
 
-$\Phi$ is the standard Normal cumulative distribution function, $\phi$
-is the standard Normal density function.
+$\Phi$ is the standard Normal cumulative distribution function, $\phi$ is the standard Normal density function.
 :::
 
 :::{tab-item} Dichotomous Hill
@@ -654,39 +648,22 @@ When there are fewer data points, the priors will affect the Bayesian estimation
 
 #### Bayesian Model Averaging Methods (ToxicR)
 
-From a Bayesian perspective, inference proceeds by defining a
-data-generating mechanism, given a model, $M$, and its parameters, $\theta$. For
-our purposes, $M$ would be one of the models listed above in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) that determines the probability of response. For the dichotomous models, the data-generating mechanism would be the assumption that the observations were obtained from binomial sampling, having the dose-dependent probability of response defined by one of those models (with specific values of the parameters in that model).
+From a Bayesian perspective, inference proceeds by defining a data-generating mechanism, given a model, $M$, and its parameters, $\theta$. For our purposes, $M$ would be one of the models listed above in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) that determines the probability of response. For the dichotomous models, the data-generating mechanism would be the assumption that the observations were obtained from binomial sampling, having the dose-dependent probability of response defined by one of those models (with specific values of the parameters in that model).
 
-For each model, $M$, there is a likelihood for the data,
-$\mathcal{l}(D|M,\theta)$, based on the data-generating mechanism (binomial
-sampling in the case of the dichotomous endpoints).
+For each model, $M$, there is a likelihood for the data, $\mathcal{l}(D|M,\theta)$, based on the data-generating mechanism (binomial sampling in the case of the dichotomous endpoints).
 
 Suppose for model averaging, $K$ models are considered, such that $M_{k}, k  = 1, \ldots, K$.
 
-For each model, BMDS approximates the posterior density for the BMD
-using a Laplacian approximation; call that density
-$g_{k}\left( BMD \middle| M_{k},D \right)$ for model $k$. If the parameter
-vector for model $k$ is denoted $\theta_{k}$, let ${\widehat{\theta}}_{k}$
-designate the value of that vector that maximizes the posterior
-likelihood (the maximum *a posteriori*, or MAP, estimate).
+For each model, BMDS approximates the posterior density for the BMD using a Laplacian approximation; call that density $g_{k}\left( BMD \middle| M_{k},D \right)$ for model $k$. If the parameter vector for model $k$ is denoted $\theta_{k}$, let ${\widehat{\theta}}_{k}$
+designate the value of that vector that maximizes the posterior likelihood (the maximum *a posteriori*, or MAP, estimate).
 
 The posterior density of the model-averaged BMD is
 
 $$g_{ma}\left( BMD|D \right) = \ \sum_{k = 1}^{K}{\pi_{k}\left( M_{k} \middle| D \right)g_{k}\left( BMD \middle| M_{k},D \right),}$$
 
-where $\pi_{k}$ is the posterior probability of model $M_{k}$ given the
-data.
+where $\pi_{k}$ is the posterior probability of model $M_{k}$ given the data.
 
-Clearly, this approach requires estimation of the posterior
-probabilities for each model considered. These are the weights for the
-averaging process. Unlike approaches that have been used elsewhere, we
-eschew the use of information-criteria-based weights (*e.g.*, those
-based on Bayesian information criteria or Akaike information criteria).
-Rather, BMDS generates weights using the Laplace approximation to the
-marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$,
-with parameter vector $\theta_{k}$ of length s, one approximates the
-marginal density as
+Clearly, this approach requires estimation of the posterior probabilities for each model considered. These are the weights for the averaging process. Unlike approaches that have been used elsewhere, we eschew the use of information-criteria-based weights (*e.g.*, those based on Bayesian information criteria or Akaike information criteria). Rather, BMDS generates weights using the Laplace approximation to the marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$, with parameter vector $\theta_{k}$ of length s, one approximates the marginal density as
 
 $$I_{k} = (2\pi)^{\frac{s}{2}}\left| {\widehat{\Sigma}}_{k} \right|^{\frac{1}{2}}\mathcal{l}\left( D \middle| {M_{k},\widehat{\theta}}_{k} \right)g\left( {\widehat{\theta}}_{k}|M_{k} \right)$$
 
@@ -694,112 +671,53 @@ where
 
 ${\widehat{\theta}}_{k}$ is the MAP estimate,
 
-${\widehat{\Sigma}}_{k}\ $is the negative inverse Hessian matrix
-evaluated at ${\widehat{\theta}}_{k}$,
+${\widehat{\Sigma}}_{k}$ is the negative inverse Hessian matrix evaluated at ${\widehat{\theta}}_{k}$,
 
-$\mathcal{l}\left( D \middle| {M_{k},\ \widehat{\theta}}_{k} \right)\ $is
-the likelihood of the data, for model $k$ evaluated at the MAP, and
+$\mathcal{l}\left( D \middle| {M_{k},\ \widehat{\theta}}_{k} \right)\ $ is the likelihood of the data, for model $k$ evaluated at the MAP, and
 
-$g\left( {\widehat{\theta}}_{k} \middle| M_{k} \right)$ is the value of
-the prior density for $M_{k}$ evaluated at the MAP parameter estimates.
+$g\left( {\widehat{\theta}}_{k} \middle| M_{k} \right)$ is the value of the prior density for $M_{k}$ evaluated at the MAP parameter estimates.
 
-To compute the posterior model probabilities for the $M_{k}$, one
-calculates the MAP and then calculates $I_{k}$ using the preceding
-equation. The posterior probability of the model is
+To compute the posterior model probabilities for the $M_{k}$, one calculates the MAP and then calculates $I_{k}$ using the preceding equation. The posterior probability of the model is
 
 $$\pi_{k}\left( M_{k} \middle| D \right) = \ \frac{w_{k}I_{k}}{\sum_{i = 1}^{K}{w_{k}I_{k}}},$$
 
-where $w_{k}\ $is the prior probability of model $M_{k}$. In BMDS, the
-user can specify those weights; the default is equal weight for each
-model (all models being considered are equally probable *a priori*).
+where $w_{k}\ $is the prior probability of model $M_{k}$. In BMDS, the user can specify those weights; the default is equal weight for each model (all models being considered are equally probable *a priori*).
 
-This approximation is similar to the Model Averaged Profile Likelihood
-(MAPL) approach of Fletcher and Turek
-([2012](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4286986)).
-However, while MAPL relies only on the likelihood, our approach
-incorporates prior information in calculating the marginal profile
-density of the BMD. In other words, both the likelihood and prior are
-used. The model-specific density is defined by treating profile density
-bounds as quantiles of a marginal posterior density for the parameter of
-interest, and the relation to the present approach and the MAPL approach
-is justified asymptotically.
+This approximation is similar to the Model Averaged Profile Likelihood (MAPL) approach of Fletcher and Turek ([2012](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4286986)). However, while MAPL relies only on the likelihood, our approach incorporates prior information in calculating the marginal profile density of the BMD. In other words, both the likelihood and prior are used. The model-specific density is defined by treating profile density bounds as quantiles of a marginal posterior density for the parameter of interest, and the relation to the present approach and the MAPL approach is justified asymptotically.
 
-This approach can be related to the MAPL framework by substituting the
-posterior density for the likelihood in each of the steps. This method
-approximates the marginal likelihood using the posterior MAP estimate
-and Hessian of the log-posterior.
+This approach can be related to the MAPL framework by substituting the posterior density for the likelihood in each of the steps. This method approximates the marginal likelihood using the posterior MAP estimate and Hessian of the log-posterior.
 
 :::{note}
-For the model average approach, the models listed in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) are available in the model average. For
-dichotomous model averaging, the Multistage model is capped to a maximum
-degree of 2. The reasoning for this follows upon the work of Nitcheva,
-et al.
-([2007](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/729569))
-who show that higher-order polynomials are not necessary given the fact
-that other models of the model averaging suite (*e.g.*, dichotomous
-Hill) can provide increased curvature.
+For the model average approach, the models listed in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) are available in the model average. For dichotomous model averaging, the Multistage model is capped to a maximum degree of 2. The reasoning for this follows upon the work of Nitcheva, et al. ([2007](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/729569)) who show that higher-order polynomials are not necessary given the fact that other models of the model averaging suite (*e.g.*, dichotomous Hill) can provide increased curvature.
 :::
 
 #### BMD and BMDL estimation (ToxicR)
 
-The BMDS model-averaged BMD point estimate is the weighted average of
-BMD MAP estimates from individual models, weighted by posterior weights
-$\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the
-median of the approximate posterior density of $\theta$. For the BMDL or BMDU
-estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$
-BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such
-that:
+The BMDS model-averaged BMD point estimate is the weighted average of BMD MAP estimates from individual models, weighted by posterior weights $\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the median of the approximate posterior density of $\theta$. For the BMDL or BMDU estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$ BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such that:
 
 $$\alpha = \ \int_{- \infty}^{BMD_{\alpha}}{g_{ma}\left( BMD|D \right)\ dBMD,}$$
 
 $$= \sum_{k = 1}^{K}{\pi_{k}\left( M_{k} \middle| D \right)\int_{- \infty}^{BMD_{\alpha}}{g_{k}\left( BMD \middle| M_{k},D \right)\ dBMD}.}$$
 
-The quantity
-$\int_{- \infty}^{BMD_{\alpha}}{g_{k}\left( BMD \middle| M_{k},D \right)\ dBMD}$
-is approximated by,
+The quantity $\int_{- \infty}^{BMD_{\alpha}}{g_{k}\left( BMD \middle| M_{k},D \right)\ dBMD}$ is approximated by,
 
 $$\int_{- \infty}^{BMD_{\alpha}}{g_{k}\left( BMD \middle| M_{k},D \right)\ dBMD}$$
 
 $$\approx {\frac{1}{2}\Pr}\left( \  - 2{\text{ log}\lbrack\widehat{g}}_{k}\left( \widehat{BMD} \middle| M_{k},D \right) \right\rbrack - 2{\ log\lbrack\widehat{g}}_{k}\left( BMD_{\alpha} \middle| M_{k},D \right)\rbrack < \ \chi_{1,\alpha\ }^{2}),$$
 
-where${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the
-maximum value of the posterior evaluated at *x,* $\widehat{BMD}$ is the
-MAP estimate of the BMD and $\chi_{1,\alpha\ }^{2}$ is the *α*
-quantile of a Chi-square random variable with one degree of freedom. The
-above approximation assumes $BMD_{\alpha} < \widehat{BMD}$. When
-$\widehat{BMD} < BMD_{\alpha}$ the right-hand side of this equation is
-replaced by
+where ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the maximum value of the posterior evaluated at *x,* $\widehat{BMD}$ is the MAP estimate of the BMD and $\chi_{1,\alpha\ }^{2}$ is the *α* quantile of a Chi-square random variable with one degree of freedom. The above approximation assumes $BMD_{\alpha} < \widehat{BMD}$. When $\widehat{BMD} < BMD_{\alpha}$ the right-hand side of this equation is replaced by
 
 $$\approx 1 - {\frac{1}{2}\Pr}\left( \  - 2{\ log\lbrack\widehat{g}}_{k}\left( \widehat{BMD} \middle| M_{k},D \right) \right\rbrack - 2{\ log\lbrack\widehat{g}}_{k}\left( BMD_{\gamma} \middle| M_{k},D \right)\rbrack < \ \chi_{1,\gamma\ }^{2}).$$
 
-This approximation is like the profile-likelihood used when estimating
-the BMDL and BMDU using the method of maximum likelihood, but in this
-case ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the
-posterior density, which incorporates both the likelihood and the prior.
+This approximation is like the profile-likelihood used when estimating the BMDL and BMDU using the method of maximum likelihood, but in this case ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the posterior density, which incorporates both the likelihood and the prior.
 
 #### Results Specific to ToxicR Bayesian Model Averaing
 
-To compare the difference between any two Bayesian models, the
-unnormalized Log Posterior Probability (LPP) is given, which allows the
-computation of a Bayes factor (BF) to compare any two models. BF equals
-the exponentiated difference between the two LPP. For example, if one
-wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to
-the Multistage 2{sup}`nd` degree model (Model B, $LPP_{B}$) one estimates
-the BF as
+To compare the difference between any two Bayesian models, the unnormalized Log Posterior Probability (LPP) is given, which allows the computation of a Bayes factor (BF) to compare any two models. BF equals the exponentiated difference between the two LPP. For example, if one wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to the Multistage 2{sup}`nd` degree model (Model B, $LPP_{B}$) one estimates the BF as
 
 $$BF = \exp\left( LPP_{A} - LPP_{B} \right),$$
 
-This computation assumes that both models have equal probability *a
-priori.* This value is then interpreted as the posterior odds one model
-is more correct than the other model and is used in Bayesian hypothesis
-testing. In the example above, if the Bayes Factor was 2.5, the
-interpretation would be that the Log-logistic model is *a posteriori*
-2.5 times more likely than the multistage model. When these values are
-normalized into proper probabilities, they are equivalent to the
-posterior model probabilities given in model averaging (again, assuming
-equal model probability *a priori*). The table below is adapted from Jeffreys
-([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043))
-and is a common interpretation of Bayes Factors.
+This computation assumes that both models have equal probability *a priori.* This value is then interpreted as the posterior odds one  model is more correct than the other model and is used in Bayesian hypothesis testing. In the example above, if the Bayes Factor was 2.5, the interpretation would be that the Log-logistic model is *a posteriori* 2.5 times more likely than the multistage model. When these values are normalized into proper probabilities, they are equivalent to the posterior model probabilities given in model averaging (again, assuming equal model probability *a priori*). The table below is adapted from Jeffreys ([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043)) and is a common interpretation of Bayes Factors.
 
 ```{csv-table} Bayes factors for dichotomous models.
 :header: >
@@ -813,16 +731,7 @@ and is a common interpretation of Bayes Factors.
 31.6 to 100,very strong
 100,decisive
 ```
-For BMDS, all LPP and corresponding posterior model probabilities are
-computed using the Laplace approximation. This value is different from
-the commonly used Bayesian Information Criterion (BIC), and the two
-should not be confused based upon other model averaging approaches,
-which use the BIC exclusively. Errors in the posterior probabilities
-estimated from the BIC are $O(1)$ estimators. Errors in the posterior
-probabilities estimated using the Laplace approximation are
-$O(n^{- 1})$. This means the latter approximation goes to the true
-posterior model probability with increasing data and the former, using
-the BIC, may not go to the true value.
+For BMDS, all LPP and corresponding posterior model probabilities are computed using the Laplace approximation. This value is different from the commonly used Bayesian Information Criterion (BIC), and the two should not be confused based upon other model averaging approaches, which use the BIC exclusively. Errors in the posterior probabilities estimated from the BIC are $O(1)$ estimators. Errors in the posterior probabilities estimated using the Laplace approximation are $O(n^{- 1})$. This means the latter approximation goes to the true posterior model probability with increasing data and the former, using the BIC, may not go to the true value.
 
 ```{figure} _static/img/image104.png
 :alt: Multiple model result curves plotted on single graph, with legend

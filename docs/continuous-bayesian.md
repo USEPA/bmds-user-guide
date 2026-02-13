@@ -198,10 +198,7 @@ the user-designated or auto-detected direction of change:
 
 #### Reference for Exponential models
 
-RIVM (National Institute for Public Health and the Environment
-(Netherlands)). ([RIVM,
-2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
-PROAST.
+RIVM (National Institute for Public Health and the Environment (Netherlands)). ([RIVM, 2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
 :::
 
 :::{tab-item} Exponential 5
@@ -232,10 +229,7 @@ $d \sim \ln(\log(1.6, 0.421)$
 
 #### Reference for Exponential models
 
-RIVM (National Institute for Public Health and the Environment
-(Netherlands)). ([RIVM,
-2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
-PROAST.
+RIVM (National Institute for Public Health and the Environment (Netherlands)). ([RIVM, 2018](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850042)).
 :::
 
 :::{tab-item} Hill (multiplicative)

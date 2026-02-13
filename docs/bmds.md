@@ -1,13 +1,8 @@
 # Benchmark Dose Models and Methods Included in BMDS
 
-Most of the models in the following tables were developed by U.S. EPA
-and are available in BMDS, unless otherwise noted.
+Most of the models in the following tables were developed by U.S. EPA and are available in BMDS, unless otherwise noted.
 
-Some models are flagged as available only in BMDS 2.7. The [BMDS
-2.7](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials)
-and [BMDS 3.3](https://www.epa.gov/bmds/download-bmds/) software
-packages are available for download but are no longer supported or
-updated by EPA.
+Some models are flagged as available only in BMDS 2.7. The [BMDS 2.7](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials) and [BMDS 3.3](https://www.epa.gov/bmds/download-bmds/) software packages are available for download but are no longer supported or updated by EPA.
 
 ```{csv-table} List of Maximum-Likelihood Estimation Continuous Models
 :header: Model,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1
@@ -100,28 +95,16 @@ Jonckheere-Terpstra trend test,No,No,No,No,Yes,Yes
 
 ## Models Not Included in BMDS Online
 
-BMDS Online contains all the models and features that were available in
-BMDS 2.7 except for:
+BMDS Online contains all the models and features that were available in BMDS 2.7 except for:
 
 -   The Dichotomous background-dose models, which were rarely used.
 
--   The Rai and Van Ryzin nested dichotomous model, which was not included
-    in BMDS due to the planned inclusion, and increased reliability, of
-    the Nested Logistic and NCTR models.
+-   The Rai and Van Ryzin nested dichotomous model, which was not included in BMDS due to the planned inclusion, and increased reliability, of the Nested Logistic and NCTR models.
 
--   The [ToxicoDiffusion
-    model](https://www.epa.gov/bmds/external-review-draft-toxicodiffusion-model-development-2008)---also
-    known as Repeated Response Measures--- was not included because it
-    required R to be installed on the target computer.
+-   The [ToxicoDiffusion model](https://www.epa.gov/bmds/external-review-draft-toxicodiffusion-model-development-2008)---also known as Repeated Response Measures--- was not included because it required R to be installed on the target computer.
 
--   The [Ten Berge Concentration x Time
-    model](https://www.epa.gov/bmds/external-review-concentration-x-time-ten-berge-model-2008),
-    which was superseded by [EPA's categorical regression software
-    CatReg](https://www.epa.gov/bmds/catreg). CatReg has
-    the same functionality but with added features and options.
+-   The [Ten Berge Concentration x Time model](https://www.epa.gov/bmds/external-review-concentration-x-time-ten-berge-model-2008),    which was superseded by [EPA's categorical regression software CatReg](https://www.epa.gov/bmds/catreg). CatReg has the same functionality but with added features and options.
 
 
-All these models --- excluding CatReg --- can be accessed in BMDS 2.7,
-[which is available from the BMDS
-website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).  [CatReg](https://www.epa.gov/bmds/catreg) is a Windows-based dose-time-response software package that can be downloaded from the BMDS website.
+All these models --- excluding CatReg --- can be accessed in BMDS 2.7,[which is available from the BMDS website](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials).  [CatReg](https://www.epa.gov/bmds/catreg) is a Windows-based dose-time-response software package that can be downloaded from the BMDS website.
 
