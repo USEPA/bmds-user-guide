@@ -835,12 +835,12 @@ When running the Jonckheere-Terpstra trend test, the exact method, utilizing a c
 "190", "254"
 "200", "1026"
 ```
-When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.  Users can opt to use the approximate approach even when there are no ties in the data and total N < 150. 
+When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.   
 
 Alterntatively, users can also opt to use a permutation approach that is not dependent on any distributional assumptions.  This approach iteratively reshuffles the observed data (i.e., reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the the proportion of permutted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. 
 
 Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual response data that corresponds to the observed summary statistics. This is done by iteratively generating random samples using a normal distribution; random samples are generated until the sample mean and standard deviation match the target (i.e., observed) mean and standard deviation or until the maximum number of iterations are reached.  If no sampled mean and standard deviation are found that match the target values, an error message is returned.
 
 :::{note}
-At this time, the Jonckheere-Terpstra trend test is only available in pybmds (version 25.2).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
+At this time, the Jonckheere-Terpstra trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
 :::
