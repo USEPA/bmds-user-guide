@@ -14,9 +14,9 @@ If you are new to installing Python packages and want to use pybmds or BMDS Desk
 
 The bmds-ui Python package installs BMDS Desktop to the user's local system. BMDS Desktop looks and works the same as BMDS Online but runs solely on the user's local system. If running BMDS Online is not technically possible or feasible, then BMDS Desktop can be used.
 
-```{figure} _static/img/image9.png
+```{figure} _static/img/online_desktop_sidebyside.png
 :alt: Side by side captures of BMDS Online and BMDS Desktop to show similarity, with page titles highlighted
-:scale: 50%
+:scale: 20%
 :name: f3
 
 BMDS Online and BMDS Desktop use the same interface and command components and workflows, but BMDS Desktop projects run entirely on the user's local computer with no Internet connection.
@@ -65,12 +65,12 @@ pybmds is a Python package that is the underlying execution engine for BMDS Desk
 
 Unlike BMDS Online and BMDS Desktop, however, pybmds runs inside a terminal window with a command-line interface ({numref}`f5`). The pybmds command line enables the advanced user to script batch processes, display advanced graphics, perform custom BMD analyses, and, for [**Bayesian model averaging**](./dichotomous-bayesian.md#Dichotomous Endpoints - Bayesian Model Averaging Methods), even override the default priors for parameter estimation.
 
-```{figure} _static/img/image11.png
+```{figure} _static/img/pybmds_interface.png
 :alt: pybmds running in a terminal window
-:scale: 75%
+:scale: 100%
 :name: f5
 
-pybmds is a command-line environment that runs in a terminal window.
+pybmds is a command-line environment that runs in a terminal window or in Jupyter notebooks.
 ```
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.

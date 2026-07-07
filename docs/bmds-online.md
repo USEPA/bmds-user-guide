@@ -30,7 +30,7 @@ BMDS Online displays a new, empty analysis page with the Settings tab selected. 
 
 Each BMDS Online analysis is self-contained and includes all the inputs and outputs for the executed analysis. No user or personal information is captured by BMDS Online.
 
-```{figure} _static/img/image13.png
+```{figure} _static/img/dichotomous_settings_tab.png
 :alt: BMDS Online page with default model selections
 :scale: 60%
 :name: f7
@@ -44,7 +44,7 @@ When a new analysis is created, a unique URL is created for the analysis.
 
 You can create as many analyses as you want, but ***saving an analysis saves only the most recent execution to that unique URL***. If you edit the data or add new data or new options and rerun the software, then the resulting new analysis will overwrite the previous older analysis, but the URL will remain unchanged.
 
-```{figure} _static/img/image14.png
+```{figure} _static/img/bmds_online_url.png
 :alt: BMDS Online analysis URL highlighted
 :scale: 100%
 :name: f8
@@ -58,9 +58,9 @@ A new BMDS Online analysis has a unique URL.
 
 BMDS Online tracks the steps required to run an analysis. In this example, for a new analysis, the green checkmarks show that the default set of models and options have been selected for the analysis. Red x's show that, currently, no dataset has been selected and the analysis has not been saved.
 
-```{figure} _static/img/image15.png
+```{figure} _static/img/required_analysis_step.png
 :alt: BMDS Online analysis steps marked with red and green checkmarks
-:scale: 80%
+:scale: 100%
 :name: f9
 
 When all checkmarks are green, BMDS Online can run an analysis.
@@ -73,9 +73,9 @@ An analysis can only be run after all four steps required are satisfied:  At lea
 
 1.  On the Settings tab, specify a name and description for the analysis. BMDS uses the **Analysis Name** field to name the files that are created when users select the Reporting options "data," "report," or "analysis" from the [**Actions menu**](#actions-menu).
 
-```{figure} _static/img/image16.png
+```{figure} _static/img/analysis_name_description.png
 :alt: Red highlight spotlighting the Analysis Name and Description fields
-:scale: 75%
+:scale: 100%
 :name: f10
 
 Enter a descriptive name and summary for the analysis; they will be included in the report.
@@ -84,9 +84,9 @@ Enter a descriptive name and summary for the analysis; they will be included in 
 2.  Select the model type for your analysis (*i.e.*, are you modeling dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
 
-```{figure} _static/img/image17.png
+```{figure} _static/img/model_type_picklist.png
 :alt: Model type picklist, with dichotomous selected
-:scale: 75%
+:scale: 90%
 :name: f11
 
 Dichotomous model type is selected for this analysis.
@@ -96,24 +96,21 @@ Dichotomous model type is selected for this analysis.
 An analysis can have only a single model type. You cannot mix continuous and dichotomous data in a single analysis.
 :::
 
-3.  Select which models will be used for the analysis. For this example, the default selection of dichotomous maximum-likelihood estimation (MLE) models will be used, plus all the Bayesian dichotomous model averaging models. To use all the models in a column, check the **Select All** box.
+3.  Select which models will be used for the analysis. For this example, the default selection of dichotomous Bayesian LOUD models will be used. To use all the models in a column, check the **Select All** box. To select models using ToxicR Bayesian model averaging or maximum likelihood estimation methods, click the corresponding tabs at the top of the table. 
 
-```{figure} _static/img/image18.png
-:alt: Two columns highlighted with arrows pointing to the Select All checkbox
+```{figure} _static/img/model_selection_table.png
+:alt: Model selection table with all LOUD models selected with equal prior weights
 :scale: 90%
 :name: f12
 
 Tick the Select All box to select all the models in a column.
 ```
 
-4.  Specify the option sets to be used for the analysis. For this example, we will use a single option set with the default benchmark
-    response (BMR) of 10% extra risk. You can add/delete option sets by clicking the blue plus or red
-    trash can icons, respectively, to the right of the option set panel
-    ({numref}`f13`).
+4.  Specify the option sets to be used for the analysis and the MCMC settings (if using LOUD Bayesian model averaging). For this example, we will use a single option set with the default benchmark response (BMR) of 10% extra risk. You can add/delete option sets by clicking the blue plus or red trash can icons, respectively, to the right of the option set panel({numref}`f13`). For the MCMC settings, we will use 4 chains of 12,500 iterations each, with 1,500 iterations discarded as burnin. To return to default MCMC settings, click the **Reset to Default** button.
 
-```{figure} _static/img/image19.png
+```{figure} _static/img/option_set_add_remove.png
 :alt: Option Set row with arrows pointing to the Add and Delete Row buttons
-:scale: 85%
+:scale: 40%
 :name: f13
 
 Select the blue plus icon to add a row for a new option set. Select the red trash can icon to delete the row.
@@ -140,7 +137,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
 
 2.  Select the Data tab.
 
-```{figure} _static/img/image20.png
+```{figure} _static/img/data_tab.png
 :alt: Red arrow pointing to the Data tab link
 :scale: 100%
 :name: f14
@@ -151,7 +148,7 @@ Select the Data tab to start specifying datasets.
 3.  On the Data tab, select the **New** button to add an individual dataset. For this example workflow, only the dichotomous option
     is shown for the **New dataset** field because Dichotomous was chosen as the model type on the Settings tab.
 
-```{figure} _static/img/image21.png
+```{figure} _static/img/data_tab_new_button.png
 :alt: New button highlighted
 :scale: 100%
 :name: f15

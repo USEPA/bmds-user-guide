@@ -57,9 +57,11 @@ As {numref}`f2` shows, BMDS presents [**model results**](./result-output-mle.md)
 
 -   Estimates of the bounds (*e.g.*, confidence limits) on the BMD (notated BMDL and BMDU for the lower bound and upper bound,     respectively)
 
-```{figure} _static/img/image8.png
+- Prior and posterior model weights (for Bayesian model averaging)
+
+```{figure} _static/img/output_table_with_plot.png
 :alt: Cursor hovers over Log-logistic row, with corresponding plot displayed
-:scale: 100%
+:scale: 40%
 :name: f2
 
 BMDS results for a dichotomous endpoint, presented using graph and tables
