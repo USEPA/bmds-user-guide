@@ -26,14 +26,14 @@ This section provides details on the following topics:
 
 All the traditional maximum-likelihood estimation (MLE) models and options that were available for analyzing continuous response data in previous versions of BMDS are available in BMDS Online.
 
-```{figure} _static/img/image67.png
+```{figure} _static/img/cont_models_table_MLE.png
 :alt: Checkboxes ticked for default continuous models
 :scale: 85%
-:name: f63
+:name: f66
 
-Default selection of continuous models on BMDS Online's Settings tab.
+Default selection of continuous MLE models on BMDS Online's Settings tab.
 ```
-Also available for all continuous models are options for Hybrid-Extra Risk and Hybrid-Added Risk benchmark responses (BMRs; see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal response distribution assumption (only available for Exponential models).
+Also available for all MLE continuous models are options for Hybrid-Extra Risk and Hybrid-Added Risk benchmark responses (BMRs; see [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf)), and the Lognormal response distribution assumption (only available for Exponential models).
 
 The user can choose to run the Hill, Polynomial, and Power models either restricted or unrestricted; the Linear model is not restricted while the Exponential models can ***only*** be run restricted.
 
@@ -53,10 +53,10 @@ For summarized continuous response data, the default column headers are *Dose*, 
 
 For individual continuous response data, the default column headers are *Dose* and *Response*.
 
-```{figure} _static/img/image68.png
+```{figure} _static/img/summary_indiv_cont_data.png
 :alt: Stacked screenshots of tables showing summarized data (top) and individual data (bottom)
 :scale: 100%
-:name: f64
+:name: f67
 
 Default column headers for summarized data (top) and individual data (bottom)
 ```
@@ -65,20 +65,20 @@ Default column headers for summarized data (top) and individual data (bottom)
 
 Datasets for an analysis can be a mix of individual and summarized data. Select a dataset's Enabled checkbox to include it in the analysis.
 
-```{figure} _static/img/image69.png
+```{figure} _static/img/cont_model_specifications.png
 :alt: Dataset specification settings with checkboxes selected
 :scale: 85%
-:name: f65
+:name: f68
 
 Dataset specification settings, with Enabled checkboxes selected.
 ```
 
 ### Maximum Polynomial Degree
 
-```{figure} _static/img/image70.png
+```{figure} _static/img/max_poly_degree.png
 :alt: Maximum polynomial degree column with picklist displayed
 :scale: 90%
-:name: f66
+:name: f69
 
 Maximum polynomial degree selections.
 ```
@@ -99,10 +99,10 @@ failure.*
 
 Choices for the **Adverse Direction** option are Automatic (default), Up, or Down.
 
-```{figure} _static/img/image71.png
+```{figure} _static/img/adverse_direction_picklist.png
 :alt: Adverse Direction column with picklist of values displayed
 :scale: 100%
-:name: f67
+:name: f70
 
 Adverse Direction picklist for the selected dataset.
 ```
@@ -120,10 +120,10 @@ user-selected datasets in a single batch process. (There is no limit on option s
 
 Select the blue Plus button to add a new Option Set row. Select the red Trashcan button to delete that Option Set row.
 
-```{figure} _static/img/image72.png
+```{figure} _static/img/cont_option_set.png
 :alt: BMR Type column with picklist of values displayed
 :scale: 75%
-:name: f68
+:name: f71
 
 Continuous Model Option Set row.
 ```
@@ -135,10 +135,10 @@ The following options are related to the definition of the BMD and its bounds:
 -   **Benchmark Response (BMR) Type**, which defines the method of choice for determining the response level used to derive the BMD
     (*i.e.*, relative deviation, standard deviation, etc.). For details on these methods, refer to the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown.
 
-```{figure} _static/img/image73.png
+```{figure} _static/img/cont_bmr_options.png
 :alt: BMR Type column with picklist of values displayed
 :scale: 100%
-:name: f69
+:name: f72
 
 BMR Type picklist selections.
 ```
@@ -232,10 +232,10 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 ### Distribution and Variance
 
-```{figure} _static/img/image74.png
+```{figure} _static/img/variance_dist_picklist.png
 :alt: Picklist menu selections for Distribution+Variance, with Normal+Constant highlighted
 :scale: 100%
-:name: f70
+:name: f73
 
 Distribution and Variance picklist selections.
 ```
@@ -340,18 +340,18 @@ log-scale standard deviation, estimated if need be for summarized response data 
 
     $$(ln(Sample\ Median)\  - \ ln(Model\ Fitted\ Median))/(ln(Model\ Fitted\ GSD)/\sqrt{N_{i}})$$
 
-```{figure} _static/img/image75.png
+```{figure} _static/img/cont_gof_table_normal.png
 :alt: Sample Goodness of fit with column headers
 :scale: 70%
-:name: f71
+:name: f74
 
 Goodness of Fit table headings, with Normal assumption.
 ```
 
-```{figure} _static/img/image76.png
+```{figure} _static/img/cont_gof_table_lnormal.png
 :alt: Sample Goodness of fit table with different column headers
 :scale: 70%
-:name: f72
+:name: f75
 
 Goodness of Fit table headings, with Lognormal assumption. Note the column header similarities/differences between the two tables.
 ```
@@ -366,10 +366,10 @@ dose-response model under consideration (*i.e.*, fitted).
 
 BMDS uses likelihood theory to estimate model parameters and ultimately to make inferences based on dose-response data. Maximum likelihood is the process of estimating the model parameters; the likelihood function is as large as possible (maximized) given the form of the model under consideration and the data. In other words, parameter values are "chosen" such that the subject model (*e.g.*, polynomial or power) obtains the best possible fit to the data, given the constraints of the model's parameter structure.
 
-```{figure} _static/img/image77.png
+```{figure} _static/img/cont_likelihood_table.png
 :alt: Likelihoods of interest table
 :scale: 75%
-:name: f73
+:name: f76
 
 Likelihoods of Interest table.
 ```
@@ -430,10 +430,10 @@ ${Var\{ e}_{i}\} = \sigma^{2}$
 
 The **Tests of Mean and Variance Fits** table show the results of four tests based on the log-likelihoods from the Likelihoods of Interest table. The p-values associated with the tests are based on asymptotic properties of the likelihood ratio.
 
-```{figure} _static/img/image78.png
+```{figure} _static/img/cont_variance_fit_table.png
 :alt: Test of Mean and Variance Fits table table
 :scale: 75%
-:name: f74
+:name: f77
 
 Test of Means and Variance Fits table.
 ```
@@ -488,10 +488,10 @@ The graphical output, *i.e.*, plot, is a visual depiction of the results of the 
 
 -   The routine then multiplies the SEM by the Student-T percentiles (2.5th percentile or 97.5th percentile for the lower and upper bound, respectively) appropriate for the group-specific sample size (*i.e.*, having degrees of freedom one less than that sample size).The routine adds the products to the observed means to define the lower and upper ends of the error bar.
 
-```{figure} _static/img/image79.png
+```{figure} _static/img/cont_mle_plot.png
 :alt: Graph showing results plot
 :scale: 70%
-:name: f75
+:name: f78
 
 Maximum likelihood approach results plot for continuous data.
 ```
@@ -844,3 +844,40 @@ Individual data are required for the Jonckheere-Terpstra trend test.  If users o
 :::{note}
 At this time, the Jonckheere-Terpstra trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
 :::
+
+To run the Jonckheere-Terpstra trend test, click the link on the Data Tab:
+
+```{figure} _static/img/JT_trend_link_datatab.png
+:alt: Arrow pointed to Jonckheere-Terpstra trend test link on Data tab
+:scale: 35%
+:name: f79
+
+Jonckheere-Terpstra trend test link.
+```
+This will open a new browser tab where users can parameterize the Jonckheere-Terpstra trend test as needed (i.e., change the Hypothesis and Permutation settings if needed).  If a dataset was entered in the Data tab prior to clicking the link, it will automatically be loaded in the Dataset field.  
+
+```{figure} _static/img/JT_trend_test_window.png
+:alt: Jonckheere-Terpstra trend test window showing options for running the test
+:scale: 60%
+:name: f80
+
+Jonckheere-Terpstra trend test link.
+```
+Clicking the **Execute** button will run the test and display the results in a table below the Settings area.
+
+```{figure} _static/img/JT_trend_test_results.png
+:alt: Jonckheere-Terpstra trend test window showing test results
+:scale: 60%
+:name: f81
+
+Jonckheere-Terpstra trend test link.
+```
+Users can either click the **Copy results to clipboard** link to copy the results to manually paste into a results document or use the **Actions** dropdown menu to download a formatted Word report with the results.
+
+```{figure} _static/img/JT_trend_test_results_actions.png
+:alt: Jonckheere-Terpstra trend test window showing options for saving results
+:scale: 60%
+:name: f82
+
+Jonckheere-Terpstra trend test link.
+```
