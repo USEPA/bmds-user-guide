@@ -1,6 +1,6 @@
 # Model Recommendations and Decision Logic
 
-BMDS analyzes modeling results and automatically recommends model selections that are consistent with the 2012 EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
+When running the MLE models, BMDS analyzes modeling results and automatically recommends model selections that are consistent with the 2012 EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
 BMDS Online displays the logic tests relevant to the model type selected on the Settings tab: Continuous, Dichotomous, or Nested. Multitumor/Multistage Dichotomous does not have its own set of logic rules because [**it is a special instance of Dichotomous modeling**](#multiple-tumor-analysis).
 
@@ -120,10 +120,10 @@ For all selections in the Decision Logic and Model Recommendation and Bin Placem
 
 Logic settings are saved with the Settings and Results of a run; loading a previously run analysis will restore any customized logic settings.
 
-```{figure} _static/img/image65.png
+```{figure} _static/img/decision_logic_settings.png
 :alt: BMDS Online Decision Logic table
 :scale: 50%
-:name: f61
+:name: f64
 
 Decision Logic settings.
 ```
@@ -141,10 +141,10 @@ The BMDS Decision Logic settings are:
 
 -   A value of 10,000 would almost certainly ensure that the lowest AIC is used for model recommendation, meaning that consideration of model uncertainty is relaxed (*i.e*., a greater range of BMDLs would be necessary for the lowest BMDL to be used as the selection    criterion).
 
-```{figure} _static/img/image66.png
+```{figure} _static/img/logic_table_picklist.png
 :alt: Model Recommendation and Bin Placement Logic table with picklist displayed for alternative bin placement
 :scale: 60%
-:name: f62
+:name: f65
 
 Users can change the bin placement logic for a test.
 ```
