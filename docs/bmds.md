@@ -81,7 +81,7 @@ Dichotomous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,No,No
 Continuous Bayesian Model Averaging - LOUD priors/MCMC sampling[^3],No,No,No,No,No,Yes
 Multistage Cancer/Multitumor,Yes,Yes,No,Yes,Yes,Yes
 ```
-[^3]: LOUD = Leveraging Objective Univariate Distributions, MCMC = Markov Chain Monte Carlo, see **_INSERT CROSSREF here_**  for more information 
+[^3]: LOUD = Leveraging Objective Univariate Distributions, MCMC = Markov Chain Monte Carlo, see [Bayesian Parameter Estimation](./continuous-bayesian.md#bayesian-parameter-estimation) for more information 
 
 ```{csv-table} List of Data Transformations and Trend Tests
 :header: Transformation,BMDS 2.7,BMDS 3.3,BMDS Online 24.1, BMDS Online/ Desktop/ pybmds 25.1, pybmds 25.2, BMDS Online/ Desktop/ pybmds 26.1

@@ -31,7 +31,7 @@ individual tumors need not have the same multistage degree.
 
 In accordance with EPA cancer guidelines ([U.S. EPA, 2005](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=6324329)), a Multiple Tumor Analysis will always run the restricted form of the Multistage model.
 
-Users can choose to have BMDS auto-select the appropriate multistage degree of the Multistage model for each tumor dataset. The option is available from the **Degree** picklist on the Settings tab ({numref}`f97`).
+Users can choose to have BMDS auto-select the appropriate multistage degree of the Multistage model for each tumor dataset. The option is available from the **Degree** picklist on the Settings tab ({numref}`f120`).
 
 ```{figure} _static/img/mst_degree_picklist.png
 :alt: Degree column picklist values displayed, with "auto" selected
@@ -143,7 +143,7 @@ BMDS will recommend a model degree based on the decision logic and settings foun
 
    * If a user specifies a degree for a given model, that degree will be used regardless of model fit.
 
-  * If the results do not meet the **Test Threshold** value set in the **Ratio of BMD/BMDL (Caution)** setting on the Logic tab ({numref}`f99`), BMDS displays a pop-up message to the user that *BMD/BMDL ratio \>\[value\]; consider consulting a statistician*. However, the model is not removed from the results.
+  * If the results do not meet the **Test Threshold** value set in the **Ratio of BMD/BMDL (Caution)** setting on the Logic tab ({numref}`f122`), BMDS displays a pop-up message to the user that *BMD/BMDL ratio \>\[value\]; consider consulting a statistician*. However, the model is not removed from the results.
 
 ```{figure} _static/img/mst_logic.png
 :alt: The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a threshold value of 3.
@@ -175,7 +175,7 @@ To access the Poly K adjustment tool:
 With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
 ```
 
-Selecting the link displays the Poly K Adjustment page ({numref}`f101`), where the user can enter their data and specify settings. Users can copy and paste data from a CSV file or an Excel sheet into the Dataset text box.
+Selecting the link displays the Poly K Adjustment page ({numref}`f124`), where the user can enter their data and specify settings. Users can copy and paste data from a CSV file or an Excel sheet into the Dataset text box.
 
 Under the Dataset table:
 
@@ -217,7 +217,7 @@ The inputs for the Poly K tool are:
 
    * **Tumor status**: numeric value indicating if animal did not have tumor (0) or did have tumor (1)
 
-Select the **Execute** button to run the analysis. BMDS Online extends the Poly K Adjustment page with the following outputs ({numref}`f102`):
+Select the **Execute** button to run the analysis. BMDS Online extends the Poly K Adjustment page with the following outputs ({numref}`f125`):
 
 -   A summary table of the original and adjusted data
 

@@ -84,7 +84,7 @@ The response associated with the BMR that is displayed in the graphical model ou
 
 This is because to obtain the actual response value one must solve for $P(d)$ in the equation for added or extra risk discussed above.
 
-The horizontal bar depicting the response level used to derive the BMD ({numref}`f79`) that is displayed in the graphical model output will only be the same as the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at background, P(0), equals zero.
+The horizontal bar depicting the response level used to derive the BMD ({numref}`f97`) that is displayed in the graphical model output will only be the same as the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at background, P(0), equals zero.
 
 When P(0) does not equal zero, the true response level can be calculated using the Extra Risk equation described in [**Risk Type**](#risk-type)
 
@@ -198,7 +198,7 @@ The graphical output (*i.e.*, plot) is a visual depiction of the results of the 
 Dichotomous endpoint plot with error bars on the data points.
 ```
 
-The error bars shown on the plots of dichotomous data ({numref}`f82`) are derived using a modification of the Wilson interval (based on the score statistic) but with a continuity correction method ([Fleiss et al., 2003](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4829616)). The calculation finds the proportion, $p_{i}$, such that
+The error bars shown on the plots of dichotomous data ({numref}`f100`) are derived using a modification of the Wilson interval (based on the score statistic) but with a continuity correction method ([Fleiss et al., 2003](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4829616)). The calculation finds the proportion, $p_{i}$, such that
 
 $$\frac{\left| p - p_{i} \right| - \frac{1}{2n}}{\sqrt{\frac{p_{i} \times (1 - p_{i})}{n}}} = z$$
 

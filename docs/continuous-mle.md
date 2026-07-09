@@ -316,7 +316,7 @@ Therefore, in most cases, the user should use non-transformed values and select 
 
 The **Goodness of Fit** table displays the model predictions relative to the observed (or calculated) data that were used as input, one row for each dose group. Generally, one desires to have the model predictions match the input data as well as possible.
 
-Note that in the Goodness of Fit tables shown in {numref}`f71` and {numref}`f72`:
+Note that in the Goodness of Fit tables shown in {numref}`f74` and {numref}`f75`:
 
 -   Sample Mean = the sample mean for both Normally and Lognormally distributed data.
 

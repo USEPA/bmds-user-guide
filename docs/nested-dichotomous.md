@@ -53,7 +53,7 @@ The default column headers for nested dichotomous data are *Dose*, *Litter Size*
 There ***must*** be data in the LSC column even if the modeling options do not call for the use of LSC.
 :::
 
-{numref}`f88` is a screenshot of a nested dataset in Excel that is formatted
+{numref}`f109` is a screenshot of a nested dataset in Excel that is formatted
 for use in BMDS.
 
 ```{figure} _static/img/nst_dichot_input_dataset.png
@@ -64,7 +64,7 @@ for use in BMDS.
 Nested dataset formatted correctly for BMDS analysis.
 ```
 
-As {numref}`f88` shows, each litter is on a separate row, showing the dose it received, its sample size (*Litter Size*), the number of responders (*Incidence*), and the value of a covariate (*Litter Specific Covariate*).
+As {numref}`f109` shows, each litter is on a separate row, showing the dose it received, its sample size (*Litter Size*), the number of responders (*Incidence*), and the value of a covariate (*Litter Specific Covariate*).
 
 ## Option Set
 
@@ -217,7 +217,7 @@ Bootstrap Runs table.
 
 ### Scaled Residuals Table
 
-In simple dichotomous modeling, there is a single scaled residual for each dose group. For nested designs, the probabilities of response and therefore the scaled residuals will vary across experimental units (*i.e.*, litters). That variation is shown in the Litter Data table ({numref}`f96`) and summarized in the Scaled Residuals table ({numref}`f95`). The summary is an attempt to capture a general impression of the closeness of the observed response rates to those predicted by the model. As is typical, scaled residual values greater than 2 in absolute value may affect the user's assessment of fit.
+In simple dichotomous modeling, there is a single scaled residual for each dose group. For nested designs, the probabilities of response and therefore the scaled residuals will vary across experimental units (*i.e.*, litters). That variation is shown in the Litter Data table ({numref}`f117`) and summarized in the Scaled Residuals table ({numref}`f116`). The summary is an attempt to capture a general impression of the closeness of the observed response rates to those predicted by the model. As is typical, scaled residual values greater than 2 in absolute value may affect the user's assessment of fit.
 
 ```{figure} _static/img/nst_dichot_scaled_residuals.png
 :alt: Scaled Residuals Table

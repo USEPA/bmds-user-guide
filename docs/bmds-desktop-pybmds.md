@@ -32,7 +32,7 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 -   Within a database file (project), analyses can be labelled and organized.
 
-```{figure} _static/img/image10.png
+```{figure} _static/img/desktop_interface.png
 :alt: BMDS Desktop user interface showing list of previous analyses
 :scale: 75%
 :name: f4
