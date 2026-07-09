@@ -748,7 +748,7 @@ For BMDS, all LPP and corresponding posterior model probabilities are computed u
 ```{figure} _static/img/ToxicR_bayesian_plot.png
 :alt: Multiple model result curves plotted on single graph, with legend
 :scale: 75%
-:name: f105
+:name: f107
 
 Sample ToxicR Bayesian dichotomous results plot.
 ```
