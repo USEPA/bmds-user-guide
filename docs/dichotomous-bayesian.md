@@ -4,7 +4,7 @@ As described in the [Continuous Endpoints - Bayesian Model Averaging Methods](./
 
 Briefly, traditional BMD modeling involves fitting a number of dose-response models to the observed data and selecting the single “best” model based on predefined criteria (see [**Goodness of Fit Table**](./dichotomous-mle.md#goodness-of-fit-table) and [**AIC and Model Comparisons**](./dichotomous-mle.md#aic-and-model-comparisons)). However, no single traditional dose-response model can be expected to capture the underlying biology or toxicological modes of action, and each candidate model represents only a possible hypothesis about the biologic processes leading to the observed endpoint being modeled. 
 
-Model averaging accounts for uncertainty across both individual model parameters and the suite of models analyzed (Hinne et al., 2020, ADD REF). In addition, Bayesian inference is commonly employed for model averaging, as it improves characterization of uncertainty in risk value estimation by incorporating prior information and using observed data to estimate a posterior distribution of the parameter of interest (in this case, the BMD). Prior information is incorporated by specifying prior probability distributions for unknown model parameters. BMDS model averaging proceeds from the basis of Bayesian analyses, for which the parameters of the models under consideration are updated using
+Model averaging accounts for uncertainty across both individual model parameters and the suite of models analyzed ([Hinne et al., 2020](https://journals.sagepub.com/doi/10.1177/2515245919898657)). In addition, Bayesian inference is commonly employed for model averaging, as it improves characterization of uncertainty in risk value estimation by incorporating prior information and using observed data to estimate a posterior distribution of the parameter of interest (in this case, the BMD). Prior information is incorporated by specifying prior probability distributions for unknown model parameters. BMDS model averaging proceeds from the basis of Bayesian analyses, for which the parameters of the models under consideration are updated using
 the dataset of interest.  
 
 Currently, there are two approaches for Bayesian model averaging for dichotomous endpoints available in BMDS:
@@ -30,7 +30,7 @@ In an animal toxicological experiment with $r$ increasing doses, ${x}_{1}, \ldot
 
 Since ${p}_{0}$ and ${p}_{1}$ are proportions (the proportion of responders at the relevant doses), Beta distributions were selected as priors because Beta is the conjugate prior class for modeling Binomial proportions.  For prior development, priors for ${p}_{0}$ and ${p}_{1}$ were sought that presented invariance under reparameterization and aligned with reference prior theory ([Bernardo, 1998](**ADDREF**); [Tiao and Box, 1973](**ADDREF**)), namely the development of a prior that maximizes divergence between the prior and the posterior as data observatons are made.  By maximizing divergence, the data is allowed to have the maximum effect on the posterior estimates.  
 
-For the case of a proportion (probability) were the generation of responses is assumed to follow a binomial distribution with fixed (unknown) probability of response, the reference prior corresponds to a $p \sim \text{Beta}(\frac{1}{2}, \frac{1}{2})$ distribution (**SEE FIGURE XXX**)
+For the case of a proportion (probability) were the generation of responses is assumed to follow a binomial distribution with fixed (unknown) probability of response, the reference prior corresponds to a $p \sim \text{Beta}(\frac{1}{2}, \frac{1}{2})$ distribution.
 
 This is the prior used for ${p}_{0}$ and ${p}_{1}$, subject to ${p}_{0} > {p}_{1}$; the $\text{Beta}(1/2, 1/2)$ probability density function assigns higher probabilities to values closer to 0 or 1.  To obtain a computationally tractable joint prior satisfying the constraint ${p}_{0} > {p}_{1}$, the joint prior for ${p}_{0}$ and ${p}_{1}$ was reformulated using a Dirichlet distribution induced by three latent Gamma random variables:
 
@@ -56,7 +56,15 @@ which produces heavy tails near 0 and 1 and approximate the marginal $\text{Beta
 
 In BMDS, the set of Bayesian dichotomous models used in LOUD model averaging is identical to the set of models used for maximum-likelihood estimation (MLE) approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and ToxicR model averaging ([**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr)). 
 
-Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
+```{figure} _static/img/LOUD_dichot_models.png
+:alt: Window showing the dichotomous models available for LOUD Bayesian model averaging
+:scale: 80%
+:name: f106
+
+Dichotomous models available for LOUD Bayesian model averaging
+```
+
+Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd) (i.e., selection of the appropriate benchmark response level) are the same for the MLE implementation of the dichotomous models.  The same two dataset and two option set limit applies to dichotomous data identical as the limits imposed for continuous data.
 
 #### Individual Model Specifications (LOUD)
 
@@ -296,7 +304,7 @@ For the dichotomous Hill model, ${p}_{0}$ and ${p}_{1}$ are assigned $\beta(0.05
 
 #### Bayesian Parameter Estimation (LOUD)
 
-The same Markov chain Monte Carlo (MCMC) latent slice sampling used for continuous data (see [Bayesian Parameter Estimation (continuous)](./continuous-bayesian.md#bayesian-parameter-estimation)) is used to derive posterior distributions for the standard model parameters and BMDs for dichotomous data and the same statistics (potential scale reduction ($\hat{R}$) and effective sample size (ESS)) are used to judge convergence. 
+The same Markov chain Monte Carlo (MCMC) latent slice sampling used for continuous data (see [Bayesian Parameter Estimation (continuous)](./continuous-bayesian.md#bayesian-parameter-estimation)) is used to derive posterior distributions for the standard model parameters and BMDs for dichotomous data and the same statistics (potential scale reduction ($\hat{R}$) and effective sample size (ESS)) are used to judge convergence. The same MCMC sampling options also apply to dichotomous analyses.
 
 ### Bayesian Model Averaging (LOUD)
 
@@ -315,6 +323,10 @@ The model weights used for generating the model averaged posterior can be calcul
 #### BMD and BMDL Estimation (LOUD)
 
 Once the model-averaged posterior density of the BMD is estimated, the model-averaged BMD is simply the median of the posterior distribution and the 5$^{th}$ and 95$^{th}$ percentiles of the posterior distribution are used as the BMDL and BMDU, respectively.
+
+#### Specific Dichotomous Bayesian Model Averaging Results
+
+BMDS displays the results for dichotomous LOUD model averaging analyses identically as those for [**continuous data**](./continuous-bayesian.md#specific-continuous-bayesian-model-averaging-results). The same considerations of convergence and sampling efficiency pertain to dichotomous data as for continuous data.  
 
 ## ToxicR Model Averaging - Dichotomous Endpoints
 
@@ -733,10 +745,10 @@ This computation assumes that both models have equal probability *a priori.* Thi
 ```
 For BMDS, all LPP and corresponding posterior model probabilities are computed using the Laplace approximation. This value is different from the commonly used Bayesian Information Criterion (BIC), and the two should not be confused based upon other model averaging approaches, which use the BIC exclusively. Errors in the posterior probabilities estimated from the BIC are $O(1)$ estimators. Errors in the posterior probabilities estimated using the Laplace approximation are $O(n^{- 1})$. This means the latter approximation goes to the true posterior model probability with increasing data and the former, using the BIC, may not go to the true value.
 
-```{figure} _static/img/image104.png
+```{figure} _static/img/ToxicR_bayesian_plot.png
 :alt: Multiple model result curves plotted on single graph, with legend
 :scale: 75%
 :name: f105
 
-Sample Bayesian dichotomous results plot.
+Sample ToxicR Bayesian dichotomous results plot.
 ```

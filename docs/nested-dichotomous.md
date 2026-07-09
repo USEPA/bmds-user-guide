@@ -29,10 +29,10 @@ BMDS contains two nested dichotomous models:
 
 The Nested Logistic model is the log-logistic model, modified to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
 
-```{figure} _static/img/image87.png
+```{figure} _static/img/nst_dichot_model_table.png
 :alt: Nested model selection
-:scale: 80%
-:name: f87
+:scale: 90%
+:name: f108
 
 BMDS nested model selection.
 ```
@@ -56,10 +56,10 @@ There ***must*** be data in the LSC column even if the modeling options do not c
 {numref}`f88` is a screenshot of a nested dataset in Excel that is formatted
 for use in BMDS.
 
-```{figure} _static/img/image88.png
+```{figure} _static/img/nst_dichot_input_dataset.png
 :alt: Example of how a nested dichotomous dataset should be formatted for analysis
-:scale: 100%
-:name: f88
+:scale: 85%
+:name: f109
 
 Nested dataset formatted correctly for BMDS analysis.
 ```
@@ -70,10 +70,10 @@ As {numref}`f88` shows, each litter is on a separate row, showing the dose it re
 
 On the BMDS Online Settings tab, the user can define multiple Option Sets to apply to multiple user-selected models and multiple user-selected datasets in a single batch process. Select the blue Plus button to define a new Option Set configuration; select the red Trashcan icon to delete the Option Set.
 
-```{figure} _static/img/image89.png
+```{figure} _static/img/nst_dichot_option_sets.png
 :alt: Options table selections for nested model
 :scale: 80%
-:name: f89
+:name: f110
 
 Nested Model options.
 ```
@@ -107,10 +107,10 @@ The horizontal bar depicting the response level used to derive the BMD that is d
 
 When P(0) does not equal zero, the true response level can be calculated using the Extra Risk equation described in [**Risk Type**](#risk-type).
 
-```{figure} _static/img/image64.png
-:alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
-:scale: 80%
-:name: f90
+```{figure} _static/img/nst_dichot_model_graph.png
+:alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.05
+:scale: 90%
+:name: f111
 
 Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
 ```
@@ -123,10 +123,10 @@ The value for confidence level must be between 0 and 1 (not inclusive). For a co
 
 ### Litter Specific Covariate
 
-```{figure} _static/img/image90.png
+```{figure} _static/img/nst_dichot_lsc_dropdown.png
 :alt: For the nested dichotomous models, the Litter Specific Covariate option picklist selections are: Overall Mean (default) and Control Group Mean.
 :scale: 100%
-:name: f91
+:name: f112
 
 Litter Specific Covariate options.
 ```
@@ -158,10 +158,10 @@ For more details, refer to [**Bootstrap Results Table**](#bootstrap-results-tabl
 
 BMDS automatically runs all forms of the available nested models and displays the results on the Output tab. The codes following the model name indicate whether the litter specific covariate (lsc) and intralitter correlation (ilc) are included in the result.
 
-```{figure} _static/img/image91.png
-:alt: Four rows of nested logistic model result types
+```{figure} _static/img/nst_dichot_model_combinations.png
+:alt: Eight rows of nested logistic and NCTR models result types
 :scale: 100%
-:name: f92
+:name: f113
 
 Nested model results as listed on the Output tab.
 ```
@@ -191,10 +191,10 @@ The nested models use a bootstrap approach for evaluating the fit of the model t
 
 The Bootstrap Results table summarizes the result of that test for goodness of fit. It reiterates the user-input number of iterations and displays the seed number used to generate the simulations (which may have been chosen randomly by BMDS). The log-likelihood and the Observed Chi-square test statistic pertain to the observed data. The Combined P-value can be used to infer whether the fit is adequate. Small p-values (*e.g.*, less than 0.05 or 0.10) would indicate poor fit.
 
-```{figure} _static/img/image92.png
+```{figure} _static/img/nst_dichot_bootstrap_summary.png
 :alt: Bootstrap Results table
-:scale: 80%
-:name: f93
+:scale: 100%
+:name: f114
 
 Bootstrap Results table.
 ```
@@ -207,23 +207,22 @@ Thus, BMDS runs the procedure three times and gets a p-value for each. These can
 
 Further details include middle and high-end percentiles for the Chi-square test statistic, that can be further compared to the observed value.
 
-```{figure} _static/img/image93.png
+```{figure} _static/img/nst_dichot_bootstrap_runs.png
 :alt: Bootstrap Runs table
-:scale: 80%
-:name: f94
+:scale: 100%
+:name: f115
 
 Bootstrap Runs table.
 ```
-
 
 ### Scaled Residuals Table
 
 In simple dichotomous modeling, there is a single scaled residual for each dose group. For nested designs, the probabilities of response and therefore the scaled residuals will vary across experimental units (*i.e.*, litters). That variation is shown in the Litter Data table ({numref}`f96`) and summarized in the Scaled Residuals table ({numref}`f95`). The summary is an attempt to capture a general impression of the closeness of the observed response rates to those predicted by the model. As is typical, scaled residual values greater than 2 in absolute value may affect the user's assessment of fit.
 
-```{figure} _static/img/image94.png
+```{figure} _static/img/nst_dichot_scaled_residuals.png
 :alt: Scaled Residuals Table
-:scale: 75%
-:name: f95
+:scale: 100%
+:name: f116
 
 Summarized Scaled Residuals.
 ```
@@ -235,10 +234,10 @@ Their are multiple values for scaled residuals reported in the Scaled Residuals 
 
 The Litter Data table shows the model-predicted probability of response and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
 
-```{figure} _static/img/image95.png
-:alt: Eleven rows of the Little Data table showing columns for Dose, Litter Specific Covariance, Estimated robability, Litter Size, Expected, Observed, and Scaled Residual
-:scale: 50%
-:name: f96
+```{figure} _static/img/nst_dichot_litter_data_table.png
+:alt: Seventeen rows of the Little Data table showing columns for Dose, Litter Specific Covariance, Estimated robability, Litter Size, Expected, Observed, and Scaled Residual
+:scale: 80%
+:name: f117
 
 Partial capture of the Litter Data table.
 ```
@@ -432,3 +431,24 @@ The approach used for all the nested dichotomous models is the same. The equatio
 
 $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
+### Additional Plots
+
+Some cases arise where models with intralitter correlation (ILC) estimated give a much better fit than corresponding models where ILC was not included in the model. This happens even when the estimated mean response rates (from the dose-response equation) appear very similar across those two models and very closely match the observations (as summarized in the traditional dose-response plots as the total number of responders over the total number of fetuses, ignoring litter membership).  For example: 
+
+```{figure} _static/img/nst_dichot_model_graph_comparison.png
+:alt: Comparison of two nested logistic plots that are very similar by have very different p-values, indicating poorer fit.
+:scale: 50%
+:name: f118
+
+Comparison of nested logistic models with or without ILC
+```
+
+An additional nested plot is available by clicking the **View Additional Plots** button.  This plot graphs the observed number of litters with a certain number of responding fetuses and the model estimate of that value.  Users can visually ascertain how well each variation of the nested model predicts the "correct" observed number of litters with a particular number of responding fetuses for each individual dose group.
+
+```{figure} _static/img/nst_dichot_additional_plot.png
+:alt: Visual of the additional nested dichotomous plot that graphs observed vs predicted number of responding fetuses per dose group per model form.
+:scale: 80%
+:name: f118
+
+Additional nested dichotomous plot
+```
