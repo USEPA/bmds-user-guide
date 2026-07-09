@@ -14,10 +14,10 @@ For more information on the Bayesian implementation of the dichotomous models, s
 
 BMDS offers the traditional MLE dichotomous response models available in previous versions of BMDS plus Bayesian versions of each model, and a Bayesian model averaging feature.
 
-```{figure} _static/img/image81.png
+```{figure} _static/img/MLE_dichot_model_table.png
 :alt: Dichotomous model table with default models selected
-:scale: 65%
-:name: f76
+:scale: 85%
+:name: f94
 
 Default dichotomous model selection.
 ```
@@ -32,10 +32,10 @@ The dataset-specific **Maximum multistage degree** picklist will contain choices
 
 The default value for number degrees to run will be the lesser of $N‑1$ or 3, but the user can change this to a higher number of degrees up to the lesser of $N‑1$ or 4. 
 
-```{figure} _static/img/image82.png
+```{figure} _static/img/max_multistage_degree.png
 :alt: Maximum Multistage Degree picklist selections displayed, with degree 3 highlighted
 :scale: 100%
-:name: f77
+:name: f95
 
 Maximum Multistage Degrees for dichotomous datasets.
 ```
@@ -52,10 +52,10 @@ On the Settings tab, the user can define up to six Option Sets in BMDS Online (u
 
 Select the blue Plus button in the table header to define a new Option Set configuration row; select the red Trash Can button to delete the row.
 
-```{figure} _static/img/image83.png
+```{figure} _static/img/MLE_dichot_option_sets.png
 :alt: Dichotomous model options with Risk Type picklist values displayed
 :scale: 80%
-:name: f78
+:name: f96
 
 Dichotomous Model options
 ```
@@ -88,10 +88,10 @@ The horizontal bar depicting the response level used to derive the BMD ({numref}
 
 When P(0) does not equal zero, the true response level can be calculated using the Extra Risk equation described in [**Risk Type**](#risk-type)
 
-```{figure} _static/img/image64.png
+```{figure} _static/img/individual_model_plot.png
 :alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
 :scale: 80%
-:name: f79
+:name: f97
 
 Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
 ```
@@ -108,10 +108,10 @@ For example, if the user sets the confidence level to 0.95 (the default), then t
 
 ### Goodness of Fit Table
 
-```{figure} _static/img/image84.png
+```{figure} _static/img/MLE_dichot_gof_table.png
 :alt: Goodness of Fit table
 :scale: 80%
-:name: f80
+:name: f98
 
 Goodness of Fit table for MLE Dichotomous.
 ```
@@ -132,10 +132,10 @@ The fit of the model to the data may be called into question if the scaled resid
 
 ### Analysis of Deviance Table
 
-```{figure} _static/img/image85.png
+```{figure} _static/img/MLE_dichot_dev_table.png
 :alt: Analysis of Deviance table
 :scale: 75%
-:name: f81
+:name: f99
 
 Analysis of Deviance table for MLE Dichotomous.
 ```
@@ -190,10 +190,10 @@ The *P-Value* reflects the use of this Chi-square approximation to assess signif
 
 The graphical output (*i.e.*, plot) is a visual depiction of the results of the modeling. Because plots, in general, were discussed in [**Graphs/Plots (All Endpoints)**](./result-output-mle-bayesian.md#graphsplots-all-endpoints), here we describe the one additional detail specific to the dichotomous models: computation of the error bars.
 
-```{figure} _static/img/image86.png
+```{figure} _static/img/dichot_mle_plot.png
 :alt: Graph displaying error bars on the data points
 :scale: 80%
-:name: f82
+:name: f100
 
 Dichotomous endpoint plot with error bars on the data points.
 ```
@@ -636,7 +636,7 @@ To access the Rao-Scott transformation:
 ```{figure} _static/img/RS_button.png
 :alt: screenshot showing Rao-Scott transformation button under data table for Dichotomous data
 :scale: 30%
-:name: f83
+:name: f101
 
 With Dichotomous as the model type, BMDS Online displays a Rao-Scott transformation link under the data table.
 ```
@@ -660,7 +660,7 @@ Additionally, users will need to select the species that corresponds to their do
 ```{figure} _static/img/RS_data_entry_v2.png
 :alt: the Rao-Scott transformation page
 :scale: 65%
-:name: f84
+:name: f102
 
 The Rao-Scott transformation page, with an example dataset loaded
 ```
@@ -674,7 +674,7 @@ Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-
 ```{figure} _static/img/RS_results_v2.png
 :alt: Result window following Rao-Scott transformation operation
 :scale: 65%
-:name: f85
+:name: f103
 
 Result of running a Rao-Scott transformation, with summary table of results and plots of adjusted vs original values
 ```
@@ -686,7 +686,7 @@ From the Actions drop down menu, users can download the Rao-Scott adjusted data 
 ```{figure} _static/img/RS_report_v2.png
 :alt: Contents of downloaded Rao-Scott transformation Word report
 :scale: 90%
-:name: f86
+:name: f104
 
 Rao-Scott transformation Word report, with summary table of results, plots of original vs adjusted values, and Rao-Scott transformation regression parameter values
 ```
@@ -772,5 +772,15 @@ The asymptotic *p*-value is based on a normal approximation of the linear trend 
 The null hypothesis for the Cochran-Armitage test is that the binomial proportion of the responses is the same across all levels of the ordinal dose variable; *p*-values less than the alpha level (normally 0.05) indicate that a monotonic trend does exist in the data.
 
 :::{note}
-At this time, the Cochran-Armitage trend test is only available in pybmds (version 25.2).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
+At this time, the Cochran-Armitage trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
 :::
+
+To run the Cochran-Armitage test, users can click the **Cochran-Armitage Test** button on the Data tab after entering a dataset.  The trend test results will display in a table below the plot.  
+
+```{figure} _static/img/cochran_armitage_button_results.png
+:alt: Dichotomous Data tab displaying the results of the Cochran-Armitage trend test
+:scale: 75%
+:name: f105
+
+Results for the Cochran-Armitage trend test display under the plot on the dichotomous Data tab
+```
