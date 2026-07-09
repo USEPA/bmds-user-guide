@@ -448,7 +448,7 @@ An additional nested plot is available by clicking the **View Additional Plots**
 ```{figure} _static/img/nst_dichot_additional_plot.png
 :alt: Visual of the additional nested dichotomous plot that graphs observed vs predicted number of responding fetuses per dose group per model form.
 :scale: 80%
-:name: f118
+:name: f119
 
 Additional nested dichotomous plot
 ```

@@ -33,10 +33,10 @@ In accordance with EPA cancer guidelines ([U.S. EPA, 2005](https://hero.epa.gov/
 
 Users can choose to have BMDS auto-select the appropriate multistage degree of the Multistage model for each tumor dataset. The option is available from the **Degree** picklist on the Settings tab ({numref}`f97`).
 
-```{figure} _static/img/image96.png
+```{figure} _static/img/mst_degree_picklist.png
 :alt: Degree column picklist values displayed, with "auto" selected
 :scale: 100%
-:name: f97
+:name: f120
 
 The Degree picklist with the auto-select option highlighted.
 ```
@@ -117,10 +117,10 @@ The user can specify the multistage degree for each dataset.
 
 Choose whether BMDS auto-selects the appropriate multistage degree or whether it should be user-specified. Selectable values are auto, 1, 2, 3, or 4.
 
-```{figure} _static/img/image97.png
+```{figure} _static/img/mst_option_table.png
 :alt: Dataset options table for multitumor data, with Degree column picklist values displayed
 :scale: 75%
-:name: f98
+:name: f121
 
 Dataset options for multitumor data.
 ```
@@ -145,10 +145,10 @@ BMDS will recommend a model degree based on the decision logic and settings foun
 
   * If the results do not meet the **Test Threshold** value set in the **Ratio of BMD/BMDL (Caution)** setting on the Logic tab ({numref}`f99`), BMDS displays a pop-up message to the user that *BMD/BMDL ratio \>\[value\]; consider consulting a statistician*. However, the model is not removed from the results.
 
-```{figure} _static/img/image98.png
+```{figure} _static/img/mst_logic.png
 :alt: The Logic setting for \"Ratio of BMD/BMDL (caution)\" showing a threshold value of 3.
 :scale: 80%
-:name: f99
+:name: f122
 
 BMDS Online will display an error message if the result does not meet the threshold value specified in this Dichotomous Logic tab setting.
 ```
@@ -167,10 +167,10 @@ To access the Poly K adjustment tool:
 
 3.  Beneath the data table, select the link for **Poly K Adjustment**.
 
-```{figure} _static/img/image99.png
+```{figure} _static/img/poly3_button.png
 :alt: Arrow pointing to Poly K Adjustment link
 :scale: 75%
-:name: f100
+:name: f123
 
 With Multistage Cancer/Multitumor as the model type, BMDS Online displays a Poly K Adjustment link under the data table.
 ```
@@ -191,10 +191,10 @@ The dataset used for poly-k adjustment should have the following columns in this
 
 -   **Tumor status.** Numeric value indicating if animal did not have tumor (0) or did have tumor (1)
 
-```{figure} _static/img/image100.png
+```{figure} _static/img/poly3_data_entry.png
 :alt: Poly K Adjustment page
 :scale: 70%
-:name: f101
+:name: f124
 
 The Poly K Adjustment page, with an example dataset.
 ```
@@ -229,10 +229,10 @@ Select the **Execute** button to run the analysis. BMDS Online extends the Poly 
 
 The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard. From here, the user can return to their Multistage/Multitumor analysis, return to the Data tab, select the [**Load dataset from Excel button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the clipboard contents to create a new dataset. Or they can paste the clipboard contents into Excel for further analysis.
 
-```{figure} _static/img/image101.png
+```{figure} _static/img/poly3_results.png
 :alt: Result window following Poly K adjustment operation
 :scale: 85%
-:name: f102
+:name: f125
 
 Result of running a Poly K adjustment, with plot of tumor incidence over study duration
 ```
@@ -335,20 +335,20 @@ By default, BMDS runs the Multistage model as restricted. This is the EPA standa
 
 The Modeling Summary table for the restricted Multistage model includes an estimate of the slope factor, defined by EPA as the linear slope between the extra risk (0.1) at the BMDL(10) and the extra risk (0) at background (generally 0 dose).
 
-```{figure} _static/img/image102.png
+```{figure} _static/img/mst_BMD_summary_table.png
 :alt: Modeling Summary table containing Slope Factor row
 :scale: 75%
-:name: f103
+:name: f126
 
 Slope Factor (fourth row in table) appears only on restricted Multistage model results for multistage/multitumor endpoints.
 ```
 
 The Multistage model plot also includes a dashed line representing this linear slope.
 
-```{figure} _static/img/image103.png
+```{figure} _static/img/mst_plot_CSF.png
 :alt: Graph with dashed line dhowing linear slope
 :scale: 80%
-:name: f104
+:name: f127
 
 The dashed line for the Multistage model plot representing cancer slope factor.
 ```
