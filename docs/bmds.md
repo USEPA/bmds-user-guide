@@ -97,7 +97,7 @@ Jonckheere-Terpstra trend test,No,No,No,No,Yes,Yes
 
 BMDS Online contains all the models and features that were available in BMDS 2.7 except for:
 
--   The Dichotomous background-dose models, which were rarely used.
+-   The dichotomous background-dose models, which were rarely used.
 
 -   The Rai and Van Ryzin nested dichotomous model, which was not included in BMDS due to the planned inclusion, and increased reliability, of the Nested Logistic and NCTR models.
 

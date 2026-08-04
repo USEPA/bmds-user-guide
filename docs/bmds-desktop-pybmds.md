@@ -1,6 +1,6 @@
 # BMDS Desktop and pybmds
 
-New in 2024 is the rollout of BMDS Desktop and pybmds. Both applications enable the user to work offline without needing an internet connection, while each application offers its own specific advantages.
+BMDS Desktop and pybmds were released in 2024. Both applications enable the user to work offline without needing an internet connection, while each application offers its own specific advantages.
 
 ## Requirements, Installation, and Documentation
 
@@ -30,7 +30,7 @@ BMDS Desktop is identical to BMDS Online, with the following differences:
 
 -   Database files (projects) are single files containing all analyses; the BMDS Desktop opening page shows all previous analyses included in that project.
 
--   Within a database file (project), analyses can be labelled and organized.
+-   Within a database file (project), analyses can be labelled and organized using the Collections feature.
 
 ```{figure} _static/img/desktop_interface.png
 :alt: BMDS Desktop user interface showing list of previous analyses
@@ -44,13 +44,15 @@ BMDS Desktop home page, showing selectable and searchable list of previous analy
 
 -   BMDS Desktop can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#maximum-number-of-datasets) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than putting large numbers of datasets into a single analysis.
 
--   The Microsoft Word report does not contain URLs because the analysis was run on a local computer, not the internet.
+-   The Microsoft Word report does not contain URLs because the analysis is run on a local computer, not the internet.
 
 ### Constraints on Sharing Analyses with BMDS Online
 
 You can [**export an analysis or results**](./bmds-online.md#sharing-and-downloading-analyses-and-results) from BMDS Desktop and import the files into BMDS Online, and vice versa. However, there are some caveats:
 
--   BMDS Online is limited to a maximum of 3-6 option sets and 6 datasets (for dichotomous, continuous, and nested dichotomous endpoints) or 10 datasets (for cancer endpoints). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
+-   For MLE analyses, BMDS Online is limited to a maximum of 3-6 option sets and 6 datasets (for dichotomous, continuous, and nested dichotomous endpoints) or 10 datasets (for cancer endpoints). If the exported BMDS Desktop analysis exceeds these limits, then BMDS Online cannot load the analysis.
+
+-   For LOUD Bayesian model averaging analyses, BMDS Online is limited to 2 option sets and 2 datasets.
 
 -   The export function is intended to share and view analyses and results only; it is not intended to support a seamless interchange of data between the two applications, nor does it support a collaborative workflow.
 
