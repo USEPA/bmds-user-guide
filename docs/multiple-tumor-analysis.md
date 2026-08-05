@@ -1,6 +1,6 @@
 # Multiple Tumor Analysis
 
-Multiple tumor analysis is most often limited to analyses of cancer data where the component datasets are for tumors occurring at various sites, hence its name.
+Multiple tumor analysis is limited to analyses of cancer data where the component datasets are for tumors occurring at various sites, hence its name.
 
 The BMDS modeling option **Multistage Cancer/Multitumor** is a special application of dichotomous modeling. It is offered as a convenience to the user who may be interested in evaluating the combined effect of two or more independent, dichotomous responses.
 
@@ -27,7 +27,7 @@ Unless there is substantial biological evidence to  indicate that the tumor type
 *  A multistage model is an appropriate model for each of the tumors separately. However, the individual multistage models fit to the
 individual tumors need not have the same multistage degree.
 
-*  The user is interested in estimating the risk of getting one or more of the tumors under analysis; the results indicate the BMD and BMDL associated with the user-defined benchmark response (BMR) level, where the BMD and BMDL are the maximum likelihood and lower bound estimates of the dose that is estimated to give an extra risk equal to the BMR for the combination (getting one or more of the tumors).
+*  The user is interested in estimating the risk of getting one or more of the tumors under analysis; the results indicate the BMD and BMDL associated with the user-defined BMR level, where the BMD and BMDL are the MLE and lower bound estimates of the dose that is estimated to give an extra risk equal to the BMR for the combination (getting one or more of the tumors).
 
 In accordance with EPA cancer guidelines ([U.S. EPA, 2005](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=6324329)), a Multiple Tumor Analysis will always run the restricted form of the Multistage model.
 
@@ -57,7 +57,7 @@ The output of a Multistage Multitumor model run will present the results of fitt
 
 In practice, the user should investigate each tumor individually and determine which degree of the Multistage-Cancer model is most appropriate for each individual tumor. That determination will involve all the usual considerations of fit, AIC, etc.
 
-When a specific form of the Multistage-Cancer model is chosen for each of the tumors of interest (they need not have the same degree across all the tumors in question), the user should specify those choices in the analysis.
+When a specific form of the Multistage-Cancer model is chosen for each of the tumors of interest (they need not have the same degree across all the tumors in question, as noted above), the user should specify those choices in the analysis.
 
 :::{note}
 The following descriptions are valid only when the tumors are assumed to be independent of one another (conditional on dose level).
@@ -101,7 +101,7 @@ A profile-likelihood approach is used to derive the BMDL:
 
    * For that set of parameters, the risk at $d$ is equal to the user-specified BMR.
 
-Note that the combined log-likelihood is a function of the fits of the individual tumors (the sum of the individual log-likelihoods), obtained using their tumor-specific β values. Thus, the search for the parameters of the combined Multistage-Cancer model varies the individual-tumor β values in such a way that the individual log-likelihoods add up to a combined likelihood within the range desired (greater than or equal to the target). However, to satisfy the second constraint, the sums of the individual-tumor parameters (shown above to be the parameters of the combined probability function) are used to evaluate the risk for any proposed BMDL, D.
+Note that the combined log-likelihood is a function of the fits of the individual tumors (i.e., the sum of the individual log-likelihoods), obtained using their tumor-specific β values. Thus, the search for the parameters of the combined Multistage-Cancer model varies the individual-tumor $β$ values in such a way that the individual log-likelihoods add up to a combined likelihood within the range desired (greater than or equal to the target). However, to satisfy the second constraint, the sums of the individual-tumor parameters (shown above to be the parameters of the combined probability function) are used to evaluate the risk for any proposed BMDL.
 
 Note that the individual tumors need not be modeled with the same degree of the Multistage-Cancer model. Any terms not included for an individual tumor are assumed to be zero (and will remain at zero during BMDL optimization) in the summations shown above.
 
@@ -185,11 +185,11 @@ Under the Dataset table:
 
 The dataset used for poly-k adjustment should have the following columns in this sequence:
 
--   **Dose.** Numeric value of dose group
+-   **Dose:** Numeric value of dose group
 
--   **Day.** Numeric value of survival time
+-   **Day:** Numeric value of survival time
 
--   **Tumor status.** Numeric value indicating if animal did not have tumor (0) or did have tumor (1)
+-   **Tumor status:** Numeric value indicating if animal did not have tumor (0) or did have tumor (1)
 
 ```{figure} _static/img/poly3_data_entry.png
 :alt: Poly K Adjustment page
@@ -203,19 +203,19 @@ Select the **About** button to display a complete description of the poly-adjust
 
 The inputs for the Poly K tool are:
 
-* **Dose units**. The dose metrics for the data being adjusted (*e.g.*, ppm, mg/kg-d).
+* **Dose units:** The dose metrics for the data being adjusted (*e.g.*, ppm, mg/kg-d).
 
-* **Power.** The power to be used for the adjustment. Defaults to 3, but can be adjusted given the nature of the tumors being analyzed.
+* **Power:** The power to be used for the adjustment. Defaults to 3, but can be adjusted given the nature of the tumors being analyzed.
 
-* **Duration.** The duration of the study in days. By default (if empty), the maximum reported day in the dataset. In [Kissling et     al.(2008)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/708980), the authors note that the poly-3 adjustment has not been validated for carcinogenicity studies longer than two years, consistent with the conclusion of the [Portier et al. (1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998) analysis that acknowledges that "animals used in historical control data base were generally sacrificed if they lived to 109 weeks.... Thus, the application of these models beyond 109 weeks would be speculative."
+* **Duration:** The duration of the study in days. By default (if empty), the maximum reported day in the dataset. In [Kissling et     al.(2008)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/708980), the authors note that the poly-3 adjustment has not been validated for carcinogenicity studies longer than two years, consistent with the conclusion of the [Portier et al. (1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998) analysis that acknowledges that "animals used in historical control data base were generally sacrificed if they lived to 109 weeks.... Thus, the application of these models beyond 109 weeks would be speculative."
 
-* **Dataset.** The dose-response data that will be adjusted, provided in an uploaded CSV file with the following structure:
+* **Dataset:** The dose-response data that will be adjusted, provided in an uploaded CSV file with the following structure:
 
-   * **Dose**: numeric value of dose group
+   * **Dose:**: numeric value of dose group
 
-   * **Day**: numeric value of survival time
+   * **Day:**: numeric value of survival time
 
-   * **Tumor status**: numeric value indicating if animal did not have tumor (0) or did have tumor (1)
+   * **Tumor status:**: numeric value indicating if animal did not have tumor (0) or did have tumor (1)
 
 Select the **Execute** button to run the analysis. BMDS Online extends the Poly K Adjustment page with the following outputs ({numref}`f125`):
 
@@ -293,7 +293,7 @@ If an animal in a 2-year bioassay dies after one year, this animal can be consid
 
 Given the example above, an animal dying at one year would contribute a weight of $(½)^{3}=0.125$. For tumors that are quicker to develop, a lower value of k can be used (such that animals dying early provide more information). Conversely, for slower developing tumors, a higher value of k can be used (such that animals dying early provide less information).
 
-Use of the poly-3 adjustment will result in survival adjusted Ns (frequently non-integer values) that can be used in dose-response analyses.
+Use of the poly-k adjustment will result in survival adjusted Ns (frequently non-integer values) that can be used in dose-response analyses.
 
 ## Option Set
 
@@ -315,7 +315,7 @@ $$extra\ risk\  - \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$$
 
 The BMR is the value of risk (extra or added, as specified by the user) for which a BMD is estimated. BMR must be between 0 and 1 (not inclusive). If $P(0)\  > \ 0$, then values for BMR greater than $1 - \ P(0)$ will result in an error when the risk type is added risk. That is because the maximum added risk that can ever be achieved is $1 - \ P(0)$. In practice, this should not typically be an issue because one usually is interested in BMR values in the range of 0.01 to around 0.10.
 
-### Confidence Level (one sided)
+### Confidence Level (one-sided)
 
 The Confidence Level is a real number between 0 and 1; 0.95 is recommended by EPA ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
@@ -360,5 +360,5 @@ inhalation unit risk (IUR) as defined by IRIS. For more information, see the **I
 
 If BMDS estimates one or more of the tumors to have a BMD greater than three times the highest dose tested (for that tumor), then the multiple tumor analysis will stop at an intermediate point, *i.e.*, after the fitting has been done for the tumor in question and the magnitude of that BMD has been determined. No tumors listed below that tumor will be analyzed, and no combination will be completed.
 
-It is probably the case that the tumor in question will not add substantially to the estimation of a BMD for the combinations of tumors, assuming other tumors have BMDs less than three times the highest dose; that is because the magnitude of response for the tumor in question has not even reached the benchmark response level for such a high exposure and so its individual contribution to the risk of getting one or more of the tumors being analyzed will be small in comparison to that for the other tumors. The user might attempt a combination that does not include the tumor in question.
+It is probably the case that the tumor in question will not add substantially to the estimation of a BMD for the combinations of tumors, assuming other tumors have BMDs less than three times the highest dose; that is because the magnitude of response for the tumor in question has not even reached the BMR level for such a high exposure and so its individual contribution to the risk of getting one or more of the tumors being analyzed will be small in comparison to that for the other tumors. The user might attempt a combination that does not include the tumor in question.
 
