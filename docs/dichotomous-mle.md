@@ -1,8 +1,6 @@
 # Dichotomous Endpoints - Maximum Likelihood Methods
 
-BMDS includes models for dichotomous endpoints in which the observations are independent of each other. In these models, the  dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals that have an adverse response is assumed to be binomially distributed.
-
-A specific example of such a dataset is a study in which adult animals are exposed to different concentrations of a toxicant and then evaluated for the presence of liver toxicity manifested as increased histopathological lesions.
+BMDS includes models for dichotomous endpoints in which the observations are independent of each other adn outcomes are categorical (i.e., presence or absence of a specific adverse effect). In these models, the dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals (or humans, if using epidemiologic data) with an adverse response is assumed to be binomially distributed.
 
 For models for dichotomous endpoints in which the responses are nested (for example, pups within litters, and litters nested within doses), see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md).
 
@@ -24,11 +22,11 @@ Default dichotomous model selection.
 
 Most MLE models can be run restricted or unrestricted. The EPA default recommendation for initial runs is to restrict the Dichotomous Hill, Gamma, Log-Logistic, Multistage, and Weibull models and un-restrict the Logistic, Log-Probit, Probit and Quantal Linear models. Note that the Logistic, Probit, and Quantal Linear models have no restricted option ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-See [**Individual Model Specifications**](#individual--model-specifications) for the effect of the user selecting the restricted version of the models (refer to the paragraphs in the *Notes* fields). In general, the restrictions prevent the slope of the dose-response curve from becoming infinite at 0 dose. This is often considered to be biologically unrealistic and can lead to numerical problems when computing confidence limits, so several authors have recommended restricting the appropriate parameter. A BMDS Online analysis can have a maximum of six datasets for dichotomous endpoints.
+See [**Individual Model Specifications**](#individual--model-specifications) for the effect of the user selecting the restricted version of the models (refer to the paragraphs in the *Notes* fields). In general, the restrictions prevent the slope of the dose-response curve from becoming infinite at a dose level of 0. This is often considered to be biologically unrealistic and can lead to numerical problems when computing confidence limits, so several authors have recommended restricting the appropriate parameter. A BMDS Online analysis can have a maximum of six datasets for dichotomous endpoints.
 
 ## Maximum Multistage Degree
 
-The dataset-specific **Maximum multistage degree** picklist will contain choices for degree 1 to the lesser of $N‑1$ or 4.
+The dataset-specific **Maximum Multistage Degree** picklist will contain choices for degree 1 to the lesser of $N‑1$ or 4.
 
 The default value for number degrees to run will be the lesser of $N‑1$ or 3, but the user can change this to a higher number of degrees up to the lesser of $N‑1$ or 4. 
 
@@ -43,12 +41,12 @@ Maximum Multistage Degrees for dichotomous datasets.
 Hovering over the help text icon for **Maximum multistage degree** displays the following text:
 
 :::{note}
-*Studies have indicated that higher degree polynomial models are not warranted in that they generally do not sufficiently improve fit over simpler models (Nitcheva et al., 2007; PMC2040324). Complex models also increase computer processing time and the chance of model failure.*
+Studies have indicated that higher degree polynomial models are not warranted in that they generally do not sufficiently improve fit over simpler models ([Nitcheva et al., 2007](https://pmc.ncbi.nlm.nih.gov/articles/PMC2040324/)). Complex models also increase computer processing time and the chance of model failure.
 :::
 
-## Option Sets
+## Defining Modeling Settings with Option Sets
 
-On the Settings tab, the user can define up to six Option Sets in BMDS Online (unlimited in BMDS Desktop and pybmds) to apply to multiple user-selected models and multiple user-selected datasets in a single batch process.
+On the **Settings tab**, the user can define up to six Option Sets in BMDS Online (unlimited in BMDS Desktop and pybmds) to apply to multiple user-selected models and multiple user-selected datasets in a single batch process.
 
 Select the blue Plus button in the table header to define a new Option Set configuration row; select the red Trash Can button to delete the row.
 
@@ -72,11 +70,13 @@ Extra risk is the additional risk divided by the predicted proportion of animals
 
 $$Extra\ risk\ at\ dose\ d\  = \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$$
 
+When there are responses at background (i.e., in the control group), defining the BMR using extra risk will result in a smaller BMD given the population of animals able to respond to treatment is smaller.
+
 ### BMR
 
-The BMR is the value of risk (extra or added, as specified by the user) for which a BMD is estimated. BMR must be between 0 and 1 (not inclusive).
+The BMR is the value of risk (extra or added, as specified by the user) for which a BMD is estimated. The BMR must be between 0 and 1 (not inclusive).
 
-If $P(0)\  > \ 0$, then values for the BMR greater than $1 - \ P(0)$ will result in an error when the risk type is added risk. That is because the maximum added risk that can ever be achieved is $1 - \ P(0)$. In practice, this should not typically be an issue because one usually is interested in BMR values in the range of 0.01 to around 0.10.
+If $P(0)\  > \ 0$, then values for the BMR greater than $1 - \ P(0)$ will result in an error when the risk type is added risk. That is because the maximum added risk that can ever be achieved is $1 - \ P(0)$. In practice, this should not typically be an issue because one usually is interested in BMR values in the range of 0.01 to approximately 0.10.
 
 ### BMR and Plots
 
@@ -177,7 +177,7 @@ Deviance is approximately a Chi-square random variable with degrees of freedom s
 
 :::{tab-item} P-value
 
-The *P-Value* reflects the use of this Chi-square approximation to assess significance of the difference in fits. Larger deviances    correspond to smaller p-values, so a small p-value indicates that the smaller model does not fit as well as the full model. The user may choose a rejection level (0.05 is common) to test if the model fit is appropriate.
+The P-Value reflects the use of this Chi-square approximation to assess significance of the difference in fits. Larger deviances    correspond to smaller p-values, so a small p-value indicates that the smaller model does not fit as well as the full model. The user may choose a rejection level (0.05 is common) to test if the model fit is appropriate.
 
 ***For the fitted model***, this is another measure of the fit of the model to the data.
 
@@ -227,7 +227,7 @@ The error bars shown in BMDS plots use alpha = 0.05 and so represent the 95% con
 
 BMDS contains nine MLE models for dichotomous endpoints as defined below.
 
-### Individual  Model Specifications
+### Individual Model Specifications
 
 ::::{tab-set}
 
@@ -253,7 +253,7 @@ $0\  < \beta < \ 10,000$
 
 **User Parameter Restriction Options**
 
-Can restrict all $\beta$ coefficients to $leq$ 0. Doing so will guarantee that the multistage model will be either perfectly flat or always increasing.
+The user can restrict all $\beta$ coefficients to $\leq$ 0. Doing so will guarantee that the multistage model will be either perfectly flat or always increasing.
 
 Per [EPA Technical Guidance (2012)](https://www.epa.gov/risk/benchmark-dose-technical-guidance), when the Multistage model is used for cancer analyses (e.g., in Multitumor analyses) all $\beta$ coefficients are restricted to be non-negative.
 :::
@@ -516,7 +516,7 @@ This expression ignores a constant term that is independent of the parameter vec
 
 ### AIC and Model Comparisons
 
-The Akaike Information Criterion (AIC) ([Akaike, 1973](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=591)) can be used to compare different models fit (by the same fitting method, *e.g.*, by maximizing the likelihood) to the same dataset. The AIC is a statistic that depends on the value of LL (the log-likelihood function; see the previous section) and the number of estimated parameters, p:
+The Akaike Information Criterion (AIC) ([Akaike, 1973](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=591)) can be used to compare different models fit (by the same fitting method, *e.g.*, by maximizing the likelihood) to the same dataset. The AIC is a statistic that depends on the value of LL (the log-likelihood function; see the [**previous section**](#likelihood-function)) and the number of estimated parameters, p:
 
 $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
@@ -524,15 +524,15 @@ $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 The AICs for the dichotomous endpoints ignore the parameter-independent term, because LL as defined in the previous section ignores that term. This differs from the case of the continuous endpoints, where the parameter-independent term was not ignored, because its value depended on the assumed underlying data distribution (Normal or Lognormal). For dichotomous endpoints, there is only one assumed distribution for the counts of responders (the Binomial distribution), so the parameter-independent term has no effect and therefore can be ignored.
 :::
 
-The AIC balances the goals of getting the highest LL value possible while being parsimonious with respect to the number of parameters  needed to achieve a high LL value. Since the equation for AIC has a negative multiplier for LL (which one wants to be greater) and positive multiplier for p (which one wants to be as small as possible and still get "good fit"), a model with a **smaller value of AIC** than other models is presumed to be the better model on the basis of AIC. Although such methods are not exact, they can provide useful guidance in model selection.
+The AIC balances the goals of getting the highest LL value possible while being parsimonious with respect to the number of parameters needed to achieve a high LL value. Since the equation for AIC has a negative multiplier for LL (which one wants to be greater) and positive multiplier for p (which one wants to be as small as possible and still get "good fit"), a model with a **smaller value of AIC** than other models is presumed to be the better model on the basis of AIC. Although such methods are not exact, they can provide useful guidance in model selection.
 
 In the current version of BMDS, the number of estimated parameters includes only those that have not been estimated to equal a bounding value, either from the model-imposed constraints or user-imposed restrictions. For more details, see [**Individual Model Specifications**](#individual--model-specifications).
 
 :::{note}
 
-The parameter counting process may or may not be reasonable, depending on the boundary value that a parameter in question hits.
+The parameter counting process may or may not be reasonable, depending on the boundary value that a parameter in question hits (*i.e.,* is estimated to be equal to).
 
-For example, if the power parameter in a model hits (*i.e.*, is estimated to be equal to) the upper bound of 18, it would usually be the case that one would want to count that parameter as one that is estimated, but BMDS does ***not*** do that.
+For example, if the power parameter in a model hits the upper bound of 18, it would usually be the case that one would want to count that parameter as one that is estimated, but BMDS does ***not*** do that.
 
 For this reason, the user is apprised to carefully consider the cases where parameter bounds have been hit and to consider the implications for issues such as model comparison and model selection.
 :::
@@ -605,7 +605,7 @@ All models represented here use the same model forms as presented in [**Individu
 
 ### BMDL and BMDU Computation
 
-BMDS currently calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the confidence limits for the BMD (called the BMDL and BMDU here) is the same for all the models in BMDS, and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3198)). Two different specific approaches are followed in these models.
+BMDS currently calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the confidence limits for the BMD (called the BMDL and BMDU here) is the same for all the models in BMDS and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3198)). Two different specific approaches are followed in these models.
 
 For the Multistage model, it is impractical to explicitly reparameterize the dose-response model function to allow BMD to appear as an explicit parameter. For these models, the BMR equation is used as a non-linear constraint, and the minimum value of BMD is determined such that the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly
 
@@ -679,7 +679,7 @@ Select the **Execute** button to run the analysis.  BMDS Online extends the Rao-
 Result of running a Rao-Scott transformation, with summary table of results and plots of adjusted vs original values
 ```
 
-The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data table, select the [**Load dataset from Excel button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the clipboard contents to create a new dataset. Or they can paste the clipboard contents into Excel for further analysis.
+The **Copy Data for BMDS Modeling** link copies the summary table data to the clipboard.  From there, the user can return to their Dichotomous analysis, return to the data table, select the [**Load dataset from Excel button**](./bmds-online.md#adding-datasets-method-2-copy-and-paste), and paste the clipboard contents to create a new dataset. Or the user can paste the clipboard contents into Excel for further analysis.
 
 From the Actions drop down menu, users can download the Rao-Scott adjusted data or create a Word report documenting the Rao-Scott transformation.  This Word report will recapitulate the summary table and plots previously displayed in the browser window and will additionally report the actual values of the design effect estimated from the entered unadjusted data and the Rao-Scott regression parameter values.
 
@@ -692,13 +692,13 @@ Rao-Scott transformation Word report, with summary table of results, plots of or
 ```
 ### More on the Rao-Scott Transformation
 
-For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (*i.e.*, litter data for individual dams) in order to account for the tendency of pups from one litter to respond more alike one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).
+For dose-response analyses of dichotomous developmental toxicity studies, the proper approach is to model individual animal data (*i.e.*, litter data for individual dams) in order to account for the tendency of pups from one litter to respond more similarly to one another than pups from other litters.  This behavior is commonly termed the *litter effect* or *intralitter correlation* (see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md#nested-dichotomous-endpoints) for more details).
 
-However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data is reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data: the total number of fetuses and the number of fetuses responding per dose group, but not information on how many fetuses from each litter were affected. When dose-level summary data is reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
+However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data are reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data: the total number of fetuses and the number of fetuses responding per dose group but not information on how many fetuses from each litter were affected. When dose-level summary data are reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 
 If summary developmental data (*i.e.*, dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results can occur, including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less health-protective, BMDLs would be estimated given that the confidence interval around the BMD would be narrower.
 
-Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necessary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), multiple statistical studies have researched the concept of the design effect, $D$, as a strategy to reduce overdispersion arising from clustered study design via a simple dose-response transformation. The core concept is that correlated data can be transformed via scaling and then modeled with standard dichotomous models as if they were not correlated.  As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) reports, the design effect is related approximately to  intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
+Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necessary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), multiple statistical studies have researched the concept of the design effect, $D$, as a strategy to reduce overdispersion arising from clustered study design via a simple dose-response transformation. The core concept is that correlated data can be transformed via scaling and then modeled with standard dichotomous models as if they were not correlated. As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) reports, the design effect is related approximately to intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
 
 As described in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), $D$ is the ratio of the variance for correlated, clustered data and the variance for uncorrelated binomial data, given both have the same average proportion of affected animals. An estimate of the proportion of affected fetuses, $P_{f}=\frac{A_{f}}{N_{f}}$, where $A_{f}$ is the number of affected fetuses and $N_{f}$ is the total number of fetuses, is required by both measures of variance.
 
@@ -712,9 +712,9 @@ $$\left( \frac{m}{m-1}\right)\frac{1}{N_{f}}\sum_{i}^{m}n_{i}^{2}{\left( p_{i} -
 
 where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the number of litters.
 
-In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$.
+In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This scaling of the numerator and denominator results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$.
 
-As can be seen in the equations above, the calculation of the design effect requires litter-level data given the need to know $p_{i}$ for each litter and that it thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squares and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
+As can be seen in the equations above, the calculation of the design effect requires litter-level data (i.e., need to know $p_{i}$ for each litter) and thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squares and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
 
 ```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
@@ -730,7 +730,7 @@ As can be seen in the equations above, the calculation of the design effect requ
 "Rabbits", "OR", "10", "43", "1.1477", "0.2739", "0.1299"
 ```
 
-From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) vs the design effect calculated using  orthogonal regression ($D_{OR}$), by practice the design effect estimated using these two regression approaches is averaged to generate the average design effect ($D_{average}$) actually used in the scaling of $N_{f}$ and $A_{f}$. 
+From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) versus the design effect calculated using  orthogonal regression ($D_{OR}$), BMDS calculates an average design effect ($D_{average}$) that is the average of the design effects estimated using these two regression approaches.  The $D_{average}$ is the value that is actually used in the scaling of $N_{f}$ and $A_{f}$. 
 
 :::{note}
 When dose-group incidences are zero, the calculation of the design effect includes a $ln(0)$, term, which is undefined.  If design effect was calculated as normal, dose-groups with 0 incidece would be assigned the maximum design effect possible.  The testing of the Rao-Scott transformation did not cover situations such as these and until testing can be conducted to determine if this appropriate, a design effect of 0 (meaning no scaling) is manually assigned to dose groups with 0 incidence.  Additionally, in cases of exceedingly low incidence (approximately occurring when $P_{f} < 0.006$), a design effect less than 1 will be estimated, resulting in a scaling upwards (i.e., larger numbers) of the transformed incidence and N values.  In cases such as this, a design effect of 1 is manually applied to prevent this behavior.
@@ -761,7 +761,7 @@ Rao-Scott transformed N: ${N_{f}}_{RS} = \frac{116}{2.3045} = 50.337$
 
 For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical.
 
-The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and thus lower BMDLs. This is the consequence of the transformation that is most important as the lower BMDLs of the Rao-Scott transformed fetal incidence data approximate the BMDLs that would be estimated had individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved modeling individual-level data.
+The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and, most importantly, lower BMDLs. The lower BMDLs estimated when using the Rao-Scott transformed fetal incidence data approximate the BMDLs that would have been estimated if individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved by modeling individual-level data.
 
 ## Trend Test for Dichotomous Data
 
