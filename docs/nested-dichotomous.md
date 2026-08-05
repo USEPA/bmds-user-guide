@@ -2,16 +2,16 @@
 
 In a nested study, for each dose tested, there is a group of experimental units receiving that specific dose of the chemical of interest. For each of those experimental units, several dichotomous observations are obtained, *i.e.*, those dichotomous observations are nested within the experimental units.
 
-Moreover, because of the nesting, one may suspect that the observations within each experimental unit are more similar to one another than they are to observations from other experimental units. For example, consider a developmental toxicity experiment, in which pregnant female rodents (*dams*) are exposed to the chemical of interest prior to or during pregnancy. The offspring (*pups*) from each litter are examined after birth for the presence or absence of malformations. Because each rodent dam may produce a dozen or more pups, the results consist of a set of dichotomous (malformation present or absent) counts for each dam.
+Moreover, because of the nesting, one may suspect that the observations within each experimental unit are more similar to one another than they are to observations from other experimental units. For example, consider a developmental toxicity experiment, in which pregnant female rodents (*dams*) are exposed to the chemical of interest prior to or during pregnancy. The offspring (*pups*) from each litter are examined after birth for the presence or absence of malformations. Because each rodent dam may produce a dozen or more pups, the results consist of a related set of dichotomous (malformation present or absent) counts for each dam.
 
 Nested dichotomous models are defined to account for---and model--- the data structure associated with such experimental designs.
 
 The most common application of the nested models will be to developmental toxicology studies of organisms that have multiple
-offspring per litter, as do rodents. In these study designs, pregnant dams are given one or several doses of a toxicant, and the fetuses, embryos, or term offspring are examined for signs of abnormal development. In such studies, it is usual for the responses of pups in the same litter to be more similar to each other than to the responses of pups in different litters (termed *intra-litter correlation*, or *litter-effect*). Another way to describe the same phenomenon is that the variance among the proportion of pups affected in litters is greater than would be expected if the pups were responding completely independently of each other.
+offspring per litter, as do rodents. In these study designs, pregnant dams are given one or several doses of a toxicant, and the fetuses, embryos, or term offspring are examined for signs of abnormal development. In such studies, it is common for the responses of pups in the same litter to be more similar to each other than to the responses of pups in different litters (termed *intra-litter correlation*, or *litter-effect*). Another way to describe the same phenomenon is that the variance among the proportion of pups affected in litters is greater than would be expected if the pups were responding completely independently of each other.
 
 Observations from such studies might include skeletal structure change, delayed ossification in the bone, or organ structural change to malformation, among many others. Since all those observations are made in pups---but *not* in the mothers---these data are nested data.
 
-Nested models in BMDS make available two approaches to this feature of developmental toxicology studies:
+Nested models in BMDS provide two approaches to account for this feature of developmental toxicology studies. For example, in the context of developmental toxicity studies:
 
 1.  They use a probability model that provides for extra inter-litter variance of the proportion of pups affected (the beta-binomial probability model: see [**Likelihood Function**](#likelihood-function)), and
 
@@ -25,7 +25,7 @@ BMDS contains two nested dichotomous models:
 
 -   Nested Logistic model
 
--   NCTR (National Center for Toxicological Research) model
+-   National Center for Toxicological Research (NCTR) model
 
 The Nested Logistic model is the log-logistic model, modified to include a litter-specific covariate, whereas the NCTR model is the Weibull model, similarly modified to include a litter-specific variable.
 
@@ -80,7 +80,7 @@ Nested Model options.
 
 ### Risk Type
 
-Choices for the Risk Type option are Extra Risk (default) or Added Risk.
+Choices for the Risk Type option are **Extra Risk** (default) or **Added Risk**.
 
 Added risk is the additional proportion of total animals that respond in the presence of the dose, or the probability of response at dose $d$, $P(d)$, minus the probability of response in the absence of exposure, $P(0)$:
 
@@ -95,7 +95,7 @@ Thus, extra and additional risk are equal when background rate is zero.
 ### BMR
 
 The BMR is the value of risk (extra or added, as specified by the user) for which a BMD is estimated. BMR must be between 0 and 1 (not
-inclusive). If $P(0)\  > \ 0$, then values for BMR greater than $1 - \ P(0)$ will result in an error when the risk type is added risk. That is because the maximum added risk that can ever be achieved is $1 - \ P(0)$. In practice, this should not typically be an issue because one usually is interested in BMR values in the range of 0.01 to around 0.10.
+inclusive). If $P(0)\  > \ 0$, then values for BMR greater than $1 - \ P(0)$ will result in an error when the risk type is added risk. That is because the maximum added risk that can ever be achieved is $1 - \ P(0)$. In practice, this should not typically be an issue because one usually is interested in BMR values in the range of 0.01 to approximately 0.10.
 
 ### BMR and Plots
 
@@ -117,11 +117,11 @@ Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
 
 ### Confidence Level (one sided)
 
-The Confidence Level is a fraction between 0 and 1; 0.95 is recommended by EPA ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)). 
+The confidence level is a fraction between 0 and 1; 0.95 is recommended by EPA ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)). 
 
 The value for confidence level must be between 0 and 1 (not inclusive). For a confidence level of $x$, BMDS will output BMDL and BMDU estimates, each of which is a one-sided confidence bound at level $x$. For example, if the user sets the confidence level to 0.95 (the default), then the BMDL is a 95% one-sided lower confidence bound for the BMD estimate; the BMDU is a 95% one-sided lower confidence bound for the BMD estimate. In that example, the range from BMDL to BMDU would constitute a 90% confidence interval (5% in each tail outside that interval).
 
-### Litter Specific Covariate
+### Litter-Specific Covariate
 
 ```{figure} _static/img/nst_dichot_lsc_dropdown.png
 :alt: For the nested dichotomous models, the Litter Specific Covariate option picklist selections are: Overall Mean (default) and Control Group Mean.
@@ -156,7 +156,7 @@ For more details, refer to [**Bootstrap Results Table**](#bootstrap-results-tabl
 
 ### Four Combinations of Nested Models
 
-BMDS automatically runs all forms of the available nested models and displays the results on the Output tab. The codes following the model name indicate whether the litter specific covariate (lsc) and intralitter correlation (ilc) are included in the result.
+BMDS automatically runs all forms of the available nested models and displays the results on the Output tab. The codes following the model name indicate whether the litter-specific covariate (LSC) and intralitter correlation (ILC) are included in the result.
 
 ```{figure} _static/img/nst_dichot_model_combinations.png
 :alt: Eight rows of nested logistic and NCTR models result types
@@ -170,10 +170,10 @@ Nested model results as listed on the Output tab.
 :widths: 20 15 15
 :header-rows: 1
 
-*   - Litter Specific Coveriate
+*   - Litter Specific Covariate
     - Intralitter Correlation - Estimated
     - Intralitter Correlation - Set to Zero
-*   - Inlcluded in Model
+*   - Included in Model
     - lsc+ilc+
     - lsc+ilc-
 *   - Not Included in Model
@@ -181,7 +181,7 @@ Nested model results as listed on the Output tab.
     - lsc-ilc-
 :::
 
-The Litter Specific Covariate is another variable that the model can (optionally) include, one that may help to explain the variation in the response from one experimental unit to another. The experimental unit is very often a litter of observations, hence the designation *Litter Specific*. For more details, refer to [**Litter Specific Covariate**](#litter-specific-covariate).
+The LSC is another variable that the model can (optionally) include, one that may help to explain the variation in the response from one experimental unit to another. The experimental unit is very often a litter of observations, hence the designation *Litter Specific*. For more details, refer to [**Litter Specific Covariate**](#litter-specific-covariate).
 
 The intralitter correlation (again referencing the litter as a common experimental unit) variable estimates the degree to which observations within the same litter are correlated. If set to zero (one of the options), there is no correlation; the assumption then is that every observation is independent of every other observation (conditional on the model predicted probabilities of response).
 
@@ -189,7 +189,7 @@ The intralitter correlation (again referencing the litter as a common experiment
 
 The nested models use a bootstrap approach for evaluating the fit of the model to the data under consideration. That approach takes the model with its MLE parameter values and simulates datasets matching the design (doses, sample sizes, etc.) being modeled. For each simulated dataset, the scaled residuals are computed and summed to yield a Chi-square test statistic. The distribution of that test statistic over the iterations is compared to the Chi-square test statistic from the observed data. If the model fits the data well, the observed Chi-square should not be in the upper tail of the Chi-square statistic values from the simulations. (For more on the Chi-square calculation, see [**Goodness-of-fit Information - Litter Data**](#goodness-of-fit-information-litter-data).)
 
-The Bootstrap Results table summarizes the result of that test for goodness of fit. It reiterates the user-input number of iterations and displays the seed number used to generate the simulations (which may have been chosen randomly by BMDS). The log-likelihood and the Observed Chi-square test statistic pertain to the observed data. The Combined P-value can be used to infer whether the fit is adequate. Small p-values (*e.g.*, less than 0.05 or 0.10) would indicate poor fit.
+The **Bootstrap Results** table summarizes the result of that test for goodness of fit. It reiterates the user-input number of iterations and displays the seed number used to generate the simulations (which may have been chosen randomly by BMDS). The log-likelihood and the Observed Chi-square test statistic pertain to the observed data. The combined P-value can be used to infer whether the fit is adequate. Small p-values (*e.g.*, less than 0.05 or 0.10) would indicate poor fit.
 
 ```{figure} _static/img/nst_dichot_bootstrap_summary.png
 :alt: Bootstrap Results table
@@ -201,11 +201,11 @@ Bootstrap Results table.
 
 ### Bootstrap Runs Table
 
-The Bootstrap Runs table gives further details about the bootstrap test of fit. Since it is a random procedure (relying on random generation of datasets with the fitted model as the data-generating process) there is the possibility of noise entering into the computations.
+The **Bootstrap Runs** table gives further details about the bootstrap test of fit. Since it is a random procedure (relying on random generation of datasets with the fitted model as the data-generating process) there is the possibility of noise entering into the computations.
 
-Thus, BMDS runs the procedure three times and gets a p-value for each. These can be compared to determine if stability has been achieved. If not, the user may wish to increase the number of iterations.
+Thus, BMDS runs the procedure three times and gets a p-value for each. These values can be compared to determine if stability has been achieved. If not, the user may wish to increase the number of iterations.
 
-Further details include middle and high-end percentiles for the Chi-square test statistic, that can be further compared to the observed value.
+Further details include middle and high-end percentiles for the Chi-square test statistic, which can be further compared to the observed value.
 
 ```{figure} _static/img/nst_dichot_bootstrap_runs.png
 :alt: Bootstrap Runs table
@@ -227,12 +227,12 @@ In simple dichotomous modeling, there is a single scaled residual for each dose 
 Summarized Scaled Residuals.
 ```
 :::{note}
-Their are multiple values for scaled residuals reported in the Scaled Residuals table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical.
+There are multiple values for scaled residuals reported in the **Scaled Residuals** table, including the minimum, average, and maximum scaled residual.  The scaled residuals reported are the scaled residuals for the litters with litter specific covariate closest to the overall mean for the dose group closest to the estimated BMD.  In the situation where there is only one litter with a litter specific covariate value closest to the mean value, the value reported for the minimum, average, and maximum scaled residual will be identical.
 :::
 
 ### Litter Data Table
 
-The Litter Data table shows the model-predicted probability of response and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
+The **Litter Data** table shows the model-predicted probability of response and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
 
 ```{figure} _static/img/nst_dichot_litter_data_table.png
 :alt: Seventeen rows of the Little Data table showing columns for Dose, Litter Specific Covariance, Estimated robability, Litter Size, Expected, Observed, and Scaled Residual
@@ -375,9 +375,9 @@ $$\sum_{a}^{b}{( \bullet ) = 0}\ if\ a > b\ (by\ convention).$$
 
 This log-likelihood ignores a term that is independent of the values of the parameters.
 
-### Goodness of Fit Information Litter Data
+### Goodness-of-Fit Information for Litter Data
 
-The Litter Data table provides a listing of the data, expected and observed responses, and scaled residuals for each litter. The scaled residual values printed at the end of the table are defined as follows:
+The **Litter Data** table provides a listing of the data, expected and observed responses, and scaled residuals for each litter. The scaled residual values printed at the end of the table are defined as follows:
 
 $$\frac{(Obs\  - \ Expected)}{SE}$$
 
@@ -395,15 +395,15 @@ The overall model should be called into question if the scaled residual values a
 
 The goodness-of-fit p-values are calculated using a bootstrap approach.
 
-1.  The MLE parameter values are used to generate $B$ pseudo-datasets having the same design features (number of doses and number of   litters per dose), litter-sizes, and, if necessary, litter-specific covariate values, as the original dataset. What varies from pseudo-dataset to pseudo-dataset are the number of responding units within litters, and those are generated, at random, as dictated by the values of the ML estimates.
+1.  The MLE parameter values are used to generate $B$ pseudo-datasets that have the same design features (number of doses and number of litters per dose), litter-sizes, and, if necessary, litter-specific covariate values, as the original dataset. What varies from pseudo-dataset to pseudo-dataset are the number of responding units within litters, and those are generated, at random, as dictated by the values of the ML estimates.
 
-1.  Once the B bootstrap iterations are generated, a statistic referred to as *Chi-square* is calculated for each. The *Chi-square statistic* is the sum of the squares of the scaled residuals for each litter, as described above. Higher values of that statistic are indicative of poorer match between the model predictions and the data.
+2.  Once the $B$ bootstrap iterations are generated, a statistic referred to as *Chi-square* is calculated for each. The *Chi-square statistic* is the sum of the squares of the scaled residuals for each litter, as [described above](#scaled-residuals-table). Higher values of that statistic are indicative of poorer match between the model predictions and the data.
 
-2.  The Chi-square statistic from the original data is computed and compared to the values from the $B$ bootstrap iterations. The p-value is the proportion of Chi-square values from the iterations that are greater than the original Chi-square value.
+3.  The Chi-square statistic from the original data is computed and compared to the values from the $B$ bootstrap iterations. The p-value is the proportion of Chi-square values from the iterations that are greater than the original Chi-square value.
 
 High p-values are indicative of adequate fit (*i.e.*, there was a high proportion of Chi-square values associated with pseudo-datasets obtained from data known to be consistent with the model and the ML estimates of the model parameters).
 
-That calculation is repeated three times, and various percentiles of the generated Chi-square statistic are presented. This allows the user to determine if enough bootstrap iterations (B) have been specified. The default iterations for B is 1000 and should probably not be reduced. The user may wish to increase the default if the percentiles for Chi-square differ markedly across the three runs (specifically the median and lower percentiles), or if the p-values calculated from the three runs differ markedly. This may only be an issue when the p-value is close to the value (*e.g.*, 0.05 or 0.10) used as a critical value for deciding if the fit of the model to the data is adequate. If there is some variability in the p-values, but they are all greater than 0.20, for example, then one probably need not worry about increasing the value for B.
+That calculation is repeated three times, and various percentiles of the generated Chi-square statistic are presented. This allows the user to determine if enough bootstrap iterations ($B$) have been specified. The default iterations for $B$ is 1000 and should probably not be reduced. The user may wish to increase the default if the percentiles for Chi-square differ markedly across the three runs (specifically the median and lower percentiles), or if the p-values calculated from the three runs differ markedly. This may only be an issue when the p-value is close to the value (*e.g.*, 0.05 or 0.10) used as a critical value for deciding if the fit of the model to the data is adequate. If there is some variability in the p-values, but they are all greater than 0.20, for example, then one probably need not worry about increasing the value for $B$.
 
 :::{note}
 In traditional testing situations, the Chi-square statistic would be approximated by a Chi-square random variable having a certain degree of freedom, and its "significance" (p-value) would be determined from the appropriate Chi-square distribution function.
@@ -413,11 +413,11 @@ In traditional testing situations, the Chi-square statistic would be approximate
 
 The error bars shown for the plots of nested data are calculated in the same way as those for dichotomous data (and described in [**Plot and Error Bar Calculation**](./dichotomous-mle.md#plot-and-error-bar-calculation) for dichotomous endpoints).
 
-However, a Rao-Scott transformation is applied prior to the calculations to express the observations in terms of an effective number of affected fetuses divided by the total number in each group (the format required for the confidence intervals of simple dichotomous responses).
+However, a [Rao-Scott transformation](./dichotomous-mle.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data) is applied prior to the calculations to express the observations in terms of an effective number of affected fetuses divided by the total number in each group (the format required for the confidence intervals of simple dichotomous responses).
 
 ### BMD Computation
 
-BMD computation is like that for dichotomous models with the added wrinkle that a value for a litter-specific covariate (LSC) may be used, in addition to dose, to describe changes in the endpoint. It therefore affects the BMD calculation. If an LSC is included in the model, the user can choose to plot results and compute BMDs for one of two specific values of the LSC, either the overall mean (across all dose groups) or the control group mean. Typically, the overall mean is the preferred choice, but the control group mean might be appropriate in certain situations.
+BMD computation proceeds as for dichotomous models with the added option that a value for a litter-specific covariate (LSC) may be used, in addition to dose, to describe changes in the endpoint. Thus, the potential LSC affects the BMD calculation. If an LSC is included in the model, the user can choose to plot results and compute BMDs for one of two specific values of the LSC, either the overall mean (across all dose groups) or the control group mean. Typically, the overall mean is the preferred choice, but the control group mean might be appropriate in certain situations.
 
 For example, suppose the LSC value varies enough from group to group to be "interesting," but it goes up for some dose groups and down for others in a manner that does not indicate a dose effect. In this case, the user might decide to use the control group mean LSC when the BMD is close to the background dose (*i.e.*, basically deciding that the LSC of interest in that region is more likely to be the average observed for the control group as opposed to the average across all the groups). If the LSC is found to be affected by dose (*i.e.*, if its value appears to have a consistent trend with respect to dose), its use is discouraged.
 
@@ -425,9 +425,9 @@ Details of the BMD calculation are shown in [**Nested Dichotomous Models and the
 
 ### BMDL Computation
 
-BMDS currently only calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the lower confidence limit for the BMD (called the BMDL here) is the same for all the models in BMDS, and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
+BMDS currently only calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the lower confidence limit for the BMD (i.e., the BMDL) is the same for all the models in BMDS and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
 
-The approach used for all the nested dichotomous models is the same. The equations that define the benchmark response in terms of the benchmark dose and the dose-response model are solved for one of the model parameters, using either the control group mean or the overall mean of the litter-specific covariate. The resulting expression is substituted back into the model equations, with the effect of re-parameterizing the model so that BMD appears explicitly as a parameter. A value for BMD is then found such that, when the remaining parameters are varied to maximize the likelihood, the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly
+The approach used for all the nested dichotomous models is the same. The equations that define the BMR in terms of the BMD and the dose-response model are solved for one of the model parameters, using either the control group mean or the overall mean of the litter-specific covariate. The resulting expression is substituted back into the model equations, with the effect of re-parameterizing the model so that BMD appears explicitly as a parameter. A value for BMD is then found such that, when the remaining parameters are varied to maximize the likelihood, the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly
 
 $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
