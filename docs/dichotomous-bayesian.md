@@ -1,6 +1,6 @@
 # Dichotomous Endpoints - Bayesian Model Averaging Methods
 
-As described in the [Continuous Endpoints - Bayesian Model Averaging Methods](./continuous-bayesian.md) section, Bayesian model averaging (BMD) methods offers several advantages to typical MLE single-model selection methods. 
+As described in the [Continuous Endpoints - Bayesian Model Averaging Methods](./continuous-bayesian.md) section, Bayesian model averaging (BMA) methods offer several advantages to typical MLE single-model selection methods. 
 
 Briefly, traditional BMD modeling involves fitting a number of dose-response models to the observed data and selecting the single “best” model based on predefined criteria (see [**Goodness of Fit Table**](./dichotomous-mle.md#goodness-of-fit-table) and [**AIC and Model Comparisons**](./dichotomous-mle.md#aic-and-model-comparisons)). However, no single traditional dose-response model can be expected to capture the underlying biology or toxicological modes of action, and each candidate model represents only a possible hypothesis about the biologic processes leading to the observed endpoint being modeled. 
 
@@ -19,7 +19,7 @@ At this time, EPA does not offer technical guidance on Bayesian modeling or Baye
 
 ## LOUD Model Averaging - Dichotomous Endpoints
 
-The EPA has developed an approach to BMA for dichotomous data, terned "leveraging objective univariate distributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to dichotomous dose-response data, where each response can take on one of only two possible outcomes, positive (effect present) and negative (effect absent). 
+The EPA has developed an approach to BMA for dichotomous data, termed "leveraging objective univariate distributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to dichotomous dose-response data, where each response can take on one of only two possible outcomes, positive (effect present) and negative (effect absent). 
 
 In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the response probabilities for dichotomous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
 
@@ -28,9 +28,9 @@ In the LOUD framework, dose-response models are reparametrized in terms of inter
 
 In an animal toxicological experiment with $r$ increasing doses, ${x}_{1}, \ldots, {x}_{r}$, let $Y = ({y}_{1}, {y}_{2}, \ldots, {y}_{r})$ represent the vector of observed positive responses for each dose group, where each ${y}_{i}$ corresponds to the observed number of positive responses at dose ${x}_{i}$, and let ${n}_{1}, \ldots, {n}_{r}$ denote the total number of animals per group.  Then ${y}_{i} \sim \text{Binomial}({n}_{i},p({x}_{i}))$, where $p({x}_{i})$ is the probability of a positive response at dose ${x}_{i}$.  Specifically, when dose levels are scaled such that the control dose = 0 and the highest dose = 1, ${p}_{0}$ and ${p}_{1}$ refer to the probabilities of response at the minimum and maximum dose levels, respectively. 
 
-Since ${p}_{0}$ and ${p}_{1}$ are proportions (the proportion of responders at the relevant doses), Beta distributions were selected as priors because Beta is the conjugate prior class for modeling Binomial proportions.  For prior development, priors for ${p}_{0}$ and ${p}_{1}$ were sought that presented invariance under reparameterization and aligned with reference prior theory ([Bernardo, 1998](**ADDREF**); [Tiao and Box, 1973](**ADDREF**)), namely the development of a prior that maximizes divergence between the prior and the posterior as data observatons are made.  By maximizing divergence, the data is allowed to have the maximum effect on the posterior estimates.  
+Since ${p}_{0}$ and ${p}_{1}$ are proportions (the proportion of responders at the relevant doses), Beta distributions were selected as priors because Beta is the conjugate prior class for modeling Binomial proportions.  For prior development, priors for ${p}_{0}$ and ${p}_{1}$ were sought that presented invariance under reparameterization and aligned with reference prior theory ([Bernardo, 1998](**ADDREF**); [Tiao and Box, 1973](**ADDREF**)), namely the development of a prior that maximizes divergence between the prior and the posterior as data observations are made.  By maximizing divergence, the data are allowed to have the maximum effect on the posterior estimates.  
 
-For the case of a proportion (probability) were the generation of responses is assumed to follow a binomial distribution with fixed (unknown) probability of response, the reference prior corresponds to a $p \sim \text{Beta}(\frac{1}{2}, \frac{1}{2})$ distribution.
+For the case of a proportion (probability), if the generation of responses is assumed to follow a binomial distribution with fixed (unknown) probability of response, the reference prior would correspond to a $p \sim \text{Beta}(\frac{1}{2}, \frac{1}{2})$ distribution.
 
 This is the prior used for ${p}_{0}$ and ${p}_{1}$, subject to ${p}_{0} > {p}_{1}$; the $\text{Beta}(1/2, 1/2)$ probability density function assigns higher probabilities to values closer to 0 or 1.  To obtain a computationally tractable joint prior satisfying the constraint ${p}_{0} > {p}_{1}$, the joint prior for ${p}_{0}$ and ${p}_{1}$ was reformulated using a Dirichlet distribution induced by three latent Gamma random variables:
 
@@ -64,7 +64,7 @@ In BMDS, the set of Bayesian dichotomous models used in LOUD model averaging is 
 Dichotomous models available for LOUD Bayesian model averaging
 ```
 
-Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd) (i.e., selection of the appropriate benchmark response level) are the same for the MLE implementation of the dichotomous models.  The same two dataset and two option set limit applies to dichotomous data identical as the limits imposed for continuous data.
+Note that the considerations regarding the [**Definition of the BMD**](./dichotomous-mle.md#bmr) (i.e., selection of the appropriate BMR level) are the same for the Bayesian and MLE implementations of the dichotomous models. The same two-dataset and two-option set limit applies to dichotomous data as for continuous data.
 
 #### Individual Model Specifications (LOUD)
 
@@ -82,7 +82,7 @@ $$p({d}_{0}) = {p}_{1} = {p}_{0} + (1 - {p}_{0}) \cdot (1 - exp^{(-\beta \cdot {
 
 $$\beta = -\ln \left\lbrack \frac{1 - {p}_{1}}{1 - {p}_{0}} \right\rbrack$$
 
-The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (e.g., $\alpha$ in the Weibull model) was chose to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implictily describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
+The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (e.g., $\alpha$ in the Weibull model) was chosen to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implictily describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
 
 ::::{tab-set}
 
@@ -304,7 +304,7 @@ For the dichotomous Hill model, ${p}_{0}$ and ${p}_{1}$ are assigned $\beta(0.05
 
 #### Bayesian Parameter Estimation (LOUD)
 
-The same Markov chain Monte Carlo (MCMC) latent slice sampling used for continuous data (see [Bayesian Parameter Estimation (continuous)](./continuous-bayesian.md#bayesian-parameter-estimation)) is used to derive posterior distributions for the standard model parameters and BMDs for dichotomous data and the same statistics (potential scale reduction ($\hat{R}$) and effective sample size (ESS)) are used to judge convergence. The same MCMC sampling options also apply to dichotomous analyses.
+The same Markov Chain Monte Carlo (MCMC) latent slice sampling used for continuous data (see [Bayesian Parameter Estimation (continuous)](./continuous-bayesian.md#bayesian-parameter-estimation)) is used to derive posterior distributions for the standard model parameters and BMDs for dichotomous data. The same statistics (potential scale reduction ($\hat{R}$) and effective sample size (ESS)) are used to judge convergence. The same MCMC sampling options also apply to dichotomous analyses.
 
 ### Bayesian Model Averaging (LOUD)
 
@@ -318,7 +318,7 @@ $$p \left(BMD|Y \right) = \sum_{k = 1}^{K}{{w}_{k}p \left( {BMD}_{k}|Y,{M}_{k} \
 
 where ${w}_{k}$ represents the normalized weight for model ${M}_{k}$.
 
-The model weights used for generating the model averaged posterior can be calculated using the WAIC or posterior model probabilities as for continuous data (see [Bayesian Model Averaging (continuous)](./continuous-bayesian.md#bayesian-model-averaging)).   
+The model weights used for generating the model-averaged posterior can be calculated using the WAIC or posterior model probabilities as for continuous data (see [Bayesian Model Averaging (continuous)](./continuous-bayesian.md#bayesian-model-averaging)).   
 
 #### BMD and BMDL Estimation (LOUD)
 
@@ -334,11 +334,11 @@ The EPA, in conjunction with statisticians at the National Institute of Environm
 
 ### Mathematical Details for ToxicR Bayesian Dichotomous Models
 
-In BMDS, the set of Bayesian dichotomous models used in ToxicR model averaging is identical to the set of models used for maximum-likelihood estimation (MLE) approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and LOUD model averaging ([**Individual Model Specifications (LOUD)**](./dichotomous-bayesian.md#individual-model-specifications-loud)). The model forms and parameter priors for the BMDS dichotomous models are defined below.
+In BMDS, the set of Bayesian dichotomous models used in ToxicR model averaging is identical to the set of models used for MLE approaches ([**Dichotomous Response Models**](./dichotomous-mle.md#dichotomous-response-models)) and LOUD model averaging ([**Individual Model Specifications (LOUD)**](./dichotomous-bayesian.md#individual-model-specifications-loud)). The model forms and parameter priors for the BMDS dichotomous models are defined below.
 
 #### Individual Model Specifications (ToxicR)
 
-The priors for the parameters used in ToxicR model averaging are based on scaled doses and scaled responses; BMDS performs this scaling automatically by dividing by the maximum dose in the dataset under consideration, *i.e.*, that the doses under consideration range from 0 to 1 (inclusive). **BMDS automatically scales the responses** by dividing by the mean response in the control (or lowest dose) group. The user does ***not*** need to scale anything beforehand. That means that the parameter estimates, and BMD values returned by the program have been adjusted back to the original scale of the doses and the original scale of the responses specified in the input data file.
+The priors for the parameters used in ToxicR model averaging are based on scaled doses and scaled responses; BMDS performs this scaling automatically by dividing by the maximum dose in the dataset under consideration, *i.e.*, that the doses under consideration range from 0 to 1 (inclusive). **BMDS automatically scales the responses** by dividing by the mean response in the control (or lowest dose) group. The user does ***not*** need to scale anything beforehand. That means that the parameter estimates and BMD values returned by the program have been adjusted back to the original scale of the doses and the original scale of the responses specified in the input data file.
 
 ::::{tab-set}
 
@@ -372,7 +372,7 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 **Notes**
 
-The prior over $\beta_{1}$ reflects the belief that the linear term should be strictly prositive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
+The prior for $\beta_{1}$ reflects the belief that the linear term should be strictly prositive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
 
 For model averaging purposes, $N = 2$.
 
@@ -471,7 +471,7 @@ $\beta \sim Lognormal(0,1)$
 
 **Notes**
 
-The prior for $\alpha$ entails that there is only a 0.05 prior probability the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.
+The prior for $\alpha$ entails that there is only a 0.05 prior probability that the power parameter will be less than 1. This allows for models that are supralinear; however, it requires a large amount of data for the $\alpha$ parameter to go much below 1.
 
 The $\alpha$ parameter is also constrained to be greater than 0.2 for numerical reasons.
 :::
@@ -653,7 +653,7 @@ For all the models described above, $\text{logit}(g) = \ln\left( \frac{g}{1 - g}
 :::
 
 :::{note}
-As the number of observations in a dataset increases, there should be less quantitative difference between the parameters and BMDs obtained from the Bayesian approach and from the maximum-likelihood estimation (MLE) approach.
+As the number of observations in a dataset increases, there should be less quantitative difference between the parameters and BMDs obtained from the Bayesian approach and from the MLE approach.
 
 When there are fewer data points, the priors will affect the Bayesian estimation. The impact may be most noticeable when the data suggest a "hockey-stick" shaped dose-response relationship, or when those data suggest strong supralinear behavior. In these cases, the priors specified above for the Bayesian approach will tend to "shrink back" parameter estimates to obtain smoother dose-response relationships where changes in the slope are more gradual.
 :::
@@ -675,7 +675,7 @@ $$g_{ma}\left( BMD|D \right) = \ \sum_{k = 1}^{K}{\pi_{k}\left( M_{k} \middle| D
 
 where $\pi_{k}$ is the posterior probability of model $M_{k}$ given the data.
 
-Clearly, this approach requires estimation of the posterior probabilities for each model considered. These are the weights for the averaging process. Unlike approaches that have been used elsewhere, we eschew the use of information-criteria-based weights (*e.g.*, those based on Bayesian information criteria or Akaike information criteria). Rather, BMDS generates weights using the Laplace approximation to the marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$, with parameter vector $\theta_{k}$ of length s, one approximates the marginal density as
+Clearly, this approach requires estimation of the posterior probabilities for each model considered. These are the weights for the averaging process. Unlike approaches that have been used elsewhere, we eschew the use of information-criteria-based weights (*e.g.*, those based on Bayesian information criteria (BIC) or Akaike information criteria(AIC)). Rather, BMDS generates weights using the Laplace approximation to the marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$, with parameter vector $\theta_{k}$ of length s, one approximates the marginal density as
 
 $$I_{k} = (2\pi)^{\frac{s}{2}}\left| {\widehat{\Sigma}}_{k} \right|^{\frac{1}{2}}\mathcal{l}\left( D \middle| {M_{k},\widehat{\theta}}_{k} \right)g\left( {\widehat{\theta}}_{k}|M_{k} \right)$$
 
@@ -700,12 +700,12 @@ This approximation is similar to the Model Averaged Profile Likelihood (MAPL) ap
 This approach can be related to the MAPL framework by substituting the posterior density for the likelihood in each of the steps. This method approximates the marginal likelihood using the posterior MAP estimate and Hessian of the log-posterior.
 
 :::{note}
-For the model average approach, the models listed in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) are available in the model average. For dichotomous model averaging, the Multistage model is capped to a maximum degree of 2. The reasoning for this follows upon the work of Nitcheva, et al. ([2007](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/729569)) who show that higher-order polynomials are not necessary given the fact that other models of the model averaging suite (*e.g.*, dichotomous Hill) can provide increased curvature.
+For the model average approach, the models listed in [**Individual Model Specifications (ToxicR)**](./dichotomous-bayesian.md#individual-model-specifications-toxicr) are available in the model average. For dichotomous model averaging, the Multistage model is capped to a maximum degree of 2. The reasoning for this follows upon the work of Nitcheva, et al. ([2007](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/729569)) who show that higher-order polynomials are not necessary given the fact that other models in the model averaging suite (*e.g.*, dichotomous Hill) can provide increased curvature.
 :::
 
 #### BMD and BMDL estimation (ToxicR)
 
-The BMDS model-averaged BMD point estimate is the weighted average of BMD MAP estimates from individual models, weighted by posterior weights $\pi_{k}\left( M_{k} \middle| D \right).$ This is equivalent to the median of the approximate posterior density of $\theta$. For the BMDL or BMDU estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$ BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such that:
+The BMDS model-averaged BMD point estimate is the weighted average of BMD MAP estimates from individual models, weighted by posterior weights $\pi_{k}\left( M_{k} \middle| D \right).$ This estimate is equivalent to the median of the approximate posterior density of $\theta$. For the BMDL or BMDU estimates, the equation defining $g_{ma}$ is integrated. A $100(\alpha)%$ BMDU estimate or $100(1 - \alpha)%$ BMDL estimate is the value $BMD_{α}$ such that:
 
 $$\alpha = \ \int_{- \infty}^{BMD_{\alpha}}{g_{ma}\left( BMD|D \right)\ dBMD,}$$
 
@@ -721,7 +721,7 @@ where ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the maximum valu
 
 $$\approx 1 - {\frac{1}{2}\Pr}\left( \  - 2{\ log\lbrack\widehat{g}}_{k}\left( \widehat{BMD} \middle| M_{k},D \right) \right\rbrack - 2{\ log\lbrack\widehat{g}}_{k}\left( BMD_{\gamma} \middle| M_{k},D \right)\rbrack < \ \chi_{1,\gamma\ }^{2}).$$
 
-This approximation is like the profile-likelihood used when estimating the BMDL and BMDU using the method of maximum likelihood, but in this case ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the posterior density, which incorporates both the likelihood and the prior.
+This approximation is like the profile-likelihood used when estimating the BMDL and BMDU using the MLE methods (see [Maximum Likelihood and Related Non-Bayesian Methods](./modeling-methods.md#maximum-likelihood-and-related-non-bayesian-methods)), but in this case ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the posterior density, which incorporates both the likelihood and the prior.
 
 #### Results Specific to ToxicR Bayesian Model Averaing
 
@@ -743,7 +743,7 @@ This computation assumes that both models have equal probability *a priori.* Thi
 31.6 to 100,very strong
 100,decisive
 ```
-For BMDS, all LPP and corresponding posterior model probabilities are computed using the Laplace approximation. This value is different from the commonly used Bayesian Information Criterion (BIC), and the two should not be confused based upon other model averaging approaches, which use the BIC exclusively. Errors in the posterior probabilities estimated from the BIC are $O(1)$ estimators. Errors in the posterior probabilities estimated using the Laplace approximation are $O(n^{- 1})$. This means the latter approximation goes to the true posterior model probability with increasing data and the former, using the BIC, may not go to the true value.
+For BMDS, all LPP and corresponding posterior model probabilities are computed using the Laplace approximation. This value is different from the commonly used BIC, and the two should not be confused based upon other model averaging approaches, which use the BIC exclusively. Errors in the posterior probabilities estimated from the BIC are $O(1)$ estimators. Errors in the posterior probabilities estimated using the Laplace approximation are $O(n^{- 1})$. This means the latter approximation goes to the true posterior model probability with increasing data and the former, using the BIC, may not go to the true value.
 
 ```{figure} _static/img/ToxicR_bayesian_plot.png
 :alt: Multiple model result curves plotted on single graph, with legend
