@@ -1,18 +1,18 @@
 # Results Output Common to MLE and Bayesian Models
 
-BMDS results provide the user with goodness-of-fit criteria and model results for MLE models to aid in determining the appropriateness of the Model and Option Set to the benchmark dose derivation.
+BMDS results provide the user with goodness-of-fit criteria and model results for MLE models to aid in determining the appropriateness of the Model and Option Set to the BMD derivation.
 
 BMDS Online displays summary results for the analysis for the Model and Option Set in the Output tab. From the Output tab, the user can then select an individual model's detailed results and statistics. Individual model results open in their own window when the model name is selected.
 
-## All Models: Output Tab
+## Output Tab
 
-The Output tab displays several tables of results and calculations depending on the type of endpoint and modeling method.
+The **Output** tab displays several tables of results and calculations depending on the type of endpoint and modeling method.
 
--   Dataset and Option Set tables: Reproduces the dataset and option set selections for the analysis.
+-   Dataset and Option Set tables that recapitulate the dataset and option set selections for the analysis.
 
--   Maximum Likelihood Approach Model Results table, for both Restricted and Unrestricted models. The table includes key fit statistics with BMDS recommendations for best-fitting model.
+-   Maximum Likelihood Approach Model Results table for both Restricted and Unrestricted models. The table includes key fit statistics with BMDS recommendations for best-fitting model.
 
--   Graph of the dataset; hover the pointer over a model name to display the curve.
+-   Graph of the dataset, hovering the pointer over a model name  displays the curve.
 
 -   Model Selection block where the user can document the best-fitting model.
 
@@ -53,7 +53,7 @@ Multistage Multitumor Results Output tab layout.
 ```
 ## Individual Model Results
 
-From the Output tab's Maximum Likelihood Approach Model Results table, select any model link {numref}`f51` to display a popup window thoroughly detailing that model's stats results {numref}`f52`.
+From the **Output** tab's Maximum Likelihood Approach Model Results table, select any model link {numref}`f51` to display a popup window thoroughly detailing that model's stats results {numref}`f52`.
 
 ```{figure} _static/img/model_in_summary_table.png
 :alt: Callout box drawn around model name in summary results table
@@ -123,7 +123,7 @@ Nested Dichotomous model results window layout - MLE.
 Multistage Multitumor model results window layout - MLE.
 ```
 
-### Summary Table of Key Fit Statistics (All Endpoints)
+### Summary Table of Key Fit Statistics (All Data Types)
 
 A model result window's Modeling Summary table for the Model-Option set contains---depending on the endpoint type---the BMD, BMDL, and BMDU estimates, AIC, Log Likelihood, the overall goodness-of-fit test p-value, and degrees of freedom (d.f.).
 
@@ -173,7 +173,7 @@ where $y$ are model predicted responses, $\theta$ are the model parameters, $s$ 
 
 $$lppd(y,\theta)=\sum_i \log \frac{1}{S} \sum_s p(y_i|\theta_s)$$ 
 
-The $\sum_i Var_\theta \log p(y_i|\theta)$ term is a correction for the effective number of parameters to adjust for overfitting ([Gelman, 2013](https://hero.epa.gov/reference/13243402)). Smaller values of the WAIC indicate better fit. For LOUD Bayesian model averaging, the WAIC is used for model weights, where the individual model weight is computed by normalizing the inverse of the WAIC for that model:
+The $\sum_i Var_\theta \log p(y_i|\theta)$ term is a correction for the effective number of parameters to adjust for overfitting ([Gelman, 2013](https://hero.epa.gov/reference/13243402)). As for the AIC, smaller values of the WAIC indicate better fit. For LOUD Bayesian model averaging, the WAIC is used for model weights, where the individual model weight is computed by normalizing the inverse of the WAIC for that model:
 
 $$w_k=\frac{exp(-\frac{1}{2}WAIC_k)}{\sum^K_{k=1}exp(-\frac{1}{2}WAIC_k)}$$
 
@@ -195,18 +195,18 @@ For LOUD continuous and dichotomous models, the p-value is calculated based on c
 Model Parameters table for MLE Exponential 3 model, with popup description of bounded variable.
 ```
 
-For MLE models, the Model Parameters table includes the estimates for the parameter values that "optimize" the model fit.  Parameter estimates are checked to see if they fall within a given tolerance ($1.0e^{-6}$) of parameter boundaries. If so, they are marked as *On Bound*. This tolerance value applies to all parameters. There are no hard boundaries for parameters for LOUD models.
+For MLE models, the **Model Parameters** table includes the estimates for the parameter values that "optimize" the model fit.  Parameter estimates are checked to see if they fall within a given tolerance ($1.0e^{-6}$) of parameter boundaries. If so, they are marked as *On Bound*. This tolerance value applies to all parameters. There are no hard boundaries for parameters for LOUD models.
 
-### Cumulative Distribution Function (CDF) Table (All Endpoints)
+### Cumulative Distribution Function (CDF) Table (All Data Types)
 
-CDF stands for *cumulative distribution function*, in this case for the BMD estimate. It lists the percentiles associated with the CDF for the BMD being estimated ({numref}`f59`).
+CDF stands for *cumulative distribution function*, in this case for the BMD estimate. The CDF table lists the percentiles associated with the CDF for the BMD being estimated ({numref}`f59`).
 
 Note that the BMD value associated with the CDF value of 0.5 is the MLE of the BMD (and matches the value reported for the BMD in the Summary table discussed above).
 
-The CDF block may also correspond to the Summary table in terms of the BMDL and BMDU values reported in the latter. Recall that the confidence level specified by the user in the options is a one-sided confidence level. So, if that confidence level is related to one of the cumulative percentiles in the CDF block, the BMD values will match.
+The CDF table may also correspond to the Summary table in terms of the BMDL and BMDU values reported in the latter. Recall that the confidence level specified by the user in the options is a one-sided confidence level. Therefore, if that confidence level is related to one of the cumulative percentiles in the CDF block, the BMD values will match.
 
 As an example, if the confidence level specified by the user is 0.95 (95% one-sided confidence limits requested), then the BMDU from the
-Benchmark Dose table will match the BMD value listed for 0.95 in the CDF block. And the BMDL will match the BMD value listed for 0.05 in the CDF block.
+Benchmark Dose table will match the BMD value listed for 0.95 in the CDF table. Similarly, the BMDL will match the BMD value listed for 0.05 in the CDF table.
 
 ```{figure} _static/img/BMD_CDF_plot.png
 :alt: CDF table with accompanying graph
@@ -217,7 +217,7 @@ CDF table and graph.
 ```
 :::{important}
 **Why is BMDS reporting different cumulative distribution function values for different confidence levels?**<br>
-BMDS may report different Cumulative Distribution Function (CDF) percentile values when different user-specified confidence levels (alphas) are chosen. **These differences are not a bug in BMDS**. Rather, these CDF ranges — and any differences in CDFs based on different confidence levels — are calculated by the underlying Gnu Scientific Library's methods, not by BMDS. Differences in CDFs should not affect repeatability or reliability of results. However, users should use discretion when comparing CDF values to BMDL/BMDU values calculated from different confidence levels. For example, if a user inputs a 90% confidence level (alpha = 0.1), the BMDU is not guaranteed to match the 90% percentile from the CDF when using a 95% confidence level (alpha = 0.5).
+BMDS may report different CDF percentile values when different user-specified confidence levels (alphas) are chosen. **These differences are not a bug in BMDS**. Rather, these CDF ranges — and any differences in CDFs based on different confidence levels — are calculated by the underlying Gnu Scientific Library's methods, not by BMDS. Differences in CDFs should not affect repeatability or reliability of results. However, users should use discretion when comparing CDF values to BMDL/BMDU values calculated from different confidence levels. For example, if a user inputs a 90% confidence level (alpha = 0.1), the BMDU is not guaranteed to match the 90% percentile from the CDF when using a 95% confidence level (alpha = 0.5).
 :::
 
 ### Graphs/Plots (All Endpoints)
@@ -240,9 +240,9 @@ The results plot shows the dose-response curve estimated by the model.
 
 -   The diamond symbol inside the horizontal bar is the BMD.
 
--   The horizontal bar's left edge is the BMDL, the right is the BMDU.
+-   The horizontal bar's left edge is the BMDL, and the right is the BMDU.
 
-Error bar calculations for the data points differ slightly based on the endpoint:
+Error bar calculations for the data points differ slightly based on the endpoint (see details in the subsections linked below):
 
 -   [**For continuous endpoints**](./continuous-mle.md#plot-and-error-bar-calculation).
 
