@@ -2,7 +2,7 @@
 
 BMDS results provide the user with goodness-of-fit criteria and model results for MLE models to aid in determining the appropriateness of the Model and Option Set to the BMD derivation.
 
-BMDS Online displays summary results for the analysis for the Model and Option Set in the Output tab. From the Output tab, the user can then select an individual model's detailed results and statistics. Individual model results open in their own window when the model name is selected.
+BMDS Online displays analysis summary results for the Model and Option Set in the Output tab. From the Output tab, the user can then select an individual model's detailed results and statistics. Individual model results open in their own window when the model name is selected.
 
 ## Output Tab
 

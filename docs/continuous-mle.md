@@ -1,16 +1,14 @@
 # Continuous Endpoints - Maximum Likelihood Methods
 
-Continuous endpoints take on values that are real numbers (as opposed to integers, for example), measuring things that can vary continuously (weights, concentrations, etc.).
+Continuous endpoints take on values that are real numbers (as opposed to integers, for example), measuring outcomes that can vary continuously (weights, concentrations, etc.).
 
 The three key features of such measures that need to be specified to estimate a BMD are:
 
 1.  What direction of change indicates a toxic response (see [**Adverse Direction**](#adverse-direction)),
 
-2.  Definition of the BMD relative to the change in the response (see [**Benchmark Response**](#defining-the-bmd)), and
+2.  Definition of the BMR based on the magnitude of change in the response (see [**Benchmark Response**](#defining-the-bmd)), and
 
 3.  How the responses are distributed (see [**Distribution and Variance**](#distribution-and-variance)).
-
-With respect to the distribution, one needs to consider the type of distribution and the nature of the variability around the center of the distribution. The options available to the user, discussed in [**Distribution and Variance**](#distribution-and-variance), relate to all those choices.
 
 This section provides details on the following topics:
 
@@ -63,7 +61,7 @@ Default column headers for summarized data (top) and individual data (bottom)
 
 ## Dataset Specifications (Settings Tab)
 
-Datasets for an analysis can be a mix of individual and summarized data. Select a dataset's Enabled checkbox to include it in the analysis.
+Datasets for an analysis can be a mix of individual and summarized data. Select a dataset's **Enabled** checkbox to include it in the analysis.
 
 ```{figure} _static/img/cont_model_specifications.png
 :alt: Dataset specification settings with checkboxes selected
@@ -113,10 +111,10 @@ If Automatic is chosen, BMDS chooses the adverse direction based on the shape of
 
 This selection only affects how the user-designated benchmark response (BMR) is used in conjunction with model results to obtain the BMD.
 
-## Option Sets
+## Defining Modeling Settings with Option Sets
 
-On the BMDS Online Settings tab, the user can define up to six Option Sets to apply to multiple user-selected models and multiple
-user-selected datasets in a single batch process. (There is no limit on option sets in BMDS Desktop and pybmds.)
+On the BMDS Online **Settings** tab, the user can define up to six **Option Sets** to apply to multiple user-selected models and multiple
+user-selected datasets in a single batch process. There is no limit on option sets in BMDS Desktop and pybmds. Option sets define what settings (e.g., BMR type, BMR factor, etc.) will be used when modeling the datasets in question.
 
 Select the blue Plus button to add a new Option Set row. Select the red Trashcan button to delete that Option Set row.
 
@@ -133,7 +131,7 @@ Continuous Model Option Set row.
 The following options are related to the definition of the BMD and its bounds:
 
 -   **Benchmark Response (BMR) Type**, which defines the method of choice for determining the response level used to derive the BMD
-    (*i.e.*, relative deviation, standard deviation, etc.). For details on these methods, refer to the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown.
+    (*i.e.*, relative deviation, standard deviation, etc.). For details on these methods, refer to the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) picklist.
 
 ```{figure} _static/img/cont_bmr_options.png
 :alt: BMR Type column with picklist of values displayed
@@ -145,9 +143,9 @@ BMR Type picklist selections.
 
 -   The **BMRF (Benchmark Response factor)** is specific to the method selected for the BMR Type. The [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown summarizes the options related to BMR Type and BMRF.
 
--   **Tail Probability** marks the cut-off for defining adversity and applies only to Hybrid-Extra Risk BMR Type, not the background rate. If the default setting of 0.01, for example, is used, this indicates that the user has specified that, in the absence of exposure, there is a probability of 1% for a response that is considered adverse. This. is a "tail probability" in the sense that it specifies how much of the tail of the distribution of responses (upper or lower) is in the adverse range. It implicitly defines the cut-off between Normal and adverse responses. The user can edit the value for this setting.
+-   **Tail Probability** marks the cut-off for defining adversity and applies only to Hybrid-Extra Risk BMR Type, not the background rate. If the default setting of 0.01, for example, is used, this indicates that the user has specified that, in the absence of exposure, there is a probability of 1% for a response that is considered adverse. This. is a "tail probability" in the sense that it specifies how much of the tail of the distribution of responses (upper or lower) is in the adverse range. It implicitly defines the cut-off between normal and adverse responses. The user can edit the value for this setting.
 
--   **Confidence Level** is set to 0.95 by default. This confidence level corresponds to a **one-sided** confidence bound, in either
+-   **Confidence Level** is set to 0.95 by default. This confidence level corresponds to a *one-sided* confidence bound, in either
     direction. In other words, if the confidence level is set to 0.95, the BMDL is the one-sided 95% lower bound on the BMD; the BMDU is the one-sided 95% upper bound on the BMD. The interval from the BMDL to the BMDU would, in that case, be a 90% confidence interval.
 
 
@@ -178,7 +176,7 @@ $\frac{|m(BMD) - m(0)|}{m(0)}\ = \ BMRF$
 
 **Mathematical Definition**<br><br> $|m(BMD) - m(0)|\ = \ BMRF$
 
-**BMRF Notes:** <br>BMRF is the specified change, there is no default because it is very endpoint specific
+**BMRF Notes:** <br>BMRF is the specified change; there is no default because it is explicitly endpoint specific
 :::
 
 :::{tab-item} Standard Deviation
@@ -232,6 +230,8 @@ where $X_{0}$ is a response value and $Pr(X<X_{0}|d)$ is the probability that th
 
 ### Distribution and Variance
 
+With respect to the distribution, one needs to consider the type of distribution and the nature of the variability around the center of the distribution. The options available to the user relate the choices displayed in {numref}`f73`.
+
 ```{figure} _static/img/variance_dist_picklist.png
 :alt: Picklist menu selections for Distribution+Variance, with Normal+Constant highlighted
 :scale: 100%
@@ -249,19 +249,19 @@ In total, three combinations are allowed:
 
 2.  **Normal distribution, non-constant (modeled) variance:** each dose group may have a different variance, described by a variance model (see [**Likelihoods of Interest Table**](#likelihoods-of-interest-table)) with two parameters (α and ρ) relating the dose    group's estimated mean value (see below) to the variance. Those two parameters are estimated simultaneously with the parameters of the dose-response model.
 
-:::{important}
+:::{note}
 The $\alpha$ parameter is returned for all models except for the exponential models, which return $ln(\alpha).$
 :::
 
 3.  **Lognormal distribution, constant coefficient of variation (CV):** for lognormally distributed responses, each dose group has the same CV, which entails that the log-scale variance is constant over dose groups (though the natural-scale variance will differ from group to group).
 
-:::{important}
+:::{note}
 CV = standard deviation divided by mean. Log-scale refers to the values of the logarithms of the responses. Natural-scale refers to the values of the responses, untransformed.
 :::
 
 With respect to the response distribution (Normal or Lognormal), please note the following:
 
--   The Lognormal distribution can only be assumed when the responses are strictly positive. The Lognormal distribution is only applicable to positive real values.
+-   The Lognormal distribution can only be assumed when the responses are strictly positive. 
 
 -   Regardless of the distribution assumed, the dose-response model under consideration is the representation of the change in the     median of the distribution of responses as a function of dose. If we denote the median at dose d by $m(d)$, then it is always true for BMDS that $m(d) = f(d)$, where $f(d)$ is the dose-response function under consideration (see [**Individual Model Specifications**](#individual-model-specifications)).
 
@@ -282,19 +282,19 @@ estimated log-scale sample mean ($m_{L}$): $m_{L} = \ln{(m) - \frac{s_{L}^{2}}{2
 estimated log-scale sample standard deviation ($s_{L}$): $s_{L} = \sqrt{(\ln\left\lbrack 1 + \frac{s^{2}}{m^{2}} \right\rbrack)}$ 
 where m and s are the sample mean and sample standard deviation, respectively.
 
-When data are assumed to be lognormally distributed and individual response data are available, BMDS provides an exact maximum-likelihood estimation (MLE) solution. In BMDS, the exact solution is the ***only*** solution option implemented when individual observations are input, and the Lognormal assumption is chosen. BMDS does not provide an option for computing the approximate solution.
+When data are assumed to be lognormally distributed and individual response data are available, BMDS provides an exact MLE solution. In BMDS, the exact solution is the ***only*** solution option implemented when individual observations are input, and the Lognormal assumption is chosen. BMDS does not provide an option for computing the approximate solution.
 
 If the user wants to compute an approximate solution from individual observations (*e.g.*, for research purposes), then they should use the following procedure:
 
 1.  Compute the group-specific sample means and sample standard deviations.
 
-2.  Input those values as would be done for an analysis based on those summary statistics (but still selecting Lognormal as the    distribution type).
+2.  Input those values as would be done for an analysis based on those summary statistics (but still select Lognormal as the distribution type).
 
 #### Log-transformed Responses are NOT Recommended
 
 :::{warning}
-***Using log-transformed responses in the analysis is not
-recommended.***
+**Using log-transformed responses in the analysis is not
+recommended.**
 :::
 
 If the user chooses to log-transform the data prior to analysis, then the interpretation of the BMD and BMDL estimates would have to be
@@ -310,7 +310,7 @@ interpreted with supporting statistical expertise.
 Therefore, in most cases, the user should use non-transformed values and select the Lognormal distribution if the data are assumed to be lognormally distributed.
 
 
-## Specific Continuous Results
+## Results from Continuous Models
 
 ### Goodness of Fit Table
 
@@ -348,7 +348,7 @@ log-scale standard deviation, estimated if need be for summarized response data 
 Goodness of Fit table headings, with Normal assumption.
 ```
 
-```{figure} _static/img/cont_gof_table_lnormal.png
+```{figure} _static/img/cont_gof_table_lognormal.png
 :alt: Sample Goodness of fit table with different column headers
 :scale: 70%
 :name: f75
@@ -450,7 +450,7 @@ Suppose that $L(X)$ represents the likelihood of model X. Now, using the theory,
 
 $$- 2 \times \ln\left\{ \frac{L(A)}{L(B)} \right\} = - 2 \times \left( \ln\left\{ L(A) \right\} - \ln\left\{ L(B) \right\} \right) = 2 \times \ln\left\{ L(B) \right\} - 2 \times ln\{ L(A)\}$$
 
-The values in the Likelihoods of Interest table are in fact the log-likelihoods, as discussed above, $\ln\{ L(B)\}$ and $\ln\{ L(A)\}$, so this likelihood ratio calculation becomes just a subtraction problem. This value can then in turn be compared to a Chi-square random variable with a specified number of degrees of freedom.
+The values in the **Likelihoods of Interest** table are in fact the log-likelihoods, as discussed above, $\ln\{ L(B)\}$ and $\ln\{ L(A)\}$, so this likelihood ratio calculation becomes just a subtraction problem. This value can then in turn be compared to a Chi-square random variable with a specified number of degrees of freedom.
 
 As mentioned in conjunction with the Likelihoods of Interest table, each log-likelihood value has an associated number of parameters. The number of degrees of freedom for the Chi-square test statistic is merely the .difference between the two model parameter counts of the two models. In the mini-example above, suppose Model A has 5 fitted parameters, and that Model B has 8. In this case, the Chi-square value to be compared to would be a Chi-square with 8 - 5 = 3 degrees of freedom.
 
@@ -462,7 +462,7 @@ H{sub}`1`: B models the data better than A
 
 Keeping these tests in mind, suppose $2 \times \log\{ L(B)\}\  - \ 2 \times \log\{ L(A)\}\  = \ 4.89$ based on 3 degrees of freedom. Also, suppose the rejection criteria is a Chi-square probability of less than 0.05. Looking on a Chi-square table, 4.89 has a p-value somewhere between 0.10 and 0.25. In this case, H{sub}`0` would not be rejected, and it would seem to be appropriate to model the data using Model A (*i.e.*, the simpler model A models the data as well as the more complex model B). BMDS automatically does the table look-up for the user and provides the p-value associated with the calculated log-likelihood ratio having degrees of freedom as described above.
 
-The Tests of Means and Variance table in BMDS provides four default tests for any of the continuous models.
+The **Tests of Means and Variance** table in BMDS provides four default tests for any of the continuous models.
 
 **Test 1 (A2 vs R): Tests the null hypothesis that responses and variances do not differ among dose levels. If this test fails to reject the null hypothesis, there may not be a dose-response.**
 
@@ -474,7 +474,7 @@ This test compares A1 (the simpler model) to Model A2. Model A1 is a simpler A2 
 
 **Test 3 (A3 vs A2): Tests the null hypothesis that the variances are adequately modeled. If this test fails to reject the null hypothesis, it may be inferred that the variances have been modeled appropriately.**
 
-Here, the test is one to see if the user-specified variance model, is appropriate. If the user-specified variance model is Constant Variance, then Models A1 and A3 are identical; this test is the same as Test 2, with the same interpretation. If the user-specified variance model is nonconstant (${\sigma_{i}}^{2} = \alpha \times {\mu_{i}}^{\rho}$), this test determines if that equation appears adequate to describe the variance across dose groups. Model A3 is the simpler version of Model A2 obtained by constraining the variances to fit the nonconstant variance equation. The default p-value for rejecting the null hypothesis is 0.05 (as reported in the Tests of Interest section of the output). A p-value less than 0.05 is an indication that the user may want to consider a different variance model. A p-value greater than 0.05 supports the use of user-specified variance model for the dose-response modeling.
+Here, the test is one to see if the user-specified variance model, is appropriate. If the user-specified variance model is Constant Variance, then Models A1 and A3 are identical. This test is the same as Test 2, with the same interpretation. If the user-specified variance model is nonconstant (${\sigma_{i}}^{2} = \alpha \times {\mu_{i}}^{\rho}$), this test determines if that equation appears adequate to describe the variance across dose groups. Model A3 is the simpler version of Model A2 obtained by constraining the variances to fit the nonconstant variance equation. The default p-value for rejecting the null hypothesis is 0.05 (as reported in the Tests of Interest section of the output). A p-value less than 0.05 is an indication that the user may want to consider a different variance model. A p-value greater than 0.05 supports the use of user-specified variance model for the dose-response modeling.
 
 **Test 4 (Fitted vs A3): Tests the null hypothesis that the model for the mean fits the data. If this test fails to reject the null hypothesis, the user has support for the selected model.**
 
@@ -484,7 +484,7 @@ This test compares the Fitted Model to Model A3. The Fitted Model is a simpler M
 
 The graphical output, *i.e.*, plot, is a visual depiction of the results of the modeling. Although plot features are common to all models, here we describe the one additional detail specific to the continuous models, *i.e.*, computation of the error bars for mean response of the dose group:
 
--   The plotting routine calculates the standard error of the mean (SEM) for each group. The routine divides the group-specific observed variance (obs standard deviation squared) by the group-specific sample size.
+-   The plotting routine calculates the standard error of the mean (SEM) for each group. The routine divides the group-specific observed variance (observed standard deviation squared) by the group-specific sample size.
 
 -   The routine then multiplies the SEM by the Student-T percentiles (2.5th percentile or 97.5th percentile for the lower and upper bound, respectively) appropriate for the group-specific sample size (*i.e.*, having degrees of freedom one less than that sample size).The routine adds the products to the observed means to define the lower and upper ends of the error bar.
 
@@ -677,7 +677,7 @@ RIVM (National Institute for Public Health and the Environment (Netherlands)). (
 
 In addition to the model for the median response as a function of dose, the model for the variance also needs to be defined.
 
-For responses assumed to vary Normally around the median, the variance model is:
+For responses assumed to vary normally around the median, the variance model is:
 
 $${\sigma_{i}}^{2} = \ exp\{ ln(\alpha)\  + \rho*ln\lbrack m\left( {dose}_{i} \right)\rbrack\}$$
 
@@ -691,7 +691,7 @@ When the responses are assumed to be Lognormally distributed, then the variance 
 
 $${\sigma_{Li}}^{2} = \alpha$$
 
-Because, for Lognormal data, BMDS is restricted to a constant log-scale variance model (equivalent to a constant coefficient of variation), $\rho$ does not appear in that equation (in essence, it is once again set to 0 under the assumption of Lognormally distributed responses).
+Because, for lognormal data, BMDS is restricted to a constant log-scale variance model (equivalent to a constant coefficient of variation), $\rho$ does not appear in that equation (in essence, it is once again set to 0 under the assumption of lognormally distributed responses).
 
 The formulation of the variance model shown above allows for several commonly encountered situations. When the estimated value of $\rho\ > 0$, the estimated variances will increase with increasing median values and decrease with decreasing median values.  When $\rho\ < 0$, the variances will decrease with increasing median values and increase with decreasing median values.  If $\rho\  = \ 1$, then the variance is proportional to the median. If $\rho\  = \ 2$, then the coefficient of variation is constant, a common assumption especially for biochemical measures and one which mimics the constant coefficient of variation assumption of lognormally distributed responses (but without having to assume that the responses are in fact lognormally distributed).
 
@@ -748,7 +748,7 @@ The Akaike Information Criterion (AIC) ([Akaike, 1973](https://hero.epa.gov/hero
 
 Note that the AIC balances the goals of getting the highest LL value possible while being parsimonious with respect to the number of parameters needed to achieve a high LL value. Since the equation for AIC has a negative multiplier for LL (which one wants to be greater) and positive multiplier for p (which one wants to be as small as possible and still get good fit), a model with a **smaller value of AIC** than other models is presumed to be the better model based on AIC. Although such methods are not exact, they can provide useful guidance in model selection.
 
-In BMDS, the number of estimated parameters includes only those that have not been estimated to equal a bounding value (either from the model-imposed constraints or user-imposed restrictions (see [**Individual Model Specifications**](#individual-model-specifications)).
+In BMDS, the number of estimated parameters includes only those that have not been estimated to equal a bounding value (either from the model-imposed constraints or user-imposed restrictions (see [**Individual Model Specifications**](#individual-model-specifications))).
 
 :::{note}
 This counting process may or may not be reasonable, depending on the boundary value that a parameter in question hits.
@@ -758,7 +758,7 @@ For example, if the power parameter in a model hits (*i.e.*, is estimated to be 
 For this reason, the user is apprised to carefully consider the cases where parameter bounds have been hit and to consider the  implications for issues such as model comparison and model selection.
 :::
 
-If a parameter hits a bound for any model, the parameter estimates are maximum likelihood estimates (MLEs) only in the restricted sense that the bounded parameter has been assigned a value and the other parameters are MLEs conditional on that assigned value. Such model results are not strictly comparable with others in terms of AIC. In such a case, the BMD and BMDL could depend on the choice of power parameter; thus, sensitivity analysis is recommended if one intends to rely on the reported BMD or BMDL. This is especially important when considering power parameters that have hit the upper bound of 18.
+If a parameter hits a bound for any model, the parameter estimates are MLEs only in the restricted sense that the bounded parameter has been assigned a value and the other parameters are MLEs conditional on that assigned value. Such model results are not strictly comparable with others in terms of AIC. In such a case, the BMD and BMDL could depend on the choice of power parameter; thus, sensitivity analysis is recommended if one intends to rely on the reported BMD or BMDL. This is especially important when considering power parameters that have hit the upper bound of 18.
 
 :::{note}
 To facilitate comparing models with different likelihoods (*i.e.*, Normal vs. Lognormal), the log-likelihood is calculated using all the terms shown in the LL equations in [**Likelihood Function**](#likelihood-function).
@@ -780,34 +780,34 @@ A conservative position would be that comparisons of model runs assuming Normall
 
 ### BMDL and BMDU Computation
 
-The estimation of the BMDs, depending on the definition of the BMR type, is specified in the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown. The derivation of the confidence bounds for the BMD, *i.e.*, the BMDL and BMDU, is defined in this section.
+The estimation of the BMDs, depending on the definition of the BMR type, is specified in the [**Options related to continuous BMR type and BMRF**](#options-related-to-continuous-bmr-type-and-bmrf) dropdown. The derivation of the confidence bounds for the BMD, *i.e.*, the BMDL and BMDU, is explained in this section.
 
-The general approach to computing the confidence limits for the BMD is the same for all the models in BMDS, and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
+The general approach to computing the confidence limits for the BMD is the same for all the models in BMDS and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
 
 Two different specific approaches are followed for the continuous models.
 
-**For the Power Model:** For the power model, the equations that define the benchmark response in terms of the benchmark dose and the dose-response model are solved for one of the model parameters. The resulting expression is substituted back into the model equations, with the effect of re-parameterizing the model so that BMD appears explicitly as a parameter. A value for BMD is then found such that, when the remaining parameters are varied to maximize the likelihood conditional on that BMD value, the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly
+**Power Model:** For the power model, the equations that define the BMR in terms of the BMD and the dose-response model are solved for one of the model parameters. The resulting expression is substituted back into the model equations, with the effect of re-parameterizing the model so that BMD appears explicitly as a parameter. A value for BMD is then found such that, when the remaining parameters are varied to maximize the likelihood conditional on that BMD value, the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly:
 
 $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
 **For the Polynomial, Hill, and Exponential Models:** For the polynomial, Hill, and exponential models, it is impractical or impossible to explicitly reparameterize the dose-response model function to allow BMD to appear as an explicit parameter. For these models, the BMR equation is used as a non-linear constraint, and the minimum value of BMD is determined such that the log-likelihood is equal to the
-log-likelihood at the maximum likelihood estimates less 
+log-likelihood at the maximum likelihood estimates minus
 
 $$\frac{\chi_{1,1 - 2\alpha}^{2}}{2}$$
 
-Occasionally, the following error message may appear for a model: *BMDL computation is at best imprecise for these data*. This is a  lag that convergence for the BMDL was not successful in the sense that the required level of convergence (\< 1e-3 relative change in the target function by the time the optimizer terminates) has not been achieved. 
+Occasionally, the following error message may appear for a model: *BMDL computation is at best imprecise for these data*. This is a  lag that convergence for the BMDL was not successful in the sense that the required level of convergence ($< 1 \times 10^{-3}$ relative change in the target function by the time the optimizer terminates) has not been achieved. 
 
 ## Continuous Response Data with Negative Means
 
-Negative response data is defined as when the value of the mean or response is negative in the data.
+Negative response data is defined as data with a negative value for the mean or for the individual responses.
 
 Data with negative means should only be modeled with a constant variance model.
 
 Avoid using the following models with negative response data:
 
--   Do not use exponential models with summarized negative response data. For exponential models, the mean cannot be negative.
+-   Exponential models: for the Exponential models, the mean cannot be negative.
 
--   Do not use power or exponential models with individual negative response data. For these models, the response cannot be negative.
+-   Power or Exponential models: for these models, the individual response(s) cannot be negative.
 
 ### Modeling Transformed Negative Data
 
@@ -837,7 +837,7 @@ When running the Jonckheere-Terpstra trend test, the exact method, utilizing a c
 ```
 When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.   
 
-Alterntatively, users can also opt to use a permutation approach that is not dependent on any distributional assumptions.  This approach iteratively reshuffles the observed data (i.e., reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the the proportion of permutted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. 
+Alternatively, users can also opt to use a permutation approach that is not dependent on any distributional assumptions.  This approach iteratively reshuffles the observed data (i.e., reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the proportion of permuted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. 
 
 Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual response data that corresponds to the observed summary statistics. This is done by iteratively generating random samples using a normal distribution; random samples are generated until the sample mean and standard deviation match the target (i.e., observed) mean and standard deviation or until the maximum number of iterations are reached.  If no sampled mean and standard deviation are found that match the target values, an error message is returned.
 
