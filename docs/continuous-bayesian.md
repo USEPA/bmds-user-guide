@@ -1,14 +1,14 @@
 # Continuous Endpoints - Bayesian Model Averaging Methods
 
-Traditional BMD modeling involves fitting a number of dose-response models to the observed data and selecting the single “best” model based on predefined criteria (see [**Goodness of Fit Table**](./continuous-mle.md#goodness-of-fit-table) and [**AIC and Model Comparisons**](./continuous-mle.md#aic-and-model-comparisons)). However, no single traditional dose-response model can be expected to capture the underlying biology or toxicological modes of action, and each candidate model represents only a possible hypothesis about the biologic processes leading to the observed endpoint being modeled. Hence, using the associated BMDL from the “best” model may not fully reflect the true model uncertainty ([Haber et al., 2018](https://hero.epa.gov/reference/11400398/); [Wheeler & Bailer, 2007](https://hero.epa.gov/reference/669774/)). 
+Traditional BMD modeling involves fitting a number of dose-response models to the observed data and selecting the single “best” model based on predefined criteria (see [**Goodness of Fit Table**](./continuous-mle.md#goodness-of-fit-table) and [**AIC and Model Comparisons**](./continuous-mle.md#aic-and-model-comparisons)). However, no single traditional dose-response model can be expected to fully capture the underlying biology or toxicological modes of action, and each candidate model represents only a possible hypothesis about the biologic processes leading to the observed endpoint being modeled. Hence, using the associated BMDL from the “best” model may not fully reflect the true model uncertainty ([Haber et al., 2018](https://hero.epa.gov/reference/11400398/); [Wheeler & Bailer, 2007](https://hero.epa.gov/reference/669774/)). 
 
-Therefore, model averaging in BMD modeling has been recommended by the National Institute for Occupational Safety and Health (NIOSH), World Health Organization (WHO), and the European Food Safety Authority (EFSA) as an approach that incorporates results from multiple candidate models, combined through weighted averaging to account for model uncertainty ([Wheeler et al., 2020](https://hero.epa.gov/reference/5939422/);[Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/)). Model averaging accounts for uncertainty across both individual model parameters and the suite of models analyzed ([Hinne et al., 2020](https://journals.sagepub.com/doi/10.1177/2515245919898657)). In addition, Bayesian inference is commonly employed for model averaging, as it improves characterization of uncertainty in risk value estimation by incorporating prior information and using observed data to estimate a posterior distribution of the parameter of interest (in this case, the BMD). Prior information is incorporated by specifying prior probability distributions for unknown model parameters. 
+Therefore, model averaging in BMD modeling has been recommended by the National Institute for Occupational Safety and Health (NIOSH), World Health Organization (WHO), and the European Food Safety Authority (EFSA) as an approach that incorporates results from multiple candidate models, combined through weighted averaging to better account for model uncertainty ([Wheeler et al., 2020](https://hero.epa.gov/reference/5939422/);[Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/)). Model averaging accounts for uncertainty across both individual model parameters and the suite of models analyzed ([Hinne et al., 2020](https://journals.sagepub.com/doi/10.1177/2515245919898657)). In addition, Bayesian inference is commonly employed for model averaging, as it improves characterization of uncertainty in risk value estimation by incorporating prior information and using observed data to estimate a posterior distribution of the parameter of interest (in this case, the BMD). Prior information is incorporated by specifying prior probability distributions for unknown model parameters. 
 
-The EPA has developed an approach to BMA for continuous data, terned "leveraging objective univariate distributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to continuous dose-response data, where each response can take on any value in an interval. 
+The EPA has developed an approach to Bayesian model averaging (BMA) for continuous data, termed "leveraging objective univariate distributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk of overly dominant prior effects on the posterior distribution.  The LOUD approach described in this section is applied to continuous dose-response data. 
 
 In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the predicted means for continuous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
 
-Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate benchmark response level) are the same for the Bayesian implementation of the continuous models.
+Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate BMR level) are the same for the Bayesian implementation of the continuous models.
 
 :::{important}
 At this time, EPA does not offer technical guidance on
@@ -44,7 +44,7 @@ For continuous models, variance refers to the variability of individual response
 - Normal distribution with non-constant variance modeled as a power function of the mean response, and
 - Lognormal distribution with a constant coefficient of variation
 
-In all cases, a inverse-gamma prior was assigned to the variance term.  The inverse-gamma distribution is the conjugate prior for the variance of a Normal model and correspondes the reference prior for dispersion parameters ([Gelman, 2006](https://hero.epa.gov/reference/4235805/)).  The shape and scale hyperparameters were chose to reflect the degrees of freedom and observed variability in the control and high-dose groups.  The probability function for the inverse-gamma distribution is:
+In all cases, an inverse-gamma prior was assigned to the variance term.  The inverse-gamma distribution is the conjugate prior for the variance of a Normal model and correspondes the reference prior for dispersion parameters ([Gelman, 2006](https://hero.epa.gov/reference/4235805/)).  The shape and scale hyperparameters were chosen to reflect the degrees of freedom and observed variability in the control and high-dose groups.  The probability function for the inverse-gamma distribution is:
 
 $$\text{InvGamma}\left(y|\alpha,\beta\right)=\frac{{\beta}^{\alpha}}{\Gamma(\alpha)}{y}^{-\left(\alpha+1\right)}\text{exp}\left(-\beta \cdot \frac{1}{y}\right)$$
 
@@ -64,7 +64,7 @@ The variance of observations is modeled as a power function of the mean:
 
 $${Var}_{i}= \alpha \cdot {\lbrack\mu\left({d}_{i}\right)\rbrack}^{\rho}$$
 
-where the parameters $\alpha$ and $\rho$ represent scale and power parameters and are estimated simultaneously with the other parameters in the dose-response model, and $\mu\left({d}_{i}\right)$ is the predicted resposne from the dose-response model under consideration for the ${i}^{th}$ dose group.  To estimate $\alpha$ and $\rho$, such that 
+where the parameters $\alpha$ and $\rho$ represent scale and power parameters and are estimated simultaneously with the other parameters in the dose-response model, and $\mu\left({d}_{i}\right)$ is the predicted response from the dose-response model under consideration for the ${i}^{th}$ dose group.  To estimate $\alpha$ and $\rho$, such that 
 
 $${Var}_{i} \sim \text{InvGamma}\left(\frac{{n}_{0}-1}{2},\frac{{n}_{0} \cdot {s}_{0}^{2}}{2}\right)$$ 
 
@@ -86,7 +86,7 @@ where ${s}_{\log, 01}$ is the overall observed log-scale variance across the ${x
 
 ## Mathematical Details for Bayesian Continuous Models
 
-BMDS Online (version 26.1) contains a total of nine Bayesian models for continuous endpoints as defined below. From the existing suite of MLE continuous models included in previous versions of BMDS, Bayesian versions of the Power, Exponential-3, Exponential-5, and additive Hill models were devloped, as shown below. Bayesian versions of the polynomial and linear models were not developed as monotone restrictions on polynomials are difficult to enforce and non-monotone functions lead to difficulties when evaluating the BMD, such as the possibility of having two BMDs for the same BMR. 
+BMDS Online (version 26.1) contains a total of nine Bayesian models for continuous endpoints as defined below. From the existing suite of MLE continuous models included in previous versions of BMDS, Bayesian versions of the Power, Exponential-3, Exponential-5, and additive Hill models were developed, as shown below. Bayesian versions of the polynomial and linear models were not developed as monotone restrictions on polynomials are difficult to enforce and non-monotone functions lead to difficulties when evaluating the BMD (such as the possibility of having two BMDs for the same BMR). 
 
 ```{figure} _static/img/cont_models_table_LOUD_BMDS.png
 :alt: BMDS Online model table showing the default BMDS models available for continuous LOUD model averaging
@@ -106,7 +106,7 @@ In addition to the existing BMDS continuous models, dose-response models from RI
 Extended models available for LOUD Bayesian model averaging
 ```
 :::{note}
-Note that, with respect to the BMDS Hill model, the term additive connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see [PROAST](https://hero.epa.gov/reference/4850042/)), the background is treated multiplicatively instead:  $m\left(x|\theta\right) = a \left\lbrack 1 + \left(c -1\right) \cdot \frac{{x}^{d}}{{b}^{d}+{x}^{d}} \right\rbrack$
+Note that, with respect to the BMDS Hill model, the term "additive" connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see [PROAST](https://hero.epa.gov/reference/4850042/)), the background is treated multiplicatively instead:  $m\left(x|\theta\right) = a \left\lbrack 1 + \left(c -1\right) \cdot \frac{{x}^{d}}{{b}^{d}+{x}^{d}} \right\rbrack$
 :::
 
 Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms. So, for every model, all three distributional forms (normal/constant, normal/non-constant, lognormal) can be included in the model average, except for the lognormal assumption for the Power and additive Hill models.  These two models are additive to background and can conceivably estimate negative responses, possibly violating the lognormal distribution assumption.
@@ -123,7 +123,7 @@ LOUD continuous model and distribution combinations
 Therefore, considering the combination of available models and distribution types, running a LOUD continuous model averaging analysis using the default BMDS models would consist of 10 model + distribution combinations.  Running the full extended suite of BMDS + PROAST + EFSA models would consist of either 22 or 23 model + distribution combinations, depending on whether the additive Hill or multiplicative Hill model was included in the suite, respectively.
 
 :::{note}
-Although there are a total of nine Bayesian continuous models, the user must select wheter the additive or multiplicative Hill will be used in the model average.  Thus, the full model averaging suite of continuous models would be Power, Exponential 3, Exponential 5, Inverse Exponential, Lognormal, Gamma, LMS two-stage and either the additive Hill (BMDS) or multiplicative Hill (PROAST) models
+Although there are a total of nine Bayesian continuous models, the user must select whether the additive or multiplicative Hill will be used in the model average.  Thus, the full model averaging suite of continuous models would be Power, Exponential 3, Exponential 5, Inverse Exponential, Lognormal, Gamma, LMS two-stage and either the additive Hill (BMDS) or multiplicative Hill (PROAST) models
 :::
 
 ### Individual Model Specifications
@@ -460,13 +460,13 @@ $$p \left(BMD|Y \right) = \sum_{k = 1}^{K}{{w}_{k}p \left( {BMD}_{k}|Y,{M}_{k} \
 
 where ${w}_{k}$ represents the normalized weight for model ${M}_{k}$.
 
-The model weights used for generating the model averaged posterior can be calculated in one of two ways in BMDS:
+The model weights used for generating the model-averaged posterior can be calculated in one of two ways in BMDS:
 
-1. The Watanabe-Akaike Information Criterion (WAIC), which computes a log pointwise posterior predictive density and adds a correction for the effective number of parameters to adjust for overfitting (Gelman et al. 2014, ADD REF).  The WAIC is asymptotically equivalent to leave-one-out cross-validation (LOO) (Vehtari, et al. 2017, ADD REF). For model averaging, the WAIC weights are computed by normalizing the inverse of the WAIC for each model. If ${WAIC}_{k}$ is the WAIC for model ${M}_{k}$, the WAIC weight for ${M}_{k}$, ${w}_{k}$, is given by:
+1. The Watanabe-Akaike Information Criterion (WAIC), which computes a log pointwise posterior predictive density and adds a correction for the effective number of parameters to adjust for overfitting ([Gelman, 2013](https://hero.epa.gov/reference/13243402)).  The WAIC is asymptotically equivalent to leave-one-out cross-validation (LOO) ([Vehtari, et al. (2016)](https://hero.epa.gov/reference/13243404)). For model averaging, the WAIC weights are computed by normalizing the inverse of the WAIC for each model. If ${WAIC}_{k}$ is the WAIC for model ${M}_{k}$, the WAIC weight for ${M}_{k}$, ${w}_{k}$, is given by:
 
 $${w}_{k} = \frac{e^{\left(-\frac{1}{2}{WAIC}_{k}\right)}}{\sum_{k=1}^{K}e^{\left(-\frac{1}{2}{WAIC}_{k}\right)}}$$
 
-2. Posterior predictive model probabilities, $P\left({M}_{k},{\theta}_{k}|Y\right)$, determined by Bayes' theorum:
+2. Posterior predictive model probabilities, $P\left({M}_{k},{\theta}_{k}|Y\right)$, determined by Bayes' theorem:
 
 $$P\left({M}_{k},{\theta}_{k}|Y\right) = \frac{f\left({M}_{k}\right)\int{L\left(Y|{M}_{k},{\theta}_{k}\right)\pi\left({M}_{k},{\theta}_{k}\right)d{\theta}_{k}}}{\sum_{i=1}^{K}f\left({M}_{i}\right)\int{L\left(Y|{M}_{i},{\theta}_{i}\right)\pi\left({M}_{i},{\theta}_{i}\right)d{\theta}_{i}}}$$
 
@@ -496,7 +496,7 @@ Once the model-averaged posterior density of the BMD is estimated, the model-ave
 
 ## Specific Continuous Bayesian Model Averaging Results
 
-Results for continous LOUD model averaging are displayed on the Output tab, including the dataset modeled, the option set used, the MCMC options used, and the modeling summary table and plot.
+Results for continuous LOUD model averaging are displayed on the Output tab, including the dataset modeled, the option set used, the MCMC options used, and the modeling summary table and plot.
 
 ```{figure} _static/img/LOUD_cont_output_tab.png
 :alt: BMDS Online Output tab for LOUD model averaging.  
@@ -524,7 +524,7 @@ Scrolling down the individual model window will display the model parameters tab
 Additional modeling results for a single model included in a LOUD model averaing analysis
 ```
 
-The model parameter table provides users MCMC convergence and sampling diagnostics:
+The model parameter table provides users with MCMC convergence and sampling diagnostics:
 
 - **The potential scale reduction statistic ($\hat{R}$)**: the ratio of the average variation of samples within each Markov chain to the variance of samples across all chains.  When chains have reached equilibrium (i.e., have converged), the $\hat{R}$ statistic will equal 1; when chains have not converged the $\hat{R}$ statistic will be greater than 1.  In general, values less than 1.01 indicate convergence; values less than 1.1 may be also be acceptable for some analyses, but 1.01 is a stricter target for convergence. Note, that the $\hat{R}$ statistic will only be reported when greater than one Markov chain is used.
 
@@ -544,7 +544,7 @@ Scrolling to the bottom of the individual model window will display the model pa
 Model specific posterior parameter distribution and trace plots
 ```
 
-Trace plots show the sampled values of a parameter across all iterations of the MCMC chains. Trace plots can help assess whether chains are mixing well and whether they have reached a stable, stationary distribution. Ideally, trace plots will look like a "hairy catepillar" where the chain moves around a constant level without obvious trends, shifts, or abrupt jumps.  Occassionally, a few extreme samples might be observed (individual values inconsistent with the overall trend in the chain).  These divergent values transitions may be problematic, but overall are less of a concern in an overall well-behaved trace plot.  
+Trace plots show the sampled values of a parameter across all iterations of the MCMC chains. Trace plots can help assess whether chains are mixing well and whether they have reached a stable, stationary distribution. Ideally, trace plots will look like a "hairy caterpillar" where the chain moves around a constant level without obvious trends, shifts, or abrupt jumps.  Occasionally, a few extreme samples might be observed (individual values inconsistent with the overall trend in the chain).  These divergent value transitions may be problematic but overall are less of a concern in an well-behaved trace plot.  
 
 Overall, trace plots are diagnostic and not definitive. Trace plot behavior should always be considered alongside the $\hat{R}$, Markov Chain standard error, and bulk and tail ESS values.
 
