@@ -574,7 +574,7 @@ $BMD = \left\{\begin{array}{r}\frac{G^{-1}(BMR;\alpha)}{\beta}\ extra\ risk \\ \
 :::
 
 :::{tab-item} Logistic
-$BMD = \frac{ ln(\frac{1-Z}{1 + Z \times e^{-\alpha}})}{\beta}$
+$BMD = -\frac{ ln(\frac{1-Z}{1 + Z \times e^{-\alpha}})}{\beta}$
 
 where
 
