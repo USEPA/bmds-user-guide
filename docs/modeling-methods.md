@@ -2,7 +2,7 @@
 
 BMDS employs two general modeling approaches: Bayesian for dichotomous endpoints only, and non-Bayesian methods (*i.e.*, maximum likelihood estimation) for dichotomous, continuous, and nested dichotomous endpoints.
 
-Both Bayesian and non-Bayesian methods estimate parameters of a statistical model based on observed data. Both approaches use the likelihood function, which measures how well the model explains the observed data and provides key statistics such as point estimates (BMD) and bounds (BMDL). However, the precise way the likelihood is used differs somewhat between the two approaches.
+Both Bayesian and non-Bayesian methods estimate parameters of a statistical model based on observed data. Both approaches use the likelihood function, which measures how well the model explains the observed data and provides key statistics such as point estimates (e.g., BMD) and bounds (e.g., BMDL). However, the precise way that the likelihood is used differs somewhat between the two approaches.
 
 ## Maximum Likelihood and Related Non-Bayesian Methods
 
@@ -28,7 +28,7 @@ To see how model parameter estimates are reported in the BMDS results, refer to 
 
 Bayesian methods combine prior information about parameters with the observed data to update the probability of an event of interest, as more evidence becomes available. Bayesian analysis can be more computationally intensive than MLE methodology but offers a richer view of parameter uncertainty.
 
-Following the Bayesian approach, distributions describing the *a priori* uncertainty in the parameter values (the so-called prior distributions) are updated using the data under consideration to yield *a posteriori* distributions (the so-called posterior distributions). A quantile of the posterior BMD distribution, for example the 5th percentile, may be used for a Bayesian BMDL.[^2]
+Following the Bayesian approach, distributions describing the *a priori* uncertainty in the parameter values (the so-called "prior distributions") are updated using the data under consideration to yield *a posteriori* distributions (the so-called "posterior distributions"). A quantile of the posterior BMD distribution, for example the 5th percentile, may be used for a Bayesian BMDL.[^2]
 
 [^2]: Bayesian upper or lower bounds computed in this way define "credible" intervals, which are Bayesian analogues of classical confidence intervals.
 
@@ -45,7 +45,7 @@ At this time, EPA does not offer technical guidance on Bayesian modeling or Baye
 Specifics on the Bayesian model equations and parameter priors are presented in the following
 sections:
 
--   [**Mathematical Details for Bayesian Continuous Models**](./continuous-bayesian.md#mathematical-details-for-bayesian-continuous-models)
+-   [**Mathematical Details for LOUD Bayesian Continuous Models**](./continuous-bayesian.md#mathematical-details-for-bayesian-continuous-models)
 
 -   [**Mathematical Details for LOUD Bayesian Dichotomous Models**](./dichotomous-bayesian.md#mathematical-details-for-loud-bayesian-dichotomous-models)
 
@@ -62,12 +62,13 @@ The methods used for Bayesian model averaging are described in more detail in th
 
 ## Optimization Algorithms Used in BMDS
 
-BMDS uses the NLopt optimization library for MLE analyses and some Bayesian computations. Somewhat differently constrained optimization
+BMDS uses the [NLopt](https://github.com/stevengj/nlopt/releases) optimization library for MLE analyses and some Bayesian computations. Somewhat differently constrained optimization
 methods are involved for BMD and BMDL computations (Bayesian or MLE). Several optimization algorithms available in the library are used to ensure reliability of the estimation:
 
 -   For global optimization involving the maximum likelihood or maximum *a posteriori* estimation subject to bounds on parameters (which are inequality constraints), the L-BFGS[^4] method is attempted first. If it fails to converge, gradient-free algorithms (subplex and BOBYQA[^5]) are then attempted. Note that the parameter bounds will be carried forward into the calculations that follow.
 
-[^4]: Limited-memory *BFGS (L-BFGS or LM-BFGS)* is an optimization algorithm in the family of quasi-Newton methods that approximates the Broyden--Fletcher--Goldfarb--Shanno algorithm (*BFGS*).[^5]: Bound Optimization by Quadratic Approximation (BOBYQA) is a numerical optimization method.
+[^4]: Limited-memory *BFGS (L-BFGS or LM-BFGS)* is an optimization algorithm in the family of quasi-Newton methods that approximates the Broyden--Fletcher--Goldfarb--Shanno algorithm (*BFGS*).
+[^5]: Bound Optimization by Quadratic Approximation (BOBYQA) is a numerical optimization method.
 
 -   The Bayesian BMDL in BMDS, as well as profile likelihood, involves *profiling*, wherein parameters are optimized with the BMD fixed at specific values, in addition to the inequality constraints on the individual parameters. Fixing the BMD will add a linear or nonlinear equality constraint.
 
