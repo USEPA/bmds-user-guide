@@ -19,7 +19,7 @@ At this time, EPA does not offer technical guidance on Bayesian modeling or Baye
 
 ## LOUD Model Averaging - Dichotomous Endpoints
 
-The EPA has developed an approach to BMA for dichotomous data, termed "***L***everaging ***O***ptimized ***U***nified prior ***D***istributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to dichotomous dose-response data, where each response can take on one of only two possible outcomes, positive (effect present) and negative (effect absent). 
+The EPA has developed an approach to BMA for dichotomous data, termed "***L***everaging ***O***ptimized ***U***nified prior ***D***istributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk of overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to dichotomous dose-response data, where each response can take on one of only two possible outcomes, positive (effect present) and negative (effect absent). 
 
 In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the response probabilities for dichotomous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
 
@@ -360,7 +360,7 @@ $0\  \leq \ g\  < \ 1$
 
 $\beta_{i} > 0$
 
-$N \geq 2$
+$n \geq 2$
 
 **Priors**
 
@@ -374,7 +374,7 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 The prior for $\beta_{1}$ reflects the belief that the linear term should be strictly prositive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
 
-For model averaging purposes, $N = 2$.
+For model averaging purposes, $n = 2$.
 
 :::
 
@@ -465,7 +465,7 @@ $0\  < \ \beta\  < 10,000$
 
 $logit(g) \sim Normal(0,2)$
 
-$\alpha \sim Lognormal(\ln(2)\sqrt(0.18))$
+$\alpha \sim Lognormal(\ln(2),\sqrt(0.18))$
 
 $\beta \sim Lognormal(0,1)$
 
@@ -723,13 +723,13 @@ $$\approx 1 - {\frac{1}{2}\Pr}\left( \  - 2{\ log\lbrack\widehat{g}}_{k}\left( \
 
 This approximation is like the profile-likelihood used when estimating the BMDL and BMDU using the MLE methods (see [Maximum Likelihood and Related Non-Bayesian Methods](./modeling-methods.md#maximum-likelihood-and-related-non-bayesian-methods)), but in this case ${\ \widehat{g}}_{k}\left( x \middle| M_{k},D \right)$ is the posterior density, which incorporates both the likelihood and the prior.
 
-#### Results Specific to ToxicR Bayesian Model Averaing
+#### Results Specific to ToxicR Bayesian Model Averaging
 
 To compare the difference between any two Bayesian models, the unnormalized Log Posterior Probability (LPP) is given, which allows the computation of a Bayes factor (BF) to compare any two models. BF equals the exponentiated difference between the two LPP. For example, if one wishes to compare the Log-Logistic model (Model A) (yielding $LPP_{A}$) to the Multistage 2{sup}`nd` degree model (Model B, $LPP_{B}$) one estimates the BF as
 
 $$BF = \exp\left( LPP_{A} - LPP_{B} \right),$$
 
-This computation assumes that both models have equal probability *a priori.* This value is then interpreted as the posterior odds one  model is more correct than the other model and is used in Bayesian hypothesis testing. In the example above, if the Bayes Factor was 2.5, the interpretation would be that the Log-logistic model is *a posteriori* 2.5 times more likely than the multistage model. When these values are normalized into proper probabilities, they are equivalent to the posterior model probabilities given in model averaging (again, assuming equal model probability *a priori*). The table below is adapted from Jeffreys ([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043)) and is a common interpretation of Bayes Factors.
+This computation assumes that both models have equal probability *a priori.* This value is then interpreted as the posterior odds that one model is more correct than the other model and is used in Bayesian hypothesis testing. In the example above, if the Bayes Factor was 2.5, the interpretation would be that the Log-logistic model is *a posteriori* 2.5 times more likely than the multistage model. When these values are normalized into proper probabilities, they are equivalent to the posterior model probabilities given in model averaging (again, assuming equal model probability *a priori*). The table below is adapted from Jeffreys ([1998](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043)) and is a common interpretation of Bayes Factors.
 
 ```{csv-table} Bayes factors for dichotomous models.
 :header: >

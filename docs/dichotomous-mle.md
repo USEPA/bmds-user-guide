@@ -736,7 +736,7 @@ From these regression coefficients, the design effect can be calculated as $D = 
 When dose-group incidences are zero, the calculation of the design effect includes a $ln(0)$, term, which is undefined.  If design effect was calculated as normal, dose-groups with 0 incidece would be assigned the maximum design effect possible.  The testing of the Rao-Scott transformation did not cover situations such as these and until testing can be conducted to determine if this appropriate, a design effect of 0 (meaning no scaling) is manually assigned to dose groups with 0 incidence.  Additionally, in cases of exceedingly low incidence (approximately occurring when $P_{f} < 0.006$), a design effect less than 1 will be estimated, resulting in a scaling upwards (i.e., larger numbers) of the transformed incidence and N values.  In cases such as this, a design effect of 1 is manually applied to prevent this behavior.
 :::
 
-An example calculation is provided below for a hypothetical developmental study using mice.
+An example calculation is provided below for a hypothetical developmental study using rats.
 
 ```{csv-table} Example Calculation of the Design effect and Transformed Incidence Numbers for a Hypothetical Mouse Study
 :header: >
@@ -765,7 +765,7 @@ The ultimate consequence of the Rao-Scott transformation will be the estimation 
 
 ## Trend Test for Dichotomous Data
 
-The Cochran-Armitage trend test allows users to test for trends in binomial proportions across different levels of a single variable.  In the case of dichotomous dose-response data, the number of responses divided by the total number of subjects exposed represents the binomial proportion, which is tested across the different doses.  Here, dose is treated as an ordinal variable, and thus the test depends only on the order of the doses, not their numerical values.  The Cochran-Armitage trend test in pybmds automatically computes both the asymptotic and conditional exact *p*-values for testing the presences of a monotonic trend in incidence rations across increasing dose groups.
+The Cochran-Armitage trend test allows users to test for trends in binomial proportions across different levels of a single variable.  In the case of dichotomous dose-response data, the number of responses divided by the total number of subjects exposed represents the binomial proportion, which is tested across the different doses.  Here, dose is treated as an ordinal variable, and thus the test depends only on the order of the doses, not their numerical values.  The Cochran-Armitage trend test in pybmds automatically computes both the asymptotic and conditional exact *p*-values for testing the presences of a monotonic trend in incidence ratios across increasing dose groups.
 
 The asymptotic *p*-value is based on a normal approximation of the linear trend statistic proposed by [Cochran (1954)](https://www.jstor.org/stable/pdf/3001616.pdf) and [Armitage (1954)](https://www.jstor.org/stable/3001775?seq=1).  The exact one-sided *p*-value for the Cochran-Armitage trend test uses a special case of the linear rank test algorithm by [Mehta, Patel, and Tsiastis (1992)](https://www.jstor.org/stable/1390598?seq=6).
 
