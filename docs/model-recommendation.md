@@ -22,11 +22,11 @@ Models that meet the appropriate logic criteria are considered [**Viable**](#via
 
 BMDS places each model into one of three different bins:
 
--  **Viable**---highest-quality model, no serious deficiencies found based on user-defined logic, but may contain warnings.
+-  **Viable**---highest-quality model, no serious deficiencies found based on default or user-defined logic, but may contain warnings.
 
 -  **Unusable**---required outputs such as BMD or BMDL are not estimated.
 
--  **Questionable**---some serious deficiencies based on user-defined decision logic.
+-  **Questionable**---some serious deficiencies based on default or user-defined decision logic.
 
 The default settings for factors (tests) that determine bin placement are consistent with EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 

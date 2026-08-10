@@ -18,7 +18,7 @@ The **Output** tab displays several tables of results and calculations depending
 
 -   Bayesian Model Averaging Results table and graph.
 
-The following wireframe diagrams provide a simple overview of the tables and plots shown on the Output tab for each endpoint type.
+The following wireframe diagrams ({numref}`f47`-{numref}`f50` provide a simple overview of the tables and plots shown on the Output tab for each endpoint type.
 
 ```{figure} _static/img/cont_output_layout.png
 :alt: Simplified and labeled layout of continuous results output page
@@ -73,7 +73,7 @@ Select a model name in the results table ...
 
 ### Individual Model Result Window Layouts
 
-The individual model results window layout differs based on the type of endpoint: continuous, dichotomous, and nested dichotomous. The following wireframe diagrams illustrate the results displayed by BMDS for each model type.
+The individual model results window layout differs based on the type of endpoint: continuous, dichotomous, and nested dichotomous. The following wireframe diagrams ({numref}`f53`-{numref}`f56`) illustrate the results displayed by BMDS for each model type.
 
 ```{figure} _static/img/results_layout_MLE_C.png
 :alt: Simplified and labelled diagram of continuous model result window layout - MLE
@@ -125,7 +125,7 @@ Multistage Multitumor model results window layout - MLE.
 
 ### Summary Table of Key Fit Statistics (All Data Types)
 
-A model result window's Modeling Summary table for the Model-Option set contains---depending on the endpoint type---the BMD, BMDL, and BMDU estimates, AIC, Log Likelihood, the overall goodness-of-fit test p-value, and degrees of freedom (d.f.).
+A model result window's **Modeling Summary** table for the Model-Option set contains---depending on the endpoint type---the BMD, BMDL, and BMDU estimates, AIC, Log Likelihood, the overall goodness-of-fit test p-value, and degrees of freedom (d.f.).
 
 ```{figure} _static/img/BMD_summary_table_MLE.png
 :alt: Model Summary table from result output
@@ -201,7 +201,7 @@ For MLE models, the **Model Parameters** table includes the estimates for the pa
 
 CDF stands for *cumulative distribution function*, in this case for the BMD estimate. The CDF table lists the percentiles associated with the CDF for the BMD being estimated ({numref}`f59`).
 
-Note that the BMD value associated with the CDF value of 0.5 is the MLE of the BMD (and matches the value reported for the BMD in the Summary table discussed above).
+Note that the BMD value associated with the CDF value of 0.5 is the MLE of the BMD (and matches the value reported for the BMD in the **Modeling Summary** table discussed [above](#summary-table-of-key-fit-statistics-all-data-types)).
 
 The CDF table may also correspond to the Summary table in terms of the BMDL and BMDU values reported in the latter. Recall that the confidence level specified by the user in the options is a one-sided confidence level. Therefore, if that confidence level is related to one of the cumulative percentiles in the CDF block, the BMD values will match.
 
@@ -232,7 +232,7 @@ Graphical outputs (plots) are displayed on both the Output tab and on the indivi
 Results plot for the Multistage 2 model.
 ```
 
-The results plot shows the dose-response curve estimated by the model.
+The results plot (see {numref}`f63') shows the dose-response curve estimated by the model.
 
 -   Data points are shown as blue dots with their individual group confidence intervals.
 
