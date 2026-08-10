@@ -48,7 +48,7 @@ Although auto-select is the BMDS default option, the user can choose to manually
 ## Multistage Multitumor Model Description
 
 :::{note}
-Before using the Multistage Multitumor model, it is strongly recommended that users refer to the [Technical Guidance on choosing the appropriate stage of a multistage model for cancer modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382).
+Before using the Multistage Multitumor model, it is strongly recommended that users refer to the [Technical Guidance on choosing the appropriate stage of a multistage model for cancer modeling](https://www.epa.gov/bmds/choosing-appropriate-stage-multistage-model-cancer-modeling-bmds-technical-guidance).
 :::
 
 The purpose of the Multistage Multitumor model in BMDS is to enable the user to calculate BMDs and BMDLs for a combination of tumors (corresponding to a defined risk of getting one or more of those tumors) when the individual tumor dose-responses have been modeled using a Multistage-Cancer model.
@@ -131,7 +131,7 @@ The help text for the **Degree** column reads as follows:
 
 BMDS will recommend a model degree based on the decision logic and settings found on the Logic tab for Dichotomous endpoints. For more details, refer to [**Model Recommendations and Decision Logic**](./model-recommendation.md#model-recommendations-and-decision-logic).
 
-   * If the user opts for the auto-select functionality, the best fitting model is chosen according to the [Technical Guidance on choosing the appropriate stage of a multistage model for cancer modeling](https://cfpub.epa.gov/ncea/bmds/recordisplay.cfm?deid=308382). If no model can be chosen based on that criterion, then the model is removed from the Multistage Multitumor model results.
+   * If the user opts for the auto-select functionality, the best fitting model is chosen according to the [Technical Guidance on choosing the appropriate stage of a multistage model for cancer modeling](https://www.epa.gov/bmds/choosing-appropriate-stage-multistage-model-cancer-modeling-bmds-technical-guidance). If no model can be chosen based on that criterion, then the model is removed from the Multistage Multitumor model results.
 
    * The Multistage Multitumor model decision logic uses the following criteria for the user-defined test thresholds from the Dichotomous Logic tab:
 
