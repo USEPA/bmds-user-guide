@@ -43,7 +43,7 @@ A BMDS analysis can have the following number of continuous datasets:
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses instead of putting large numbers of     datasets into a single analysis.
 
--   **pybmds:** No limit.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
 
 For details on inserting or importing datasets, refer to [**Specifying Datasets**](./bmds-online.md#specifying-datasets).
 
@@ -464,19 +464,19 @@ Keeping these tests in mind, suppose $2 \times \log\{ L(B)\}\  - \ 2 \times \log
 
 The **Tests of Means and Variance** table in BMDS provides four default tests for any of the continuous models.
 
-**Test 1 (A2 vs R): Tests the null hypothesis that responses and variances do not differ among dose levels. If this test fails to reject the null hypothesis, there may not be a dose-response.**
+**Test 1 (Fullest Model, A2 vs Reduced Model, R): Tests the null hypothesis that responses and variances do not differ among dose levels. If this test fails to reject the null hypothesis, there may not be a dose-response.**
 
 This test compares Model R (the simpler model) to Model A2. Model R is a simpler A2 (or nested within A2) since R can be obtained from A2 by restricting all the mean parameters to be equal to one another and restricting all the variance parameters to be equal to one another. If this test fails to reject the null hypothesis, then there may not be a dose-response, as the inference would be that the simpler model (R) is not much worse than the saturated model. The default p-value for the test (as reported in the Tests of Interest section of the output) is 0.05. A p-value less than 0.05 is an indication that there is a difference between response and/or variances among the dose levels and supports a conclusion to model the data. A p-value greater than 0.05 is an indication that the data may not be suitable for dose-response modeling.
 
-**Test 2 (A1 vs A2): Tests the null hypothesis that variances are homogeneous. If this test fails to reject the null hypothesis, the simpler constant variance model may be appropriate.**
+**Test 2 (Full Constant Variance Model, A1 vs Fullest Model, A2): Tests the null hypothesis that variances are homogeneous. If this test fails to reject the null hypothesis, the simpler constant variance model may be appropriate.**
 
 This test compares A1 (the simpler model) to Model A2. Model A1 is a simpler A2 (or nested within A2) since A1 can be obtained from A2 by restricting all the variance parameters to be equal to one another. If this test rejects the null hypothesis, the inference is that the constant variance assumption is incorrect and a modeled variance is necessary to adequately represent the data. The default p-value for rejecting the null hypothesis is 0.05 (as reported in the Tests of Interest section of the output). A p-value less than 0.05 is an indication that the user should consider running a non-homogeneous (*e.g.*, nonconstant) variance model. A p-value greater than 0.05 is an indication that a constant variance assumption may be suitable for the dose-response modeling.
 
-**Test 3 (A3 vs A2): Tests the null hypothesis that the variances are adequately modeled. If this test fails to reject the null hypothesis, it may be inferred that the variances have been modeled appropriately.**
+**Test 3 (Full Model with Variance Structure Specified by User, A3 vs Fullest Model, A2): Tests the null hypothesis that the variances are adequately modeled. If this test fails to reject the null hypothesis, it may be inferred that the variances have been modeled appropriately.**
 
 Here, the test is one to see if the user-specified variance model, is appropriate. If the user-specified variance model is Constant Variance, then Models A1 and A3 are identical. This test is the same as Test 2, with the same interpretation. If the user-specified variance model is nonconstant (${\sigma_{i}}^{2} = \alpha \times {\mu_{i}}^{\rho}$), this test determines if that equation appears adequate to describe the variance across dose groups. Model A3 is the simpler version of Model A2 obtained by constraining the variances to fit the nonconstant variance equation. The default p-value for rejecting the null hypothesis is 0.05 (as reported in the Tests of Interest section of the output). A p-value less than 0.05 is an indication that the user may want to consider a different variance model. A p-value greater than 0.05 supports the use of user-specified variance model for the dose-response modeling.
 
-**Test 4 (Fitted vs A3): Tests the null hypothesis that the model for the mean fits the data. If this test fails to reject the null hypothesis, the user has support for the selected model.**
+**Test 4 (Fitted Model vs Full Model with Variance Structure Specified by User, A3): Tests the null hypothesis that the model for the mean fits the data. If this test fails to reject the null hypothesis, the user has support for the selected model.**
 
 This test compares the Fitted Model to Model A3. The Fitted Model is a simpler Model A3 (or nested within Model A3) because it can be obtained by restricting the means (unrestricted in A3) to be described by the dose-response function under consideration. If this test fails to reject the null hypothesis, the inference is that the fitted model is adequate to describe the dose-related changes in the means (conditional on the form of the variance model; the form of the variance model is the same for the Fitted Model and Model A3). Failure to reject the null hypothesis is associated with the inference that the restriction of the means to the shape of the dose-response function under consideration is adequate. The default p-value for rejecting the null hypothesis is 0.1 (as reported in the Tests of Interest section of the output). A p-value less than 0.1 is an indication that the user may want to try a different model (*i.e.*, the fit of the Fitted Model is not good enough). A p-value greater than 0.1 is an indication that the Fitted Model appears to be suitable for dose-response modeling.
 
@@ -508,11 +508,9 @@ The definitions of the continuous models are fully specified below. Note that $m
 
 ::::{tab-set}
 
-:::{tab-item} Linear and Polynomial
+:::{tab-item} Polynomial
 
 **Model Form**
-
-The Linear model is a form of the polynomial model.
 
 $$m(dose) = g\  + \ \beta_{1} \times dose + \beta_{2} \times dose^{2} + \ldots + \beta_{n} \times dose^{n}$$
 
@@ -538,7 +536,7 @@ Restrict the value of the polynomial coefficients to be either non-positive or n
 
 **Model Form**
 
-The Linear model is a form of the polynomial model.
+The Linear model is a specific parameterization of the polynomial model.
 
 $$m(dose) = g\  + \ \beta\  \times dose$$
 
@@ -724,7 +722,7 @@ $s_{i}^{2} = \frac{\sum_{j = 1}^{N_{i}}{(y_{ij} - {\overline{y}}_{i})}^{2}\ }{N_
 
 $N = \ \sum_{i = 1}^{G}N_{i}$.
 
-The parameters defining $m\left( {dose}_{i} \right)$ and ${\sigma_{i}}^{2}$ (see previous two subsections) are optimized to maximize the LL equation value.
+The parameters defining $m\left( {dose}_{i} \right)$ and ${\sigma_{i}}^{2}$ (see [Individual Model Specifications](#individual-model-specifications) and [Variance Model](#variance-model)) are optimized to maximize the LL equation value.
 
 #### Assuming Lognormally Distributed Responses
 
@@ -738,11 +736,11 @@ ${\overline{z}}_{Li}\  = \ $log-scale sample mean for $i^{th}$ dose group, and
 
 ${{\ s}_{Li}}^{2}\  = \ $log-scale sample variance for $i^{th}$ dose group.
 
-As in the case of Normally distributed responses, the parameters defining $m\left( {dose}_{i} \right)$ and ${\sigma_{Li}}^{2}$ (see previous two subsections) are optimized to maximize the LL equation value.
+As in the case of Normally distributed responses, the parameters defining $m\left( {dose}_{i} \right)$ and ${\sigma_{Li}}^{2}$ (see [Individual Model Specifications](#individual-model-specifications) and [Variance Model](#variance-model)) are optimized to maximize the LL equation value.
 
 ### AIC and Model Comparisons
 
-The Akaike Information Criterion (AIC) ([Akaike, 1973](https://hero.epa.gov/hero/?action=search.view&reference_id=591)) can be used to compare different models fit (by the same fitting method, *e.g.*, by maximizing the likelihood) to the same dataset. The AIC is a statistic that depends on the value of LL (see previous section) and the number of estimated parameters, p:
+The Akaike Information Criterion (AIC) ([Akaike, 1973](https://hero.epa.gov/hero/?action=search.view&reference_id=591)) can be used to compare different models fit (by the same fitting method, *e.g.*, by maximizing the likelihood) to the same dataset. The AIC is a statistic that depends on the value of LL (see [Likelihood Function](#likelihood-function)) and the number of estimated parameters, p:
 
 > $$AIC\  = \  - 2 \times LL\  + \ 2 \times p$$
 
@@ -872,7 +870,7 @@ Clicking the **Execute** button will run the test and display the results in a t
 
 Jonckheere-Terpstra trend test link.
 ```
-Users can either click the **Copy results to clipboard** link to copy the results to manually paste into a results document or use the **Actions** dropdown menu to download a formatted Word report with the results.
+Users can either click the **Copy results to clipboard** link to copy the results to manually paste into a results document or use the **Actions** dropdown menu to download a formatted Word report with the results and simulated data (if using).
 
 ```{figure} _static/img/JT_trend_test_results_actions.png
 :alt: Jonckheere-Terpstra trend test window showing options for saving results

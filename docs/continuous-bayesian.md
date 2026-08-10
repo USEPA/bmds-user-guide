@@ -44,7 +44,7 @@ For continuous models, variance refers to the variability of individual response
 - Normal distribution with non-constant variance modeled as a power function of the mean response, and
 - Lognormal distribution with a constant coefficient of variation
 
-In all cases, an inverse-gamma prior was assigned to the variance term.  The inverse-gamma distribution is the conjugate prior for the variance of a Normal model and correspondes the reference prior for dispersion parameters ([Gelman, 2006](https://hero.epa.gov/reference/4235805/)).  The shape and scale hyperparameters were chosen to reflect the degrees of freedom and observed variability in the control and high-dose groups.  The probability function for the inverse-gamma distribution is:
+In all cases, an inverse-gamma prior was assigned to the variance term.  The inverse-gamma distribution is the conjugate prior for the variance of a Normal model and corresponds to the reference prior for dispersion parameters ([Gelman, 2006](https://hero.epa.gov/reference/4235805/)).  The shape and scale hyperparameters were chosen to reflect the degrees of freedom and observed variability in the control and high-dose groups.  The probability function for the inverse-gamma distribution is:
 
 $$\text{InvGamma}\left(y|\alpha,\beta\right)=\frac{{\beta}^{\alpha}}{\Gamma(\alpha)}{y}^{-\left(\alpha+1\right)}\text{exp}\left(-\beta \cdot \frac{1}{y}\right)$$
 
@@ -96,7 +96,7 @@ BMDS Online (version 26.1) contains a total of nine Bayesian models for continuo
 BMDS models available for LOUD Bayesian model averaging
 ```
 
-In addition to the existing BMDS continuous models, dose-response models from RIVM and EFSA have also been incorporated into BMDS.  These dose-response functions from [EFSA](https://hero.epa.gov/reference/12033104/) and [PROAST](https://hero.epa.gov/reference/4850042/) were the 4-parameter multiplicative Hill, Inverse-Exponential, and Lognormal models (termed “canonical” models in ([Slob et al., 2025](https://pubmed.ncbi.nlm.nih.gov/40202288/)) and the Gamma, and linearized multistage (LMS)-two-stage  models. 
+In addition to the existing BMDS continuous models, dose-response models from RIVM and EFSA have also been incorporated into BMDS.  These dose-response functions from [EFSA](https://hero.epa.gov/reference/12033104/) and [PROAST](https://hero.epa.gov/reference/4850042/) were 1) the 4-parameter multiplicative Hill, Inverse-Exponential, and Lognormal models (termed “canonical” models in [Slob et al., 2025](https://pubmed.ncbi.nlm.nih.gov/40202288/)) and, 2) the Gamma, and linearized multistage (LMS)-two-stage models. 
 
 ```{figure} _static/img/cont_models_table_LOUD_extended.png
 :alt: BMDS Online model table showing the extended models available for continuous LOUD model averaging
@@ -109,9 +109,9 @@ Extended models available for LOUD Bayesian model averaging
 Note that, with respect to the BMDS Hill model, the term "additive" connotes that the portion of the dose-response curve that changes with dose is treated additively relative to the background response variable, i.e., the model takes the form $m(x|\theta) = g + \frac{v \times {dose}^{n}}{k^{n} + {dose}^{n}}$.  For the multiplicative Hill model (see [PROAST](https://hero.epa.gov/reference/4850042/)), the background is treated multiplicatively instead:  $m\left(x|\theta\right) = a \left\lbrack 1 + \left(c -1\right) \cdot \frac{{x}^{d}}{{b}^{d}+{x}^{d}} \right\rbrack$
 :::
 
-Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms. So, for every model, all three distributional forms (normal/constant, normal/non-constant, lognormal) can be included in the model average, except for the lognormal assumption for the Power and additive Hill models.  These two models are additive to background and can conceivably estimate negative responses, possibly violating the lognormal distribution assumption.
+Additionally, the Bayesian model averaging performed by BMDS considers not only uncertainty across models, but also uncertainty across distributional forms of the response variances. So, for every model, all three distributional forms (normal/constant, normal/non-constant, lognormal) can be included in the model average, except for the lognormal assumption for the Power and additive Hill models.  These two models are additive to background and can conceivably estimate negative responses, possibly violating the lognormal distribution assumption.
 
-For example, see below, where the Exponential 3 model is included three times, once each for each variance assumption.
+For example, see {numref}`f85` below, where the Exponential 3 model is included three times, once each for each variance assumption.
 
 ```{figure} _static/img/LOUD_cont_model_and_dist.png
 :alt: BMDS Online model table showing the exponential three is included three times in the averaging suite.  
@@ -120,7 +120,7 @@ For example, see below, where the Exponential 3 model is included three times, o
 
 LOUD continuous model and distribution combinations
 ```
-Therefore, considering the combination of available models and distribution types, running a LOUD continuous model averaging analysis using the default BMDS models would consist of 10 model + distribution combinations.  Running the full extended suite of BMDS + PROAST + EFSA models would consist of either 22 or 23 model + distribution combinations, depending on whether the additive Hill or multiplicative Hill model was included in the suite, respectively.
+Therefore, considering the combination of available models (nine dose-response models) and distribution types (three variance options), running a LOUD continuous model averaging analysis using the default BMDS models would consist of 10 model + variance distribution combinations(CV, NCV, and Lognormal distributions for the Exp3 and Exp5 models and CV and NCV distributions for the Power and Hill models).  Running the full extended suite of BMDS + PROAST + EFSA models would consist of either 22 or 23 model + distribution combinations, depending on whether the additive Hill or multiplicative Hill model was included in the suite, respectively.  All three variance distributions are available for all models except the additive Hill and Power models.
 
 :::{note}
 Although there are a total of nine Bayesian continuous models, the user must select whether the additive or multiplicative Hill will be used in the model average.  Thus, the full model averaging suite of continuous models would be Power, Exponential 3, Exponential 5, Inverse Exponential, Lognormal, Gamma, LMS two-stage and either the additive Hill (BMDS) or multiplicative Hill (PROAST) models
@@ -192,7 +192,7 @@ $g = {m}_{0}$
 
 $k \sim \ln(0,2)$ 
 
-$n \sim \ln(\log(1.6, 0.421)$
+$n \sim \ln(\log(1.6), 0.421)$
 
 $v = \left({m}_{1} - {m}_{0}\right) \cdot \left({k}^{n}+1\right)$
 :::
@@ -217,7 +217,7 @@ $a = {m}_{0}$
 
 $b = {\brack\log\left(\frac{{m}_{1}}{{m}_{0}}\right)\rbrack}^{\frac{1}{c}}$ 
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 
 **Notes**
 
@@ -257,7 +257,7 @@ $b = \sim \ln(0,2)$
 
 $c = \frac{{m}_{0}-{m}_{1} \cdot \exp^\left({b}^{n}\right)}{{m}_{0}-{m}_{0} \cdot \exp^\left({b}^{n}\right)}$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 
 #### Reference for Exponential models
 
@@ -288,7 +288,7 @@ $b \sim \ln(0,2)$
 
 $c = \frac{{m}_{0}-{m}_{1}}{{m}_{0}} \cdot \left(b + 1\right) + 1$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 :::
 
 :::{tab-item} Inverse Exponential
@@ -315,7 +315,7 @@ $b \sim \ln(0,2)$
 
 $c = \frac{{m}_{1}-{m}_{0} + {m}_{0} \cdot \exp^{-b}}{{m}_{0} \cdot e^{(-b)}}$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 :::
 
 :::{tab-item} Lognormal
@@ -341,7 +341,7 @@ $b \sim \ln(0,2)$
 
 $c = \frac{{m}_{1}-{m}_{0} + {m}_{0} \cdot \Phi\left(\log(b)\right)}{{m}_{0} \cdot \Phi\left(\log(b)\right)}$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 
 :::
 
@@ -372,7 +372,7 @@ $b \sim \ln(0,2)$
 
 $c = \frac{{m}_{1}-{m}_{0}}{{m}_{0} \cdot pgamma(b,d,1)} + 1$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 
 :::
 
@@ -399,14 +399,14 @@ $b \sim \ln(0,2)$
 
 $c = \frac{{m}_{1}-{m}_{0} \cdot \exp^{-b-d}}{{m}_{0}-{m}_{0} \cdot \exp^{-b-d}}$
 
-$d \sim \ln(\log(1.6, 0.421)$
+$d \sim \ln(\log(1.6), 0.421)$
 
 :::
 ::::
 
 ### Option Sets and Datasets for LOUD Model Averaging
 
-For LOUD model averaging, the considerations of parameterizing the modeling analysis using the Option Set table is largely the same as for the MLE models [Option Sets](./continuous-mle.md#option-sets) with some important differences.  First, given the computational load that MCMC sampling entails, only two option sets are allowed when using LOUD model averaging.
+For LOUD model averaging, the considerations of parameterizing the modeling analysis using the Option Set table is largely the same as for the MLE models [Option Sets](./continuous-mle.md#option-sets) with some important differences.  First, given the computational load that Markov chain Monte Carlo (MCMC) sampling entails, only two option sets are allowed when using LOUD model averaging.
 
 ```{figure} _static/img/LOUD_option_set_limit.png
 :alt: BMDS Online option set table demonstrating the two option set limit.  
@@ -428,9 +428,9 @@ Only two option sets are allowed if LOUD continuous model averaging is used
 ```
 
 ### Bayesian Parameter Estimation
-Markov chain Monte Carlo (MCMC) sampling is used to derive posterior distributions for the standard model parameters and BMDs. MCMC sampling is conducted by using a latent slice sampler in compiled the C++ bmdscore library.  The latent slice sampler is a more computationally efficient alternative to the Metropolis-Hastings algorithm and addresses the issues raised in other sampling algorithms ([Li, 2022](https://repositories.lib.utexas.edu/items/e2c66f3f-a89f-4a32-8d29-6c5162d16c5d); [Li & Walker, 2023](https://www.sciencedirect.com/science/article/pii/S0167947322002328)). 
+MCMC sampling is used to derive posterior distributions for the standard model parameters and BMDs. MCMC sampling is conducted by using a latent slice sampler in the compiled the C++ bmdscore library.  The latent slice sampler is a more computationally efficient alternative to the Metropolis-Hastings algorithm and addresses the issues raised in other sampling algorithms (e.g., need for a proposal distribution and application of accept/reject criteria) ([Li, 2022](https://repositories.lib.utexas.edu/items/e2c66f3f-a89f-4a32-8d29-6c5162d16c5d); [Li & Walker, 2023](https://www.sciencedirect.com/science/article/pii/S0167947322002328)). 
 
-The structure of the MCMC sampling is customizable in BMDS: the default is 1 chain of 50,000K samples with 5,000 samples discarded as burn-in, but up to 4 separate chains can be used. The maximum number of iterations across all chains is 50,000.  The minimum number of samples per chain is 2,500 with a minimum burn-in of 100 per chain. The default seed used for MCMC sampling is zero, but any value (between 0 and 2,147,483,647) can be selected by the user. 
+The structure of the MCMC sampling is customizable in BMDS: the default is 1 chain of 50,000 samples with 5,000 samples discarded as burn-in, but up to 4 separate chains can be used. The maximum number of iterations across all chains is 50,000.  The minimum number of samples per chain is 2,500 with a minimum burn-in of 100 per chain. The default seed used for MCMC sampling is zero, but any value (between 0 and 2,147,483,647) can be selected by the user. 
 
 ```{figure} _static/img/LOUD_MCMC_settings.png
 :alt: BMDS Online MCMC settings for LOUD model averaging.  
@@ -478,7 +478,7 @@ The WAIC approach to estimating model weights is used by default in BMDS as it c
 
 The LOUD approach can be applied to summary level statistics (i.e., reported means and standard deviations) as well as to individual response data (i.e., a series of response values for each test subject, from which means and standard deviations are derived).
 
-When individual response data are reported and used for dose-response modeling, the summary statistics are calculated by the software and used for statistical calculations.  When summary statistics are used, given that they are most often generated under the normal distribution assumption (i.e., are arithmetic means and standard deviations), the data must be transformed to the log-scale for the lognormal variance model.  BMDS uses the method employed in [ToxicR](https://hero.epa.gov/reference/12902051/) to do so:
+When individual response data are reported and used for dose-response modeling, the summary statistics are calculated by the software and used for statistical calculations.  When summary statistics are used, given that they are most often generated under the normal distribution assumption (i.e., are arithmetic means and standard deviations), the summary statistics must be transformed to the log-scale for the lognormal variance model.  BMDS uses the method employed in [ToxicR](https://hero.epa.gov/reference/12902051/) to do so:
 
 $${\overline{y}_{i}}^{'} = \log\left(\overline{y}_{i}\right) - 0.5 \cdot \left\lbrack{\left(\frac{{s}_{i}}{\overline{y}_{i}}\right)}^{2}+1\right\rbrack$$
 
@@ -487,7 +487,7 @@ $${s}_{i}^{'} = \sqrt{ \log\left\lbrack{\left(\frac{{s}_{i}}{\overline{y}_{i}}\r
 where $\overline{y}_{i}$ and ${s}_{i}$ are the arithmetic mean and standard deviation, respectively ([Crump, 1995](https://hero.epa.gov/reference/2258/); [Slob, 2002](https://hero.epa.gov/reference/24962/)). 
 
 :::{important}
-Extensive simulation testing of the continuous LOUD model averaging methods indicated that almost identical results were obtained when using either summary data or individual data.
+Extensive simulation testing of the continuous LOUD model averaging methods indicated that almost identical results were obtained when using either summary data or individual data.  ***ADD CITATION TO REPORT WHEN AVAILABLE***
 :::
 
 ### BMD and BMDL estimation
@@ -537,7 +537,7 @@ A reasonable rule of thumb is that the Markov chains can be considered to have c
 Scrolling to the bottom of the individual model window will display the model parameter distributions table, where posterior distributions of the model BMD and parameter values are displayed along with trace plots of those same parameters.  
 
 ```{figure} _static/img/LOUD_cont_individual_model_3.png
-:alt: Plots for model parameter posterior distributions and associated trace plots for a LOUD continuous model averaing analysis.  
+:alt: Plots for model parameter posterior distributions and associated trace plots for a LOUD continuous model averaging analysis.  
 :scale: 80%
 :name: f92
 
