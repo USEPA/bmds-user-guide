@@ -297,7 +297,7 @@ Use of the poly-k adjustment will result in survival adjusted Ns (frequently non
 
 ## Option Set
 
-The Multitumor options are the same as for the [**Dichotomous option sets**](./dichotomous-mle.md#option-sets).
+The Multitumor options are the same as for the [**Dichotomous option sets**](./dichotomous-mle.md#defining-modeling-settings-with-option-sets).
 
 ### Risk Type
 

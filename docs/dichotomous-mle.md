@@ -22,7 +22,7 @@ Default dichotomous model selection.
 
 Most MLE models can be run restricted or unrestricted. The EPA default recommendation for initial runs is to restrict the Dichotomous Hill, Gamma, Log-Logistic, Multistage, and Weibull models and un-restrict the Logistic, Log-Probit, Probit and Quantal Linear models. Note that the Logistic, Probit, and Quantal Linear models have no restricted option ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-See [**Individual Model Specifications**](#individual--model-specifications) for the effect of the user selecting the restricted version of the models (refer to the paragraphs in the *Notes* fields). In general, the restrictions prevent the slope of the dose-response curve from becoming infinite at a dose level of 0. This is often considered to be biologically unrealistic and can lead to numerical problems when computing confidence limits, so several authors have recommended restricting the appropriate parameter. A BMDS Online analysis can have a maximum of six datasets for dichotomous endpoints.
+See [**Individual Model Specifications**](#individual-model-specifications) for the effect of the user selecting the restricted version of the models (refer to the paragraphs in the *Notes* fields). In general, the restrictions prevent the slope of the dose-response curve from becoming infinite at a dose level of 0. This is often considered to be biologically unrealistic and can lead to numerical problems when computing confidence limits, so several authors have recommended restricting the appropriate parameter. A BMDS Online analysis can have a maximum of six datasets for dichotomous endpoints.
 
 ## Maximum Multistage Degree
 
@@ -116,7 +116,7 @@ For example, if the user sets the confidence level to 0.95 (the default), then t
 Goodness of Fit table for MLE Dichotomous.
 ```
 
-The Goodness of Fit table in the individual model results shows a listing of the data (*N* and *Observed*), the model-estimated probability of response (*Estimated Probability*), and corresponding expected number of responders (*Expected*). This is a good place for the user to assess the appropriateness of the model, in addition to the overall goodness-of-fit statistics reported in the Summary table (refer to [**Summary Table of Key Fit Statistics (All Endpoints)**](./result-output-mle-bayesian.md#summary-table-of-key-fit-statistics-all-endpoints) and [**Analysis of Deviance Table**](#analysis-of-deviance-table)). If a model fits well, the observed and expected number of responders should be relatively close.
+The Goodness of Fit table in the individual model results shows a listing of the data (*N* and *Observed*), the model-estimated probability of response (*Estimated Probability*), and corresponding expected number of responders (*Expected*). This is a good place for the user to assess the appropriateness of the model, in addition to the overall goodness-of-fit statistics reported in the Summary table (refer to [**Summary Table of Key Fit Statistics (All Endpoints)**](./result-output-mle-bayesian.md#summary-table-of-key-fit-statistics-all-data-types) and [**Analysis of Deviance Table**](#analysis-of-deviance-table)). If a model fits well, the observed and expected number of responders should be relatively close.
 
 The scaled residual values printed at the end of the table are defined as follows:
 
@@ -151,7 +151,7 @@ The full model posits a separate and independent probability of response for eac
 
 :::{tab-item} Fitted Model
 
-The maximum log-likelihood value obtainable for the model under consideration. It corresponds to the model with the parameters set equal to the values shown in [**Individual Model Specifications**](#individual--model-specifications). The number of parameters equals the number of parameters in that table that are not reported as *Bounded*.
+The maximum log-likelihood value obtainable for the model under consideration. It corresponds to the model with the parameters set equal to the values shown in [**Individual Model Specifications**](#individual-model-specifications). The number of parameters equals the number of parameters in that table that are not reported as *Bounded*.
 :::
 
 :::{tab-item} Reduced Model
@@ -504,7 +504,7 @@ The distribution of $n_{i}$ is assumed to be binomial with probability
 
 $$p_{i} = p\left( dose_{i};\ \theta \right),\ i = 1,2,\ldots G$$
 
-where $\theta$ is a vector of dose-response model parameters (see [**Individual  Model Specifications**](#individual--model-specifications)). Then the log-likelihood function $LL$ can be written as
+where $\theta$ is a vector of dose-response model parameters (see [**Individual  Model Specifications**](#individual-model-specifications)). Then the log-likelihood function $LL$ can be written as
 
 $$LL = \ \sum_{i = 1}^{G}{{LL}_{i}(N_{i},\ n_{i},\ dose_{i};\ \theta)}$$
 
@@ -526,7 +526,7 @@ The AICs for the dichotomous endpoints ignore the parameter-independent term, be
 
 The AIC balances the goals of getting the highest LL value possible while being parsimonious with respect to the number of parameters needed to achieve a high LL value. Since the equation for AIC has a negative multiplier for LL (which one wants to be greater) and positive multiplier for p (which one wants to be as small as possible and still get "good fit"), a model with a **smaller value of AIC** than other models is presumed to be the better model on the basis of AIC. Although such methods are not exact, they can provide useful guidance in model selection.
 
-In the current version of BMDS, the number of estimated parameters includes only those that have not been estimated to equal a bounding value, either from the model-imposed constraints or user-imposed restrictions. For more details, see [**Individual Model Specifications**](#individual--model-specifications).
+In the current version of BMDS, the number of estimated parameters includes only those that have not been estimated to equal a bounding value, either from the model-imposed constraints or user-imposed restrictions. For more details, see [**Individual Model Specifications**](#individual-model-specifications).
 
 :::{note}
 
@@ -539,7 +539,7 @@ For this reason, the user is apprised to carefully consider the cases where para
 
 ### BMD Computation
 
-The BMD is computed as a function of the parameters of the model under consideration (see [**Individual Model Specifications**](#individual--model-specifications)). Solutions for the BMD for all the dichotomous models are shown below.
+The BMD is computed as a function of the parameters of the model under consideration (see [**Individual Model Specifications**](#individual-model-specifications)). Solutions for the BMD for all the dichotomous models are shown below.
 
 #### Calculation of the BMD for the Individual Dichotomous Models
 
@@ -600,7 +600,7 @@ $BMD = \left\{ \begin{array}{r} e\frac{- \alpha - \log\left( - \frac{BMR - v + g
 ::::
 
 :::{note}
-All models represented here use the same model forms as presented in [**Individual Model Specifications**](#individual--model-specifications). The BMR is the value specified by the user to correspond to the risk level of interest (see [**BMR**](#bmr)).
+All models represented here use the same model forms as presented in [**Individual Model Specifications**](#individual-model-specifications). The BMR is the value specified by the user to correspond to the risk level of interest (see [**BMR**](#bmr)).
 :::
 
 ### BMDL and BMDU Computation

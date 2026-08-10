@@ -406,7 +406,7 @@ $d \sim \ln(\log(1.6), 0.421)$
 
 ### Option Sets and Datasets for LOUD Model Averaging
 
-For LOUD model averaging, the considerations of parameterizing the modeling analysis using the Option Set table is largely the same as for the MLE models [Option Sets](./continuous-mle.md#option-sets) with some important differences.  First, given the computational load that Markov chain Monte Carlo (MCMC) sampling entails, only two option sets are allowed when using LOUD model averaging.
+For LOUD model averaging, the considerations of parameterizing the modeling analysis using the Option Set table is largely the same as for the MLE models [Option Sets](./continuous-mle.md#defining-modeling-settings-with-option-sets) with some important differences.  First, given the computational load that Markov chain Monte Carlo (MCMC) sampling entails, only two option sets are allowed when using LOUD model averaging.
 
 ```{figure} _static/img/LOUD_option_set_limit.png
 :alt: BMDS Online option set table demonstrating the two option set limit.  
