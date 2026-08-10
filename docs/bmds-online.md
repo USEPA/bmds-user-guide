@@ -87,7 +87,7 @@ Changing any input parameter related to model, dataset, or option set will requi
 Enter a descriptive name and summary for the analysis; they will be included in the report.
 ```
 
-2.  Select the model type for your analysis (*i.e.*, are you modeling dichotomous or continuous data?). For this example, the
+2.  Select the model type for your analysis (*e.g.*, are you modeling dichotomous or continuous data?). For this example, the
     dichotomous model type has been selected.
 
 ```{figure} _static/img/model_type_picklist.png
@@ -99,10 +99,10 @@ Dichotomous model type is selected for this analysis.
 ```
 
 :::{important}
-An analysis can have only a single model type. You cannot mix continuous and dichotomous data in a single analysis.
+An analysis can have only a single model type. For example, you cannot mix continuous and dichotomous data in a single analysis.
 :::
 
-3.  Select which models will be used for the analysis. For this example, the default selection of dichotomous Bayesian LOUD models will be used. To use all the models in a column, check the **Select All** box. To select models using ToxicR Bayesian model averaging or Maximum Likelihood Estimation (MLE) methods, click the corresponding tabs at the top of the table. 
+3.  Select which models will be used for the analysis. For thes example in {numref}`f12`, the default selection of dichotomous Bayesian LOUD models will be used. To use all the models in a column, check the **Select All** box. To select models using ToxicR Bayesian model averaging or Maximum Likelihood Estimation (MLE) methods, click the corresponding tabs at the top of the table. 
 
 ```{figure} _static/img/model_selection_table.png
 :alt: Model selection table with all LOUD models selected with equal prior weights
@@ -112,7 +112,7 @@ An analysis can have only a single model type. You cannot mix continuous and dic
 Tick the Select All box to select all the models in a column.
 ```
 
-4.  Specify the option sets to be used for the analysis and the MCMC settings (if using LOUD Bayesian model averaging). For this example, we will use a single option set with the default benchmark response (BMR) of 10% extra risk. You can add/delete option sets by clicking the blue plus or red trash can icons, respectively, to the right of the option set panel({numref}`f13`). For the MCMC settings, we will use 4 chains of 12,500 iterations each, with 1,500 iterations discarded as burnin. To return to default MCMC settings, click the **Reset to Default** button.
+4.  Specify the option sets to be used for the analysis and the MCMC settings (if using LOUD Bayesian model averaging). For this example ({numref}`f13`), we will use a single option set with the default benchmark response (BMR) of 10% extra risk. You can add/delete option sets by clicking the blue plus or red trash can icons, respectively, to the right of the option set panel. For the MCMC settings, we will use 4 chains of 12,500 iterations each, with 1,500 iterations discarded as burn-in. To return to default MCMC settings, click the **Reset to Default** button.
 
 ```{figure} _static/img/option_set_add_remove.png
 :alt: Option Set row with arrows pointing to the Add and Delete Row buttons
@@ -132,7 +132,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses  instead of putting large numbers of datasets into a single analysis. 
 
--   **pybmds:** No limit.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
 
 ## Specifying Datasets
 
@@ -150,7 +150,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
 Select the Data tab to start specifying datasets.
 ```
 
-3.  On the Data tab, select the **New** button to add an individual dataset. For this example workflow, only the dichotomous option
+3.  On the Data tab, select the **New** button to add an individual dataset. For this example workflow shown in {numref}`f15`, only the dichotomous option
     is shown for the **New dataset** field because Dichotomous was chosen as the model type on the Settings tab.
 
 ```{figure} _static/img/data_tab_new_button.png
@@ -198,7 +198,7 @@ multitumor modeling.
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses instead of putting large numbers of
     datasets into a single analysis.
 
--   **pybmds:** No limit.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
 
 ### Adding Datasets, Method 1: Manually
 
@@ -267,7 +267,7 @@ BMDS Online displays only one dataset at a time. However, it tracks ***all*** da
 
 All datasets created during a session are saved via the [**Actions menu's**](#actions-menu) **Download analysis** option and all specified datasets in a session can be Shared.
 
-Select the **Create** button to create a new default dataset with an autogenerated name. The user can switch between datasets created during the current session by selecting them from the **Select existing** picklist.
+Select the **New** button to create a new default dataset with an autogenerated name. The user can switch between datasets created during the current session by selecting them from the **Select existing** picklist.
 
 ```{figure} _static/img/multiple_datasets_dropdown.png
 :alt: Picklist showing multiple datasets for selection
@@ -402,8 +402,7 @@ Hover the mouse over the question mark icon for help text on Maximum multistage 
 Selecting **Save Analysis** ensures all specifications are in place for an analysis.
 ```
 
-5.  Select the **Run Analysis** button to execute the analysis. A running analysis can be stopped by selecting the **Cancel
-    execution** button.
+5.  Select the **Run Analysis** button to execute the analysis. A running analysis can be stopped by selecting the **Cancel execution** button.
 
 ```{figure} _static/img/cancel_execution.png
 :alt: UI showing \"executing\" feedback, with a Cancel execution button
@@ -527,7 +526,7 @@ Select the **Save model selection** button to finalize model selection. BMDS Onl
 The final output table: BMDS-recommended row in blue, user-selected row in green, and footnotes.
 ```
 
-Individual model and model averaging results can also be investigated by clicking on the desired row in the results table. In the following figure, the **Model Average** link is selected to display the **Model Average** pop up window. Hover the mouse across the curves to investigate results in more detail.
+Individual model and model averaging results can also be investigated by clicking on the desired row in the results table. In {numref}`f43`, the **Model Average** link is selected to display the **Model Average** pop up window. Hover the mouse across the curves to investigate results in more detail.
 
 ```{figure} _static/img/model_average_window.png
 :alt: Model Average results graphs with hovering cursor displaying pop-up model information
@@ -568,7 +567,7 @@ analysis.
 
 ### Constraints on Sharing Analysis URLs
 
--   **Only the most recent analysis is available:** BMDS Online analyses are linked to the URL of the ***current*** session. When a link is shared, only the most recent execution of that analysis is preserved and will be available to others. Therefore, if you need to perform more work after sharing an analysis link, we recommend [**creating a new analysis**](#creating-a-new-analysis).
+-   **Only the most recent analysis is available:** BMDS Online analyses are linked to the URL of the ***current*** session. When a link is shared, only the most recent execution of that analysis is preserved and will be available to others. Meaning, if a shared analysis is changed or modified by users that received an an edit link, the shared analysis will be overwritten with no notification to the original user. Therefore, if you need to perform more work after sharing or receiving an edit link, we recommend [**creating a new analysis**](#creating-a-new-analysis) or cloning the shared analysis.
 
 -   **Analyses are deleted after three years unless extended:** If you share the link with others, note that analyses are deleted after
     three years, unless retention of the analysis is extended from the **Actions** menu. The **Download analysis** feature can be used to save and share analyses that need to be retained long-term.
@@ -589,13 +588,13 @@ BMDS Online Actions menu options.
 
 -   **Delete analysis**: Delete the current analysis. If an analysis is deleted, it cannot be restored.
 
--   **Download data**: Download the analysis as an Excel file. By default, the user-specified Analysis Name is the Excel filename; the
-    user can change the filename before saving. The Excel file contains all the datasets, their option settings, and their analysis results.
+-   **Clone analysis**: Creates a cloned analysis from the current analysis that retains all options and model parameterizations and results. The cloned analysis will identify which analysis it was cloned from in the **Analysis Description** field on the **Settings** tab.
+
+-   **Download results**: Download the analysis as an Excel file. By default, the user-specified **Analysis Name** on the **Settings** tab is used as the Excel filename; the user can change the filename before saving. The Excel file contains all the datasets, their option settings, and their analysis results.
 
 -   **Download report**: Download the analysis results as a Word file. Options for the Word report can include only the user-selected
     model, all models, and all models with the BMD Cumulative Data Function (CDF) table. Note that the Word report contains the
-    analysis URL, and users can access their analyses via the generated report. The name given to the Word file is the user-specified
-    Analysis Name.
+    analysis URL, and users can access their analyses via the generated report. By default, the user-specified **Analysis Name** on the **Settings** tab is used as the Word filename.
 
 :::{important}
 The BMDS Desktop report does not include URLs because the analysis resides on the user's local system rather than the Internet.
@@ -607,7 +606,7 @@ The BMDS Desktop report does not include URLs because the analysis resides on th
 
 ### Microsoft Word Report
 
-Select the **Actions** menu's **Download report** option to display the following panel where the user can customize what will appear in the report.
+Select the **Actions** menu's **Download report** option to display the panel shown in {numref}`f46` where the user can customize what will appear in the report.
 
 The **Long dataset format** option is recommended for most users. Selecting the options **Include all models** and **Include BMD CDF
 Table** make the report considerably longer.

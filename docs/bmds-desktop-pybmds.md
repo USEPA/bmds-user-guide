@@ -24,7 +24,7 @@ BMDS Online and BMDS Desktop use the same interface and command components and w
 
 ### BMDS Desktop-Specific Features and Constraints
 
-BMDS Desktop is identical to BMDS Online, with the following differences:
+BMDS Desktop is identical to BMDS Online with regard to the technical details of the models and the user interface.  The following differences are related to how data and outputs are stored and shared and the limitations placed on the number of datasets that can be run at one time:  
 
 -   Dose response analyses and data storage are fully offline.
 
@@ -77,5 +77,5 @@ pybmds is a command-line environment that runs in a terminal window or in Jupyte
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.
 
-pybmds can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#maximum-number-of-datasets) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, it is recommended to create multiple analyses rather than put large numbers of datasets into a single analysis.
+pybmds can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#maximum-number-of-datasets) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, running large numbers of LOUD analyses can take a long time and run into memory storage issues.
 

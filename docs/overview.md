@@ -27,7 +27,7 @@ Collectively, the application of the methods for fitting mathematical models to 
 
 ## BMDS for Dose-Response Modeling
 
-EPA's Benchmark Dose Software (BMDS) provides easy access to numerous [**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative relationship between a chemical ***dose*** and the test subject's ***response***. The user can select from and/or compare the models to make predictions about the quantitative relationship between dose and response. A specific focus of this software is the estimation of a statistical BMD, including bounds (*e.g.*, 95% confidence intervals) on such estimates.
+EPA's Benchmark Dose Software (BMDS) provides easy access to numerous [**dose-response models**](./bmds.md) that help risk assessors estimate the quantitative relationship between a chemical ***dose*** and the test subject's ***response***. The user can select from and/or compare the models to make predictions about the quantitative relationship between dose and response. A specific focus of this software is the statistical estimation of a BMD, including bounds (*e.g.*, 95% confidence intervals) on such estimates.
 
 BMDS facilitates dose-response modeling. BMDS models are currently accessible via an online browser-based web application ([BMDS Online](https://bmdsonline.epa.gov/)), a desktop application ([BMDS Desktop](https://usepa.github.io/BMDS/desktop.html)), or in a scripting environment ([pybmds](https://usepa.github.io/BMDS/quickstart.html)).
 
@@ -108,6 +108,44 @@ The full [BMDS application history](https://www.epa.gov/bmds/about-benchmark-dos
 
 There is also the added flexibility of offline processing with [**BMDS Desktop and pybmds**](./bmds-desktop-pybmds.md).
 
+### Recent Key Improvements and Enhancements
+
+All improvements and enhancements listed below are available in BMDS Online, BMDS Desktop, and pybmds:
+
+-   Addition of Multistage Cancer/Multitumor model, along with a [**poly-k adjustment tool**](./multiple-tumor-analysis.md#poly-k-adjustment) (24.1 release)
+
+-   Addition of the Nested Logistic nested dichotomous model for developmental toxicity data (24.1 release)
+
+-   Addition of the NCTR nested dichotomous model for developmental toxicity data (25.1 release)
+
+-   Addition of the [**Rao-Scott transformation tool**](./dichotomous-mle.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data) for dichotomous endpoints (25.1 release)
+
+-   Ability to clone an analysis after clicking a [**Read-only link**](./bmds-online.md#share-menu) (25.1 release)
+
+-   LOUD Bayesian model averaging for dichotomous and continuous data (26.1 release)
+
+-   Additional continuous models for LOUD Bayesian model averaging analyses (26.1 release)
+
+-   Goodness of fit statistic for LOUD Bayesian model averaging (26.1 release)
+
+-   Added download LOUD inference data object to Actions button (26.1 release)
+
+-   Added Cochran Armitage trend test for dichotomous and cancer/multitumor data and Jonckheere-Terpstra trend test for continuous data (pybmds 25.2 release, BMDS Online and Desktop 26.1 release)
+
+-   Added additional plotting functionality for nested dichotomous data (pybmds 25.2 release, BMDS Online and Desktop 26.1 release)
+
+-   Enhancements and under-the-hood fixes to improve efficiency, error handling, and stability for future development (24.1, 25.1, 25.2, and 26.1 releases)
+
+-   Bug fixes (24.1, 25.1, 25.2, and 26.1 releases)
+
+The following improvements are only available in pybmds 26.1, but will be added to future releases of BMDS Online and Desktop:
+
+-   Removal of the restriction that the $\rho$ be positive when modeling continuous data with non-constant variance
+
+-   The ability to count all model parameters for the purpose of statistical calculations like the AIC and p-value
+
+For a complete list of what's new or changed in the current release, refer to the BMDS website's [Release History page](https://www.epa.gov/bmds/bmds-online-release-history).
+
 ### Privacy is Respected
 
 The BMDS Online application does not track personal information about users of the software.
@@ -145,44 +183,6 @@ Active development has stopped on the Excel-based BMDS 3.3 application. While th
 BMDS Online, BMDS Desktop, and pybmds are now the primary applications where new development and innovation will occur. As a web-application with no requirement to download any software, BMDS Online also offers an easier introduction to BMD analysis for new users.
 
 BMDS 3.3 will remain [downloadable](https://www.epa.gov/bmds/download-bmds/) but will receive no further updates.
-
-### Recent Key Improvements and Enhancements
-
-All improvements and enhancements listed below are available in BMDS Online, BMDS Desktop, and pybmds:
-
--   Addition of Multistage Cancer/Multitumor model, along with a [**poly-k adjustment tool**](./multiple-tumor-analysis.md#poly-k-adjustment) (24.1 release)
-
--   Addition of the Nested Logistic nested dichotomous model for developmental toxicity data (24.1 release)
-
--   Addition of the NCTR nested dichotomous model for developmental toxicity data (25.1 release)
-
--   Addition of the [**Rao-Scott transformation tool**](./dichotomous-mle.md#rao-scott-transformation-for-modeling-summary-dichotomous-developmental-data)  (25.1 release)
-
--   Ability to clone an analysis after clicking a [**Read-only link**](./bmds-online.md#share-menu) (25.1 release)
-
--   LOUD Bayesian model averaging for dichotomous and continuous data (26.1 release)
-
--   Additional continuous models for LOUD Bayesian model averaging analyses (26.1 release)
-
--   Goodness of fit statistic for LOUD Bayesian model averaging (26.1 release)
-
--   Added download LOUD inference data object to Actions button (26.1 release)
-
--   Added Cochran Armitage trend test for dichotomous and cancer/multitumor data and Jonckheere-Terpstra trend test for continuous data (pybmds 25.2 release, BMDS Online and Desktop 26.1 release)
-
--   Added additional plotting functionality for nested dichotomous data (pybmds 25.2 release, BMDS Online and Desktop 26.1 release)
-
--   Enhancements and under-the-hood fixes to improve efficiency, error handling, and stability for future development (24.1, 25.1, 25.2, and 26.1 releases)
-
--   Bug fixes (24.1, 25.1, 25.2, and 26.1 releases)
-
-The following improvements are only available in pybmds 26.1, but will be added to future releases of BMDS Online and Desktop:
-
--   Removal of the restriction that the $\rho$ be positive when modeling continuous data with non-constant variance
-
--   The ability to count all model parameters for the purpose of statistical calculations like the AIC and p-value
-
-For a complete list of what's new or changed in the current release, refer to the BMDS website's [Release History page](https://www.epa.gov/bmds/bmds-online-release-history).
 
 ## BMDS Resources
 
