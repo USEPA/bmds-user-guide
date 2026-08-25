@@ -108,6 +108,13 @@ Environmental Protection Agency, Risk Assessment Forum.
 
 Vehtari, A., Gelman, A., & Gabry, J. (2017). Practical Bayesian model evaluation using leave-one-out cross-validation and WAIC. Statistics and Computing, 27(5), 1413–1432. [doi: 10.1007/s11222-016-9696-4](https://doi.org/10.1007/s11222-016-9696-4) [[HERO](https://hero.epa.gov/reference/13243404/)]{.badge}
 
+Wheeler, M. W., & Bailer, A. J. (2007). Properties of model‐averaged BMDLs: a study of model averaging in dichotomous response risk estimation. Risk Analysis: An International Journal, 27(3), 659–670. [doi: 10.1111/j.1539-6924.2007.00920.x]( https://doi.org/10.1111/j.1539-6924.2007.00920.x) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/17640214/)]{.badge} 
+
+Wheeler, M. W., Blessinger, T., Shao, K., Allen, B. C., Olszyk, L., Davis, J. A., & Gift, J. S. (2020). Quantitative Risk Assessment: Developing a Bayesian Approach to Dichotomous Dose–Response Uncertainty. Risk Analysis, 40(9), 1706–1722. [doi: doi.org/10.1111/risa.13537](https://doi.org/10.1111/risa.13537) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/32602232/)]{.badge} [[HERO](https://heronetnext.epa.gov/reference/5939422/)]{.badge}
+
+Wheeler, M. W., Cortiñas Abrahantes, J., Aerts, M., Gift, J. S., & Allen Davis, J. (2022). Continuous model averaging for benchmark dose analysis: Averaging over distributional forms. Environmetrics, 33(5). [doi: doi.org/10.1002/env.2728](https://doi.org/10.1002/env.2728) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/36589902/)]{.badge} [[HERO](https://heronetnext.epa.gov/reference/10330529/)]{.badge}
+
+
 Williams D. A. (1988). Estimation bias using the beta-binomial
 distribution in teratology. Biometrics, 44(1), 305--309.
 [doi: 10.2307/2531921](https://doi.org/10.2307/2531921) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3358995/)]{.badge}

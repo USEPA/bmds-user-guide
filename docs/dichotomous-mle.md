@@ -1,6 +1,6 @@
 # Dichotomous Endpoints - Maximum Likelihood Methods
 
-BMDS includes models for dichotomous endpoints in which the observations are independent of each other adn outcomes are categorical (i.e., presence or absence of a specific adverse effect). In these models, the dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals (or humans, if using epidemiologic data) with an adverse response is assumed to be binomially distributed.
+BMDS includes models for dichotomous endpoints in which the observations are independent of each other and outcomes are categorical (i.e., presence or absence of a specific adverse effect). In these models, the dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals (or humans, if using epidemiologic data) with an adverse response is assumed to be binomially distributed.
 
 For models for dichotomous endpoints in which the responses are nested (for example, pups within litters, and litters nested within doses), see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md).
 

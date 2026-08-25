@@ -4,7 +4,7 @@
 
 Dose-response modeling is a technique, often used in toxicology, epidemiology, and risk assessment, for quantitatively relating exposure (dose) to a biological outcome (response). It may be thought of as an elaborate form of regression, which is the statistical technique used to explore or represent the relationship(s) between two (or more) variables.
 
-In the dose-response context, the dose term (*e.g.*, mg of chemical per kg body weight per day) is conceputally viewed as the "cause" of the response (*e.g.*, presence of a tumor or other manifestation of disease or a measure of the weight of some organ that might be susceptible to the toxic effects of the exposure).
+In the dose-response context, the dose term (*e.g.*, mg of chemical per kg body weight per day) is conceptually viewed as the "cause" of the response (*e.g.*, presence of a tumor or other manifestation of disease or a measure of the weight of some organ that might be susceptible to the toxic effects of the exposure).
 
 ### Benchmark Dose Approach to Dose-Response Modeling
 
@@ -33,7 +33,7 @@ BMDS facilitates dose-response modeling. BMDS models are currently accessible vi
 
 ### Types of Responses Modeled
 
-In dose-response modeling, the approapriate models, statistical assumptions, and techniques depend on the type of response under consideration. 
+In dose-response modeling, the appropriate models, statistical assumptions, and techniques depend on the type of response under consideration. 
 
 For BMDS, as discussed in this user guide, the distinctions that are made (*i.e.*, for which separate and distinct
 modeling approaches are applied) can be categorized with respect to the following three types of response: continuous endpoints, dichotomous endpoints, and nested dichotomous endpoints. (Nested continuous endpoints will be added to a future release.)

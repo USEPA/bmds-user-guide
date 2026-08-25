@@ -8,7 +8,7 @@ Both Bayesian and non-Bayesian methods estimate parameters of a statistical mode
 
 The BMDS non-Bayesian methods are maximum likelihood estimation (MLE)[^1] and statistics that rely on optimized likelihood values, particularly profile likelihood bounds and the Akaike Information Criterion (AIC) for model-selection. In this documentation, the term *MLE method* is used for the group of methods associated with likelihood maximization, recognizing that the term may be considered to apply most specifically to point estimation.
 
-[^1]: BMDS has in the past referred to the non-Bayesian approach variously as "frequentist," "Maximum Likelihood," or "Maximum ikelihood Approach."
+[^1]: BMDS has in the past referred to the non-Bayesian approach variously as "frequentist," "Maximum Likelihood," or "Maximum Likelihood Approach."
 
 The MLE approach is based on finding the parameter values that maximize the likelihood function. In simpler terms, it chooses the parameters that make the observed data most probable. Models fit by these methods report associated bounds determined by profile likelihood approaches. [Crump and Howe (1985)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3198)
 
@@ -18,7 +18,7 @@ Specifics on the MLE model equations are presented in the following sections:
 
 -   [**Mathematical Details for Continuous MLE Models**](./continuous-mle.md#mathematical-details-for-continuous-mle-models)
 
--   [**Mathematical Details for for Dichotomous MLE Models**](./dichotomous-mle.md#mathematical-details-for-dichotomous-mle-models)
+-   [**Mathematical Details for Dichotomous MLE Models**](./dichotomous-mle.md#mathematical-details-for-dichotomous-mle-models)
     
 -   [**Mathematical Details for Nested Dichotomous Endpoints**](./nested-dichotomous.md#mathematical-details-for-nested-dichotomous-mle-models)
 

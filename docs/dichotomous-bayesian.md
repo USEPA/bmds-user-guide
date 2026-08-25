@@ -11,7 +11,7 @@ Currently, there are two approaches for Bayesian model averaging for dichotomous
 
 1. [LOUD](./dichotomous-bayesian.md#mathematical-details-for-loud-bayesian-dichotomous-models) methods, using MCMC sampling and WAIC weights (fully described in Jacketti et al., 2026 **ADD REF**)
 
-2. [ToxicR](./dichotomous-bayesian.md#mathematical-details-for-toxicr-bayesian-dichotomous-models) methods, using  *a posteriori* and Laplace approximation methods (fully described in [Wheeler et al. 2020](https://hero.epa.gov/reference/5939422/) and [Wheeler, 2022](https://hero.epa.gov/reference/12902051/)), and 
+2. [ToxicR](./dichotomous-bayesian.md#mathematical-details-for-toxicr-bayesian-dichotomous-models) methods, using  *a posteriori* and Laplace approximation methods (fully described in [Wheeler et al. 2020](https://hero.epa.gov/reference/5939422/) and [Wheeler, 2022](https://hero.epa.gov/reference/12902051/)). 
 
 :::{important}
 At this time, EPA does not offer technical guidance on Bayesian modeling or Bayesian model averaging.
@@ -82,7 +82,7 @@ $$p({d}_{0}) = {p}_{1} = {p}_{0} + (1 - {p}_{0}) \cdot (1 - exp^{(-\beta \cdot {
 
 $$\beta = -\ln \left\lbrack \frac{1 - {p}_{1}}{1 - {p}_{0}} \right\rbrack$$
 
-The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (e.g., $\alpha$ in the Weibull model) was chosen to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implictily describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
+The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (e.g., $\alpha$ in the Weibull model) was chosen to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implicitly describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
 
 ::::{tab-set}
 
@@ -372,7 +372,7 @@ $\beta \sim Lognormal(\ln(2),0.5)$
 
 **Notes**
 
-The prior for $\beta_{1}$ reflects the belief that the linear term should be strictly prositive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
+The prior for $\beta_{1}$ reflects the belief that the linear term should be strictly positive if the quadratic term is positive in the two-hit model of carcinogenesis.  The difference in priors between the Multistage and Quantal Linear models is by design.  The objective is to emphasize the higher-order terms in each model. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
 
 For model averaging purposes, $n = 2$.
 
@@ -675,7 +675,7 @@ $$g_{ma}\left( BMD|D \right) = \ \sum_{k = 1}^{K}{\pi_{k}\left( M_{k} \middle| D
 
 where $\pi_{k}$ is the posterior probability of model $M_{k}$ given the data.
 
-Clearly, this approach requires estimation of the posterior probabilities for each model considered. These are the weights for the averaging process. Unlike approaches that have been used elsewhere, we eschew the use of information-criteria-based weights (*e.g.*, those based on Bayesian information criteria (BIC) or Akaike information criteria(AIC)). Rather, BMDS generates weights using the Laplace approximation to the marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$, with parameter vector $\theta_{k}$ of length s, one approximates the marginal density as
+This approach requires estimation of the posterior probabilities for each model considered. These are the weights for the averaging process. Unlike approaches that have been used elsewhere, we eschew the use of information-criteria-based weights (*e.g.*, those based on Bayesian information criteria (BIC) or Akaike information criteria(AIC)). Rather, BMDS generates weights using the Laplace approximation to the marginal density of the data. That is, for model $M_{k~}$, $1 ≤ k ≤ K$, with parameter vector $\theta_{k}$ of length s, one approximates the marginal density as
 
 $$I_{k} = (2\pi)^{\frac{s}{2}}\left| {\widehat{\Sigma}}_{k} \right|^{\frac{1}{2}}\mathcal{l}\left( D \middle| {M_{k},\widehat{\theta}}_{k} \right)g\left( {\widehat{\theta}}_{k}|M_{k} \right)$$
 

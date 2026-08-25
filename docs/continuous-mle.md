@@ -452,7 +452,7 @@ $$- 2 \times \ln\left\{ \frac{L(A)}{L(B)} \right\} = - 2 \times \left( \ln\left\
 
 The values in the **Likelihoods of Interest** table are in fact the log-likelihoods, as discussed above, $\ln\{ L(B)\}$ and $\ln\{ L(A)\}$, so this likelihood ratio calculation becomes just a subtraction problem. This value can then in turn be compared to a Chi-square random variable with a specified number of degrees of freedom.
 
-As mentioned in conjunction with the Likelihoods of Interest table, each log-likelihood value has an associated number of parameters. The number of degrees of freedom for the Chi-square test statistic is merely the .difference between the two model parameter counts of the two models. In the mini-example above, suppose Model A has 5 fitted parameters, and that Model B has 8. In this case, the Chi-square value to be compared to would be a Chi-square with 8 - 5 = 3 degrees of freedom.
+As mentioned in conjunction with the Likelihoods of Interest table, each log-likelihood value has an associated number of parameters. The number of degrees of freedom for the Chi-square test statistic is merely the difference between the two model parameter counts of the two models. In the mini-example above, suppose Model A has 5 fitted parameters, and that Model B has 8. In this case, the Chi-square value to be compared to would be a Chi-square with 8 - 5 = 3 degrees of freedom.
 
 In the A vs B example, what is exactly being tested? In terms of hypotheses, it would be:
 
@@ -486,7 +486,7 @@ The graphical output, *i.e.*, plot, is a visual depiction of the results of the 
 
 -   The plotting routine calculates the standard error of the mean (SEM) for each group. The routine divides the group-specific observed variance (observed standard deviation squared) by the group-specific sample size.
 
--   The routine then multiplies the SEM by the Student-T percentiles (2.5th percentile or 97.5th percentile for the lower and upper bound, respectively) appropriate for the group-specific sample size (*i.e.*, having degrees of freedom one less than that sample size).The routine adds the products to the observed means to define the lower and upper ends of the error bar.
+-   The routine then multiplies the SEM by the Student-T percentiles (2.5th percentile or 97.5th percentile for the lower and upper bound, respectively) appropriate for the group-specific sample size (*i.e.*, having degrees of freedom one less than that sample size). The routine adds the products to the observed means to define the lower and upper ends of the error bar.
 
 ```{figure} _static/img/cont_mle_plot.png
 :alt: Graph showing results plot

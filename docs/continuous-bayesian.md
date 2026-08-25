@@ -508,20 +508,20 @@ Output tab for continuous LOUD model averaging analysis
 Clicking on an individual model will display that model's results in a separate window.  As on the main Output tab, the dataset, option set, and MCMC options are displayed, along with the modeling summary for that individual model. Note that the model p-value is displayed in the Model Summary table.  Although p-values are not used as cut-off values to exclude models in Bayesian model averaging, it is useful to check individual model p-values to ensure that at least one model in the averaging suite adequately fits the observed data.
 
 ```{figure} _static/img/LOUD_cont_individual_model.png
-:alt: Individual modeling results for a LOUD continuous model averaing analysis.  
+:alt: Individual modeling results for a LOUD continuous model averaging analysis.  
 :scale: 80%
 :name: f90
 
-Modeling results for a single model included in a LOUD model averaing analysis
+Modeling results for a single model included in a LOUD model averaging analysis
 ```
 Scrolling down the individual model window will display the model parameters table, the Goodness of Fit table, and the BMD cumulative distribution table and plot.
 
 ```{figure} _static/img/LOUD_cont_individual_model_2.png
-:alt: Additional individual modeling results for a LOUD continuous model averaing analysis.  
+:alt: Additional individual modeling results for a LOUD continuous model averaging analysis.  
 :scale: 80%
 :name: f91
 
-Additional modeling results for a single model included in a LOUD model averaing analysis
+Additional modeling results for a single model included in a LOUD model averaging analysis
 ```
 
 The model parameter table provides users with MCMC convergence and sampling diagnostics:
@@ -532,7 +532,7 @@ The model parameter table provides users with MCMC convergence and sampling diag
 
 - **Bulk and Tail effective sample size (ESS)**: Bulk ESS measures the sampling efficiency for estimating the posterior median whereas Tail ESS measures the sampling efficiency for estimating the boundaries of the posterior (i.e., the 5th and 95th percentiles).  Higher values of both indicate good sampling efficiency.
 
-A reasonable rule of thumb is that the Markov chains can be considered to have converged when both $\hat{R}$ is below 1.1 and ESS values are greater than 100 per Markov chain. When these targets are not met, the number of MCMC iterations can be increased to try to acheive convergence.  If convergence for an individual model is not acheivable, that model/distrbution combination can be removed from the model averaging suite and the analysis re-run without it.
+A reasonable rule of thumb is that the Markov chains can be considered to have converged when both $\hat{R}$ is below 1.1 and ESS values are greater than 100 per Markov chain. When these targets are not met, the number of MCMC iterations can be increased to try to achieve convergence.  If convergence for an individual model is not achievable, that model/distribution combination can be removed from the model averaging suite and the analysis re-run without it.
 
 Scrolling to the bottom of the individual model window will display the model parameter distributions table, where posterior distributions of the model BMD and parameter values are displayed along with trace plots of those same parameters.  
 
@@ -544,7 +544,7 @@ Scrolling to the bottom of the individual model window will display the model pa
 Model specific posterior parameter distribution and trace plots
 ```
 
-Trace plots show the sampled values of a parameter across all iterations of the MCMC chains. Trace plots can help assess whether chains are mixing well and whether they have reached a stable, stationary distribution. Ideally, trace plots will look like a "hairy caterpillar" where the chain moves around a constant level without obvious trends, shifts, or abrupt jumps.  Occasionally, a few extreme samples might be observed (individual values inconsistent with the overall trend in the chain).  These divergent value transitions may be problematic but overall are less of a concern in an well-behaved trace plot.  
+Trace plots show the sampled values of a parameter across all iterations of the MCMC chains. Trace plots can help assess whether chains are mixing well and whether they have reached a stable, stationary distribution. Ideally, trace plots will look like a "hairy caterpillar" where the chain moves around a constant level without obvious trends, shifts, or abrupt jumps.  Occasionally, a few extreme samples might be observed (individual values inconsistent with the overall trend in the chain). These divergent value transitions may be problematic but overall are less of a concern in a well-behaved trace plot.  
 
 Overall, trace plots are diagnostic and not definitive. Trace plot behavior should always be considered alongside the $\hat{R}$, Markov Chain standard error, and bulk and tail ESS values.
 
