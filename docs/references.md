@@ -44,8 +44,6 @@ Gelman, A., Hwang, J., & Vehtari, A. (2013). Understanding predictive informatio
 
 Hinne, M., Gronau, Q. F., van den Bergh, D., & Wagenmakers, E.-J. (2020). A conceptual introduction to Bayesian model averaging. Advances in Methods and Practices in Psychological Science, 3(2), 200–215. [doi: 10.1177/2515245919898657](https://doi.org/10.1177/2515245919898657) [[HERO](https://hero.epa.gov/reference/13243400/)]{.badge}
 
-Jacketti et al. 2026 LOUD methods.
-
 Jeffreys, H. (1998). The theory of probability. Oxford, United Kingdom:
 Oxford University Press.
 [[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4850043)]{.badge}
