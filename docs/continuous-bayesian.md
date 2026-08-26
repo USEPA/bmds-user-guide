@@ -8,7 +8,7 @@ The EPA has developed an approach to Bayesian model averaging (BMA) for continuo
 
 In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the predicted means for continuous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
 
-Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd)(i.e., selection of the appropriate BMR level) are the same for the Bayesian implementation of the continuous models.
+Note that the considerations regarding the [**Definition of the BMD**](./continuous-mle.md#defining-the-bmd) (i.e., selection of the appropriate BMR level) are the same for the Bayesian implementation of the continuous models.
 
 :::{important}
 At this time, EPA does not offer technical guidance on
