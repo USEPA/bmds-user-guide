@@ -43,7 +43,7 @@ A BMDS analysis can have the following number of continuous datasets:
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses instead of putting large numbers of     datasets into a single analysis.
 
--   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and result in memory storage issues.
 
 For details on inserting or importing datasets, refer to [**Specifying Datasets**](./bmds-online.md#specifying-datasets).
 

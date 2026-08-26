@@ -132,7 +132,7 @@ To reset the model selection to the BMDS Online defaults, select the **Reset Sel
 
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses  instead of putting large numbers of datasets into a single analysis. 
 
--   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and result in memory storage issues.
 
 ## Specifying Datasets
 
@@ -198,7 +198,7 @@ multitumor modeling.
 -   **BMDS Desktop:** No limit essentially; but it is recommended to create multiple analyses instead of putting large numbers of
     datasets into a single analysis.
 
--   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and run into memory storage issues.
+-   **pybmds:** No limit, but running large numbers of LOUD analyses can take very long and result in memory storage issues.
 
 ### Adding Datasets, Method 1: Manually
 
@@ -567,7 +567,7 @@ analysis.
 
 ### Constraints on Sharing Analysis URLs
 
--   **Only the most recent analysis is available:** BMDS Online analyses are linked to the URL of the ***current*** session. When a link is shared, only the most recent execution of that analysis is preserved and will be available to others. Meaning, if a shared analysis is changed or modified by users that received an an edit link, the shared analysis will be overwritten with no notification to the original user. Therefore, if you need to perform more work after sharing or receiving an edit link, we recommend [**creating a new analysis**](#creating-a-new-analysis) or cloning the shared analysis.
+-   **Only the most recent analysis is available:** BMDS Online analyses are linked to the URL of the ***current*** session. When a link is shared, only the most recent execution of that analysis is preserved and will be available to others. Meaning, if a shared analysis is changed or modified by users that received an edit link, the shared analysis will be overwritten with no notification to the original user. Therefore, if you need to perform more work after sharing or receiving an edit link, we recommend [**creating a new analysis**](#creating-a-new-analysis) or cloning the shared analysis.
 
 -   **Analyses are deleted after three years unless extended:** If you share the link with others, note that analyses are deleted after
     three years, unless retention of the analysis is extended from the **Actions** menu. The **Download analysis** feature can be used to save and share analyses that need to be retained long-term.

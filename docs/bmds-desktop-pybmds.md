@@ -77,5 +77,5 @@ pybmds is a command-line environment that runs in a terminal window or in Jupyte
 
 The [pybmds user guide](https://usepa.github.io/BMDS/) includes "recipes" for BMD analyses that the advanced user can build on to create their own analyses.
 
-pybmds can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#maximum-number-of-datasets) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, running large numbers of LOUD analyses can take a long time and run into memory storage issues.
+pybmds can theoretically accept an unlimited number of [**datasets**](./bmds-online.md#maximum-number-of-datasets) and [**option sets**](./bmds-online.md#maximum-number-of-option-sets); however, running large numbers of LOUD analyses can take a long time and result in memory storage issues.
 
