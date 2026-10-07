@@ -10,7 +10,7 @@ Akadémiai Kiadó.
 
 Bernardo, J. M. (1979). Reference Posterior Distributions for Bayesian Inference. Journal of the Royal Statistical Society Series B: Statistical Methodology, 41(2), 113–128. [doi: 10.1111/j.2517-6161.1979.tb01066.x](https://academic.oup.com/jrsssb/article/41/2/113/7027630) [[HERO](https://hero.epa.gov/reference/13243399/)].{badge}
 
-Bernardo, J. M. (1998). Bayesian reference analysis. A Postgraduate Tutorial Course, Universitat de Valencia, Spain. [[HERO]()].{badge}
+Bernardo, J. M. (1998). Bayesian reference analysis. A Postgraduate Tutorial Course, Universitat de Valencia, Spain. [[PDF](https://www.uv.es/bernardo/Monograph.pdf)]{.badge}
 
 Carr, GJ; Porter, CJ. (1991). An evaluation of the Rai and Van Ryzin
 Dose‐Response Model in teratology. Risk Anal 11: 111-120.
@@ -62,7 +62,7 @@ litter effects on dose-response modeling in teratology. Biometrics 42:
 85-98.
 [doi: 10.2307/2531245](http://dx.doi.org/10.2307/2531245) [[PubMed](https://pubmed.ncbi.nlm.nih.gov/3719065/)]{.badge}[[HERO](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3252)]{.badge}
 
-Li, Y. (2022). Latent Slice Sampling. The University of Texas at Austin. [doi: 10.26153/tsw/42321](http://dx.doi.org/10.26153/tsw/42321) [[HERO]()]{.badge}
+Li, Y. (2022). Latent Slice Sampling. The University of Texas at Austin. [doi: 10.26153/tsw/42321](http://dx.doi.org/10.26153/tsw/42321)
 
 Li, Y., & Walker, S. G. (2023). A latent slice sampling algorithm. Computational Statistics & Data Analysis, 179, 107652. [doi: 10.1016/j.csda.2022.107652](https://doi.org/10.1016/j.csda.2022.107652) [[HERO](https://hero.epa.gov/reference/13243405/)]{.badge}
 
@@ -91,7 +91,7 @@ RIVM (National Institute for Public Health and the Environment
 
 Slob, W. (2002). Dose-response modeling of continuous endpoints. Toxicological sciences 66.2: 298-312. [doi: 10.1093/toxsci/66.2.298](https://doi.org/10.1093/toxsci/66.2.298) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/11896297/)]{.badge} [[HERO](https://heronetnext.epa.gov/reference/24962/)]{.badge}
 
-Slob, W., Bakker, M. I., Bokkers, B. G. H., Chen, G., Chiu, W. A., Mennes, W., Nicolaie, M. A., Setzer, R. W., & White, P. A. (2025). The use of canonical dose–response models for benchmark dose analysis of continuous toxicological data. Critical Reviews in Toxicology, 0(0), 1–25. [doi: 10.1080/10408444.2025.2464067](https://doi.org/10.1080/10408444.2025.2464067) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/40202288/)]{.badge} [[HERO]()]{.badge}
+Slob, W., Bakker, M. I., Bokkers, B. G. H., Chen, G., Chiu, W. A., Mennes, W., Nicolaie, M. A., Setzer, R. W., & White, P. A. (2025). The use of canonical dose–response models for benchmark dose analysis of continuous toxicological data. Critical Reviews in Toxicology, 0(0), 1–25. [doi: 10.1080/10408444.2025.2464067](https://doi.org/10.1080/10408444.2025.2464067) [[Pubmed](https://pubmed.ncbi.nlm.nih.gov/40202288/)]{.badge} 
 
 Tiao, G. C., & Box, G. E. P. (1973). Some comments on “Bayes” estimators. The American Statistician, 27(1), 12–14. [doi: 10.2307/2682897](https://doi.org/10.2307/2682897) [[HERO](https://hero.epa.gov/reference/13243403/)]{.badge}
 
