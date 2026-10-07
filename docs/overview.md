@@ -36,7 +36,7 @@ BMDS facilitates dose-response modeling. BMDS models are currently accessible vi
 In dose-response modeling, the appropriate models, statistical assumptions, and techniques depend on the type of response under consideration. 
 
 For BMDS, as discussed in this user guide, the distinctions that are made (*i.e.*, for which separate and distinct
-modeling approaches are applied) can be categorized with respect to the following three types of response: continuous endpoints, dichotomous endpoints, and nested dichotomous endpoints. (Nested continuous endpoints will be added to a future release.)
+modeling approaches are applied) can be categorized with respect to the following three types of response: continuous endpoints, dichotomous endpoints, and nested dichotomous endpoints. 
 
 The key features of those response (endpoint) types are as follows:
 
@@ -70,11 +70,11 @@ BMDS results for a dichotomous endpoint, presented using graph and tables
 
 ## Advantages of the BMD Method
 
-EPA uses [**BMD methods**](./modeling-methods.md) to derive reference values (RfVs), such as reference doses (RfDs), reference concentrations (RfCs), and cancer slope factors (CSFs), which are used along with other scientific information to set standards for human health effects.[^1]
+EPA uses [**BMD methods**](./modeling-methods.md) to derive reference values (RfVs), such as reference doses (RfDs), reference concentrations (RfCs), and cancer slope factors (CSFs), which are used along with other scientific information to develop risk assessments that can be used by the Agency to implement programmatic objectives and inform regulatory actions.[^1]
 
 [^1]: With few exceptions, RfD/RfC values are noncancer benchmarks and slope factors are generally cancer benchmarks derived in accordance with [EPA cancer guidelines](https://www.epa.gov/sites/production/files/2013-09/documents/cancer_guidelines_final_3-25-05.pdf).
 
-Prior to the development of BMD modeling approaches and availability of tools such as BMDS, noncancer risk assessment benchmarks such as RfDs and RfCs were determined from no-observed-adverse-effect levels (NOAELs), which represent the highest experimental dose at which there are no biologically significant increases in the frequency or severity of adverse effects between the exposed population and its appropriate controls. When NOAELs were unavailable, the lowest-observed-adverse-effect-level (LOAEL), the lowest exposure concentration at which there are biologically significant increases in frequency or severity of adverse effects, can be used instead.
+Prior to the development of BMD modeling approaches and availability of tools such as BMDS, noncancer risk assessment benchmarks such as RfDs and RfCs were determined from no-observed-adverse-effect levels (NOAELs), which represent the highest experimental dose at which there are no biologically significant increases in the frequency or severity of adverse effects between the exposed population and its appropriate controls. When NOAELs are unavailable, the lowest-observed-adverse-effect-level (LOAEL), the lowest exposure concentration at which there are biologically significant increases in frequency or severity of adverse effects, can be used instead.
 
 However, using the NOAEL or LOAEL to determine RfDs and RfCs has long been recognized as having limitations, including:
 
@@ -102,7 +102,7 @@ The full [BMDS application history](https://www.epa.gov/bmds/about-benchmark-dos
 
 ## What's New in BMDS
 
-[BMDS](https://www.epa.gov/bmds) is the U.S. EPA's primary application for BMD modeling and includes multiple applications for conducting dose-response analyses according to user needs and preferences.
+[BMDS](https://www.epa.gov/bmds) is the EPA's primary application for BMD modeling and includes multiple applications for conducting dose-response analyses according to user needs and preferences.
 
 [BMDS Online](./bmds-online.md) leverages aspects of the familiar BMDS 3.x Excel interface yet delivers faster performance and enables greater accessibility for users. Now, instead of downloading and installing an Excel macro-based application, users only need an internet connection to run a BMD analysis.
 
@@ -221,5 +221,5 @@ The documentation for BMDS Desktop and pybmds are at <https://usepa.github.io/BM
 The [BMDS Contact Us page](https://www.epa.gov/bmds/forms/contact-us-about-benchmark-dose-tools) serves as the online Help Desk for all BMDS applications. Post questions, concerns, comments, or suggestions on any aspect of the software or its usage.
 
 :::{important}
-**Final Product** This document has been reviewed in accordance with the U.S. Environmental Protection Agency, Office for Applied Science and Environmental Solutions, and approved for publication.
+**Final Product** This document has been reviewed in accordance with U.S. Environmental Protection Agency policy and approved for publication.
 :::

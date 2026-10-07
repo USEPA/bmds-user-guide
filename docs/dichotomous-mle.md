@@ -1,6 +1,6 @@
 # Dichotomous Endpoints - Maximum Likelihood Methods
 
-BMDS includes models for dichotomous endpoints in which the observations are independent of each other and outcomes are categorical (i.e., presence or absence of a specific adverse effect). In these models, the dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals (or humans, if using epidemiologic data) with an adverse response is assumed to be binomially distributed.
+BMDS includes models for dichotomous endpoints in which the observations are independent of each other and outcomes are categorical (*i.e.*, presence or absence of a specific adverse effect). In these models, the dose-response model defines the probability that an experimental unit (*e.g.*, a rat or a mouse in a standard, non-nested toxicological study) will have an adverse response at a given dose. The actual number of animals (or humans, if using epidemiologic data) with an adverse response is assumed to be binomially distributed.
 
 For models for dichotomous endpoints in which the responses are nested (for example, pups within litters, and litters nested within doses), see [**Nested Dichotomous Endpoints**](./nested-dichotomous.md).
 
@@ -70,7 +70,7 @@ Extra risk is the additional risk divided by the predicted proportion of animals
 
 $$Extra\ risk\ at\ dose\ d\  = \ \frac{P(d)\ –\ P(0)}{1 - P(0)}$$
 
-When there are responses at background (i.e., in the control group), defining the BMR using extra risk will result in a smaller BMD given the population of animals able to respond to treatment is smaller.
+When there are responses at background (*i.e.*, in the control group), defining the BMR using extra risk will result in a smaller BMD given the population of animals able to respond to treatment is smaller.
 
 ### BMR
 
@@ -86,7 +86,7 @@ This is because to obtain the actual response value one must solve for $P(d)$ in
 
 The horizontal bar depicting the response level used to derive the BMD ({numref}`f97`) that is displayed in the graphical model output will only be the same as the user-defined BMR (*e.g.*, 10% Extra Risk) when the response at background, P(0), equals zero.
 
-When P(0) does not equal zero, the true response level can be calculated using the Extra Risk equation described in [**Risk Type**](#risk-type)
+When P(0) does not equal zero, the true response level can be calculated using the Extra Risk equation described in [**Risk Type**](#risk-type).
 
 ```{figure} _static/img/individual_model_plot.png
 :alt: Close-up of horizontal bar of results plot, centered on a BMR of 0.1
@@ -100,7 +100,7 @@ Results plot, with horizontal bar centered on the y-axis at the modeled BMR.
 
 The Confidence Level is a fraction between 0 and 1; 0.95 is recommended by EPA ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-The value for confidence level must be between 0 and 1 (not inclusive). For a confidence level of $x$, BMDS will output BMDL and BMDU estimates, each of which is a one-sided confidence bound at level $x$.
+The value for a confidence level must be between 0 and 1 (not inclusive). For a confidence level of $x$, BMDS will output BMDL and BMDU estimates, each of which is a one-sided confidence bound at level $x$.
 
 For example, if the user sets the confidence level to 0.95 (the default), then the BMDL is a 95% one-sided lower confidence bound for the BMD estimate; the BMDU is a 95% one-sided lower upper confidence bound for the BMD estimate. In that example, the range from BMDL to BMDU would constitute a 90% confidence interval (5% in each tail outside that interval).
 
@@ -167,7 +167,7 @@ Associated with each of these three models are three values: Deviance, degrees o
 
 :::{tab-item} Deviance
 
-The Deviance is twice the difference between the fitted or reduced model and the full model log-likelihood values. This Deviance is    another goodness-of-fit metric: if the Deviance is small, then the smaller model (*i.e.*, the fitted or reduced model) describes the   data nearly as well as the full model does.
+The Deviance is twice the difference between the fitted or reduced model and the full model log-likelihood values. This Deviance is another goodness-of-fit metric: if the Deviance is small, then the smaller model (*i.e.*, the fitted or reduced model) describes the   data nearly as well as the full model does.
 :::
 
 :::{tab-item} Degrees of Freedom (Test d.f.)
@@ -255,7 +255,7 @@ $0\  < \beta < \ 10,000$
 
 The user can restrict all $\beta$ coefficients to $\leq$ 0. Doing so will guarantee that the multistage model will be either perfectly flat or always increasing.
 
-Per [EPA Technical Guidance (2012)](https://www.epa.gov/risk/benchmark-dose-technical-guidance), when the Multistage model is used for cancer analyses (e.g., in Multitumor analyses) all $\beta$ coefficients are restricted to be non-negative.
+Per [EPA Benchmark Dose Technical Guidance (2012)](https://www.epa.gov/risk/benchmark-dose-technical-guidance), when the Multistage model is used for cancer analyses (*e.g.*, in Multitumor analyses) all $\beta$ coefficients are restricted to be non-negative.
 :::
 
 :::{tab-item} Weibull (and Quantal Linear)
@@ -696,7 +696,7 @@ For dose-response analyses of dichotomous developmental toxicity studies, the pr
 
 However, it is frequently the case that dose-response modelers will be modeling data reported in the peer-reviewed literature and it is rarely the case that individual litter data are reported in peer-reviewed articles or provided as supplemental materials.  Instead, peer-reviewed articles typically report the dose-level summary data: the total number of fetuses and the number of fetuses responding per dose group but not information on how many fetuses from each litter were affected. When dose-level summary data are reported, it is impossible to account for the presence of intralitter correlations when conducting benchmark dose analyses of dichotomous data.
 
-If summary developmental data (*i.e.*, dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results can occur, including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger, less health-protective, BMDLs would be estimated given that the confidence interval around the BMD would be narrower.
+If summary developmental data (*i.e.*, dose-level fetal Ns and incidence) were modeled with regular dichotomous models without accounting for the litter effect, misleading modeling results can occur, including incorrect perception of high precision, smaller p-values than warranted, and narrower confidence intervals.  These effects are due to the fact that the "true" variance would be underestimated if clustering is ignored because the observations are correlated.  The most consequential effect would be that larger BMDLs would be estimated given that the confidence interval around the BMD would be narrower.
 
 Ultimately, ignoring litter effects results in biased estimates from dose-response models.  Therefore, alternative statistical approaches are necessary in order to use summary statistics while also accounting for intralitter correlation.  As reported in [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311), multiple statistical studies have researched the concept of the design effect, $D$, as a strategy to reduce overdispersion arising from clustered study design via a simple dose-response transformation. The core concept is that correlated data can be transformed via scaling and then modeled with standard dichotomous models as if they were not correlated. As [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) reports, the design effect is related approximately to intralitter correlation $\rho_{I}$ as $D = \left\lbrack 1 + (n -1)\rho_{I} \right\rbrack$ in the special case that all litters have $n$ offspring.  More typically, a weighted average of litter size is used.
 
@@ -714,7 +714,7 @@ where $n_{i}$ is the number of offspring in the $i^{th}$ litter and $m$ is the n
 
 In order to apply the Rao-Scott transformation, both the numerator and denominator of a dose-level proportion are divided by $D$.  This scaling of the numerator and denominator results in what can be described as the *effective* sample size $\left({N_{f}}_{RS} = \frac{N_{f}}{D}\right)$ and the *effective* affected fetuses $\left({A_{f}}_{RS} = \frac{A_{f}}{D}\right)$.
 
-As can be seen in the equations above, the calculation of the design effect requires litter-level data (i.e., need to know $p_{i}$ for each litter) and thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squares and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
+As can be seen in the equations above, the calculation of the design effect requires litter-level data (*i.e.*, need to know $p_{i}$ for each litter) and thus cannot be calculated directly from dose-group-level data. In order to provide BMDS users an approach to approximate $D$ for summary data, [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) conducted an analysis of 55 developmental toxicity studies for which individual level data were available and used the regression equation $\ln(D) = a + b \times\ln(P_{f})$ to establish the relationship between $D$ and $P_{f}$ for studies that used either rats, mice, or rabbits as their test species.  This analysis used both least-squares and orthogonal regression.  The table below reports the species-specific regression coefficients for the established relationship between $D$ and $P_{f}$.
 
 
 ```{csv-table} Linear Least Squares (LS) and Orthogonal Regression (OR) Estimates by Species
@@ -733,7 +733,7 @@ As can be seen in the equations above, the calculation of the design effect requ
 From these regression coefficients, the design effect can be calculated as $D = e^{\left\lbrack a + b \times \ln(P_{f})+0.5\sigma_{res}^{2} \right\rbrack}$. Given there is no strong methodological preference using the design effect calculated using linear least squares regression ($D_{LS}$) versus the design effect calculated using  orthogonal regression ($D_{OR}$), BMDS calculates an average design effect ($D_{average}$) that is the average of the design effects estimated using these two regression approaches.  The $D_{average}$ is the value that is actually used in the scaling of $N_{f}$ and $A_{f}$. 
 
 :::{note}
-When dose-group incidences are zero, the calculation of the design effect includes a $ln(0)$, term, which is undefined.  If design effect was calculated as normal, dose-groups with 0 incidece would be assigned the maximum design effect possible.  The testing of the Rao-Scott transformation did not cover situations such as these and until testing can be conducted to determine if this appropriate, a design effect of 0 (meaning no scaling) is manually assigned to dose groups with 0 incidence.  Additionally, in cases of exceedingly low incidence (approximately occurring when $P_{f} < 0.006$), a design effect less than 1 will be estimated, resulting in a scaling upwards (i.e., larger numbers) of the transformed incidence and N values.  In cases such as this, a design effect of 1 is manually applied to prevent this behavior.
+When dose-group incidences are zero, the calculation of the design effect includes a $ln(0)$, term, which is undefined.  If design effect was calculated as normal, dose-groups with 0 incidece would be assigned the maximum design effect possible.  The testing of the Rao-Scott transformation did not cover situations such as these and until testing can be conducted to determine if this appropriate, a design effect of 0 (meaning no scaling) is manually assigned to dose groups with 0 incidence.  Additionally, in cases of exceedingly low incidence (approximately occurring when $P_{f} < 0.006$), a design effect less than 1 will be estimated, resulting in a scaling upwards (*i.e.*, larger numbers) of the transformed incidence and N values.  In cases such as this, a design effect of 1 is manually applied to prevent this behavior.
 :::
 
 An example calculation is provided below for a hypothetical developmental study using rats.
@@ -761,7 +761,7 @@ Rao-Scott transformed N: ${N_{f}}_{RS} = \frac{116}{2.3045} = 50.337$
 
 For modeling the transformed data in BMDS, the values in the ${N_{f}}_{RS}$ and ${A_{f}}_{RS}$ column would be entered as the modeling inputs. Note that the original $P_{f}$ and Rao-Scott transformed ${P_{f}}_{RS}$ values are identical.
 
-The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD, and, most importantly, lower BMDLs. The lower BMDLs estimated when using the Rao-Scott transformed fetal incidence data approximate the BMDLs that would have been estimated if individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved by modeling individual-level data.
+The ultimate consequence of the Rao-Scott transformation will be the estimation of wider confidence intervals for the BMD and lower BMDLs. The lower BMDLs estimated when using the Rao-Scott transformed fetal incidence data approximate the BMDLs that would have been estimated if individual-level data been modeled with a nested dichotomous model. [Fox et al., 2017](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/3392311) compared multiple approaches for accounting for intralitter correlation using summary level data (*e.g.*, setting $D$ equal to a set value, setting $D = \frac{N_{f}}{N_{L}}$, modeling average proportion affected as a continuous variable, or modeling the proportion of litters responding) and saw that using the design effects estimated from the historical data regressions (*i.e.*, the method described above) resulted in BMDLs that were most equivalent to those achieved by modeling individual-level data.
 
 ## Trend Test for Dichotomous Data
 
@@ -772,7 +772,7 @@ The asymptotic *p*-value is based on a normal approximation of the linear trend 
 The null hypothesis for the Cochran-Armitage test is that the binomial proportion of the responses is the same across all levels of the ordinal dose variable; *p*-values less than the alpha level (normally 0.05) indicate that a monotonic trend does exist in the data.
 
 :::{note}
-At this time, the Cochran-Armitage trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
+The Cochran-Armitage trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
 :::
 
 To run the Cochran-Armitage test, users can click the **Cochran-Armitage Test** button on the Data tab after entering a dataset.  The trend test results will display in a table below the plot.  

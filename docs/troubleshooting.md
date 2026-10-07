@@ -31,4 +31,4 @@ Modeling results when Gamma model is excluded
 
 Modeling results when Gamma model is included and BMR = 0.05000001 is used
 ```
-The results of the two analyses are practically identical (i.e., numerical modeling results identical to at least the third decimal place). If users decide using the results from Step 2 is appropriate, they should make a note in their modeling results that a BMR = 0.05000001 was used and the reason for that value.
+The results of the two analyses are practically identical (*i.e.*, numerical modeling results identical to at least the third decimal place). If users decide using the results from Step 2 is appropriate, they should make a note in their modeling results that a BMR = 0.05000001 was used and the reason for that value.

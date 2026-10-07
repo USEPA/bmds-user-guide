@@ -232,7 +232,7 @@ There are multiple values for scaled residuals reported in the **Scaled Residual
 
 ### Litter Data Table
 
-The **Litter Data** table shows the model-predicted probability of response and expected number of responders (i.e., $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
+The **Litter Data** table shows the model-predicted probability of response and expected number of responders (*i.e.*, $Expected\ number\ of\ responders = Estimated\ Probability \times Litter\ Size$).
 
 ```{figure} _static/img/nst_dichot_litter_data_table.png
 :alt: Seventeen rows of the Little Data table showing columns for Dose, Litter Specific Covariance, Estimated robability, Litter Size, Expected, Observed, and Scaled Residual
@@ -425,7 +425,7 @@ Details of the BMD calculation are shown in [**Nested Dichotomous Models and the
 
 ### BMDL Computation
 
-BMDS currently only calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the lower confidence limit for the BMD (i.e., the BMDL) is the same for all the models in BMDS and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
+BMDS currently only calculates one-sided confidence intervals, in accordance with current BMD practice. The general approach to computing the lower confidence limit for the BMD (*i.e.*, the BMDL) is the same for all the models in BMDS and is based on the asymptotic distribution of the likelihood ratio ([Crump and Howe, 1985](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=3198)).
 
 The approach used for all the nested dichotomous models is the same. The equations that define the BMR in terms of the BMD and the dose-response model are solved for one of the model parameters, using either the control group mean or the overall mean of the litter-specific covariate. The resulting expression is substituted back into the model equations, with the effect of re-parameterizing the model so that BMD appears explicitly as a parameter. A value for BMD is then found such that, when the remaining parameters are varied to maximize the likelihood, the resulting log-likelihood is less than that at the maximum likelihood estimates by exactly
 

@@ -1,6 +1,6 @@
 # Benchmark Dose Models and Methods Included in BMDS
 
-Most of the models in the following tables were developed by U.S. EPA and are available in BMDS, unless otherwise noted.
+Most of the models in the following tables were developed by EPA and are available in BMDS, unless otherwise noted.
 
 Some models are flagged as available only in BMDS 2.7. The [BMDS 2.7](https://www.epa.gov/bmds/benchmark-dose-software-bmds-version-27-materials) and [BMDS 3.3](https://www.epa.gov/bmds/download-bmds/) software packages are available for download but are no longer supported or updated by EPA.
 

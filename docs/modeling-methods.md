@@ -2,7 +2,7 @@
 
 BMDS employs two general modeling approaches: Bayesian for dichotomous endpoints only, and non-Bayesian methods (*i.e.*, maximum likelihood estimation) for dichotomous, continuous, and nested dichotomous endpoints.
 
-Both Bayesian and non-Bayesian methods estimate parameters of a statistical model based on observed data. Both approaches use the likelihood function, which measures how well the model explains the observed data and provides key statistics such as point estimates (e.g., BMD) and bounds (e.g., BMDL). However, the precise way that the likelihood is used differs somewhat between the two approaches.
+Both Bayesian and non-Bayesian methods estimate parameters of a statistical model based on observed data. Both approaches use the likelihood function, which measures how well the model explains the observed data and provides key statistics such as point estimates (*e.g.*, BMD) and bounds (*e.g.*, BMDL). However, the precise way that the likelihood is used differs somewhat between the two approaches.
 
 ## Maximum Likelihood and Related Non-Bayesian Methods
 

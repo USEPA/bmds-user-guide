@@ -102,7 +102,7 @@ Dichotomous model type is selected for this analysis.
 An analysis can have only a single model type. For example, you cannot mix continuous and dichotomous data in a single analysis.
 :::
 
-3.  Select which models will be used for the analysis. For thes example in {numref}`f12`, the default selection of dichotomous Bayesian LOUD models will be used. To use all the models in a column, check the **Select All** box. To select models using ToxicR Bayesian model averaging or Maximum Likelihood Estimation (MLE) methods, click the corresponding tabs at the top of the table. 
+3.  Select which models will be used for the analysis. For this example in {numref}`f12`, the default selection of dichotomous Bayesian LOUD models will be used. To use all the models in a column, check the **Select All** box. To select models using ToxicR Bayesian model averaging or Maximum Likelihood Estimation (MLE) methods, click the corresponding tabs at the top of the table. 
 
 ```{figure} _static/img/model_selection_table.png
 :alt: Model selection table with all LOUD models selected with equal prior weights
@@ -381,7 +381,7 @@ Visit the [Plotly Website Help Page](https://plotly.com/chart-studio-help/zoom-p
 Enable datasets to satisfy another analysis requirement.
 ```
 
-3.  For dichotomous data, BMDS Online treats the maximum Multistage model differently depending on the modeling method used.  For LOUD or ToxicR Bayesian model averaging, only the Multistage 1 (Quantal Linear) and Multistate 2 models are used.  For MLE modeling, BMDS Online automatically selects the Maximum multistage degree to be 3. However, you can manually select a range of options from the **Maximum multistage degree** picklist. For more information, see [**Maximum Multistage Degree**](./dichotomous-mle.md#maximum-multistage-degree).
+3.  For dichotomous data, BMDS Online treats the maximum Multistage model differently depending on the modeling method used. For LOUD or ToxicR Bayesian model averaging, only the Multistage 1 (Quantal Linear) and Multistate 2 models are used. For MLE modeling, BMDS Online automatically selects the Maximum multistage degree to be 3. However, you can manually select a range of options from the **Maximum multistage degree** picklist. For more information, see [**Maximum Multistage Degree**](./dichotomous-mle.md#maximum-multistage-degree).
 
 ```{figure} _static/img/max_mst_degree_hovertext.png
 :alt: Help text panel displayed beside pointer hovering over question mark icon
@@ -574,7 +574,7 @@ analysis.
 
 ### Actions Menu
 
-```{figure} _static/img/online_action_menu.png
+```{figure} _static/img/online_action_menu_new.png
 :alt: Actions menu options
 :scale: 120%
 :name: f45

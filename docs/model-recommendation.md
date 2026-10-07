@@ -1,6 +1,6 @@
 # Model Recommendations and Decision Logic
 
-When running the MLE models, BMDS analyzes modeling results and automatically recommends model selections that are consistent with the 2012 EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
+When running the MLE models, BMDS analyzes modeling results and automatically recommends model selections that are consistent with the EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
 BMDS Online displays the logic tests relevant to the model type selected on the Settings tab: continuous, dichotomous, or nested dichotomous. Multitumor/Multistage dichotomous does not have its own set of logic rules because [**it is a special instance of dichotomous modeling**](#multiple-tumor-analysis).
 
@@ -8,9 +8,9 @@ On the **Logic** tab, users can enable or disable specific decision logic settin
 
 ## About the Logic Tab
 
-The **Logic** tab and its settings assist users in performing BMD analyses in accordance with EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).  Models are placed in bins based on the criteria below.
+The **Logic** tab and its settings assist users in performing BMD analyses in accordance with the EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).  Models are placed in bins based on the criteria below.
 
-The logic settings can be overridden but are set to default values and options that are most consistent with EPA's BMD guidance.
+The logic settings can be overridden but are set to default values and options that are most consistent with EPA's BMD technical guidance.
 
 All models start as Viable before the logic tests are applied. If a modeling result meets the criteria listed in [**Unusable**](#unusable-bin) or [**Questionable**](#questionable-bin), its results are placed in those respective bins.
 
@@ -28,9 +28,9 @@ BMDS places each model into one of three different bins:
 
 -  **Questionable**---some serious deficiencies based on default or user-defined decision logic.
 
-The default settings for factors (tests) that determine bin placement are consistent with EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
+The default settings for factors (tests) that determine bin placement are consistent with the EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)).
 
-### Viable
+### Viable Bin
 
 All models start as Viable before the logic tests are applied.
 
@@ -50,13 +50,13 @@ These tests apply to all datasets.
 
 If ***any*** of the tests described in this section are true, then the results are classed as Questionable.
 
-The following default settings that can cause test failure, and thereby affect bin placement, are not explicitly given in the EPA BMD guidance. These test settings have been assigned based on general EPA practice and are, therefore, more open to user discretion:
+The following default settings that can cause test failure, and thereby affect bin placement, are not explicitly given in the EPA technical BMD guidance. These test settings have been assigned based on general EPA practice and are, therefore, more open to user discretion:
 
 -   BMDL range default fail: \> 3-fold (all dataset types)
 
 -   Constant and non-constant variance p-value default fail: \< 0.05 (continuous only)[^1]
 
-[^1]: Examples given in EPA BMD guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) suggest a criteria of p-value \> 0.1 for variance models, but this cut-off value has since been relaxed in practice. Future EPA guidance will reflect this change.
+[^1]: Examples given in EPA BMD guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) suggest a criteria of p-value \> 0.1 for variance models, but this cut-off value has since been relaxed in practice. 
 
 -   Ratio of BMD/BMDL (serious) default fail: \> 20 (all dataset types)
 
@@ -96,7 +96,7 @@ For continuous datasets only, the test is:
 
 After all models of the same Option Set (*i.e.*, same model run settings such as BMR Type, BMRF, etc.) have been placed into one of the three quality bins, a best-fitting model is recommended from the Viable bin.
 
-The model recommendation criteria are based on BMDL or AIC criteria defined in the 2012 EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) and the following criteria:
+The model recommendation criteria are based on BMDL or AIC criteria defined in the EPA Benchmark Dose Technical Guidance ([U.S. EPA, 2012](https://hero.epa.gov/hero/index.cfm?action=search.view&reference_id=1239433)) and the following criteria:
 
 -   If the range of BMDLs from models remaining in the Viable bin is \< 3, then recommend the BMDL from the model with the lowest AIC.
 
@@ -153,7 +153,7 @@ The **Notes to Show** column text cannot be edited. BMDS automatically updates a
 
 ## Documenting Recommendations in the Word Report
 
-Based on the decision logic entered by the user, BMDS will attempt to select a recommended, best-fitting model. A user must ultimately select a model and may choose to disagree with the BMDS auto-determination. If so, the user should document that disagreement in the Word Report.
+Based on the decision logic entered by the user, BMDS will attempt to select a recommended, best-fitting model. A user must ultimately select a model and may choose to disagree with the BMDS auto-determination. If so, the user should document that disagreement in the Word report.
 
 Any changes made by the user to the BMDS default logic also should be noted in any results or reports.
 

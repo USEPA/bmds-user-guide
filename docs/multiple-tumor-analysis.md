@@ -87,7 +87,7 @@ The $β_{xj}$ values are available directly from the Multistage-Cancer runs perf
 
 A profile-likelihood approach is used to derive the BMDL:
 
-* Given the BMD and the log-likelihood associated with the MLE solution, a target likelihood is defined based on the user-specified confidence level (e.g., 95%).
+* Given the BMD and the log-likelihood associated with the MLE solution, a target likelihood is defined based on the user-specified confidence level (*e.g.*, 95%).
 
 *  That target likelihood is derived by computing the percentile of a Chi-square (1 degree of freedom) corresponding to the confidence level specified by the user (actually, the alpha associated with the confidence level, times 2).
 
@@ -101,7 +101,7 @@ A profile-likelihood approach is used to derive the BMDL:
 
    * For that set of parameters, the risk at $d$ is equal to the user-specified BMR.
 
-Note that the combined log-likelihood is a function of the fits of the individual tumors (i.e., the sum of the individual log-likelihoods), obtained using their tumor-specific β values. Thus, the search for the parameters of the combined Multistage-Cancer model varies the individual-tumor $β$ values in such a way that the individual log-likelihoods add up to a combined likelihood within the range desired (greater than or equal to the target). However, to satisfy the second constraint, the sums of the individual-tumor parameters (shown above to be the parameters of the combined probability function) are used to evaluate the risk for any proposed BMDL.
+Note that the combined log-likelihood is a function of the fits of the individual tumors (*i.e.*, the sum of the individual log-likelihoods), obtained using their tumor-specific β values. Thus, the search for the parameters of the combined Multistage-Cancer model varies the individual-tumor $β$ values in such a way that the individual log-likelihoods add up to a combined likelihood within the range desired (greater than or equal to the target). However, to satisfy the second constraint, the sums of the individual-tumor parameters (shown above to be the parameters of the combined probability function) are used to evaluate the risk for any proposed BMDL.
 
 Note that the individual tumors need not be modeled with the same degree of the Multistage-Cancer model. Any terms not included for an individual tumor are assumed to be zero (and will remain at zero during BMDL optimization) in the summations shown above.
 
@@ -239,7 +239,7 @@ Result of running a Poly K adjustment, with plot of tumor incidence over study d
 
 ### More on the Poly K Adjustment Approach
 
-The Poly K adjustment is an approach (based on the poly-k trend test developed by [Portier and Bailer (1989)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/93236) to correct for treatment-related differences in survival across dose-groups in standard 2-year cancer bioassays.
+The Poly K adjustment is an approach (based on the poly-k trend test developed by [Portier and Bailer (1989)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/93236)) to correct for treatment-related differences in survival across dose-groups in standard 2-year cancer bioassays.
 
 Consider the example provided in Portier and Bailer (1989): there exists a tumor type that does not appear before 90 weeks of age and has 10% incidence, so that the lifetime incidence would be 5 animals in a group of 50. If exposure to a carcinogen increases the lifetime incidence to 30%, 15 animals out of a group of 50 would develop the tumor. But, if exposure to the carcinogen also decreases survival to 60% at 90 weeks, as few as 9 out of the 30 surviving exposed animals would develop a tumor. If this decrease in survival is not taken into account, the incidence used in dose-response modeling would be as low as 9/50.
 
@@ -289,7 +289,7 @@ Animals in a carcinogenicity experiment can be placed into four bins for the pur
 [Portier and Bailer
 (1989)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/93236) provide a rationale for how to determine the denominator contribution of animals that die early without developing a tumor:
 
-If an animal in a 2-year bioassay dies after one year, this animal can be considered to be at less risk of developing a tumor than animals that lived until the end of the experiment. Thus, this animal should not contribute the same amount of information as animals that survived until the end of the experiment (irrespective of tumor status) or animals that did develop a tumor (irrespective of survival time). In other words, this animal should not be given a weight of 1 (i.e., should not be counted as 1 when determining the denominator). If the risk of developing a tumor is constant throughout a lifetime, this animal should be given a weight of ½. However, if tumor risk accelerates with age, this animal would be at $(½)^{k}$ the risk of developing the tumor compared to animals that survive until the end of the experiment, where k is the exponent for the polynomial function describing the cumulative rate of tumor onset as a function of time. [Portier et al. (1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998) analyzed the untreated control groups of 47 NTP studies in mice and rats and concluded that a 3rd order polynomial was a reasonable general value of k.
+If an animal in a 2-year bioassay dies after one year, this animal can be considered to be at less risk of developing a tumor than animals that lived until the end of the experiment. Thus, this animal should not contribute the same amount of information as animals that survived until the end of the experiment (irrespective of tumor status) or animals that did develop a tumor (irrespective of survival time). In other words, this animal should not be given a weight of 1 (*i.e.*, should not be counted as 1 when determining the denominator). If the risk of developing a tumor is constant throughout a lifetime, this animal should be given a weight of ½. However, if tumor risk accelerates with age, this animal would be at $(½)^{k}$ the risk of developing the tumor compared to animals that survive until the end of the experiment, where k is the exponent for the polynomial function describing the cumulative rate of tumor onset as a function of time. [Portier et al. (1986)](https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/4998) analyzed the untreated control groups of 47 NTP studies in mice and rats and concluded that a 3rd order polynomial was a reasonable general value of k.
 
 Given the example above, an animal dying at one year would contribute a weight of $(½)^{3}=0.125$. For tumors that are quicker to develop, a lower value of k can be used (such that animals dying early provide more information). Conversely, for slower developing tumors, a higher value of k can be used (such that animals dying early provide less information).
 
@@ -353,8 +353,7 @@ The Multistage model plot also includes a dashed line representing this linear s
 The dashed line for the Multistage model plot representing cancer slope factor.
 ```
 
-If dose units are in mg/kg-day, this equals the oral slope factor (OSF) as defined by IRIS. If the dose units are µg/m3, this equals the
-inhalation unit risk (IUR) as defined by IRIS. For more information, see the **IRIS Toxicity Values** section of the [Basic Information about the Integrated Risk Information System (IRIS) web page](https://www.epa.gov/iris/basic-information-about-integrated-risk-information-system).
+If dose units are in mg/kg-day, this equals the oral slope factor (OSF), if the dose units are µg/m3, this equals the inhalation unit risk (IUR). 
 
 ## Troubleshooting a Tumor Analysis
 

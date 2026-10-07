@@ -9,7 +9,7 @@ the dataset of interest.
 
 Currently, there are two approaches for Bayesian model averaging for dichotomous endpoints available in BMDS:
 
-1. [LOUD](./dichotomous-bayesian.md#mathematical-details-for-loud-bayesian-dichotomous-models) methods, using MCMC sampling and WAIC weights (fully described in Jacketti et al., 2026 **ADD REF**)
+1. [LOUD](./dichotomous-bayesian.md#mathematical-details-for-loud-bayesian-dichotomous-models) methods, using MCMC sampling and WAIC weights (fully described in EPA et al., 2026 **ADD REF**)
 
 2. [ToxicR](./dichotomous-bayesian.md#mathematical-details-for-toxicr-bayesian-dichotomous-models) methods, using  *a posteriori* and Laplace approximation methods (fully described in [Wheeler et al. 2020](https://hero.epa.gov/reference/5939422/) and [Wheeler, 2022](https://hero.epa.gov/reference/12902051/)). 
 
@@ -21,7 +21,7 @@ At this time, EPA does not offer technical guidance on Bayesian modeling or Baye
 
 The EPA has developed an approach to BMA for dichotomous data, termed "***L***everaging ***O***ptimized ***U***nified prior ***D***istributions" (LOUD) that seeks to balance prior influence and data-driven inference by employing both empirical and weakly-informative priors, which may reduce the risk of overly dominant prior effects on the posterior distribution.  The LOUD approach is applied to dichotomous dose-response data, where each response can take on one of only two possible outcomes, positive (effect present) and negative (effect absent). 
 
-In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (e.g., the response probabilities for dichotomous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
+In the LOUD framework, dose-response models are reparametrized in terms of interpretable response levels at the minimum and maximum doses of the dose-response dataset, corresponding to parameters directly tied to the observed data (*e.g.*, the response probabilities for dichotomous data). This allows for a consistent set of priors to be applied across model forms. The priors for two of each model’s parameters can be derived directly from the priors for the response levels at the minimum and maximum doses. For models with three or more parameters, the priors for the remaining parameters are defined separately, as discussed below. 
 
 (priors-for-p0-and-p1)=
 ### Priors for p{sub}`0` and p{sub}`1` 
@@ -64,7 +64,7 @@ In BMDS, the set of Bayesian dichotomous models used in LOUD model averaging is 
 Dichotomous models available for LOUD Bayesian model averaging
 ```
 
-Note that the considerations regarding the [**Definition of the BMD**](./dichotomous-mle.md#bmr) (i.e., selection of the appropriate BMR level) are the same for the Bayesian and MLE implementations of the dichotomous models. The same two-dataset and two-option set limit applies to dichotomous data as for continuous data.
+Note that the considerations regarding the [**Definition of the BMD**](./dichotomous-mle.md#bmr) (*i.e.*, selection of the appropriate BMR level) are the same for the Bayesian and MLE implementations of the dichotomous models. The same two-dataset and two-option set limit applies to dichotomous data as for continuous data.
 
 #### Individual Model Specifications (LOUD)
 
@@ -82,7 +82,7 @@ $$p({d}_{0}) = {p}_{1} = {p}_{0} + (1 - {p}_{0}) \cdot (1 - exp^{(-\beta \cdot {
 
 $$\beta = -\ln \left\lbrack \frac{1 - {p}_{1}}{1 - {p}_{0}} \right\rbrack$$
 
-The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (e.g., $\alpha$ in the Weibull model) was chosen to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implicitly describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
+The priors for the remaining parameters are listed below explicitly and were obtained from [Wheeler et al., 2022](https://hero.epa.gov/reference/10330529/). For example, the prior for the power parameter (*e.g.*, $\alpha$ in the Weibull model) was chosen to take any positive value but places a low prior probability on values less than 1 that would lead to an infinite slope at the origin.  The parameterization of the dichotomous Hill model was adjusted due to redundancy:  both ${p}_{1}$ (probability of response at the maximum dose) and $v$ (maximum extra risk) implicitly describe the maximum response, which can cause unstable sampling during model fitting.  Thus, the dichotomous Hill model is reparameterized such that ${p}_{1}$ was set equal to $v$.  For all models, parameters that identify curvature were assigned separate priors based on the priors in ToxicR (see [Individual Model Specifications (ToxicR)](./dichotomous-bayesian.md#individual-model-specifications-toxicr)) because ${p}_{0}$ and ${p}_{1}$ do not contain information to identify the shape of the curve.  
 
 ::::{tab-set}
 
@@ -330,7 +330,7 @@ BMDS displays the results for dichotomous LOUD model averaging analyses identica
 
 ## ToxicR Model Averaging - Dichotomous Endpoints
 
-The EPA, in conjunction with statisticians at the National Institute of Environmental Health Sciences (NIEHS), developed the ToxicR approach for dichotomous model averaging.  This approach uses maximum *a posteriori* approaches for model parameter estimation and a Laplacian approximation to estimate the posterior densities and posterior model weights of individual models.  
+EPA, in conjunction with statisticians at the National Institute of Environmental Health Sciences (NIEHS), developed the ToxicR approach for dichotomous model averaging ([Wheeler et al. 2020](https://hero.epa.gov/reference/5939422/)). This uses maximum *a posteriori* approaches for model parameter estimation and a Laplacian approximation to estimate the posterior densities and posterior model weights of individual models.  
 
 ### Mathematical Details for ToxicR Bayesian Dichotomous Models
 
@@ -436,7 +436,7 @@ $\beta \sim Lognormal(0,1)$
 
 **Notes**
 
-The difference in priors between the Quantal Linear model and the Multistage 1 model is by design. The objective is to emphasize the higher-order terms in each model.  The Quantal Linear model is not the same as the Multistage 1 model. This is important for model averaging purposes. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
+The difference in priors between the Quantal Linear model and the Multistage 1 model is by design. The objective is to emphasize the higher-order terms in each model. The Quantal Linear model is not the same as the Multistage 1 model. This is important for model averaging purposes. The Multistage 1 model uses a prior favoring shallow dose-response relationships, while the Quantal Linear model uses a more diffuse prior.
 
 :::
 
@@ -649,7 +649,7 @@ $logit(v) \sim Normal(0,3)$
 ::::
 
 :::{important}
-For all the models described above, $\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. $Normal(x, y)$ denotes a Normal distribution with mean $x$ and standard deviation $y$. $Lognormal(w, z)$ denotes a Lognormal distribution with log-scale mean $w$ and log-scale standard deviation $z$.  Further, the background parameter constraints above are on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
+For all the models described above, $\text{logit}(g) = \ln\left( \frac{g}{1 - g} \right)$. $Normal(x, y)$ denotes a Normal distribution with mean $x$ and standard deviation $y$. $Lognormal(w, z)$ denotes a Lognormal distribution with log-scale mean $w$ and log-scale standard deviation $z$. Further, the background parameter constraints above are on the logit scale, which is the form in which BMDS uses these constraints for calculation. The constraints are input into the software on the real number scale, with values of -18/18 for the MLE model and -20/20 for the Bayesian model minimum/maximum. The software then performs a logit transformation on these values. The background parameter values output by BMDS in the results will have a range of 0 to the maximum dose for each model.
 :::
 
 :::{note}

@@ -114,7 +114,7 @@ This selection only affects how the user-designated benchmark response (BMR) is 
 ## Defining Modeling Settings with Option Sets
 
 On the BMDS Online **Settings** tab, the user can define up to six **Option Sets** to apply to multiple user-selected models and multiple
-user-selected datasets in a single batch process. There is no limit on option sets in BMDS Desktop and pybmds. Option sets define what settings (e.g., BMR type, BMR factor, etc.) will be used when modeling the datasets in question.
+user-selected datasets in a single batch process. There is no limit on option sets in BMDS Desktop and pybmds. Option sets define what settings (*e.g.*, BMR type, BMR factor, etc.) will be used when modeling the datasets in question.
 
 Select the blue Plus button to add a new Option Set row. Select the red Trashcan button to delete that Option Set row.
 
@@ -441,7 +441,7 @@ Test of Means and Variance Fits table.
 The likelihood ratio is the ratio of two likelihood values, many of which are given in the BMDS output. Statistical theory proves that
 $- 2*ln(likelihood\ ratio)$ converges to a Chi-square random variable as the sample size gets large and the number of dose levels gets large. These values can in turn be used to obtain approximate probabilities to make inferences about model fit. Chi-square tables can be found in almost any statistical reference book.
 
-Suppose the user wishes to test two models, A and B, for fit. One assumption that is made for these tests is that model A is nested within Model B, *i.e.*, that Model B can be simplified (via restriction of some parameters in Model B) in such a way that the simplified model is Model A. This implies that Model A has fewer varying parameters. As an ...example, consider that the linear model is a "simpler" or "nested" model relative to the power model because the linear model has the power parameter restricted to be equal to 1.
+Suppose the user wishes to test two models, A and B, for fit. One assumption that is made for these tests is that model A is nested within Model B, *i.e.*, that Model B can be simplified (via restriction of some parameters in Model B) in such a way that the simplified model is Model A. This implies that Model A has fewer varying parameters. As an example, consider that the linear model is a "simpler" or "nested" model relative to the power model because the linear model has the power parameter restricted to be equal to 1.
 
 :::{note} The model with a higher number of parameters is always in the denominator of this ratio.
 :::
@@ -820,7 +820,7 @@ The Jonckheere-Terpstra trend test ([Jonckheere, 1954](https://www.jstor.org/sta
 
 The Jonckheere-Terpstra trend test can be performed using a one-sided alternative hypothesis that the trend in responses is either increasing or decreasing (with the direction set by the user before running the test) or a two-sided alternative hypothesis used to detect a trend in either direction. Both exact and approximate versions of the Jonckheere-Terpstra trend test are available.  
 
-When running the Jonckheere-Terpstra trend test, the exact method, utilizing a convolution approach to compute the null distribution of the Jonckheere-Terpstra statistic, is preferentially used. However, this exact method is only available when there are no ties in the data (i.e., there are no equal response values in the data set across dose groups) and when the total sample size is less than 150. The limit on sample size is based on the observation that computation time for the exact Jonckheere's test increases in an exponential fashion with increasing total N:
+When running the Jonckheere-Terpstra trend test, the exact method, utilizing a convolution approach to compute the null distribution of the Jonckheere-Terpstra statistic, is preferentially used. However, this exact method is only available when there are no ties in the data (*i.e.*, there are no equal response values in the data set across dose groups) and when the total sample size is less than 150. The limit on sample size is based on the observation that computation time for the exact Jonckheere's test increases in an exponential fashion with increasing total N:
 
 ```{csv-table} Computation time for the exact Jonckheere-Terpstra trend test
 :header: >
@@ -835,9 +835,9 @@ When running the Jonckheere-Terpstra trend test, the exact method, utilizing a c
 ```
 When the total N exceeds 150 or ties in the data exist, the approximate approach, based on a normal approximation of the test statistics, is used instead.   
 
-Alternatively, users can also opt to use a permutation approach that is not dependent on any distributional assumptions.  This approach iteratively reshuffles the observed data (i.e., reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the proportion of permuted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. 
+Alternatively, users can also opt to use a permutation approach that is not dependent on any distributional assumptions.  This approach iteratively reshuffles the observed data (*i.e.*, reshuffles the response data relative to dose group labels) to generate a dataset that might be expected due to chance.  For each reshuffled (permuted) dataset, the test statistic is calculated and compared to the original test statistic.  The final p-value is then the proportion of permuted statistics that are greater than or lesser than the original statistic for decreasing and increasing trends, respectively. 
 
-Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (i.e., means and standard deviations only), BMDS includes an approach to calculate synthetic individual response data that corresponds to the observed summary statistics. This is done by iteratively generating random samples using a normal distribution; random samples are generated until the sample mean and standard deviation match the target (i.e., observed) mean and standard deviation or until the maximum number of iterations are reached.  If no sampled mean and standard deviation are found that match the target values, an error message is returned.
+Individual data are required for the Jonckheere-Terpstra trend test.  If users only have summary level continuous data (*i.e.*, means and standard deviations only), BMDS includes an approach to calculate synthetic individual response data that corresponds to the observed summary statistics. This is done by iteratively generating random samples using a normal distribution; random samples are generated until the sample mean and standard deviation match the target (*i.e.*, observed) mean and standard deviation or until the maximum number of iterations are reached.  If no sampled mean and standard deviation are found that match the target values, an error message is returned.
 
 :::{note}
 At this time, the Jonckheere-Terpstra trend test is available in pybmds and BMDS Online and Desktop (version 26.1).  See [pybmds Documentation](https://usepa.github.io/BMDS/recipes/index.html) for examples of usage
@@ -852,7 +852,7 @@ To run the Jonckheere-Terpstra trend test, click the link on the Data Tab:
 
 Jonckheere-Terpstra trend test link.
 ```
-This will open a new browser tab where users can parameterize the Jonckheere-Terpstra trend test as needed (i.e., change the Hypothesis and Permutation settings if needed).  If a dataset was entered in the Data tab prior to clicking the link, it will automatically be loaded in the Dataset field.  
+This will open a new browser tab where users can parameterize the Jonckheere-Terpstra trend test as needed (*i.e.*, change the Hypothesis and Permutation settings if needed).  If a dataset was entered in the Data tab prior to clicking the link, it will automatically be loaded in the Dataset field.  
 
 ```{figure} _static/img/JT_trend_test_window.png
 :alt: Jonckheere-Terpstra trend test window showing options for running the test
@@ -870,7 +870,7 @@ Clicking the **Execute** button will run the test and display the results in a t
 
 Jonckheere-Terpstra trend test link.
 ```
-Users can either click the **Copy results to clipboard** link to copy the results to manually paste into a results document or use the **Actions** dropdown menu to download a formatted Word report with the results and simulated data (if using).
+Users can either click the **Copy results to clipboard** link to copy the results to manually paste into a results document or use the **Actions** dropdown menu to download a formatted Word report with the results and simulated data (if trend test was run on summary data).
 
 ```{figure} _static/img/JT_trend_test_results_actions.png
 :alt: Jonckheere-Terpstra trend test window showing options for saving results
